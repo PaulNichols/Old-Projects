@@ -1,0 +1,48 @@
+﻿
+<!--EXTERNAL_PROPERTIES: sourceDirectory-->
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<UsingTask TaskName="NCoverExplorer.MSBuildTasks.NCoverExplorer" 
+             AssemblyFile="NCoverExplorer.MSBuildTasks.dll"/>
+<UsingTask TaskName="NCoverExplorer.MSBuildTasks.NCover" 
+             AssemblyFile="NCoverExplorer.MSBuildTasks.dll"/>
+  <UsingTask TaskName="WebDirectoryDelete" AssemblyName="C:\Discovery\ManagementServer\Source\Dev\Discovery\Solution Items\MSBuild.Community.Tasks.dll"/>
+
+  
+  
+  <Target Name="Clean" >
+    <!-- Clean the UI source directory-->
+   
+    <RemoveDir Directories="$(sourceDirectory)\Discovery\Presentation\Discovery.ui" />
+    
+    
+  </Target>
+
+
+  <!--<Target Name="NCover" >
+
+    <NCover
+        CommandLineExe="C:\Program Files\NUnit-Net-2.0 2.2.8\bin\nunit-console.exe"
+			  CommandLineArgs="C:\Discovery\ManagementServer\Source\Dev\Discovery.UnitTests\bin\Debug\Discovery.UnitTests.dll" />
+  </Target>-->
+  
+ 
+   <ItemGroup>
+     <Assembly Include="C:\Discovery\ManagementServer\Source\Dev\Discovery\Business Objects\bin\Debug\Discovery.dll" />
+  </ItemGroup>
+  <Target Name="NCover">
+    <NCover  
+        ToolPath="C:\Program Files\NCover\"
+        CommandLineExe="C:\Program Files\NUnit-Net-2.0 2.2.8\bin\nunit-console.exe"
+        CommandLineArgs="C:\Discovery\ManagementServer\Source\Dev\Discovery\Testing\Discovery.UnitTests\bin\Debug\Discovery.UnitTests.dll"
+        CoverageFile="C:\Discovery\ManagementServer\Artifacts\Development\coverage.xml"
+        LogLevel="Verbose"
+        LogFile="C:\Discovery\ManagementServer\Artifacts\Development\coverage.log"
+        WorkingDirectory="C:\Discovery\ManagementServer\Source\Dev\"
+        ExcludeAttributes="CoverageExclude"
+        Assemblies="@(Assembly)" />
+  </Target>
+
+
+
+</Project>

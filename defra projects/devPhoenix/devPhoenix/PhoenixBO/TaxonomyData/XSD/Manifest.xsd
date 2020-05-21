@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Steve Colby (n/a) -->
+<xs:schema attributeFormDefault="qualified" id="manifest" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="manifest" msdata:IsDataSet="true" msdata:Locale="en-GB" msdata:EnforceConstraints="False">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Row" minOccurs="32" maxOccurs="32">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TableName">
+								<xs:annotation>
+									<xs:documentation>Name of the table</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="31" />
+										<xs:enumeration value="vAquatic" />
+										<xs:enumeration value="vAreaofUse" />
+										<xs:enumeration value="vBru" />
+										<xs:enumeration value="vCommonName" />
+										<xs:enumeration value="vCountry" />
+										<xs:enumeration value="vDecisions" />
+										<xs:enumeration value="vDistribAqua" />
+										<xs:enumeration value="vDistribBru" />
+										<xs:enumeration value="vDistribCty" />
+										<xs:enumeration value="vFamily" />
+										<xs:enumeration value="vGenus" />
+										<xs:enumeration value="vHighCommon" />
+										<xs:enumeration value="vHighDecisions" />
+										<xs:enumeration value="vHighLegal" />
+										<xs:enumeration value="vHighQuotas" />
+										<xs:enumeration value="vHighSynonyms" />
+										<xs:enumeration value="vKingdom" />
+										<xs:enumeration value="vLegal" />
+										<xs:enumeration value="vLegalName" />
+										<xs:enumeration value="vLevelOfUse" />
+										<xs:enumeration value="vNotification" />
+										<xs:enumeration value="vPart" />
+										<xs:enumeration value="vQuotas" />
+										<xs:enumeration value="vQuotaSource" />
+										<xs:enumeration value="vQuotaTerms" />
+										<xs:enumeration value="vSpecies" />
+										<xs:enumeration value="vSynLink" />
+										<xs:enumeration value="vTaxClass" />
+										<xs:enumeration value="vTaxOrder" />
+										<xs:enumeration value="vTaxPhylum" />
+										<xs:enumeration value="vUsed" />
+										<xs:enumeration value="vUseType" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="RowCount" type="xs:nonNegativeInteger">
+								<xs:annotation>
+									<xs:documentation>Count of rows in the table</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="LastChangeDate" type="xs:date">
+								<xs:annotation>
+									<xs:documentation>Date table was last updated</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

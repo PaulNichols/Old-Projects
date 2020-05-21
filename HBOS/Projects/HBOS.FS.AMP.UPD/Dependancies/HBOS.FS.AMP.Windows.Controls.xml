@@ -1,0 +1,1840 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HBOS.FS.AMP.Windows.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.CellEventArgs">
+            <summary>
+            CellEventArgs are the arguments for a Cell Click (or double click) event. The information includes RowNumber, ColumnNumber and CellType.
+            </summary>
+            <remarks>It effectively encapsulates the information from a HitTest.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.CellEventArgs.#ctor(System.Int32,System.Int32,System.Windows.Forms.DataGrid.HitTestType)">
+            <summary>
+            Constructor for the column number, row number and cell type
+            </summary>
+            <param name="columnNumber">Column number of clicked cell.</param>
+            <param name="rowNumber">Row number of clicked cell.</param>
+            <param name="hitTestType">Cell type of clicked cell (e.g. header, cell, gridline etc)</param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CellEventArgs.RowNumber">
+            <summary>
+            Row Number for clicked cell
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CellEventArgs.ColumnNumber">
+            <summary>
+            Column number for clicked cell
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CellEventArgs.Type">
+            <summary>
+            Cell type for clicked cell
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs">
+            <summary>
+            CheckBoxEventArgs are the arguments for a checked changed event. The information includes RowNumber, ColumnNumber, CellType, Old Value and New Value
+            </summary>
+            <remarks>It effectively encapsulates the information from a HitTest.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs.#ctor(System.Int32,System.Int32,System.Windows.Forms.DataGrid.HitTestType,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor for the column number, row number,cell type, old value and new value
+            </summary>
+            <param name="columnNumber">Column number of clicked cell.</param>
+            <param name="rowNumber">Row number of clicked cell.</param>
+            <param name="hitTestType">Cell type of clicked cell (e.g. header, cell, gridline etc)</param>
+            <param name="newValue"></param>
+            <param name="oldValue"></param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs.RowNumber">
+            <summary>
+            Row Number for clicked cell
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs.ColumnNumber">
+            <summary>
+            Column number for clicked cell
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs.Type">
+            <summary>
+            Cell type for clicked cell
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs.OldValue">
+            <summary>
+            Old checked value
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs.NewValue">
+            <summary>
+            New check value
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.ComboBoxEventArgs">
+            <summary>
+            ComboBoxEventArgs - arguments raised when the Combo box changes values
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.ComboBoxEventArgs.#ctor(System.Int32,System.Object,System.Object)">
+            <summary>
+            Create a Combo Event Args
+            </summary>
+            <param name="rowNumber">row number in grid</param>
+            <param name="comboSelectedValue">selected value</param>
+            <param name="comboSelectedDisplay">selected text</param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.ComboBoxEventArgs.RowNumber">
+            <summary>
+            Row Number for clicked cell
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.ComboBoxEventArgs.SelectedValue">
+            <summary>
+            Selected Value
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.ComboBoxEventArgs.SelectedDisplay">
+            <summary>
+            Selected Text that is currently displayed
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGrid">
+            <summary>
+            <p>Customised HBOS FS AMP Data Grid.</p>
+            <p>Extends the native DataGrid functionality by providing Write (Extract to file), Print and Print Preview functionality.</p>
+            </summary>
+            <remarks>
+            <p>Methods added to the grid include</p>
+            <list type="bullet">
+            	<item><see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.Print(System.Data.DataView,System.String)"/></item>
+            	<item><see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPreview(System.Data.DataView,System.String)"/></item>
+            	<item><see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.Write(System.Data.DataView,System.String,System.String)"/></item>
+            	<item><see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.CopyDefaultTableStyle(HBOS.FS.AMP.Windows.Controls.DataGrid,System.Windows.Forms.DataGridTableStyle)"/></item>
+            	<item><see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.BindToCustomCollection(System.Collections.IList)"/></item>
+            	<item><see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.RetrieveOriginalCustomCollection"/></item>
+            	<item><see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.RetrieveUpdatedCustomCollection"/></item>
+            </list>
+            <p>Events added to the grid include:</p>
+            <list type="bullet">
+            	<item><see cref="E:HBOS.FS.AMP.Windows.Controls.DataGrid.CellClicked"/></item>
+            	<item><see cref="E:HBOS.FS.AMP.Windows.Controls.DataGrid.CellDoubleClicked"/></item>
+            </list>
+            <p>Note: If you add a tablestyle to the grid, it will overwrite the default styling of the grid. If you wish to reapply the default datagrid style, call the <see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.CopyDefaultTableStyle(HBOS.FS.AMP.Windows.Controls.DataGrid,System.Windows.Forms.DataGridTableStyle)"/> method.</p>
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.#ctor">
+            <summary>
+            Constructor to initialise component
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.Print(System.Data.DataView,System.String)">
+            <summary>
+            Prints the contents of the Grid.
+            </summary>
+            <param name="dataViewToPrint">The contents of the dataview are the actual details printed.</param>
+            <param name="pageHeader">Page Header to print on document. Can be suppressed using PrintPageHeader.</param>
+            <remarks>
+            <para>Some properties on the grid affect the contents of the printout. These properties include:</para>
+            <list type="bullet">
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintColumnHeadings"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintInPortraitLayout"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageHeader"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageNumbers"/></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.Print(System.String)">
+            <summary>
+            Prints the contents of the Grid.
+            </summary>
+            <param name="pageHeader">Page Header to print on document. Can be suppressed using PrintPageHeader.</param>
+            <remarks>
+            <para>Assumes the datagrid has been bound by using <see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.BindToCustomCollection(System.Collections.IList)"/></para>
+            <para>Some properties on the grid affect the contents of the printout. These properties include:</para>
+            <list type="bullet">
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintColumnHeadings"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintInPortraitLayout"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageHeader"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageNumbers"/></item>
+            </list>
+            </remarks>
+            <exception cref="T:System.ApplicationException">If the grid hasn't been bound to a DataView, or bound to via BindToCustomCollection, raise an error.</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPreview(System.Data.DataView,System.String)">
+            <summary>
+            Perform a Print Preview for the contents of the Data Grid
+            </summary>
+            <param name="dataViewToPrint">The contents of the dataview are the actual details printed.</param>
+            <param name="pageHeader">Page Header to print on document. Can be suppressed using PrintPageHeader.</param>
+            <remarks>
+            Some properties on the grid affect the contents of the printout. These properties include:
+            <list type="bullet">
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintColumnHeadings"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintInPortraitLayout"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageHeader"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageNumbers"/></item>
+            </list>
+            </remarks> 
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPreview(System.String)">
+            <summary>
+            Perform a Print Preview for the contents of the Data Grid
+            </summary>
+            <param name="pageHeader">Page Header to print on document. Can be suppressed using PrintPageHeader.</param>
+            <remarks>
+            <para>Print using the dataview that was set up as part of <see cref="M:HBOS.FS.AMP.Windows.Controls.DataGrid.BindToCustomCollection(System.Collections.IList)"/> </para>
+            Some properties on the grid affect the contents of the printout. These properties include:
+            <list type="bullet">
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintColumnHeadings"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintInPortraitLayout"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageHeader"/></item>
+            	<item><see cref="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageNumbers"/></item>
+            </list>
+            </remarks> 
+            <exception cref="T:System.ApplicationException">If the grid hasn't been bound to a DataView, or bound to via BindToCustomCollection, raise an error.</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.Write(System.Data.DataView,System.String,System.String)">
+            <summary>
+            Write/Extract the contents of the grid into a file using an embedded XSL.
+            </summary>
+            <param name="dataViewToPrint">The DataView to write to the file.</param>
+            <param name="fileName">The filename to write the grid contents to.</param>
+            <param name="xslResourceName">The embedded Xsl resource to use when writing the grid contents to file.</param>
+            <remarks>
+            	<para>An XSLT is used to format the output of the DataView when writing to the file.</para>
+            	<note>The top level node will be called "DataGrid".</note>
+            	<note>Each row will be tagged with the original TableName from the DataView.</note>
+            	<note>The xslt must be an embedded resource.</note>
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.Write(System.String,System.String)">
+            <summary>
+            Write/Extract the contents of the grid into a file using an embedded XSL.
+            </summary>
+            <param name="fileName">The filename to write the grid contents to.</param>
+            <param name="xslResourceName">The embedded Xsl resource to use when writing the grid contents to file.</param>
+            <remarks>
+            	<para>An XSLT is used to format the output of the DataView when writing to the file.</para>
+            	<note>The top level node will be called "DataGrid".</note>
+            	<note>Each row will be tagged with the original TableName from the DataView.</note>
+            	<note>The xslt must be an embedded resource.</note>
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.CopyDefaultTableStyle(HBOS.FS.AMP.Windows.Controls.DataGrid,System.Windows.Forms.DataGridTableStyle)">
+            <summary>
+            Copy the display-related properties of the given DataGrid to the given DataGridTableStyle
+            </summary>
+            <param name="datagrid">The DataGrid to copy the style information from.</param>
+            <param name="ts">The tableStyle to copy the style information to.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.CopyDefaultTableStyle(System.Windows.Forms.DataGridTableStyle)">
+            <summary>
+            Copy the display-related properties of the DataGrid to the given DataGridTableStyle
+            </summary>
+            <param name="ts">The TableStyle to copy the style information to.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.CopyDefaultTableStyle">
+            <summary>
+            Copy the display-related properties of the DataGrid to all the DataGridTableStyle
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.BindToCustomCollection(System.Collections.IList)">
+            <summary>
+            Creates a DataTable from the custom collection and binds the table's default view to the grid
+            </summary>
+            <param name="customCollection"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.ResetOffset">
+            <summary>
+            Resets the offset.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.RetrieveOriginalCustomCollection">
+            <summary>
+            Retrieves the un-modified original custom collection from the grid
+            </summary>
+            <returns>The un-modified custom collection</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.RetrieveUpdatedCustomCollection">
+            <summary>
+            Retrieve the updated custom collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.RetrieveEntireCustomCollection">
+            <summary>
+            Retrieve entire collection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.RetrieveObject(System.Int32)">
+            <summary>
+            Retrieve a single row from the grid as the appropriate type.
+            </summary>
+            <param name="rowNumber">Row number to retrieve from Grid</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.SetDefaultValue(System.String,System.Object)">
+            <summary>
+            Set the default value for a property.
+            </summary>
+            <param name="propertyName"></param>
+            <param name="propertyDefaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.RejectChanges(System.Int32)">
+            <summary>
+            Reject the changes for a row in the Grid.
+            </summary>
+            <param name="rowNumber"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.CommitChanges">
+            <summary>
+            Commit the changes to the Data Grid
+            </summary>
+            <remarks>Particularly useful if you perform batch updates against the data in the Grid.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.SetValue(System.Int32,System.String,System.Object)">
+            <summary>
+            Set the value for a particular property.
+            </summary>
+            <param name="rowNumber">Row number to set value for</param>
+            <param name="propertyName">Property to set value for</param>
+            <param name="propertyValue">Value to set the property to.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.GetValue(System.Int32,System.String)">
+            <summary>
+            Get the value for a particular property.
+            </summary>
+            <param name="rowNumber">Row number to set value for</param>
+            <param name="propertyName">Property to set value for</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.HasProperty(System.String)">
+            <summary>
+            Does the Grid have a particular property
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.createObjectFromDataRow(System.Data.DataRow)">
+            <summary>
+            Create object from data row
+            </summary>
+            <param name="currentRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.addTypeProperty(System.Data.DataTable)">
+            <summary>
+            Add a type column to the Data Table
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.addColumnsForProperties(System.Reflection.PropertyInfo[],System.Data.DataTable)">
+            <summary>
+            Make sure the table contains all the properties
+            </summary>
+            <param name="properties"></param>
+            <param name="dt"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.createTableFromDataView">
+            <summary>
+            Figure out the datatable from looking at the view
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.setRowState(System.Data.DataTable)">
+            <summary>
+            Set the Data Row State for the row.
+            </summary>
+            <param name="newTable"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.DataGrid_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Handle a double click on the grid
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>Raises a CellDoubleClicked event if we have a subscriber.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.DataGrid_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Mouse up event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Candle a mouse down to prevent a sort on a boolean column
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.DataGrid_Enter(System.Object,System.EventArgs)">
+            <summary>
+            When the grid becomes the active control, make sure it has the focus
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+            <remarks>This is a really nasty hack. It looks like when the DataGrid becomes the active control, focus is set to
+            the first column in the grid. If this is a ComboBox column, it causes a runtime exception.
+            By setting the focus to the grid, the problem seems to go away.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.BoundData_RowChanged(System.Object,System.Data.DataRowChangeEventArgs)">
+            <summary>
+            The underlying data has changed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.BoundData_RowDeleted(System.Object,System.Data.DataRowChangeEventArgs)">
+            <summary>
+            The underlying data has been deleted
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.DataGrid_CurrentCellChanged(System.Object,System.EventArgs)">
+            <summary>
+            The cell has changed, so remember the row, column number
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGrid.DataGrid_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Use the mouse move to do tooltips
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.TableStyles">
+            <summary>
+            Support for custom designer - needed so we can use the GUI to choose our custom columns.
+            </summary>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGrid.SelectedRowChanged">
+            <summary>
+            Row changed event - raised when the current row is changed
+            </summary>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGrid.CellClicked">
+            <summary>
+            Cell Clicked event - raised when a cell in the Grid is clicked
+            </summary>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGrid.CellDoubleClicked">
+            <summary>
+            Occurs when a cell is double clicked
+            </summary>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGrid.RowDeleted">
+            <summary>
+            Occurs when the data in a row is deleted.
+            </summary>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGrid.RowChanged">
+            <summary>
+            Occurs when the data in a row is changed
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.CaptionVisible">
+            <summary>
+            Gets or sets a value that indicates whether the grid's caption is visible.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.AllowDelete">
+            <summary>
+            Are we allowing deletes
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.AllowNew">
+            <summary>
+            Are we allowing new records
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.FlatMode">
+            <summary>
+            Gets or sets a value indicating whether the grid displays in Flat Mode.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintColumnHeadings">
+            <summary>
+            Add Column Headings to Print outs.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageNumbers">
+            <summary>
+            Add Page Numbers to the print out
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintInPortraitLayout">
+            <summary>
+            Print in Portrait mode
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageHeader">
+            <summary>
+            Add a Page Header to the print out
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.BackgroundColor">
+            <summary>
+            Gets or sets the colour of the non-row area of the grid.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.BackColor">
+            <summary>
+            Gets or sets the background colour of even numbered rows of the grid.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.AlternatingBackColor">
+            <summary>
+            Gets or sets the background colour of odd numbered rows of the grid.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.BorderStyle">
+            <summary>
+            Gets or sets the grid's border style.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.CaptionBackColor">
+            <summary>
+            Gets or sets the background colour of the caption area.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.CaptionForeColor">
+            <summary>
+            Gets or sets the foreground colour of the caption area.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.ForeColor">
+            <summary>
+            Gets or sets the foreground colour (typically the colour of the text) property of the DataGrid control.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.GridLineColor">
+            <summary>
+            Gets or sets the color of the Grid lines.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.GridLineStyle">
+            <summary>
+            Gets or sets the line style of the grid.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.HeaderBackColor">
+            <summary>
+            Gets or sets the background colour of all row and column headers.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.HeaderForeColor">
+            <summary>
+            Gets or sets the foreground colour of headers.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.LinkColor">
+            <summary>
+            Gets or sets the colour of the text that you can click to navigate to a child table.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.SelectionBackColor">
+            <summary>
+            Gets or sets the background colour of the selected rows.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.SelectionForeColor">
+            <summary>
+            Gets or sets the foreground colour of the selected rows..
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.ParentRowsBackColor">
+            <summary>
+            Gets or sets the background colour of parent rows.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.ParentRowsForeColor">
+            <summary>
+            Gets or sets the foreground colour of parent rows.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.AllowNavigation">
+            <summary>
+            Allow Navigation
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.Count">
+            <summary>
+            The number of rows displayed in the DataGrid
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.DataSource">
+            <summary>
+            User is setting the data source.
+            </summary>
+            <remarks>Sets up the events handles for Rows added and Deleted.</remarks>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintColumnSettings">
+            <summary>
+            Set of print settings for each column
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintPageHeadingFont">
+            <summary>
+            The page heading font
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintColumnHeadingFont">
+            <summary>
+            The column heading font
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintStandardFont">
+            <summary>
+            The standard font
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGrid.PrintGridStyle">
+            <summary>
+            Print Style
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGrid.GridPrintStyle">
+            <summary>
+            What print style to use. Allows scope for multiple print styles
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGrid.GridPrintStyle.Normal">
+            <summary>
+            Normal Print Style with Wrapping if necessary
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGrid.GridPrintStyle.MultipleHorizontalPages">
+            <summary>
+            Multiple horizontal pages.
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGrid.SelectedRowChangedDelegate">
+            <summary>
+            Row Changed Delegate
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGrid.CellClickedDelegate">
+            <summary>
+            Cell Clicked Delegate
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGrid.CellDoubleClickedDelegate">
+            <summary>
+            Cell Double Clicked Delegate
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGrid.RowChangedDelegate">
+            <summary>
+            Row has changed
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGrid.RowDeletedDelegate">
+            <summary>
+            Row has been deleted
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn">
+            <summary>
+            DataGridBool1ClickColumn - check box editing with 1 click
+            </summary>
+            <remarks>Sourced from http://www.syncfusion.com/FAQ/WinForms/FAQ_c44c.asp#q945q</remarks>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.ICustomDataGridColumn">
+            <summary>
+            Interface for Data Grid custom columns
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.ICustomDataGridColumn.ToolTipProperty">
+            <summary>
+            The tooltip property for this column
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.OnCheckedChanged(System.Object,HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs)">
+            <summary>
+            Signal the column to raise an CheckedChanged event if there is a listener
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.OnInsufficientPermissions(System.Object,HBOS.FS.AMP.Windows.Controls.CheckBoxEventArgs)">
+            <summary>
+            Signal the column to raise an insufficient permission event if there is a listener
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.InitializeComponent">
+            <summary>
+            Default to not allowing Nulls
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            Set value
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.SetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32,System.Object)">
+            <summary>
+            Set value
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <param name="cellValue"></param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.CanCheck">
+            <summary>
+            Has the user the appropriate permissions to check the checkbox
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.CanUnCheck">
+            <summary>
+            Has the user got the permissions to uncheck the checkbox.
+            </summary>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.CheckedChanged">
+            <summary>
+            Occurs when the data in a row is changed.
+            </summary>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.InsufficientPermissions">
+            <summary>
+            Occurs when the user doen't have sufficient permissions to perform an operation!
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.ToolTipProperty">
+            <summary>
+            The tooltip property
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.CheckedChangedDelegate">
+            <summary>
+            Check box value has changed
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridBool1ClickColumn.InsufficientPermissionsDelegate">
+            <summary>
+            Insufficient permissions to perform operation
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn">
+            <summary>
+            DataGridTextBoxColumn - allows a combo style column in a data grid
+            </summary>
+            <remarks>Based on http://msdn.microsoft.com/msdnmag/issues/03/08/DataGrids/default.aspx
+            </remarks>
+            <example>
+            While the DataGrid is bound to a DataView, the Combo column must also be bound to a data source. 
+            An example is as follows:
+            <code escaped="true">
+            dataGridComboBoxColumn1.DataSource = m_AllTitlesTable;
+            dataGridComboBoxColumn1.DisplayMember = "TitleName";
+            dataGridComboBoxColumn1.ValueMember = "TitleID";
+            </code>
+            </example>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.#ctor">
+            <summary>
+            Constructor - create combobox, register selection change event handler and register lose focus event handler
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            On edit, add scroll event handler, and display combo box
+            </summary>
+            <param name="source">The data source for the grid</param>
+            <param name="rowNum">The row number affected.</param>
+            <param name="bounds"></param>
+            <param name="readOnly">IS the grid read only</param>
+            <param name="instantText"></param>
+            <param name="cellIsVisible">Is the cell visible</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            Given a row, get the value member associated with a row.  Use the value
+            member to find the associated display member by iterating over bound datasource
+            </summary>
+            <param name="source">Data source for the column</param>
+            <param name="rowNum">Affected row number</param>
+            <returns>The column value for the row</returns>
+            <remarks>Changed this so that if the value was Null, it sets the value to be the first in the combo</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.SetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32,System.Object)">
+            <summary>
+            Given a row and a display member, iterating over bound datasource to find
+            the associated value member.  Set this value member.
+            </summary>
+            <param name="source">The data source for the grid</param>
+            <param name="rowNum">The row number affected</param>
+            <param name="cellValue">The value to set for the cell.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.DataGrid_Scroll(System.Object,System.EventArgs)">
+            <summary>
+            On datagrid scroll, hide the combobox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.comboBox_Leave(System.Object,System.EventArgs)">
+            <summary>
+            On combo box losing focus, set the column value, hide the combo box,
+            and unregister scroll event handler
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.comboBox_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Combo box has changed index
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.SelectedIndexChanged">
+            <summary>
+            Selected Index changed delegate
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.DataSource">
+            <summary>
+            Set the combo box data source
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.DisplayMember">
+            <summary>
+            Set the combo box Display Member
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.ValueMember">
+            <summary>
+            Set the combo box Value member
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.IList">
+            <summary>
+            Access to the IList for the combo box
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.ITypedList">
+            <summary>
+            Access to the ITyped List for the combobox
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.propertyDescriptorCollection">
+            <summary>
+            Access to the Property Descriptor Collection
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.propertyDescriptorDisplayMember">
+            <summary>
+            Access to the Display Member
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.propertyDescriptorValueMember">
+            <summary>
+            Access to the Display Member
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.ToolTipProperty">
+            <summary>
+            The tool tip property
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn.SelectedIndexChangedDelegate">
+            <summary>
+            Selected index changed delegate
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn">
+            <summary>
+            Summary description for DataGridDateColumn.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            creates a new col
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn.#ctor">
+            <summary>
+            creates a new col
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            GetColumnValueAtRow
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridDateColumn.ToolTipProperty">
+            <summary>
+            Tooltip property
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn">
+            <summary>
+            DataGridImageColumn - allow images to be displayed in Data Grid Column
+            </summary>
+            <remarks>
+            <p>Based upon http://www.datagridcolumnstyles.net/easyDataGrid.asp</p>
+            <p>It assumes the underlying data is an enum. The images displayed are stored in the ImageList and the image displayed is the associated position in the ImageList</p>
+            <p>Both the test associated with the enum and the icon itself are displayed.</p>
+            </remarks>
+            <example>
+            An imagelist must be dropped on the from, appropriate images added to the ImageList and the ImageList assigned to the ImageList property of the GridImageColumn.
+            The Type of the enum must also be assigned to the GridImageColumn so it can load the appropriate image for the appropriate enum value.
+            <code escaped="true">
+            dataGridImageColumn1.EnumType = typeof(Severity);
+            this.dataGridImageColumn1.ImageList = this.imageList1;
+            </code>
+            </example>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Don't allow editing
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <param name="bounds"></param>
+            <param name="readOnly"></param>
+            <param name="instantText"></param>
+            <param name="cellIsVisible"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            Given a row, get the value member associated with a row.  Use the ImageList
+            to find the associated display image
+            </summary>
+            <param name="source">The Data source of the grid.</param>
+            <param name="rowNum">The row number we are painting.</param>
+            <returns>The Image to paint for this cell.</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.GetColumnStringValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            Given a row, get the text to display which will be theenum value.
+            </summary>
+            <param name="source">The data source for the grid.</param>
+            <param name="rowNum">The row number affected.</param>
+            <returns>The text to display for this cell which is the enum value.</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.SetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32,System.Object)">
+            <summary>
+            Given a row iterate over ImageList to find
+            the associated value member.  Set this value member.
+            </summary>
+            <param name="source">The data source of the grid</param>
+            <param name="rowNum">The row number affected.</param>
+            <param name="value">The value to specify for this cell.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Brush,System.Drawing.Brush,System.Boolean)">
+            <summary>
+            Paint the image with the appropriate icon and text.
+            </summary>
+            <param name="g"></param>
+            <param name="bounds"></param>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <param name="backBrush"></param>
+            <param name="foreBrush"></param>
+            <param name="alignToRight"></param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.ImageList">
+            <summary>
+            Set the Grids Image Columns associated ImageList.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.EnumType">
+            <summary>
+            Set the Grids Image Columns associated enum type.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn.ToolTipProperty">
+            <summary>
+            Tooltip rpoperty
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn">
+            <summary>
+            DataGridPercentageColumn - numbers displayed as percentages but stored as fraction
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.m_numberType">
+            <summary>
+            The number type for the column
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.m_decimalPlaces">
+            <summary>
+            The number of decimal places to use.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.m_maskExpression">
+            <summary>
+            The regular expression to use for validating the key presses
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.m_allowNegative">
+            <summary>
+            Allow negative numbers
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.m_toolTipProperty">
+            <summary>
+            Tool tip property
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Edit
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <param name="bounds"></param>
+            <param name="readOnly"></param>
+            <param name="instantText"></param>
+            <param name="cellIsVisible"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.Commit(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            Commit the change
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            GetColumnValueAtRow
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.SetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32,System.Object)">
+            <summary>
+            SetColumnValueAtRow
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <param name="cellValue"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.TextBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Make sure the user only types valid values.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.validCharacter(System.Char)">
+            <summary>
+            Is it a valid character.
+            </summary>
+            <param name="proposedCharacter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.validString(System.String)">
+            <summary>
+            Is it a valid string
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.calculateFormatMask">
+            <summary>
+            Calculate the format mask
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.DecimalPlaces">
+            <summary>
+            Number of decimal places
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.AllowNegative">
+            <summary>
+            Allow negative numbers
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridNumberColumn.ToolTipProperty">
+            <summary>
+            Tooltip property
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn">
+            <summary>
+            DataGridPercentageColumn - Column for displaying percentages
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.#ctor">
+            <summary>
+            Constructor which initialises the type to a percentage column
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Edit
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <param name="bounds"></param>
+            <param name="readOnly"></param>
+            <param name="instantText"></param>
+            <param name="cellIsVisible"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.Commit(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            Commit the change
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.GetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32)">
+            <summary>
+            GetColumnValueAtRow
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.SetColumnValueAtRow(System.Windows.Forms.CurrencyManager,System.Int32,System.Object)">
+            <summary>
+            SetColumnValueAtRow
+            </summary>
+            <param name="source"></param>
+            <param name="rowNum"></param>
+            <param name="cellValue"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.TextBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Make sure the user only types valid values.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.calculateFormatMask">
+            <summary>
+            Calculate the format mask
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridPercentageColumn.DecimalPlaces">
+            <summary>
+            Number of decimal places
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridPrinter">
+            <summary>
+            DataGridPrinter - Handles the logic of printing a DataView / DataGrid.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPrinter.#ctor(System.Boolean,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor for Data Grid Printer - gathers print settings.
+            </summary>
+            <param name="printPageHeadings">Are we print page headings</param>
+            <param name="pageHeading">Page heading to print</param>
+            <param name="printColumnHeadings">Are we printing column headings.</param>
+            <param name="printPageNumbers">Are we printing page numbers</param>
+            <param name="printInPortraitLayout">Are we printing in portrait layout</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPrinter.#ctor(System.Boolean,System.String,System.Boolean,System.Boolean,System.Boolean,HBOS.FS.AMP.Windows.Controls.PrintColumnSettingsCollection,System.Drawing.Font,System.Drawing.Font,System.Drawing.Font)">
+            <summary>
+            Constructor for Data Grid Printer providing custom column widths
+            </summary>
+            <param name="printPageHeadings">Are we printing page headings</param>
+            <param name="pageHeading">Page Heading to print</param>
+            <param name="printColumnHeadings">Are we printing column headings.</param>
+            <param name="printPageNumbers">Are we printing page numbers</param>
+            <param name="printInPortraitLayout">Are we printing in portrait layout.</param>
+            <param name="printColumnSettings"></param>
+            <param name="columnHeadingFont"></param>
+            <param name="pageHeadingFont"></param>
+            <param name="standardFont"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPrinter.Print(System.Data.DataTable,HBOS.FS.AMP.Windows.Controls.DataGrid.GridPrintStyle)">
+            <summary>
+            Print the Grid using the built data table
+            </summary>
+            <param name="dataToPrint"></param>
+            <param name="printStyle"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPrinter.PrintPreview(System.Data.DataTable,HBOS.FS.AMP.Windows.Controls.DataGrid.GridPrintStyle)">
+            <summary>
+            Do a print preview using the built Data table
+            </summary>
+            <param name="dataToPrint"></param>
+            <param name="printStyle"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPrinter.calculateColumnWidth(System.String,System.Int32)">
+            <summary>
+            Calculate the column width - necessqry in case the user didn't give us enough column widths so we might need to default
+            </summary>
+            <param name="fieldName"></param>
+            <param name="defaultColumnWidth"></param>
+            <returns></returns>
+            <remarks>Use a column width of 0 (or negative) to hide a column</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPrinter.calculateRowWidth(System.Int32,System.Int32)">
+            <summary>
+            Calculate the total Row Width
+            </summary>
+            <param name="defaultColumnWidth"></param>
+            <param name="totalRowWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridPrinter.m_printDocument_PrintPage(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+            Print each page - needs to handle page headers, column headers, data rows and page numbers.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridTextBoxReadOnlyColumn">
+            <summary>
+            ReadOnlyColumn - doesn't allow the cell to get the focus.
+            </summary>
+            <remarks>Allows the row to be selected rather than the cell. Necessary if we are capturing double click events.</remarks>
+            <example>
+            	<para>Works in the same as a normal DataGridTextBoxColumn but is unable to receive the focus</para>
+            	<code>
+            		this.dataGridTextBoxReadOnlyColumn1.MappingName = "Column1";
+            	</code>
+            </example>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridTextBoxReadOnlyColumn.Edit(System.Windows.Forms.CurrencyManager,System.Int32,System.Drawing.Rectangle,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            Make sure the edit doesn't happen
+            </summary>
+            <param name="source">Data Source for the grid</param>
+            <param name="rowNum">Row number affected.</param>
+            <param name="bounds"></param>
+            <param name="readOnly">Is the cell readonly</param>
+            <param name="instantText"></param>
+            <param name="cellIsVisible">Is the cell visible.</param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.DataGridTextBoxReadOnlyColumn.ToolTipProperty">
+            <summary>
+            Tooltip property
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.DataGridWriter">
+            <summary>
+            DataGridWriter - Provides the functionality to writes the contents of a dataview / data grid to a file using an XSLT transform.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridWriter.#ctor(System.String,System.String,System.Data.DataTable)">
+            <summary>
+            Constructor for writing a DataGrid / DataView's contents.
+            </summary>
+            <param name="outputFileName">File to write the grid contents to.</param>
+            <param name="xslResourceName">XSLT resoure to use to transform the grid contents.</param>
+            <param name="tableToWrite">DataTable containing the data to write.</param>
+            <remarks>The root name will be "DataGrid" with each row being the DataTable.TableName.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.DataGridWriter.Write">
+            <summary>
+            Write the contents as per the transform. The root name matched against will be "DataGrid" with each row being tagged with the DataTable.TableName.
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.NumberType">
+            <summary>
+            What number type are we storing
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.NumberType.Standard">
+            <summary>
+            Standard
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.NumberType.Percentage">
+            <summary>
+            Percentage
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.IPropertyDisplayFormatter">
+            <summary>
+            Implement this interface to allow custom formatting of a property 
+            (to be used within the grid, but this formatting could be applied elsewhere)
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.IPropertyDisplayFormatter.FormatProperty(System.Reflection.PropertyInfo,System.Object,System.Object)">
+            <summary>
+            Provides custom formatting on a property. To use, get the property value, 
+            then use a case statement on the property name to provide specific formatting for that property 
+            </summary>
+            <param name="propertyToDisplay">The property being displayed</param>
+            <param name="propertyValue">The value of the property being displayed</param>
+            <param name="customType">A business object that contains other data that may affect formatting (such as a Set flag)</param>
+            <returns>The formatted value for display purposes</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.IPropertyDisplayFormatter.IsCustomFormatted(System.String)">
+            <summary>
+            Used to determine if a given property is to be custom formatted
+            </summary>
+            <param name="propertyName">The name of the property in question</param>
+            <returns>boolean flag indicating whether this property is custom formatted</returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings">
+            <summary>
+            PrintSettings - settings for the datagrid to use when printing
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.#ctor(System.String,System.Int32,System.Drawing.StringAlignment,System.String,System.Drawing.Font,System.Drawing.Font)">
+            <summary>
+            Constructor for PrintSettings taking all the arguments.
+            </summary>
+            <param name="field"></param>
+            <param name="width"></param>
+            <param name="textAlignment"></param>
+            <param name="headerText"></param>
+            <param name="headerFont"></param>
+            <param name="detailFont"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.#ctor(System.String,System.Int32,System.Drawing.StringAlignment,System.String)">
+            <summary>
+            Constructor for Print Settings which defaults the Font settings.
+            </summary>
+            <param name="field"></param>
+            <param name="width"></param>
+            <param name="textAlignment"></param>
+            <param name="headerText"></param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.Field">
+            <summary>
+            Field name
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.Width">
+            <summary>
+            Width
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.Alignment">
+            <summary>
+            Text alignment
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.HeaderText">
+            <summary>
+            Header Text
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.HeaderFont">
+            <summary>
+            Header Font
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.DetailFont">
+            <summary>
+            Detail Font
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.PrintColumnSettings.UseDefaultFonts">
+            <summary>
+            Are we use Grid default fonts
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.PrintColumnSettingsCollection">
+            <summary>
+            A collection of PrintColumnSettings.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.PrintColumnSettingsCollection.Add(HBOS.FS.AMP.Windows.Controls.PrintColumnSettings)">
+            <summary>
+            Add a setting to the collection
+            </summary>
+            <param name="settingsToAdd"></param>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.SelectedRowChangedEventArgs">
+            <summary>
+            SelectedRowChangedEventArgs - information for changing rows in a dataGrid
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.SelectedRowChangedEventArgs.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor for a Row Changed Event Argument
+            </summary>
+            <param name="oldRowNumber">The old row number</param>
+            <param name="newRowNumber">The new row number</param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.SelectedRowChangedEventArgs.OldRowNumber">
+            <summary>
+            The old row number
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.SelectedRowChangedEventArgs.NewRowNumber">
+            <summary>
+            The new row number
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.HBOSColumnStylesCollectionEditor">
+            <summary>
+            ColumnStylesCollectionEditor - necessary so that the we can choose a custom column for the Grid using the build in designers.
+            </summary>
+            <remarks>
+            <para>As additional column types are developed, their type must be added to <see cref="M:HBOS.FS.AMP.Windows.Controls.HBOSColumnStylesCollectionEditor.CreateNewItemTypes"/></para>
+            <note>This class is never created directly, but is created by interacting with the GUI designers for the grid</note>
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.HBOSColumnStylesCollectionEditor.#ctor(System.Type)">
+            <summary>
+            Constructor which takes the column type.
+            </summary>
+            <param name="type">Type of Data Grid Column to create.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.HBOSColumnStylesCollectionEditor.CreateNewItemTypes">
+            <summary>
+            Allows the GUI to odetermine what types can be added to the grid.
+            </summary>
+            <returns>An array of types which we can add as columns to the DataGrid.</returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.HBOSTableStyle">
+            <summary>
+            TableStyle - necessary so that the Grid knows that we need to use a custom Column styles colleciton editor.
+            </summary>
+            <remarks>
+            	<para>The custom column styles collection editor is aware of our custom column types.</para>
+            	<note>This class is never created directly, but is created by interacting with the GUI designers for the grid</note>
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.HBOSTableStyle.CreateGridColumn(System.ComponentModel.PropertyDescriptor,System.Boolean)">
+            <summary>
+            Create a Grid Column
+            </summary>
+            <param name="prop"></param>
+            <param name="isDefault"></param>
+            <returns></returns>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.HBOSTableStyle.GridColumnStyles">
+            <summary>
+            Access to the GridColumnStylesCollection
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.HBOSTableStylesCollectionEditor">
+            <summary>
+            TableStylesCollectionEditor - Editor for the Table Styles
+            </summary>
+            <remarks>
+            <para>A custom TableStylesCollectionEditor is required, so that the custom HBOSTableStyle can be called. This ensures that our custom columns are made 
+            available for selection by the developer when using the GUI designer for the DataGrid</para>
+            <note>This class is never created directly, but is created by interacting with the GUI designers for the grid</note>
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.HBOSTableStylesCollectionEditor.#ctor(System.Type)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.HBOSTableStylesCollectionEditor.CreateNewItemTypes">
+            <summary>
+            Create a New Item Types
+            </summary>
+            <returns>The HBOS Table Style which is aware of our custom Data Grid Column Styles.</returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.EnumDisplayTextAttribute">
+            <summary>
+            The textual representation of an item in an enumerated list.
+            </summary>
+            <example>The following sample shows a decorated enum
+            <code>
+            public enum AuditEventSource
+            {
+            	Null = 0,
+            
+            	[EnumDisplayTextAttribute( "Exception Management" )]
+            	ExceptionManagement = 1,
+            
+            	[EnumDisplayTextAttribute( "Agency Earnings" )]
+            	AgencyEarnings = 2,
+            
+            	[EnumDisplayTextAttribute( "Agency Management" )]
+            	AgencyManagment = 3,
+            
+            	[EnumDisplayTextAttribute( "Common" )]
+            	HBOS_FS_Common = 4
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.EnumDisplayTextAttribute.#ctor(System.String)">
+            <summary>
+            Construct a new display text attribute
+            </summary>
+            <param name="displayText"></param>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.EnumDisplayTextAttribute.DisplayText">
+            <summary>
+            Retrieve the display text
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.EnumComboBox">
+            <summary>
+            A combo box that displays the contents of an enum whose items are decorated
+            with the EnumDisplayTextAttribute attribute.
+            </summary>
+            <example>
+            	<para>The enum must be attributed with the appropriate information.</para>
+            	<code>
+            		public enum MyColours : int
+            		{
+            			[EnumDisplayText("Blaze Red")]
+            			Red,
+            			[EnumDisplayText("Shocking Blue")]
+            			Blue,
+            			[EnumDisplayText("Grass Green")]
+            			Green,
+            			[EnumDisplayText("Storm Purple")]
+            			Purple
+            		}
+            	</code>
+            	<para>The enum type is then assigned to the Enum combo</para>
+            	<code>
+            		enumComboBox1.Enum = typeof(MyColours);
+            	</code>
+            </example>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.EnumComboBox.#ctor">
+            <summary>
+            Constructs a new EnumComboBox
+            </summary>
+            <remarks>DropDownStyle is set to DropDownList.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.EnumComboBox.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.EnumComboBox.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.EnumComboBox.SelectedItem">
+            <summary>
+            Returns the selected enum value
+            </summary>
+            <example> Retrieving the selected value:
+            <code>
+            AuditEventSource auditEventSource = (AuditEventSource)enumComboBox1.SelectedItem;
+            </code>
+            Setting the selected value:
+            <code>
+            enumComboBox1.SelectedItem = AuditEventSource.AgencyEarnings;
+            </code>
+            </example>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.EnumComboBox.Enum">
+            <summary>
+            Set the enum that will be displayed in the combo box
+            </summary>
+            <example> Populating an EnumComboBox:
+            <code>
+            enumComboBox1.Enum = typeof(AuditEventSource);
+            </code>
+            </example>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.NamespaceDoc">
+            <summary>
+            <p>The <see cref="N:HBOS.FS.AMP.Windows.Controls"/> namespace provides generic AMP Window Controls.
+            These include:</p> 
+            <list type="bullet">
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.DataGrid"/> - an enhanced datagrid allowing printing, exporting, and custom column types.</item>
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.NumericTextBox"/> - a textbox which only allows numeric text entry, and has a Max and Min value.</item>
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.EnumComboBox"/> - a combo that can be populated with an enum with the appropriate attributes.</item>
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.SplashScreenForm"/> - a generic splash screen.</item>
+            </list>
+            <p>The datagrid also includes extended Designer Support. This also the user to choose the new custom column styles through the GUI designer.
+            <list type="bullet">
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.HBOSColumnStylesCollectionEditor"></see> - custimised column styles collection editor.</item>
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.HBOSTableStyle"></see> - custimised table style editor.</item>
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.HBOSTableStylesCollectionEditor"></see> - custimised table styles collection editor.</item>
+            </list>
+            </p>
+            <p>The custom column types currently supported by the Grid include
+            <list type="bullet">
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.DataGridComboBoxColumn"></see> - a column with a combo box</item>
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.DataGridImageColumn"></see> - a column with an image.</item>
+            <item><see cref="T:HBOS.FS.AMP.Windows.Controls.DataGridTextBoxReadOnlyColumn"></see> - a normal column but it can't receive the focus.</item>
+            </list>
+            </p>
+            <para><see cref="N:HBOS.FS.AMP.Windows.Controls"/> is dependent upon HBOS.FS.AMP.Utilities. The DataGrid uses <see cref="T:HBOS.FS.AMP.Utilities.ResourceHelper"/> for access to embedded resource for its write functionality.</para>
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NamespaceDoc.#ctor">
+            <summary>
+            This class is a dummy class used by NDoc to provide a namespace summary.
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.NumericTextBox">
+            <summary>
+            A text box that only allows the entry of numbers.
+            </summary>
+            <remarks>Useful for currency fields etc where we want to prevent the use from entering alphabetic characters.</remarks>
+            <example>
+            <para>A number of properties on the control should be set to ensure the user is limited to entering correct data.</para>
+            <code>
+            numericTextBox1.MaxValue = 100;
+            numericTextBox1.MinValue = 0;
+            numericTextBox1.ValueMultiplier = 1;
+            numericTextBox1.DecimalPlaces = 2;
+            </code>
+            </example>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.setToolTip">
+            <summary>
+            Set the tooltip for the control.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.setMaskExpression">
+            <summary>
+            Set the mask regular expression for the control. This is based on the
+            number for decimal places and the minimum and maximum expression.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.validString(System.String)">
+            <summary>
+            Validate whether a given string is a valid number for this control.
+            </summary>
+            <param name="text">number</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.validCharacter(System.Char)">
+            <summary>
+            Validate the entry of a new character.
+            </summary>
+            <param name="proposedCharacter">The character that the user wants to add to the control</param>
+            <returns>true if valid, false if not</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.isNumeric(System.String)">
+            <summary>
+            Tests whether a string is numeric.
+            </summary>
+            <param name="text">string to test</param>
+            <returns>true if numeric, false if not</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.#ctor">
+            <summary>
+            Construct a new numeric text box
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.NumericTextBox_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            A key has been pressed so check it's validity.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.NumericTextBox_Leave(System.Object,System.EventArgs)">
+            <summary>
+            The control is losing focus so remove any garbage left behind.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.NumericTextBox.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.NumericTextBox.DecimalPlaces">
+            <summary>
+            The number of digits to the right of the decimal point.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.NumericTextBox.MinValue">
+            <summary>
+            The minimum value the control will accept
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.NumericTextBox.MaxValue">
+            <summary>
+            The maximum value the control will accept
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.NumericTextBox.ShowToolTips">
+            <summary>
+            Indicates whether the control shows tool tips.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.NumericTextBox.Text">
+            <summary>
+            The text displayed in the control
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.NumericTextBox.Value">
+            <summary>
+            The decimal value of the text displayed - can be different from the Text value if the TextMultiplier is not 1.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.NumericTextBox.ValueMultiplier">
+            <summary>
+            The value multiplier.
+            
+            Values set/get via the Value property have the multiplier applied to them. i.e. for a multiplier of 100:
+            
+            12 passed in to the Value property would result in "1200" being displayed
+            If "6.0000" was displayed, this value accessed via the Value property would return 0.06
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.SplashScreenForm">
+            <summary>
+            The Clerical Medical splash screen - displays a Splash Screen while application initialisation occurs. 
+            The Splash screen contains details of the application name, application version and a progress message.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.SplashScreenForm.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Construct a new SplashScreenForm
+            </summary>
+            <param name="application">Application text to display.</param>
+            <param name="version">Version text to display></param>
+            <param name="legalCopyright">Legal copyright to display</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.SplashScreenForm.#ctor(System.String,System.String)">
+            <summary>
+            Construct a new SplashScreenForm
+            </summary>
+            <param name="application">Application text to display.</param>
+            <param name="version">Version text to display></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.SplashScreenForm.#ctor(System.String)">
+            <summary>
+            Construct a new SplashScreenForm
+            </summary>
+            <param name="application">Application text to display.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.SplashScreenForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.SplashScreenForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.SplashScreenForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.Windows.Controls.SplashScreenForm.Progress">
+            <summary>
+            Set the progress text to display
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.Windows.Controls.TextValidator">
+            <summary>
+            TextValidator - various regular expressions which are useful for validating text entry.
+            </summary>
+            <remarks>Used by the <see cref="T:HBOS.FS.AMP.Windows.Controls.NumericTextBox"/> to ensure only valid data is entered</remarks>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.PostCodeRegEx">
+            <summary>
+            A Regular Expression which requires a mandatory UK PostCode. This contains p1 and p2 regular expression parameters.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.PostCodeRegExOpt">
+            <summary>
+            A Regular Expression which requires an optional UK PostCode. This contains p1 and p2 regular expression parameters.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.PostCodeRegReformat">
+            <summary>
+            The corresponding parameter expression for reformatting the postcodes from above.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.NumericOnlyRegEx">
+            <summary>
+            A Regular Expression which requires mandatory number.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.NumericOnlyRegExOpt">
+            <summary>
+            A Regular Expression which requires optional number.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.PositiveIntegerRegEx">
+            <summary>
+            A regular expression for positive integers
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.NegativeIntegerRegEx">
+            <summary>
+            A regular expression for integers which allows negatives.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.NotBlankEx">
+            <summary>
+            A regular expression for not blank.
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.Windows.Controls.TextValidator.IsBlankEx">
+            <summary>
+            A regular expression for is blank.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.TextValidator.PositiveRealRegEx(System.Int32)">
+            <summary>
+            A regular expression for positive real numbers.
+            </summary>
+            <param name="decimalPlaces">decimal places</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.Windows.Controls.TextValidator.NegativeRealRegEx(System.Int32)">
+            <summary>
+            A regular expression for real numbers which allows negatives.
+            </summary>
+            <param name="decimalPlaces">decimal places</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

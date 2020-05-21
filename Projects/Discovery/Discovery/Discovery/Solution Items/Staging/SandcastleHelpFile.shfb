@@ -1,0 +1,44 @@
+﻿<project schemaVersion="1.3.1.1">
+  <assemblies>
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Business Objects\bin\Staging\Discovery.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Business Objects\bin\Staging\Discovery.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\RequestManagement\Discovery.RequestManager\bin\Staging\Discovery.RequestManager.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\RequestManagement\Discovery.RequestManager\bin\Staging\Discovery.RequestManager.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\RequestManagement\Discovery.RequestManagerClient\bin\Staging\Discovery.RequestManagerClient.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\RequestManagement\Discovery.RequestManagerClient\bin\Staging\Discovery.RequestManagerClient.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Data Access\Discovery.SQLDataAccessProvider\bin\Staging\Discovery.SQLDataAccessProvider.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Data Access\Discovery.SQLDataAccessProvider\bin\Staging\Discovery.SQLDataAccessProvider.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Support\ValidationFramework\bin\Staging\ValidationFramework.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Support\ValidationFramework\bin\Staging\ValidationFramework.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Support\Discovery.Utility\bin\Staging\Discovery.Utility.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Support\Discovery.Utility\bin\Staging\Discovery.Utility.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\RequestManagement\Discovery.RequestManager.Service\bin\Staging\Discovery.RequestManager.Service.exe" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\RequestManagement\Discovery.RequestManager.Service\bin\Staging\Discovery.RequestManager.Service.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Presentation\Discovery.Web.UI.CustomControls\bin\Staging\Discovery.Web.UI.CustomControls.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Presentation\Discovery.Web.UI.CustomControls\bin\Staging\Discovery.Web.UI.CustomControls.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Integration\Discovery.Integration.Service\bin\Staging\Discovery.Integration.Service.exe" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Integration\Discovery.Integration.Service\bin\Staging\Discovery.Integration.Service.XML" />
+    <assembly assemblyPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Integration\Discovery.Integration\bin\Staging\Discovery.Integration.dll" xmlCommentsPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Integration\Discovery.Integration\bin\Staging\Discovery.Integration.XML" />
+  </assemblies>
+  <contentPlacement>AboveNamespaces</contentPlacement>
+  <dependencies>
+    <dependencyItem depPath="C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\*.*" />
+    <dependencyItem depPath="C:\Discovery\ManagementServer\Source\Staging\Discovery\Solution Items\Dependencies\*.*" />
+    <dependencyItem depPath="C:\Program Files\NUnit-Net-2.0 2.2.8\bin\*.*" />
+  </dependencies>
+  <projectSummary>This is a project summary...</projectSummary>
+  <sandcastlePath />
+  <hhcPath />
+  <hxcompPath />
+  <outputPath>C:\Discovery\ManagementServer\Help\Staging\</outputPath>
+  <helpFileFormat>Website</helpFileFormat>
+  <cleanIntermediates>True</cleanIntermediates>
+  <purgeDuplicateTopics>True</purgeDuplicateTopics>
+  <binaryTOC>True</binaryTOC>
+  <includeFavorites>False</includeFavorites>
+  <preliminary>False</preliminary>
+  <rootNSContainer>False</rootNSContainer>
+  <helpTitle>A Sandcastle Documented Class Library</helpTitle>
+  <htmlHelpName>Documentation</htmlHelpName>
+  <language>en-US</language>
+  <copyrightHref />
+  <copyrightText />
+  <feedbackEMailAddress />
+  <headerText />
+  <projectLinks>Local</projectLinks>
+  <sdkLinks>Index</sdkLinks>
+  <presentationStyle>Prototype</presentationStyle>
+  <missingTags>Summary, Parameter, Returns</missingTags>
+  <visibleItems>InheritedMembers, InheritedFrameworkMembers, Privates, Protected, SealedProtected, PrivateFields</visibleItems>
+</project>

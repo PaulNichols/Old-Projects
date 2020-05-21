@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_tblCategory_Display - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_tblCategory_Display
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+Create Procedure [spS_tblCategory_Display]<br>
+				<br>
+				(<br>
+				 @Cat_LngID [int] = Null -- for [tblCategory].[Cat_LngID] column<br>
+				)<br>
+				<br>
+				-- Returns the number of records found<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				 [tblCategory_Records].[ID1]<br>
+				,[tblCategory_Records].[Display]<br>
+				<br>
+				From [fntblCategory_Display](@Cat_LngID) As [tblCategory_Records]<br>
+				<br>
+				Order By<br>
+				[tblCategory_Records].[Display]<br>
+				<br>
+				Return(@@RowCount)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Function">
+		<div class="MainTitle">
+			T-SQL code for the underlying inline table-valued function used by this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Function [fntblCategory_Display]<br>
+				(<br>
+				 @Cat_LngID [int] = Null<br>
+				)<br>
+				<br>
+				Returns Table<br>
+				<br>
+				As<br>
+				<br>
+				Return<br>
+				(<br>
+				Select<br>
+				 [Cat_LngID] As [ID1]<br>
+				,[Cat_StrName] As [Display]<br>
+				&nbsp;&nbsp;&nbsp;<br>
+				From [dbo].[tblCategory]<br>
+				<br>
+				Where<br>
+				    ((@Cat_LngID Is Null) Or ([Cat_LngID] = @Cat_LngID))<br>
+				)<br>
+				<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:18
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

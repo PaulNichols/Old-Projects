@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="Schedule4ApplicantBredData" targetNamespace="http://tempuri.org/Schedule4ApplicantBredData.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/Schedule4ApplicantBredData.xsd"
+	xmlns:mstns="http://tempuri.org/Schedule4ApplicantBredData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="Schedule4ApplicantBredData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOSchedule4ApplicantBred_Main">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:integer" minOccurs="0" />
+							<xs:element name="Barcode" type="xs:string" minOccurs="0" />
+							<xs:element name="InspectionSection" type="xs:boolean" minOccurs="0" />
+							<xs:element name="MaxSignatures" type="xs:integer" minOccurs="0" />
+							<xs:element name="KeeperDetails" type="xs:string" minOccurs="0" />
+							<xs:element name="PartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef" type="xs:string" minOccurs="0" />
+							<xs:element name="NumOfEggs" type="xs:string" minOccurs="0" />
+							<xs:element name="LastEggLaid" type="xs:string" minOccurs="0" />
+							<xs:element name="Convict5YearsYesX" type="xs:string" minOccurs="0" />
+							<xs:element name="Convict5YearsNoX" type="xs:string" minOccurs="0" />
+							<xs:element name="Convict3YearsYesX" type="xs:string" minOccurs="0" />
+							<xs:element name="Convict3YearsNoX" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOSchedule4ApplicantBred_Sub1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:integer" minOccurs="0" />
+							<xs:element name="Gender" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType" type="xs:string" minOccurs="0" />
+							<xs:element name="Species" type="xs:string" minOccurs="0" />
+							<xs:element name="CommonName" type="xs:string" minOccurs="0" />
+							<xs:element name="RegKeeperYes" type="xs:string" minOccurs="0" />
+							<xs:element name="RegKeeperNo" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOSchedule4ApplicantBred_Sub2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:integer" minOccurs="0" />
+							<xs:element name="BirdNo" type="xs:string" minOccurs="0" />
+							<xs:element name="Species" type="xs:string" minOccurs="0" />
+							<xs:element name="CommonName" type="xs:string" minOccurs="0" />
+							<xs:element name="HatchDay" type="xs:string" minOccurs="0" />
+							<xs:element name="HatchMonth" type="xs:string" minOccurs="0" />
+							<xs:element name="HatchYear" type="xs:string" minOccurs="0" />
+							<xs:element name="Sex" type="xs:string" minOccurs="0" />
+							<xs:element name="KeptAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="OtherRingNo" type="xs:string" minOccurs="0" />
+							<xs:element name="OtherRingType" type="xs:string" minOccurs="0" />
+							<xs:element name="ClosedRing" type="xs:string" minOccurs="0" />
+							<xs:element name="Microchip" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo1" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo2" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo3" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo4" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo5" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo6" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo7" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo8" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo9" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo10" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOSchedule4InspectorSig">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:integer" minOccurs="0" />
+							<xs:element name="BirdNo1" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo2" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo3" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo4" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo5" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//mstns:BOSchedule4ApplicantBred_Main" />
+			<xs:field xpath="mstns:ApplicationId" />
+		</xs:key>
+		<xs:keyref name="BOSchedule4ApplicantBred_MainBOSchedule4ApplicantBred_Sub1" refer="key1">
+			<xs:selector xpath=".//mstns:BOSchedule4ApplicantBred_Sub1" />
+			<xs:field xpath="mstns:ApplicationId" />
+		</xs:keyref>
+		<xs:keyref name="BOSchedule4ApplicantBred_MainBOSchedule4ApplicantBred_Sub2" refer="key1">
+			<xs:selector xpath=".//mstns:BOSchedule4ApplicantBred_Sub2" />
+			<xs:field xpath="mstns:ApplicationId" />
+		</xs:keyref>
+		<xs:keyref name="BOSchedule4ApplicantBred_MainBOSchedule4InspectorSig" refer="key1">
+			<xs:selector xpath=".//mstns:BOSchedule4InspectorSig" />
+			<xs:field xpath="mstns:ApplicationId" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

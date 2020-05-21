@@ -1,0 +1,168 @@
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using HBOS.FS.AMP.UPD.Exceptions;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.BenchMark;
+using HBOS.FS.AMP.UPD.Types.Funds;
+using HBOS.FS.AMP.UPD.Types.Snapshot;
+using HBOS.FS.AMP.UPD.Types.StockMarketIndex;
+using HBOS.FS.Support.Tex;
+using Microsoft.ApplicationBlocks.Data;
+
+namespace HBOS.FS.AMP.UPD.Persistence
+{
+	/// <summary>
+	/// Persits Asset movement constiuent parts
+	/// </summary>
+	public class AssetMovementConstituentPersister:EntityPersister
+	{
+	
+		#region Constructor
+
+		/// <summary>
+		/// Creates a new <see cref="AssetMovementConstituentPersister"/> instance.
+		/// </summary>
+		public AssetMovementConstituentPersister(string connectionString): base(connectionString)
+		{
+		}
+
+		#endregion
+
+		#region Load methods 
+
+		/// <summary>
+		/// Loads the all available benchmarks.
+		/// </summary>
+		/// <returns></returns>
+		public AssetMovementConstituentCollection LoadAssetFundMovementConstituents(string assetFundId)
+		{
+			T.E();
+			AssetMovementConstituentCollection parts = new AssetMovementConstituentCollection();
+
+			SqlParameter[] parameters = new SqlParameter[1];
+			parameters[0] = new SqlParameter("@cAssetFundID",SqlDbType.Char,8);
+
+			this.LoadEntityCollection("usp_BenchMarkSplitGetByAssetFundID", parameters, parts);
+			T.X();
+			return parts;
+		}
+
+		/// <summary>
+		/// Loads all benchmarks in the system
+		/// </summary>
+		/// <returns></returns>
+		public AssetMovementConstituentCollection LoadAllBenchmarks()
+		{
+			T.E();
+			AssetMovementConstituentCollection results = new AssetMovementConstituentCollection();
+
+			this.LoadEntityCollection("usp_BenchMarkGetAll", results);
+
+			T.X();
+			return results;
+		}
+
+		
+		/// <summary>
+		/// Creates the entity from the data reader.
+		/// </summary>
+		/// <param name="safeReader">Reader to get the data from.</param>
+		/// <returns></returns>
+		protected override object CreateEntity(SafeDataReader safeReader)
+		{
+			T.E();
+			AssetMovementConstituent newConstituent = null;
+			try
+			{
+				//this benchmark should be populated with a fund or market index or other benchmarkable type				
+				IBenchMark benchmark=null;			
+				
+				if(!safeReader.IsNull("hiPortfolioCode"))
+				{
+					FundStaticDataPersister fundPersister = new FundStaticDataPersister(this.ConnectionString);
+					benchmark = fundPersister.Load(safeReader.GetString("hiPortfolioCode"));
+				}
+				else if(!safeReader.IsNull("marketIndexId"))
+				{
+					StockMarketIndexPersister indexPersister = new StockMarketIndexPersister(this.ConnectionString);
+					benchmark = indexPersister.Load(safeReader.GetInt32("marketIndexID"));
+				}
+
+				if(benchmark==null)
+				{
+					throw new DatabaseException("Cannot load the benchmark");
+				}
+
+				decimal proportion = 0;
+				if (safeReader.ColumnExists("proporion"))
+				{
+					proportion = safeReader.GetDecimal("proportion");
+				}
+				
+				newConstituent = new AssetMovementConstituent(proportion,benchmark);
+			}
+			finally
+			{
+				T.X();
+			}
+			return newConstituent;
+
+		}
+
+		#endregion
+
+		/// <summary>
+		/// Associates the constituate parts with the specified Asset fund.
+		/// </summary>
+		/// <param name="parts">Constituents to save, those marked IsDeleted=true will not be saved</param>
+		/// <param name="snapshot">Snapshot to associate collection with</param>
+		/// <param name="txn">Transaction to use</param>
+		public void Save(AssetMovementConstituentCollection parts, Snapshot snapshot, SqlTransaction txn)
+		{
+			foreach(AssetMovementConstituent part in parts)
+			{
+				if (!part.IsDeleted)
+				{
+					string spName = "usp_BenchmarkSplitCreate";
+					SqlParameter[] parameters = null;
+
+					try
+					{
+						parameters = new SqlParameter[5];
+						parameters[0] = new SqlParameter("@cAssetFundID",SqlDbType.Char,8);
+						parameters[0].Value = part.ParentAssetFund;
+						parameters[1] = new SqlParameter("@lSnapshotID",SqlDbType.BigInt);
+						parameters[1].Value = snapshot.Id;
+
+						parameters[2] = new SqlParameter("@cHiPortfolioCode",SqlDbType.Char,10);
+						parameters[3] = new SqlParameter("@iMarketIndexID",SqlDbType.Int);
+
+						if (part.BenchMark is Fund)
+						{
+							Fund fund = (Fund)part.BenchMark;
+							parameters[2].Value = fund.HiPortfolioCode;
+							parameters[3].Value = Convert.DBNull;
+						}
+						else if (part.BenchMark is StockMarketIndex)
+						{
+							StockMarketIndex index = (StockMarketIndex)part.BenchMark;
+							parameters[2].Value = Convert.DBNull;
+							parameters[3].Value = index.MarketIndexId;
+						}
+				
+						parameters[4] = new SqlParameter("@dProportion",SqlDbType.Decimal);
+						parameters[4].Value = part.Proportion;
+
+						SqlHelper.ExecuteNonQuery(txn,CommandType.StoredProcedure,spName,parameters);
+				
+					}
+					catch(SqlException ex)
+					{
+						ThrowDBException(ex,spName,parameters);
+					}
+				}
+			}
+		}
+	}
+}

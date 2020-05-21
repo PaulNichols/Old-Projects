@@ -1,0 +1,1961 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{631366A1-8D1D-495B-98F7-9CE1E786BABB}"
+        SccProjectName = "SAK"
+        SccLocalPath = "SAK"
+        SccAuxPath = "SAK"
+        SccProvider = "SAK"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "PhoenixReport"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "Off"
+                RootNamespace = "uk.gov.defra.Phoenix.PhoenixReport"
+                StartupObject = "uk.gov.defra.Phoenix.PhoenixReport.(None)"
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Test"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "CrystalDecisions.Shared"
+                    AssemblyName = "CrystalDecisions.Shared"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalDecisions.Shared.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
+                />
+                <Reference
+                    Name = "CrystalDecisions.ReportSource"
+                    AssemblyName = "CrystalDecisions.ReportSource"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalDecisions.ReportSource.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\winnt\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\winnt\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\winnt\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\winnt\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "..\..\..\winnt\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "CrystalDecisions.CrystalReports.Engine"
+                    AssemblyName = "CrystalDecisions.CrystalReports.Engine"
+                    HintPath = "..\..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalDecisions.CrystalReports.Engine.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "Common.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <Folder RelPath = "Base\" />
+                <Folder RelPath = "Compression\" />
+                <Folder RelPath = "InterfaceClasses\" />
+                <Folder RelPath = "Interfaces\" />
+                <File
+                    RelPath = "Report\ApplicationArticle10_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ApplicationArticle10_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ApplicationArticle10_RPT.vb"
+                    DependentUpon = "ApplicationArticle10_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\ApplicationArticle10_RPT.resx"
+                    DependentUpon = "ApplicationArticle10_RPT.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Report\ApplicationArticle10Specimens_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ApplicationArticle10Specimens_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ApplicationArticle10Specimens_RPT.vb"
+                    DependentUpon = "ApplicationArticle10Specimens_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Article10_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Article10_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Article10_RPT.vb"
+                    DependentUpon = "Article10_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Article10Instructions_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Article10Instructions_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Article10Instructions_RPT.vb"
+                    DependentUpon = "Article10Instructions_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\BirdRegDoc_Main_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "BirdRegDoc_Main_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\BirdRegDoc_Main_RPT.vb"
+                    DependentUpon = "BirdRegDoc_Main_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESApplicationPermit_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESApplicationPermit_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\CITESApplicationPermit_RPT.vb"
+                    DependentUpon = "CITESApplicationPermit_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESApplicationPermitInstructions_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESApplicationPermitInstructions_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\CITESApplicationPermitInstructions_RPT.vb"
+                    DependentUpon = "CITESApplicationPermitInstructions_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESApplicationSpecimens_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESApplicationSpecimens_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\CITESApplicationSpecimens_RPT.vb"
+                    DependentUpon = "CITESApplicationSpecimens_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESConsignment_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESConsignment_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\CITESConsignment_RPT.vb"
+                    DependentUpon = "CITESConsignment_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESConsignmentPermits_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESConsignmentPermits_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\CITESConsignmentPermits_RPT.vb"
+                    DependentUpon = "CITESConsignmentPermits_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESConsignmentPermits_RPT.resx"
+                    DependentUpon = "CITESConsignmentPermits_RPT.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Report\CITESPermit_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESPermit_RPT1.vb"
+                />
+                <File
+                    RelPath = "Report\CITESPermit_RPT1.vb"
+                    DependentUpon = "CITESPermit_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESPermitCoverLetter_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESPermitCoverLetter_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\CITESPermitCoverLetter_RPT.vb"
+                    DependentUpon = "CITESPermitCoverLetter_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESPermitInstructions_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CITESPermitInstructions_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\CITESPermitInstructions_RPT.vb"
+                    DependentUpon = "CITESPermitInstructions_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\CITESPermitInstructions_RPT.resx"
+                    DependentUpon = "CITESPermitInstructions_RPT.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Report\Consignment_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Consignment_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Consignment_RPT.vb"
+                    DependentUpon = "Consignment_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\ConsignmentSpecimens_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ConsignmentSpecimens_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ConsignmentSpecimens_RPT.vb"
+                    DependentUpon = "ConsignmentSpecimens_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Detail_Adjustment_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Offline_Detail_Adjustment_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Detail_Adjustment_RPT.vb"
+                    DependentUpon = "DFA_Offline_Detail_Adjustment_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Detail_Refund_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Offline_Detail_Refund_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Detail_Refund_RPT.vb"
+                    DependentUpon = "DFA_Offline_Detail_Refund_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Payment_Cash_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Offline_Payment_Cash_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Payment_Cash_RPT.vb"
+                    DependentUpon = "DFA_Offline_Payment_Cash_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Payment_Cheques_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Offline_Payment_Cheques_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Payment_Cheques_RPT.vb"
+                    DependentUpon = "DFA_Offline_Payment_Cheques_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Payment_PostalOrder_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Offline_Payment_PostalOrder_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Payment_PostalOrder_RPT.vb"
+                    DependentUpon = "DFA_Offline_Payment_PostalOrder_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Summary_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Offline_Summary_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Offline_Summary_RPT.vb"
+                    DependentUpon = "DFA_Offline_Summary_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Online_Payment_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Online_Payment_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Online_Payment_RPT.vb"
+                    DependentUpon = "DFA_Online_Payment_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Online_Refund_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Online_Refund_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Online_Refund_RPT.vb"
+                    DependentUpon = "DFA_Online_Refund_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Online_Summary_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Online_Summary_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Online_Summary_RPT.vb"
+                    DependentUpon = "DFA_Online_Summary_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\DFA_Waiver_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "DFA_Waiver_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\DFA_Waiver_RPT.vb"
+                    DependentUpon = "DFA_Waiver_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\KeeperBirdDetails_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "KeeperBirdDetails_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\KeeperBirdDetails_RPT.vb"
+                    DependentUpon = "KeeperBirdDetails_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\KeeperBirds_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "KeeperBirds_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\KeeperBirds_RPT.vb"
+                    DependentUpon = "KeeperBirds_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\LimisMonthly_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "LimisMonthly_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\LimisMonthly_RPT.vb"
+                    DependentUpon = "LimisMonthly_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\LimisReceivedBy_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "LimisReceivedBy_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\LimisReceivedBy_RPT.vb"
+                    DependentUpon = "LimisReceivedBy_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\LimisRunningTotals_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "LimisRunningTotals_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\LimisRunningTotals_RPT.vb"
+                    DependentUpon = "LimisRunningTotals_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_BankDetail_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PartyDataProtection_BankDetail_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_BankDetail_RPT.vb"
+                    DependentUpon = "PartyDataProtection_BankDetail_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_Notes_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PartyDataProtection_Notes_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_Notes_RPT.vb"
+                    DependentUpon = "PartyDataProtection_Notes_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_OtherAddress_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PartyDataProtection_OtherAddress_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_OtherAddress_RPT.vb"
+                    DependentUpon = "PartyDataProtection_OtherAddress_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_OtherContact_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PartyDataProtection_OtherContact_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_OtherContact_RPT.vb"
+                    DependentUpon = "PartyDataProtection_OtherContact_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PartyDataProtection_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\PartyDataProtection_RPT.vb"
+                    DependentUpon = "PartyDataProtection_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\PaymentReceipt_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PaymentReceipt_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\PaymentReceipt_RPT.vb"
+                    DependentUpon = "PaymentReceipt_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\PeriodicFinSum_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PeriodicFinSum_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\PeriodicFinSum_RPT.vb"
+                    DependentUpon = "PeriodicFinSum_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\ReferralServiceLevel_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ReferralServiceLevel_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ReferralServiceLevel_RPT.vb"
+                    DependentUpon = "ReferralServiceLevel_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\ReferralServiceLevelDetails_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ReferralServiceLevelDetails_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ReferralServiceLevelDetails_RPT.vb"
+                    DependentUpon = "ReferralServiceLevelDetails_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\RegisteredBirds_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "RegisteredBirds_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\RegisteredBirds_RPT.vb"
+                    DependentUpon = "RegisteredBirds_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\RemittanceAdvice_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "RemittanceAdvice_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\RemittanceAdvice_RPT.vb"
+                    DependentUpon = "RemittanceAdvice_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ApplicantBred_Main_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ApplicantBred_Main_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ApplicantBred_Main_RPT.vb"
+                    DependentUpon = "Schedule4ApplicantBred_Main_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ApplicantBred_Sub1_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ApplicantBred_Sub1_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ApplicantBred_Sub1_RPT.vb"
+                    DependentUpon = "Schedule4ApplicantBred_Sub1_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ApplicantBred_Sub2_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ApplicantBred_Sub2_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ApplicantBred_Sub2_RPT.vb"
+                    DependentUpon = "Schedule4ApplicantBred_Sub2_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4Birds_Main_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4Birds_Main_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4Birds_Main_RPT.vb"
+                    DependentUpon = "Schedule4Birds_Main_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4Birds_Sub1_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4Birds_Sub1_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4Birds_Sub1_RPT.vb"
+                    DependentUpon = "Schedule4Birds_Sub1_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4Chicks_Main_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4Chicks_Main_RPT2.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4Chicks_Main_RPT2.vb"
+                    DependentUpon = "Schedule4Chicks_Main_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4Chicks_Sub1_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4Chicks_Sub1_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4Chicks_Sub1_RPT.vb"
+                    DependentUpon = "Schedule4Chicks_Sub1_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4Chicks_Sub2_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4Chicks_Sub2_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4Chicks_Sub2_RPT.vb"
+                    DependentUpon = "Schedule4Chicks_Sub2_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4Found_Main_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4Found_Main_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4Found_Main_RPT.vb"
+                    DependentUpon = "Schedule4Found_Main_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4Found_Sub1_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4Found_Sub1_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4Found_Sub1_RPT.vb"
+                    DependentUpon = "Schedule4Found_Sub1_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ImportedBirds_Main_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ImportedBirds_Main_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ImportedBirds_Main_RPT.vb"
+                    DependentUpon = "Schedule4ImportedBirds_Main_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ImportedBirds_Sub1_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ImportedBirds_Sub1_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ImportedBirds_Sub1_RPT.vb"
+                    DependentUpon = "Schedule4ImportedBirds_Sub1_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4InspectorSig_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4InspectorSig_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4InspectorSig_RPT.vb"
+                    DependentUpon = "Schedule4InspectorSig_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ReplacementRings_Main_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ReplacementRings_Main_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ReplacementRings_Main_RPT.vb"
+                    DependentUpon = "Schedule4ReplacementRings_Main_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ReplacementRings_Sub1_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ReplacementRings_Sub1_RPT1.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ReplacementRings_Sub1_RPT1.vb"
+                    DependentUpon = "Schedule4ReplacementRings_Sub1_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Schedule4ReturnAddress_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "Schedule4ReturnAddress_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Schedule4ReturnAddress_RPT.vb"
+                    DependentUpon = "Schedule4ReturnAddress_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\ServiceLevelsReferral_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ServiceLevelsReferral_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ServiceLevelsReferral_RPT.vb"
+                    DependentUpon = "ServiceLevelsReferral_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\SpeciesCaseTypes_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "SpeciesCaseTypes_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\SpeciesCaseTypes_RPT.vb"
+                    DependentUpon = "SpeciesCaseTypes_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\SpeciesTradePattern_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "SpeciesTradePattern_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\SpeciesTradePattern_RPT.vb"
+                    DependentUpon = "SpeciesTradePattern_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\ViewAuditLog_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ViewAuditLog_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ViewAuditLog_RPT.vb"
+                    DependentUpon = "ViewAuditLog_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\ViewCaseTypesSpecies_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "ViewCaseTypesSpecies_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\ViewCaseTypesSpecies_RPT.vb"
+                    DependentUpon = "ViewCaseTypesSpecies_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\CertificatePermitCoverLetter_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CertificatePermitCoverLetter_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\CertificatePermitCoverLetter_RPT.vb"
+                    DependentUpon = "CertificatePermitCoverLetter_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\CertificateRefusalLetter_Details_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CertificateRefusalLetter_Details_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\CertificateRefusalLetter_Details_RPT.vb"
+                    DependentUpon = "CertificateRefusalLetter_Details_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\CertificateRefusalLetter_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CertificateRefusalLetter_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\CertificateRefusalLetter_RPT.vb"
+                    DependentUpon = "CertificateRefusalLetter_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\PermitRefusalLetter_Details_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PermitRefusalLetter_Details_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\PermitRefusalLetter_Details_RPT.vb"
+                    DependentUpon = "PermitRefusalLetter_Details_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\PermitRefusalLetter_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "PermitRefusalLetter_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\PermitRefusalLetter_RPT.vb"
+                    DependentUpon = "PermitRefusalLetter_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\RegistrationRefusalLetter_Details_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "RegistrationRefusalLetter_Details_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\RegistrationRefusalLetter_Details_RPT.vb"
+                    DependentUpon = "RegistrationRefusalLetter_Details_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\RegistrationRefusalLetter_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "RegistrationRefusalLetter_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\RegistrationRefusalLetter_RPT.vb"
+                    DependentUpon = "RegistrationRefusalLetter_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\SemiCompleteReminderLetter_Details_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "SemiCompleteReminderLetter_Details_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\SemiCompleteReminderLetter_Details_RPT.vb"
+                    DependentUpon = "SemiCompleteReminderLetter_Details_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Report\Letters\SemiCompleteReminderLetter_RPT.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "SemiCompleteReminderLetter_RPT.vb"
+                />
+                <File
+                    RelPath = "Report\Letters\SemiCompleteReminderLetter_RPT.vb"
+                    DependentUpon = "SemiCompleteReminderLetter_RPT.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\ApplicationArticle10_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "ApplicationArticle10_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\ApplicationArticle10_XSD.vb"
+                    DependentUpon = "ApplicationArticle10_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\ApplicationArticle10_XSD.xsx"
+                    DependentUpon = "ApplicationArticle10_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Article10_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Article10_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Article10_XSD.vb"
+                    DependentUpon = "Article10_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Article10_XSD.xsx"
+                    DependentUpon = "Article10_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\BirdRegDoc_Main_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "BirdRegDoc_Main_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\BirdRegDoc_Main_XSD.vb"
+                    DependentUpon = "BirdRegDoc_Main_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\BirdRegDoc_Main_XSD.xsx"
+                    DependentUpon = "BirdRegDoc_Main_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\CITESApplicationPermit_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "CITESApplicationPermit_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\CITESApplicationPermit_XSD.vb"
+                    DependentUpon = "CITESApplicationPermit_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\CITESApplicationPermit_XSD.xsx"
+                    DependentUpon = "CITESApplicationPermit_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\CITESConsignment_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "CITESConsignment_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\CITESConsignment_XSD.vb"
+                    DependentUpon = "CITESConsignment_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\CITESConsignment_XSD.xsx"
+                    DependentUpon = "CITESConsignment_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\CITESConsignmentPermits_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "CITESConsignmentPermits_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\CITESConsignmentPermits_XSD.vb"
+                    DependentUpon = "CITESConsignmentPermits_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\CITESConsignmentPermits_XSD.xsx"
+                    DependentUpon = "CITESConsignmentPermits_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\CITESPermit_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "CITESPermit_XSD2.vb"
+                />
+                <File
+                    RelPath = "Xsd\CITESPermit_XSD.xsx"
+                    DependentUpon = "CITESPermit_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\CITESPermit_XSD2.vb"
+                    DependentUpon = "CITESPermit_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\CITESPermitCoverLetter_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "CITESPermitCoverLetter_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\CITESPermitCoverLetter_XSD.vb"
+                    DependentUpon = "CITESPermitCoverLetter_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\CITESPermitCoverLetter_XSD.xsx"
+                    DependentUpon = "CITESPermitCoverLetter_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Consignment_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Consignment_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Consignment_XSD.vb"
+                    DependentUpon = "Consignment_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Consignment_XSD.xsx"
+                    DependentUpon = "Consignment_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Detail_Adjustment_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Detail_Adjustment_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Detail_Adjustment_XSD.xsx"
+                    DependentUpon = "DFA_Offline_Detail_Adjustment_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Detail_Refund_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Detail_Refund_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Detail_Refund_XSD.xsx"
+                    DependentUpon = "DFA_Offline_Detail_Refund_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_Cash_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_Cash_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_Cash_XSD.xsx"
+                    DependentUpon = "DFA_Offline_Payment_Cash_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_Cheques_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_Cheques_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_Cheques_XSD.xsx"
+                    DependentUpon = "DFA_Offline_Payment_Cheques_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_PostalOrder_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_PostalOrder_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Payment_PostalOrder_XSD.xsx"
+                    DependentUpon = "DFA_Offline_Payment_PostalOrder_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Summary_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Summary_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Offline_Summary_XSD.xsx"
+                    DependentUpon = "DFA_Offline_Summary_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Payment_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Payment_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Payment_XSD.xsx"
+                    DependentUpon = "DFA_Online_Payment_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Refund_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Refund_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Refund_XSD.xsx"
+                    DependentUpon = "DFA_Online_Refund_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Summary_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Summary_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Online_Summary_XSD.xsx"
+                    DependentUpon = "DFA_Online_Summary_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Waiver_XSD.vb"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Waiver_XSD.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Xsd\DFA_Waiver_XSD.xsx"
+                    DependentUpon = "DFA_Waiver_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\KeeperBirds_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "KeeperBirds_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\KeeperBirds_XSD.vb"
+                    DependentUpon = "KeeperBirds_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\KeeperBirds_XSD.xsx"
+                    DependentUpon = "KeeperBirds_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\LimisMonthly_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "LimisMonthly_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\LimisMonthly_XSD.vb"
+                    DependentUpon = "LimisMonthly_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\LimisMonthly_XSD.xsx"
+                    DependentUpon = "LimisMonthly_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\LimisReceivedBy_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "LimisReceivedBy_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\LimisReceivedBy_XSD.vb"
+                    DependentUpon = "LimisReceivedBy_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\LimisReceivedBy_XSD.xsx"
+                    DependentUpon = "LimisReceivedBy_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\LimisRunningTotals_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "LimisRunningTotals_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\LimisRunningTotals_XSD.vb"
+                    DependentUpon = "LimisRunningTotals_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\LimisRunningTotals_XSD.xsx"
+                    DependentUpon = "LimisRunningTotals_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\PartyDataProtection_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "PartyDataProtection_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\PartyDataProtection_XSD.vb"
+                    DependentUpon = "PartyDataProtection_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\PartyDataProtection_XSD.xsx"
+                    DependentUpon = "PartyDataProtection_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\PaymentReceipt_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "PaymentReceipt_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\PaymentReceipt_XSD.vb"
+                    DependentUpon = "PaymentReceipt_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\PaymentReceipt_XSD.xsx"
+                    DependentUpon = "PaymentReceipt_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\PeriodicFinSum_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "PeriodicFinSum_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\PeriodicFinSum_XSD.vb"
+                    DependentUpon = "PeriodicFinSum_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\PeriodicFinSum_XSD.xsx"
+                    DependentUpon = "PeriodicFinSum_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\ReferralServiceLevel_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "ReferralServiceLevel_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\ReferralServiceLevel_XSD.vb"
+                    DependentUpon = "ReferralServiceLevel_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\ReferralServiceLevel_XSD.xsx"
+                    DependentUpon = "ReferralServiceLevel_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\RegisteredBirds_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "RegisteredBirds_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\RegisteredBirds_XSD.vb"
+                    DependentUpon = "RegisteredBirds_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\RegisteredBirds_XSD.xsx"
+                    DependentUpon = "RegisteredBirds_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\RemittanceAdvice_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "RemittanceAdvice_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\RemittanceAdvice_XSD.vb"
+                    DependentUpon = "RemittanceAdvice_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\RemittanceAdvice_XSD.xsx"
+                    DependentUpon = "RemittanceAdvice_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ApplicantBred_Main_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Schedule4ApplicantBred_Main_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ApplicantBred_Main_XSD.vb"
+                    DependentUpon = "Schedule4ApplicantBred_Main_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ApplicantBred_Main_XSD.xsx"
+                    DependentUpon = "Schedule4ApplicantBred_Main_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Birds_Main_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Schedule4Birds_Main_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Birds_Main_XSD.vb"
+                    DependentUpon = "Schedule4Birds_Main_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Birds_Main_XSD.xsx"
+                    DependentUpon = "Schedule4Birds_Main_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Chicks_Main_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Schedule4Chicks_Main_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Chicks_Main_XSD.vb"
+                    DependentUpon = "Schedule4Chicks_Main_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Chicks_Main_XSD.xsx"
+                    DependentUpon = "Schedule4Chicks_Main_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Found_Main_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Schedule4Found_Main_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Found_Main_XSD.vb"
+                    DependentUpon = "Schedule4Found_Main_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4Found_Main_XSD.xsx"
+                    DependentUpon = "Schedule4Found_Main_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ImportedBirds_Main_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Schedule4ImportedBirds_Main_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ImportedBirds_Main_XSD.vb"
+                    DependentUpon = "Schedule4ImportedBirds_Main_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ImportedBirds_Main_XSD.xsx"
+                    DependentUpon = "Schedule4ImportedBirds_Main_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ReplacementRings_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "Schedule4ReplacementRings_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ReplacementRings_XSD.vb"
+                    DependentUpon = "Schedule4ReplacementRings_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Schedule4ReplacementRings_XSD.xsx"
+                    DependentUpon = "Schedule4ReplacementRings_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\ServiceLevelsReferral_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "ServiceLevelsReferral_XSD1.vb"
+                />
+                <File
+                    RelPath = "Xsd\ServiceLevelsReferral_XSD.xsx"
+                    DependentUpon = "ServiceLevelsReferral_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\ServiceLevelsReferral_XSD1.vb"
+                    DependentUpon = "ServiceLevelsReferral_XSD.xsd"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\SpeciesCaseTypes_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "SpeciesCaseTypes_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\SpeciesCaseTypes_XSD.vb"
+                    DependentUpon = "SpeciesCaseTypes_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\SpeciesCaseTypes_XSD.xsx"
+                    DependentUpon = "SpeciesCaseTypes_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\SpeciesTradePattern_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "SpeciesTradePattern_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\SpeciesTradePattern_XSD.vb"
+                    DependentUpon = "SpeciesTradePattern_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\SpeciesTradePattern_XSD.xsx"
+                    DependentUpon = "SpeciesTradePattern_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\ViewAuditLog_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "ViewAuditLog_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\ViewAuditLog_XSD.vb"
+                    DependentUpon = "ViewAuditLog_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\ViewAuditLog_XSD.xsx"
+                    DependentUpon = "ViewAuditLog_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\ViewCaseTypesSpecies_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "ViewCaseTypesSpecies_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\ViewCaseTypesSpecies_XSD.vb"
+                    DependentUpon = "ViewCaseTypesSpecies_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\ViewCaseTypesSpecies_XSD.xsx"
+                    DependentUpon = "ViewCaseTypesSpecies_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Letters\CertificatePermitCoverLetter_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "CertificatePermitCoverLetter_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Letters\CertificatePermitCoverLetter_XSD.vb"
+                    DependentUpon = "CertificatePermitCoverLetter_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Letters\CertificatePermitCoverLetter_XSD.xsx"
+                    DependentUpon = "CertificatePermitCoverLetter_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Letters\CertificateRefusalLetter_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "CertificateRefusalLetter_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Letters\CertificateRefusalLetter_XSD.vb"
+                    DependentUpon = "CertificateRefusalLetter_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Letters\CertificateRefusalLetter_XSD.xsx"
+                    DependentUpon = "CertificateRefusalLetter_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Letters\PermitRefusalLetter_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "PermitRefusalLetter_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Letters\PermitRefusalLetter_XSD.vb"
+                    DependentUpon = "PermitRefusalLetter_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Letters\PermitRefusalLetter_XSD.xsx"
+                    DependentUpon = "PermitRefusalLetter_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Letters\RegistrationRefusalLetter_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "RegistrationRefusalLetter_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Letters\RegistrationRefusalLetter_XSD.vb"
+                    DependentUpon = "RegistrationRefusalLetter_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Letters\RegistrationRefusalLetter_XSD.xsx"
+                    DependentUpon = "RegistrationRefusalLetter_XSD.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Xsd\Letters\SemiCompleteReminderLetter_XSD.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "SemiCompleteReminderLetter_XSD.vb"
+                />
+                <File
+                    RelPath = "Xsd\Letters\SemiCompleteReminderLetter_XSD.vb"
+                    DependentUpon = "SemiCompleteReminderLetter_XSD.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Xsd\Letters\SemiCompleteReminderLetter_XSD.xsx"
+                    DependentUpon = "SemiCompleteReminderLetter_XSD.xsd"
+                    BuildAction = "None"
+                />
+            </Include>
+        </Files>
+        <StartupServices>
+            <Service ID = "{CF845C55-C321-4742-B673-E6212D061ED9}" />
+        </StartupServices>
+    </VisualBasic>
+</VisualStudioProject>
+

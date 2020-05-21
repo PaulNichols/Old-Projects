@@ -1,0 +1,115 @@
+[Root]
+Most Recent Package=NT Service
+
+
+[Package|NT Service|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\em\Desktop\NT_Service\Package
+
+[Package|NT Service|Configure DAO ISAMs]
+Applicable=No
+
+[Package|NT Service|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|NT Service|Files Found]
+
+[Package|NT Service|Files Released]
+
+[Package|NT Service|Missing Dependency Information]
+C:\Documents and Settings\em\Desktop\NT_Service\NTSVC.ocx=
+C:\Program Files\Common Files\System\ado\msadox.dll=
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=
+C:\Program Files\Common Files\System\ado\msado25.tlb=
+
+[Package|NT Service|Out-of-Date Dependency Information]
+
+[Package|NT Service|Files Added]
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\mdac_typ.exe=
+C:\Documents and Settings\em\Desktop\NT_Service\ntsvc.oca=
+C:\Documents and Settings\em\Desktop\NT_Service\Install.bat=
+C:\Documents and Settings\em\Desktop\NT_Service\Uninstall.bat=
+
+[Package|NT Service|Files Removed]
+
+[Package|NT Service|Files In Project]
+C:\Documents and Settings\em\Desktop\NT_Service\NTService.exe=Yes
+C:\WINNT\system32\msvbvm60.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\System\ado\msado25.tlb=Yes
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=Yes
+C:\Program Files\Common Files\System\ado\msadox.dll=Yes
+C:\Documents and Settings\em\Desktop\NT_Service\NTSVC.ocx=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\system32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Documents and Settings\em\Desktop\NT_Service\ntsvc.oca=Yes
+C:\Documents and Settings\em\Desktop\NT_Service\Install.bat=Yes
+C:\Documents and Settings\em\Desktop\NT_Service\Uninstall.bat=Yes
+
+[Package|NT Service|Configure Registry Files]
+Applicable=No
+
+[Package|NT Service|Configure Remote Servers]
+Applicable=No
+
+[Package|NT Service|Install Locations]
+C:\Documents and Settings\em\Desktop\NT_Service\NTService.exe=$(AppPath)
+C:\WINNT\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\System\ado\msado25.tlb=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msadox.dll=$(WinSysPath)
+C:\Documents and Settings\em\Desktop\NT_Service\NTSVC.ocx=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Documents and Settings\em\Desktop\NT_Service\ntsvc.oca=$(WinSysPath)
+C:\Documents and Settings\em\Desktop\NT_Service\Install.bat=$(AppPath)
+C:\Documents and Settings\em\Desktop\NT_Service\Uninstall.bat=$(AppPath)
+
+[Package|NT Service|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\em\Desktop\NT_Service\NTService.exe=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Documents and Settings\em\Desktop\NT_Service\Install.bat=No
+C:\Documents and Settings\em\Desktop\NT_Service\Uninstall.bat=No
+
+[Package|NT Service|Distribution]
+Type=single
+Size=
+Title=Contacts Service Manager
+
+[Package|NT Service|Package]
+PackageFolder=C:\Documents and Settings\em\Desktop\NT_Service\Package
+ProjectFolder=C:\Documents and Settings\em\Desktop\NT_Service
+ServerSideCab=
+File1=C:\Documents and Settings\em\Desktop\NT_Service\Package\setup.exe
+File2=C:\Documents and Settings\em\Desktop\NT_Service\Package\Setup.Lst
+File3=C:\Documents and Settings\em\Desktop\NT_Service\Package\NTService.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|NT Service|IconGroups]
+Group0=Contacts Service Manager
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|NT Service|Contacts Service Manager]
+Icon1=NTService.exe
+Title1=Contacts Service Manager
+StartIn1=$(AppPath)
+Key1=Icon1

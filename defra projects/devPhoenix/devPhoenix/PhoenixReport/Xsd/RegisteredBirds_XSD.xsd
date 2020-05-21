@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RegisteredBirdsData" targetNamespace="http://tempuri.org/RegisteredBirdsData.xsd"
+	xmlns:mstns="http://tempuri.org/RegisteredBirdsData.xsd" xmlns="http://tempuri.org/RegisteredBirdsData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="RegisteredBirdsData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BORegisteredBirds">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HolderId" type="xs:integer" minOccurs="0" />
+							<xs:element name="SpeciesName" type="xs:string" minOccurs="0" />
+							<xs:element name="NumberSpecimens" type="xs:string" minOccurs="0" />
+							<xs:element name="FateName" type="xs:string" minOccurs="0" />
+							<xs:element name="FateDate" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOKeeper">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HolderId" type="xs:integer" minOccurs="0" />
+							<xs:element name="NameAddress" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//mstns:BOKeeper" />
+			<xs:field xpath="mstns:HolderId" />
+		</xs:key>
+		<xs:keyref name="BOKeeperBORegisteredBirds" refer="mstns:key1">
+			<xs:selector xpath=".//mstns:BORegisteredBirds" />
+			<xs:field xpath="mstns:HolderId" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

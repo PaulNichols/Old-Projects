@@ -1,0 +1,94 @@
+﻿<StateMachineWorkflowDesigner Name="Workflow1" xmlns:ns0="clr-namespace:System.Drawing;Assembly=System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/workflow">
+	<StateMachineWorkflowDesigner.Location>
+		<ns0:Point X="30" Y="30" />
+	</StateMachineWorkflowDesigner.Location>
+	<StateMachineWorkflowDesigner.Designers>
+		<StateDesigner Name="NotValid">
+			<StateDesigner.Location>
+				<ns0:Point X="301" Y="202" />
+			</StateDesigner.Location>
+			<StateDesigner.Size>
+				<ns0:Size Width="202" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+		<StateDesigner Name="Complete">
+			<StateDesigner.Location>
+				<ns0:Point X="278" Y="710" />
+			</StateDesigner.Location>
+			<StateDesigner.Size>
+				<ns0:Size Width="160" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+		<StateDesigner Name="Valid">
+			<StateDesigner.Location>
+				<ns0:Point X="325" Y="331" />
+			</StateDesigner.Location>
+			<StateDesigner.Size>
+				<ns0:Size Width="160" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+		<StateDesigner Name="Live">
+			<StateDesigner.Location>
+				<ns0:Point X="329" Y="530" />
+			</StateDesigner.Location>
+			<StateDesigner.Size>
+				<ns0:Size Width="160" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+		<StateDesigner Name="Printed">
+			<StateDesigner.Location>
+				<ns0:Point X="70" Y="560" />
+			</StateDesigner.Location>
+			<StateDesigner.Size>
+				<ns0:Size Width="160" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+		<StateDesigner Name="Held">
+			<StateDesigner.Location>
+				<ns0:Point X="671" Y="542" />
+			</StateDesigner.Location>
+			<StateDesigner.Size>
+				<ns0:Size Width="160" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+		<StateDesigner Name="Cancelled">
+			<StateDesigner.Location>
+				<ns0:Point X="539" Y="736" />
+			</StateDesigner.Location>
+			<StateDesigner.Size>
+				<ns0:Size Width="160" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+		<StateDesigner Name="WaitingForOrderState">
+			<StateDesigner.Location>
+				<ns0:Point X="327" Y="74" />
+			</StateDesigner.Location>
+			<StateDesigner.Designers>
+				<EventDrivenDesigner Name="eventDrivenActivity1">
+					<EventDrivenDesigner.Designers>
+						<HandleExternalEventActivityDesigner Name="handleExternalEventActivity1">
+							<HandleExternalEventActivityDesigner.Size>
+								<ns0:Size Width="90" Height="40" />
+							</HandleExternalEventActivityDesigner.Size>
+							<HandleExternalEventActivityDesigner.Location>
+								<ns0:Point X="345" Y="177" />
+							</HandleExternalEventActivityDesigner.Location>
+						</HandleExternalEventActivityDesigner>
+					</EventDrivenDesigner.Designers>
+					<EventDrivenDesigner.Size>
+						<ns0:Size Width="110" Height="142" />
+					</EventDrivenDesigner.Size>
+					<EventDrivenDesigner.Location>
+						<ns0:Point X="335" Y="105" />
+					</EventDrivenDesigner.Location>
+				</EventDrivenDesigner>
+			</StateDesigner.Designers>
+			<StateDesigner.Size>
+				<ns0:Size Width="160" Height="80" />
+			</StateDesigner.Size>
+		</StateDesigner>
+	</StateMachineWorkflowDesigner.Designers>
+	<StateMachineWorkflowDesigner.Size>
+		<ns0:Size Width="848" Height="816" />
+	</StateMachineWorkflowDesigner.Size>
+</StateMachineWorkflowDesigner>

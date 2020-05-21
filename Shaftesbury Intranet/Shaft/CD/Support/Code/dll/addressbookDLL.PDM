@@ -1,0 +1,263 @@
+[Root]
+Most Recent Package=Shaft DLL Dep
+
+
+[Package|Dep File 1|Root]
+SubWizProgID=PDWizard.DepPkgSubWiz
+BuildFolder=C:\WINDOWS\SYSTEM
+
+[Package|Dep File 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Dep File 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Dep File 1|Files Found]
+
+[Package|Dep File 1|Files Released]
+
+[Package|Dep File 1|Missing Dependency Information]
+C:\Program Files\Common Files\SYSTEM\ADO\msadox.dll=
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=
+C:\Program Files\Common Files\SYSTEM\ADO\msado21.tlb=
+
+[Package|Dep File 1|Out-of-Date Dependency Information]
+
+[Package|Dep File 1|Files Added]
+
+[Package|Dep File 1|Files Removed]
+
+[Package|Dep File 1|Files In Project]
+C:\WINDOWS\SYSTEM\addressbook.dll=Yes
+C:\WINDOWS\SYSTEM\msvbvm60.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\SYSTEM\ADO\msado21.tlb=Yes
+C:\Program Files\Common Files\SYSTEM\ADO\msador15.dll=Yes
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=Yes
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=Yes
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=Yes
+C:\Program Files\Common Files\SYSTEM\ADO\msadox.dll=Yes
+C:\WINDOWS\SYSTEM\MSCOMM32.OCX=Yes
+
+[Package|Dep File 1|Configure Registry Files]
+Applicable=
+
+[Package|Dep File 1|Configure Remote Servers]
+Applicable=
+
+[Package|Dep File 1|Install Locations]
+C:\WINDOWS\SYSTEM\addressbook.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\SYSTEM\ADO\msado21.tlb=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msador15.dll=$(CommonFilesSys)\ADO
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msadox.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMM32.OCX=$(WinSysPath)
+
+[Package|Dep File 1|Configure Shared Files]
+Applicable=
+
+[Package|Dep File 1|DepFile]
+DepCabFile=
+DepCabRun=
+
+[Package|Dep File 1|Package]
+PackageFolder=C:\WINDOWS\SYSTEM
+ProjectFolder=C:\WINDOWS\Desktop\Shaftesbury\Contacts\dll
+ServerSideCab=
+File1=C:\WINDOWS\SYSTEM\addressbook.DEP
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Dep File 2|Root]
+SubWizProgID=PDWizard.DepPkgSubWiz
+BuildFolder=C:\WINNT\Profiles\administrator.000\Desktop\Contacts\dll
+
+[Package|Dep File 2|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Dep File 2|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Dep File 2|Files Found]
+
+[Package|Dep File 2|Files Released]
+
+[Package|Dep File 2|Missing Dependency Information]
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOX.DLL=
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=
+C:\Program Files\Common Files\SYSTEM\ADO\MSADO21.TLB=
+C:\WINNT\SYSTEM32\MSADOX.DLL=
+D:\Program Files\Office\MSO9.DLL=
+D:\Program Files\Office\MSWORD9.OLB=
+D:\Program Files\Office\MSOUTL9.OLB=
+
+[Package|Dep File 2|Out-of-Date Dependency Information]
+
+[Package|Dep File 2|Files Added]
+
+[Package|Dep File 2|Files Removed]
+
+[Package|Dep File 2|Files In Project]
+C:\Program Files\Common Files\SYSTEM\ADO\MSADO21.TLB=Yes
+C:\WINNT\SYSTEM32\addressbook.dll=Yes
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+D:\Program Files\Office\MSOUTL9.OLB=Yes
+D:\Program Files\Office\MSWORD9.OLB=Yes
+D:\Program Files\Office\MSO9.DLL=Yes
+C:\WINNT\SYSTEM32\MSADOX.DLL=Yes
+C:\WINNT\SYSTEM32\MSCOMM32.OCX=Yes
+
+[Package|Dep File 2|Configure Registry Files]
+Applicable=
+
+[Package|Dep File 2|Configure Remote Servers]
+Applicable=
+
+[Package|Dep File 2|Install Locations]
+C:\WINDOWS\SYSTEM\addressbook.dll=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\SYSTEM\ADO\MSADO21.TLB=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOR15.DLL=$(CommonFilesSys)\ADO
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOX.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMM32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\addressbook.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Office\MSOUTL9.OLB=$(WinSysPath)
+D:\Program Files\Office\MSWORD9.OLB=$(WinSysPath)
+D:\Program Files\Office\MSO9.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADOX.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMM32.OCX=$(WinSysPath)
+
+[Package|Dep File 2|Configure Shared Files]
+Applicable=
+
+[Package|Dep File 2|DepFile]
+DepCabFile=
+DepCabRun=
+
+[Package|Dep File 2|Package]
+PackageFolder=C:\WINNT\Profiles\administrator.000\Desktop\Contacts\dll
+ProjectFolder=C:\WINNT\Profiles\administrator.000\Desktop\Contacts\dll
+ServerSideCab=
+File1=C:\WINNT\Profiles\administrator.000\Desktop\Contacts\dll\addressbook.DEP
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|Shaft DLL Dep|Root]
+SubWizProgID=PDWizard.DepPkgSubWiz
+BuildFolder=C:\winnt\system32
+
+[Package|Shaft DLL Dep|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Shaft DLL Dep|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Shaft DLL Dep|Files Found]
+
+[Package|Shaft DLL Dep|Files Released]
+
+[Package|Shaft DLL Dep|Missing Dependency Information]
+C:\Program Files\Common Files\System\ado\msado21.tlb=
+C:\WINNT\system32\actrpt.dll=
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=
+
+[Package|Shaft DLL Dep|Out-of-Date Dependency Information]
+
+[Package|Shaft DLL Dep|Files Added]
+
+[Package|Shaft DLL Dep|Files Removed]
+
+[Package|Shaft DLL Dep|Files In Project]
+C:\WINNT\system32\addressbook.dll=Yes
+C:\WINNT\system32\msvbvm60.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=Yes
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=Yes
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=Yes
+C:\WINNT\system32\actrpt.dll=Yes
+C:\WINNT\system32\MSDBRPTR.DLL=Yes
+C:\WINNT\system32\MSSTDFMT.DLL=Yes
+C:\Program Files\Common Files\System\ado\msado21.tlb=Yes
+
+[Package|Shaft DLL Dep|Configure Registry Files]
+Applicable=
+
+[Package|Shaft DLL Dep|Configure Remote Servers]
+Applicable=
+
+[Package|Shaft DLL Dep|Install Locations]
+C:\WINNT\system32\addressbook.dll=$(WinSysPath)
+C:\WINNT\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=$(WinSysPath)
+C:\WINNT\system32\actrpt.dll=$(WinSysPath)
+C:\WINNT\system32\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado21.tlb=$(WinSysPath)
+
+[Package|Shaft DLL Dep|Configure Shared Files]
+Applicable=
+
+[Package|Shaft DLL Dep|DepFile]
+DepCabFile=
+DepCabRun=
+
+[Package|Shaft DLL Dep|Package]
+PackageFolder=C:\winnt\system32
+ProjectFolder=C:\Documents and Settings\em\Desktop\dll
+ServerSideCab=
+File1=C:\winnt\system32\addressbook.DEP
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

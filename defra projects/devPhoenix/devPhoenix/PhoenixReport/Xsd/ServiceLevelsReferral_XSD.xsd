@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ServiceLevelsReferralData" targetNamespace="http://tempuri.org/ServiceLevelsReferralData.xsd"
+	xmlns:mstns="http://tempuri.org/ServiceLevelsReferralData.xsd" xmlns="http://tempuri.org/ServiceLevelsReferralData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="ServiceLevelsReferralData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOServiceLevelsReferral">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TotalsWithinHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsBetweenHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsOverHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsAllProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsAllWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsAllBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsAllOver" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsLastProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsLastWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsLastBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalsLastOver" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportWithinHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportBetweenHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportOverHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportAllProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportAllWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportAllBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportAllOver" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportLastProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportLastWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportLastBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportLastOver" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportWithinHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportBetweenHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportOverHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportAllProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportAllWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportAllBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportAllOver" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportLastProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportLastWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportLastBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportLastOver" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10WithinHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10BetweenHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10OverHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10AllProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10AllWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10AllBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10AllOver" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10LastProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10LastWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10LastBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="Article10LastOver" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30WithinHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30BetweenHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30OverHeading" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30AllProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30AllWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30AllBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30AllOver" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30LastProcessed" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30LastWithin" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30LastBetween" type="xs:string" minOccurs="0" />
+							<xs:element name="Article30LastOver" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

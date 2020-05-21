@@ -1,0 +1,462 @@
+using System;
+using System.Windows.Forms;
+
+using HBOS.FS.AMP.UPD.WinUI.UserControls;
+using HBOS.FS.AMP.UPD.WinUI.Helpers;
+using HBOS.FS.Support.Tex;
+using HBOS.FS.AMP.Windows.Controls;
+using HBOS.FS.AMP.UPD.Types.Funds;
+using HBOS.FS.AMP.UPD.Types.FundGroups;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Controllers;
+
+using HBOSGrid = HBOS.FS.AMP.Windows.Controls.DataGrid;
+
+namespace HBOS.FS.AMP.UPD.WinUI.Classes
+{
+	/// <summary>
+	/// View Controller for the second level authorisation process
+	/// </summary>
+	public class SecondLevelAuthorisationViewController: UpdateableStatusViewController
+	{
+
+		#region Member variables
+
+		//private bool m_eventsAreSystemGenerated = false;
+
+		#endregion
+
+		#region Action text constants
+
+		private const string selectAllActionText = "Select &All";
+		private const string deselectAllActionText = "&Deselect All";
+		private const string saveActionText = "&Save";
+		private const string cancelActionText = "&Cancel";
+		private const string printActionText = "&Print";
+		private const string exportActionText = "&Export";
+
+		#endregion
+
+
+		/// <summary>
+		/// Creates a new <see cref="SecondLevelAuthorisationViewController"/> instance.
+		/// </summary>
+		public SecondLevelAuthorisationViewController(UpdateableStatusView updateView, StatusDataManager dataManager):
+			base(updateView,dataManager)
+		{
+			T.E();
+			updateableView.SaveExecuted += new EventHandler(saveExecuted);
+			T.X();
+		}
+
+
+		#region Overrides
+
+		/// <summary>
+		/// Creates the actions.
+		/// </summary>
+		protected override StatusAction[] createActions()
+		{
+			T.E();
+
+			StatusAction[] result = new StatusAction[7];
+
+			result[0] = new StatusAction();
+			result[0].Text = "&Refresh";
+			result[0].Executed +=new EventHandler(refreshExecuted);
+
+			result[1] = new StatusAction();
+			result[1].Text = selectAllActionText;
+			result[1].Executed +=new EventHandler(selectAllExecuted);
+			result[1].RequestVisibility +=new RequestVisibilityHandler(visibilityRequested);
+
+			result[2] = new StatusAction();
+			result[2].Text = deselectAllActionText;
+			result[2].Executed +=new EventHandler(deselectAllExecuted);
+
+			result[3] = new StatusAction();
+			result[3].Text = saveActionText;
+			result[3].Executed +=new EventHandler(saveExecuted);
+
+			result[4] = new StatusAction();
+			result[4].Text = cancelActionText;
+			result[4].Executed +=new EventHandler(cancelExecuted);
+
+			result[5] = new StatusAction();
+			result[5].Text = printActionText;
+			result[5].Executed +=new EventHandler(printExecuted);
+
+			result[6] = new StatusAction();
+			result[6].Text = exportActionText;
+			result[6].Executed +=new EventHandler(exportExecuted);
+
+
+			T.X();
+			return result;
+		}
+
+		/// <summary>
+		/// Configures the grid.
+		/// </summary>
+		protected override void configureGrid()
+		{
+			T.E();
+			HBOSGrid grid = updateableView.grid;	
+			DataGridTableStyle style = new DataGridTableStyle();
+			
+			DataGridBool1ClickColumn authoriseImportedCheckBox;
+			DataGridBool1ClickColumn authorisePredictedCheckBox;
+
+			grid.TableStyles.Clear();
+			grid.TableStyles.Add(style);
+
+			style.AlternatingBackColor = System.Drawing.Color.WhiteSmoke;
+			style.DataGrid = grid;
+			style.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+			style.MappingName = "";
+
+			// Hack to allow for multi-line header rows.
+			// This requires a large font (36pt) to be set for grid.HeaderFont through the properties window
+			style.HeaderFont = grid.Font;
+
+			const int defaultColWidth = 80;
+
+			//fund columns
+			AddTextBoxReadOnlyColumnStyle(	"FullName",								"Fund Name"									,300,HorizontalAlignment.Left,"FullName");
+			AddTextBoxReadOnlyColumnStyle(	"PriceDisplay",							"Imported.\nFund Price.",					defaultColWidth,HorizontalAlignment.Right,"FullName");
+			AddTextBoxReadOnlyColumnStyle(	"PriceMovementPercentDisplay",			"Imported.\nFund Price.\nMovement.",			defaultColWidth, HorizontalAlignment.Right, "FullName");
+
+			authoriseImportedCheckBox = 
+			AddBooleanColumnStyle(			"ProgressStatus",						"Authorise\nImported\nFund Price?",		defaultColWidth, HorizontalAlignment.Center);
+
+			AddTextBoxReadOnlyColumnStyle(	"PredictedPriceDisplay",				"Predicted.\nFund Price.",					defaultColWidth,HorizontalAlignment.Right, "FullName");
+			AddTextBoxReadOnlyColumnStyle(	"PredictedPriceMovementPercentDisplay",	"Predicted.\nFund Price.\nMovement.",		defaultColWidth,HorizontalAlignment.Right, "FullName");
+			
+			authorisePredictedCheckBox =
+			AddBooleanColumnStyle(			"UsePredictedPrice",					"Authorise\nPredicted\nFund Price?",		defaultColWidth, HorizontalAlignment.Center);
+			
+			AddTextBoxReadOnlyColumnStyle(	"PriceMovementVarianceDisplay",			"Fund Price.\nVariance.",					defaultColWidth,HorizontalAlignment.Right, "FullName");
+			AddTextBoxReadOnlyColumnStyle(	"PriceMovementRoundedToleranceDisplay", "Within Fund\nPrice Tolerance",				120, HorizontalAlignment.Left,"FullName");
+
+			//asset fund columns
+			AddTextBoxReadOnlyColumnStyle(	"AssetUnitPriceDisplay",				"Imported Asset.\nFund Price.",				100, HorizontalAlignment.Right, "FullName");
+			AddTextBoxReadOnlyColumnStyle(	"AssetMovementDisplay",					"Imported.\nAsset Fund.\nMovement.",		100, HorizontalAlignment.Right, "FullName");
+			AddTextBoxReadOnlyColumnStyle(	"PredictedAssetMovementDisplay",		"Predicted.\nAsset Fund.\nMovement.",		100, HorizontalAlignment.Right, "FullName");
+			AddTextBoxReadOnlyColumnStyle(	"AssetMovementVarianceDisplay",			"Asset Fund.\nVariance.",					100, HorizontalAlignment.Right, "FullName");
+			AddTextBoxReadOnlyColumnStyle(	"AssetMovementToleranceDisplay",		"Within\nAsset Fund\nTolerance",			100, HorizontalAlignment.Center,"FullName");
+			AddTextBoxReadOnlyColumnStyle(	"FundStatusDisplay",					"Price\nStatus ",							defaultColWidth,HorizontalAlignment.Left, "FullName");
+			AddTextBoxReadOnlyColumnStyle(	"StatusChangedTime",					"Status\nChanged\nTime",					130, HorizontalAlignment.Left, "FullName");
+
+			//assign events to check box columns
+			authorisePredictedCheckBox.CheckedChanged +=new DataGridBool1ClickColumn.CheckedChangedDelegate(authPredictedPrice_CheckedChanged);
+			authoriseImportedCheckBox.CheckedChanged  +=new DataGridBool1ClickColumn.CheckedChangedDelegate(authImportedPrice_CheckedChanged);
+
+
+			authorisePredictedCheckBox.AllowNull = false;
+			authoriseImportedCheckBox.AllowNull  = false;
+
+			T.X();
+		}
+
+		#endregion Overrides	
+
+		#region Privates
+
+		private bool checkCompositeAuthorisation(Fund fund)
+		{
+			T.E();
+			bool result = true;
+
+			CompositeAssetFund composite = fund.ParentAssetFund as CompositeAssetFund;
+			if (composite != null)
+			{
+				result = composite.AreAllLinkedFundsAuthorised();
+			}
+
+			T.X();
+			return result;
+		}
+
+
+		private void doSave()
+		{
+			// Retrieve only the edited rows.
+			FundCollection funds = (FundCollection)updateableView.grid.RetrieveUpdatedCustomCollection();
+
+			foreach(Fund fund in funds)
+			{
+				if (fund.FundStatus < Fund.FundStatusType.SecondLevelAuthorised)
+				{
+					fund.IsDirty = (fund.ProgressStatus || fund.UsePredictedPrice);
+				}
+				else
+				{
+					fund.IsDirty = !(fund.ProgressStatus || fund.UsePredictedPrice);
+				}
+			}
+
+			// Save the valid data.
+			if (funds != null && funds.Count > 0)
+			{
+				try
+				{
+					FundController controller = new FundController(GlobalRegistry.ConnectionString);
+					controller.ProgressFunds(funds, Fund.FundStatusType.SecondLevelAuthorised);
+				}
+				catch (Exception ex)
+				{
+					GUIExceptionHelper.LogAndDisplayException ("CannotSaveAuthorisationsBody", "CannotSaveAuthorisationsTitle", ex);
+				}
+			}
+
+			FundCollection allFunds = (FundCollection)updateableView.grid.RetrieveEntireCustomCollection();
+			foreach(Fund fund in allFunds)
+			{
+				fund.IsDirty = false;
+				foreach(Fund updatedFund in funds)
+				{
+					if (updatedFund.HiPortfolioCode==fund.HiPortfolioCode)
+					{
+						fund.FundStatus=updatedFund.FundStatus;
+						fund.StatusChangedTime=updatedFund.StatusChangedTime;
+						break;
+					}
+				}
+			}
+			updateableView.Data = allFunds;
+			updateableView.Changed = false;
+		}
+
+
+		#endregion
+
+		#region Event Handlers
+		
+		private void visibilityRequested (object sender, RequestVisibilityArgs e)
+		{
+			//defaults
+			e.IsEnabled = true;
+			e.IsVisible = true;
+
+			if (((StatusAction) sender).Text == selectAllActionText)
+			{
+				FundGroup selectedFundGroup = ((FundStatusDataManager) dataManager).RetrieveFundGroup();
+				if (selectedFundGroup != null)
+				{
+					e.IsEnabled = selectedFundGroup.AllowSelectAllAuthorisation;
+				}
+			}
+		}
+
+		private void selectAllExecuted(object sender, EventArgs e)
+		{
+			T.E();
+
+			try
+			{
+				//m_eventsAreSystemGenerated = true;
+				if (view.Data != null && updateableView.Data.Count>0)
+				{
+					FundCollection funds = (FundCollection)updateableView.grid.RetrieveEntireCustomCollection();
+			
+					bool atLeastOneFailed = false;
+					for(int i = 0; i < funds.Count; i++)
+					{
+						Fund fund = funds[i];
+
+						if (fund.FundStatus < Fund.FundStatusType.SecondLevelAuthorised)
+						{
+							if(fund.PriceSet && checkCompositeAuthorisation(fund))
+							{
+								if (fund.UsePredictedPrice)
+								{
+									updateableView.grid.SetValue(i, "UsePredictedPrice",false); //causes rowstate to change
+									fund.UsePredictedPrice = false;
+								}
+								
+								if (!fund.ProgressStatus)
+								{
+									updateableView.grid.SetValue(i,"ProgressStatus",true); //causes rowstate to change
+									fund.ProgressStatus = true;
+								}
+
+								//updateableView.grid.
+							}
+							else
+							{
+								atLeastOneFailed = true;
+							}
+						}
+					}
+					updateableView.grid.Refresh();
+
+					if (atLeastOneFailed)
+					{	
+						MessageBoxHelper.Show("UnableToSelectAllForAuthBody","UnableToSelectAllTitle",MessageBoxButtons.OK,MessageBoxIcon.Information);
+					}
+				}
+			}
+			finally
+			{
+				//m_eventsAreSystemGenerated = false;
+				T.X();
+			}
+
+		}
+
+		private void deselectAllExecuted(object sender, EventArgs e)
+		{
+			T.E();
+			if (view.Data != null && updateableView.Data.Count>0)
+			{
+				FundCollection funds = (FundCollection)updateableView.grid.RetrieveEntireCustomCollection();
+				bool anyReleasedFunds = false;
+
+				for(int i = 0; i < funds.Count; i++)
+				{
+					Fund fund = funds[i];
+					if (fund.ProgressStatus || fund.UsePredictedPrice)
+					{
+						if (fund.FundStatus >= Fund.FundStatusType.Released)
+						{
+							anyReleasedFunds = true;
+						}
+						else
+						{
+							updateableView.grid.SetValue(i,"ProgressStatus",false); //causes rowstate to change
+							fund.ProgressStatus = false;
+
+							updateableView.grid.SetValue(i,"UsePredictedPrice",false); //causes rowstate to change
+							fund.UsePredictedPrice = false;
+						}
+					}
+				}
+
+				if (anyReleasedFunds)
+				{	
+					MessageBoxHelper.Show("UnauthoriseAllSomeReleasedBody","UnauthoriseAllSomeReleasedTitle",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				}
+			}
+			else
+			{
+				MessageBoxHelper.Show("NothingToUnauthoriseBody","NothingToUnauthoriseTitle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+			}
+
+			T.X();
+		}
+
+		private void saveExecuted(object sender, EventArgs e)
+		{
+			doSave();
+		}
+
+		private void cancelExecuted(object sender, EventArgs e)
+		{
+			loadDataToGrid();
+		}
+
+		private void refreshExecuted(object sender, EventArgs e)
+		{
+			refreshData();
+		}
+		
+		private void printExecuted(object sender, EventArgs e)
+		{
+			printGrid("Second Level Authorisation");
+		}
+		
+		private void exportExecuted(object sender, EventArgs e)
+		{
+			exportGrid("FundAuthorisation.csv","HBOS.FS.AMP.UPD.WinUI.UserControls.SecondLevelAuthorisation.xslt");
+		}
+	
+		private void authPredictedPrice_CheckedChanged(object sender, CheckBoxEventArgs e)
+		{
+			Fund changedFund = fundAtRow(e.RowNumber);
+
+			if (e.NewValue == true)
+			{	
+				decimal predPrice = changedFund.PredictedPrice;
+				if(predPrice <= 0)
+				{
+					updateableView.grid.RejectChanges(e.RowNumber);
+					MessageBoxHelper.Show("CannotAuthoriseUnpredictedBody","CannotAuthoriseUnpredictedTitle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+				}
+				else
+				{
+					if (checkCompositeAuthorisation(changedFund))
+					{
+						if (changedFund.ProgressStatus)
+						{
+							updateableView.grid.SetValue(e.RowNumber,"ProgressStatus",false);
+							updateableView.grid.Refresh();
+						}
+						updateableView.Changed = true;
+					}
+					else
+					{
+						updateableView.grid.RejectChanges(e.RowNumber);
+						MessageBoxHelper.Show("CannotAuthoriseComposite","CompositeAuthorisationTitle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+					}
+				}
+			}
+			else
+			{
+				if (changedFund.FundStatus >= Fund.FundStatusType.Released)
+				{
+					updateableView.grid.RejectChanges(e.RowNumber);
+					MessageBoxHelper.Show("CannotUnauthoriseReleasedBody","CannotUnauthoriseReleasedTitle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+				}
+				else
+				{
+					updateableView.Changed = true;
+				}
+			}
+		}
+
+		private void authImportedPrice_CheckedChanged(object sender, CheckBoxEventArgs e)
+		{
+			Fund changedFund = fundAtRow(e.RowNumber);
+			
+			if (e.NewValue == true)
+			{
+				if(!changedFund.PriceSet)
+				{
+					updateableView.grid.RejectChanges(e.RowNumber);
+					MessageBoxHelper.Show("CannotAuthoriseUnimportedBody","CannotAuthoriseUnimportedTitle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+				}
+				else 
+				{
+					if (checkCompositeAuthorisation(changedFund))
+					{
+						if (changedFund.UsePredictedPrice)
+						{
+							updateableView.grid.SetValue(e.RowNumber,"UsePredictedPrice",false);
+							updateableView.grid.Refresh();
+						}
+						updateableView.Changed = true;
+					}		
+					else
+					{
+						updateableView.grid.RejectChanges(e.RowNumber);
+						MessageBoxHelper.Show("CannotAuthoriseComposite","CompositeAuthorisationTitle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+					}
+				}
+			}
+			else
+			{
+				if (changedFund.FundStatus >= Fund.FundStatusType.Released)
+				{
+					updateableView.grid.RejectChanges(e.RowNumber);
+					MessageBoxHelper.Show("CannotUnauthoriseReleasedBody","CannotUnauthoriseReleasedTitle",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+				}
+				else
+				{
+					updateableView.Changed = true;
+				}
+			}
+		}
+
+		#endregion
+	}
+}

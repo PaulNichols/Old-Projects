@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<configSections>
+		<section name="connectionStrings" type="System.Configuration.NameValueSectionHandler"/>
+	</configSections>
+	<connectionStrings>
+		<add key="Development - UPD_MVSII" value="Password=upd;Persist Security Info=True;User ID=upd;Initial Catalog=UPD_MVSII;Data Source=SQLSRV98\FSYS2000;Application Name=UPD Administration;"/>
+		<add key="Development - UPD" value="Password=upd;Persist Security Info=True;User ID=upd;Initial Catalog=UPD;Data Source=SQLSRV95;Application Name=UPD Administration;"/>
+		<add key="SAT - UPD_VAL" value="Password=upd;Persist Security Info=True;User ID=upd;Initial Catalog=UPD_VAL;Data Source=SQLSRV98\FSYS2000;Application Name=UPD Administration;"/>
+		<add key="SAT - UPD_ENQ" value="Password=upd;Persist Security Info=True;User ID=upd;Initial Catalog=UPD_ENQ;Data Source=SQLSRV94;Application Name=UPD Administration;"/>		
+		<add key="SAT - UPD_DIST" value="Password=upd;Persist Security Info=True;User ID=upd;Initial Catalog=UPD_DIST;Data Source=SQLSRV94;Application Name=UPD Administration;"/>				
+		<add key="Development - UPD_MVSIII" value="Password=upd;Persist Security Info=True;User ID=upd;Initial Catalog=UPD_MVSIII;Data Source=SQLSRV98\FSYS2000;Application Name=UPD Administration;"/>
+	</connectionStrings>
+</configuration>

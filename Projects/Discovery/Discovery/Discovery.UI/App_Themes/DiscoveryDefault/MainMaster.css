@@ -1,0 +1,17 @@
+﻿
+
+
+
+/* --------------------------------------------------------------------------------------------------- */
+/* Used when the Menu adapter is NOT used. */
+/* These styles are used by the Menu's skin, found in this theme's skin file. */
+
+.Menu-Skin-Static
+{
+    padding:2px 10px;
+}
+
+.Menu-Skin-DynamicHover
+{
+    background: #165EA9 url(bg-menu-main.gif) repeat-x;
+}

@@ -1,0 +1,62 @@
+using System;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.BenchMark;
+
+namespace HBOS.FS.AMP.UPD.Types.StockMarketIndex
+{
+	/// <summary>
+	/// Summary description for StockMarketIndex.
+	/// </summary>
+	public class StockMarketIndex:IBenchMark
+	{
+		/// <summary>
+		/// Creates a new <see cref="StockMarketIndex"/> instance.
+		/// </summary>
+		public StockMarketIndex()
+		{
+			//
+			// TODO: Add constructor logic here
+			//
+		}
+
+		#region IBenchMark implementation
+
+		/// <summary>
+		/// Gets the Bench Mark movement.
+		/// </summary>
+		/// <value></value>
+		public decimal Movement
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		/// <summary>
+		/// Gets the Bench Mark currency.
+		/// </summary>
+		/// <value></value>
+		public Currency Currency
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		/// <summary>
+		/// Gets the state of availability for the Bench Mark.
+		/// </summary>
+		/// <value></value>
+		public BenchMarkAvailabilityState Availability
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		/// <summary>
+		/// This message will show more explination for the BenchMarkAvailabilityState status.
+		/// </summary>
+		/// <value></value>
+		public string AvailableMessage
+		{
+			get { throw new NotImplementedException(); }
+		}
+
+		#endregion
+	}
+}

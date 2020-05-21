@@ -1,0 +1,62 @@
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.Currency;
+using HBOS.FS.Support.Tex;
+
+namespace HBOS.FS.AMP.UPD.Persistence
+{
+	/// <summary>
+	/// Summary description for AssetFundPricingPersister.
+	/// </summary>
+	public class AssetFundBenchMarkPersister : AssetFundStaticDataPersister
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="connectionString"></param>
+		public AssetFundBenchMarkPersister(string connectionString) : base(connectionString)
+		{
+			//
+			// TODO: Add constructor logic here
+			//
+		}
+
+
+		/// <summary>
+		/// Creates the light entity.
+		/// </summary>
+		/// <param name="reader">Reader.</param>
+		/// <returns></returns>
+		protected override AssetFund createLightEntity(SafeDataReader reader)
+		{
+			AssetFund newAssetFund = null;
+			T.E();
+			try
+			{
+				//Create a standard object (was previously a light object, but now these are removed),
+				//but just set the properties we're interested in and don't bother to load up any other data
+
+
+				//also retrieve its fund groups
+
+				AssetFund.AssetFundTypeEnum afType = resolveDBTypeToAssetFundType(reader.GetString("fundType"));
+				Currency currency = new Currency(reader.GetString("currencyCode"));
+				newAssetFund = new AssetFund(afType,
+				                             null,
+				                             null,
+				                             null,
+				                             null,
+				                             null,
+				                             null,
+				                             null,
+				                             currency);
+
+			}
+			finally
+			{
+				T.X();
+			}
+			return newAssetFund;
+		}
+
+	}
+}

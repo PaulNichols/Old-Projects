@@ -1,0 +1,308 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			OlymarsDemo.DataClasses namespace - Overview
+		</title>
+		<link href="StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			OlymarsDemo.DataClasses namespace
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				The <b>OlymarsDemo.DataClasses</b> namespace provides a set of classes that can make
+				all the necessary data access calls to the SQL Server database stored procedures.<br>
+				<br>
+				When you call a stored procedure, you usually perform 4 tasks:
+				<ul>
+					<li>
+						1- Affect the stored procedure parameters before the call
+					</li>
+					<li>
+						2- Call the stored procedure itself
+					</li>
+					<li>
+						3- Retrieve back the stored procedure return value and all the output parameters
+					</li>
+					<li>
+						4- If provided, retrieve back a resultset (or an XML stream)
+					</li>
+				</ul>
+				<br>
+				In order to perform those 4 tasks, two types of classes are provided:
+				<ul>
+					<li>
+						"<b>Parameter</b>" type of class: allows you to perform task #1 and #3
+					</li>
+					<li>
+						"<b>StoredProcedure</b>" type of class: allows you to perform task #2 and #4
+					</li>
+				</ul>
+				<br>
+				When you want to execute a given stored procedure, search for the 2 classes located in the
+				<b>OlymarsDemo.DataClasses.Parameters</b> and <b>OlymarsDemo.DataClasses.StoredProcedures</b> which names are the
+				names of your stored procedures. Whit these two types of class, you will able to successfully call
+				any stored procedure of your database.
+			</div>
+		</blockquote>		
+		<hr>
+		<div class="MainTitle">
+			Parameter
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				Before the stored procedure call, this type of classes allows you to supply the following information:
+				<ul>
+					<li>
+						The connection information: how do you want to connect to your database
+					</li>
+					<li>
+						Parameters values: what value do you want to affect to each of your stored procedure parameter
+					</li>
+				</ul>
+				After the stored procedure call, this type of classes allows you to retrieve the following information:
+				<ul>
+					<li>
+						Parameters values: Return Value and all the Output parameters
+					</li>
+					<li>
+						Exception information: information on exceptions that were thrown
+					</li>
+				</ul>
+			</div>
+		</blockquote>		
+		<hr>
+		<div class="MainTitle">
+			StoredProcedure
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				This type of classes allows to <b>actually make the call</b> to your stored procedure.<br>
+				<br>
+				If the stored procedure returns back a resultset (or an XML stream), this class will also
+				give you the ability to get back the data using various ways, such as getting back a <b>System.Data.DataSet</b>,
+				<b>System.Data.SqlClient.SqlDataReader</b>, ...
+			</div>
+		</blockquote>		
+		<hr>
+		<div class="MainTitle">
+			'OlymarsDemo' database stored procedures
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				You will find next the list of all the 'OlymarsDemo' stored procedures that you can call using
+				this namespace:<br>
+				(* indicates that the stored procedure was generated)
+			</div>
+			<br>
+			<table border="1" cellpadding="5" cellspacing="0" class="MainBody">
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spD_tblCategory.htm">spD_tblCategory</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spD_tblCustomer.htm">spD_tblCustomer</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spD_tblOrder.htm">spD_tblOrder</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spD_tblOrderItem.htm">spD_tblOrderItem</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spD_tblProduct.htm">spD_tblProduct</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spD_tblSupplier.htm">spD_tblSupplier</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spD_tblSupplierProduct.htm">spD_tblSupplierProduct</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spD_xDeleteDatabase.htm">spD_xDeleteDatabase</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spI_tblCategory.htm">spI_tblCategory</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spI_tblCustomer.htm">spI_tblCustomer</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spI_tblOrder.htm">spI_tblOrder</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spI_tblOrderItem.htm">spI_tblOrderItem</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spI_tblProduct.htm">spI_tblProduct</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spI_tblSupplier.htm">spI_tblSupplier</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spI_tblSupplierProduct.htm">spI_tblSupplierProduct</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblCategory.htm">spS_tblCategory</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblCategory_Display.htm">spS_tblCategory_Display</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblCustomer.htm">spS_tblCustomer</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblCustomer_Display.htm">spS_tblCustomer_Display</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrder.htm">spS_tblOrder</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrder_Display.htm">spS_tblOrder_Display</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrder_Full.htm">spS_tblOrder_Full</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrder_SelectDisplay.htm">spS_tblOrder_SelectDisplay</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrderItem.htm">spS_tblOrderItem</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrderItem_Display.htm">spS_tblOrderItem_Display</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrderItem_Full.htm">spS_tblOrderItem_Full</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblOrderItem_SelectDisplay.htm">spS_tblOrderItem_SelectDisplay</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblProduct.htm">spS_tblProduct</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblProduct_Display.htm">spS_tblProduct_Display</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblProduct_Full.htm">spS_tblProduct_Full</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblProduct_SelectDisplay.htm">spS_tblProduct_SelectDisplay</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblSupplier.htm">spS_tblSupplier</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblSupplier_Display.htm">spS_tblSupplier_Display</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblSupplierProduct.htm">spS_tblSupplierProduct</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblSupplierProduct_Display.htm">spS_tblSupplierProduct_Display</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_tblSupplierProduct_Full.htm">spS_tblSupplierProduct_Full</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_tblSupplierProduct_SelectDisplay.htm">spS_tblSupplierProduct_SelectDisplay</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_xProductQuantityPerOrder.htm">spS_xProductQuantityPerOrder</a>
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_xQuantityOrderedPerProduct.htm">spS_xQuantityOrderedPerProduct</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_xReadOrderDateAmount.htm">spS_xReadOrderDateAmount</a>
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_xReadOrderItems.htm">spS_xReadOrderItems</a>
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_xReadOrderLines.htm">spS_xReadOrderLines</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_xSearchCustomer.htm">spS_xSearchCustomer</a>
+					</td>
+					<td>
+						<a href="Stored_Procedures/spU_tblCategory.htm">spU_tblCategory</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spU_tblCustomer.htm">spU_tblCustomer</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spU_tblOrder.htm">spU_tblOrder</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spU_tblOrderItem.htm">spU_tblOrderItem</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spU_tblProduct.htm">spU_tblProduct</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spU_tblSupplier.htm">spU_tblSupplier</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spU_xUpdateTotalOrderAmount.htm">spU_xUpdateTotalOrderAmount</a>
+					</td>
+					<td>
+						<a href="Stored_Procedures/spX_xRebuildIndexes.htm">spX_xRebuildIndexes</a>*
+					</td>
+				</tr>
+			</table>
+		</blockquote>	
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:58
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

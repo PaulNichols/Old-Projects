@@ -1,0 +1,959 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			WebListBoxCustom_spS_tblProduct_Full - Members overview
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			WebListBoxCustom_spS_tblProduct_Full
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			To read an overview on this class, click <a href="WebListBox_spS_tblProduct_Full.htm">here</a>.<br>
+			To see an example on how to call this class in Visual C# .NET, click <a href="WebListBox_spS_tblProduct_Full_CS.htm">here</a>.<br>
+			To see an example on how to call this class in Visual Basic .NET, click <a href="WebListBox_spS_tblProduct_Full_VB.htm">here</a>.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#ConnectionType">ConnectionType</a>
+					</li>
+					<li>
+						<a href="#ConnectionString">ConnectionString</a>
+					</li>
+					<li>
+						<a href="#DoDataBindAfterRefreshData">DoDataBindAfterRefreshData</a>
+					</li>
+					<li>
+						<a href="#Initialize1">Initialize</a>
+					</li>
+					<li>
+						<a href="#RefreshData1">RefreshData</a>
+					</li>
+					<li>
+						<a href="#SelectedRecordID">SelectedRecordID</a>
+					</li>
+					<li>
+						<a href="#SelectedRecordsID">SelectedRecordsID</a>
+					</li>
+					<li>
+						<a href="#SP_Parameter">SP_Parameter</a>
+					</li>
+					<li>
+						<a href="#SqlConnection">SqlConnection</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Constructor"></a>
+		<div class="MainTitle">
+			Public Constructor
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New()
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+						public WebListBoxCustom_spS_tblProduct_Full();
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>OlymarsDemo.Web.ListBoxes.WebListBoxCustom_spS_tblProduct_Full</b> class.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Property
+		</div>
+		<blockquote>
+			<a name="ConnectionType"></a>
+			<div class="Highlight">
+				ConnectionType
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionType As OlymarsDemo.DataClasses.ConnectionType<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public OlymarsDemo.DataClasses.ConnectionType ConnectionType { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the current type of connection that is going or has been used
+					against the Sql Server database. It can be:
+					<ul>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.None
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.ConnectionString
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.SqlConnection
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.SqlTransaction [Not available here]
+						</li>
+					</ul>
+					This property is set when you instanciate this class depending on the
+					overloaded version of the <a href="#Initialize1">Initialize</a> method
+					you have used.<br>
+				</div>
+			</blockquote>
+			<a name="ConnectionString"></a>
+			<div class="Highlight">
+				ConnectionString
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionString As String<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string ConnectionString { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the connection string to be used against the 
+					SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>OlymarsDemo.DataClasses.ConnectionType.ConnectionString</b>.
+				</div>
+			</blockquote>
+			<a name="SqlConnection"></a>
+			<div class="Highlight">
+				SqlConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlConnection As System.Data.SqlClient.SqlConnection<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlConnection SqlConnection { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used
+					against the SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>OlymarsDemo.DataClasses.ConnectionType.SqlConnection</b>.
+				</div>
+			</blockquote>
+			<a name="SP_Parameter"></a>
+			<div class="Highlight">
+				SP_Parameter
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SP_Parameter As OlymarsDemo.DataClasses.Parameters.spS_tblProduct_Full<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public OlymarsDemo.DataClasses.Parameters.spS_tblProduct_Full SP_Parameter { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the Parameter class that was used to populate this control. For more information on this class, click
+					<a href="../../Stored_Procedures/spS_tblProduct_Full_Param_Members.htm">here</a>.
+				</div>
+			</blockquote>
+			<a name="DoDataBindAfterRefreshData"></a>
+			<div class="Highlight">
+				DoDataBindAfterRefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Property DoDataBindAfterRefreshData As Boolean<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public bool DoDataBindAfterRefreshData { get; set; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Gets or sets the fact that the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWebUIControlClassDataBindTopic.htm">DataBind</a>
+					method has to be called after the <a href="#RefreshData1">RefreshData</a> method call.
+				</div>
+			</blockquote>
+			<a name="SelectedRecordID"></a>
+			<div class="Highlight">
+				SelectedRecordID
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SelectedRecordID As String<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string SelectedRecordID { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the currently selected record primary key.
+				</div>
+			</blockquote>
+			<a name="SelectedRecordsID"></a>
+			<div class="Highlight">
+				SelectedRecordsID
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SelectedRecordsID As System.Collections.ArrayList<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Collections.ArrayList SelectedRecordsID { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the currently selected records primary keys. This property is only available if
+					SelectionMode=MultiSimple or SelectionMode=MultiExtended.<br>
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Methods
+		</div>
+		<blockquote>
+			<a name="Initialize1"></a>
+			<div class="Highlight">
+				Initialize
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal connectionString As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal valueMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal displayMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_GuidID As System.Data.SqlTypes.SqlGuid<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_ReturnXML As System.Data.SqlTypes.SqlBoolean<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string connectionString<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string valueMember<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string displayMember<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid param_Pro_GuidID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 param_Pro_LngCategoryID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlBoolean param_ReturnXML<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Initializes the control. You need to specify how to connect to the
+					SQL Server database. You also need to supply the <b>spS_tblProduct_Full</b>
+					stored procedure parameters.<br>
+					<br>					
+					By default, if this stored procedure returns more than one resultset,
+					the <b>first one</b> will be used to populate this control.<br>
+					<br>
+					The data will only be populated once you have called the <a href="#RefreshData1">RefreshData</a> method.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					<blockquote>
+						If a blank connection string is supplied, the class will search for:<br>
+						<br>
+						&nbsp;&nbsp;First an entry in the configuration file:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+						<br>
+						&nbsp;&nbsp;Then the following registry entry:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\OlymarsDemo<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+						<br>
+						A helper function that can build this connection string for you is available. See the <a href="../../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+						<br>
+						To see the documentation on how to build this connection string,
+						<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+					</blockquote>
+					<b>valueMember</b>: name of the field to be used as a primary key.<br>
+					<br>
+					<b>displayMember</b>: name of the field to be used for the content display.<br>
+					<br>
+					<b>param_Pro_GuidID</b>: Value for the parameter <b>@Pro_GuidID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_GuidID" column.</b><br>
+						<br>
+					<b>param_Pro_LngCategoryID</b>: Value for the parameter <b>@Pro_LngCategoryID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_LngCategoryID" column.</b><br>
+						<br>
+					<b>param_ReturnXML</b>: Value for the parameter <b>@ReturnXML</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>False if you want the data back in a resultset. True if you want the data back in an XML stream.</b><br>
+						<br>
+				</div>
+			</blockquote>
+			<a name="Initialize2"></a>
+			<div class="Highlight">
+				Initialize
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal connectionString As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal valueMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal displayMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal tableName As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_GuidID As System.Data.SqlTypes.SqlGuid<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_ReturnXML As System.Data.SqlTypes.SqlBoolean<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string connectionString<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string valueMember<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string displayMember<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string tableName<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid param_Pro_GuidID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 param_Pro_LngCategoryID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlBoolean param_ReturnXML<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Initializes the control. You need to specify how to connect to the
+					SQL Server database. You also need to supply the <b>spS_tblProduct_Full</b>
+					stored procedure parameters.<br>
+					<br>					
+					The data will only be populated once you have called the <a href="#RefreshData1">RefreshData</a> method.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					<blockquote>
+						If a blank connection string is supplied, the class will search for:<br>
+						<br>
+						&nbsp;&nbsp;First an entry in the configuration file:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+						<br>
+						&nbsp;&nbsp;Then the following registry entry:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\OlymarsDemo<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+						<br>
+						A helper function that can build this connection string for you is available. See the <a href="../../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+						<br>
+						To see the documentation on how to build this connection string,
+						<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+					</blockquote>
+					<b>valueMember</b>: name of the field to be used as a primary key.<br>
+					<br>
+					<b>displayMember</b>: name of the field to be used for the content display.<br>
+					<br>
+					<b>tableName</b>: name of the table to use to populate the control.
+					<blockquote>
+						If this stored procedure returns more than one resultset, the DataSet will be populated with tables which names are:
+						<ul>
+							<li>
+								spS_tblProduct_Full
+							</li>
+							<li>
+								spS_tblProduct_Full1
+							</li>
+							<li>
+								spS_tblProduct_Full2
+							</li>
+							<li>
+								...
+							</li>
+							<li>
+								spS_tblProduct_FullX
+							</li>
+						</ul>
+						where X = total resultset number - 1<br>
+					</blockquote>
+					<b>param_Pro_GuidID</b>: Value for the parameter <b>@Pro_GuidID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_GuidID" column.</b><br>
+						<br>
+					<b>param_Pro_LngCategoryID</b>: Value for the parameter <b>@Pro_LngCategoryID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_LngCategoryID" column.</b><br>
+						<br>
+					<b>param_ReturnXML</b>: Value for the parameter <b>@ReturnXML</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>False if you want the data back in a resultset. True if you want the data back in an XML stream.</b><br>
+						<br>
+				</div>
+			</blockquote>
+			<a name="Initialize3"></a>
+			<div class="Highlight">
+				Initialize
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+								&nbsp;&nbsp;&nbsp;, ByVal valueMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal displayMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_GuidID As System.Data.SqlTypes.SqlGuid<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_ReturnXML As System.Data.SqlTypes.SqlBoolean<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlConnection sqlConnection<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string valueMember<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string displayMember<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid param_Pro_GuidID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 param_Pro_LngCategoryID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlBoolean param_ReturnXML<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Initializes the control. You need to specify how to connect to the
+					SQL Server database. You also need to supply the <b>spS_tblProduct_Full</b>
+					stored procedure parameters.<br>
+					<br>					
+					By default, if this stored procedure returns more than one resultset,
+					the <b>first one</b> will be used to populate this control.<br>
+					<br>
+					The data will only be populated once you have called the <a href="#RefreshData1">RefreshData</a> method.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. If it is not opened, it will be
+					opened when used then closed again after the job is done.<br>
+					<br>
+					<b>valueMember</b>: name of the field to be used as a primary key.<br>
+					<br>
+					<b>displayMember</b>: name of the field to be used for the content display.<br>
+					<br>
+					<b>param_Pro_GuidID</b>: Value for the parameter <b>@Pro_GuidID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_GuidID" column.</b><br>
+						<br>
+					<b>param_Pro_LngCategoryID</b>: Value for the parameter <b>@Pro_LngCategoryID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_LngCategoryID" column.</b><br>
+						<br>
+					<b>param_ReturnXML</b>: Value for the parameter <b>@ReturnXML</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>False if you want the data back in a resultset. True if you want the data back in an XML stream.</b><br>
+						<br>
+				</div>
+			</blockquote>
+			<a name="Initialize4"></a>
+			<div class="Highlight">
+				Initialize
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+								&nbsp;&nbsp;&nbsp;, ByVal valueMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal displayMember As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal tableName As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_GuidID As System.Data.SqlTypes.SqlGuid<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByVal param_ReturnXML As System.Data.SqlTypes.SqlBoolean<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlConnection sqlConnection<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string valueMember<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string displayMember<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string tableName<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid param_Pro_GuidID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 param_Pro_LngCategoryID<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlBoolean param_ReturnXML<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Initializes the control. You need to specify how to connect to the
+					SQL Server database. You also need to supply the <b>spS_tblProduct_Full</b>
+					stored procedure parameters.<br>
+					<br>					
+					The data will only be populated once you have called the <a href="#RefreshData1">RefreshData</a> method.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. If it is not opened, it will be
+					opened when used then closed again after the job is done.<br>
+					<br>
+					<b>valueMember</b>: name of the field to be used as a primary key.<br>
+					<br>
+					<b>displayMember</b>: name of the field to be used for the content display.<br>
+					<br>
+					<b>tableName</b>: name of the table to use to populate the control.
+					<blockquote>
+						If this stored procedure returns more than one resultset, the DataSet will be populated with tables which names are:
+						<ul>
+							<li>
+								spS_tblProduct_Full
+							</li>
+							<li>
+								spS_tblProduct_Full1
+							</li>
+							<li>
+								spS_tblProduct_Full2
+							</li>
+							<li>
+								...
+							</li>
+							<li>
+								spS_tblProduct_FullX
+							</li>
+						</ul>
+						where X = total resultset number - 1<br>
+					</blockquote>
+					<b>param_Pro_GuidID</b>: Value for the parameter <b>@Pro_GuidID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_GuidID" column.</b><br>
+						<br>
+					<b>param_Pro_LngCategoryID</b>: Value for the parameter <b>@Pro_LngCategoryID</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "Pro_LngCategoryID" column.</b><br>
+						<br>
+					<b>param_ReturnXML</b>: Value for the parameter <b>@ReturnXML</b>.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>False if you want the data back in a resultset. True if you want the data back in an XML stream.</b><br>
+						<br>
+				</div>
+			</blockquote>
+			<a name="RefreshData1"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData()
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads the <b>chosen resultset returned by the stored procedure</b>. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">OlymarsDemo.DataClasses.CustomException</a> is thrown.
+				</div>
+			</blockquote>
+			<a name="RefreshData2"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal startRecord As Integer<br>
+								&nbsp;&nbsp;&nbsp;, ByVal maxRecords As Integer<br>
+								)
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int startRecord<br>
+								&nbsp;&nbsp;&nbsp;, int maxRecords<br>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads a subset of the <b>chosen resultset returned by the stored procedure</b>. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">OlymarsDemo.DataClasses.CustomException</a> is thrown.<br>
+					<br>
+					<b>startRecord</b>: The zero-based record number to start with.<br>
+					<br>
+					<b>maxRecords</b>: The maximum number of records to retrieve.
+				</div>
+			</blockquote>
+			<a name="RefreshData3"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal PrimaryKey As Object<br>
+								)
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object PrimaryKey<br>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads the <b>chosen resultset returned by the stored procedure</b>. You can specify which record you want to be selected
+					by default. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">OlymarsDemo.DataClasses.CustomException</a> is thrown.<br>
+					<br>
+					<b>PrimaryKey</b>: Primary key of the record you want to be selected by default.<br>
+				</div>
+			</blockquote>
+			<a name="RefreshData4"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal PrimaryKey As Object<br>
+								&nbsp;&nbsp;&nbsp;, ByVal startRecord As Integer<br>
+								&nbsp;&nbsp;&nbsp;, ByVal maxRecords As Integer<br>
+								)
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object PrimaryKey<br>
+								&nbsp;&nbsp;&nbsp;, int startRecord<br>
+								&nbsp;&nbsp;&nbsp;, int maxRecords<br>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads a subset of the <b>chosen resultset returned by the stored procedure</b>. You can specify which record you want to be selected
+					by default. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">OlymarsDemo.DataClasses.CustomException</a> is thrown.<br>
+					<br>
+					<b>PrimaryKey</b>: Primary key of the record you want to be selected by default.<br>
+					<br>
+					<b>startRecord</b>: The zero-based record number to start with.<br>
+					<br>
+					<b>maxRecords</b>: The maximum number of records to retrieve.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:40
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

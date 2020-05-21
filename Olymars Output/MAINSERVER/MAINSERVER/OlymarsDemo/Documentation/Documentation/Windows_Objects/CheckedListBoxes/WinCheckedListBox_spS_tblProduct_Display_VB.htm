@@ -1,0 +1,180 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			WinCheckedListBox_tblProduct - Reusing the Windows CheckedListBox in Visual Basic .NET
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			WinCheckedListBox_tblProduct
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Reusing the Windows CheckedListBox in Visual Basic .NET
+		</div>
+		<hr>
+			<div class="MainTitle">
+				Overview
+			</div>
+			<blockquote>
+				<div class="MainBody">
+					This class was generated for the [<a href="../../Tables/tblProduct.htm">tblProduct</a>] table.<br>
+					It is located in the <span class="FixedHighLight">OlymarsDemo.Windows.CheckedListBoxes</span> namespace.<br>
+					<br>
+					This class derives from the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsCheckedListBoxClassTopic.htm">System.Windows.Forms.CheckedListBox</a> class.<br>
+					<br>
+					It allows you to display the [<a href="../../Tables/tblProduct.htm">tblProduct</a>] table content.
+					Please note that this class relies on the underlying
+					class [<a href="../../Tables/HowTo_Select/tblProduct_Overview.htm#Display">OlymarsDemo.DataClasses.StoredProcedures.spS_tblProduct_Display</a>].<br>
+				</div>
+			</blockquote>
+			<hr>
+			<div class="MainTitle">
+				Step by step tutorial
+			</div>
+			<blockquote>
+				<div class="MainTitle">
+					First Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						If you are in Visual Studio.NET, make a reference to the following
+						assembly: "OlymarsDemo.dll".
+					</div>
+					<br>
+					<div class="MainBody">
+						If you are using the compiler, be sure to add a "/r:" switch pointing
+						on the following assembly: "OlymarsDemo.dll".
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Second Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Customize your tool box in Visual Studio.NET by:<br>
+						<UL>
+							<LI>Add new tab in your control box (name it OlymarsDemo, for example)</LI>
+							<LI>
+								Right-Click on this new tab and click on the "Customize Toolbox..." menu
+							</LI>
+							<LI>
+								Switch to the "NET Framework Components" tab
+							</LI>
+							<LI>Click on the "Browse" button and find the OlymarsDemo.dll assembly</LI>
+							<LI>
+								Check the following control:
+								<UL>
+									<LI>Name: <span class="FixedHighLight">WinCheckedListBox_tblProduct</span></LI>
+									<LI>Namespace: <span class="FixedHighLight">OlymarsDemo.Windows.CheckedListBoxes</span></LI>
+								</UL>
+							</LI>
+							<LI>Drag and drop this control on your form and name it:<br><b>winCheckedListBox_tblProduct1</b></LI>
+						</UL>
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Third Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						add thoses directives at the top of your code:
+					</div>
+					<div class="Code">
+						Imports OlymarsDemo.DataClasses<br>
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Fourth Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Use this <b><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsCheckedListBoxClassTopic.htm">System.Windows.Forms.CheckedListBox</a></b> based class as described below:
+					</div>
+					<br>
+					<div class="Code">
+						<div class="FixedComment">
+							' Let's build a connection string to the database.<br>
+							' Note: the connection string policy is described <a href="../../Stored_Procedures/spS_tblProduct_VB.htm#Connection">here</a>.<br>
+							' <br>
+							' To see the documentation on how to build this connection string,<br>
+							' <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a>
+						</div>
+						Dim ConnectionString As String = _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information.BuildConnectionString("MAINSERVER\MAINSERVER", "OlymarsDemo")<br>
+						<br>
+						<div class="FixedComment">
+							' Thoses variables are here to specify any foreign keys value in order<br>
+							' to get only a subset of the table records.
+						</div>
+						<br>
+						<div class="FixedComment">
+							' TODO: Supply your own value here. Type must be:<br>
+							' either System.Data.SqlTypes.SqlInt32<br>
+							'     or System.Int32
+						</div>
+						Dim _Pro_LngCategoryID As Object = Nothing<br>
+						<br>
+						<br>
+						<div class="FixedComment">
+							' Let's initialize the control by specifying the connection string<br>
+							' and all related foreign keys if we want a subset of the current table records.
+						</div>
+						winCheckedListBox_tblProduct1.Initialize(ConnectionString<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, _Pro_LngCategoryID<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+						<br>
+						<div class="FixedComment">
+							' If you want the control to check automatically one or more<br>
+							' specific records, fill an ArrayList (<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemCollectionsArrayListClassTopic.htm">System.Collections.ArrayList</a>)<br>
+							' with the desired primay keys.
+						</div>
+						Dim ArrayOf_Pro_GuidID As New _<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Collections.ArrayList()<br>
+						<br>
+						ArrayOf_Pro_GuidID.Add(...)<br>
+						ArrayOf_Pro_GuidID.Add(...)<br>
+						<br>
+						winCheckedListBox_tblProduct1.RefreshData(ArrayOf_Pro_GuidID)<br>
+						<br>
+						<div class="FixedComment">
+							' If a record is selected in the control, we can ask the control<br>
+							' to refresh all the table fields related to this record.
+						</div>
+						<br>
+						<div class="FixedComment">
+							' Once a record is selected in the control, we can ask the control<br>
+							' to refresh all the table fields related to this record.
+						</div>
+						If winCheckedListBox_tblProduct1.SelectedIndex &lt;&gt; -1 Then<br>
+						<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;winCheckedListBox_tblProduct1.RefreshCurrentRecord()<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' We can now access all the table fields via the abstract class
+						</div>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(winCheckedListBox_tblProduct1.Abstract_tblProduct.Col_Pro_StrName.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... = winCheckedListBox_tblProduct1.Abstract_tblProduct.Col_Pro_StrName<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+						<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(winCheckedListBox_tblProduct1.Abstract_tblProduct.Col_Pro_CurPrice.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... = winCheckedListBox_tblProduct1.Abstract_tblProduct.Col_Pro_CurPrice<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+						<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(winCheckedListBox_tblProduct1.Abstract_tblProduct.Col_Pro_LngCategoryID.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... = winCheckedListBox_tblProduct1.Abstract_tblProduct.Col_Pro_LngCategoryID<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+						<br>
+						End If<br>
+				</blockquote>
+			</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:33
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

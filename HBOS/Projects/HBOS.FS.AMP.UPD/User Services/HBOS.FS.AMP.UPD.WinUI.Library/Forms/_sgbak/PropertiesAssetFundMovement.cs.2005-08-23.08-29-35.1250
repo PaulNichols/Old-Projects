@@ -1,0 +1,178 @@
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.WinUI.Classes;
+using HBOS.FS.AMP.UPD.WinUI.Helpers;
+using HBOS.FS.AMP.UPD.WinUI.UserControls;
+using DataGrid = HBOS.FS.AMP.Windows.Controls.DataGrid;
+using HBOSGrid = HBOS.FS.AMP.Windows.Controls.DataGrid;
+
+namespace HBOS.FS.AMP.UPD.WinUI.Forms
+{
+	/// <summary>
+	/// Summary description for PropertiesAssetFundMovement.
+	/// </summary>
+	public class PropertiesAssetFundMovement : UserControl
+	{
+		private DataGrid assetFundMovementGrid;
+		private Label lblAFMovementValue;
+		private Label lblAFMovement;
+
+		/// <summary> 
+		/// Required designer variable.
+		/// </summary>
+		private Container components = null;
+
+
+		/// <summary>
+		/// This is a control shared by both the Status view screens. 
+		/// When the properties for a chosen item is viewed, this control 
+		/// will show the Asset fund movement in a grid
+		/// </summary>
+		public PropertiesAssetFundMovement()
+		{
+			// This call is required by the Windows.Forms Form Designer.
+			InitializeComponent();
+
+			// TODO: Add any initialization after the InitializeComponent call
+
+		}
+
+		/// <summary> 
+		/// Clean up any resources being used.
+		/// </summary>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				if (components != null)
+				{
+					components.Dispose();
+				}
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Component Designer generated code
+
+		/// <summary> 
+		/// Required method for Designer support - do not modify 
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.assetFundMovementGrid = new HBOS.FS.AMP.Windows.Controls.DataGrid();
+			this.lblAFMovementValue = new System.Windows.Forms.Label();
+			this.lblAFMovement = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.assetFundMovementGrid)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// assetFundMovementGrid
+			// 
+			this.assetFundMovementGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+				| System.Windows.Forms.AnchorStyles.Left) 
+				| System.Windows.Forms.AnchorStyles.Right)));
+			this.assetFundMovementGrid.DataMember = "";
+			this.assetFundMovementGrid.FlatMode = false;
+			this.assetFundMovementGrid.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.assetFundMovementGrid.GridLineColor = System.Drawing.Color.Black;
+			this.assetFundMovementGrid.HeaderFont = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.assetFundMovementGrid.Location = new System.Drawing.Point(0, 24);
+			this.assetFundMovementGrid.Name = "assetFundMovementGrid";
+			this.assetFundMovementGrid.PrintColumnHeadingFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+			this.assetFundMovementGrid.PrintColumnSettings = null;
+			this.assetFundMovementGrid.PrintPageHeadingFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+			this.assetFundMovementGrid.PrintStandardFont = new System.Drawing.Font("Arial", 8F);
+			this.assetFundMovementGrid.Size = new System.Drawing.Size(328, 152);
+			this.assetFundMovementGrid.TabIndex = 6;
+			// 
+			// lblAFMovementValue
+			// 
+			this.lblAFMovementValue.Location = new System.Drawing.Point(192, 8);
+			this.lblAFMovementValue.Name = "lblAFMovementValue";
+			this.lblAFMovementValue.Size = new System.Drawing.Size(120, 14);
+			this.lblAFMovementValue.TabIndex = 8;
+			this.lblAFMovementValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lblAFMovement
+			// 
+			this.lblAFMovement.Location = new System.Drawing.Point(8, 8);
+			this.lblAFMovement.Name = "lblAFMovement";
+			this.lblAFMovement.Size = new System.Drawing.Size(174, 14);
+			this.lblAFMovement.TabIndex = 7;
+			this.lblAFMovement.Text = "Total Asset Fund movement:";
+			// 
+			// PropertiesAssetFundMovement
+			// 
+			this.Controls.Add(this.lblAFMovementValue);
+			this.Controls.Add(this.lblAFMovement);
+			this.Controls.Add(this.assetFundMovementGrid);
+			this.Name = "PropertiesAssetFundMovement";
+			this.Size = new System.Drawing.Size(328, 176);
+			((System.ComponentModel.ISupportInitialize)(this.assetFundMovementGrid)).EndInit();
+			this.ResumeLayout(false);
+
+		}
+
+		#endregion
+
+		/// <summary>
+		/// This method will populate the control with details from the Asset fund
+		/// </summary>
+		/// <param name="currentAssetFund"></param>
+		public void Populate(AssetFund currentAssetFund)
+		{
+			AssetFundDecorator decoratoredAssetFund=AssetFundDecorator.ToDecoratedObject(currentAssetFund);
+			lblAFMovementValue.Text =  decoratoredAssetFund.PredictedAssetMovementDisplay;
+
+			HBOSGrid grid = assetFundMovementGrid;
+			DataGridTableStyle style = new DataGridTableStyle();
+
+		//	grid.MouseDown+=new MouseEventHandler(grid_mousedown);
+			grid.TableStyles.Clear();
+			grid.TableStyles.Add(style);
+
+			style.AlternatingBackColor = Color.WhiteSmoke;
+			style.DataGrid = grid;
+			style.HeaderForeColor = SystemColors.ControlText;
+			style.MappingName = "";
+
+			// Hack to allow for multi-line header rows.
+			// This requires a large font (36pt) to be set for grid.HeaderFont through the properties window
+			style.HeaderFont = grid.Font;
+
+			//set-up the columns
+			SetUpColumns(grid);
+
+			assetFundMovementGrid.BindToCustomCollection(AssetMovementConstituentPropertiesDecorator.FromConstituentListToDecorated(decoratoredAssetFund.AssetFund.AssetMovementConstituents) );
+//			ImportControl.SizeColumnsToContent(grid,-1);
+			ImportControl.SetGridPrinterSettings(grid,style);
+
+		}
+
+
+		private  void SetUpColumns(DataGrid grid)
+		{
+			const int defaultColWidth = 80;
+
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "BenchmarkDisplayName", "Name", 150, HorizontalAlignment.Left, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "ProportionDisplay", "Weighting (%).", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "CurrencyCode", "Benchmark\nCurrency", defaultColWidth, HorizontalAlignment.Left, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "BenchmarkMovement", "Benchmark.\nMovement (%).", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "CurrencyMovement", "Currency.\nMovement (%).", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "TotalMovement", "Total.\nMovement (%).", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "Effect", "Effect (%).", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "Availiblity", "Availiblity.", 150, HorizontalAlignment.Left, "AvailabilityMessage");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "PreviousBenchmarkValue", "Previous.\nBenchmark.\nValue.", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "CurrentBenchmarkValue", "Current.\nBenchmark.\nValue.", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "PreviousAssetFundExchangeRate", "Previous.\nFund Exchange Rate.", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "CurrentAssetFundExchangeRate", "Current.\nFund Exchange.\nRate.", defaultColWidth, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "PreviousBenchmarkExchangeRate", "Previous.\nBenchmark.\nExchange Rate.", 120, HorizontalAlignment.Right, "");
+			StatusViewController.AddTextBoxReadOnlyColumnStyle(grid, "CurrentBenchmarkExchangeRate", "Current.\nBenchmark.\nExchange Rate.", 120, HorizontalAlignment.Right, "");
+		}
+
+		
+        }
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+How to Use:
+Roles and Rule can be combined
+If no Role and no Rule is defined
+-->
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode  title="Management Server" url="Default.aspx?" >
+    <siteMapNode url="Default.aspx" title="Home"  rules="Basic" description="Return to the Home Page" />
+    <siteMapNode title="Shipments"  description="Shipment Related Screens" >
+      <siteMapNode url="Shipments/OpCoShipments.aspx" title="OpCo Shipments" rules="Shipment: OpCo Shipment Search"></siteMapNode>
+      <siteMapNode url="Shipments/TDCShipments.aspx" title="TDC Shipments" rules="Shipment: TDC Shipment Search"></siteMapNode>
+      <siteMapNode url="Shipments/TDCShipment.aspx" title="Add Ad-hoc/Warehouse Shipment" rules="Shipment: Edit Ad-Hoc Order Detail"></siteMapNode>
+      <siteMapNode url="Shipments/SummaryByRoute.aspx" title="Summary By Route" rules="Shipment: Summary By Route"></siteMapNode>
+      <siteMapNode url="Shipments/SummaryByTrip.aspx" title="Summary By Trip" rules="Shipment: Summary By Trip"></siteMapNode>
+      <siteMapNode url="Shipments/TrunkedStockSummary.aspx" title="Trunked Stock Summary" rules="Shipment: View Trunked Stock Summary"></siteMapNode>
+
+      <siteMapNode  title="OpTrak"  >
+        <siteMapNode url="Optrak/OptrakGeneration.aspx" title="Generate OpTrak Files"  rules="Optrak: Generate Files" />
+        <siteMapNode url="Optrak/RoutingHistory.aspx" title="View Routing History"  rules="Optrak: View Routing History" />
+      </siteMapNode>
+
+    </siteMapNode>
+
+    <siteMapNode title="Administration"  >
+
+      <siteMapNode  title="Integration"  >
+        <siteMapNode url="admin/Integration/Connections.aspx" title="Connections" rules="Integration: View Connections"></siteMapNode>
+        <siteMapNode url="admin/Integration/DownTimes.aspx" title="Connection Down Times" rules="Integration: View Down Times" ></siteMapNode>
+        <siteMapNode url="admin/Integration/Tasks.aspx" title="Tasks" rules="Integration: View Tasks" ></siteMapNode>
+      </siteMapNode>
+      <siteMapNode  title="Errors And Logging"  >
+      <siteMapNode url="admin/logging/logentries.aspx" title="Log Viewer" rules="Admin: View Log Entries"  />
+      <siteMapNode url="admin/logging/ErrorHandling.aspx" title="Error Handling" rules="Admin: View Error Handling"  />
+      </siteMapNode>
+      <siteMapNode url="admin/MessageAudits.aspx" title="Message Audit" rules="Admin: View Message Audits"  />
+      <siteMapNode url="admin/printjobs.aspx" title="Print Queues"  rules="Admin: View Print Jobs"  />
+
+      <siteMapNode  title="Security"  >
+        <siteMapNode url="admin/security/Roles.aspx" title="Roles" rules="Admin: View Roles"></siteMapNode>
+        <siteMapNode url="admin/security/rules.aspx" title="Rules" rules="Admin: View Rules"></siteMapNode>
+        <siteMapNode url="admin/security/users.aspx" title="Users" rules="Admin: View Users"></siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode url="admin/Sequences.aspx" title="Sequences" rules="Admin: View Sequence Numbers"/>
+
+      <siteMapNode  title="Scheduling"  >
+        <siteMapNode url="scheduling/Schedules.aspx" title="Schedules" rules="Scheduling: View Schedules"/>
+        <siteMapNode url="scheduling/ScheduleHistories.aspx" title="Schedule History" rules="Scheduling: View ScheduleHistory"/>
+        <siteMapNode url="scheduling/ScheduleStatus.aspx" title="Schedule Status" rules="Scheduling: View ScheduleStatus"/>
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode  title="Reference Data"  >
+      <siteMapNode url="ReferenceData/LoadCategories.aspx" title="Load Categories" rules="Reference Data: View Load Categories" ></siteMapNode>
+      <siteMapNode url="ReferenceData/Mappings.aspx" title="Mapping" rules="Reference Data: View Mappings"></siteMapNode>
+      <siteMapNode url="ReferenceData/NonWorkingDays.aspx" title="Non-Working Days"  rules="Reference Data: View Non Working Days"></siteMapNode>
+      <siteMapNode url="ReferenceData/OpCos.aspx" title="Operating Companies" rules="Reference Data: View Opcos"></siteMapNode>
+      <siteMapNode url="ReferenceData/OpCoDivisions.aspx" title="Operating Company Divisions" rules="Reference Data: View Opco Divisions"></siteMapNode>
+      <siteMapNode url="ReferenceData/OptrakRegions.aspx" title="Optrak Regions" rules="Reference Data: View Regions"></siteMapNode>
+      <siteMapNode url="ReferenceData/Routes.aspx" title="Routes" rules="Reference Data: View Routes"></siteMapNode>
+      <siteMapNode url="ReferenceData/SalesLocations.aspx" title="Sales Locations"  rules="Reference Data: View Sales Locations"></siteMapNode>
+      <siteMapNode url="ReferenceData/TransactionTypes.aspx" title="Transaction Types" rules="Reference Data: View Transaction Types"></siteMapNode>
+      <siteMapNode url="ReferenceData/TransactionSubTypes.aspx" title="Transaction Sub Types" rules="Reference Data: View Transaction Sub Types"></siteMapNode>
+      <siteMapNode url="ReferenceData/TrunkerDays.aspx" title="Trunker Days" rules="Reference Data: View Trunker Days"></siteMapNode>
+      <siteMapNode url="ReferenceData/Warehouses.aspx" title="Warehouse"  rules="Reference Data: View Warehouses"></siteMapNode>
+
+
+
+    </siteMapNode>
+
+  </siteMapNode>
+</siteMap>

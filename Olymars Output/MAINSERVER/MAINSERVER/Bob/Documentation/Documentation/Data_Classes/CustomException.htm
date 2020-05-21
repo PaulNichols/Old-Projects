@@ -1,0 +1,257 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			Bob.DataClasses namespace - CustomException Class
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			Bob.DataClasses namespace
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;CustomException Class
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				This custom exception can be thrown by any class that makes, behind the
+				scene, use of the Bob.DataClasses.* classes:<br>
+				<ul>
+					<li>
+						<a href="../Abstracts.htm">Bob.AbstractClasses</a>
+					</li>
+					<br><br>
+					<li>
+						<a href="../Windows_Objects/WinCheckedListBoxes.htm">Bob.Windows.CheckedListBoxes</a>
+					</li>
+					<li>
+						<a href="../Windows_Objects/WinComboBoxes.htm">Bob.Windows.ComboBoxes</a>
+					</li>
+					<li>
+						<a href="../Windows_Objects/WinDataGrids.htm">Bob.Windows.DataGrids</a>
+					</li>
+					<li>
+						<a href="../Windows_Objects/WinListBoxes.htm">Bob.Windows.ListBoxes</a>
+					</li>
+					<br><br>
+					<li>
+						<a href="../Web_Objects/WebCheckBoxLists.htm">Bob.Web.CheckBoxLists</a>
+					</li>
+					<li>
+						<a href="../Web_Objects/WebDataGrids.htm">Bob.Web.DataGrids</a>
+					</li>
+					<li>
+						<a href="../Web_Objects/WebDataLists.htm">Bob.Web.DataLists</a>
+					</li>
+					<li>
+						<a href="../Web_Objects/WebDropDownLists.htm">Bob.Web.DropDownLists</a>
+					</li>
+					<li>
+						<a href="../Web_Objects/WebListBoxes.htm">Bob.Web.ListBoxes</a>
+					</li>
+					<li>
+						<a href="../Web_Objects/WebRepeaters.htm">Bob.Web.Repeaters</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#Parameter">Parameter</a>
+					</li>
+					<li>
+						<a href="#ClassName">ClassName</a>
+					</li>
+					<li>
+						<a href="#MethodName">MethodName</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="#Constructor"></a>
+		<div class="MainTitle">
+			Public Instance Constructor
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal parameter As IParameter<br>
+								&nbsp;&nbsp;&nbsp;, ByVal className As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal methodName As String<br>
+							)
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public CustomException(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IParameter parameter<br>
+								&nbsp;&nbsp;&nbsp;, string className<br>
+								&nbsp;&nbsp;&nbsp;, string methodName<br>
+							);
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<div class="MainBody">
+				Create a new instance of the CustomException class.<br>
+				<br>
+				<b>parameter</b>: the Parameter (<a href="Parameters.htm">Bob.DataClasses.Parameters.*</a>) class that was involved.
+				You retrieve back a generic <a href="IParameter.htm">interface</a> that you can cast back to the original parameter class.<br>
+				<br>
+				<b>className</b>: name of the class from which the exception has been thrown.<br>
+				<br>
+				<b>methodName</b>: name of the method from which the exception has been thrown.<br>
+				<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Properties
+		</div>
+		<blockquote>
+			<a name="Parameter"></a>
+			<div class="Highlight">
+				Parameter
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property Parameter() As Bob.DataClasses.IParameter
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public Bob.DataClasses.IParameter Parameter();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the Parameter (<a href="Parameters.htm">Bob.DataClasses.Parameters.*</a>) class that was involved.
+					You retrieve back a generic <a href="IParameter.htm">interface</a> that you can cast back to the original parameter class.
+				</div>
+			</blockquote>
+			<a name="ClassName"></a>
+			<div class="Highlight">
+				ClassName
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ClassName() As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string ClassName();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the name of the class from which the exception has been thrown.
+				</div>
+			</blockquote>
+			<a name="MethodName"></a>
+			<div class="Highlight">
+				MethodName
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property MethodName() As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string MethodName();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the name of the method from which the exception has been thrown.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

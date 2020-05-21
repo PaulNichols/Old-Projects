@@ -1,0 +1,580 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			WinForm_tblCustomer - Members overview
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			WinForm_tblCustomer
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			To read an overview on this class, click <a href="tblCustomer.htm">here</a>.<br>
+			To see an example on how to call this class in Visual C# .NET, click <a href="tblCustomer_CS.htm">here</a>.<br>
+			To see an example on how to call this class in Visual Basic .NET, click <a href="tblCustomer_VB.htm">here</a>.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#ConnectionString">ConnectionString</a>
+					</li>
+					<li>
+						<a href="#ConnectionType">ConnectionType</a>
+					</li>
+					<li>
+						<a href="#AddNewRecord1">AddNewRecord</a>
+					</li>
+					<li>
+						<a href="#EditExistingRecord1">EditExistingRecord</a>
+					</li>
+					<li>
+						<a href="#ErrorHasOccured">ErrorHasOccured</a>
+					</li>
+					<li>
+						<a href="#Parameter">Parameter</a>
+					</li>
+					<li>
+						<a href="#SqlConnection">SqlConnection</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Constructor"></a>
+		<div class="MainTitle">
+			Public Constructor
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New()
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+						public WinForm_tblCustomer();
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>OlymarsDemo.Windows.Forms.WinForm_tblCustomer</b> class.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Properties
+		</div>
+		<blockquote>
+			<a name="ConnectionType"></a>
+			<div class="Highlight">
+				ConnectionType
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionType As OlymarsDemo.DataClasses.ConnectionType<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public OlymarsDemo.DataClasses.ConnectionType ConnectionType { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the current type of connection that has been used
+					against the Sql Server database. It can be:
+					<ul>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.None
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.ConnectionString
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.SqlConnection
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.SqlTransaction [Not available here]
+						</li>
+					</ul>
+					This property is set when you instanciate this class depending on the
+					overloaded version of the <a href="#Initialize1">Initialize</a> method
+					you have used.<br>
+				</div>
+			</blockquote>
+			<a name="ConnectionString"></a>
+			<div class="Highlight">
+				ConnectionString
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionString As String<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string ConnectionString { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the connection string to be used against the 
+					SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>OlymarsDemo.DataClasses.ConnectionType.ConnectionString</b>.
+				</div>
+			</blockquote>
+			<a name="SqlConnection"></a>
+			<div class="Highlight">
+				SqlConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlConnection As System.Data.SqlClient.SqlConnection<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlConnection SqlConnection { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used
+					against the SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>OlymarsDemo.DataClasses.ConnectionType.SqlConnection</b>.
+				</div>
+			</blockquote>
+			<a name="Parameter"></a>
+			<div class="Highlight">
+				Parameter
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property Parameter As IParameter<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public IParameter Parameter { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the Parameter (<a href="../../Data_Classes/IParameter.htm">IParameter</a>) that was used to perform the latest insertion or update.
+					This property can return one of the two following types of Parameter classes depending
+					on the method you have called (<a href="#AddNewRecord1">AddNewRecord</a> or <a href="#EditExistingRecord1">EditExistingRecord</a>):
+					<ul>
+						<li>
+							<a href="../../Stored_Procedures/spI_tblCustomer_Param_Members.htm">OlymarsDemo.DataClasses.Parameters.spI_tblCustomer</a>
+						</li>
+						<li>
+							<a href="../../Stored_Procedures/spU_tblCustomer_Param_Members.htm">OlymarsDemo.DataClasses.Parameters.spU_tblCustomer</a>
+						</li>
+					</ul>
+				</div>
+			</blockquote>
+			<a name="ErrorHasOccured"></a>
+			<div class="Highlight">
+				ErrorHasOccured
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ErrorHasOccured As Boolean<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public bool ErrorHasOccured { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns <b>True</b> if the last call to <a href="#AddNewRecord1">AddNewRecord</a> or <a href="#EditExistingRecord1">EditExistingRecord</a>
+					was unsuccessful. Returns <b>False</b> otherwise.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Methods
+		</div>
+		<blockquote>
+			<a name="AddNewRecord1"></a>
+			<div class="Highlight">
+				AddNewRecord
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub AddNewRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal caller As System.Windows.Forms.IWin32Window<br>
+								&nbsp;&nbsp;&nbsp;, ByVal formTitle As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal connectionString As String<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void AddNewRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.IWin32Window caller<br>
+								&nbsp;&nbsp;&nbsp;, string formTitle<br>
+								&nbsp;&nbsp;&nbsp;, string connectionString<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Allows you to add a new record in the <b>tblCustomer</b> table.<br>
+					<br>
+					<b>caller</b>: The <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsIWin32WindowClassTopic.htm">IWin32Window</a> this form will display in front of.<br>
+					<br>
+					<b>formTitle</b>: Title of this form.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					<blockquote>
+						If a blank connection string is supplied, the class will search for:<br>
+						<br>
+						&nbsp;&nbsp;First an entry in the configuration file:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+						<br>
+						&nbsp;&nbsp;Then the following registry entry:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\OlymarsDemo<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+						<br>
+						A helper function that can build this connection string for you is available. See the <a href="../../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+						<br>
+						To see the documentation on how to build this connection string,
+						<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+					</blockquote>
+				</div>
+			</blockquote>
+			<a name="AddNewRecord2"></a>
+			<div class="Highlight">
+				AddNewRecord
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub AddNewRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal caller As System.Windows.Forms.IWin32Window<br>
+								&nbsp;&nbsp;&nbsp;, ByVal formTitle As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void AddNewRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.IWin32Window caller<br>
+								&nbsp;&nbsp;&nbsp;, string formTitle<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlClient.SqlConnection sqlConnection<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Allows you to add a new record in the <b>tblCustomer</b> table.<br>
+					<br>
+					<b>caller</b>: The <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsIWin32WindowClassTopic.htm">IWin32Window</a> this form will display in front of.<br>
+					<br>
+					<b>formTitle</b>: Title of this form.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. If it is not opened, it will be
+					opened when used then closed again after the job is done.<br>
+				</div>
+			</blockquote>
+			<a name="EditExistingRecord1"></a>
+			<div class="Highlight">
+				EditExistingRecord
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function EditExistingRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal caller As System.Windows.Forms.IWin32Window<br>
+								&nbsp;&nbsp;&nbsp;, ByVal formTitle As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal connectionString As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal id As System.Data.SqlTypes.SqlInt32<br>
+								) As Boolean<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public bool EditExistingRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.IWin32Window caller<br>
+								&nbsp;&nbsp;&nbsp;, string formTitle<br>
+								&nbsp;&nbsp;&nbsp;, string connectionString<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 id<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Allows you to update an existing record from the <b>tblCustomer</b> table.<br>
+					<br>
+					Returns <b>True</b> if the record was successfully found in the database. Otherwise, returns
+					<b>False</b> and no form will be displayed.<br>
+					<br>
+					<b>caller</b>: The <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsIWin32WindowClassTopic.htm">IWin32Window</a> this form will display in front of.<br>
+					<br>
+					<b>formTitle</b>: Title of this form.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					<blockquote>
+						If a blank connection string is supplied, the class will search for:<br>
+						<br>
+						&nbsp;&nbsp;First an entry in the configuration file:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+						<br>
+						&nbsp;&nbsp;Then the following registry entry:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\OlymarsDemo<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+						<br>
+						A helper function that can build this connection string for you is available. See the <a href="../../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+						<br>
+						To see the documentation on how to build this connection string,
+						<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+					</blockquote>
+					<b>id</b>: Primary key of the record to update.<br>
+				</div>
+			</blockquote>
+			<a name="EditExistingRecord2"></a>
+			<div class="Highlight">
+				EditExistingRecord
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function EditExistingRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal caller As System.Windows.Forms.IWin32Window<br>
+								&nbsp;&nbsp;&nbsp;, ByVal formTitle As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+								&nbsp;&nbsp;&nbsp;, ByVal id As System.Data.SqlTypes.SqlInt32<br>
+								) As Boolean<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public bool EditExistingRecord(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.IWin32Window caller<br>
+								&nbsp;&nbsp;&nbsp;, string formTitle<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlClient.SqlConnection sqlConnection<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 id<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Allows you to update an existing record from the <b>tblCustomer</b> table.<br>
+					<br>
+					Returns <b>True</b> if the record was successfully found in the database. Otherwise, returns
+					<b>False</b> and no form will be displayed.<br>
+					<br>
+					<b>caller</b>: The <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsIWin32WindowClassTopic.htm">IWin32Window</a> this form will display in front of.<br>
+					<br>
+					<b>formTitle</b>: Title of this form.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. If it is not opened, it will be
+					opened when used then closed again after the job is done.<br>
+					<br>
+					<b>id</b>: Primary key of the record to update.<br>
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:58
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

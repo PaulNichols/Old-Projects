@@ -1,0 +1,303 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			Bob.DataClasses namespace - OlymarsInformation Attribute
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			Bob.DataClasses namespace
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;OlymarsInformation Attribute
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				This class, which derives from the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemattributeclasstopic.htm">System.Attribute</a> class, contains all the information
+				needed to be synchronized between the database schema and the generated code. If the assembly
+				is compiled with either the /define:<b>OLYMARS_DEBUG</b> or the /define:<b>OLYMARS_ATTRIBUTE</b> flags, this
+				class will be included in all the classes that make a database access.<br>
+				<br>
+				Furthermore, if the assembly was compiled with /define:<b>OLYMARS_DEBUG</b> flag, a check is made each time you use one of the class. This call verifies that the current SQL object
+				version is in sync with the one stored in the attribute of the class. If the version numbers are not in sync anymore, an exception is thrown.<br>
+				<br>
+				However, if you know that your code is not in sync anymore with the database schema but you want to be able to run the code anyway, you can do so by adding a <b>new key in the configuration file</b>:<br>
+				<blockquote>
+					&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br>
+					&lt;configuration&gt;<br>
+						&nbsp;&nbsp;&lt;appSettings&gt;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDebugCheck" value="False" /&gt;<br>
+						&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+					&lt;/configuration&gt;
+				</blockquote>
+				<br>
+				This class is located in the '<a href="../DataClasses.htm">Bob.DataClasses</a>' namespace.
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#DeveloperName">DeveloperName</a>
+					</li>
+					<li>
+						<a href="#GeneratedOn">GeneratedOn</a>
+					</li>
+					<li>
+						<a href="#SqlObjectDependancyName">SqlObjectDependancyName</a>
+					</li>
+					<li>
+						<a href="#SqlObjectDependancyRevision">SqlObjectDependancyRevision</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Constructor"></a>
+		<div class="MainTitle">
+			Public Instance Constructors
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New()
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public OlymarsInformationAttribute();
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<div class="MainBody">
+				Create a new instance of the OlymarsInformationAttribute class.
+			</div>
+		</blockquote>
+		<br>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal developerName As String<br>
+							&nbsp;&nbsp;&nbsp;, ByVal generatedOn As String<br>
+							&nbsp;&nbsp;&nbsp;, ByVal sqlObjectDependancyName As String<br>
+							&nbsp;&nbsp;&nbsp;, ByVal sqlObjectDependancyRevision As Integer<br>
+							)<br/>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public OlymarsInformationAttribute(<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string developerName<br>
+							&nbsp;&nbsp;&nbsp;, string generatedOn<br>
+							&nbsp;&nbsp;&nbsp;, string sqlObjectDependancyName<br>
+							&nbsp;&nbsp;&nbsp;, int sqlObjectDependancyRevision<br>
+							);<br/>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<div class="MainBody">
+				Create a new instance of the OlymarsInformationAttribute class.
+			</div>
+		</blockquote>
+		<br/>
+		<hr>
+		<div class="MainTitle">
+			Public Property
+		</div>
+		<blockquote>
+			<a name="DeveloperName"></a>
+			<div class="Highlight">
+				DeveloperName
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property DeveloperName() As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string DeveloperName();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the name of the developer that has generated the class for which this attribute is set.
+				</div>
+			</blockquote>
+			<a name="GeneratedOn"></a>
+			<div class="Highlight">
+				GeneratedOn
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property GeneratedOn() As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string GeneratedOn();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the date when the developer has generated the class for which this attribute is set.
+				</div>
+			</blockquote>
+			<a name="SqlObjectDependancyName"></a>
+			<div class="Highlight">
+				SqlObjectDependancyName
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlObjectDependancyName() As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string SqlObjectDependancyName();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the name of the SQL object for which the class, for which this attribute is set, was generated.
+				</div>
+			</blockquote>
+			<a name="SqlObjectDependancyRevision"></a>
+			<div class="Highlight">
+				SqlObjectDependancyRevision
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlObjectDependancyRevision() As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string SqlObjectDependancyRevision();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the version of the SQL object for which the class, for which this attribute is set, was generated.<br>
+					<br>
+					For more information on versionning in SQL Server, please search the "Book Online" for '<b>base_schema_ver</b>' in '<b>sysobjects</b>' table.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

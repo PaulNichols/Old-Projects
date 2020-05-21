@@ -1,0 +1,15 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="Solution Types\UT_HBOS.FS.AMP.RAW.Tool12.Types\bin\debug\UT_HBOS.FS.AMP.RAW.Tool12.Types.dll" />
+    <assembly path="Business Services\UT_HBOS.FS.AMP.RAW.Tool12.Business\bin\Debug\UT_HBOS.FS.AMP.RAW.Tool12.Business.dll" />
+    <assembly path="Data Services\UT_HBOS.FS.AMP.RAW.Tool12.DataAccess\bin\Debug\UT_HBOS.FS.AMP.RAW.Tool12.DataAccess.dll" />
+    <assembly path="Database\UT_Database\bin\Debug\UT_Database.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="Solution Types\UT_HBOS.FS.AMP.RAW.Tool12.Types\bin\release\UT_HBOS.FS.AMP.RAW.Tool12.Types.dll" />
+    <assembly path="Business Services\UT_HBOS.FS.AMP.RAW.Tool12.Business\bin\release\UT_HBOS.FS.AMP.RAW.Tool12.Business.dll" />
+    <assembly path="Data Services\UT_HBOS.FS.AMP.RAW.Tool12.DataAccess\bin\release\UT_HBOS.FS.AMP.RAW.Tool12.DataAccess.dll" />
+    <assembly path="Database\UT_Database\bin\Release\UT_Database.dll" />
+  </Config>
+</NUnitProject>

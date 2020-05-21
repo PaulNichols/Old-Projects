@@ -1,0 +1,35 @@
+[FILES]
+UIUnitTest.html
+UIUnitTestHierarchy.html
+UIUnitTest.SearchCites.html
+UIUnitTest.SearchCitesMembers.html
+UIUnitTest.SearchCitesConstructor.html
+UIUnitTest.SearchCitesFields.html
+UIUnitTest.SearchCites.Manager.html
+UIUnitTest.SearchCites.Radio.html
+UIUnitTest.SearchCites.usercontrol.html
+UIUnitTest.SearchCitesMethods.html
+UIUnitTest.SearchCites.FindManager.html
+UIUnitTest.SearchCites.SetUp.html
+UIUnitTest.SearchCites.TearDown.html
+UIUnitTest.SearchCites.TestLayout.html
+
+[OPTIONS]
+Title=Documentation
+Auto Index=Yes
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=Documentation.chm
+Default Window=MsdnHelp
+Default topic=UIUnitTest.html
+Display compile progress=No
+Error log file=Documentation.log
+Full-text search=Yes
+Index file=Documentation.hhk
+Language=0x409 English (United States)
+Contents file=Documentation.hhc
+
+[WINDOWS]
+MsdnHelp="Documentation Help","Documentation.hhc","Documentation.hhk","UIUnitTest.html","UIUnitTest.html",,,,,0x62520,220,0x387e,[86,51,872,558],,,,,,,0
+
+[INFOTYPES]

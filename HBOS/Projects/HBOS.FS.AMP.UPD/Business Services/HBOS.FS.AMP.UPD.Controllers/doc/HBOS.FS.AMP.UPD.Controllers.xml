@@ -1,0 +1,1977 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HBOS.FS.AMP.UPD.Controllers</name>
+    </assembly>
+    <members>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.AssetFundDataRowValidator">
+            <summary>
+            Hi3PricesAssetFundDataRowValidator - makes sure a row is a valid fund
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundDataRowValidator.#ctor(System.Collections.Hashtable,System.Int32,HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType)">
+            <summary>
+            Constructor which remembers the market indices
+            </summary>
+            <param name="allAssetFunds">All asset funds expected or could be valid for the type of import</param>
+            <param name="assetFundColumnPosition">The position of the Asset Fund Id in the current file</param>
+            <param name="importType">type of import to validate against</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the Hi3 Price
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HBOS.FS.AMP.UPD.Controllers.AssetFundDataRowValidator.InvalidDataRowEvent">
+            <summary>
+            Invalid Data Row Event
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundDataValidator.OnInvalidDataRow(System.String,HBOS.FS.AMP.Data.Types.ValidationErrorSeverity)">
+            <summary>
+            Raises the invalid data row (Overridable).
+            </summary>
+            <param name="message">Error or warning message</param>
+            ///<param name="severity">Severity of the error</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundDataValidator.CompareSplits(HBOS.FS.AMP.UPD.Persistence.ImportPersister,HBOS.FS.AMP.UPD.Types.Snapshot.Snapshot,System.Data.SqlClient.SqlTransaction,System.String)">
+             <summary>
+            Compare the entries in the temp table with the real benchmark split table
+            on an asset by asset basis and see if the new split has the same number of funds 
+            and the funds are for all the same countries. If there are any problems the raise 
+            erros to be stored with the other validation errors and displayed to the user
+             </summary>
+             <param name="importPersister"></param>
+             <param name="snapshot"></param>
+             <param name="transaction"></param>
+             <param name="companyCode"></param>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator">
+            <summary>
+            CompositeSplitFundDataRowValidator - makes sure a row's Composite Asset 
+            Fund Exists in list of Asset Funds for the company, also the linked fund 
+            is a valid fund for the company and finally the value is a decimal and >=0
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator.#ctor(System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            
+            </summary>
+            <param name="companyAssetFunds">All Asset Funds for the current company</param>
+            <param name="companyFunds">All Funds for the current company</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the Composite Fund
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator.InvalidDataRowEvent">
+            <summary>
+            Invalid Data Row Event
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator.CompositeLinkedFundColumnPosition">
+            <summary>
+            Column Position in the composite import file
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator.CompositeLinkedFundColumnPosition.AssetFund">
+            <summary>
+            Asset Fund (0)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator.CompositeLinkedFundColumnPosition.LinkedFundCode">
+            <summary>
+            LinkedFund Code (1)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.CompositeSplitFundDataRowValidator.CompositeLinkedFundColumnPosition.Value">
+            <summary>
+            Value (2)
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CountryStockmarketDataRowValidator">
+            <summary>
+            CountryDataRowValidator - makes sure a row contains a valid country and the country has a market associated
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CountryStockmarketDataRowValidator.#ctor(HBOS.FS.AMP.UPD.Types.AssetFunds.StockMarketCollection,System.Int32)">
+            <summary>
+            Constructor which remembers the countries.
+            </summary>
+            <param name="allMarkets"></param>
+            <param name="countryColumnPosition">The position in the text file that the country appears</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CountryStockmarketDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the Currency Exchange Rate record
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HBOS.FS.AMP.UPD.Controllers.CountryStockmarketDataRowValidator.InvalidDataRowEvent">
+            <summary>
+            Invalid Data Row Event
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CurrencyDataRowValidator">
+            <summary>
+            CurrencyDataRowValidator - makes sure a row is a valid currency
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrencyDataRowValidator.#ctor(HBOS.FS.AMP.UPD.Types.Currency.CurrencyCollection)">
+            <summary>
+            Constructor which remembers the currencies.
+            </summary>
+            <param name="allCurrencies"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrencyDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the Currency Exchange Rate record
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HBOS.FS.AMP.UPD.Controllers.CurrencyDataRowValidator.InvalidDataRowEvent">
+            <summary>
+            Invalid Data Row Event
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.Hi3PricesAssetUnitPriceDataRowValidator">
+            <summary>
+            Hi3PricesAssetUnitPriceDataRowValidator - makes sure each class / series has the same asset unit price
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.Hi3PricesAssetUnitPriceDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the asset unit price
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HBOS.FS.AMP.UPD.Controllers.Hi3PricesAssetUnitPriceDataRowValidator.InvalidDataRowEvent">
+            <summary>
+            Invalid Data Row Event
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.Hi3InitialPricesSeriesDataRowValidator">
+            <summary>
+            Hi3PricesAssetFundDataRowValidator - makes sure a row is a valid series 1
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator">
+            <summary>
+            Hi3PricesAssetFundDataRowValidator - makes sure a row is a valid series 1
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.m_fundIsAnOEIC">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.m_SeriesNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.m_allHiPortfolioCodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.#ctor(System.Collections.Hashtable,HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType)">
+            <summary>
+            Constructor which remembers the market indices
+            </summary>
+            <param name="allHiPortfolioCodes"></param>
+            <param name="importType">The type of import being attempted and validated</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.OnInvalidDataRowEvent(System.String,System.String[],System.Data.DataTable)">
+            <summary>
+            Ons the invalid data row event.
+            </summary>
+            <param name="message">Message.</param>
+            <param name="dataRow">Data row.</param>
+            <param name="dataDefinition">Data definition.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the series Number
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.InvalidDataRowEvent">
+            <summary>
+            Invalid Data Row Event
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.SeriesNumber">
+            <summary>
+            Set the series number
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator.OEICFund">
+            <summary>
+            Gets or sets a value indicating whether [OEIC fund].
+            </summary>
+            <value>
+            	<c>true</c> if [OEIC fund]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.Hi3InitialPricesSeriesDataRowValidator.#ctor(System.Collections.Hashtable,HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType)">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.Hi3InitialPricesSeriesDataRowValidator"/> instance.
+            </summary>
+            <param name="importFileType"> The type of import being attempted and validated</param>
+            <param name="allHiPortfolioCodes">All hi portfolio codes.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.Hi3InitialPricesSeriesDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the series Number
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.MarketIndexDataRowValidator">
+            <summary>
+            MarketIndexDataRowValidator - makes sure a row is a valid market index
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.MarketIndexDataRowValidator.#ctor(HBOS.FS.AMP.UPD.Types.AssetFunds.StockMarketCollection)">
+            <summary>
+            Constructor which remembers the market indices
+            </summary>
+            <param name="allStockMarkets"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.MarketIndexDataRowValidator.Validate(System.String[],System.Data.DataTable)">
+            <summary>
+            Validate the Market Rate record
+            </summary>
+            <param name="dataRow"></param>
+            <param name="dataDefinition"></param>
+            <returns></returns>
+        </member>
+        <member name="E:HBOS.FS.AMP.UPD.Controllers.MarketIndexDataRowValidator.InvalidDataRowEvent">
+            <summary>
+            Invalid Data Row Event
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.MarketIndexDataRowValidator.MarketIndicesColumnPosition">
+            <summary>
+            Column Position in the market indices file
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.MarketIndexDataRowValidator.MarketIndicesColumnPosition.MarketName">
+            <summary>
+            Market Name (0)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.MarketIndexDataRowValidator.MarketIndicesColumnPosition.MarketValue">
+            <summary>
+            Market Value (1)
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.AssetFundController">
+            <summary>
+            Summary description for AssetFundController.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAssetFundLookupsByCompany(System.String,System.String)">
+            <summary>
+            Loads a list of asset funds for supplied company
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAssetFundLookupsByCompanyAndType(System.String,System.String,HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund.AssetFundTypeEnum)">
+            <summary>
+            Loads a list of asset funds for supplied company and type
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyCode">The company code to filter by</param>
+            <param name="assetFundType">The asset fund type to filter by</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAssetFundForStaticData(System.String,System.String)">
+            <summary>
+            Lightweight asset fund load (static data)
+            </summary>
+            <param name="connectionString"></param>
+            <param name="assetFundID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAssetFundsByCompanyIdForStaticDataExport(System.String,System.String)">
+            <summary>
+            Lightweight asset fund load (static data)
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAssetFunds(System.String,System.String,System.Boolean)">
+            <summary>
+            Get a collection of the asset funds from the database for a specified company
+            </summary>
+            <param name="connectionString">Valid database connection string</param>
+            <param name="companyCode">The ID of the company for which the funds are to be retrieved</param>
+            <param name="currentWeightings">Extract the most recent weightings<br />
+            <list type="bullet">
+            <item>
+            <description>Pass in a value of <code>true</code> will extract the most recent weightings overriding any 
+            indices that have authorised where there are more recent values</description>
+            </item>
+            <list type="bullet">
+            <listheader>
+            <description>Pass in a value of <code>false</code> will either</description>
+            </listheader>
+            <item>
+            <description>Extract weightings for authorised indices only.</description>
+            </item>
+            <item>
+            <description>Or, when there are no authorised indices for the most recent weightings</description>
+            </item>
+            </list>
+            </list>
+            </param>
+            <returns>A collection of asset fund objects</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAssetFunds(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Get a collection of the asset funds from the database for a specified fund group
+            </summary>
+            <param name="connectionString">Valid DB connection string</param>
+            <param name="fundGroupID">The ID of the fund group for which the funds are to be retrieved</param>
+            <param name="currentWeightings">Extract the most recent weightings<br />
+            <list type="bullet">
+            <item>
+            <description>Pass in a value of <code>true</code> will extract the most recent weightings overriding any 
+            indices that have authorised where there are more recent values</description>
+            </item>
+            <list type="bullet">
+            <listheader>
+            <description>Pass in a value of <code>false</code> will either</description>
+            </listheader>
+            <item>
+            <description>Extract weightings for authorised indices only.</description>
+            </item>
+            <item>
+            <description>Or, when there are no authorised indices for the most recent weightings</description>
+            </item>
+            </list>
+            </list>
+            </param>
+            <returns>A collection of asset fund objects</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAssetFund(System.String,System.String,System.Boolean)">
+            <summary>
+            Get the passed asset fund
+            </summary>
+            <param name="connectionString"></param>
+            <param name="assetFundID"></param>
+            <param name="currentWeightings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadCountries(System.String)">
+            <summary>
+            Method to get a list of all the countries held in the DB
+            </summary>
+            <param name="connectionString">Valid DB connection string</param>
+            <returns type="CountryCollection">A country collection object</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAllAvailableBenchmarks(System.String)">
+            <summary>
+            Loads the all available benchmarks.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.UpdateAssetFund(System.String,HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund)">
+            <summary>
+            Saves a singular asset fund
+            </summary>
+            <param name="connectionString"></param>
+            <param name="assetFund"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.UpdateAssetFundAndChildFunds(System.String,HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund,HBOS.FS.AMP.UPD.Types.Funds.FundCollection)">
+            <summary>
+            Update the asset fund and associated funds
+            </summary>
+            <param name="connectionString"></param>
+            <param name="assetFund"></param>
+            <param name="childFunds"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.ValidateUpdatedAssetFund(System.String,HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund)">
+            <summary>
+            Validates that the short name is ok, the full name is ok, and that the market splits total 100%
+            Precondition - full name and short name max length is validated prior to here (by restricting text field in UI)
+            </summary>
+            <param name="connection"></param>
+            <param name="updatedAssetFund"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.ValidateNewAssetFund(System.String,HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund)">
+            <summary>
+            Validates data for the creation of a new asset fund. Accepts param data
+            rather than an object as type also requires validation.
+            Precondition - maxlength of fields validated in UI.
+            </summary>
+            <param name="connection"></param>
+            <param name="assetFund"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.validateBenchmarkValueSplit(HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund)">
+            <summary>
+            Validate the market value split proportion value of the asset fund weighted
+            indices.  This will ensure the sum of the proportion value adds up to 100%. 
+            Note that this can only be validated for an updated asset fund - a new asset fund
+            cannot have mv splits as its type has not been decide upon until saved
+            </summary>
+            <param name="updatedAssetFund"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.CanBenchmarkBeAddedToAssetFund(System.String,System.String,System.String)">
+            <summary>
+            Validates the benchmark can be added to the specified asset fund.
+            This is the test for any circular reference against the asset fund and benchmark fund.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="assetFundCode">Asset fund code.</param>
+            <param name="benchmarkFundCode">Benchmark fund code.</param>
+            <returns>String: empty when true; populated when false.</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.UpdateMovementConstituents(HBOS.FS.AMP.UPD.Types.AssetFunds.AssetMovementConstituentCollection,HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund,System.String)">
+            <summary>
+            Updates the movement constituents.
+            </summary>
+            <param name="parts">Parts.</param>
+            <param name="fund">Fund.</param>
+            <param name="connectionString">Connection string.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.BeginLoadAllAvailableBenchmarks(System.String)">
+            <summary>
+            Begins the load all available benchmarks.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.BeginLoadAllAvailableBenchmarks(System.String,System.AsyncCallback)">
+            <summary>
+            Begins the load all available benchmarks with a call back function.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="callBack">Call back.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.AssetFundController.EndLoadAllAvailableBenchmarks(System.IAsyncResult)">
+            <summary>
+            Ends the load all available benchmarks.
+            </summary>
+            <param name="asyncResult">An Async Result.</param>
+            <returns></returns>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.AssetFundController.MaxTolerance">
+            <summary>
+            The maximum upper tolerance allowed
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError">
+            <summary>
+            Indicates what type of error occurred 
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundNoError">
+             <summary>
+            No error occurred 
+             </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundTypeNotSelected">
+            <summary>
+            The Asset Funds type (OEIC, Linked or COmposite) has not been set
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundPriceFileNotSelected">
+            <summary>
+            The mandatory Price file has not been associated to the AssetFund
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundSplitLessThan100Percent">
+            <summary>
+            market splits proportion total is less than 100%
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundSplitMoreThan100Percent">
+            <summary>
+            market splits proportion total is greater than 100%
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundInvalidNumDecimalPlacesProportion">
+            <summary>
+            a weighting must be valid to 4dp (6dp as a ratio)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundMaxToleranceExceeded">
+            <summary>
+            value higher than max
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundToleranceNegative">
+            <summary>
+            tolerance must be provided
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundInvalidNumDecimalPlacesTolerance">
+            <summary>
+            tolerance must be to 2dp
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundFieldEmptyFullName">
+            <summary>
+            Full Name required field empty
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundDuplicateFieldFullName">
+            <summary>
+            Full Name unique field already exists
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundFieldEmptyShortName">
+            <summary>
+            Short Name required field is empty
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundDuplicateFieldShortName">
+            <summary>
+            Short Name unique field already exists
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundFieldEmptyCode">
+            <summary>
+            Asset Fund Code required field is empty
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError.AssetFundDuplicateFieldCode">
+            <summary>
+            Asset Fund Code unique field already exists
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.AssetFundController.ToleranceValidationError">
+            <summary>
+            validation enum for tolerance validation
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.AssetFundController.LoadAllBenchMarksDelegate">
+            <summary>
+            This delegate is used to Asynchronously Load All benchmarks
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CompanyController">
+            <summary>
+            Controller object for all things Company orientated.  
+            This will handle calls to the business and data layers.
+            This is used to keep the logical layers seperate.  
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.LoadCompany(System.String,System.String)">
+            <summary>
+            Load the details of the specified company into a company object
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyCode">Code for the company data to be extracted</param>
+            <returns>A company object containing the company details</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load company</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.LoadCompanyCodeByName(System.String,System.String)">
+            <summary>
+            Loads the company by name .
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="companyName">Name of the company.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.LoadCompanyByCode(System.String,System.String)">
+            <summary>
+            Load the details of the specified company into a company object
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyCode">Code for the company data to be extracted</param>
+            <returns>A company object containing the company details</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load company</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.LoadCompanies(System.String)">
+            <summary>
+            Extract all company details available to the specified user
+            </summary>
+            <param name="connectionString"></param>
+            <returns>CompanyCollection object</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load companies</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.GetImportDirectory(System.String,System.String)">
+            <summary>
+            Gets the import directory for the supplied company code
+            </summary>
+            <param name="connectionString">Database connection string</param>
+            <param name="companyCode">Company to retrieve the import directory for.</param>
+            <returns>The import driectory for teh current company</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load company</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.UpdateCompany(System.String,HBOS.FS.AMP.UPD.Types.Companies.Company)">
+            <summary>
+            Save modified company details through the persistance layer
+            </summary>
+            <param name="connectionString"></param>
+            <param name="updatedCompany">Company object containing modified company details</param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConcurrencyViolationException">Unable to update item as item has been modified since last load</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.ProgressCompanyValuationDay(System.String,System.String)">
+            <summary>
+            Progresses the company valuation day.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="companyCode">Company code.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.UpdateCompanies(System.String,HBOS.FS.AMP.UPD.Types.Companies.CompanyCollection)">
+            <summary>
+            Save a collection of modified company details through the persistance layer
+            </summary>
+            <param name="connectionString"></param>
+            <param name="updatedCompanies">CompanyCollection object containing any modified company details</param>
+            <returns>Success/failure flag</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConcurrencyViolationException">Unable to update item as item has been modified since last load</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyController.DeleteCompany(System.String,HBOS.FS.AMP.UPD.Types.Companies.Company)">
+            <summary>
+            Make a call to the persistance layer to delete the specified company
+            </summary>
+            <param name="connectionString"></param>
+            <param name="deleteCompany">Code of the company to be deleted</param>
+            <returns>Success/failure flag</returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CompanyDetails">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CompanyDetails.#ctor(HBOS.FS.AMP.UPD.Types.Companies.Company)">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.CompanyDetails"/> instance.
+            </summary>
+            <param name="company">Company.</param>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.CompanyDetails.CompanyCode">
+            <summary>
+            Gets the company code.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.CompanyDetails.CompanyValuationDate">
+            <summary>
+            Gets the company valuation date.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.CompanyDetails.NextValuationDate">
+            <summary>
+            Gets the next valuation date.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.CompanyDetails.PreviousValuationDate">
+            <summary>
+            Gets the next valuation date.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CountryController">
+            <summary>
+            Controller object for all things Country orientated.  
+            This will handle calls to the data layer.
+            This is used to keep the logical layers seperate.  
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CountryController.#ctor">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.CountryController"/> instance.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CountryController.LoadStockMarkets(System.String,System.String)">
+            <summary>
+            Loads the stock markets related to the specified Country.
+            </summary>
+            <param name="countryCode">Country code.</param>
+            <param name="connectionString">Connection string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CountryController.LoadCountry(System.String,System.String)">
+            <summary>
+            Loads the specified Country.
+            </summary>
+            <param name="CountryCode">Country code.</param>
+            <param name="connectionString"></param>
+            <returns>Populated Country object</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load Country</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CountryController.UpdateCountry(HBOS.FS.AMP.UPD.Types.Countries.Country,System.String)">
+            <summary>
+            Updates the Country item to the database.
+            </summary>
+            <param name="Country">Country object.</param>
+            <param name="connectionString"></param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CurrencyController">
+            <summary>
+            Controller object for all things currency orientated.  
+            This will handle calls to the data layer.
+            This is used to keep the logical layers seperate.  
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrencyController.#ctor">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.CurrencyController"/> instance.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrencyController.LoadCurrency(System.String,System.String)">
+            <summary>
+            Loads the specified currency.
+            </summary>
+            <param name="currencyCode">Currency code.</param>
+            <param name="connectionString"></param>
+            <returns>Populated currency object</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load currency</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrencyController.UpdateCurrency(HBOS.FS.AMP.UPD.Types.Currency.Currency,System.String)">
+            <summary>
+            Updates the currency item to the database.
+            </summary>
+            <param name="currency">Currency object.</param>
+            <param name="connectionString"></param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConcurrencyViolationException">Unable to update item as item has been modified since last load</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.CurrentStatusController">
+            <summary>
+            Summary description for CurrentStatusController.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrentStatusController.#ctor">
+            <summary>
+            Create an instance of <see cref="T:HBOS.FS.AMP.UPD.Controllers.CurrentStatusController"/>
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrentStatusController.LoadCurrentStatus(System.String,System.String)">
+            <summary>
+            Gets the current import file status from the database
+            </summary>
+            <returns>An <see cref="T:HBOS.FS.AMP.UPD.Types.Status.CurrentImportStatus"/> object containing information on the last imported files.</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load company</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.CurrentStatusController.LoadCompanyImportStatus(System.String,System.String)">
+            <summary>
+            Load all the import details for the passed company
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.DistributionFileController">
+            <summary>
+            Summary description for DistributionFileController.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.#ctor(System.String)">
+            <summary>
+            DistributionFile constructor
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.LoadFilesForCompanyCode(System.String)">
+            <summary>
+            Load all the available distribution files for the passed company
+            </summary>
+            <param name="companyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.LoadFilesForDistribution(System.String)">
+            <summary>
+            Load all the files for distribution for a given company
+            </summary>
+            <param name="companyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.SaveFileAfterDistribution(HBOS.FS.AMP.UPD.Types.DistributionFiles.DistributionFile)">
+            <summary>
+            Updates the distribution file and the funds associated with that distribution once
+            distribution has taken place.
+            </summary>
+            <param name="fileToUpdate">File to update.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.Distribute(HBOS.FS.AMP.UPD.Types.DistributionFiles.DistributionFile,System.Data.DataSet)">
+            <summary>
+            Export the released fund data to the relevant files.
+            </summary>
+            <remarks>
+            Populate a data set with all the released funds then use XSLT to structure
+            the output file and populate it.
+            </remarks>
+            <param name="fileInformation">The distribution file item object</param>
+            <param name="data">data to distribute</param>
+            <remarks>All exceptions thrown are <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ExportException">Export Exceptions</exception></remarks>
+            <exception cref="T:System.Security.SecurityException">The user does not have the required permission to output the distribution file</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The exception that is thrown when the operating system denies access because of an I/O error or a specific type of security error.</exception>
+            <exception cref="T:System.Xml.Xsl.XsltCompileException">The exception that is thrown by the Load method when an error is found in the Extensible Stylesheet Transformation (XSLT) stylesheet.</exception>
+            <exception cref="T:System.Xml.Xsl.XsltException">The exception that is thrown when an error occurs while processing an Extensible Stylesheet Language (XSL) transform.</exception>
+            <exception cref="T:System.Exception">Unable to generate the distribtion file</exception>
+            <returns>StringBuilder</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.loadDistributionDataXmlDocument(System.Data.DataSet)">
+            <summary>
+            Returns the export data for a distribution as an untyped data set. The table 
+            is named with the id of the distribution.
+            </summary>
+            <param name="data">Data to distribute.</param>
+            <returns>XmlDataDocument</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.RetrieveAndValidateData(HBOS.FS.AMP.UPD.Types.DistributionFiles.DistributionFile)">
+            <summary>
+            Retrieves the and validate data to distribute.
+            </summary>
+            <param name="fileToDistribute">File to distribute.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.DistributionFileController.archiveFile(HBOS.FS.AMP.UPD.Types.DistributionFiles.DistributionFile)">
+            <summary>
+            Archive the export file if it already exists
+            </summary>
+            <param name="file">Distribution file object containing the filename and path to export</param>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.FundController">
+            <summary>
+            Controller object for all things Fund orientated.  This is used to
+            keep the logical layers seperate.  
+            The controller will handle calls to the business and data layers.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.#ctor">
+            <summary>
+            Default constructor for Fund controller
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.#ctor(System.String)">
+            <summary>
+            Constructor using the connection string.
+            </summary>
+            <remarks>This is the preferred constructor for MVS Drop II</remarks>
+            <param name="ConnectionString">The application connection string.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadStaticData(System.String)">
+            <summary>
+            Return a partially populated fund matching the given HiPortfolioCode.
+            The fund object will contain factors, tolerances and fund groups of type 'Fund'.
+            </summary>
+            <param name="fundCode">The code for the required fund</param>
+            <returns>A single Fund object</returns>
+            <remarks>This method will be used to populate the fund static data maintenance screen.</remarks>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadFundsByCompany(System.String)">
+            <summary>
+            Load all fund full details for company - required for static data export
+            </summary>
+            <param name="companyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadPartialFundsForCompanyByFile(System.String,System.String,System.String)">
+            <summary>
+            Return a collection of partially populated fund object for the given Company Code.
+            </summary>
+            <param name="companyCode">The Company code for the required fund Collection</param>
+            <param name="extension">Extension of file to filter by</param>
+            <param name="fileName">File name to filter by</param>
+            <returns>A fund collection</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadPartialFundsForCompany(System.String)">
+            <summary>
+            Return a collection of partially populated fund object for the given Company Code.
+            </summary>
+            <param name="companyCode">The Company code for the required fund Collection</param>
+            <returns>A fund collection</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadAllPartialFunds">
+            <summary>
+            Return a collection of all partially populated fund objects .
+            </summary>
+            <returns>A fund collection</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadFundLookupsByCompany(System.String)">
+            <summary>
+            Loads the fund group lookups by company.
+            </summary>
+            <param name="companyCode">Company code.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadAuthorisedPrices(System.Int32)">
+            <summary>
+            Returns all the funds for the given fund group that have a status 
+            lower than Released.  The ProgressStatus property is set according 
+            to the fund status.
+            </summary>
+            <param name="fundGroupID">The current fund group ID.</param>
+            <returns>
+            A fund collection for the fund group but with any funds with 
+            an inappropriate status removed.
+            </returns>
+            <remarks>
+            Use this method for the second level authorised screen.
+            </remarks>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadForFundGroup(System.Int32)">
+            <summary>
+            Return all the funds for the fund group.
+            </summary>
+            <param name="fundGroupID">The current fund group ID.</param>
+            <returns>All funds for the fund group.</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadForCompany(System.String)">
+            <summary>
+            Return all the funds for the given company.
+            </summary>
+            <param name="companyCode">The code for the current company.</param>
+            <returns>The fund list for the company.</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.UpdateStaticData(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            Save modified fund details through the persistance layer
+            </summary>
+            <param name="updateFund">Fund object containing modified fund details</param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConcurrencyViolationException">Unable to update item as item has been modified since last load</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ProgressFunds(HBOS.FS.AMP.UPD.Types.Funds.FundCollection,HBOS.FS.AMP.UPD.Types.Funds.Fund.FundStatusType)">
+            <summary>
+            Update the fund status to the next level for any funds that have had their ProgressStatus
+            flag set.
+            </summary>
+            <param name="funds">The collection of edited funds.</param>
+            <param name="progression">The status that the affected funds are to be progressed to.</param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ValidateUpperTolerance(System.Decimal)">
+            <summary>
+            Validates the upper tolerance.
+            </summary>
+            <param name="tolerance">Tolerance.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ValidateTolerances(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            Validates the tolerances, checks to see upper > than lower.
+            </summary>
+            <param name="fundToValidate">Fund to validate.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ValidateLowerTolerance(System.Decimal)">
+            <summary>
+            Validates the lower tolerance.
+            </summary>
+            <param name="tolerance">Tolerance.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ValidateFund(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            Validates a fund is ok
+            </summary>
+            <param name="fundToValidate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ValidateRevaluationFactor(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            Validates the revaluation factor.
+            </summary>
+            <param name="fundToValidate">Fund to validate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ValidateTPE(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            Validates the TPE.
+            </summary>
+            <param name="fundToValidate">Fund to validate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ValidateXFactor(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            Validates the X factor.
+            </summary>
+            <param name="fundToValidate">Fund to validate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.CurrentlyABenchmark(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            Determines if the Fund is being used as a benchmark by any Asset Funds
+            </summary>
+            <param name="fund">Fund to check.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.GenerateHiPortfolioCode(HBOS.FS.AMP.UPD.Types.Funds.Fund)">
+            <summary>
+            generates hiportfolio code (from assetFundID and share class)
+            </summary>
+            <param name="fund"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ClearHolidays">
+            <summary>
+            Clears the cache of holidays
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadHolidays">
+            <summary>
+            Loads a list of dates that are UK bank holidays. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadReleaseFundsForFundGroup(System.String,System.Int32)">
+            <summary>
+            Returns all the funds for the given fund group that have a status of either Second Level
+            Authorised or Released.  The ProgressStatus property is set according to the fund status.
+            </summary>
+            <param name="connectionString">The application connection string.</param>
+            <param name="fundGroupID">The current fund group ID.</param>
+            <returns>
+            The fund collection for the fund group but with any funds with an inappropriate status
+            removed.
+            </returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadFundsByAssetFund(System.String,System.String)">
+            <summary>
+            Return all the funds for the given Asset Fund.
+            </summary>
+            <param name="connectionString">The application connection string.</param>
+            <param name="assetFund">The code for the current Asset Fund.</param>
+            <returns>The fund list for the Asset Fund.</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <remarks>This will create a partially populated fund object, returning factors, tolerances, fundgroups, and external system identifiers.</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.ProgressFunds(System.String,HBOS.FS.AMP.UPD.Types.Funds.FundCollection,HBOS.FS.AMP.UPD.Types.Funds.Fund.FundStatusType)">
+            <summary>
+            Update the fund status to the next level for any funds that have had their ProgressStatus
+            flag set.
+            </summary>
+            <param name="connectionString">The application connection string.</param>
+            <param name="funds">The collection of edited funds.</param>
+            <param name="progression">The status that the affected funds are to be progressed to.</param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load funds</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.Update(System.String,HBOS.FS.AMP.UPD.Types.Funds.FundCollection)">
+            <summary>
+            Save modified fund details through the persistance layer
+            </summary>
+            <param name="connectionString"></param>
+            <param name="updatedFunds">Fund Collection object containing details of modified funds</param>
+            <returns>Success/failure flag</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConcurrencyViolationException">Unable to update item as item has been modified since last load</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundController.LoadFundLookupsByGroup(System.Int32)">
+            <summary>
+            Loads a fund lookupcollection by group.
+            </summary>
+            <param name="groupId">Group id.</param>
+            <returns></returns>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.FundController.MaxTolerance">
+            <summary>
+            The maximum upper tolerance allowed
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError">
+            <summary>
+            Indicates what type of error occurred. Used for most fields as is generic
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.NoError">
+            <summary>
+            no error occurred
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundFieldEmptyHiPortfolioCode">
+            <summary>
+            Required HiportCode missing
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundCannotUnSelectBenchMark">
+            <summary>
+            The fund is being used as a benchmark in the system so it 
+            cannot currently be 
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundTypeNotSelected">
+            <summary>
+            No Fund Type has been selected (OEIC, Linked or Composite)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundFieldEmptyFullName">
+            <summary>
+            The required Full Name value is missing
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundFieldEmptyShortName">
+            <summary>
+            The required Short Name value is missing
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundDuplicateFieldHiPortCode">
+            <summary>
+            The Hiport code should be unique
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundDuplicateFieldSecurityCode">
+            <summary>
+            The security code value must be unique
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundDuplicateFieldFullName">
+            <summary>
+            The full name value must be unique
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundDuplicateFieldShortName">
+            <summary>
+            The short name value must be unique
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundFieldEmptyAssetFundID">
+            <summary>
+            An asset fund must be specified for the fund
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundFieldEmptyClassOrPriceSeries">
+            <summary>
+            /// The required Class Or Price Series value is missing
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundInvalidCodeClassOrPriceSeries">
+            <summary>
+            The value entered for the Class Or Price Series is invalid
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundFieldEmptyExternalSystemId">
+            <summary>
+            An external systems does not have an identifier
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundUpperToleranceLessThanLowerTolerance">
+            <summary>
+            The upper tolerance cannot be higher than the upper
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundXFactorInvalid">
+            <summary>
+            The X Factor failed validation
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundTPEInvalid">
+            <summary>
+            The TPE is not within boundry values
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundRevaluationFactorInvalid">
+            <summary>
+            The TPE is not within  boundry values
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundScalingFactorInvalid">
+            <summary>
+            The scaling factor is not within  boundry values
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundUpperToleranceZero">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundUpperToleranceNegative">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundMaxUpperToleranceExceeded">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundInvalidNumDecimalPlacesUpperTolerance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundLowerToleranceZero">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundLowerToleranceNegative">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundMaxLowerToleranceExceeded">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundInvalidNumDecimalPlacesLowerTolerance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundLowerToleranceInvalidNumber">
+            <summary>
+            not a valid decimal
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundUpperToleranceInvalidNumber">
+            <summary>
+            Not a valid decimal
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundTPEInvalidNumber">
+            <summary>
+            not a valid decimal
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundRevaluationFactorInvalidNumber">
+            <summary>
+            not a valid decimal
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundScalingFactorInvalidNumber">
+            <summary>
+            not a valid decimal
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError.FundXFactorInvalidNumber">
+            <summary>
+            not a valid decimal
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.FundGroupController">
+            <summary>
+            Controller object for all things FundGroup orientated.  This is used to
+            keep the logical layers seperate.  
+            The controller will handle calls to the business and data layers.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.#ctor(System.String)">
+            <summary>
+            Default constructor for Fund Group controller
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.LoadFundGroupsByCompany(System.String)">
+            <summary>
+            Returns the collection of Fund group objects for the passed company
+            </summary>
+            <param name="companyCode">The ID of the company for which the fund groups are to be retrieved.</param>
+            <returns>A collection of matching fund groups.</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.LoadFundGroupsByCompanyAndTypeLookUp(System.String,HBOS.FS.AMP.UPD.Types.FundGroups.FundGroupFactory.FundGroupTypes)">
+            <summary>
+            Returns the collection of Fund group objects for the passed company
+            </summary>
+            <param name="companyCode">The ID of the company for which the fund groups are to be retrieved.</param>
+            <param name="fundType">The 1 char code for fund group type- "A" for AssetFund, "I" for Individual (Fund)</param>
+            <returns>A collection of matching fund groups.</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.LoadFundGroupsByCompanyAndType(System.String,HBOS.FS.AMP.UPD.Types.FundGroups.FundGroupFactory.FundGroupTypes)">
+            <summary>
+            Returns the collection of Fund group objects for the passed company
+            </summary>
+            <param name="companyCode">The ID of the company for which the fund groups are to be retrieved.</param>
+            <param name="fundType">The 1 char code for fund group type- "A" for AssetFund, "I" for Individual (Fund)</param>
+            <returns>A collection of matching fund groups.</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.FlushFundGroups">
+            <summary>
+            Clears the persistance cache of Fund Groups
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.LoadFundGroupLookupsByCompany(System.String)">
+            <summary>
+            Loads the fund group lookups by company.
+            </summary>
+            <param name="companyCode">Company code.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.LoadFundGroupLookupsByAssetFund(System.String)">
+            <summary>
+            Loads the fund group lookups associated with the passed asset fund
+            </summary>
+            <param name="assetFundID">The unique key of the asset fund</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.LoadFundGroupStaticData(System.Int32)">
+            <summary>
+            Loads the fund group static data.
+            </summary>
+            <param name="fundGroupId">Fund group id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.LoadFundGroupStaticData(HBOS.FS.AMP.UPD.Types.Lookups.SimpleLookup)">
+            <summary>
+            Loads the fund group static data for a simple lookup.
+            </summary>
+            <param name="lookup">Lookup.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.SaveFundGroup(HBOS.FS.AMP.UPD.Types.FundGroups.FundGroup)">
+            <summary>
+            Save the passed fund group
+            </summary>
+            <param name="fundGroup"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.FundGroupController.ValidateFundGroup(HBOS.FS.AMP.UPD.Types.FundGroups.FundGroup,HBOS.FS.AMP.UPD.Controllers.FundGroupController.FundGroupValidationError@,HBOS.FS.AMP.UPD.Controllers.FundGroupController.FundGroupValidationError@,System.Boolean@)">
+            <summary>
+            Validates that a new or updated fundgroup is valid for db save
+            </summary>
+            <param name="fndGrp"></param>
+            <param name="fullNameError"></param>
+            <param name="shortNameError"></param>
+            <param name="validFundGroupType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.FundGroupController.FundGroupValidationError">
+            <summary>
+            Indicates what type of error occurred 
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundGroupController.FundGroupValidationError.NoError">
+            <summary>
+            no error occurred
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundGroupController.FundGroupValidationError.FieldEmpty">
+            <summary>
+            a required field was not completed
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundGroupController.FundGroupValidationError.DuplicateField">
+            <summary>
+            a unique field already exists in db
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.FundGroupController.FundGroupValidationError.InvalidValue">
+            <summary>
+            only applies to fund group number - must be a valid value (0 (not used), 1-10, or 30)
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.ImportController">
+            <summary>
+            ImportController - Used to manage File Import functionality
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportSnapshot">
+            <summary>
+            Snapshot object from the last import
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.#ctor(System.String)">
+            <summary>
+            Default constructor for Fund Group controller
+            </summary>
+            <param name="connectionString">Connection string to use</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.VerifyNewFile(System.String,System.String)">
+            <summary>
+            Verify that we have a new file
+            </summary>
+            <param name="importFileName">File to Import</param>
+            <param name="companyCode"></param>
+            <returns>True if it is a new file, False if it isn't</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.Import(HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType,System.String,System.String,System.String,System.String,System.DateTime)">
+            <summary>
+            Import the file.
+            </summary>
+            <param name="companyCode"></param>
+            <param name="importFileType">Type of import</param>
+            <param name="importFileName">File being imported</param>
+            <param name="companyValuationDate">The current companies valuation date (use to validate the file against)</param>
+            <param name="importFileNameExtension">Extension of the file being imported</param>
+            <param name="importFileNameWithoutExtension">Name of file being imported without the extension of path</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.ActivateImport">
+            <summary>
+            Activate the current import batch.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.CancelImport">
+            <summary>
+            Cancels the current import batch.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.importStockMarketIndices">
+            <summary>
+            Import Stock Market Indices
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.importCurrencyExchangeRates">
+            <summary>
+            Import Currency Exchange Rates
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.importHi3Prices(System.Boolean,HBOS.FS.AMP.UPD.Types.Snapshot.SnapshotProcess)">
+            <summary>
+            Import Hi3 Prices
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.generateHi3PricesColumns">
+            <summary>
+            Generate Hi3 Prices Columns
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.transferHi3Prices(HBOS.FS.AMP.UPD.Types.Snapshot.Snapshot,System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Transfer the data by row
+            </summary>
+            <param name="ImportSnapshot">Unique DB Id for the current Import</param>
+            <param name="expectedFile">Is the price file being imported an expetced one for the current company</param>
+            <param name="reader"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.transferCompositeSplit(HBOS.FS.AMP.UPD.Types.Snapshot.Snapshot,System.Data.IDataReader,System.Collections.Hashtable,System.Collections.Hashtable,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            Import and validate the Composte split file
+            </summary>
+            <param name="ImportSnapshot"></param>
+            <param name="reader"></param>
+            <param name="allCompanyAssetFunds">All the current companies Asset Funds</param>
+            <param name="allCompanyHiPortfolioCodes">All the current companies Hi Portfolio Codes</param>
+            <param name="transaction"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.storeValidationError(System.Object,HBOS.FS.AMP.UPD.Controllers.AssetFundDataValidator.InvalidDataEventArgs)">
+            <summary>
+            Remember any validation errors
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.storeInvalidDataRowEvent(System.Object,HBOS.FS.AMP.Data.Types.InvalidDataRowEventArgs)">
+            <summary>
+            Remember any validation errors
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.importHi3CompositeFundSplits">
+            <summary>
+            Import the Hi3 Composite Fund Splits
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.importHi3AssetFundSplit(System.String)">
+            <summary>
+            Import the Hi3 Asset Fund Splits
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.Dispose">
+            <summary>
+            Disposes this instance.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.ImportController.ValidationErrors">
+            <summary>
+            Public access to the validation errors.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportedRows">
+            <summary>
+            Public Access to the imported rows.
+            </summary>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Controllers.ImportController.HasAuthorisedPrices">
+            <summary>
+            Does the company for this controller have authorised prices.
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType">
+            <summary>
+            Import File Type
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.StockMarketIndices">
+            <summary>
+            Stock Market Indices (0)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.CurrencyExchangeRate">
+            <summary>
+            Currency Exchange Rates (1)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.Hi3Prices">
+            <summary>
+            Hi3Prices (2)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.Hi3AssetFundSplits">
+            <summary>
+            Hi3AssetFundSplit
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.Hi3CompositeFundSplits">
+            <summary>
+            Hi3CompositeFundSplit
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.Hi3PricesLinked">
+            <summary>
+            Hi3Prices for Linked Funds  (5)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.Hi3PricesComposite">
+            <summary>
+            Hi3Prices for Composite Funds (6)
+            </summary>
+        </member>
+        <member name="F:HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType.PriceComparisionPrices">
+            <summary>
+            Price Import for the Price comparision report (7)
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.CompanyCollections.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.ImportController.CompanyCollections"/> instance.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="companyCode">Company code.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ImportController.CompanyCollections.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.ImportController.CompanyCollections"/> instance.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="companyCode">Company code.</param>
+            <param name="fileName">Name of the file.</param>
+            <param name="extension">Extension.</param>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.LookupController">
+            <summary>
+            LookupController - Controller to retrieve various lookups
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.LookupController.LoadSystems(System.String,System.String)">
+            <summary>
+            Load all the Systems that we know about
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyCode">Company to load List for</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.LookupController.LoadCurrencies(System.String)">
+            <summary>
+            Load all the Currencies that we know about
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.LookupController.LoadPriceFiles(System.String,System.String)">
+            <summary>
+            Loads all the price files.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="companyCode">Only load the files for the specified country</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.LookupController.FlushCountries">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.LookupController.FlushCurrencies">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.LookupController.LoadCountries(System.String)">
+            <summary>
+            Load all the Countries that we know about
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.LookupController.LoadStockMarketIndices(System.String)">
+            <summary>
+            Load all the stock market Indices
+            TODO this is loading up an old legacy type, but is still used by Import
+            </summary>
+            <param name="connectionString">Database connection string</param>
+            <returns>Populated indices</returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.PriceFileController">
+            <summary>
+            Controller object for all things PriceFile orientated.  
+            This will handle calls to the data layer.
+            This is used to keep the logical layers seperate.  
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.PriceFileController.#ctor">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.PriceFileController"/> instance.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.PriceFileController.LoadPriceFile(System.Int32,System.String)">
+            <summary>
+            Loads the specified PriceFile.
+            </summary>
+            <param name="priceFileId">Unique identifier of the Price File to load.</param>
+            <param name="connectionString"></param>
+            <returns>Populated PriceFile object</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load PriceFile</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.PriceFileController.LoadAssetFunds(System.Int32,System.String)">
+            <summary>
+            Loads the asset funds.
+            </summary>
+            <param name="priceFileId">Price file id.</param>
+            <param name="connectionString">Connection string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.PriceFileController.UpdatePriceFile(HBOS.FS.AMP.UPD.Types.AssetFunds.PriceFile,System.String)">
+            <summary>
+            Updates the PriceFile item to the database.
+            </summary>
+            <param name="PriceFile">PriceFile object.</param>
+            <param name="connectionString"></param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.PriceFileController.IsFileRelatedToCompany(System.String,System.String,System.String,System.String)">
+            <summary>
+            Determines whether the specified fileName is  related to the company.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="companyCode">Company code.</param>
+            <param name="extension">File extension</param>
+            <param name="connectionString">Connection string.</param>
+            <returns>
+            	<c>true</c> if [is file related to company] [the specified fileName]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.ReportController">
+            <summary>
+            Report Controller functionality
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ReportController.LoadPredictedPricesReportByFundGroup(System.String,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            Load Predicted Prices Report By Fund Group
+            </summary>
+            <param name="connectionString"></param>
+            <param name="fundGroupID"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ReportController.LoadPredictedPricesReportByFund(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Load Predicted Prices Report By Fund
+            </summary>
+            <param name="connectionString"></param>
+            <param name="fundID"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.ReportController.LoadPriceComparisionData(System.String,System.DateTime,System.Int64,System.Data.DataSet)">
+            <summary>
+            Loads the price comparision data.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="valuationDate">Valuation date.</param>
+            <param name="snapShotId">Snap shot id.</param>
+            <param name="datasetToFill">Dataset to fill and return</param>
+            <returns></returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.StockMarketController">
+            <summary>
+            Controller object for all things StockMarket orientated.  
+            This will handle calls to the data layer.
+            This is used to keep the logical layers seperate.  
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.StockMarketController.#ctor">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.StockMarketController"/> instance.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.StockMarketController.LoadStockMarket(System.Int32,System.String)">
+            <summary>
+            Loads the specified StockMarket.
+            </summary>
+            <param name="stockMarketIndex">StockMarket Unique Index.</param>
+            <param name="connectionString"></param>
+            <returns>Populated StockMarket object</returns>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to load StockMarket</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.StockMarketController.UpdateStockMarket(HBOS.FS.AMP.UPD.Types.AssetFunds.StockMarket,System.String)">
+            <summary>
+            Updates the StockMarket item to the database.
+            </summary>
+            <param name="StockMarket">StockMarket object.</param>
+            <param name="connectionString"></param>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConstraintViolationException">Unable to insert item as an existing item already exists with unique key</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.ConcurrencyViolationException">Unable to update item as item has been modified since last load</exception>
+            <exception cref="T:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">Unable to create/update or delete items</exception>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.SystemController">
+            <summary>
+            Summary description for UPDIO.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.SystemController.#ctor">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.SystemController"/> instance.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.SystemController.GetServerDateTime(System.String)">
+            <summary>
+            Gets the server date time.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.SystemController.GetNextWorkingDay(System.String,System.DateTime)">
+            <summary>
+            works out next working day from today
+            </summary>
+            <returns></returns>
+            	private DateTime NextWorkingDay
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.UPDIO">
+            <summary>
+            Summary description for UPDIO.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.#ctor">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.UPDIO"/> instance.
+            </summary>
+            <remarks>Made private to prevent creation of object</remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.FileExists(System.String)">
+            <summary>
+            Test to see if a specified file exists in the designated path
+            </summary>
+            <param name="fileName">Filename and path</param>
+            <returns>Exists flag</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.MoveFile(System.String,System.String)">
+            <summary>
+            Copy a file from one location to another
+            </summary>
+            <param name="sourceFileName">Source file name and path</param>
+            <param name="destinationFileName">Destination file name and path</param>
+            <returns>Success flag</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.LoadNewFileNameWithDate(System.String,System.String)">
+            <summary>
+            Create a new file name for the specified file.  If the file already
+            exists then apply the file creation date to the file name
+            </summary>
+            <param name="fileName">Existing file</param>
+            <param name="prefix">Any prefix to be applied to the filename</param>
+            <returns>New file name</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.Createfile(System.String,System.Boolean)">
+            <summary>
+            Create the specified file
+            </summary>
+            <param name="fileName"></param>
+            <param name="addDummyLine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.CreateFolder(System.String)">
+            <summary>
+            Create a specified folder
+            </summary>
+            <param name="folderPath"></param>
+            <returns>Success flag</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.LoadFilePath(System.String)">
+            <summary>
+            Get the folder path from the file name and path
+            </summary>
+            <param name="fileName">File name and path</param>
+            <returns>The folder path</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.BuildFilePath(System.String,System.String)">
+            <summary>
+            Join a filename and pathname together
+            </summary>
+            <param name="pathname"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UPDIO.formatDateToSring(System.DateTime)">
+            <summary>
+            Format the date time into a string to be used within a file name
+            </summary>
+            <param name="dateTime">DateTime object</param>
+            <returns>A formatted string of the date time: yyyyMMddHHmmss</returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.UserController">
+            <summary>
+            Controller object for all things Fund orientated.  This is used to
+            keep the logical layers seperate.  
+            The controller will handle calls to the business and data layers.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.#ctor">
+            <summary>
+            Contstructor
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.UserIsValid(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.GrantedPermissionsAttributeCollection(System.String,System.String,System.String)">
+            <summary>
+            Return the user permissions for the user and the current company.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="companyId">Company id.</param>
+            <param name="logOnId">Log on id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.GetLastCompany(System.String)">
+            <summary>
+            Get the Company that the current user last chose
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.SetLastCompany(System.String,System.String)">
+            <summary>
+            Set the Company that the current user last chose
+            </summary>
+            <param name="connectionString"></param>
+            <param name="companyId"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.LoadUser(System.String,System.String,System.String)">
+            <summary>
+            Loads a sing user by Login ID.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="loginID">Login ID.</param>
+            <param name="companyCode">Company code.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.LoadUsers(System.String,System.String)">
+            <summary>
+            Get a collection of users filtered by the company code/id
+            </summary>
+            <param name="connectionString"></param>
+            <param name="CompanyID"></param>
+            <returns>UserCollection</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.SaveUsers(HBOS.FS.AMP.UPD.Types.Users.UserCollection,System.String,System.String)">
+            <summary>
+            Save the users back to the Data Source
+            </summary>
+            <param name="users">The users to save</param>
+            <param name="companyCode">Company code that the users is being deleted from for permission reasons</param>
+            <param name="connectionString">The connection string to the database to save them in</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.GetAllPermissions(HBOS.FS.AMP.UPD.Types.Users.User,System.String,System.String)">
+            <summary>
+            Gets the all permissions those granted to the user  will be indeicated.
+            </summary>
+            <param name="user">User.</param>
+            <param name="companyCode">Company code.</param>
+            <param name="connectionString">Connection string.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.UserController.LoadExportData(System.String,System.String)">
+            <summary>
+            Loads the export data.
+            </summary>
+            <param name="connectionString">Connection string.</param>
+            <param name="companyCode">Company code.</param>
+            <returns></returns>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Controllers.VersionController">
+            <summary>
+            Provides Business Logic for controlling versioning
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.VersionController.#ctor">
+            <summary>
+            Creates a new <see cref="T:HBOS.FS.AMP.UPD.Controllers.VersionController"/> instance.
+            Private constructor to prevent construction of a static class
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Controllers.VersionController.VerifyVersion(System.String,System.Version)">
+            <summary>
+            Verifies the version number
+            </summary>
+            <param name="connectionString">String to use for database connection</param>
+            <param name="version">Version to verify.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

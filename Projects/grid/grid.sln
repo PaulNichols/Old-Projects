@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\grid\", "..\..\..\..\Desktop\HierDataGrid_CS_src\HierDataGrid_CS_src\CSharpDemoHierGrid\grid\", "{327534A4-FF3F-4BC8-84BA-D86B7F9738FA}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/grid"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\HierDataGrid_CS_src\HierDataGrid_CS_src\CSharpDemoHierGrid\grid\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\grid\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/grid"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\HierDataGrid_CS_src\HierDataGrid_CS_src\CSharpDemoHierGrid\grid\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\grid\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2232"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{327534A4-FF3F-4BC8-84BA-D86B7F9738FA}.Debug|.NET.ActiveCfg = Debug|.NET
+		{327534A4-FF3F-4BC8-84BA-D86B7F9738FA}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

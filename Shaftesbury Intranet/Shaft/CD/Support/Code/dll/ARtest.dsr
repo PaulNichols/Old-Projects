@@ -1,0 +1,147 @@
+VERSION 5.00
+Begin {82282820-C017-11D0-A87C-00A0C90F29FC} rptshaft1 
+   Caption         =   "ActiveReport1"
+   ClientHeight    =   11115
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   15240
+   StartUpPosition =   3  'Windows Default
+   _ExtentX        =   26882
+   _ExtentY        =   19606
+   SectionData     =   "ARtest.dsx":0000
+End
+Attribute VB_Name = "rptshaft1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim i As Long, iContactcount As Long
+
+Private Sub ActiveReport_ReportStart()
+Dim nFilaswidth As Double, j As Integer
+ Printer.Orientation = 2
+ PageLeftMargin = 300
+ PageRightMargin = 300
+ Caption = "Reports..."
+lbl9.BackStyle = 1
+ With oCurUser.Settings
+    For j = 1 To 9
+        If .Columns(j).Name = "File As" Then nFilaswidth = .Columns(j).Width: Exit For
+    Next j
+    .Columns(j).Width = 0
+    lbl1.Text = .Columns(1).Name: lbl1.Width = .Columns(1).Width: lbl1.Left = 0
+    lbl2.Text = .Columns(2).Name: lbl2.Width = .Columns(2).Width: lbl2.Left = lbl1.Left + lbl1.Width
+    lbl3.Text = .Columns(3).Name: lbl3.Width = .Columns(3).Width: lbl3.Left = lbl2.Left + lbl2.Width
+    lbl4.Text = .Columns(4).Name: lbl4.Width = .Columns(4).Width: lbl4.Left = lbl3.Left + lbl3.Width
+    lbl5.Text = .Columns(5).Name: lbl5.Width = .Columns(5).Width: lbl5.Left = lbl4.Left + lbl4.Width
+    lbl6.Text = .Columns(6).Name: lbl6.Width = .Columns(6).Width: lbl6.Left = lbl5.Left + lbl5.Width
+    lbl7.Text = .Columns(7).Name: lbl7.Width = .Columns(7).Width: lbl7.Left = lbl6.Left + lbl6.Width
+    lbl8.Text = .Columns(8).Name: lbl8.Width = .Columns(8).Width: lbl8.Left = lbl7.Left + lbl7.Width
+    lbl9.Text = .Columns(9).Name: lbl9.Width = .Columns(9).Width: lbl9.Left = lbl8.Left + lbl8.Width
+
+    PageHeader.Height = 500
+    lbl1.Height = PageHeader.Height ': Line1.Y1 = PageHeader.Height: Line1.Y2 = PageHeader.Height
+    lbl2.Height = PageHeader.Height ': Line2.Y1 = PageHeader.Height: Line2.Y2 = PageHeader.Height
+    lbl3.Height = PageHeader.Height ': Line3.Y1 = PageHeader.Height: Line3.Y2 = PageHeader.Height
+    lbl4.Height = PageHeader.Height ': Line4.Y1 = PageHeader.Height: Line4.Y2 = PageHeader.Height
+    lbl5.Height = PageHeader.Height ': Line5.Y1 = PageHeader.Height: Line5.Y2 = PageHeader.Height
+    lbl6.Height = PageHeader.Height ': Line7.Y1 = PageHeader.Height: Line7.Y2 = PageHeader.Height
+    lbl7.Height = PageHeader.Height ': Line8.Y1 = PageHeader.Height: Line8.Y2 = PageHeader.Height
+    lbl8.Height = PageHeader.Height ': Line9.Y1 = PageHeader.Height: Line9.Y2 = PageHeader.Height
+    lbl9.Height = PageHeader.Height ': Line10.Y1 = PageHeader.Height: Line10.Y2 = PageHeader.Height
+    
+    lbl1.Border.BottomColor = &H0&: lbl1.Border.BottomStyle = ddBLSolid: lbl1.Border.LeftColor = &H0&: lbl1.Border.LeftStyle = ddBLSolid: lbl1.Border.RightColor = &H0&: lbl1.Border.RightStyle = ddBLSolid: lbl1.Border.TopColor = &H0&: lbl1.Border.TopStyle = ddBLSolid
+    lbl2.Border.BottomColor = &H0&: lbl2.Border.BottomStyle = ddBLSolid: lbl2.Border.LeftColor = &H0&: lbl2.Border.LeftStyle = ddBLSolid: lbl2.Border.RightColor = &H0&: lbl2.Border.RightStyle = ddBLSolid: lbl2.Border.TopColor = &H0&: lbl2.Border.TopStyle = ddBLSolid
+    lbl3.Border.BottomColor = &H0&: lbl3.Border.BottomStyle = ddBLSolid: lbl3.Border.LeftColor = &H0&: lbl3.Border.LeftStyle = ddBLSolid: lbl3.Border.RightColor = &H0&: lbl3.Border.RightStyle = ddBLSolid: lbl3.Border.TopColor = &H0&: lbl3.Border.TopStyle = ddBLSolid
+    lbl4.Border.BottomColor = &H0&: lbl4.Border.BottomStyle = ddBLSolid: lbl4.Border.LeftColor = &H0&: lbl4.Border.LeftStyle = ddBLSolid: lbl4.Border.RightColor = &H0&: lbl4.Border.RightStyle = ddBLSolid: lbl4.Border.TopColor = &H0&: lbl4.Border.TopStyle = ddBLSolid
+    lbl5.Border.BottomColor = &H0&: lbl5.Border.BottomStyle = ddBLSolid: lbl5.Border.LeftColor = &H0&: lbl5.Border.LeftStyle = ddBLSolid: lbl5.Border.RightColor = &H0&: lbl5.Border.RightStyle = ddBLSolid: lbl5.Border.TopColor = &H0&: lbl5.Border.TopStyle = ddBLSolid
+    lbl6.Border.BottomColor = &H0&: lbl6.Border.BottomStyle = ddBLSolid: lbl6.Border.LeftColor = &H0&: lbl6.Border.LeftStyle = ddBLSolid: lbl6.Border.RightColor = &H0&: lbl6.Border.RightStyle = ddBLSolid: lbl6.Border.TopColor = &H0&: lbl6.Border.TopStyle = ddBLSolid
+    lbl7.Border.BottomColor = &H0&: lbl7.Border.BottomStyle = ddBLSolid: lbl7.Border.LeftColor = &H0&: lbl7.Border.LeftStyle = ddBLSolid: lbl7.Border.RightColor = &H0&: lbl7.Border.RightStyle = ddBLSolid: lbl7.Border.TopColor = &H0&: lbl7.Border.TopStyle = ddBLSolid
+    lbl8.Border.BottomColor = &H0&: lbl8.Border.BottomStyle = ddBLSolid: lbl8.Border.LeftColor = &H0&: lbl8.Border.LeftStyle = ddBLSolid: lbl8.Border.RightColor = &H0&: lbl8.Border.RightStyle = ddBLSolid: lbl8.Border.TopColor = &H0&: lbl8.Border.TopStyle = ddBLSolid
+    lbl9.Border.BottomColor = &H0&: lbl9.Border.BottomStyle = ddBLSolid: lbl9.Border.LeftColor = &H0&: lbl9.Border.LeftStyle = ddBLSolid: lbl9.Border.RightColor = &H0&: lbl9.Border.RightStyle = ddBLSolid: lbl9.Border.TopColor = &H0&: lbl9.Border.TopStyle = ddBLSolid
+    
+    txt1.Border.BottomColor = &H0&: txt1.Border.BottomStyle = ddBLSolid: txt1.Border.LeftColor = &H0&: txt1.Border.LeftStyle = ddBLSolid: txt1.Border.RightColor = &H0&: txt1.Border.RightStyle = ddBLSolid: txt1.Border.TopColor = &H0&: txt1.Border.TopStyle = ddBLSolid
+    txt2.Border.BottomColor = &H0&: txt2.Border.BottomStyle = ddBLSolid: txt2.Border.LeftColor = &H0&: txt2.Border.LeftStyle = ddBLSolid: txt2.Border.RightColor = &H0&: txt2.Border.RightStyle = ddBLSolid: txt2.Border.TopColor = &H0&: txt2.Border.TopStyle = ddBLSolid
+    txt3.Border.BottomColor = &H0&: txt3.Border.BottomStyle = ddBLSolid: txt3.Border.LeftColor = &H0&: txt3.Border.LeftStyle = ddBLSolid: txt3.Border.RightColor = &H0&: txt3.Border.RightStyle = ddBLSolid: txt3.Border.TopColor = &H0&: txt3.Border.TopStyle = ddBLSolid
+    txt4.Border.BottomColor = &H0&: txt4.Border.BottomStyle = ddBLSolid: txt4.Border.LeftColor = &H0&: txt4.Border.LeftStyle = ddBLSolid: txt4.Border.RightColor = &H0&: txt4.Border.RightStyle = ddBLSolid: txt4.Border.TopColor = &H0&: txt4.Border.TopStyle = ddBLSolid
+    txt5.Border.BottomColor = &H0&: txt5.Border.BottomStyle = ddBLSolid: txt5.Border.LeftColor = &H0&: txt5.Border.LeftStyle = ddBLSolid: txt5.Border.RightColor = &H0&: txt5.Border.RightStyle = ddBLSolid: txt5.Border.TopColor = &H0&: txt5.Border.TopStyle = ddBLSolid
+    txt6.Border.BottomColor = &H0&: txt6.Border.BottomStyle = ddBLSolid: txt6.Border.LeftColor = &H0&: txt6.Border.LeftStyle = ddBLSolid: txt6.Border.RightColor = &H0&: txt6.Border.RightStyle = ddBLSolid: txt6.Border.TopColor = &H0&: txt6.Border.TopStyle = ddBLSolid
+    txt7.Border.BottomColor = &H0&: txt7.Border.BottomStyle = ddBLSolid: txt7.Border.LeftColor = &H0&: txt7.Border.LeftStyle = ddBLSolid: txt7.Border.RightColor = &H0&: txt7.Border.RightStyle = ddBLSolid: txt7.Border.TopColor = &H0&: txt7.Border.TopStyle = ddBLSolid
+    txt8.Border.BottomColor = &H0&: txt8.Border.BottomStyle = ddBLSolid: txt8.Border.LeftColor = &H0&: txt8.Border.LeftStyle = ddBLSolid: txt8.Border.RightColor = &H0&: txt8.Border.RightStyle = ddBLSolid: txt8.Border.TopColor = &H0&: txt8.Border.TopStyle = ddBLSolid
+    txt9.Border.BottomColor = &H0&: txt9.Border.BottomStyle = ddBLSolid: txt9.Border.LeftColor = &H0&: txt9.Border.LeftStyle = ddBLSolid: txt9.Border.RightColor = &H0&: txt9.Border.RightStyle = ddBLSolid: txt9.Border.TopColor = &H0&: txt9.Border.TopStyle = ddBLSolid
+
+    
+    txt1.Width = lbl1.Width: txt1.Left = lbl1.Left
+    txt2.Width = lbl2.Width: txt2.Left = lbl2.Left
+    txt3.Width = lbl3.Width: txt3.Left = lbl3.Left
+    txt4.Width = lbl4.Width: txt4.Left = lbl4.Left
+    txt5.Width = lbl5.Width: txt5.Left = lbl5.Left
+    txt6.Width = lbl6.Width: txt6.Left = lbl6.Left
+    txt7.Width = lbl7.Width: txt7.Left = lbl7.Left
+    txt8.Width = lbl8.Width: txt8.Left = lbl8.Left
+    txt9.Width = lbl9.Width: txt9.Left = lbl9.Left
+
+    lbl1.Visible = IIf(lbl1.Width = 0, False, True): txt1.Visible = lbl1.Visible
+    lbl2.Visible = IIf(lbl2.Width = 0, False, True): txt2.Visible = lbl2.Visible
+    lbl3.Visible = IIf(lbl3.Width = 0, False, True): txt3.Visible = lbl3.Visible
+    lbl4.Visible = IIf(lbl4.Width = 0, False, True): txt4.Visible = lbl4.Visible
+    lbl5.Visible = IIf(lbl5.Width = 0, False, True): txt5.Visible = lbl5.Visible
+    lbl6.Visible = IIf(lbl6.Width = 0, False, True): txt6.Visible = lbl6.Visible
+    lbl7.Visible = IIf(lbl7.Width = 0, False, True): txt7.Visible = lbl7.Visible
+    lbl8.Visible = IIf(lbl8.Width = 0, False, True): txt8.Visible = lbl8.Visible
+    lbl9.Visible = IIf(lbl9.Width = 0, False, True): txt9.Visible = lbl9.Visible
+    
+    lbl1.CanGrow = False: lbl1.CanShrink = False
+    lbl2.CanGrow = False: lbl2.CanShrink = False
+    lbl3.CanGrow = False: lbl3.CanShrink = False
+    lbl4.CanGrow = False: lbl4.CanShrink = False
+    lbl5.CanGrow = False: lbl5.CanShrink = False
+    lbl6.CanGrow = False: lbl6.CanShrink = False
+    lbl7.CanGrow = False: lbl7.CanShrink = False
+    lbl8.CanGrow = False: lbl8.CanShrink = False
+    lbl9.CanGrow = False: lbl9.CanShrink = False
+    
+    txt1.CanGrow = False: txt1.CanShrink = False
+    txt2.CanGrow = False: txt2.CanShrink = False
+    txt3.CanGrow = False: txt3.CanShrink = False
+    txt4.CanGrow = False: txt4.CanShrink = False
+    txt5.CanGrow = False: txt5.CanShrink = False
+    txt6.CanGrow = False: txt6.CanShrink = False
+    txt7.CanGrow = False: txt7.CanShrink = False
+    txt8.CanGrow = False: txt8.CanShrink = False
+    txt9.CanGrow = False: txt9.CanShrink = False
+
+    Detail.CanGrow = True
+    Detail.CanShrink = True
+  i = 1
+  .Columns(j).Width = nFilaswidth
+    If Not rptRS.Recordset.BOF Then rptRS.Recordset.MoveFirst
+    With frmaddressbook.grdcontacts
+        txt1.DataField = .TextMatrix(1, 0)
+        txt2.DataField = .TextMatrix(1, 1)
+        txt3.DataField = .TextMatrix(1, 2)
+        txt4.DataField = .TextMatrix(1, 3)
+        txt5.DataField = .TextMatrix(1, 4)
+        txt6.DataField = .TextMatrix(1, 5)
+        txt7.DataField = .TextMatrix(1, 6)
+        txt8.DataField = .TextMatrix(1, 7)
+        txt9.DataField = .TextMatrix(1, 8)
+    End With
+  End With
+End Sub
+
+Private Sub Detail_AfterPrint()
+i = i + 1
+End Sub
+
+Private Sub Detail_Format()
+    Detail.Height = 280
+    iContactcount = iContactcount + 1
+End Sub
+
+Private Sub PageFooter_Format()
+   lblPage = "Page: " & Str(pageNumber)
+   lblDate = "Date: " & Date
+   lblcontacts = "Contacts : " & iContactcount
+End Sub
+

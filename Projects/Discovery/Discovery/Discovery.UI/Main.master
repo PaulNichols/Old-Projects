@@ -1,0 +1,80 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" EnableTheming="true" Inherits="Main" %>
+<%@ Register Src="UserControls/DiscoveryProgress.ascx" TagName="DiscoveryProgress"
+    TagPrefix="Discovery" %>
+<%@ Register Src="UserControls/DiscoveryMessage.ascx" TagName="DiscoveryMessage" TagPrefix="Discovery" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Page-Enter" content="progid:DXImageTransform.Microsoft.Fade(duration=.3)" />
+    <title>Management Server</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- AJAX Script Manager Start -->
+        <asp:ScriptManager runat="server" ID="ajaxScriptManager" ScriptMode="Release" />
+        
+        <!-- Progress PopUp Start -->
+        <Discovery:DiscoveryProgress id="DiscoveryProgress1" runat="server"/>
+
+        <!-- Progress PopUp End -->
+        <table class="PageContainer" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td>
+                    <table class="PageHeader" width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="width: 100%">
+                                <div class="SiteBanner">
+                                    Management Server</div>
+                              <!--  felt it was redundant
+                              <asp:SiteMapPath ID="SiteMapPath1" runat="server" />-->
+                                <b>
+                                    <asp:LoginName ID="LoginName" runat="server" />
+                                    <asp:LoginStatus ID="LoginStatus" LogoutAction="Redirect" LogoutPageUrl="~/Default.aspx"
+                                        runat="server" />
+                                </b>
+                            </td>
+                            <td align="right" style="width: 100%" rowspan="2">
+                                <asp:Image ID="Image1" runat="server" SkinID="SiteLogo" />
+                                <br />
+                              
+                            </td>
+                        </tr>
+                        <tr style="padding-top: 5px">
+                            <td colspan="2">
+                                <asp:Menu ID="Menu1" EnableViewState="false" runat="server" DataSourceID="ManagementServer">
+                                </asp:Menu>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <!-- Messages Update Panel Start -->
+                                <asp:UpdatePanel ID="updatePanelMessage" runat="server">
+                                    <ContentTemplate>
+                                        <!-- System Messages Start -->
+                                        <Discovery:DiscoveryMessage ID="MessagePopup" runat="server" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                                <!-- Messages Update Panel End -->
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="PageContent">
+                    <!-- Page Content -->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="SiteCopyright" style="text-align: center">
+                    <asp:HyperLink ID="HyperLinkCopyright" runat="server" CssClass="SiteCopyright" Width="100%">Copyright</asp:HyperLink><br />
+                    Version:
+                    <asp:Label ID="LabelVersion" CssClass="SiteCopyright" runat="server" Text="Label"></asp:Label></td>
+            </tr>
+        </table>
+        <asp:SiteMapDataSource ID="ManagementServer" runat="server" ShowStartingNode="False"
+            SiteMapProvider="CustomSiteMapProvider" />
+    </form>
+</body>
+</html>

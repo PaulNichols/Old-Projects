@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DFA_Online_PaymentData" targetNamespace="http://tempuri.org/DFA_Online_PaymentData.xsd"
+	xmlns:mstns="http://tempuri.org/DFA_Online_PaymentData.xsd" xmlns="http://tempuri.org/DFA_Online_PaymentData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="DFA_Online_PaymentData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BODFA_Online_Payment">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RowId" type="xs:long" minOccurs="0" />
+							<xs:element name="BoldRow" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ColumnData" type="xs:string" minOccurs="0" />
+							<xs:element name="PhoenixReference" type="xs:string" minOccurs="0" />
+							<xs:element name="Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="PartyID" type="xs:string" minOccurs="0" />
+							<xs:element name="PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="NumOfApplications" type="xs:string" minOccurs="0" />
+							<xs:element name="RemittanceAdvice" type="xs:string" minOccurs="0" />
+							<xs:element name="PaymentDetails" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

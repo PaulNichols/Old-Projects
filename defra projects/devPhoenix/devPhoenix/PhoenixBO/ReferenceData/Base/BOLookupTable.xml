@@ -1,0 +1,1032 @@
+<LookupData>
+	<LookupTable id="1" name="ApplicationType">
+		<TableDescription>Application or Notification Type</TableDescription>
+		<ReferenceObject>ReferenceData.BOApplicationType</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-001</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowEdit/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Code</HeaderText>
+			<Length>20</Length>
+			<RegExp>^[A-Za-z0-9]+$</RegExp>
+			<Message>You must enter a Code: no leading spaces</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>CitesYesNoText</VisibleCol>
+			<HeaderText>CITES Yes/No</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>Answer Yes or No (Y/N)</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>WLRSService</VisibleCol>
+			<HeaderText>WLRS Service Level(Days)</HeaderText>
+			<Length>2</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter a level</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>JNCCService1</VisibleCol>
+			<HeaderText>JNCC Service Level1(Days)</HeaderText>
+			<Length>2</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter a level</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>JNCCService2</VisibleCol>
+			<HeaderText>JNCC Service Level2(Days)</HeaderText>
+			<Length>2</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter a level</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>KewService1</VisibleCol>
+			<HeaderText>KEW Service Level1(Days)</HeaderText>
+			<Length>2</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter a level</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>KewService2</VisibleCol>
+			<HeaderText>KEW Service Level2(Days)</HeaderText>
+			<Length>2</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter a level</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="3" name="CITESDerivative">
+		<TableDescription>CITES Part or Derivative</TableDescription>
+		<ReferenceObject>ReferenceData.BOCITESDerivative</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-003</ScreenNumber>
+		<TableType>2</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<HeaderText>Code</HeaderText>
+			<Length>0</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>0</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<HeaderText>Description</HeaderText>
+			<Length>0</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>0</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<HeaderText>Explanation</HeaderText>
+			<Length>0</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>0</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<HeaderText>Preferred</HeaderText>
+			<Length>0</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>0</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<HeaderText>Alternate</HeaderText>
+			<Length>0</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>0</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<HeaderText>SortSeq</HeaderText>
+			<Length>0</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>0</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="4" name="CITESPurpose">
+		<TableDescription>CITES Purpose</TableDescription>
+		<ReferenceObject>ReferenceData.BOCITESPurpose</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-004</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Code</HeaderText>
+			<Length>1</Length>
+			<RegExp>^[A-Za-z]+$</RegExp>
+			<Message>You must enter a Code (1 Char - Upper Case)</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>CommercialPurposeText</VisibleCol>
+			<HeaderText>Commercial Purpose (Y/N)</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>You must enter a Commercial Purpose (Y/N)</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="5" name="CITESSource">
+		<TableDescription>CITES Source</TableDescription>
+		<ReferenceObject>ReferenceData.BOCITESSource</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-005</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Code</HeaderText>
+			<Length>1</Length>
+			<RegExp>^[A-Za-z]+$</RegExp>
+			<Message>You must enter a Code (1 Char- Upper Case)</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>ListEntry</VisibleCol>
+			<HeaderText>Source List Entry</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must have a Source List Entry: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Source Description</HeaderText>
+			<Length>250</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>AdditionalSourceText</VisibleCol>
+			<HeaderText> Additional Source (Y/N)</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>You must answer Y(es) or N(o) for Additional Source</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="7" name="CITESUnitOfMeasurement">
+		<TableDescription>CITES Unit of Measure</TableDescription>
+		<ReferenceObject>BOUnitOfMeasurement</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-006</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Code</HeaderText>
+			<Length>5</Length>
+			<RegExp>^[A-Za-z0-9]+$</RegExp>
+			<Message>You must enter a Code: no leading spaces</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>30</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="11" name="Titles">
+		<TableDescription>Party Title</TableDescription>
+		<ReferenceObject>BOTitles</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-008</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>20</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="12" name="PhoenixParameter">
+		<TableDescription>Phoenix Parameter</TableDescription>
+		<ReferenceObject>ReferenceData.BOPhoenixParameter</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-009</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowEdit/>
+		<Column>
+			<VisibleCol>ParamName</VisibleCol>
+			<HeaderText>Parameter</HeaderText>
+			<Length>30</Length>
+			<RegExp>^[A-Za-z0-9]+$</RegExp>
+			<Message>You must enter a Parameter ID</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>ParamValue</VisibleCol>
+			<HeaderText> Value</HeaderText>
+			<Length>255</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Parameter Value</Message>
+			<LookupList>PhoenixParameter</LookupList>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="14" name="RefusalReason">
+		<TableDescription>Refusal Reason</TableDescription>
+		<ReferenceObject>ReferenceData.BORefusalReason</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-010</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Subject</VisibleCol>
+			<HeaderText>Subject</HeaderText>
+			<Length>30</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Subject: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText> Standard Text</HeaderText>
+			<Length>1000</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter Standard Text  : no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="15" name="ScientificAdvice">
+		<TableDescription>Standard Scientific Advice</TableDescription>
+		<ReferenceObject>ReferenceData.BOScientificAdvice</ReferenceObject>
+		<SecurityLevel>2</SecurityLevel>
+		<ScreenNumber>RD-011</ScreenNumber>
+		<TableType>7</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Code</HeaderText>
+			<Length>3</Length>
+			<RegExp>^[A-Za-z0-9]+$</RegExp>
+			<Message>You must enter a Code: no leading spaces</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>RecommendedStatus</VisibleCol>
+			<HeaderText>Recommended Status</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^\d$</RegExp>
+			<Message>You must select a Recommended Status</Message>
+			<LookupList>RecommendedStatus</LookupList>
+			<Default>0</Default>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Subject</HeaderText>
+			<Length>30</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Subject: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>AdviceText</VisibleCol>
+			<HeaderText>Advice Text</HeaderText>
+			<Length>1000</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter some Advice Text: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>DefaultAdviceText</VisibleCol>
+			<HeaderText>Default Advice Text</HeaderText>
+			<Length>1000</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter some Default Advice Text: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="16" name="SpecialCondition">
+		<TableDescription>Standard Special Condition</TableDescription>
+		<ReferenceObject>ReferenceData.BOSpecialCondition</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-012</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Special Condition Code</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Special Condition Code: no leading spaces</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Subject</VisibleCol>
+			<HeaderText>Special condition Subject</HeaderText>
+			<Length>200</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Special Condition Subject: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Special Condition Standard Text</HeaderText>
+			<Length>899</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Special Condition</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>BFDateRequiredText</VisibleCol>
+			<HeaderText>BFDate Required (Y/N)</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>You must enter a BF Date Required (Y/N)</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="17" name="StandardFee">
+		<TableDescription>Standard Fee</TableDescription>
+		<ReferenceObject>ReferenceData.BOStandardFee</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-013</ScreenNumber>
+		<TableType>4</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>PlantOrCoralText</VisibleCol>
+			<HeaderText>Plant or Coral (Y)es/(N)o</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>You must enter Plant or Coral (Y/N)</Message>
+			<Default>No</Default>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>CommercialPurposeText</VisibleCol>
+			<HeaderText>Commercial Purpose (Y)es/(N)o</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>You must enter Commercial Purpose (Y/N)</Message>
+			<Default>No</Default>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>BirdFeeLevel</VisibleCol>
+			<HeaderText>Bird Fee Level</HeaderText>
+			<Length>1</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter a Bird Fee Level</Message>
+			<Default>0</Default>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>MinimumNumberOfSpecies</VisibleCol>
+			<HeaderText>Minimum No. (Species or Genera)</HeaderText>
+			<Length>2</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter Minimum No. of Species or Genera</Message>
+			<Default>0</Default>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>MaximumNumberOfSpecies</VisibleCol>
+			<HeaderText>Maximum No. (Species or Genera)</HeaderText>
+			<Length>2</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter Maximum No. of Species or Genera</Message>
+			<Default>99</Default>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>FeeText</VisibleCol>
+			<HeaderText>Fee</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^\d+(\.\d\d)?$</RegExp>
+			<Message>You must enter a Fee</Message>
+			<Default>0</Default>
+			<EditColumn>1</EditColumn>
+			<RightJustified/>
+		</Column>
+	</LookupTable>
+	<LookupTable id="18" name="UKCountry">
+		<TableDescription>UK Country</TableDescription>
+		<ReferenceObject>ReferenceData.BOUKCountry</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-014</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>UKCountryCode</VisibleCol>
+			<HeaderText>UK Code</HeaderText>
+			<Length>1</Length>
+			<RegExp>^[A-Z]$</RegExp>
+			<Message>You must enter a UK Country Code</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>UKCountryName</VisibleCol>
+			<HeaderText>UK Name</HeaderText>
+			<Length>20</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a UK Country Name : no leading spaces</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="19" name="AcquisitionTransferMethod">
+		<TableDescription>Acquisition or Transfer Method</TableDescription>
+		<ReferenceObject>ReferenceData.BOAcquisitionTransferMethod</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-015</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>25</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="22" name="AdultDORType">
+		<TableDescription>Adult DOR Type</TableDescription>
+		<ReferenceObject>ReferenceData.BOAdultDORType</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-018</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="23" name="ApplicationMethod">
+		<TableDescription>Application Method</TableDescription>
+		<ReferenceObject>ReferenceData.BOApplicationMethod</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-019</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="27" name="Article10CertificateType">
+		<TableDescription>Article 10 Type</TableDescription>
+		<ReferenceObject>ReferenceData.BOArticle10CertificateType</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-023</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="28" name="BusinessType">
+		<TableDescription>Business Type</TableDescription>
+		<ReferenceObject>Party.BOBusinessType</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-024</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="30" name="ContactType">
+		<TableDescription>Contact Type</TableDescription>
+		<ReferenceObject>Party.BOContactType</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-025</ScreenNumber>
+		<TableType>6</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="31" name="CustomsDocumentType">
+		<TableDescription>Customs Document Type</TableDescription>
+		<ReferenceObject>ReferenceData.BOCustomsDocumentType</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-026</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="32" name="DEFRARingFate">
+		<TableDescription>WLRS Ring Fate</TableDescription>
+		<ReferenceObject>ReferenceData.BODefraRingFate</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-027</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>20</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="34" name="IDMarkType">
+		<TableDescription>Identifying Mark Type</TableDescription>
+		<ReferenceObject>ReferenceData.BOIDMarkType</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-028</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Permanence</VisibleCol>
+			<HeaderText>Permanence</HeaderText>
+			<Length>1</Length>
+			<RegExp>^[A-Za-z]+$</RegExp>
+			<Message>You must enter a Permanence Indicator (1 Alphabetic character)</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="35" name="PermitStatus">
+		<TableDescription>Permit or Certificate Status</TableDescription>
+		<ReferenceObject>ReferenceData.BOPermitStatus</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-029</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="38" name="PaymentMethod">
+		<TableDescription>Payment Method</TableDescription>
+		<ReferenceObject>ReferenceData.BOPaymentMethod</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-031</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>30</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="39" name="PermitCertificateReprintingStatus">
+		<TableDescription>Permit or Certificate Reprinting Status</TableDescription>
+		<ReferenceObject>ReferenceData.BOPermitCertificateReprintingStatus</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-032</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Level of Use: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="40" name="PermitCertificateType">
+		<TableDescription>Permit or Certificate Type</TableDescription>
+		<ReferenceObject>ReferenceData.BOPermitCertificateType</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-033</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>20</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="41" name="PortOfEntry">
+		<TableDescription>Port of Entry</TableDescription>
+		<ReferenceObject>ReferenceData.BOPortofEntry</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-034</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="43" name="RingSize">
+		<TableDescription>WLRS Ring Size</TableDescription>
+		<ReferenceObject>ReferenceData.BORingSize</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-035</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Ring Size Code</HeaderText>
+			<Length>1</Length>
+			<RegExp>^[A-Za-z]+$</RegExp>
+			<Message>Ring Size Code can only be one UPPERCASE character.</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="44" name="SpecimenAgeStatus">
+		<TableDescription>Specimen Age Status</TableDescription>
+		<ReferenceObject>ReferenceData.BOSpecimenAgeStatus</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-036</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="45" name="SpecimenFate">
+		<TableDescription>Specimen Fate</TableDescription>
+		<ReferenceObject>ReferenceData.BOSpecimenFate</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-037</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>20</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="47" name="DelegationGuideline">
+		<TableDescription>Delegation Guideline</TableDescription>
+		<ReferenceObject>ReferenceData.BODelegationGuideline</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-039</ScreenNumber>
+		<TableType>3</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Code</VisibleCol>
+			<HeaderText>Code</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^\d+$</RegExp>
+			<Message>You must enter a Code(Numeric)</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Subject</VisibleCol>
+			<HeaderText>Subject</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Subject: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>Reason</VisibleCol>
+			<HeaderText>Reason</HeaderText>
+			<Length>255</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Reason: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="50" name="TaxonomyUsageType">
+		<TableDescription>Taxonomy Usage Types</TableDescription>
+		<ReferenceObject>ReferenceData.BOTaxonomyUsageType</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-041</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>UsageTypeDescription</VisibleCol>
+			<HeaderText>Usage Type</HeaderText>
+			<Length>50</Length>
+		</Column>
+		<Column>
+			<VisibleCol>UsageTypeStatus</VisibleCol>
+			<HeaderText>Status</HeaderText>
+		</Column>
+	</LookupTable>
+	<LookupTable id="51" name="TaxonomyPart">
+		<TableDescription>Taxonomy Part</TableDescription>
+		<ReferenceObject>ReferenceData.BOTaxonomyUsagePart</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-042</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>PartDescription</VisibleCol>
+			<HeaderText>Part Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Level of Use: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="52" name="TaxonomyLevelOfUse">
+		<TableDescription>Taxonomy Level of Use</TableDescription>
+		<ReferenceObject>ReferenceData.BOTaxonomyUsageLevelOfUse</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-043</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>LevelOfUseDescription</VisibleCol>
+			<HeaderText>Level of Use</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Level of Use: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="53" name="Message">
+		<TableDescription>Message</TableDescription>
+		<ReferenceObject>ReferenceData.BOMessage</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-044</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowEdit/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Message Text</HeaderText>
+			<Length>200</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>IsWarningText</VisibleCol>
+			<HeaderText>Warning Message (Y/N)?</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>You must enter Y(es) or N(o) to Warning Message</Message>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>URL</VisibleCol>
+			<HeaderText>Hyperlink for information</HeaderText>
+			<Length>100</Length>
+			<RegExp>^(((ht|f)tp(s?))\://)?(www.|[a-zA-Z].)[a-zA-Z0-9\-\.]+\.(com|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\;\?\&apos;\\\+&amp;%\$#\=~_\-]+))*$|\S</RegExp>
+			<Message>Enter a Hyperlink for Information</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="54" name="GWDCountry">
+		<TableDescription>GWD Country</TableDescription>
+		<ReferenceObject>ReferenceData.BOGWDCountry</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-045</ScreenNumber>
+		<TableType>5</TableType>
+		<AllowEdit/>
+		<Column>
+			<VisibleCol>CodeDescription</VisibleCol>
+			<HeaderText>Country (ISO Code)</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>Select Country</Message>
+			<LookupList>CountryList</LookupList>
+			<EditColumn>0</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>ECMemberStateAsText</VisibleCol>
+			<HeaderText>EU Member (Y/N)?</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>Enter Y(es) or N(o) if Country is EU Member</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+		<Column>
+			<VisibleCol>CITESSignatoryAsText</VisibleCol>
+			<HeaderText>CITES Signatory (Y/N)?</HeaderText>
+			<Length>-1</Length>
+			<RegExp>^([Yy]([Ee][Ss])?|[Nn][Oo]?)$</RegExp>
+			<Message>Enter Y(es) or N(o) if Country is CITES Signatory</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="56" name="DuplicateReason">
+		<TableDescription>Duplicate Reason</TableDescription>
+		<ReferenceObject>ReferenceData.BODuplicateReason</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-047</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Description</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Description: no leading spaces</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+	<LookupTable id="57" name="ContactTypeGroup">
+		<TableDescription>Contact Type Group</TableDescription>
+		<ReferenceObject>ReferenceData.BOContactTypeGroup</ReferenceObject>
+		<SecurityLevel>0</SecurityLevel>
+		<ScreenNumber>RD-048</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>GroupName</VisibleCol>
+			<HeaderText>Group Name</HeaderText>
+			<Length>50</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter a Group Name: no leading spaces</Message>
+		</Column>
+		<Column>
+			<VisibleCol>Expression</VisibleCol>
+			<HeaderText>Expression</HeaderText>
+			<Length>500</Length>
+			<Message>You must enter an Expression: no leading spaces</Message>
+		</Column>
+	</LookupTable>
+	<LookupTable id="58" name="Article10Fate">
+		<TableDescription>Article 10 Fate</TableDescription>
+		<ReferenceObject>ReferenceData.BOArticle10Fate</ReferenceObject>
+		<SecurityLevel>1</SecurityLevel>
+		<ScreenNumber>RD-049</ScreenNumber>
+		<TableType>1</TableType>
+		<AllowAddNew/>
+		<AllowDelete/>
+		<AllowEdit/>
+		<AllowMakeInactive/>
+		<Column>
+			<VisibleCol>Description</VisibleCol>
+			<HeaderText>Article 10 Fate</HeaderText>
+			<Length>30</Length>
+			<RegExp>^\w.*$</RegExp>
+			<Message>You must enter an Article 10 Fate</Message>
+			<EditColumn>1</EditColumn>
+		</Column>
+	</LookupTable>
+</LookupData>

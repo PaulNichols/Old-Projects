@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\AtlasWebSite1\", "..\..\WebSites\AtlasWebSite1\", "{B484B7DB-3E8A-42E8-B88B-17AEBF33B15D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/AtlasWebSite1"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\AtlasWebSite1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\AtlasWebSite1\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/AtlasWebSite1"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\AtlasWebSite1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\AtlasWebSite1\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "7566"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\Cust\", "..\..\WebSites\Cust\", "{574827FC-58A5-4028-BDEE-E18B5EE6B4AD}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/Cust"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\Cust\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Cust\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Cust"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\Cust\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Cust\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "7608"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B484B7DB-3E8A-42E8-B88B-17AEBF33B15D}.Debug|.NET.ActiveCfg = Debug|.NET
+		{B484B7DB-3E8A-42E8-B88B-17AEBF33B15D}.Debug|.NET.Build.0 = Debug|.NET
+		{574827FC-58A5-4028-BDEE-E18B5EE6B4AD}.Debug|.NET.ActiveCfg = Debug|.NET
+		{574827FC-58A5-4028-BDEE-E18B5EE6B4AD}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

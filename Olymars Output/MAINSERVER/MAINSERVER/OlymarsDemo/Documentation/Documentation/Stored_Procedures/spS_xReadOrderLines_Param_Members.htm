@@ -1,0 +1,900 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_xReadOrderLines - Members overview
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_xReadOrderLines
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			This class must be used in conjunction with the [<a href="spS_xReadOrderLines_Sp_Members.htm">OlymarsDemo.DataClasses.StoredProcedures.spS_xReadOrderLines</a>] class.
+			These classes allow you to execute the [<a href="spS_xReadOrderLines.htm">spS_xReadOrderLines</a>] stored procedure.<br>
+				<br>
+				Basically, you use the "<b>Parameter</b>" class to supply the needed parameters to the stored procedure. Then,
+				you use the "<b>StoredProcedure</b>" class to actually execute the stored procedure. Once executed, you can
+				retrieve back the ReturnValue and all the output parameters by using again the "<b>Parameter</b>" class.<br>
+				<br>
+				This class inherits from <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemMarshalByRefObjectClassTopic.htm">System.MarshalByRefObject</a> and implements the following interfaces:
+				<ul>
+					<li>
+						<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemIDisposableClassTopic.htm">System.IDisposable</a>
+					</li>
+					<li>
+					<a href="../Data_Classes/IParameter.htm">OlymarsDemo.DataClasses.IParameter</a>
+					</li>
+				</ul>
+			To read an overview on this stored procedure, click <a href="spS_xReadOrderLines_Overview.htm">here</a>.<br>
+			To see an example on how to call this class in Visual C# .NET, click <a href="spS_xReadOrderLines_CS.htm">here</a>.<br>
+			To see an example on how to call this class in Visual Basic .NET, click <a href="spS_xReadOrderLines_VB.htm">here</a>.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#CommandTimeOut">CommandTimeOut</a>
+					</li>
+					<li>
+						<a href="#ConnectionString">ConnectionString</a>
+					</li>
+					<li>
+						<a href="#ConnectionType">ConnectionType</a>
+					</li>
+					<li>
+						<a href="#Dispose">Dispose</a>
+					</li>
+					<li>
+						<a href="#ErrorSource">ErrorSource</a>
+					</li>
+					<li>
+						<a href="#OtherException">OtherException</a>
+					</li>
+					<li>
+						<a href="#Param_RETURN_VALUE">Param_RETURN_VALUE</a>
+					</li>
+					<li>
+						<a href="#Param_OrderID">Param_OrderID</a>
+					</li>
+					<li>
+						<a href="#Param_OrderID_UseDefaultValue">Param_OrderID_UseDefaultValue</a>
+					</li>
+					<li>
+						<a href="#Reset">Reset</a>
+					</li>
+					<li>
+						<a href="#SetUpConnection1">SetUpConnection</a>
+					</li>
+					<li>
+						<a href="#SqlConnection">SqlConnection</a>
+					</li>
+					<li>
+						<a href="#SqlException">SqlException</a>
+					</li>
+					<li>
+						<a href="#SqlTransaction">SqlTransaction</a>
+					</li>
+					<li>
+						<a href="#StoredProcedureName">StoredProcedureName</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Constructor"></a>
+		<div class="MainTitle">
+			Public Constructors
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New()<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public spS_xReadOrderLines();<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>OlymarsDemo.DataClasses.Parameters.spS_xReadOrderLines</b> class.<br>
+				<br>
+				If you use this constructor version, "not assigning parameter values" implies <b>using the parameter default values</b>.
+			</div>
+		</blockquote>
+		<br>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(ByVal useDefaultValue As Boolean)<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public spS_xReadOrderLines(bool useDefaultValue);<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>OlymarsDemo.DataClasses.Parameters.spS_xReadOrderLines</b> class.<br>
+				<br>
+				<b>useDefaultValue</b>: If <b>True</b>, this parameter indicates that "not assigning parameter values" implies <b>using the parameter default values</b>. If <b>False</b>, this parameter indicates that "not assigning parameter values" implies <b>using the SQL Server Null value</b>.
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Properties
+		</div>
+		<blockquote>
+			<a name="StoredProcedureName"></a>
+			<div class="Highlight">
+				StoredProcedureName
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property StoredProcedureName As String<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public string StoredProcedureName { get; };<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the stored procedure name for which this class was built, i.e. 'spS_xReadOrderLines'.
+				</div>
+			</blockquote>
+			<a name="CommandTimeOut"></a>
+			<div class="Highlight">
+				CommandTimeOut
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Property CommandTimeOut As Integer<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public int CommandTimeOut { get; set; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets or returns the time-out (in seconds) to be use by the ADO command
+					object (System.Data.SqlClient.SqlCommand). If not set, default value is 30 seconds.
+				</div>
+			</blockquote>
+			<a name="Param_RETURN_VALUE"></a>
+			<div class="Highlight">
+				Param_RETURN_VALUE
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public ReadOnly Property Param_RETURN_VALUE As System.Data.SqlTypes.SqlInt32<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlTypes.SqlInt32 Param_RETURN_VALUE { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the value returned back by the stored procedure execution.<br>
+					<br>
+					<b>Warning</b>: if you have called one of the two overloaded versions of the <b>Execute</b> method (of the corresponding <a href="spS_xReadOrderLines_Sp_Members.htm#Execute1">StoredProcedure</a> class) that gets you back either a SqlDataReader or a XmlReader,
+					you will <b>not be able</b> to retrieve back the value of the stored procedure Return Value until you have closed the underlying SqlDataReader or XmlReader. You will receive an <b>InvalidOperationException</b> exception if you try to do so.
+				</div>
+			</blockquote>
+			<a name="Param_OrderID"></a>
+			<div class="Highlight">
+				Param_OrderID
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Property Param_OrderID As System.Data.SqlTypes.SqlGuid<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlTypes.SqlGuid Param_OrderID { get; set; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Gets or sets the value of the stored procedure Input parameter '<b>@OrderID</b>'.<br>
+					<br>
+						Description of this parameter: <b>Update this description in the "Olymars/Description" extended property of the "@OrderID" parameter.</b>.<br>
+					<br>
+					In SQL Server, this parameter is of type: <b>[uniqueidentifier]</b>.<br>
+					<br>
+					If this parameter is not set before the stored procedure call occurs, a Null (SQL Server meaning) value
+					will be supplied to the corresponding parameter when the call is made. If you wish to use
+					the <b>parameter default value</b>, consider calling the <a href="#Param_OrderID_UseDefaultValue">Param_OrderID_UseDefaultValue()</a> method.<br>
+					<br>
+					<b>Warning</b>: if you have called the Param_OrderID_UseDefaultValue() method, you will receive an <b>InvalidOperationException</b> exception if you try to read this parameter value.<br>
+				</div>
+			</blockquote>
+			<a name="ConnectionType"></a>
+			<div class="Highlight">
+				ConnectionType
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionType As OlymarsDemo.DataClasses.ConnectionType<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public OlymarsDemo.DataClasses.ConnectionType ConnectionType { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the current type of connection that is going or has been used
+					against the Sql Server database. It can be:
+					<ul>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.None
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.ConnectionString
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.SqlConnection
+						</li>
+						<li>
+							OlymarsDemo.DataClasses.ConnectionType.SqlTransaction
+						</li>
+					</ul>
+					This property is set when you call the <a href="#SetUpConnection1">SetUpConnection</a>
+					method.<br>
+					<br>
+ 					See <a href="../Data_Classes/ConnectionType.htm">ConnectionType</a> for more information.
+				</div>
+			</blockquote>
+			<a name="ConnectionString"></a>
+			<div class="Highlight">
+				ConnectionString
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionString As String<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string ConnectionString { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the connection string to be used against the 
+					SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>OlymarsDemo.DataClasses.ConnectionType.ConnectionString</b>.
+				</div>
+			</blockquote>
+			<a name="SqlConnection"></a>
+			<div class="Highlight">
+				SqlConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlConnection As System.Data.SqlClient.SqlConnection<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlConnection SqlConnection { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used
+					against the SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>OlymarsDemo.DataClasses.ConnectionType.SqlConnection</b>.
+				</div>
+			</blockquote>
+			<a name="SqlTransaction"></a>
+			<div class="Highlight">
+				SqlTransaction
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlTransaction As System.Data.SqlClient.SqlTransaction<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlTransaction SqlTransaction { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">SqlTransaction</a> to be used
+					against the SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>OlymarsDemo.DataClasses.ConnectionType.SqlTransaction</b>.
+				</div>
+			</blockquote>
+			<a name="ErrorSource"></a>
+			<div class="Highlight">
+				ErrorSource
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ErrorSource As OlymarsDemo.DataClasses.ErrorSource<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public OlymarsDemo.DataClasses.ErrorSource ErrorSource { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Allows you to know at which step did the error occured if one occured. This value can be:
+					<ul>
+						<li>
+							<b>NotAvailable</b>: Error level is not available yet.
+						</li>
+						<li>
+							<b>NoError</b>: No error has occured during the call.
+						</li>
+						<li>
+							<b>ConnectionInitialization</b>: An error has occured while initializing a SQLConnection object.
+						</li>
+						<li>
+							<b>ParametersSetting</b>: An error has occured while setting some parameters to the SQLCommand object.
+						</li>
+						<li>
+							<b>ConnectionOpening</b>: An error has occured while opening the SQLConnection object.
+						</li>
+						<li>
+							<b>QueryExecution</b>: An error has occured while executing the SQLCommand object.
+						</li>
+						<li>
+							<b>ParametersRetrieval</b>: An error has occured while retrieving some parameters from the SQLCommand object.
+						</li>
+						<li>
+							<b>Other</b>: An unhandled error has occured during the call.
+						</li>
+					</ul>
+					See <a href="../Data_Classes/ErrorSource.htm">ErrorSource</a> for more information.
+				</div>
+			</blockquote>
+			<a name="SqlException"></a>
+			<div class="Highlight">
+				SqlException
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlException As System.Data.SqlClient.SqlException<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlException SqlException { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					In case of an ADO .NET exception, returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlExceptionClassTopic.htm">System.Data.SqlClient.SqlException</a> exception
+					that has occured.
+				</div>
+			</blockquote>
+			<a name="OtherException"></a>
+			<div class="Highlight">
+				OtherException
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property OtherException As System.Exception<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Exception OtherException { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					In case of a System exception, returns the standard exception that 
+					has occured.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Methods
+		</div>
+		<blockquote>
+			<a name="SetUpConnection1"></a>
+			<div class="Highlight">
+				SetUpConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub SetUpConnection(<br>
+								&nbsp;&nbsp;&nbsp;ByVal connectionString As String<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void SetUpConnection(<br>
+								&nbsp;&nbsp;&nbsp;string connectionString<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets the connection string to be used against the SQL Server database.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					If a blank connection string is supplied, the class will search for:<br>
+					<br>
+					&nbsp;&nbsp;First an entry in the configuration file:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+					<br>
+					&nbsp;&nbsp;Then the following registry entry:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\OlymarsDemo<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+					<br>
+					A helper function that can build this connection string for you is available. See the <a href="../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+					<br>
+					To see the documentation on how to build this connection string,
+					<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+				</div>
+			</blockquote>
+			<a name="SetUpConnection2"></a>
+			<div class="Highlight">
+				SetUpConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub SetUpConnection(<br>
+								&nbsp;&nbsp;&nbsp;ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void SetUpConnection(<br>
+								&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlConnection sqlConnection<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used against the SQL Server database.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. It can be opened or not. If it is not opened, it will be opened when used then closed again after the job is done.
+				</div>
+			</blockquote>
+			<a name="SetUpConnection3"></a>
+			<div class="Highlight">
+				SetUpConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub SetUpConnection(<br>
+								&nbsp;&nbsp;&nbsp;ByVal sqlTransaction As System.Data.SqlClient.SqlTransaction<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void SetUpConnection(<br>
+								&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlTransaction sqlTransaction<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">SqlTransaction</a> to be used against the SQL Server database.<br>
+					<br>
+					<b>sqlTransaction</b>: A valid SqlTransaction object.
+				</div>
+			</blockquote>
+			<a name="Param_OrderID_UseDefaultValue"></a>
+			<div class="Highlight">
+				Param_OrderID_UseDefaultValue
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Param_OrderID_UseDefaultValue()<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Param_OrderID_UseDefaultValue();<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Indicates that the '@OrderID' parameter value is not supplied and that the default value should be used.
+				</div>
+			</blockquote>
+			<a name="Reset"></a>
+			<div class="Highlight">
+				Reset
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Reset()<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Reset();<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					This method allows you to reset the parameter object. Please note that this
+					method resets all the parameters members except the ConnectionString and
+					the Command time-out which are left in their current state.
+				</div>
+			</blockquote>
+			<a name="Dispose"></a>
+			<div class="Highlight">
+				Dispose
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Dispose()<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Dispose();<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Disposes the current instance of this object.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:22
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

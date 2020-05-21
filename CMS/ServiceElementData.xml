@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceElementsDS xmlns="http://tempuri.org/ServiceElementsDS.xsd">
+    <Element d2p1:ElementId="1" d2p1:Ref="A" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Deployment, upgrade and evolution" d2p1:LastMonth="0.95" d2p1:Commentary="Text summary of  &lt;200 characters describing the reason for the service level shown." d2p1:ThisMonth="0.98" d2p1:RTLastMonth="false" d2p1:RTThisMonth="false" d2p1:RTNextMonth="true" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:Target="0.97" d2p1:Level="1">
+    </Element>
+    <Element d2p1:ElementId="2" d2p1:Ref="B" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Programme and project management" d2p1:LastMonth="0.95" d2p1:Commentary="This text is typed in by as service level analyst as part of the monthly reporting. It may be possible to take it directly from HPOV or the HD system" d2p1:ThisMonth="0.985" d2p1:GThreshold="0.99" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:RTLastMonth="false" d2p1:Target="0.97" d2p1:Level="1">
+    </Element>
+    <Element d2p1:ElementId="3" d2p1:Ref="C" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Installation services in UK" d2p1:LastMonth="0.99" d2p1:Commentary="Commentary summary on this service element" d2p1:ThisMonth="0.98" d2p1:NextMonth="0.99" d2p1:RTNextMonth="true" d2p1:RTLastMonth="false" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:Target="0.97" d2p1:Level="1">
+    </Element>
+    <Element d2p1:ElementId="4" d2p1:Ref="D" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Training services" d2p1:LastMonth="1" d2p1:Commentary="A simple interface will be provided to allow the management of monthly reporting" d2p1:ThisMonth="1" d2p1:RTLastMonth="false" d2p1:RTThisMonth="false" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:Target="0.97" d2p1:Level="1" d2p1:NextMonth="1">
+    </Element>
+    <Element d2p1:ElementId="5" d2p1:Ref="E" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="UK Operational services - general" d2p1:LastMonth="0.951" d2p1:Commentary="Escalation will be part automated, with over-ride for the SLA analyst to manually enter the overview information" d2p1:ThisMonth="0.95" d2p1:RTLastMonth="false" d2p1:RTThisMonth="false" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.95" d2p1:Target="0.97" d2p1:Level="1" d2p1:NextMonth="1">
+    </Element>
+    <Element d2p1:ElementId="6" d2p1:Ref="F" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Service level title" d2p1:LastMonth="0.95" d2p1:Commentary="Commentary on services" d2p1:ThisMonth="0.98" d2p1:RTLastMonth="false" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:Target="0.97" d2p1:Level="1" d2p1:NextMonth="1">
+    </Element>
+    <Element d2p1:ElementId="7" d2p1:Ref="C1" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Installation programme implementation" d2p1:LastMonth="0.95" d2p1:Commentary="Commentary on services" d2p1:ParentElementId="3" d2p1:ThisMonth="0.98" d2p1:RTLastMonth="false" d2p1:RTThisMonth="false" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:Target="0.97" d2p1:Level="2" d2p1:NextMonth="0.99">
+    </Element>
+    <Element d2p1:ElementId="8" d2p1:Ref="C2" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Instalation programme" d2p1:LastMonth="0.99" d2p1:Commentary="Commentary on services" d2p1:ParentElementId="3" d2p1:ThisMonth="0.80" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:Target="0.97" d2p1:Level="2" d2p1:NextMonth="0.99">
+    </Element>
+    <SLADetail>
+        <SLADetailId>1</SLADetailId>
+    </SLADetail>
+    <Element d2p1:Ref="C2.1" d2p1:Description="Service Element 1" d2p1:LastMonth="0.95" d2p1:ParentElementId="8" d2p1:Commentary="Commentary on services" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:ThisMonth="0.98" d2p1:ElementId="9" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:SLADetailId="1" d2p1:Target="0.97" d2p1:Level="3" d2p1:NextMonth="0.99">
+    </Element>
+    <Element d2p1:ElementId="10" d2p1:Ref="B1" d2p1:Description="Test" d2p1:ParentElementId="2" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:GThreshold="0.98" d2p1:RThreshold="0.94" d2p1:Target="0.97" d2p1:Level="2" d2p1:Commentary="Commentary on services" d2p1:AThreshold="0.97">
+    </Element>
+    <Element d2p1:ElementId="11" d2p1:Ref="G" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Service Area Title" d2p1:LastMonth="0.95" d2p1:Commentary="Commentary on services" d2p1:ThisMonth="0.985" d2p1:NextMonth="1" d2p1:Level="1" d2p1:RThreshold="0.94" d2p1:AThreshold="0.97" d2p1:GThreshold="0.99">
+    </Element>
+    <Element d2p1:ElementId="12" d2p1:Ref="H" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Description="Service Area Title" d2p1:LastMonth="0.99" d2p1:Commentary="Commentary on services" d2p1:ThisMonth="0.98" d2p1:NextMonth="0.99" d2p1:Level="1" d2p1:RThreshold="0.94" d2p1:AThreshold="0.97" d2p1:GThreshold="0.98">
+    </Element>
+    <Element d2p1:ElementId="13" d2p1:Ref="I" d2p1:Description="Service Area Title" d2p1:LastMonth="1" d2p1:Commentary="Commentary on services" d2p1:ThisMonth="1" d2p1:NextMonth="1" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Level="1" d2p1:RThreshold="0.94" d2p1:AThreshold="0.97" d2p1:GThreshold="0.98">
+    </Element>
+    <Element d2p1:ElementId="14" d2p1:Ref="J" d2p1:Description="Service Area Title" d2p1:LastMonth="0.951" d2p1:Commentary="Commentary on services" d2p1:ThisMonth="0.95" d2p1:NextMonth="1" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Level="1" d2p1:RThreshold="0.95" d2p1:AThreshold="0.97" d2p1:GThreshold="0.98">
+    </Element>
+    <Element d2p1:ElementId="16" d2p1:Ref="C2.2" d2p1:Description="Service Element 2" d2p1:ParentElementId="8" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:Level="3" d2p1:ThisMonth="0.98" d2p1:NextMonth="0.99" d2p1:RThreshold="0.94" d2p1:AThreshold="0.97" d2p1:GThreshold="0.98">
+    </Element>
+    <Element d2p1:ElementId="17" d2p1:Ref="C2.3" d2p1:Description="Service Element 3" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd" d2p1:LastMonth="0.95" d2p1:ParentElementId="8" d2p1:ThisMonth="0.8" d2p1:NextMonth="0.99" d2p1:RThreshold="0.94" d2p1:AThreshold="0.97" d2p1:GThreshold="0.98" d2p1:Level="3">
+    </Element>
+    <Element d2p1:ElementId="18" d2p1:Ref="C2.4" d2p1:Description="Service Element 4" d2p1:LastMonth="0.99" d2p1:ParentElementId="8" d2p1:ThisMonth="0.8" d2p1:NextMonth="0.99" d2p1:GThreshold="0.98" d2p1:AThreshold="0.97" d2p1:RThreshold="0.94" d2p1:Level="3" xmlns:d2p1="http://tempuri.org/ServiceElementsDS.xsd">
+    </Element>
+</ServiceElementsDS>

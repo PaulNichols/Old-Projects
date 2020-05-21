@@ -1,0 +1,340 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Web"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{AB419094-5050-4112-9B53-85F026B0A0B2}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "CMS"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "CMS"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "ASPMenu"
+                    AssemblyName = "ASPMenu"
+                    HintPath = "..\..\..\Program Files\WebActive\aspMENU.net\ASPMenu.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "about.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "admin.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "alert.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "aspmenu.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "aspmenu.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "aspmenuexample.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "aspmenuexample.aspx.cs"
+                    DependentUpon = "aspmenuexample.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "aspmenuexample.aspx.resx"
+                    DependentUpon = "aspmenuexample.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ASPMenuMain.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ASPMenuMain.ascx.cs"
+                    DependentUpon = "ASPMenuMain.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ASPMenuMain.ascx.resx"
+                    DependentUpon = "ASPMenuMain.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ASPMenuSchema.xsd"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "changes.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CMS.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "footer.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax"
+                    SubType = "Component"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax.cs"
+                    DependentUpon = "Global.asax"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax.resx"
+                    DependentUpon = "Global.asax.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "header.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "header.aspx.cs"
+                    DependentUpon = "header.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "header.aspx.resx"
+                    DependentUpon = "header.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "index.html"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "issues.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "main.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "news.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "online.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "page4.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "page7.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PerformanceMeasuring.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PerformanceMeasuring.aspx.cs"
+                    DependentUpon = "PerformanceMeasuring.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PerformanceMeasuring.aspx.resx"
+                    DependentUpon = "PerformanceMeasuring.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "README.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ServiceElementData.xml"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ServiceElementsDS.xsd"
+                    BuildAction = "Content"
+                    Generator = "MSDataSetGenerator"
+                    LastGenOutput = "ServiceElementsDS.cs"
+                />
+                <File
+                    RelPath = "ServiceElementsDS.cs"
+                    DependentUpon = "ServiceElementsDS.xsd"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "ServiceElementsDS.xsx"
+                    DependentUpon = "ServiceElementsDS.xsd"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "support.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "welcome.html"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "bin\" />
+                <File
+                    RelPath = "images\crown.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\down.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\down_white.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\ORG.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\page4.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\page7.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\right.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\right_white.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\up.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\up_white.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "javascript\iescript.js"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "javascript\nnscript.js"
+                    BuildAction = "Content"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

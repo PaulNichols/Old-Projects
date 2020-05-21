@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1986580A-EC5F-4F91-9D7F-46B1A752418A}"
+	ProjectSection(SolutionItems) = preProject
+		DistributedSystem1.ad = DistributedSystem1.ad
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "System1", "System1", "{81652524-C819-4D03-A7D8-07F8DEBE4AC1}"
+	ProjectSection(SolutionItems) = preProject
+		System1.sd = System1.sd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81652524-C819-4D03-A7D8-07F8DEBE4AC1} = {1986580A-EC5F-4F91-9D7F-46B1A752418A}
+	EndGlobalSection
+EndGlobal

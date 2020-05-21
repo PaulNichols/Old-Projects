@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			WinForm_Title - Using the Windows Form in Visual Basic .NET
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			WinForm_Title
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Using the Windows Form in Visual Basic .NET
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				This class was generated for the [<a href="../../Tables/Title.htm">Title</a>] table.<br>
+				It is located in the <span class="FixedHighLight">Bob.Windows.Forms</span> namespace.<br>
+				<br>
+				This class derives from the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemwindowsformsformclasstopic.htm">System.Windows.Forms.Form</a> class.<br>
+				<br>
+				<br>
+				See also:<br>
+				<br>
+				<ul>
+					<li>
+						To read an overview on this class, click <a href="Title.htm">here</a>.<br>
+					</li>
+					<li>
+						<a href="Title_Members.htm">Members overview</a><br>
+					</li>
+					<li>
+						To see an example on how to call this class in Visual C# .NET, click <a href="Title_CS.htm">here</a>.<br>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Step by step tutorial
+		</div>
+		<blockquote>
+			<div class="MainTitle">
+				First Step:
+			</div>
+			<blockquote>
+				<div class="MainBody">
+					If you are in Visual Studio.NET, make a reference to the following
+					assemblies: "Bob.dll" and "Bob.Forms.dll.
+				</div>
+				<br>
+				<div class="MainBody">
+					If you are using the compiler, be sure to add a "/r:" switch pointing
+					on the following assemblies: "Bob.dll" and "Bob.Forms.dll.
+				</div>
+			</blockquote>
+			<div class="MainTitle">
+				Second Step:
+			</div>
+			<blockquote>
+				<div class="MainBody">
+					add thoses directives at the top of your code:
+				</div>
+				<div class="Code">
+					Imports Bob.DataClasses<br>
+					Imports Bob.DataClasses.Parameters<br>
+					Imports Bob.Windows.Forms<br>
+				</div>
+			</blockquote>
+			<div class="MainTitle">
+				Third Step:
+			</div>
+			<blockquote>
+				<div class="MainBody">
+					Use this <b><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemwindowsformsformclasstopic.htm">System.Windows.Forms.Form</a></b> based class as described below:
+				</div>
+				<br>
+				<div class="Code">
+					<div class="FixedComment">
+						' Let's build a connection string to the database.<br>
+						' Note: the connection string policy is described <a href="../../Stored_Procedures/spS_tProduct_VB.htm#Connection">here</a>.<br>
+						' <br>
+						' To see the documentation on how to build this connection string,<br>
+						' <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a>
+					</div>
+					Dim ConnectionString As String = _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information.BuildConnectionString("MAINSERVER\MAINSERVER", "Bob")<br>
+					<br>
+					Dim WinForm_Title1 As New WinForm_Title();<br>
+					<br>
+					<div class="FixedComment">
+						' Here is how to display the form for insertion
+					</div>
+					WinForm_Title1.AddNewRecord(Me, "Add a new record", ConnectionString)<br>
+					If WinForm_Title1.DialogResult = DialogResult.OK Then<br>
+					<br>
+					<div class="FixedComment">
+						&nbsp;&nbsp;&nbsp;' A new record was inserted
+					</div>
+					<div class="FixedComment">
+						&nbsp;&nbsp;&nbsp;' Let's retrieve the primary key
+					</div>
+					&nbsp;&nbsp;&nbsp;Dim NewKey As System.Data.SqlTypes.SqlInt32<br>
+					&nbsp;&nbsp;&nbsp;NewKey = CType(WinForm_Title1.Parameter, spI_Title).Param_TitleId<br>
+					<br>
+					End If<br>
+					<br>
+					<br>
+					<div class="FixedComment">
+						' Here is how to display the form for update
+					</div>
+					Dim ExistingKey As System.Data.SqlTypes.SqlInt32 = &lt;some value&gt;<br>
+					If WinForm_Title1.EditExistingRecord(Me, "Update this record", ConnectionString, ExistingKey) Then<br>
+					<br>
+						&nbsp;&nbsp;&nbsp;If WinForm_Title1.DialogResult = DialogResult.OK Then<br>
+					<div class="FixedComment">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' This record was updated
+					</div>
+						&nbsp;&nbsp;&nbsp;End If<br>
+					<br>
+					Else<br>
+					<br>
+					<div class="FixedComment">
+						&nbsp;&nbsp;&nbsp;' This record (ExistingKey) does not exist in the database
+					</div>
+					<br>
+					End If<br>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

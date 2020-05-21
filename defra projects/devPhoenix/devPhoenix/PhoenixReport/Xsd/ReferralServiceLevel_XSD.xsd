@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ReferralServiceLevelData" targetNamespace="http://tempuri.org/ReferralServiceLevelData.xsd"
+	xmlns:mstns="http://tempuri.org/ReferralServiceLevelData.xsd" xmlns="http://tempuri.org/ReferralServiceLevelData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="ReferralServiceLevelData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOServiceLevelDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ServiceLevelId" type="xs:integer" minOccurs="0" />
+							<xs:element name="ReferralType" type="xs:string" minOccurs="0" />
+							<xs:element name="Processed" type="xs:string" minOccurs="0" />
+							<xs:element name="WithinFiveDays" type="xs:string" minOccurs="0" />
+							<xs:element name="Between6and10Days" type="xs:string" minOccurs="0" />
+							<xs:element name="Over10Days" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOServiceLevelTypes">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ServiceLevelId" type="xs:integer" minOccurs="0" />
+							<xs:element name="Description" type="xs:string" minOccurs="0" />
+							<xs:element name="ThrowNewPage" type="xs:boolean" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//mstns:BOServiceLevelTypes" />
+			<xs:field xpath="mstns:ServiceLevelId" />
+		</xs:key>
+		<xs:keyref name="BOServiceLevelTypesBOServiceLevelDetails" refer="mstns:key1">
+			<xs:selector xpath=".//mstns:BOServiceLevelDetails" />
+			<xs:field xpath="mstns:ServiceLevelId" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,57 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:Hashtable id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Collections">
+<LoadFactor>0.72</LoadFactor>
+<Version>2</Version>
+<Comparer xsi:null="1"/>
+<HashCodeProvider xsi:null="1"/>
+<HashSize>11</HashSize>
+<Keys href="#ref-2"/>
+<Values href="#ref-3"/>
+</a1:Hashtable>
+<SOAP-ENC:Array id="ref-2" SOAP-ENC:arrayType="xsd:anyType[2]">
+<item id="ref-4" xsi:type="SOAP-ENC:string">_reserved_lastInstallerAttempted</item>
+<item id="ref-5" xsi:type="SOAP-ENC:string">_reserved_nestedSavedStates</item>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-3" SOAP-ENC:arrayType="xsd:anyType[2]">
+<item xsi:type="xsd:int">0</item>
+<item href="#ref-6"/>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-6" SOAP-ENC:arrayType="a1:IDictionary[1]" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Collections">
+<item href="#ref-7"/>
+</SOAP-ENC:Array>
+<a1:Hashtable id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Collections">
+<LoadFactor>0.72</LoadFactor>
+<Version>10</Version>
+<Comparer xsi:null="1"/>
+<HashCodeProvider xsi:null="1"/>
+<HashSize>23</HashSize>
+<Keys href="#ref-8"/>
+<Values href="#ref-9"/>
+</a1:Hashtable>
+<SOAP-ENC:Array id="ref-8" SOAP-ENC:arrayType="xsd:anyType[9]">
+<item id="ref-10" xsi:type="SOAP-ENC:string">DB_INSTANCE</item>
+<item id="ref-11" xsi:type="SOAP-ENC:string">IS_SQL_LOCAL</item>
+<item id="ref-12" xsi:type="SOAP-ENC:string">NET1_1</item>
+<item id="ref-13" xsi:type="SOAP-ENC:string">PATH</item>
+<item id="ref-14" xsi:type="SOAP-ENC:string">COPY_ONLY</item>
+<item href="#ref-4"/>
+<item id="ref-15" xsi:type="SOAP-ENC:string">INSTALL_VDIR</item>
+<item id="ref-16" xsi:type="SOAP-ENC:string">REGISTRY_KEY</item>
+<item href="#ref-5"/>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-9" SOAP-ENC:arrayType="xsd:anyType[9]">
+<item id="ref-17" xsi:type="SOAP-ENC:string"></item>
+<item id="ref-18" xsi:type="SOAP-ENC:string">True</item>
+<item id="ref-19" xsi:type="SOAP-ENC:string">3706-4322</item>
+<item id="ref-20" xsi:type="SOAP-ENC:string">C:\Program Files\ASP.NET Starter Kits\ASP.NET Portal (VBVS)\</item>
+<item id="ref-21" xsi:type="SOAP-ENC:string">False</item>
+<item xsi:type="xsd:int">-1</item>
+<item id="ref-22" xsi:type="SOAP-ENC:string">True</item>
+<item id="ref-23" xsi:type="SOAP-ENC:string">Software\Microsoft\ASP.NET Portal (VBVS)</item>
+<item href="#ref-24"/>
+</SOAP-ENC:Array>
+<SOAP-ENC:Array id="ref-24" SOAP-ENC:arrayType="a1:IDictionary[0]" xmlns:a1="http://schemas.microsoft.com/clr/ns/System.Collections">
+</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

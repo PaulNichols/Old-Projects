@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="SpeciesTradePatternData" targetNamespace="http://tempuri.org/SpeciesTradePatternData.xsd"
+	xmlns:mstns="http://tempuri.org/SpeciesTradePatternData.xsd" xmlns="http://tempuri.org/SpeciesTradePatternData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="SpeciesTradePatternData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOSpeciesTradePattern">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PartDerivative" type="xs:string" minOccurs="0" />
+							<xs:element name="Source" type="xs:string" minOccurs="0" />
+							<xs:element name="Purpose" type="xs:string" minOccurs="0" />
+							<xs:element name="CountryOfOrigin" type="xs:string" minOccurs="0" />
+							<xs:element name="CountryFrom" type="xs:string" minOccurs="0" />
+							<xs:element name="CountryTo" type="xs:string" minOccurs="0" />
+							<xs:element name="AppImport" type="xs:string" minOccurs="0" />
+							<xs:element name="AppExport" type="xs:string" minOccurs="0" />
+							<xs:element name="AppSeizure" type="xs:string" minOccurs="0" />
+							<xs:element name="AppTotal" type="xs:string" minOccurs="0" />
+							<xs:element name="TradeImport" type="xs:string" minOccurs="0" />
+							<xs:element name="TradeExport" type="xs:string" minOccurs="0" />
+							<xs:element name="TradeSeizure" type="xs:string" minOccurs="0" />
+							<xs:element name="TradeTotal" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

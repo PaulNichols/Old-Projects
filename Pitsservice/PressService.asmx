@@ -1,0 +1,1 @@
+<%@ WebService Language="vb" Codebehind="PressService.asmx.vb" Class="PITSService.PressService" %>

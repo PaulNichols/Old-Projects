@@ -1,0 +1,75 @@
+using System;
+
+using HBOS.FS.AMP.UPD.Types.Funds;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using UT_HBOS.FS.AMP.UPD.Types.AssetFunds;
+
+using NUnit.Framework;
+
+namespace UT_HBOS.FS.AMP.UPD.Types.Funds
+{
+	/// <summary>
+	/// Base class for tests on fund calculations
+	/// </summary>
+	public abstract class FundCalculationTestBase
+	{
+
+		#region Initialisation
+		/// <summary>
+		/// Set up the fund that we'll be testing
+		/// </summary>
+		[SetUp]
+		public virtual void SetUp()
+		{
+			m_subject = MockFund.CreateInitialisedFund();
+
+//			subject.PreviousPriceCurrentBasisSet = false;
+			subject.PreviousPrice                = 0m;
+//			subject.ValuationFactor              = 0m;
+			subject.ValuationBasisEffect		 = 0m;
+			subject.ScaleFactor					 = 0m;
+			subject.XFactor                      = 0m;
+			subject.RevalFactor					 = 0m;
+		}
+
+		#endregion Initialisation		
+
+
+		#region ProtectedMethodsAndProperties
+
+		// The fund we're testing
+		private LinkedFund m_subject;
+
+		/// <summary>
+		/// The Fund entity that is the subject of the test(read-only) 
+		/// </summary>
+		protected LinkedFund subject
+		{
+			get {return m_subject;}
+		}
+
+		
+		/// <summary>
+		/// Makes the fund calculate itself.
+		/// </summary>
+		protected void makeFundCalculate()
+		{
+			subject.ParentAssetFund = subject.ParentAssetFund;	
+		}
+
+		/// <summary>
+		/// Assigns an asset fund to the fund.
+		/// </summary>
+		protected void assignAssetFund()
+		{
+//			AssetFundIndexWeightedCollection indicies = AssetFundAssetMovementCalculationTests.CreateSingleIndex();
+//			indicies[0].MarketMovement = 0m;
+//			indicies[0].CurrencyMovement = 0m;
+//			
+//			subject.ParentAssetFund = AssetFundAssetMovementCalculationTests.CreateInitialisedAssetFundWithIndexMovements(indicies);
+		}
+
+		#endregion ProtectedMethodsAndProperties
+
+	}
+}

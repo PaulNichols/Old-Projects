@@ -1,0 +1,153 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<%@ Register Assembly="Discovery.Web.UI.CustomControls" Namespace="Discovery.Web.UI.CustomControls" TagPrefix="Discovery" %>
+<%@ Register Assembly="RJS.Web.WebControl.PopCalendar" Namespace="RJS.Web.WebControl" TagPrefix="rjs" %>
+
+<rjs:PopCalendar  runat="server"
+        BorderWidth="1px" Buttons="[<][m][y]  [>]" 
+        CssClass="Classic" Culture="en-GB English (United Kingdom)" Fade="0.5" Format="dd/mm/yyyy"
+        Move="True" RequiredDate="False" Separator="/" ShowMessageBox="True" Shadow="True" BorderStyle="Solid" BorderColor="Black" BackColor="Yellow"
+        ShowWeekend="True" WeekendMessage="blah" RequiredDateMessage="Please select a Start Date from the Calender" />
+
+<asp:SiteMapPath runat="server"  PathSeparator=" : ">
+    <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+    <CurrentNodeStyle ForeColor="#333333" />
+    <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+    <RootNodeStyle Font-Bold="True" ForeColor="#6B696B" />
+</asp:SiteMapPath>
+   
+<asp:Wizard  runat="server" BackColor="#F7F7DE" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" >            
+    <StepStyle BorderWidth="0px" ForeColor="Black" />
+    <SideBarStyle BackColor="#7C6F57" BorderWidth="0px" Width="150px"  VerticalAlign="Top" />
+    <NavigationButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid"    BorderWidth="1px" ForeColor="Black" />
+    <SideBarButtonStyle BorderWidth="0px"  ForeColor="White" />
+    <HeaderStyle BackColor="#F7F7DE"  BorderStyle="Solid" BorderColor="#F7F7DE"  Font-Bold="True" HorizontalAlign="Left" />
+</asp:Wizard>
+                            
+<asp:Menu  runat="server"
+    ForeColor="black"
+    Orientation="Horizontal"
+    DynamicHorizontalOffset="0" 
+    DynamicVerticalOffset="0"
+    StaticEnableDefaultPopOutImage="true"
+    StaticPopOutImageUrl="~/App_Themes/DiscoveryDefault/menu/arrow.gif" 
+    DynamicPopOutImageUrl="~/App_Themes/DiscoveryDefault/menu/arrow.gif"
+    CssClass="Menu-Skin-Horizontal">
+    <StaticMenuItemStyle BackColor="White" ItemSpacing="0" ForeColor="black" BorderStyle="solid" BorderWidth="1px" BorderColor="#D2D2D2" Width="180px" HorizontalPadding="5" VerticalPadding="4" CssClass="Menu-Skin-StaticItem" />
+    <StaticHoverStyle BackColor="White" ForeColor="green" CssClass="Menu-Skin-DynamicHover" />
+    <DynamicMenuItemStyle ForeColor="black" BorderStyle="solid" BorderWidth="1px"  BorderColor="#D2D2D2" Width="180px" HorizontalPadding="5" VerticalPadding="4" CssClass="Menu-Skin-StaticItem" />
+    <DynamicHoverStyle BackColor="#FFFFFF" ForeColor="green" CssClass="Menu-Skin-DynamicHover" />
+</asp:Menu>
+
+<asp:FormView   runat="server" 
+        BackColor="#F7F7DE" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" >
+           <EmptyDataTemplate>
+            The item you requested could not be display
+        </EmptyDataTemplate>
+        </asp:FormView >
+
+<asp:FormView runat="server" SkinID="FormViewNone"></asp:FormView >
+        
+<Discovery:DiscoveryGrid runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical"  AutoGenerateColumns="False" PageSize="15" runat="server"  AllowSorting="True" >
+    <EmptyDataTemplate>No items have been defined, please click 'Add New'</EmptyDataTemplate>
+    <FooterStyle BackColor="#CCCC99" />
+    <RowStyle BackColor="#F7F7DE" />
+    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+    <AlternatingRowStyle BackColor="White" />
+      <EmptyDataTemplate>
+            There are no Items to display...
+        </EmptyDataTemplate>
+        
+</Discovery:DiscoveryGrid>
+
+<asp:DropDownList  runat="server" CssClass="EditText"></asp:DropDownList >
+
+ <asp:TextBox runat="server" CssClass="EditText" ></asp:TextBox >
+ 
+<asp:GridView runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical"  AutoGenerateColumns="False" PageSize="15" runat="server" AllowPaging="True" AllowSorting="True" >
+    <EmptyDataTemplate>No items have been defined, please click 'Add New'</EmptyDataTemplate>
+    <FooterStyle BackColor="#CCCC99" />
+    <RowStyle BackColor="#F7F7DE" />
+    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+    <AlternatingRowStyle BackColor="White" />
+      <EmptyDataTemplate>
+            There are no Items to display...
+        </EmptyDataTemplate>
+        <EmptyDataRowStyle BackColor="#F7F7DE" />
+         
+</asp:GridView >
+
+<asp:Panel SkinID="PanelMessages" runat="server"  Width="50%" BackColor="#F7F7DE" BorderColor="#DEDFDE" BorderStyle="Solid" BorderWidth="1px" ForeColor="Black" Visible="false" HorizontalAlign="Center" />
+ 
+ 
+  <asp:Login  runat="server" CssClass="Login">
+                        <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
+                    </asp:Login>
+
+<asp:ValidationSummary runat="server" ShowMessageBox="True"
+        ShowSummary="False"  HeaderText="Validation Errors:"/>
+
+
+<asp:HyperLink SkinID="HyperLinkBack" ImageUrl="buttons/btn_back.gif" runat="server" AlternateText="Back"/>
+<asp:ImageButton runat="server" ImageUrl="buttons/btn_additem.gif" CauseValidation="false" Text="Add New" SkinID="NewButton" ></asp:ImageButton>
+<asp:ImageButton SkinID="ButtonDelete"  ImageUrl="buttons/btn_deleteitem.gif" runat="server" AlternateText="Delete" />
+<asp:ImageButton SkinID="ButtonEdit" ImageUrl="buttons/btn_edititem.gif" runat="server" AlternateText="Edit" />
+<asp:ImageButton SkinID="ButtonSave"  ImageUrl="buttons/btn_saveitem.gif" runat="server" AlternateText="Save" />
+<asp:ImageButton SkinID="ButtonInsert" ImageUrl="buttons/btn_saveitem.gif" runat="server" AlternateText="Insert" />
+<asp:ImageButton SkinID="ButtonCancel" ImageUrl="buttons/btn_cancel.gif"  runat="server" AlternateText="Cancel" />
+<asp:ImageButton SkinID="ButtonOpCoShipment" ImageUrl="buttons/btn_opcoshipment.gif"  runat="server" AlternateText="OpCo Shipment" />
+<asp:ImageButton SkinID="ButtonTDCShipment" ImageUrl="buttons/btn_tdcshipment.gif"  runat="server" AlternateText="TDC Shipment" />
+<asp:ImageButton SkinID="ButtonTDCShipmentSmall" ImageUrl="buttons/btn_tdcicon.gif" runat="server" AlternateText="TDC Shipment" />
+<asp:ImageButton SkinID="ButtonOpCoShipmentSmall" ImageUrl="buttons/btn_opcoicon.gif" runat="server" AlternateText="OpCo Shipment" />
+<asp:ImageButton SkinID="ButtonSplitShipment" ImageUrl="buttons/btn_splitshipment.gif"  runat="server" AlternateText="Split Shipment" />
+<asp:ImageButton SkinID="ButtonAddLine" ImageUrl="buttons/btn_addline.gif"  runat="server" AlternateText="Add Line" />
+<asp:ImageButton SkinID="ButtonAuditDetails" ImageUrl="buttons/btn_auditdetails.gif"  runat="server" AlternateText="Audit Details" />
+<asp:ImageButton SkinID="ButtonSearch" ImageUrl="search.gif" runat="server" AlternateText="Search" />
+<asp:ImageButton SkinID="ButtonDeleteMultiple"  ImageUrl="buttons/btn_deleteselected.gif" runat="server" AlternateText="Delete Selected" />
+<asp:ImageButton SkinID="ButtonShipmentPrintTransConv"  ImageUrl="buttons/btn_printtranconv.gif" runat="server" AlternateText="Print transfer/conversion note" />
+<asp:ImageButton SkinID="ButtonShipmentPrintDelColl"  ImageUrl="buttons/btn_printdelcoll.gif" runat="server" AlternateText="Print delivery/collection note" />
+<asp:ImageButton SkinID="ButtonMapToTDC"  ImageUrl="buttons/btn_maptotdc.gif" runat="server" AlternateText="Map to TDC" />
+<asp:ImageButton SkinID="ButtonCalculateDeliveryDate" ImageUrl="icons/16X16/calculator.gif" runat="server" ImageAlign="AbsMiddle" AlternateText="Calculate delivery date" />
+<asp:ImageButton SkinID="ButtonPrevious" ImageUrl="icons/arrowleft.gif" runat="server" AlternateText="Previous" />
+<asp:ImageButton SkinID="ButtonNext" ImageUrl="icons/arrowright.gif" runat="server" AlternateText="Next" />
+<asp:ImageButton SkinID="ButtonLookupAddress" ImageUrl="buttons/btn_lookupaddress.gif" runat="server" AlternateText="Lookup Address" />
+<asp:ImageButton SkinID="ButtonAcknowledge" ImageUrl="buttons/btn_acknowledge.gif" runat="server" AlternateText="Acknowledge"  />
+<asp:ImageButton SkinID="ButtonResetPassword" ImageUrl="buttons/btn_resetpassword.gif" runat="server" AlternateText="Reset Passwords"  />
+
+
+<asp:Image SkinID="Check" ImageUrl="check.gif" runat="server" AlternateText="Yes" />
+<asp:Image SkinID="UnCheck" ImageUrl="uncheck.gif" runat="server" AlternateText="No" />
+<asp:Image SkinID="Progress" ImageUrl="Progress.gif" runat="server" AlternateText="Please wait..." />
+<asp:Image SkinID="IsSplit" runat="server"  ImageUrl="check.gif" AlternateText="Shipment has been split." />
+<asp:Image SkinID="MessageMessages" ImageUrl="icons/24X24/Messages.gif" runat="server" AlternateText="Displays messages" ToolTip="Hides or shows your latest messages." />
+<asp:Image SkinID="MessageError" ImageUrl="icons/24X24/Error.gif" runat="server" AlternateText="Error" />
+<asp:Image SkinID="MessageInformation" ImageUrl="icons/24X24/Information.gif" runat="server" AlternateText="Information" />
+<asp:Image SkinID="MessageWarning" ImageUrl="icons/24X24/Warning.gif" runat="server" AlternateText="Warning" />
+<asp:Image SkinID="MessageSuccess" ImageUrl="icons/24X24/Success.gif" runat="server" AlternateText="Success" />
+<asp:Image SkinID="LogonBanner" ImageUrl="LogonBanner.jpg" runat="server" />
+
+
+<asp:LoginName runat="server"  ForeColor="#6B696B" FormatString="Welcome - {0} | " />
+
+<asp:LoginStatus   ForeColor="#6B696B"  runat="server" />
+
+
+
+<asp:Image Height="97px" Width="447px" runat="server" SkinID="SiteLogo" ImageUrl="TDCLogo.GIF"/>

@@ -1,0 +1,23 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/FundPrices_Upload.aspx">Fund Prices - Upload</asp:HyperLink> | 
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/FundPrices_View.aspx">Fund Prices - View</asp:HyperLink> |
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/OffShorePriceEdit.aspx">Fund Prices - Offshore Edit</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Funds_Display.aspx">Fund Display</asp:HyperLink>
+        <p></p></div>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+            <br />
+        </asp:contentplaceholder>
+        
+    </form>
+</body>
+</html>

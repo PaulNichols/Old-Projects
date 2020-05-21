@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_xReadOrderDateAmount - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_xReadOrderDateAmount
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Procedure [spS_xReadOrderDateAmount]<br>
+				(<br>
+				 @Ord_LngCustomerID [int]<br>
+				,@ReturnXML [bit] = 0<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				If @ReturnXML = Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ReturnXML = 0<br>
+				<br>
+				If @ReturnXML = 0<br>
+				&nbsp;&nbsp;&nbsp;Begin<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Orders].[ID]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[Orders].[Display]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From [fnxReadOrderDateAmount](@Ord_LngCustomerID) [Orders]<br>
+				&nbsp;&nbsp;&nbsp;End<br>
+				<br>
+				Else<br>
+				&nbsp;&nbsp;&nbsp;Begin<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Orders].[ID]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[Orders].[Display]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From [fnxReadOrderDateAmount](@Ord_LngCustomerID) [Orders]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For XML Auto, Elements, XMLData, BINARY BASE64<br>
+				&nbsp;&nbsp;&nbsp;End<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:20
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

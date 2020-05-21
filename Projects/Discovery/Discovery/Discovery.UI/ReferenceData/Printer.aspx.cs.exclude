@@ -1,0 +1,36 @@
+namespace Discovery.UI.Web.ReferenceData
+{
+    /*************************************************************************************************
+     ** CLASS:	Printer
+     **
+     ** OVERVIEW:
+     ** This page allows a uers to view, add, edit and delete a single Printer
+     **
+     ** MODIFICATION HISTORY:
+     **
+     ** Date:		Version:    Who:	Change:
+     ** 19/7/06		1.0			PJN		Initial Version
+     ************************************************************************************************/
+
+    public partial class Printer : DiscoveryDataDetailPage
+    {
+        #region Properties
+
+        #endregion
+
+        #region Protected Methods
+
+        #endregion
+
+        #region Events
+
+        #endregion
+
+        protected override void SetValidation()
+        {
+            base.SetValidation();
+            validation.AddValidation("TextBoxName", "Name");
+            
+        }
+    }
+}

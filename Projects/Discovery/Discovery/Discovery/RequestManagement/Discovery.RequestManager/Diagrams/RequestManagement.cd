@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.RequestManagement.RequestManager">
+    <Position X="5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <FileName>RequestManager.cs</FileName>
+      <HashCode>AAAoEAABYCFkYUBgoEFAQIAAAAAAAAAAIEICBAAAAAE=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RequestProcessors" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Discovery.RequestManagement.RequestController">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequestController.cs</FileName>
+      <HashCode>AAAgBAAAICAQQCBAEEBBQAAAAEAIAAEAIAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RequestManagers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Discovery.RequestManagement.RequestProcessor">
+    <Position X="0.5" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequestProcessor.cs</FileName>
+      <HashCode>AAAAAAAAACAQAQBAkEBAQAAAAAAAAAAAIAAEAAAABAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.RequestManagement.RequestFilter">
+    <Position X="0.5" Y="16.25" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequestSubscriber.cs</FileName>
+      <NewMemberFileName>Components\RequestManagement\RequestProcessor.cs</NewMemberFileName>
+      <HashCode>BAAAAAQAAAEAAQAAAAFAAAAAgAACAIAAAgAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.RequestManagement.RequestSubscriber">
+    <Position X="0.5" Y="10.5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequestSubscriber.cs</FileName>
+      <HashCode>FAQgAAQEIAAAQQAAANFCAIQAgACHAIAAgwAAAJAAQAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="RequestFilters" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Discovery.RequestManagement.RequestProcessorMSMQ">
+    <Position X="5" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequestProcessorMSMQ.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAEAAAgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.RequestManagerClient.RequestManagerClient">
+    <Position X="5" Y="9.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Discovery.RequestManagerClient.RequestManagerClientMSMQ">
+    <Position X="5" Y="11" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Discovery.RequestManagerClient.RequestMessage">
+    <Position X="5" Y="13.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Discovery.RequestManagement.UnprocessedRequestException">
+    <Position X="5" Y="16" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequestSubscriber.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Discovery.RequestManagement.SubscriberStatusEnum">
+    <Position X="0.5" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequestProcessor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAhAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

@@ -1,0 +1,178 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_tblSupplierProduct_SelectDisplay - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_tblSupplierProduct_SelectDisplay
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				Create Procedure [spS_tblSupplierProduct_SelectDisplay]<br>
+				<br>
+				-- Retrieve specific records from the [tblSupplierProduct] table depending on the input parameters you supply.<br>
+				<br>
+				(<br>
+				 @Spr_GuidProductID [uniqueidentifier] = Null -- for [tblSupplierProduct].[Spr_GuidProductID] column<br>
+				,@Spr_GuidSupplierID [uniqueidentifier] = Null -- for [tblSupplierProduct].[Spr_GuidSupplierID] column<br>
+				,@ReturnXML [bit] = 0 -- Indicates if we want to get back XML content instead of normal resultset (@ReturnXML = 1 to get XML back)<br>
+				)<br>
+				<br>
+				-- Returns the number of records found<br>
+				<br>
+				As<br>
+				<br>
+				/*<br>
+				&nbsp;&nbsp;&nbsp;This T-SQL code was automatically generated using:<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server Centric .NET Code Generator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v 1.0.1287.20792<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generation Date: 28/11/2004 11:31:14<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generator name: &lt;Developer Name Here&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template last update: 24/06/2002 01:53:57<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template revision: 15083637<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server version: 08.00.0194<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server: MAINSERVER\MAINSERVER<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Database: [OlymarsDemo]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;WARNING: This source is provided &quot;AS IS&quot; without warranty of any kind.<br>
+				&nbsp;&nbsp;&nbsp;The author disclaims all warranties, either express or implied, including<br>
+				&nbsp;&nbsp;&nbsp;the warranties of merchantability and fitness for a particular purpose.<br>
+				&nbsp;&nbsp;&nbsp;In no event shall the author or its suppliers be liable for any damages<br>
+				&nbsp;&nbsp;&nbsp;whatsoever including direct, indirect, incidental, consequential, loss of<br>
+				&nbsp;&nbsp;&nbsp;business profits or special damages, even if the author or its suppliers<br>
+				&nbsp;&nbsp;&nbsp;have been advised of the possibility of such damages.<br>
+				*/<br>
+				<br>
+				<br>
+				--&nbsp;&nbsp;&nbsp;IMPORTANT:<br>
+				--&nbsp;&nbsp;&nbsp;Changes to this SQL code may cause incorrect behavior<br>
+				--&nbsp;&nbsp;&nbsp;and will be lost if the code is regenerated. <br>
+				<br>
+				<br>
+				If @ReturnXML Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ReturnXML = 0<br>
+				<br>
+				If @ReturnXML = 0<br>
+				&nbsp;&nbsp;&nbsp;Begin<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [tblSupplierProduct_Records].[Spr_GuidProductID]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[tblSupplierProduct_Records].[Spr_GuidProductID_Display]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[tblSupplierProduct_Records].[Spr_GuidSupplierID]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[tblSupplierProduct_Records].[Spr_GuidSupplierID_Display]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From [fntblSupplierProduct_SelectDisplay](@Spr_GuidProductID, @Spr_GuidSupplierID) As [tblSupplierProduct_Records]<br>
+				&nbsp;&nbsp;&nbsp;End<br>
+				<br>
+				Else<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;Begin<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [tblSupplierProduct_Records].[Spr_GuidProductID]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[tblSupplierProduct_Records].[Spr_GuidProductID_Display]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[tblSupplierProduct_Records].[Spr_GuidSupplierID]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,[tblSupplierProduct_Records].[Spr_GuidSupplierID_Display]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From [fntblSupplierProduct_SelectDisplay](@Spr_GuidProductID, @Spr_GuidSupplierID) As [tblSupplierProduct_Records]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For XML Auto, Elements, XMLData, BINARY BASE64<br>
+				&nbsp;&nbsp;&nbsp;End<br>
+				<br>
+				Return(@@RowCount)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Function">
+		<div class="MainTitle">
+			T-SQL code for the underlying inline table-valued function used by this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				Create Function [fntblSupplierProduct_SelectDisplay]<br>
+				(<br>
+				 @Spr_GuidProductID [uniqueidentifier] = Null<br>
+				,@Spr_GuidSupplierID [uniqueidentifier] = Null<br>
+				)<br>
+				<br>
+				/*<br>
+				&nbsp;&nbsp;&nbsp;This T-SQL code was automatically generated using:<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server Centric .NET Code Generator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v 1.0.1287.20792<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generation Date: 28/11/2004 11:31:14<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generator name: &lt;Developer Name Here&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template last update: 24/06/2002 01:53:57<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template revision: 15083637<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server version: 08.00.0194<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server: MAINSERVER\MAINSERVER<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Database: [OlymarsDemo]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;WARNING: This source is provided &quot;AS IS&quot; without warranty of any kind.<br>
+				&nbsp;&nbsp;&nbsp;The author disclaims all warranties, either express or implied, including<br>
+				&nbsp;&nbsp;&nbsp;the warranties of merchantability and fitness for a particular purpose.<br>
+				&nbsp;&nbsp;&nbsp;In no event shall the author or its suppliers be liable for any damages<br>
+				&nbsp;&nbsp;&nbsp;whatsoever including direct, indirect, incidental, consequential, loss of<br>
+				&nbsp;&nbsp;&nbsp;business profits or special damages, even if the author or its suppliers<br>
+				&nbsp;&nbsp;&nbsp;have been advised of the possibility of such damages.<br>
+				*/<br>
+				<br>
+				<br>
+				--&nbsp;&nbsp;&nbsp;IMPORTANT:<br>
+				--&nbsp;&nbsp;&nbsp;Changes to this SQL code may cause incorrect behavior<br>
+				--&nbsp;&nbsp;&nbsp;and will be lost if the code is regenerated. <br>
+				<br>
+				<br>
+				Returns Table<br>
+				<br>
+				As<br>
+				<br>
+				Return<br>
+				(<br>
+				Select<br>
+				&nbsp;&nbsp;&nbsp; [tblSupplierProduct].[Spr_GuidProductID]<br>
+				&nbsp;&nbsp;&nbsp;,[tblProduct1].[Display] [Spr_GuidProductID_Display]<br>
+				&nbsp;&nbsp;&nbsp;,[tblSupplierProduct].[Spr_GuidSupplierID]<br>
+				&nbsp;&nbsp;&nbsp;,[tblSupplier2].[Display] [Spr_GuidSupplierID_Display]<br>
+				<br>
+				From [dbo].[tblSupplierProduct]<br>
+				    Inner Join [fntblProduct_Display](Null, Null) [tblProduct1] On [Spr_GuidProductID] = [tblProduct1].[ID1]<br>
+				        Inner Join [fntblSupplier_Display](Null) [tblSupplier2] On [Spr_GuidSupplierID] = [tblSupplier2].[ID1]<br>
+				<br>
+				Where<br>
+				<br>
+				    ((@Spr_GuidProductID Is Null) Or ([Spr_GuidProductID] = @Spr_GuidProductID))<br>
+				And ((@Spr_GuidSupplierID Is Null) Or ([Spr_GuidSupplierID] = @Spr_GuidSupplierID))<br>
+				)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:20
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

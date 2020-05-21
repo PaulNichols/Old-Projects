@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Exception>
+  <Description>An exception of type 'Discovery.ComponentServices.DataAccess.Exceptions.ForeignKeyConstraint' occurred and was caught.</Description>
+  <DateTime>2006-07-24 11:05:24Z</DateTime>
+  <ExceptionType>Discovery.ComponentServices.DataAccess.Exceptions.ForeignKeyConstraint, Discovery, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ExceptionType>
+  <Message>
+    The DELETE statement conflicted with the REFERENCE constraint "FK_Discovery_Warehouse_Discovery_Printer". The conflict occurred in database "Discovery", table "dbo.Discovery_Warehouse", column 'PrinterId'.
+    The statement has been terminated.
+  </Message>
+  <Source>Microsoft.Practices.EnterpriseLibrary.ExceptionHandling</Source>
+  <HelpLink />
+  <Property name="Data">System.Collections.ListDictionaryInternal</Property>
+  <Property name="TargetSite">System.Exception IntentionalRethrow(System.Exception, System.Exception)</Property>
+  <StackTrace>
+    at Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionPolicyEntry.IntentionalRethrow(Exception chainException, Exception originalException)
+    at Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionPolicyEntry.RethrowRecommended(Exception chainException, Exception originalException)
+    at Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionPolicyEntry.Handle(Exception exceptionToHandle)
+    at Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionPolicyImpl.HandleException(Exception exceptionToHandle)
+    at Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.ExceptionPolicy.HandleException(Exception exceptionToHandle, String policyName)
+    at Discovery.ComponentServices.DataAccess.SQLDataAccessProvider.DeletePrinter(Int32 printerId) in C:\Documents and Settings\nichols_p\My Documents\Visual Studio 2005\Discovery\Code\RequestManagement\Discovery\Discovery.SQLDataAccessProvider\Main.cs:line 1519
+    at Discovery.BusinessObjects.Controllers.PrinterController.DeletePrinter(Printer printer) in C:\Documents and Settings\nichols_p\My Documents\Visual Studio 2005\Discovery\Code\RequestManagement\Discovery\Discovery\Components\BusinessObjects\Controllers\PrinterController.cs:line 71
+  </StackTrace>
+  <additionalInfo>
+    <info name="MachineName" value="PNICHOLSLT" />
+    <info name="TimeStamp" value="24/07/2006 10:05:24" />
+    <info name="FullName" value="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <info name="AppDomainName" value="/LM/W3SVC/1/Root/Discovery.UI-99-127982091204174259" />
+    <info name="ThreadIdentity" value="Paul Nichols" />
+    <info name="WindowsIdentity" value="PNICHOLSLT\ASPNET" />
+  </additionalInfo>
+  <InnerException>
+    <ExceptionType>System.Data.SqlClient.SqlException, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ExceptionType>
+    <Message>
+      The DELETE statement conflicted with the REFERENCE constraint "FK_Discovery_Warehouse_Discovery_Printer". The conflict occurred in database "Discovery", table "dbo.Discovery_Warehouse", column 'PrinterId'.
+      The statement has been terminated.
+    </Message>
+    <Source>.Net SqlClient Data Provider</Source>
+    <HelpLink />
+    <Property name="Errors">System.Data.SqlClient.SqlErrorCollection</Property>
+    <Property name="Class">16</Property>
+    <Property name="LineNumber">7</Property>
+    <Property name="Number">547</Property>
+    <Property name="Procedure">Discovery_DeletePrinter</Property>
+    <Property name="Server">robins</Property>
+    <Property name="State">0</Property>
+    <Property name="ErrorCode">-2146232060</Property>
+    <Property name="Data">System.Collections.ListDictionaryInternal</Property>
+    <Property name="TargetSite">Void OnError(System.Data.SqlClient.SqlException, Boolean)</Property>
+    <StackTrace>
+      at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+      at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+      at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+      at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+      at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+      at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+      at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+      at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+      at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+      at Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+      at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command)
+      at Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(String storedProcedureName, Object[] parameterValues)
+      at Discovery.ComponentServices.DataAccess.SQLDataAccessProvider.ExecuteNonQuery(String spNameWithoutQualifier, Object[] sqlParameters) in C:\Documents and Settings\nichols_p\My Documents\Visual Studio 2005\Discovery\Code\RequestManagement\Discovery\Discovery.SQLDataAccessProvider\Main.cs:line 99
+      at Discovery.ComponentServices.DataAccess.SQLDataAccessProvider.DeletePrinter(Int32 printerId) in C:\Documents and Settings\nichols_p\My Documents\Visual Studio 2005\Discovery\Code\RequestManagement\Discovery\Discovery.SQLDataAccessProvider\Main.cs:line 1509
+    </StackTrace>
+  </InnerException>
+</Exception>

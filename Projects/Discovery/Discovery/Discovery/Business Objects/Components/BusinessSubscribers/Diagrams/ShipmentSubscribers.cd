@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.RequestManagement.RequestSubscriber">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Discovery.ComponentServices.Parsing.TextFieldParser">
+    <Position X="0.5" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Parsing\TextFieldParser.cs</FileName>
+      <HashCode>IQAAkgAAAhIAAAAEAABBAAAQAAAgAAEAIFAIBARgCAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="TextFields" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Discovery.ComponentServices.Parsing.TextFieldParser.FileFormat" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\ComponentServices\Parsing\TextFieldParser.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Delegate Name="Discovery.ComponentServices.Parsing.TextFieldParser.RecordFoundHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\ComponentServices\Parsing\TextFieldParser.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Discovery.ComponentServices.Parsing.TextFieldParser.RecordFailedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\ComponentServices\Parsing\TextFieldParser.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Discovery.ComponentServices.Parsing.TextFieldParser.RecordReadHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\ComponentServices\Parsing\TextFieldParser.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+  </Class>
+  <Class Name="Discovery.ComponentServices.Parsing.TextField">
+    <Position X="3" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Parsing\TextFieldParser.cs</FileName>
+      <HashCode>AAAAAgAAAIIAAAAAAECAAARAgAAEAAAAAAAgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.OpCoShipment">
+    <Position X="1.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\OpCoShipment.cs</FileName>
+      <HashCode>AEAAAAAAAAAAAAAAAQAAAAAAAAAAAAAACgAAAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.TDCShipment">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\TDCShipment.cs</FileName>
+      <HashCode>CNAgQSgQIAAhIAAAkQAGEgBAbwIAABOACAAWAACUMAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Mapping">
+    <Position X="10" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Mapping.cs</FileName>
+      <HashCode>AEAAAAAQAAgAEAAEAgEAgFIAABgAAQABAAEAgAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.MappingController">
+    <Position X="10" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\MappingController.cs</FileName>
+      <HashCode>AAAgAABAABAADAAggCAACABAAAAgIEAABwAggAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.OpCoShipmentController">
+    <Position X="1.5" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentController.cs</FileName>
+      <HashCode>AAAAABAAAAIAAAAAAAAQAAAAAAAAAAAABAAAAAAAQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.TDCShipmentController">
+    <Position X="6.75" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentController.cs</FileName>
+      <HashCode>AAgAABAIAQoAAAAAAAAQEIEAAAIAAAAADAAAAAAAAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessSubscribers.ShipmentMapping">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessSubscribers\ShipmentMapping.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAACAABAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="opCoShipment" />
+      <Field Name="tdcShipment" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Discovery.BusinessSubscribers.ShipmentParsing">
+    <Position X="3.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessSubscribers\ShipmentParsing.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAGAABAAAAAAAAAAAAAAAwAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Components.BusinessSubscribers.ShipmentValidation">
+    <Position X="1.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessSubscribers\ShipmentValidation.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

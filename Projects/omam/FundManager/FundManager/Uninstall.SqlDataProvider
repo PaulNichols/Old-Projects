@@ -1,0 +1,44 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop FAQs Table **/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}YourCompany_FundManager] DROP CONSTRAINT [FK_{objectQualifier}YourCompany_FundManager_{objectQualifier}Modules]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}YourCompany_FundManager] DROP CONSTRAINT [PK_{objectQualifier}YourCompany_FundManager]
+GO
+
+DROP INDEX {databaseOwner}[{objectQualifier}YourCompany_FundManager].[IX_{objectQualifier}YourCompany_FundManager]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}YourCompany_FundManager]
+GO
+
+/** Drop Stored Procedures **/
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}YourCompany_GetFundManagers]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}YourCompany_GetFundManager]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}YourCompany_AddFundManager]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}YourCompany_UpdateFundManager]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}YourCompany_DeleteFundManager]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

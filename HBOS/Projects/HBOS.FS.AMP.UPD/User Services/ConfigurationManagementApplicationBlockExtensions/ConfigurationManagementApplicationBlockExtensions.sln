@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationManagementApplicationBlockExtensions", "ConfigurationManagementApplicationBlockExtensions\ConfigurationManagementApplicationBlockExtensions.csproj", "{42856D48-9DD6-48C7-91BE-6EF6E3067581}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{42856D48-9DD6-48C7-91BE-6EF6E3067581}.Debug.ActiveCfg = Debug|.NET
+		{42856D48-9DD6-48C7-91BE-6EF6E3067581}.Debug.Build.0 = Debug|.NET
+		{42856D48-9DD6-48C7-91BE-6EF6E3067581}.Release.ActiveCfg = Release|.NET
+		{42856D48-9DD6-48C7-91BE-6EF6E3067581}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

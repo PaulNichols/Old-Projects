@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			tblOrder - Using the Abstract class in Visual C# .NET
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			tblOrder
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Using the Abstract class in Visual C# .NET
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+				<div class="MainBody">
+					This class was generated for the [<a href="tblOrder.htm">tblOrder</a>] table.
+					It is located in the
+					<span class="FixedHighlight">
+OlymarsDemo.AbstractClasses
+					</span>
+					namespace.<br>
+					<br>
+					Please note that this class relies on the following underlying classes:
+					<ul>
+						<li>
+							[<a href="../Tables/HowTo_Select/tblOrder_Overview.htm">OlymarsDemo.DataClasses.Parameters.spS_tblOrder</a>]
+						</li>
+						<li>
+							[<a href="../Tables/HowTo_Select/tblOrder_Overview.htm">OlymarsDemo.DataClasses.StoredProcedures.spS_tblOrder</a>].<br>
+						</li>
+					</ul>
+					<br>
+					To read an overview on this class, click <a href="../AbstractClasses/tblOrder.htm">here</a>.<br>
+					To see an example on how to call this class in Visual Basic .NET, click <a href="../AbstractClasses/tblOrder_VB.htm">here</a>.
+				</div>
+				<br>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Step by step tutorial
+		</div>
+		<blockquote>
+				<div class="MainTitle">
+					First Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						If you are in Visual Studio.NET, make a reference to the following
+						assembly: "OlymarsDemo.dll".
+					</div>
+					<br>
+					<div class="MainBody">
+						If you are using the compiler, be sure to add a "/r:" switch pointing
+						on the following assembly: "OlymarsDemo.dll".
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Second Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						add thoses directives at the top of your code:
+					</div>
+					<div class="Code">
+						using OlymarsDemo.DataClasses;<br>
+						using Abstracts = OlymarsDemo.AbstractClasses;<br>
+						using System.Data.SqlTypes;
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Third Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Use the Abstract class as described below:
+					</div>
+					<br>
+					<div class="Code">
+						<div class="FixedComment">
+							// Let's build a connection string to the database.<br>
+							// Note: the connection string policy is described <a href="../Stored_Procedures/spS_tblOrder_CS.htm#Connection">here</a>.<br>
+							// <br>
+							// To see the documentation on how to build this connection string,<br>
+							// <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a>
+						</div>
+						string ConnectionString =<br>&nbsp;&nbsp;&nbsp;&nbsp;Information.BuildConnectionString("MAINSERVER\MAINSERVER", "OlymarsDemo");<br>
+						<br>
+						<div class="FixedComment">
+							// Let's instanciate this abstract class and<br>
+							// specify the connection string to use. We could<br>
+							// also use the two others overloaded constructors<br>
+							// that allows us to provide a <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> or<br>
+							// a <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">SqlTransaction</a> instead.
+						</div>
+						Abstracts.Abstract_tblOrder NewAC =<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;new Abstracts.Abstract_tblOrder(ConnectionString);<br>
+						<br>
+						<div class="FixedComment">
+							// Now, let's refresh a specific record by providing its primary key:
+						</div>
+						<br>
+						<div class="FixedComment">
+							// TODO: provide a specific value here.
+						</div>
+						SqlGuid PK_Ord_GuidID = ...;<br>
+						<br>
+						<div class="FixedComment">
+							// Let's now call the 'Refresh()' method to load this record.<br>
+						</div>
+						if (NewAC.Refresh(PK_Ord_GuidID)) {<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;// The record was found and we can now access all its fields.
+						</div>
+							&nbsp;&nbsp;&nbsp;&nbsp;if (!NewAC.Col_Ord_DatOrderedOn.IsNull) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SqlDateTime col_Ord_DatOrderedOn = NewAC.Col_Ord_DatOrderedOn;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;if (!NewAC.Col_Ord_LngCustomerID.IsNull) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SqlInt32 col_Ord_LngCustomerID = NewAC.Col_Ord_LngCustomerID;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;if (!NewAC.Col_Ord_CurTotal.IsNull) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SqlMoney col_Ord_CurTotal = NewAC.Col_Ord_CurTotal;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							<br>
+						}<br>
+						<br>
+						else {<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;// No record with such primary key was found in the database.
+						</div>
+						}<br>
+					</div>
+			</blockquote>
+	</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:57
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

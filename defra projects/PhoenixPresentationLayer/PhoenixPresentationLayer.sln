@@ -1,0 +1,94 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PhoenixControls", "..\devPhoenix\PhoenixObjects\PhoenixControls\PhoenixControls.vbproj", "{DB80CC61-8EB2-45A8-B459-7A2C580D161F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mydevPhoenix", "http://localhost:5002/mydevPhoenix.vbproj", "{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "devPhoenixCommonCode", "http://localhost:5002/devPhoenixCommonCode/devPhoenixCommonCode.vbproj", "{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mydevPhoenixSecure", "http://localhost:5003/mydevPhoenixSecure.vbproj", "{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectUniqueName0 = ..\\devPhoenix\\PhoenixObjects\\PhoenixControls\\PhoenixControls.vbproj
+		SccProjectName0 = \u0022$/devPhoenix/devPhoenix/PhoenixControls\u0022,\u0020JWRAAAAA
+		SccLocalPath0 = ..\\devPhoenix\\PhoenixObjects\\PhoenixControls
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = http://localhost:5002/mydevPhoenix.vbproj
+		SccProjectName1 = \u0022$/devPhoenix/mydevPhoenix\u0022,\u0020BIRAAAAA
+		SccLocalPath1 = ..\\..\\Web\\devPhoenix
+		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectEnlistmentChoice1 = 2
+		SccProjectUniqueName2 = http://localhost:5002/devPhoenixCommonCode/devPhoenixCommonCode.vbproj
+		SccProjectName2 = \u0022$/devPhoenix/devPhoenixCommonCode\u0022,\u0020IIRAAAAA
+		SccLocalPath2 = ..\\..\\Web\\devPhoenix\\devPhoenixCommonCode
+		SccProvider2 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectEnlistmentChoice2 = 2
+		SccProjectUniqueName3 = http://localhost:5003/mydevPhoenixSecure.vbproj
+		SccProjectName3 = \u0022$/devPhoenix/mydevPhoenixSecure\u0022,\u0020CIRAAAAA
+		SccLocalPath3 = ..\\..\\Web\\devPhoenixSecure
+		SccProvider3 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectEnlistmentChoice3 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug - non compile = Debug - non compile
+		Debug Local = Debug Local
+		FMDDEV2 = FMDDEV2
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug.ActiveCfg = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug.Build.0 = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug - non compile.ActiveCfg = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug Local.ActiveCfg = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug Local.Build.0 = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.FMDDEV2.ActiveCfg = Release|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.FMDDEV2.Build.0 = Release|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Release.ActiveCfg = Release|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Release.Build.0 = Release|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.Debug.ActiveCfg = Debug Local|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.Debug.Build.0 = Debug Local|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.Debug - non compile.ActiveCfg = Debug Local|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.Debug Local.ActiveCfg = Debug Local|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.Debug Local.Build.0 = Debug Local|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.FMDDEV2.ActiveCfg = FMDDEV2|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.FMDDEV2.Build.0 = FMDDEV2|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.Release.ActiveCfg = FMDDEV2|.NET
+		{2F9C0C94-9A69-406C-BFC2-F347C5E2DC85}.Release.Build.0 = FMDDEV2|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug.ActiveCfg = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug.Build.0 = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug - non compile.ActiveCfg = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug Local.ActiveCfg = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug Local.Build.0 = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.FMDDEV2.ActiveCfg = Release|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.FMDDEV2.Build.0 = Release|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Release.ActiveCfg = Release|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Release.Build.0 = Release|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug.ActiveCfg = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug.Build.0 = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug - non compile.ActiveCfg = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug Local.ActiveCfg = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug Local.Build.0 = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.FMDDEV2.ActiveCfg = FMDDEV2|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.FMDDEV2.Build.0 = FMDDEV2|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Release.ActiveCfg = Debug - non compile|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Release.Build.0 = Debug - non compile|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

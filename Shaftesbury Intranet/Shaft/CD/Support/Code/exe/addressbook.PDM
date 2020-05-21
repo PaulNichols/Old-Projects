@@ -1,0 +1,184 @@
+[Root]
+Most Recent Package=Shaft
+
+
+[Package|Shaft|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\Em\Desktop\Shaft\exe\Package
+
+[Package|Shaft|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Shaft|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Shaft|Files Found]
+MSADO21.TLB=C:\Program Files\Common Files\SYSTEM\ADO\MSADO21.TLB
+MSO9.DLL=C:\Program Files\Microsoft Office\Office\MSO9.DLL
+MSOUTL9.OLB=C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB
+
+[Package|Shaft|Files Released]
+
+[Package|Shaft|Missing Dependency Information]
+C:\Program Files\ActiveReports\actrpt.dll=
+C:\WINNT\SYSTEM32\actrpt.dll=
+C:\WINNT\SYSTEM32\ARViewer.ocx=
+D:\Program Files\ActiveReports\actrpt.dll=
+D:\Program Files\ActiveReports\arviewer.ocx=
+C:\Program Files\Common Files\System\ado\msado21.tlb=
+\\Server\Files\Pauls Stuff\projects\Shaft\CD\ActBar.ocx=
+
+[Package|Shaft|Out-of-Date Dependency Information]
+C:\WINDOWS\SYSTEM\scrrun.dll=
+C:\WINDOWS\SYSTEM\Mscomctl.ocx=
+C:\WINNT\SYSTEM32\Mscomctl.ocx=
+C:\WINNT\SYSTEM32\MSO9.DLL=
+C:\WINNT\SYSTEM32\scrrun.dll=
+
+[Package|Shaft|Files Added]
+\\Server\Files\Pauls Stuff\projects\Shaft\CD\ActBar.ocx=
+
+[Package|Shaft|Files Removed]
+
+[Package|Shaft|Files In Project]
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=Yes
+C:\WINNT\SYSTEM32\scrrun.dll=Yes
+C:\WINNT\SYSTEM32\MSVCRT.DLL=Yes
+C:\WINNT\SYSTEM32\addressbook.dll=Yes
+C:\WINNT\SYSTEM32\ocx.ocx=Yes
+C:\WINNT\SYSTEM32\MSSTKPRP.DLL=Yes
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=Yes
+C:\WINNT\SYSTEM32\Mscomctl.ocx=Yes
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=Yes
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Program Files\Common Files\System\ado\msado21.tlb=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINNT\system32\arviewer.ocx=Yes
+C:\WINNT\system32\actrpt.dll=Yes
+C:\WINNT\system32\MSDBRPTR.DLL=Yes
+C:\WINNT\system32\MSSTDFMT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Documents and Settings\em\Desktop\exe\addressbook.exe=Yes
+C:\WINNT\system32\MSOUTL9.OLB=Yes
+C:\WINNT\system32\MSWORD9.OLB=Yes
+C:\WINNT\system32\MSO9.DLL=Yes
+\\Server\Files\Pauls Stuff\projects\Shaft\CD\ActBar.ocx=Yes
+
+[Package|Shaft|Configure Registry Files]
+Applicable=No
+
+[Package|Shaft|Configure Remote Servers]
+Applicable=No
+
+[Package|Shaft|Install Locations]
+L:\Projects\Shaftesbury\Contacts\Exe\addressbook.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\Mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\ocx.ocx=$(AppPath)
+C:\WINDOWS\SYSTEM\MSSTKPRP.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\addressbook.dll=$(AppPath)
+C:\Program Files\Common Files\SYSTEM\ADO\MSADO21.TLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSOUTL9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSWORD9.OLB=$(WinSysPath)
+C:\Program Files\Microsoft Office\Office\MSO9.DLL=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\MSADOX.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSCOMM32.OCX=$(WinSysPath)
+C:\Program Files\ActiveReports\actrpt.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM\MSINET.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMDLG32.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINNT\Profiles\administrator.000\Desktop\Contacts\exe\addressbook.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\scrrun.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSVCRT.DLL=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\addressbook.dll=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADO21.TLB=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSOUTL9.OLB=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSWORD9.OLB=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSO9.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADOX.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\ocx.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSSTKPRP.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\ARViewer.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\COMDLG32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\Mscomctl.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\actrpt.dll=$(WinSysPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINNT\Profiles\administrator.000\Desktop\Shaft\Contacts\exe\addressbook.exe=$(AppPath)
+D:\Program Files\ActiveReports\arviewer.ocx=$(WinSysPath)
+D:\Program Files\ActiveReports\actrpt.dll=$(WinSysPath)
+C:\Documents and Settings\Em\Desktop\Shaft\exe\addressbook.exe=$(AppPath)
+C:\WINNT\system32\MSDBRPTR.DLL=$(WinSysPath)
+C:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\Documents and Settings\em\Desktop\exe\addressbook.exe=$(AppPath)
+\\Server\Files\Pauls Stuff\projects\Shaft\CD\ActBar.ocx=$(WinSysPath)
+
+[Package|Shaft|Configure Shared Files]
+Applicable=Yes
+L:\Projects\Shaftesbury\Contacts\Exe\addressbook.exe=No
+C:\WINDOWS\SYSTEM\ocx.ocx=No
+C:\WINDOWS\SYSTEM\addressbook.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\WINNT\Profiles\administrator.000\Desktop\Contacts\exe\addressbook.exe=No
+D:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\WINNT\Profiles\administrator.000\Desktop\Shaft\Contacts\exe\addressbook.exe=No
+C:\Documents and Settings\Em\Desktop\Shaft\exe\addressbook.exe=No
+C:\Documents and Settings\em\Desktop\exe\addressbook.exe=No
+
+[Package|Shaft|Distribution]
+Type=single
+Size=
+Title=Shaftesbury Contacts
+
+[Package|Shaft|IconGroups]
+Group0=Shaftesbury Contacts
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Shaft|Shaftesbury Contacts]
+Icon1=addressbook.exe
+Title1=Shaftesbury Contacts
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Shaft|Package]
+PackageFolder=C:\Documents and Settings\Em\Desktop\Shaft\exe\Package
+ProjectFolder=C:\Documents and Settings\em\Desktop\exe
+ServerSideCab=
+File1=C:\Documents and Settings\Em\Desktop\Shaft\exe\Package\setup.exe
+File2=C:\Documents and Settings\Em\Desktop\Shaft\exe\Package\Setup.Lst
+File3=C:\Documents and Settings\Em\Desktop\Shaft\exe\Package\addressbook.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="CITESConsignmentData" targetNamespace="http://tempuri.org/CITESConsignmentData.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/CITESConsignmentData.xsd"
+	xmlns:mstns="http://tempuri.org/CITESConsignmentData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="CITESConsignmentData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOConsignment">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PermitReference" type="xs:string" minOccurs="0" />
+							<xs:element name="BarCode" type="xs:string" minOccurs="0" />
+							<xs:element name="ExhibitionX" type="xs:string" minOccurs="0" />
+							<xs:element name="ExpiryDate" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportX" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportX" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="PetX" type="xs:string" minOccurs="0" />
+							<xs:element name="ReExportX" type="xs:string" minOccurs="0" />
+							<xs:element name="ReExportCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportationX" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportationX" type="xs:string" minOccurs="0" />
+							<xs:element name="IssueDate" type="xs:string" minOccurs="0" />
+							<xs:element name="IssueLetter" type="xs:string" minOccurs="0" />
+							<xs:element name="IssuePlace" type="xs:string" minOccurs="0" />
+							<xs:element name="ReExportationX" type="xs:string" minOccurs="0" />
+							<xs:element name="SpecialConditions" type="xs:string" minOccurs="0" />
+							<xs:element name="SurrenderBorderX" type="xs:string" minOccurs="0" />
+							<xs:element name="SurrenderIssuingX" type="xs:string" minOccurs="0" />
+							<xs:element name="UserName" type="xs:string" minOccurs="0" />
+							<xs:element name="SheetDescription" type="xs:string" minOccurs="0" />
+							<xs:element name="SheetNumber" type="xs:string" minOccurs="0" />
+							<xs:element name="PrintStatus" type="xs:string" minOccurs="0" />
+							<xs:element name="PageMofN" type="xs:string" minOccurs="0" />
+							<xs:element name="IssuingManagementAuthority_NameAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="Location_Address" type="xs:string" minOccurs="0" />
+							<xs:element name="Agent_AuthorisedPartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="Agent_PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="Exporter_AuthorisedPartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="Exporter_PartyAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="Exporter_PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="Importer_AuthorisedPartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="Importer_PartyAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="Importer_PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="ForeignManagementAuthority_NameAddress" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

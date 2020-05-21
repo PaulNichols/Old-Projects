@@ -1,0 +1,4732 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			TableTreeNodeFactory - Members overview
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			TableTreeNodeFactory
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			This class is located in <b>OlymarsDemo.Windows</b> namespace. It allows you to quickly fill on TreeView with <b>OlymarsDemo</b> database table content.<br>
+			<br>
+			All methods of this class are <b>static</b>. <br>
+			<br>
+			To be able to use this class, you need to call the <a href="#SetUpConnection1">SetUpConnection</a> once for good. Then, you can
+			call any of the <b>Fill_&lt;TableName&gt;</b> method to fill out a TreeNodeCollection object with the <b>&lt;TableName&gt;</b> table content.<br>
+			<br>
+			Once you have populated a TreeNodeCollection, this collection contains <a href="TableCustomTreeNode.htm">OlymarsDemo.Windows.TableCustomTreeNode</a> based nodes. For each
+			of this node, you can query information such as:
+			<ul>
+				<li>
+					<b>Id</b>: primary key of the record
+				</li>
+				<li>
+					<b>Table</b>: returns the table from which this record was loaded (see <a href="TableList.htm">OlymarsDemo.Windows.TableList</a> enumeration for more information).
+				</li>
+			</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#ConnectionType">ConnectionType</a>
+					</li>
+					<li>
+						<a href="#SetUpConnection1">SetUpConnection</a>
+					</li>
+					<li>
+						<a href="#Fill_tblCategory1">Fill_tblCategory</a>
+					</li>
+					<li>
+						<a href="#Fill_tblCustomer1">Fill_tblCustomer</a>
+					</li>
+					<li>
+						<a href="#Fill_tblOrder1">Fill_tblOrder</a>
+					</li>
+					<li>
+						<a href="#Fill_tblOrderItem1">Fill_tblOrderItem</a>
+					</li>
+					<li>
+						<a href="#Fill_tblProduct1">Fill_tblProduct</a>
+					</li>
+					<li>
+						<a href="#Fill_tblSupplier1">Fill_tblSupplier</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Static Methods
+		</div>
+		<blockquote>
+			<a name="SetUpConnection1"></a>
+			<div class="Highlight">
+				SetUpConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub SetUpConnection(ByVal connectionString As String)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Dispose(string connectionString);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets the connection string to be used against the SQL Server database.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					If a blank connection string is supplied, the class will search for:<br>
+					<br>
+					&nbsp;&nbsp;First an entry in the configuration file:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+					<br>
+					&nbsp;&nbsp;Then the following registry entry:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\OlymarsDemo<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+					<br>
+					A helper function that can build this connection string for you is available. See the <a href="../../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+					<br>
+					To see the documentation on how to build this connection string,
+					<a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+				</div>
+			</blockquote>
+			<a name="SetUpConnection2"></a>
+			<div class="Highlight">
+				SetUpConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub SetUpConnection(ByVal sqlConnection As System.Data.SqlClient.SqlConnection)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void SetUpConnection(System.Data.SqlClient.SqlConnection sqlConnection);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets the <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used against the SQL Server database.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. It can be opened or not. If it is not opened, it will be opened when used then closed again after the job is done.
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory1"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory2"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory3"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory4"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory5"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory6"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory7"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory8"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory9"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory10"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				</div>
+			</blockquote>			
+			<a name="Fill_tblCategory11"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCategory method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCategory12"></a>
+			<div class="Highlight">
+				Fill_tblCategory
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCategory(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCategory</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer1"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer2"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer3"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer4"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer5"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer6"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer7"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer8"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer9"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer10"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				</div>
+			</blockquote>			
+			<a name="Fill_tblCustomer11"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblCustomer method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblCustomer12"></a>
+			<div class="Highlight">
+				Fill_tblCustomer
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblCustomer(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblCustomer</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder1"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder2"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder3"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder4"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder5"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder6"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder7"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder8"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder9"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder10"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>			
+			<a name="Fill_tblOrder11"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrder method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrder12"></a>
+			<div class="Highlight">
+				Fill_tblOrder
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Ord_LngCustomerID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrder(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Ord_LngCustomerID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrder</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Ord_LngCustomerID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Ord_LngCustomerID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem1"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem2"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem3"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem4"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem5"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem6"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem7"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem8"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem9"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem10"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>			
+			<a name="Fill_tblOrderItem11"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblOrderItem method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblOrderItem12"></a>
+			<div class="Highlight">
+				Fill_tblOrderItem
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidOrderID As System.Data.SqlTypes.SqlGuid<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Oit_GuidProductID As System.Data.SqlTypes.SqlGuid<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblOrderItem(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidOrderID<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlGuid col_Oit_GuidProductID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblOrderItem</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Oit_GuidOrderID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidOrderID&quot; column.<br>
+				<br>
+				<b>col_Oit_GuidProductID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Oit_GuidProductID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct1"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct2"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct3"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct4"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct5"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct6"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct7"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct8"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct9"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct10"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>			
+			<a name="Fill_tblProduct11"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblProduct method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblProduct12"></a>
+			<div class="Highlight">
+				Fill_tblProduct
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblProduct(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 col_Pro_LngCategoryID<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblProduct</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				<b>col_Pro_LngCategoryID</b>: Update this description in the &quot;Olymars/Description&quot; extended property of the &quot;Pro_LngCategoryID&quot; column.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier1"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier2"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier3"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier4"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier5"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default values are used:<br>
+				<ul>
+					<li>
+						The TreeNodeCollection is purged.
+					</li>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier6"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier7"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default values are used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier8"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier9"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default value is used:<br>
+				<ul>
+					<li>
+						No sub-node is added to the nodes.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier10"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...").<br>
+				<br>
+				</div>
+			</blockquote>			
+			<a name="Fill_tblSupplier11"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal imageIndex As Integer<br>
+					&nbsp;&nbsp;&nbsp;, ByVal selectedImageIndex As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int imageIndex<br>
+					&nbsp;&nbsp;&nbsp;, int selectedImageIndex<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br>
+				In this version of the Fill_tblSupplier method, the following default value is used:<br>
+				<ul>
+					<li>
+						30 seconds is the command time-out being used.
+					</li>
+				</ul>
+				<br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>imageIndex</b>: The image list index value of the image displayed when the tree node is in the unselected state.<br>
+				<br>
+				<b>selectedImageIndex</b>: The image list index value of the image that is displayed when the tree node is in the selected state.<br>
+				<br>
+				</div>
+			</blockquote>
+			<a name="Fill_tblSupplier12"></a>
+			<div class="Highlight">
+				Fill_tblSupplier
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal nodes As System.Windows.Forms.TreeNodeCollection<br>
+					&nbsp;&nbsp;&nbsp;, ByVal purgeTreeNodeChildren As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal addSubNode As Boolean<br>
+					&nbsp;&nbsp;&nbsp;, ByVal commandTimeOut As Integer<br>
+					)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Fill_tblSupplier(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.TreeNodeCollection nodes<br>
+					&nbsp;&nbsp;&nbsp;, bool purgeTreeNodeChildren<br>
+					&nbsp;&nbsp;&nbsp;, bool addSubNode<br>
+					&nbsp;&nbsp;&nbsp;, int commandTimeOut<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+				Populates the supplied TreeNodeCollection with the '<b>tblSupplier</b>' table content.<br>
+				<br><br>
+				<b>nodes</b>: <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemWindowsFormsTreeNodeCollectionClassTopic.htm">System.Windows.Forms.TreeNodeCollection</a> to add the TreeNodes to.<br>
+				<br>
+				<b>purgeTreeNodeChildren</b>: True if you want to purge the TreeNodeCollection before.<br>
+				<br>
+				<b>addSubNode</b>: <b>True</b> if you want to add a sub treenode to the nodes (Text property will be set to "Loading...".<br>
+				<br>
+				<b>commandTimeOut</b>: The time-out (in seconds) to be use by the ADO command object.<br>
+				<br>
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			27 December 2004 - 16:08:50
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

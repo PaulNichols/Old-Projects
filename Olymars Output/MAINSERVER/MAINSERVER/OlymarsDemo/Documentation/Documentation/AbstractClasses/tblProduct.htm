@@ -1,0 +1,564 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			tblProduct table - How to use the associated Abstract class
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			tblProduct table
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;How to use the associated Abstract class
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				An abstract class is available for the [tblProduct] table. You can find the <b>Abstract_tblProduct</b> class in the <b>OlymarsDemo.AbstractClasses</b> namespace.<br>
+				<br>
+				This class allows you to very easily retrieve a record from the
+				<b>[tblProduct]</b> table. This class relies on the following objects:<br><br>
+				<table class="FixedMainBody" cellpadding="7" cellspacing="0" border="1">
+					<tr>
+						<td>
+							<b>Object name</b>
+						</td>
+						<td>
+							<b>Object type</b>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table class="FixedMainBody" cellpadding="2" cellspacing="0" border="0">
+								<tr>
+									<td align="right">
+										<i>Class</i>:
+									</td>
+									<td>
+										<a href="../Tables/HowTo_Select/tblProduct_Overview.htm">spS_tblProduct</a>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">
+										<i>Namespace</i>:
+									</td>
+									<td>
+										<a href="../Data_Classes/Parameters.htm">OlymarsDemo.DataClasses.Parameters</a>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							Class
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table class="FixedMainBody" cellpadding="2" cellspacing="0" border="0">
+								<tr>
+									<td align="right">
+										<i>Class</i>:
+									</td>
+									<td>
+										<a href="../Tables/HowTo_Select/tblProduct_Overview.htm">spS_tblProduct</a>
+									</td>
+								</tr>
+								<tr>
+									<td align="right">
+										<i>Namespace</i>:
+									</td>
+									<td>
+										<a href="../Data_Classes/StoredProcedures.htm">OlymarsDemo.DataClasses.StoredProcedures</a>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							Class
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../Stored_Procedures/spS_tblProduct.htm">spS_tblProduct</a>
+						</td>
+						<td>
+							Stored Procedure
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../Stored_Procedures/spS_tblProduct.htm">spS_tblProduct</a>
+						</td>
+						<td>
+							Inline table-valued Function
+						</td>
+					</tr>
+				</table>
+				<br>
+				<ul>
+					<li>
+						Click <a href="../AbstractClasses/tblProduct_CS.htm">here</a> to see an example on how to use this class in Visual C# .NET<br>
+					</li>
+					<li>
+						Click <a href="../AbstractClasses/tblProduct_VB.htm">here</a> to see an example on how to use this class in Visual Basic .NET<br>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#Col_Pro_GuidID">Col_Pro_GuidID</a>
+					</li>
+					<li>
+						<a href="#Col_Pro_StrName">Col_Pro_StrName</a>
+					</li>
+					<li>
+						<a href="#Col_Pro_CurPrice">Col_Pro_CurPrice</a>
+					</li>
+					<li>
+						<a href="#Col_Pro_LngCategoryID">Col_Pro_LngCategoryID</a>
+					</li>
+					<li>
+						<a href="#Refresh">Refresh</a>
+					</li>
+					<li>
+						<a href="#Reset">Reset</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Instance Constructors
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+							&nbsp;&nbsp;&nbsp;ByVal ConnectionString As String<br>
+							)<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public Abstract_tblProduct(<br>
+								&nbsp;&nbsp;&nbsp;string ConnectionString<br>
+								);<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>Abstract_tblProduct</b> class. You must supply
+				a valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">connection string</a> to the database in order to use this class.<br>
+				<br>
+				Please note that you have access to a "helper" function that allows you to build VALID connection string fairly easily:<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<i>Shared Function</i>: <a href="../Data_Classes/Information.htm#BuildConnectionString">BuildConnectionString()</a><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<i>Class</i>: <b>Information</b><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<i>Namespace location</i>: <b>OlymarsDemo.DataClasses</b><br>
+				<br>
+				If a blank connection string is supplied, the class will search for:<br>
+				<br>
+				&nbsp;&nbsp;First an entry in the configuration file:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+				<br>
+				&nbsp;&nbsp;Then the following registry entry:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\" & Application.Database & "<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+				<br>
+				To see the documentation on how to build this connection string,
+				<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+			</div>
+			<br>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+							&nbsp;&nbsp;&nbsp;ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+							)<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public Abstract_tblProduct(<br>
+								&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlConnection sqlConnection<br>
+								);<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>Abstract_tblProduct</b> class. You must supply
+				a valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">sqlConnection</a> to the database in order to use this class.
+				<br><br>
+				An <b>ArgumentNullException</b> exception will be thrown if a <b>Null</b> value is provided for sqlConnection.
+			</div>
+			<br>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+							&nbsp;&nbsp;&nbsp;ByVal sqlTransaction As System.Data.SqlClient.SqlTransaction<br>
+							)<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public Abstract_tblProduct(<br>
+								&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlTransaction sqlTransaction<br>
+								);<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>Abstract_tblProduct</b> class. You must supply
+				a valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">sqlTransaction</a> to the database in order to use this class.
+				<br><br>
+				An <b>ArgumentNullException</b> exception will be thrown if a <b>Null</b> value is provided sqlTransaction.
+			</div>
+			<br>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Instance Methods
+		</div>
+		<Blockquote>
+			<a name="Refresh"></a>
+			<div class="Highlight">
+				Refresh
+			</div>
+			<Blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Function Refresh(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal Col_Pro_GuidID As System.Data.SqlTypes.SqlGuid<br>) As Boolean
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public bool Refresh(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlTypes.SqlGuid Col_Pro_GuidID<br>);
+						</div>
+					</td>
+				</tr>
+			</table>
+				<br>
+				<div class="MainBody">
+					This method allows you to load a specific record of the <b>[tblProduct]</b> table.
+					You must supply the primary key of the record you want to retrieve.<br>
+					<br>
+					This method returns <b>True</b> if the corresponding record was found. Otherwise,
+					it returns <b>False</b>.
+					<br>
+					<br>
+					Once this method is successfully invoked, you have access the various table columns
+					by using the corresponding properties (See the 'Public Instance Properties' section
+					below for more information).
+					<br>
+					<br>
+					An <b>ArgumentNullException</b> is thrown if a <b>Null</b> value is supplied to this function.<br>
+					<br>
+					A <a href="../Data_Classes/CustomException.htm">CustomException</a> is thrown if a database related exception is thrown from the underlying OlymarsDemo.DataClasses classes.
+				</div>
+			</Blockquote>
+			<a name="Reset"></a>
+			<div class="Highlight">
+				Reset
+			</div>
+			<Blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub Reset()
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public void Reset();
+						</div>
+					</td>
+				</tr>
+			</table>
+				<br>
+				<div class="MainBody">
+					This method allows to clear all the properties previously loaded by
+					a call to the <b>Refresh</b> method.
+				</div>
+			</Blockquote>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Instance Properties
+		</div>
+		<Blockquote>
+			<a name="Col_Pro_GuidID"></a>
+			<div class="Highlight">
+				Col_Pro_GuidID
+			</div>
+			<Blockquote>
+				<div class="MainBody">
+					<b>Update this description in the "Olymars/Description" extended property of the "Pro_GuidID" column.</b><br>
+				</div>
+				<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public ReadOnly Property Col_Pro_GuidID As System.Data.SqlTypes.SqlGuid
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public System.Data.SqlTypes.SqlGuid Col_Pro_GuidID { get; }
+						</div>
+					</td>
+				</tr>
+			</table>
+				<br>
+				<div class="MainBody">
+					This property returns the '<b>Pro_GuidID</b>' column value for the current record.
+					If this column value is <a href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80\Tools\Books\acdata.chm::/ac_8_qd_02_8pwy.htm">Null</a> (in Sql Server context), a <i>System.Data.SqlTypes.SqlGuid.Null</i> value is returned.
+					<br>
+					<br>
+					For more information on the corresponding column,
+					click <a href="../Tables/Column/tblProduct.htm#Pro_GuidID">here</a>.
+				</div>
+			</Blockquote>
+			<a name="Col_Pro_StrName"></a>
+			<div class="Highlight">
+				Col_Pro_StrName
+			</div>
+			<Blockquote>
+				<div class="MainBody">
+					<b>Update this description in the "Olymars/Description" extended property of the "Pro_StrName" column.</b><br>
+				</div>
+				<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public ReadOnly Property Col_Pro_StrName As System.Data.SqlTypes.SqlString
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public System.Data.SqlTypes.SqlString Col_Pro_StrName { get; }
+						</div>
+					</td>
+				</tr>
+			</table>
+				<br>
+				<div class="MainBody">
+					This property returns the '<b>Pro_StrName</b>' column value for the current record.
+					If this column value is <a href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80\Tools\Books\acdata.chm::/ac_8_qd_02_8pwy.htm">Null</a> (in Sql Server context), a <i>System.Data.SqlTypes.SqlString.Null</i> value is returned.
+					<br>
+					<br>
+					For more information on the corresponding column,
+					click <a href="../Tables/Column/tblProduct.htm#Pro_StrName">here</a>.
+				</div>
+			</Blockquote>
+			<a name="Col_Pro_CurPrice"></a>
+			<div class="Highlight">
+				Col_Pro_CurPrice
+			</div>
+			<Blockquote>
+				<div class="MainBody">
+					<b>Update this description in the "Olymars/Description" extended property of the "Pro_CurPrice" column.</b><br>
+				</div>
+				<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public ReadOnly Property Col_Pro_CurPrice As System.Data.SqlTypes.SqlMoney
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public System.Data.SqlTypes.SqlMoney Col_Pro_CurPrice { get; }
+						</div>
+					</td>
+				</tr>
+			</table>
+				<br>
+				<div class="MainBody">
+					This property returns the '<b>Pro_CurPrice</b>' column value for the current record.
+					If this column value is <a href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80\Tools\Books\acdata.chm::/ac_8_qd_02_8pwy.htm">Null</a> (in Sql Server context), a <i>System.Data.SqlTypes.SqlMoney.Null</i> value is returned.
+					<br>
+					<br>
+					For more information on the corresponding column,
+					click <a href="../Tables/Column/tblProduct.htm#Pro_CurPrice">here</a>.
+				</div>
+			</Blockquote>
+			<a name="Col_Pro_LngCategoryID"></a>
+			<div class="Highlight">
+				Col_Pro_LngCategoryID
+			</div>
+			<Blockquote>
+				<div class="MainBody">
+					<b>Update this description in the "Olymars/Description" extended property of the "Pro_LngCategoryID" column.</b><br>
+				</div>
+				<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public ReadOnly Property Col_Pro_LngCategoryID As System.Data.SqlTypes.SqlInt32
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public System.Data.SqlTypes.SqlInt32 Col_Pro_LngCategoryID { get; }
+						</div>
+					</td>
+				</tr>
+			</table>
+				<br>
+				<div class="MainBody">
+					This property returns the '<b>Pro_LngCategoryID</b>' column value for the current record.
+					If this column value is <a href="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80\Tools\Books\acdata.chm::/ac_8_qd_02_8pwy.htm">Null</a> (in Sql Server context), a <i>System.Data.SqlTypes.SqlInt32.Null</i> value is returned.
+					<br>
+					<br>
+					For more information on the corresponding column,
+					click <a href="../Tables/Column/tblProduct.htm#Pro_LngCategoryID">here</a>.
+				</div>
+			</Blockquote>
+		</Blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:57
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

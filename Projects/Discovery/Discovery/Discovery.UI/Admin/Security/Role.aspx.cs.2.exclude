@@ -1,0 +1,17 @@
+using System;
+
+namespace Discovery.UI.Web.Security
+{
+    public partial class Role : DiscoveryDataDetailPage
+    {
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+        }
+
+        protected override bool RequiresAuthentication()
+        {
+            return true;
+        }
+
+    }
+}

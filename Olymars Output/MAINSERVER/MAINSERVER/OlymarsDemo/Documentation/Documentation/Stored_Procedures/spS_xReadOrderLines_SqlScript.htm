@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_xReadOrderLines - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_xReadOrderLines
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				Create Procedure [spS_xReadOrderLines]<br>
+				(<br>
+				@OrderID [uniqueidentifier]<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				   [tblOrderItem].[Oit_GuidID] As [ID]<br>
+				 , [Product].[Display] As [ProductName]<br>
+				 , [tblOrderItem].[Oit_LngAmount] As [Amount]<br>
+				<br>
+				From [dbo].[tblOrderItem]<br>
+				   Inner Join [fntblProduct_Display](Null, Null) [Product] On [Oit_GuidProductID] = [Product].[ID1]<br>
+				<br>
+				Where<br>
+				   [Oit_GuidOrderID] = @OrderID<br>
+				<br>
+				Order By [ProductName] Asc<br>
+				<br>
+				Return(@@RowCount)<br>
+				<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:20
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,241 @@
+using System;
+using System.Configuration;
+using System.Reflection;
+using System.Threading;
+using HBOS.FS.AMP.UPD.Security;
+
+namespace HBOS.FS.AMP.UPD.WinUI.Classes
+{
+	/// <summary>
+	/// Static class for holding and retrieving global ui settings.
+	/// </summary>
+	public abstract /*static*/ class GlobalRegistry
+	{
+		private GlobalRegistry()
+		{
+		}
+
+		/// <summary>
+		/// Gets the connection string used to connect to the database.
+		/// </summary>
+		/// <value></value>
+		public static string ConnectionString
+		{
+			get{return ConnectionStringHandler.ToString();}
+		}
+
+		/// <summary>
+		/// Gets the Database Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLDatabaseName
+		{
+			get{return ConnectionStringHandler.SQLDatabaseName;}
+		}
+
+		/// <summary>
+		/// Gets the User Name and Password details the application will currently use .
+		/// </summary>
+		/// <value></value>
+		public static string Credentials
+		{
+			get{return ConnectionStringHandler.Credentials;}
+		}
+
+		/// <summary>
+		/// Gets the SQL Server Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLServerName
+		{
+			get{return ConnectionStringHandler.SQLServerName;}
+		}
+
+		
+		/// <summary>
+		/// Gets the company valuation point and day for the current company.
+		/// </summary>
+		/// <value></value>
+		public static DateTime CurrentCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.CurrentCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the valuation point and day if the current was progress on.
+		/// </summary>
+		/// <value></value>
+		public static DateTime NextCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.NextCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the company code for the current user.
+		/// </summary>
+		/// <value></value>
+		public static string CompanyCode
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.CompanyCode;
+			}
+		}
+
+		/// <summary>
+		/// Gets the previous valuation point and day if the current was progress on.
+		/// </summary>
+		/// <value></value>
+		public static DateTime PreviousCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.PreviousCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the client version for the running instance.
+		/// </summary>
+		/// <value></value>
+		public static Version ClientVersion
+		{
+			get
+			{
+				return Assembly.GetEntryAssembly().GetName().Version;
+			}
+		}
+
+	}
+
+	/// <summary>
+	/// Class to retrieve parts of a connection string from the app config
+	/// </summary>
+	public sealed class ConnectionStringHandler
+	{
+		private static string connectionString;
+		private static string[] m_connectionStringParts;
+
+		static ConnectionStringHandler()
+		{
+			string activeConnectionString=ConfigurationSettings.AppSettings["ActiveConnectionString"];
+			connectionString = ConfigurationSettings.AppSettings[activeConnectionString];
+			splitConnectionString();
+		}
+
+		private static void splitConnectionString()
+		{
+			char [] delimiter = ";".ToCharArray();
+			m_connectionStringParts= connectionString.Split(delimiter);
+		}
+
+		private static string[] getConnectionStringElement(string element)
+		{
+			string[] keyValue=null;
+			foreach (string part in m_connectionStringParts)
+			{
+				char [] delimiter = "=".ToCharArray();
+				keyValue=part.Split(delimiter);
+				if (keyValue[0]==element)
+				{
+					break;
+				}
+				else
+				{
+					keyValue=null;
+				}
+			}
+			return keyValue;
+		}
+
+		/// <summary>
+		/// Toes the string.
+		/// </summary>
+		/// <returns></returns>
+		public new static string ToString()
+		{
+			return connectionString;
+		}
+
+		/// <summary>
+		/// Gets the Database Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLDatabaseName
+		{
+			get
+			{
+				String returnString="";
+				string[] databaseNameParts=getConnectionStringElement("Initial Catalog");
+				if (databaseNameParts.Length==2)
+				{
+					returnString= databaseNameParts[1];
+				}
+
+				return returnString;
+			}
+		}
+		
+
+		/// <summary>
+		/// Gets the User Name and Password details the application will currently use .
+		/// </summary>
+		/// <value></value>
+		public static string Credentials
+		{
+			get
+			{
+				string returnString="n/a";
+				string[] integratedSecurity=getConnectionStringElement("Integrated Security");
+				if(integratedSecurity==null)
+				{
+					string[] userId=getConnectionStringElement("User ID");
+					string[] password=getConnectionStringElement("Password");
+					if (userId!=null && password!=null)
+					{
+						returnString=String.Concat(userId[0],"=",userId[1],",",password[0],"=",password[1]);
+					}
+				}
+				else
+				{
+					returnString=integratedSecurity[1];
+				}
+
+				return returnString;
+			}
+		}
+
+		/// <summary>
+		/// Gets the SQL Server Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLServerName
+		{
+			get
+			{
+				String returnString="";
+				string[] databaseNameParts=getConnectionStringElement("Data Source");
+				if (databaseNameParts.Length==2)
+				{
+					returnString= databaseNameParts[1];
+				}
+
+				return returnString;
+			}
+		}
+
+	}
+	
+	
+
+}

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shipments>
+  
+  <Shipment>
+    <OpCo>RHG</OpCo>
+    <OpCoContactName>Fred Flintstone</OpCoContactName>
+    <OpCoContactEmail>f.flintstone@rhg.co.uk</OpCoContactEmail>
+
+    <SequenceNo>876129</SequenceNo>
+    <ShipmentID>734651</ShipmentID>
+    <DespatchNo>1</DespatchNo>
+
+    <Amendment>0</Amendment>
+    <Hold>0</Hold>
+
+    <ShipmentDate>2006-05-08</ShipmentDate>
+    <ShipmentInstructions>Please contact security on 0845 1234567</ShipmentInstructions>
+    <RouteCode>12</RouteCode>
+    <StockWarehouse>IPS</StockWarehouse>
+
+    <Transaction>
+      <Type>Stock</Type>
+      <SubType>Normal</SubType>
+    </Transaction>
+
+    <Customer>
+      <Id>73256367</Id>
+      <Reference>AB634546</Reference>
+      <Branch>AB12</Branch>
+      <Name>NEC Graph Fix Ltd</Name>
+
+      <Address>
+        <Line1>8 Fryers Road</Line1>
+        <Line2>Walsall</Line2>
+        <Line3>West Midlands</Line3>
+        <Line4></Line4>
+        <Line5></Line5>
+        <PostCode>WS2 7LZ</PostCode>
+      </Address>
+
+      <Shipping>
+        <Address>
+          <Line1>2-20 Booth Drive</Line1>
+          <Line2>Park Farm South</Line2>
+          <Line3>Wellingborough</Line3>
+          <Line4></Line4>
+          <Line5></Line5>
+          <PostCode>NN8 6GR</PostCode>
+        </Address>
+
+        <TailLiftRequired>0</TailLiftRequired>
+        <VehicleMaxWeight>7.50</VehicleMaxWeight>
+        <CheckInTime>6</CheckInTime>
+        <WarehouseCode>IPS</WarehouseCode>
+        <AfterTime>09:00</AfterTime>
+        <BeforeTime>11:00</BeforeTime>
+        <ContactName>Security Guard</ContactName>
+        <ContactTel>0845 6745678</ContactTel>
+        <ContactEmail>security@nec-g.com</ContactEmail>
+      </Shipping>
+
+    </Customer>
+
+    <ShipmentLines>
+      <ShipmentLine>
+        <LineNo>1</LineNo>
+        <Product>Paper Pack</Product>
+        <Description1>This is a pack of paper</Description1>
+        <Description2></Description2>
+        <Qty>100</Qty>
+        <QtyUnit>Sheet</QtyUnit>
+        <Reference>NEC6867387</Reference>
+        <ConvQty>0</ConvQty>
+        <ConvInstructions></ConvInstructions>
+        <Size>
+          <Volume>12</Volume>
+          <Width>1024</Width>
+          <Length>768</Length>
+          <Weight>124</Weight>
+          <Grammage>25</Grammage>
+          <Microns>12</Microns>
+          <Packing>One box of 100 sheets</Packing>
+          <IsPanel>0</IsPanel>
+        </Size>
+        <Category>BP</Category>
+        <Group>PAPER</Group>
+        <IsISO900>0</IsISO900>
+      </ShipmentLine>
+      <ShipmentLine>
+        <LineNo>1</LineNo>
+        <Product>Paper Pack</Product>
+        <Description1>This is a pack of paper</Description1>
+        <Description2></Description2>
+        <Qty>100</Qty>
+        <QtyUnit>Sheet</QtyUnit>
+        <Reference>NEC6867387</Reference>
+        <ConvQty>0</ConvQty>
+        <ConvInstructions></ConvInstructions>
+        <Size>
+          <Volume>12</Volume>
+          <Width>1024</Width>
+          <Length>768</Length>
+          <Weight>124</Weight>
+          <Grammage>25</Grammage>
+          <Microns>12</Microns>
+          <Packing>One box of 100 sheets</Packing>
+          <IsPanel>0</IsPanel>
+        </Size>
+        <Category>BP</Category>
+        <Group>PAPER</Group>
+        <IsISO900>0</IsISO900>
+      </ShipmentLine>
+      <ShipmentLine>
+        <LineNo>1</LineNo>
+        <Product>Paper Pack</Product>
+        <Description1>This is a pack of paper</Description1>
+        <Description2></Description2>
+        <Qty>100</Qty>
+        <QtyUnit>Sheet</QtyUnit>
+        <Reference>NEC6867387</Reference>
+        <ConvQty>0</ConvQty>
+        <ConvInstructions></ConvInstructions>
+        <Size>
+          <Volume>12</Volume>
+          <Width>1024</Width>
+          <Length>768</Length>
+          <Weight>124</Weight>
+          <Grammage>25</Grammage>
+          <Microns>12</Microns>
+          <Packing>One box of 100 sheets</Packing>
+          <IsPanel>0</IsPanel>
+        </Size>
+        <Category>BP</Category>
+        <Group>PAPER</Group>
+        <IsISO900>0</IsISO900>
+      </ShipmentLine>
+      <ShipmentLine>
+        <LineNo>1</LineNo>
+        <Product>Paper Pack</Product>
+        <Description1>This is a pack of paper</Description1>
+        <Description2></Description2>
+        <Qty>100</Qty>
+        <QtyUnit>Sheet</QtyUnit>
+        <Reference>NEC6867387</Reference>
+        <ConvQty>0</ConvQty>
+        <ConvInstructions></ConvInstructions>
+        <Size>
+          <Volume>12</Volume>
+          <Width>1024</Width>
+          <Length>768</Length>
+          <Weight>124</Weight>
+          <Grammage>25</Grammage>
+          <Microns>12</Microns>
+          <Packing>One box of 100 sheets</Packing>
+          <IsPanel>0</IsPanel>
+        </Size>
+        <Category>BP</Category>
+        <Group>PAPER</Group>
+        <IsISO900>0</IsISO900>
+      </ShipmentLine>
+
+    </ShipmentLines>
+    
+  </Shipment>
+</Shipments>

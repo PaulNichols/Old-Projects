@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="LASPortal.Scheduling.ScheduleItem">
+    <Position X="0.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\Scheduling.cs</FileName>
+      <HashCode>AAQCAAkAEEAAAIQQAEAARyCEACBgAWAgGAAIABgIQQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LASPortal.Scheduling.ScheduleHistoryItem">
+    <Position X="3.25" Y="8.25" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\Scheduling.cs</FileName>
+      <HashCode>AIAFAAAAAQQAARAAQAABAAAgCAAAIAAAAAAAAEAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LASPortal.Scheduling.SchedulerClient">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\Scheduling.cs</FileName>
+      <HashCode>AEAAICAEAEQAAQYAAAAAAQAIAEIgAAAAEACAABAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LASPortal.Scheduling.SchedulingProvider">
+    <Position X="5.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\SchedulingProvider.cs</FileName>
+      <HashCode>MgAgMAAAgCAAMIAQACJERBRABIIAiAAARRAgAAICCAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LASPortal.Scheduling.EventName">
+    <Position X="7.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LASPortal.Scheduling.ScheduleSource">
+    <Position X="7.5" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LASPortal.Scheduling.ScheduleStatus">
+    <Position X="7.5" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAIAAAAAAAAAgIAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="LASPortal.Scheduling.WorkStarted">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LASPortal.Scheduling.WorkProgressing">
+    <Position X="7.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LASPortal.Scheduling.WorkCompleted">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="LASPortal.Scheduling.WorkErrored">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\Scheduling\SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+</ClassDiagram>

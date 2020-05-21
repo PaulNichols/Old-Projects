@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_xProductQuantityPerOrder - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_xProductQuantityPerOrder
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Procedure [spS_xProductQuantityPerOrder]<br>
+				(<br>
+				@ProductID uniqueidentifier<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				  [tblCustomer].[ID1] [ClientID]<br>
+				, [tblCustomer].[Display] + ' -&gt; ' + Convert(varchar(10) , Sum([tblOrderItem].[Oit_LngAmount])) + ' unit(s)' [Display]<br>
+				<br>
+				From<br>
+				[tblOrderItem]<br>
+				&nbsp;&nbsp;&nbsp;Inner Join [tblOrder] On [tblOrderItem].[Oit_GuidOrderID] = [tblOrder].[Ord_GuidID]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inner Join [fntblCustomer_Display](Null) [tblCustomer] On [tblOrder].[Ord_LngCustomerID] = [tblCustomer].[ID1]<br>
+				<br>
+				Where<br>
+				[tblOrderItem].[Oit_GuidProductID] = @ProductID<br>
+				<br>
+				Group By<br>
+				[tblCustomer].[ID1], [Display], [tblOrderItem].[Oit_GuidProductID]<br>
+				<br>
+				Order By<br>
+				  Sum([tblOrderItem].[Oit_LngAmount]) Desc<br>
+				, [tblCustomer].[Display] Asc<br>
+				<br>
+				Return(@@RowCount)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:20
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

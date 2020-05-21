@@ -1,0 +1,13 @@
+﻿.ProgressPanel
+{
+	border-right: #000000 2px solid;
+	border-top: #000000 2px solid;
+	border-left: #000000 2px solid;
+	width: 300px;
+	border-bottom: #000000 2px solid;
+	height: 120px;
+	background-color: white;
+	position: absolute;
+	left: 40%;
+	top: 40%;
+}

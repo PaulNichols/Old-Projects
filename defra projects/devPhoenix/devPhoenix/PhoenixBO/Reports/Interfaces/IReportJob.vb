@@ -1,0 +1,31 @@
+Public Interface IReportJob
+    Property ReportId() As Int32
+    Property ReportPrinterId() As Int32
+    Property PrintSequence() As Int32
+    Property AuthorisedBy() As String
+    Property AuthorisedDate() As Object
+    Property BOTypeName() As String
+    Property StapleStartPage() As Int32
+    Property StapleEndPage() As Int32
+    Property SearchReference() As String
+    Property PausedBy() As String
+    Property PausedDate() As Object
+    Property PrintingDate() As Object
+    Property PrintedDate() As Object
+    Property DeletedBy() As String
+    Property DeletedDate() As Object
+    Property LastStatusMessage() As String
+    Property StapleOff() As Boolean
+    Property ReportAuthorisedQId() As Int32
+    Property Size() As Int32
+    Property StapleBatch() As Int32
+    Property Description() As String
+    Property Description_NavigateUrl() As String
+    Property MoveToTop() As String
+    Property AuthorisedByDate() As String
+    Property DeletedByDate() As String
+    Property StatusDescription() As String
+    Property StatusDescription_ToolTip() As String
+    Property DeleteStatus() As String
+    Property ReQueueStatus() As String
+End Interface

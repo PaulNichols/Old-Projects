@@ -1,0 +1,30 @@
+<xsl:stylesheet version="1.0" 
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+    xmlns:user="urn:my-scripts"> 
+       
+    <!-- Specifiy the output type as a text file -->    
+    <xsl:output method="text" encoding="us-ascii"/>
+
+    <!-- define constants -->
+	<xsl:variable name='newline'><xsl:text>&#13;&#10;</xsl:text></xsl:variable>
+	<xsl:variable name='delimiter'><xsl:text>,</xsl:text></xsl:variable>
+	<xsl:variable name='LessThan'><xsl:text>&lt;&lt;</xsl:text></xsl:variable>
+	<xsl:variable name='GreaterThan'><xsl:text>&gt;&gt;</xsl:text></xsl:variable>
+
+    <xsl:template match="*">
+        <xsl:apply-templates select="UserPermissions"/>
+    </xsl:template>
+
+
+ <!-- Render the header row-->
+	
+	
+	 <xsl:template match="UserPermissions">
+	<xsl:value-of select='DisplayName' />
+    </xsl:template>
+
+
+	
+
+</xsl:stylesheet>

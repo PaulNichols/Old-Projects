@@ -1,0 +1,301 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			tblSupplierProduct - Overview on how to retrieve some records
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			tblSupplierProduct
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Overview on how to retrieve some records
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				In order to retrieve some records from the <b>tblSupplierProduct</b> table, you can call
+				4 differents stored procedures depending on your need:<br>
+				<br>
+				<hr>
+				<b>[spS_tblSupplierProduct]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records
+						</li>
+						<li>
+							only one specific record
+						</li>
+						<li>
+							all the table records related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>tblProduct</b> (via the <b>Spr_GuidProductID</b> column)
+								</li>
+								<li>
+									<b>tblSupplier</b> (via the <b>Spr_GuidSupplierID</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure allows you to get back the data in a resultset or
+					in an XML stream. This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>Spr_GuidProductID</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidProductID" column.
+						</li>
+						<li>
+							<b>Spr_GuidSupplierID</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidSupplierID" column.
+						</li>
+					</ul>
+				</blockquote>
+				<hr>
+				<b>[spS_tblSupplierProduct_Display]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records "display" information
+						</li>
+						<li>
+							only one specific record "display" information
+						</li>
+						<li>
+							all the table records "display" information related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>tblProduct</b> (via the <b>Spr_GuidProductID</b> column)
+								</li>
+								<li>
+									<b>tblSupplier</b> (via the <b>Spr_GuidSupplierID</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>ID1</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidProductID" column.
+						</li>
+						<li>
+							<b>ID2</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidSupplierID" column.
+						</li>
+						<li>
+							<b>Display</b>: Display for this table.
+						</li>
+					</ul>
+				</blockquote>
+				<hr>
+				<b>[spS_tblSupplierProduct_SelectDisplay]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records and all the foreign tables "display" information
+						</li>
+						<li>
+							only one specific record and all the foreign tables "display" information
+						</li>
+						<li>
+							all the table records and all the foreign tables "display" information related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>tblProduct</b> (via the <b>Spr_GuidProductID</b> column)
+								</li>
+								<li>
+									<b>tblSupplier</b> (via the <b>Spr_GuidSupplierID</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure allows you to get back the data in a resultset or
+					in an XML stream. This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>Spr_GuidProductID</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidProductID" column.
+						</li>
+						<li>
+							<b>Spr_GuidProductID_Display</b>: Display of the <b>tblProduct</b> table
+						</li>
+						<li>
+							<b>Spr_GuidSupplierID</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidSupplierID" column.
+						</li>
+						<li>
+							<b>Spr_GuidSupplierID_Display</b>: Display of the <b>tblSupplier</b> table
+						</li>
+					</ul>
+				</blockquote>
+				<hr>
+				<b>[spS_tblSupplierProduct_Full]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records and all the foreign tables columns
+						</li>
+						<li>
+							only one specific record and all the foreign tables columns
+						</li>
+						<li>
+							all the table records and all the foreign tables columns related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>tblProduct</b> (via the <b>Spr_GuidProductID</b> column)
+								</li>
+								<li>
+									<b>tblSupplier</b> (via the <b>Spr_GuidSupplierID</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure allows you to get back the data in a resultset or
+					in an XML stream. This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>Spr_GuidProductID</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidProductID" column.
+						</li>
+						<li>
+							<b>Spr_GuidSupplierID</b>: Update this description in the "Olymars/Description" extended property of the "Spr_GuidSupplierID" column.
+						</li>
+						<li>
+							<b>Spr_GuidProductID_Pro_GuidID</b>: Update this description in the "Olymars/Description" extended property of the "Pro_GuidID" column.
+						</li>
+						<li>
+							<b>Spr_GuidProductID_Pro_StrName</b>: Update this description in the "Olymars/Description" extended property of the "Pro_StrName" column.
+						</li>
+						<li>
+							<b>Spr_GuidProductID_Pro_CurPrice</b>: Update this description in the "Olymars/Description" extended property of the "Pro_CurPrice" column.
+						</li>
+						<li>
+							<b>Spr_GuidProductID_Pro_LngCategoryID</b>: Update this description in the "Olymars/Description" extended property of the "Pro_LngCategoryID" column.
+						</li>
+						<li>
+							<b>Spr_GuidSupplierID_Sup_GuidID</b>: Update this description in the "Olymars/Description" extended property of the "Sup_GuidID" column.
+						</li>
+						<li>
+							<b>Spr_GuidSupplierID_Sup_StrName</b>: Update this description in the "Olymars/Description" extended property of the "Sup_StrName" column.
+						</li>
+					</ul>
+				</blockquote>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			See also:
+		</div>
+		<blockquote>
+				<ul>
+					<div class="SeeAlsoBody">
+						<li>
+							[<b>spS_tblSupplierProduct</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+							<br>
+						</li>
+						<li>
+							[<b>spS_tblSupplierProduct_Display</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_Display_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_Display_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_Display_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_Display_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_Display_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_Display_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+							<br>
+						</li>
+						<li>
+							[<b>spS_tblSupplierProduct_SelectDisplay</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_SelectDisplay_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_SelectDisplay_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_SelectDisplay_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</l>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_SelectDisplay_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_SelectDisplay_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_SelectDisplay_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+							<br>
+						</li>
+						<li>
+							[<b>spS_tblSupplierProduct_Full</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_Full_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_tblSupplierProduct_Full_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_Full_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_tblSupplierProduct_Full_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_Full_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_tblSupplierProduct_Full_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+						</li>
+					</div>
+				</UL>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:56
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

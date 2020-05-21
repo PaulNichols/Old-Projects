@@ -1,0 +1,82 @@
+using System;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.Factors;
+
+namespace HBOS.FS.AMP.UPD.Types.Funds
+{
+	/// <summary>
+	/// Summary description for Composite.
+	/// </summary>
+	public class Composite : NonOEIC
+	{
+		#region Constructors
+
+		/// <summary>
+		/// Default constructor
+		/// </summary>
+		public Composite() : base()
+		{
+		}
+
+		/// <summary>
+		/// Creates a new Composite 
+		/// </summary>
+		/// <param name="hiPortfolioCode"></param>
+		/// <param name="fullName"></param>
+		/// <param name="shortName"></param>
+		/// <param name="classOrSeriesCode"></param>
+		/// <param name="useMidPriceAsBidPrice"></param>
+		/// <param name="onHiPortfolio3"></param>
+		/// <param name="isDualPrice"></param>
+		/// <param name="parentAssetFund"></param>
+		/// <param name="assetMovementTolerance"></param>
+		/// <param name="upperTolerance"></param>
+		/// <param name="lowerTolerance"></param>
+		/// <param name="priceIncreaseOnly"></param>
+		/// <param name="tolerancesID"></param>
+		/// <param name="price"></param>
+		/// <param name="priceSet"></param>
+		/// <param name="importedFundPriceID"></param>
+		/// <param name="valuationBasisEffect"></param>
+		/// <param name="previousPrice"></param>
+		/// <param name="previousPriceSet"></param>
+		/// <param name="fundStatus"></param>
+		/// <param name="statusChangedTime"></param>
+		/// <param name="statusChangedTimeSet"></param>
+		/// <param name="usePredictedPrice"></param>
+		/// <param name="authorisedPriceTimestamp"></param>
+		/// <param name="timestamp"></param>
+		/// <param name="isLife"></param>
+		/// <param name="parentAssetFundID"></param>
+		/// <param name="companyCode">Used for static data report. Null is acceptable for all other uses</param>
+		/// <param name="securityCode"></param>
+		/// <param name="factors"></param>
+		public Composite(string hiPortfolioCode, string fullName, string shortName,
+		                 string classOrSeriesCode, bool useMidPriceAsBidPrice,
+		                 bool onHiPortfolio3, bool isDualPrice, AssetFund parentAssetFund,
+		                 decimal assetMovementTolerance, decimal upperTolerance, decimal lowerTolerance,
+		                 bool priceIncreaseOnly, Int64 tolerancesID, decimal price, bool priceSet,
+		                 long importedFundPriceID,
+		                 decimal valuationBasisEffect,
+		                 decimal previousPrice, bool previousPriceSet, FundStatusType fundStatus, DateTime statusChangedTime,
+		                 bool statusChangedTimeSet, bool usePredictedPrice, byte[] authorisedPriceTimestamp,
+		                 byte[] timestamp, bool isLife, string parentAssetFundID, string companyCode, string securityCode, FactorCollection factors)
+			: base(hiPortfolioCode, fullName, shortName, classOrSeriesCode, useMidPriceAsBidPrice, onHiPortfolio3, isDualPrice, parentAssetFund, assetMovementTolerance, upperTolerance, lowerTolerance, priceIncreaseOnly, tolerancesID, price, priceSet, importedFundPriceID, valuationBasisEffect, previousPrice, previousPriceSet, fundStatus, statusChangedTime, statusChangedTimeSet, usePredictedPrice, authorisedPriceTimestamp, timestamp, isLife, parentAssetFundID, companyCode, securityCode, factors)
+		{
+		}
+
+		#endregion
+
+		#region Composite specific properties
+
+		/// <summary>
+		/// The string representation of the type name used for display and reporting purposes
+		/// </summary>
+		public override string FundType
+		{
+			get { return "Composite"; }
+		}
+
+		#endregion
+	}
+}

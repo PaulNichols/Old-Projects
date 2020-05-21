@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UT_HBOS.FS.AMP.UPD.WinUI.Library</name>
+    </assembly>
+    <members>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.AssetFundStatusDataManagerTest">
+            <summary>
+            Unit tests for AssetFundStatusDataManager class.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.AssetFundStatusDataManagerTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.AssetFundStatusDataManagerTest"/> instance.
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest">
+            <summary>
+            Unit tests for the fund factor business rules class
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest"/> instance.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest.InitialiseFund">
+            <summary>
+            Initialises the Composite fund
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest.CompositeXFactorTest">
+            <summary>
+            Tests the Composite fund XFactor
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest.CompositeTaxProvisionEstimateTest">
+            <summary>
+            Tests the Composite fund TPE
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest.CompositeRevaluationFactorTest">
+            <summary>
+            Tests the Composite fund Revaluation factor
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.CompositeFactorBusinessRulesTest.CompositeScalingFactorTest">
+            <summary>
+            Tests the Composite fund scaling factor
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest">
+            <summary>
+            Unit Test for ExclusiveListHelper class
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest"/> instance.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.SetUp">
+            <summary>
+            Set up routine for NUnit
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.IncludedItemsAreIncluded">
+            <summary>
+            Test that items in the included list are in the included list
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.ItemsNotIncludedAreExcluded">
+            <summary>
+            Test that items in the included list are not in the excluded list
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.ItemsMovedFromExcludedAreIncluded">
+            <summary>
+            Test moving the item from excluded to included.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.ItemsNotMovedFromExcludedAreStilExcluded">
+            <summary>
+            Test moving the item from excluded to included.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.ExcludedItemsAreExcluded">
+            <summary>
+            Test that items in the excluded list are in the excluded list
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.ItemsNotExcludedAreIncluded">
+            <summary>
+            Test that items in the excluded list are not in the included list
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.ExcludedIsEmptyIfAllMovedToIncluded">
+            <summary>
+            Test that Excluded is empty if all items moved to Included.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.IncludedIsEmptyIfAllMovedToExcluded">
+            <summary>
+            Test that Included is empty if all items moved to Excluded.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.CannotIncludeNonExistantItem">
+            <summary>
+            Exception raised when try to include an item not in the original list.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.ExclusiveListHelperTest.ItemCannotBeIncludedTwice">
+            <summary>
+            Test that items cannot be included twice.
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest">
+            <summary>
+            Unit tests for the fund factor business rules class
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest"/> instance.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest.InitialiseFund">
+            <summary>
+            Initialises the Linked fund
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest.LinkedXFactorTest">
+            <summary>
+            Tests the linked fund XFactor
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest.LinkedTaxProvisionEstimateTest">
+            <summary>
+            Tests the linked fund TPE
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest.LinkedRevaluationFactorTest">
+            <summary>
+            Tests the linked fund Revaluation factor
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.LinkedFundFactorBusinessRulesTest.LinkedScalingFactorTest">
+            <summary>
+            Tests the linked fund scaling factor
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest">
+            <summary>
+            Unit tests for the fund factor business rules class
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest"/> instance.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest.InitialiseFund">
+            <summary>
+            Initialises the OEIC fund
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest.OEICXFactorTest">
+            <summary>
+            Tests the OEIC XFactor
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest.OEICTaxProvisionEstimateTest">
+            <summary>
+            Tests the OEIC TPE
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest.OEICRevaluationFactorTest">
+            <summary>
+            OEIC Revaluation factor test
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.OEICFundFactorBusinessRulesTest.OEICScalingFactorTest">
+            <summary>
+             OEIC Scaling factor test
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest">
+            <summary>
+            Summary description for StaticDataListManagerTest.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest"/> instance.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.SetUp">
+            <summary>
+            NUnit Setup code
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.HoldsAList">
+            <summary>
+            Test that it holds a list.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.RefreshTheContentsOfTheList">
+            <summary>
+            Test that it refreshes the contents of the list.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.EventRaisedWhenContentsRefreshed">
+            <summary>
+            Test that an Event is raised when contents refreshed.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.AddNewBlankItemToList">
+            <summary>
+            Test that it adds a new blank item to list.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.DetermineIfSelectedItemIsNew">
+            <summary>
+            Test that determines the if selected item is new.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.SelectedIndexNegativeAtStart">
+            <summary>
+            Ensure the index negative at start.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.AddedItemBecomesSelectedIndex">
+            <summary>
+            Test that Added item becomes selected index.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.ChangeSelectedIndex">
+            <summary>
+            Test the change of selected index.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.ExceptionWhenSelectedIndexOverRange">
+            <summary>
+            Check that exceptions the when selected index over range.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.ReturnsTheSelectedObject">
+            <summary>
+            Test that SelectedItem returns the selected object.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.ChangingSelectedItemChangesSelectedIndex">
+            <summary>
+            Test that changing the selected item changes selected index.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.ChangedSelectedIndexRaisesEvent">
+            <summary>
+            Test that changing the selected index raises event.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.ChangingSelectedIndexRaisesEvent">
+            <summary>
+            Test that changing the selected index raises event.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.CanCancelChangeThroughEventArgs">
+            <summary>
+            Determines whether this instance [can cancel change through event args].
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.CanCancelNewThroughEventArgs">
+            <summary>
+            Determines whether this instance [can cancel change through event args].
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.DeleteTheSelectedItem">
+            <summary>
+            Deletes the selected item.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StaticDataListManagerTest.ChangeTheSelectedItem">
+            <summary>
+            Changes the selected item.
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest">
+            <summary>
+            Unit test for StatusDataManager class.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest"/> instance.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.SetUp">
+            <summary>
+            Sets the test up.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.ContainsAFundGroupFilter">
+            <summary>
+            Test that it contains a fund group filter.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.ChangingFundGroupFilterRaisesEvent">
+            <summary>
+            Test that Changing the fund group filter raises an event.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.BuildsAnIListOfTheData">
+            <summary>
+            Builds an IList of the data.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.DataNotLoadedWhenFundGroupNotChanged">
+            <summary>
+            Tests that data is not loaded when the fund group doesn't change.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.DataLoadedWhenFundGroupChanged">
+            <summary>
+            Tests that data is loaded when the fund group changes.
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusDataManagerTest.MockStatusDataManager">
+            <summary>
+            StatusDataManager is abstract so we need a mock version
+            </summary>
+        </member>
+        <member name="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusPropertyFilterTest">
+            <summary>
+            Unit tests for the StatusPropertyFilter class
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusPropertyFilterTest.#ctor">
+            <summary>
+            Creates a new <see cref="T:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusPropertyFilterTest"/> instance.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusPropertyFilterTest.Setup">
+            <summary>
+            NUnit setup code
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusPropertyFilterTest.ChangingAppliedRaisesEvent">
+            <summary>
+            Test that Changings the Applied property raises an event.
+            </summary>
+        </member>
+        <member name="M:UT_HBOS.FS.AMP.UPD.WinUI.Library.StatusPropertyFilterTest.ApplyFilterRemovesItems">
+            <summary>
+            Test that Applying the filter removes items.
+            </summary>
+        </member>
+    </members>
+</doc>

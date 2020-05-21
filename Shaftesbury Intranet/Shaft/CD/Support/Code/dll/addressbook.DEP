@@ -1,0 +1,51 @@
+[Version]
+Version=1.0.0.0
+
+[addressbook.dll <0009>]
+Dest=$(WinSysPath)
+Date=08/02/01
+Time=11:33
+Version=1.0.0.0
+CABFilename=
+Uses1=MSVBVM60.DLL
+Uses2=OLEAUT32.DLL
+Uses3=OLEPRO32.DLL
+Uses4=ASYCFILT.DLL
+Uses5=STDOLE2.TLB
+Uses6=COMCAT.DLL
+Uses7=msado21.tlb
+Uses8=MSOUTL9.OLB
+Uses9=MSWORD9.OLB
+Uses10=MSO9.DLL
+Uses11=MSADOX.DLL
+Uses12=MSCOMM32.OCX
+
+[msado21.tlb <0009>]
+Dest=$(WinSysPath)
+Date=12/12/00
+Time=13:37
+Version=2.50.4403.4
+
+[MSOUTL9.OLB <0009>]
+Dest=$(WinSysPath)
+Date=02/03/99
+Time=18:53
+Version=9.0.0.2702
+
+[MSWORD9.OLB <0009>]
+Dest=$(WinSysPath)
+Date=17/03/99
+Time=21:42
+Version=9.0.0.2717
+
+[MSO9.DLL <0009>]
+Dest=$(WinSysPath)
+Date=21/03/99
+Time=04:09
+Version=9.0.0.2720
+
+[MSADOX.DLL <0009>]
+Dest=$(WinSysPath)
+Date=19/09/99
+Time=16:47
+Version=2.50.4403.4

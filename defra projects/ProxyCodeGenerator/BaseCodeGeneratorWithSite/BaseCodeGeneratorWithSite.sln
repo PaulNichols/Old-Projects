@@ -1,0 +1,60 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscoCodeGeneratorEx", "DiscoCodeGeneratorEx.csproj", "{C6D44E3E-E1AC-47C2-B12F-1E3D384919F5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CreateCode", "CreateCode\CreateCode.vbproj", "{2A08EA89-615E-40F2-AA47-14251DE214FE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PhoenixBO", "..\..\devPhoenix\devPhoenix\PhoenixBO\PhoenixBO.vbproj", "{17E67187-ED22-4F2A-891E-FE40F1C0AF24}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {5C5F97D9-C1A8-4918-AD4D-A05BC1A8CA62}
+		SccProjectUniqueName1 = CreateCode\\CreateCode.vbproj
+		SccLocalPath1 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = CreateCode\\
+		SccProjectUniqueName2 = DiscoCodeGeneratorEx.csproj
+		SccLocalPath2 = .
+		CanCheckoutShared = false
+		SccProjectUniqueName3 = ..\\..\\devPhoenix\\devPhoenix\\PhoenixBO\\PhoenixBO.vbproj
+		SccProjectName3 = \u0022$/devPhoenix/devPhoenix/PhoenixBO\u0022,\u0020IWRAAAAA
+		SccLocalPath3 = ..\\..\\devPhoenix\\devPhoenix\\PhoenixBO
+		CanCheckoutShared = false
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+		Test = Test
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C6D44E3E-E1AC-47C2-B12F-1E3D384919F5}.Debug.ActiveCfg = Debug|.NET
+		{C6D44E3E-E1AC-47C2-B12F-1E3D384919F5}.Release.ActiveCfg = Release|.NET
+		{C6D44E3E-E1AC-47C2-B12F-1E3D384919F5}.Release.Build.0 = Release|.NET
+		{C6D44E3E-E1AC-47C2-B12F-1E3D384919F5}.Test.ActiveCfg = Release|.NET
+		{C6D44E3E-E1AC-47C2-B12F-1E3D384919F5}.Test.Build.0 = Release|.NET
+		{2A08EA89-615E-40F2-AA47-14251DE214FE}.Debug.ActiveCfg = Debug|.NET
+		{2A08EA89-615E-40F2-AA47-14251DE214FE}.Debug.Build.0 = Debug|.NET
+		{2A08EA89-615E-40F2-AA47-14251DE214FE}.Release.ActiveCfg = Release|.NET
+		{2A08EA89-615E-40F2-AA47-14251DE214FE}.Release.Build.0 = Release|.NET
+		{2A08EA89-615E-40F2-AA47-14251DE214FE}.Test.ActiveCfg = Release|.NET
+		{2A08EA89-615E-40F2-AA47-14251DE214FE}.Test.Build.0 = Release|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug.ActiveCfg = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug.Build.0 = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Release.ActiveCfg = Release|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Release.Build.0 = Release|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Test.ActiveCfg = Test|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Test.Build.0 = Test|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

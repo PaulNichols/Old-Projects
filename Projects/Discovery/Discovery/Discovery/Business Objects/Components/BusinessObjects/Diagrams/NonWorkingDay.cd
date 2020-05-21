@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.BusinessObjects.NonWorkingDay">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\NonWorkingDay.cs</FileName>
+      <HashCode>AEAAAAAABAAgAAAAIBAAAAAABAAgAAAAABAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Region">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Region.cs</FileName>
+      <HashCode>AEAAAAAAAAAgAAAAIAAgAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Warehouse">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Warehouse.cs</FileName>
+      <HashCode>IECEASAAgAAgQAAAKAAkAIgAIAIAQAACAIAAAICAAAE=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="region" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.NonWorkingDayController">
+    <Position X="5.5" Y="3.25" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\NonWorkingDayController.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAACAACAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

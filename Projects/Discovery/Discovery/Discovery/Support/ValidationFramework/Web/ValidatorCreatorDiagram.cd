@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="ValidationFramework.Web.ValidatorCreator&lt;T&gt;">
+    <Position X="9.75" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>Web\ValidatorCreator.cs</FileName>
+      <HashCode>AAAAAAgEAAAABAACAAAAAAAAAAAAAIAAgAAAAoAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ValidationFramework.Web.RequiredValidatorCreator">
+    <Position X="12.75" Y="3.75" Width="4.5" />
+    <TypeIdentifier>
+      <FileName>Web\RequiredValidatorCreator.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Web.RegexValidatorCreator">
+    <Position X="18" Y="3.75" Width="4.25" />
+    <TypeIdentifier>
+      <FileName>Web\RegexValidatorCreator.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Web.RangeValidatorCreator">
+    <Position X="2.75" Y="3.75" Width="4.25" />
+    <TypeIdentifier>
+      <FileName>Web\RangeValidatorCreator.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Web.LengthValidatorCreator">
+    <Position X="7.75" Y="3.75" Width="4.25" />
+    <TypeIdentifier>
+      <FileName>Web\LengthValidatorCreator.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Web.ValidatorGenerator">
+    <Position X="4" Y="5.75" Width="3.75" />
+    <TypeIdentifier>
+      <FileName>Web\ValidatorGenerator.cs</FileName>
+      <HashCode>AAAgACIgAAAAAABAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="ValidationFramework.Web.ValidatorGenerator.ValidationAssociation" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Web\ValidatorGenerator.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="ValidationFramework.Web.CompareValidatorCreator">
+    <Position X="0.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>Web\CompareValidatorCreator.cs</FileName>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ValidationFramework.Web.IValidatorCreator">
+    <Position X="1" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>Web\IValidatorCreator.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

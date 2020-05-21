@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.BusinessObjects.Controllers.OpCoShipmentController">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentController.cs</FileName>
+      <HashCode>AAAAABAAAAIAAAAAAAAQAAAAAAAAAAAABAAAAAAAQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.TDCShipmentController">
+    <Position X="0.5" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentController.cs</FileName>
+      <HashCode>AAgAABAIAQoAAAAAAAAQEIEAAAIAAAAADAAAAAAAAEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.TDCShipmentLineController">
+    <Position X="8.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentLineController.cs</FileName>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAQAAAAEIAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipmentCriteria">
+    <Position X="3.25" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\ShipmentCriteria.cs</FileName>
+      <HashCode>gAgCAAgIEAAAABAgAEIAIABCQwAAAEMAAAEAAIABAiA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RequiredDate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DateRange">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\DateRange.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.RoutingController">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\RoutingController.cs</FileName>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAABAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.OpcoShipmentLineController">
+    <Position X="5.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentLineController.cs</FileName>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAQAAAAEIAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.CommanderController">
+    <Position X="8.75" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\CommanderController.cs</FileName>
+      <HashCode>CAICAAAAAAAAIAAAAAgAAAAAAAAAAAAgAAgAACQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.WarehouseController" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\WarehouseController.cs</FileName>
+      <NewMemberFileName>Components\BusinessObjects\Controllers\TrunkerDayController.cs</NewMemberFileName>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAEAAAAAgAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.MappingController">
+    <Position X="6.5" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\MappingController.cs</FileName>
+      <HashCode>AAAAAAAAABAABAAgAAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.TrunkerDaysController">
+    <Position X="6.25" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\TrunkerDayController.cs</FileName>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.NonWorkingDayController">
+    <Position X="3.25" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\NonWorkingDayController.cs</FileName>
+      <HashCode>AAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAEAAACAACAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.CommanderSalesOrderLine">
+    <Position X="0.5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\CommanderSalesOrderLine.cs</FileName>
+      <HashCode>BkAiAAAAAgAFgAAACYgIAAwAiAAAQIIAQEQCCEQEIAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

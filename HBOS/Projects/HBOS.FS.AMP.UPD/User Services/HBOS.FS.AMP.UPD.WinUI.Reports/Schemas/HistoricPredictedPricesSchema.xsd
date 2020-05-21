@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="HistoricPredictedPricesSchema" targetNamespace="http://tempuri.org/HistoricPredictedPricesSchema.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/HistoricPredictedPricesSchema.xsd"
+	xmlns:mstns="http://tempuri.org/HistoricPredictedPricesSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="HistoricPredictedPricesSchema" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="usp_PredictedPriceHistoricalReportByFundGroup">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FundgroupID" type="xs:int" minOccurs="0" />
+							<xs:element name="FundCode" type="xs:string" />
+							<xs:element name="FundName" type="xs:string" />
+							<xs:element name="PriceDate" type="xs:dateTime" />
+							<xs:element name="PredictedPrice" type="xs:decimal" />
+							<xs:element name="ImportedPrice" type="xs:decimal" />
+							<xs:element name="DistributedPrice" msdata:ReadOnly="true" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

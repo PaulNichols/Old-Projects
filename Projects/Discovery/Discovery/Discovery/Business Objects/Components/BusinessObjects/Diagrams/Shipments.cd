@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.BusinessObjects.TDCShipment">
+    <Position X="7.25" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\TDCShipment.cs</FileName>
+      <HashCode>CNBgACgQIAAhIAAAkQQGUgBELwIAABOACAAWAACUMAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PAFAddress" />
+      <Property Name="StockWarehouse" />
+      <Property Name="DeliveryWarehouse" />
+    </ShowAsAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Shipment">
+    <Position X="1.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Shipment.cs</FileName>
+      <HashCode>CEUDFACEFQIAgFGGBRBAxA0QQyQNwENwSdJEQQhBEAc=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OpCoContact" />
+      <Property Name="ShipmentAddress" />
+      <Property Name="ShipmentContact" />
+      <Property Name="CustomerAddress" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ShipmentLines" />
+    </ShowAsCollectionAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Discovery.BusinessObjects.Shipment.TypeEnum">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\BusinessObjects\Entities\Shipment.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Discovery.BusinessObjects.Shipment.StatusEnum">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\BusinessObjects\Entities\Shipment.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.OpCoShipment">
+    <Position X="2.25" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\OpCoShipment.cs</FileName>
+      <HashCode>AAAAAAAAAAAACAAAAQAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Contact">
+    <Position X="4.5" Y="13.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Contact.cs</FileName>
+      <HashCode>AAAAAAAAACAAAAAgAAAAIAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Address">
+    <Position X="5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Address.cs</FileName>
+      <HashCode>AAAAEAAAABAAAAAEAAAAAIAAAACAAIBgAACA4AAAAIA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.PAFAddress">
+    <Position X="4.5" Y="9" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Address.cs</FileName>
+      <HashCode>AAQAggAEAAAAAAAEAAIAAAAGAAAAAAAAABwAAAAQAAI=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Enum Name="Discovery.BusinessObjects.PAFAddress.PAFStatusEnum" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\BusinessObjects\Entities\Address.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.ShipmentLine">
+    <Position X="9.75" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\ShipmentLine.cs</FileName>
+      <HashCode>AAAoEAAAABQgIAAU4EAIAMBBiSgAAYGwYAIAgAACIBI=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.TDCShipmentLine">
+    <Position X="6.75" Y="13.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\TDCShipmentLine.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.OpCoShipmentLine">
+    <Position X="9.75" Y="12.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\OpCoShipmentLine.cs</FileName>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Warehouse">
+    <Position X="7" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Warehouse.cs</FileName>
+      <HashCode>AACEAAAAgAAgQAAAKAAkAIgAIAIAQBACAIAYAICAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.OpCo">
+    <Position X="4.5" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\OpCo.cs</FileName>
+      <HashCode>AABCAAIAAAAgAAAAIAAiAAAAIAAAAEAAAgAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Region">
+    <Position X="10.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Region.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAAAIAAgAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.ShipmentCriteria">
+    <Position X="1.5" Y="17.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\ShipmentCriteria.cs</FileName>
+      <HashCode>gYgAEAmIhAAAgIAAAUoAgAECQyAAIENgECAAQIDAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.OpCoShipmentController">
+    <Position X="4.5" Y="22.5" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentController.cs</FileName>
+      <HashCode>gAAAABAAAAIBAAAAAAAQAAAAAAAAABAABAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.TDCShipmentController">
+    <Position X="8" Y="22.5" Width="3" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\ShipmentController.cs</FileName>
+      <HashCode>gAgAABAMAQoBAAAAAAAQEIEAAAIgEFAADAAAAAAAAEA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Class Name="Discovery.BusinessObjects.Controllers.TDCShipmentController.ShipmentStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\BusinessObjects\Controllers\ShipmentController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Discovery.BusinessObjects.Controllers.TDCShipmentController.ShipmentType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\BusinessObjects\Controllers\ShipmentController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.DiscoveryBusinessObject" Collapsed="true">
+    <Position X="3" Y="1.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Discovery.BusinessObjects.PersistableBusinessObject" Collapsed="true">
+    <Position X="6.25" Y="1.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+</ClassDiagram>

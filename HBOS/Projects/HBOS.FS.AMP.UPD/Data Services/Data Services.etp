@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<EFPROJECT>
+    <GENERAL>
+        <BANNER>Microsoft Visual Studio Application Template File</BANNER>
+        <VERSION>1.00</VERSION>
+        <SourceControlSettings>
+            <ProjectName>SAK</ProjectName>
+            <AuxPath>SAK</AuxPath>
+            <LocalPath>SAK</LocalPath>
+            <Provider>SAK</Provider>
+        </SourceControlSettings>
+        <Views>
+            <ProjectExplorer>
+                <File>..\Business Services\HBOS.FS.AMP.UPD.Persistence\HBOS.FS.AMP.UPD.Persistence.csproj</File>
+            </ProjectExplorer>
+        </Views>
+        <References>
+            <Reference>
+                <FILE>..\Business Services\HBOS.FS.AMP.UPD.Persistence\HBOS.FS.AMP.UPD.Persistence.csproj</FILE>
+                <GUIDPROJECTID>{563292A6-45A4-4CDF-937B-EDE2239DF506}</GUIDPROJECTID>
+            </Reference>
+        </References>
+    </GENERAL>
+</EFPROJECT>

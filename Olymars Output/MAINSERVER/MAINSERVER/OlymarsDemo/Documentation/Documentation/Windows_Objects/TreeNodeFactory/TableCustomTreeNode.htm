@@ -1,0 +1,445 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			TableCustomTreeNode - Members overview
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			TableCustomTreeNode
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			This class is located in <b>OlymarsDemo.Windows</b> namespace.<br>
+			<br>
+			When you call any of the <b>Fill_&lt;TableName&gt;</b> method, the supplied TreeNodeCollection
+			will be filled out with <b>TableCustomTreeNode</b> type of objects. This class derives from <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfsystemwindowsformstreenodeclasstopic.htm">System.Windows.Forms.TreeNode</a>.<br>
+			<br>
+			An instance of this class is always associated to a record coming from '<b>OlymarsDemo</b>' database tables. You can find out which table is involved by
+			calling the <a href="#Table">Table</a> property.<br>
+			<br>
+			You can refresh the display used for this TreeNode any time by simply calling the <a href="#RefreshDisplay">RefreshDisplay</a> method.
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#Display">Display</a>
+					</li>
+					<li>
+						<a href="#Id">Id</a>
+					</li>
+					<li>
+						<a href="#IsUpToDate">IsUpToDate</a>
+					</li>
+					<li>
+						<a href="#RefreshDisplay">RefreshDisplay</a>
+					</li>
+					<li>
+						<a href="#Table">Table</a>
+					</li>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Properties
+		</div>
+		<blockquote>
+			<a name="Id"></a>
+			<div class="Highlight">
+				Id
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public ReadOnly Property Id As Object<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public object Id { get; };<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Primary key of the record. Depending on the underlying table from which this record was loaded, this property can be of one of the following types:<br>
+					<br>
+				</div>
+				<div>
+					<table class="MainBody" border="1" cellspacing="0" cellpadding="5">
+						<tr>
+							<td>
+								<b>Table</b>
+							</td>
+							<td>
+								<b>Id is of type</b>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblCategory
+							</td>
+							<td>
+								System.Data.SqlTypes.SqlInt32
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblCustomer
+							</td>
+							<td>
+								System.Data.SqlTypes.SqlInt32
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblOrder
+							</td>
+							<td>
+								System.Data.SqlTypes.SqlGuid
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblOrderItem
+							</td>
+							<td>
+								System.Data.SqlTypes.SqlGuid
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblProduct
+							</td>
+							<td>
+								System.Data.SqlTypes.SqlGuid
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblSupplier
+							</td>
+							<td>
+								System.Data.SqlTypes.SqlGuid
+							</td>
+						</tr>
+					</table>
+				</div>
+			</blockquote>
+			<a name="Display"></a>
+			<div class="Highlight">
+				Display
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public ReadOnly Property Display As String<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public string Display { get; };<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Display of the record. This value is obtained by querying the 'Display' stored procedure:<br>
+					<br>
+				</div>
+				<div>
+					<table class="MainBody" border="1" cellspacing="0" cellpadding="5">
+						<tr>
+							<td>
+								<b>Table</b>
+							</td>
+							<td>
+								<b>Stored procedure beeing called</b>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblCategory
+							</td>
+							<td>
+								<a href="../../Tables/HowTo_Select/tblCategory_Overview.htm#">spS_tblCategory_Display</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblCustomer
+							</td>
+							<td>
+								<a href="../../Tables/HowTo_Select/tblCustomer_Overview.htm#">spS_tblCustomer_Display</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblOrder
+							</td>
+							<td>
+								<a href="../../Tables/HowTo_Select/tblOrder_Overview.htm#">spS_tblOrder_Display</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblOrderItem
+							</td>
+							<td>
+								<a href="../../Tables/HowTo_Select/tblOrderItem_Overview.htm#">spS_tblOrderItem_Display</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblProduct
+							</td>
+							<td>
+								<a href="../../Tables/HowTo_Select/tblProduct_Overview.htm#">spS_tblProduct_Display</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblSupplier
+							</td>
+							<td>
+								<a href="../../Tables/HowTo_Select/tblSupplier_Overview.htm#">spS_tblSupplier_Display</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</blockquote>
+			<a name="Table"></a>
+			<div class="Highlight">
+				Table
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public ReadOnly Property Table As OlymarsDemo.Windows.TableList<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public OlymarsDemo.Windows.TableList Table { get; };<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Table from which the current record was loaded. Can be one of the following <a href="TableList.htm">OlymarsDemo.Windows.TableList</a> value:<br>
+					<br>
+				</div>
+				<div>
+					<table class="MainBody" border="1" cellspacing="0" cellpadding="5">
+						<tr>
+							<td>
+								<b>Table</b>
+							</td>
+							<td>
+								<b>OlymarsDemo.Windows.TableList</b>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblCategory
+							</td>
+							<td>
+								Table_tblCategory
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblCustomer
+							</td>
+							<td>
+								Table_tblCustomer
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblOrder
+							</td>
+							<td>
+								Table_tblOrder
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblOrderItem
+							</td>
+							<td>
+								Table_tblOrderItem
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblProduct
+							</td>
+							<td>
+								Table_tblProduct
+							</td>
+						</tr>
+						<tr>
+							<td>
+								tblSupplier
+							</td>
+							<td>
+								Table_tblSupplier
+							</td>
+						</tr>
+					</table>
+				</div>
+			</blockquote>
+			<a name="IsUpToDate"></a>
+			<div class="Highlight">
+				IsUpToDate
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Property IsUpToDate As Boolean<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public bool IsUpToDate { get; set; };<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns True if the children nodes are loaded. This property is <b>NOT</b> used by the class itself.<br>
+					<br>
+					By default, this property is initialized to <b>false</b>. Later, you can change this value to reflect that the children collection of this node
+					was populated for example.
+					<br>
+					<br>
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Method
+		</div>
+		<blockquote>
+			<a name="RefreshDisplay"></a>
+			<div class="Highlight">
+				RefreshDisplay
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub RefreshDisplay(ByVal purgeTreeNodeChildren As Boolean)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void RefreshDisplay(bool purgeTreeNodeChildren);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Refreshes the display used for the current record.<br>
+					<br>
+					<b>purgeTreeNodeChildren</b>: <b>True</b> if you want to purge the current node sub-nodes collection before.<br>
+					<br>
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			27 December 2004 - 16:08:51
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

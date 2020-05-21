@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			TableTreeNodeFactory - Members overview
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			TableTreeNodeFactory
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			This class is located in <b>Bob.Windows</b> namespace. It allows you to quickly fill on TreeView with <b>Bob</b> database table content.<br>
+			<br>
+			All methods of this class are <b>static</b>. <br>
+			<br>
+			To be able to use this class, you need to call the <a href="#SetUpConnection1">SetUpConnection</a> once for good. Then, you can
+			call any of the <b>Fill_&lt;TableName&gt;</b> method to fill out a TreeNodeCollection object with the <b>&lt;TableName&gt;</b> table content.<br>
+			<br>
+			Once you have populated a TreeNodeCollection, this collection contains <a href="TableCustomTreeNode.htm">Bob.Windows.TreeNodeFactory.TableCustomTreeNode</a> based nodes. For each
+			of this node, you can query information such as:
+			<ul>
+				<li>
+					<b>Id</b>: primary key of the record
+				</li>
+				<li>
+					<b>Table</b>: returns the table from which this record was loaded (see <a href="TableList.htm">Bob.Windows.TableList</a> enumeration for more information).
+				</li>
+			</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#ConnectionType">ConnectionType</a>
+					</li>
+					<li>
+						<a href="#SetUpConnection1">SetUpConnection</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Static Methods
+		</div>
+		<blockquote>
+			<a name="SetUpConnection1"></a>
+			<div class="Highlight">
+				SetUpConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub SetUpConnection(ByVal connectionString As String)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Dispose(string connectionString);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets the connection string to be used against the SQL Server database.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					If a blank connection string is supplied, the class will search for:<br>
+					<br>
+					&nbsp;&nbsp;First an entry in the configuration file:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="Bob ConnectionString" value="..." /&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+					<br>
+					&nbsp;&nbsp;Then the following registry entry:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\Bob<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+					<br>
+					A helper function that can build this connection string for you is available. See the <a href="../../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+					<br>
+					To see the documentation on how to build this connection string,
+					<a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+				</div>
+			</blockquote>
+			<a name="SetUpConnection2"></a>
+			<div class="Highlight">
+				SetUpConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub SetUpConnection(ByVal sqlConnection As System.Data.SqlClient.SqlConnection)<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void SetUpConnection(System.Data.SqlClient.SqlConnection sqlConnection);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Sets the <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used against the SQL Server database.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. It can be opened or not. If it is not opened, it will be opened when used then closed again after the job is done.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			15 January 2005 - 18:39:24
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+			<a target="_blank" href="http://www.microsoft.com/france/msdn/olymars">http://www.microsoft.com/france/msdn/olymars</a>
+		</div>
+	</body>
+</html>

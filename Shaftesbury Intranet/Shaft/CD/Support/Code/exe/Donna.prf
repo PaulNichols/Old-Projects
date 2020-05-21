@@ -1,0 +1,12 @@
+[General]
+ProfileName = ShaftOffLine
+DefaultProfile = No
+OverwriteProfile = yes
+DefaultStore = Service1
+[Service List]
+Service1=Personal Folders
+[Service1]
+PathToPersonalFolders = c:\shaftoffline_Donna.pst
+[Personal Folders]
+ServiceName=MSPST MS
+PathToPersonalFolders=PT_STRING8,0x6700

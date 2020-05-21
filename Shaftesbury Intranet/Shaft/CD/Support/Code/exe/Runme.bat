@@ -1,0 +1,2 @@
+dotnetfx.exe
+setup.exe

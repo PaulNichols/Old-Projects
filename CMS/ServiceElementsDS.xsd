@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ServiceElementsDS" targetNamespace="http://tempuri.org/ServiceElementsDS.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/ServiceElementsDS.xsd" xmlns:mstns="http://tempuri.org/ServiceElementsDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+    <xs:element name="ServiceElementsDS" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="Element">
+                    <xs:complexType>
+                        <xs:attribute name="ElementId" type="xs:int" msdata:AutoIncrement="true" msdata:AutoIncrementStep="1" msdata:AutoIncrementSeed="1" />
+                        <xs:attribute name="Ref" type="xs:string" />
+                        <xs:attribute name="Description" type="xs:string" />
+                        <xs:attribute name="LastMonth" type="xs:decimal" />
+                        <xs:attribute name="ParentElementId" type="xs:decimal" />
+                        <xs:attribute name="Commentary" type="xs:string" />
+                        <xs:attribute name="ThisMonth" type="xs:decimal" />
+                        <xs:attribute name="NextMonth" type="xs:decimal" />
+                        <xs:attribute name="SLADetailId" type="xs:int" />
+                        <xs:attribute name="LevelDescription" type="xs:string" />
+                        <xs:attribute name="GThreshold" type="xs:decimal" />
+                        <xs:attribute name="AThreshold" type="xs:decimal" />
+                        <xs:attribute name="RThreshold" type="xs:decimal" />
+                        <xs:attribute name="RTLastMonth" type="xs:boolean" />
+                        <xs:attribute name="RTThisMonth" type="xs:boolean" />
+                        <xs:attribute name="Target" type="xs:decimal" />
+                        <xs:attribute name="Level" type="xs:int" />
+                    </xs:complexType>
+                    <xs:key name="ElementPK" msdata:PrimaryKey="true">
+                        <xs:selector xpath="." />
+                        <xs:field xpath="mstns:ElementId" />
+                    </xs:key>
+                </xs:element>
+                <xs:element name="SLADetail">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SLADetailId" type="xs:int" />
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:key name="SLADetailPK" msdata:PrimaryKey="true">
+                        <xs:selector xpath="." />
+                        <xs:field xpath="mstns:SLADetailId" />
+                    </xs:key>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

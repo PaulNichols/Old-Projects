@@ -1,0 +1,66 @@
+using System;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.Support.Tex;
+
+namespace HBOS.FS.AMP.UPD.Persistence
+{
+	/// <summary>
+		///
+		/// </summary>
+	public class AssetMovementConstituentPersister:EntityPersister
+	{
+		/// <summary>
+		/// Creates a new <see cref="AssetMovementConstituentPersister"/> instance.
+		/// </summary>
+		public AssetMovementConstituentPersister(string connectionString): base(connectionString)
+		{
+		}
+
+		/// <summary>
+		/// Loads the all available benchmarks.
+		/// </summary>
+		/// <returns></returns>
+		public  AssetMovementConstituentCollection LoadAllAvailableBenchmarks()
+		{
+			T.E();
+			AssetMovementConstituentCollection parts = new AssetMovementConstituentCollection();
+			this.LoadEntityCollection("usp_BenchMarkList", parts);
+			T.X();
+			return parts;
+		}
+
+		
+		/// <summary>
+		/// Creates the entity from the data reader.
+		/// </summary>
+		/// <param name="safeReader">Reader to get the data from.</param>
+		/// <returns></returns>
+		protected override object CreateEntity(SafeDataReader safeReader)
+		{
+			T.E();
+			AssetMovementConstituent newConstituent = null;
+			try
+			{
+				//this benchmark should be populated with a fund or market index or other benchmarkable type
+				HBOS.FS.AMP.UPD.Types.BenchMark.IBenchMark benchMark=null;
+				newConstituent = new AssetMovementConstituent(null,0,benchMark);
+			}
+			finally
+			{
+				T.X();
+			}
+			return newConstituent;
+
+		}
+
+		/// <summary>
+		/// Associates the constituate parts with the specified Asset fund.
+		/// </summary>
+		/// <param name="parts">Parts.</param>
+		/// <param name="fund">Fund.</param>
+		public  void Update(AssetMovementConstituentCollection parts, AssetFund fund)
+		{
+			throw new NotImplementedException();
+		}
+	}
+}

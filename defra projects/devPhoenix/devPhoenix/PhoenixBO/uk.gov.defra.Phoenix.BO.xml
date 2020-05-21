@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<doc>
+  <assembly>
+    <name>uk.gov.defra.Phoenix.BO</name>
+    <version>1.1.11.10938</version>
+    <fullname>uk.gov.defra.Phoenix.BO, Version=1.1.11.10938, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="T:uk.gov.defra.Phoenix.BO.Party.BOPartySpecimen.Role">
+      <summary>
+ Enum of the different relationship roles a party can have with a specimen. 
+ Examples: breeder, keeper, owner. 
+ </summary>
+    </member>
+    <member name="T:uk.gov.defra.Phoenix.BO.Party.BOPartySpecimen.Status">
+      <summary>
+ Status of the PartySpecimen link 
+ </summary>
+    </member>
+  </members>
+</doc>

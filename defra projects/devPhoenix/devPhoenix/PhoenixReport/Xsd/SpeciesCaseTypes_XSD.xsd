@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="SpeciesCaseTypesData" targetNamespace="http://tempuri.org/SpeciesCaseTypesData.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/SpeciesCaseTypesData.xsd"
+	xmlns:mstns="http://tempuri.org/SpeciesCaseTypesData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="SpeciesCaseTypesData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BODetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicantName" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicantId" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicantPostcode" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationType" type="xs:string" minOccurs="0" />
+							<xs:element name="PermitReference" type="xs:string" minOccurs="0" />
+							<xs:element name="ReceivedDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Status" type="xs:string" minOccurs="0" />
+							<xs:element name="ScientificName" type="xs:string" minOccurs="0" />
+							<xs:element name="CommonName" type="xs:string" minOccurs="0" />
+							<xs:element name="PartDerivative" type="xs:string" minOccurs="0" />
+							<xs:element name="Source" type="xs:string" minOccurs="0" />
+							<xs:element name="CertificateDeclaration" type="xs:string" minOccurs="0" />
+							<xs:element name="Gender" type="xs:string" minOccurs="0" />
+							<xs:element name="Quantity" type="xs:string" minOccurs="0" />
+							<xs:element name="NetMass" type="xs:string" minOccurs="0" />
+							<xs:element name="IssuedDate" type="xs:string" minOccurs="0" />
+							<xs:element name="QuantityUsed" type="xs:string" minOccurs="0" />
+							<xs:element name="NetMassUsed" type="xs:string" minOccurs="0" />
+							<xs:element name="Annex" type="xs:string" minOccurs="0" />
+							<xs:element name="Appendix" type="xs:string" minOccurs="0" />
+							<xs:element name="Owner" type="xs:string" minOccurs="0" />
+							<xs:element name="OtherPartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="OtherPartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="OtherPartyPostcode" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

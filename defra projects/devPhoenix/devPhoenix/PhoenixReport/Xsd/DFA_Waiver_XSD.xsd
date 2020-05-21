@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DFA_WaiverData" targetNamespace="http://tempuri.org/DFA_WaiverData.xsd" xmlns:mstns="http://tempuri.org/DFA_WaiverData.xsd"
+	xmlns="http://tempuri.org/DFA_WaiverData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="DFA_WaiverData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BODFA_Waiver">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RowId" type="xs:long" minOccurs="0" />
+							<xs:element name="BoldRow" type="xs:boolean" minOccurs="0" />
+							<xs:element name="ColumnData" type="xs:string" minOccurs="0" />
+							<xs:element name="Reference" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationNumber" type="xs:string" minOccurs="0" />
+							<xs:element name="OriginalAmount" type="xs:string" minOccurs="0" />
+							<xs:element name="AmountWaived" type="xs:string" minOccurs="0" />
+							<xs:element name="PartyID" type="xs:string" minOccurs="0" />
+							<xs:element name="PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="UserName" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

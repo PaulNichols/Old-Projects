@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="CacheManagerSettings" type="Microsoft.ApplicationBlocks.Cache.CacheConfigurationHandler,Microsoft.ApplicationBlocks.Cache" />
+    <section name="enterpriselibrary.configurationSettings" type="System.Configuration.IgnoreSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </configSections>
+  <CacheManagerSettings>
+    <!-- DATA PROTECTION SETTINGS
+		Use DataProtectionInfo to set the assembly and class which implement
+		the dataprotection interfaces for the cache.
+		-->
+    <DataProtectionInfo AssemblyName="Microsoft.ApplicationBlocks.Cache" ClassName="Microsoft.ApplicationBlocks.Cache.DataProtection.DefaultDataProtection" ValidationKey="Oci44OQ9C3xAdQ3/BMHpksPfzeTezLkXen/ahQ8T7nVk/KMgAFnssQJr00KUNhRso+MpLVwAinGep6i14X9M+A==" Validation="SHA1" />
+    <StorageInfo AssemblyName="Microsoft.ApplicationBlocks.Cache" ClassName="Microsoft.ApplicationBlocks.Cache.Storages.SingletonCacheStorage" Mode="InProc" Validated="true" Encrypted="false" />
+    <!-- 
+			MmfDictionarySize - It is the size (in bytes) of the dictionary object (in MmfCacheStorage) used to store the references of cache items. 
+		-->
+    <!-- SCAVENGING SETTINGS
+			Use the ScavengingAlgorithm to set a class that will be executed when
+			scavenging is performed.
+		-->
+    <ScavengingInfo AssemblyName="Microsoft.ApplicationBlocks.Cache" ClassName="Microsoft.ApplicationBlocks.Cache.Scavenging.LruScavenging" MemoryPollingPeriod="60" UtilizationForScavenging="80" MaximumSize="5" />
+    <!-- EXPIRATION SETTINGS
+			Use the ExpirationCheckInterval to change the interval to check for 
+			cache items expiration. The value attribute is represented in seconds.
+		-->
+    <ExpirationInfo Interval="1" />
+  </CacheManagerSettings>
+  <enterpriselibrary.configurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" applicationName="UPD" xmlns="http://www.microsoft.com/practices/enterpriselibrary/08-31-2004/configuration">
+  <configurationSections>
+    <configurationSection name="ApplicationSettings" encrypt="true">
+      <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="ApplicationSettings.config" />
+      <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+        <includeTypes />
+      </dataTransformer>
+    </configurationSection>
+    <configurationSection name="UPDUserSettings" encrypt="true">
+      <storageProvider xsi:type="CustomStorageProviderData" name="Custom Storage Provider" type="ConfigurationManagementApplicationBlockExtensions.IsolatedStorageProvider, ConfigurationManagementApplicationBlockExtensions, Version=1.0.2119.28296, Culture=neutral, PublicKeyToken=null">
+        <Attributes name="FileName" value="UPDUserSettings.config" />
+      </storageProvider>
+      <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+        <includeTypes />
+      </dataTransformer>
+    </configurationSection>
+  </configurationSections>
+  <keyAlgorithmStorageProvider xsi:type="FileKeyAlgorithmPairStorageProviderData" name="File Key Algorithm Storage Provider" path="1.key">
+    <dpapiSettings xsi:nil="true" />
+  </keyAlgorithmStorageProvider>
+  <includeTypes />
+</enterpriselibrary.configurationSettings>
+</configuration>

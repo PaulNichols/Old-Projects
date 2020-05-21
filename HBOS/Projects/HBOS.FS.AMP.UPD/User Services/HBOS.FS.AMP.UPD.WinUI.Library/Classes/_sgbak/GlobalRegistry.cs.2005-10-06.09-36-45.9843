@@ -1,0 +1,140 @@
+using System;
+using System.Configuration;
+using System.Reflection;
+using System.Threading;
+using HBOS.FS.AMP.UPD.Security;
+
+namespace HBOS.FS.AMP.UPD.WinUI.Classes
+{
+	/// <summary>
+	/// Static class for holding and retrieving global ui settings.
+	/// </summary>
+	public abstract /*static*/ class GlobalRegistry
+	{
+		private GlobalRegistry()
+		{
+		}
+
+		static GlobalRegistry()
+		{
+			string activeConnectionString=ConfigurationSettings.AppSettings["ActiveConnectionString"];
+			connectionString = ConfigurationSettings.AppSettings[activeConnectionString];
+		}
+
+		private static string connectionString;
+
+		/// <summary>
+		/// Gets the connection string used to connect to the database.
+		/// </summary>
+		/// <value></value>
+		public static string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+		}
+
+		/// <summary>
+		/// Gets the Database Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLDatabaseName
+		{
+			get
+			{
+				string[] connectionStringParts = splitConnectionString();
+				char [] delimiter = "=".ToCharArray();
+				connectionStringParts=connectionStringParts[4].Split(delimiter);
+				return connectionStringParts[1];
+			}
+		}
+		
+
+		/// <summary>
+		/// Gets the SQL Server Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLServerName
+		{
+			get
+			{
+				string[] connectionStringParts = splitConnectionString();
+				char [] delimiter = "=".ToCharArray();
+				connectionStringParts=connectionStringParts[3].Split(delimiter);
+				return connectionStringParts[1];
+			}
+		}
+
+		private static string[] splitConnectionString()
+		{
+			char [] delimiter = ";".ToCharArray();
+			return connectionString.Split(delimiter);
+		}
+
+		/// <summary>
+		/// Gets the company code for the current user.
+		/// </summary>
+		/// <value></value>
+		public static string CompanyCode
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.CompanyCode;
+			}
+		}
+
+		/// <summary>
+		/// Gets the company valuation point and day for the current company.
+		/// </summary>
+		/// <value></value>
+		public static DateTime CurrentCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.CurrentCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the valuation point and day if the current was progress on.
+		/// </summary>
+		/// <value></value>
+		public static DateTime NextCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.NextCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the previous valuation point and day if the current was progress on.
+		/// </summary>
+		/// <value></value>
+		public static DateTime PreviousCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.PreviousCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the client version for the running instance.
+		/// </summary>
+		/// <value></value>
+		public static Version ClientVersion
+		{
+			get
+			{
+				return Assembly.GetEntryAssembly().GetName().Version;
+			}
+		}
+
+	}
+}

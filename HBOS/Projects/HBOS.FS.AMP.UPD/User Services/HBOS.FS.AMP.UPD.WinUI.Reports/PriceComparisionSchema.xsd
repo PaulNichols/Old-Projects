@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema id="PriceComparisionSchema" 
+                  targetNamespace="http://tempuri.org/PriceComparisionSchema.xsd"
+                  elementFormDefault="qualified"
+                  attributeFormDefault="qualified"
+                  xmlns="http://tempuri.org/PriceComparisionSchema.xsd"
+                  xmlns:mstns="http://tempuri.org/PriceComparisionSchema.xsd"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="PriceComparisionSchema" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded"></xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

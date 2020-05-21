@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EnterpriseObjects", "..\devPhoenix\PhoenixObjects\Enterprise Objects\EnterpriseObjects.vbproj", "{33A904ED-DDB6-4120-8531-331D2583806C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PhoenixDO", "..\devPhoenix\PhoenixObjects\PhoenixDO\PhoenixDO.vbproj", "{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccProjectUniqueName0 = ..\\devPhoenix\\PhoenixObjects\\Enterprise\u0020Objects\\EnterpriseObjects.vbproj
+		SccProjectName0 = \u0022$/devPhoenix/devPhoenix/Enterprise\u0020Objects\u0022,\u0020KWRAAAAA
+		SccLocalPath0 = ..\\devPhoenix\\PhoenixObjects\\Enterprise\u0020Objects
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = ..\\devPhoenix\\PhoenixObjects\\PhoenixDO\\PhoenixDO.vbproj
+		SccProjectName1 = \u0022$/devPhoenix/devPhoenix/PhoenixDO\u0022,\u0020HWRAAAAA
+		SccLocalPath1 = ..\\devPhoenix\\PhoenixObjects\\PhoenixDO
+		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug.ActiveCfg = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug.Build.0 = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Release.ActiveCfg = Release|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Release.Build.0 = Release|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug.ActiveCfg = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug.Build.0 = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Release.ActiveCfg = Release|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

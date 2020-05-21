@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.Utility.ThreadPoolWorkItem">
+    <Position X="4" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ThreadPool.cs</FileName>
+      <HashCode>AAAQAAAAAAIAAAAAAAAAAAAAAAAEAAAAAAEAAQAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Utility.DiscoveryThreadPool">
+    <Position X="0.75" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ThreadPool.cs</FileName>
+      <HashCode>AAAQBAAEBAAACFBAgAAgQIgIQAAABAAABAAACACEAAw=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="Discovery.Utility.ThreadErrorHandlerDelegate">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ThreadPool.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Discovery.Utility.ThreadWorkDelegate">
+    <Position X="5.75" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ThreadPool.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+</ClassDiagram>

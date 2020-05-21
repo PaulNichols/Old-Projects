@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="CacheManagerSettings" type="Microsoft.ApplicationBlocks.Cache.CacheConfigurationHandler,Microsoft.ApplicationBlocks.Cache" />
+    <section name="enterpriselibrary.configurationSettings" type="System.Configuration.IgnoreSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </configSections>
+  <appSettings>
+    <!-- Import Details -->
+    <add key="ImportMarketIndicesFilter" value="Market Indices Files (*.ind)|*.ind|All files (*.*)|*.*" />
+    <add key="ImportCurrencyExchangeRateFilter" value="Exchange Rate Files (*.exr)|*.exr|All files (*.*)|*.*" />
+    <add key="ImportHi3PricesFilter" value="Price Files (*.pro)|*.pro|All files (*.*)|*.*" />
+    <add key="ImportHi3AssetFundSplits" value="Asset Market Split Files (*.afs)|*.afs|All files (*.*)|*.*" />
+    <add key="ImportHi3CompositeFundSplits" value="Composite Fund Split Files (*.cmp)|*.cmp|All files (*.*)|*.*" />
+    <add key="ImportHi3CompositePricesFilter" value="Composite Price Files (*.prc)|*.prc|All files (*.*)|*.*" />
+    <add key="ImportHi3LinkedPricesFilter" value="Linked Price Files (*.pri)|*.pri|All files (*.*)|*.*" />
+    <add key="PriceComparisionReportFilter" value="Price Files (*.pro,*.pri,*.prc)|*.pro;*.pri;*.prc|All files (*.*)|*.*" />
+    <add key="ExportSerialiseFileStream" value="c:\temp\UPDExport.bin" />
+    <!-- Switch to display dev style UI or end user style error UI -->
+    <!-- 
+			 "EndUser" for simple message picked up from resource files,
+			 "Dev" for more complex dialog, 
+			 "All" to display both dev & end user dialogs (all as opposed to both to allow for future types 
+		-->
+    <add key="ErrorUIStyle" value="dev" />
+    <!-- Connection Strings Section -->
+    <add key="ActiveConnectionString" value="Prod" />
+    <!-- Development Server -->
+    <add key="Dev" value="Persist Security Info=False;User ID=upd;Password=upd;Data Source=SQLSRV95;Initial Catalog=UPD;Application Name=UPD Administration;" />
+    <!-- Pre Production Server -->
+    <add key="Prod" value="Persist Security Info=False;User ID=upd;Password=upd;Data Source=SQLSRV94;Initial Catalog=UPD_PROD;Application Name=UPD Administration;" />
+    <!-- UAT on 94 -->
+    <add key="UAT94" value="Persist Security Info=False;User ID=upd;Password=upd;Data Source=SQLSRV94;Initial Catalog=UPD_UAT;Application Name=UPD Administration;" />
+    <!-- Live Server -->
+    <add key="Live" value="Persist Security Info=False;Integrated Security=SSPI;Data Source=SSF001;Initial Catalog=UPD;Application Name=UPD Administration;" />
+    <!-- SAT Servers -->
+    <!-- ENQ Server -->
+    <add key="ENQ" value="Persist Security Info=False;User ID=upd;Password=upd;Data Source=SQLSRV94;Initial Catalog=UPD_ENQ;Application Name=UPD Administration;" />
+    <!-- VAL Server -->
+    <add key="VAL" value="Persist Security Info=False;User ID=upd;Password=upd;Data Source=SQLSRV94;Initial Catalog=UPD_VAL;Application Name=UPD Administration;" />
+    <!-- DIST Server -->
+    <add key="DIST" value="Persist Security Info=False;Integrated Security=SSPI;Data Source=SQLSRV94;Initial Catalog=UPD_DIST;Application Name=UPD Administration;" />
+    <!-- ***************************** -->
+  </appSettings>
+  <CacheManagerSettings>
+    <!-- DATA PROTECTION SETTINGS
+		Use DataProtectionInfo to set the assembly and class which implement
+		the dataprotection interfaces for the cache.
+		-->
+    <DataProtectionInfo AssemblyName="Microsoft.ApplicationBlocks.Cache" ClassName="Microsoft.ApplicationBlocks.Cache.DataProtection.DefaultDataProtection" ValidationKey="Oci44OQ9C3xAdQ3/BMHpksPfzeTezLkXen/ahQ8T7nVk/KMgAFnssQJr00KUNhRso+MpLVwAinGep6i14X9M+A==" Validation="SHA1" />
+    <StorageInfo AssemblyName="Microsoft.ApplicationBlocks.Cache" ClassName="Microsoft.ApplicationBlocks.Cache.Storages.SingletonCacheStorage" Mode="InProc" Validated="true" Encrypted="false" />
+    <!-- 
+			MmfDictionarySize - It is the size (in bytes) of the dictionary object (in MmfCacheStorage) used to store the references of cache items. 
+		-->
+    <!-- SCAVENGING SETTINGS
+			Use the ScavengingAlgorithm to set a class that will be executed when
+			scavenging is performed.
+		-->
+    <ScavengingInfo AssemblyName="Microsoft.ApplicationBlocks.Cache" ClassName="Microsoft.ApplicationBlocks.Cache.Scavenging.LruScavenging" MemoryPollingPeriod="60" UtilizationForScavenging="80" MaximumSize="5" />
+    <!-- EXPIRATION SETTINGS
+			Use the ExpirationCheckInterval to change the interval to check for 
+			cache items expiration. The value attribute is represented in seconds.
+		-->
+    <ExpirationInfo Interval="1" />
+  </CacheManagerSettings>
+  <enterpriselibrary.configurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" applicationName="Application" xmlns="http://www.microsoft.com/practices/enterpriselibrary/08-31-2004/configuration">
+  <configurationSections>
+    <configurationSection name="test" encrypt="false">
+      <dataTransformer xsi:nil="true" />
+    </configurationSection>
+    <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="dataConfiguration" encrypt="false">
+      <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="dataConfiguration.config" />
+      <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+        <includeTypes />
+      </dataTransformer>
+    </configurationSection>
+  </configurationSections>
+  <keyAlgorithmStorageProvider xsi:type="FileKeyAlgorithmPairStorageProviderData" name="File Key Algorithm Storage Provider" path="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI\1.key">
+    <dpapiSettings xsi:nil="true" />
+  </keyAlgorithmStorageProvider>
+  <includeTypes />
+</enterpriselibrary.configurationSettings>
+</configuration>

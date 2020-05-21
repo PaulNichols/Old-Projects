@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DFA_Offline_SummaryData" targetNamespace="http://tempuri.org/DFA_Offline_SummaryData.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/DFA_Offline_SummaryData.xsd"
+	xmlns:mstns="http://tempuri.org/DFA_Offline_SummaryData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DFA_Offline_SummaryData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BODFA_OffLine_Summary">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RowId" type="xs:long" minOccurs="0" />
+							<xs:element name="ChequeNum" type="xs:string" minOccurs="0" />
+							<xs:element name="ChequeAmt" type="xs:string" minOccurs="0" />
+							<xs:element name="CashNum" type="xs:string" minOccurs="0" />
+							<xs:element name="CashAmt" type="xs:string" minOccurs="0" />
+							<xs:element name="PostalOrderNum" type="xs:string" minOccurs="0" />
+							<xs:element name="PostalOrderAmt" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalPaymentsNum" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalPaymentsAmt" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalAdjustmentsNum" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalAdjustmentsAmt" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalRefundsNum" type="xs:string" minOccurs="0" />
+							<xs:element name="TotalRefundsAmt" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

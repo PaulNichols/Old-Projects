@@ -1,0 +1,642 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			SqlDataAdapter_Customers - Members overview
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			SqlDataAdapter_Customers
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			To read an overview on this class, click <a href="HowTo_SqlDataAdapterClass_Customers.htm">here</a>.<br>
+			To see an example on how to call this class in Visual C# .NET, click <a href="HowTo_SqlDataAdapterClass_Customers_CS.htm">here</a>.<br>
+			To see an example on how to call this class in Visual Basic .NET, click <a href="HowTo_SqlDataAdapterClass_Customers_VB.htm">here</a>.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#CommandTimeOut">CommandTimeOut</a>
+					</li>
+					<li>
+						<a href="#ConnectionString">ConnectionString</a>
+					</li>
+					<li>
+						<a href="#ConnectionType">ConnectionType</a>
+					</li>
+					<li>
+						<a href="#FillDataSet1">FillDataSet</a>
+					</li>
+					<li>
+						<a href="#SqlDataAdapter">SqlDataAdapter</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Constructor"></a>
+		<div class="MainTitle">
+			Public Constructors
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+							&nbsp;&nbsp;&nbsp;ByVal connectionString As String<br>
+							)<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+						public SqlDataAdapter_Customers(<br>
+							&nbsp;&nbsp;&nbsp;string connectionString<br>
+							);<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>Bob.SqlDataAdapters.SqlDataAdapter_Customers</b> class.<br>
+				<br>
+				<b>connectionString</b>: A valid connection string to the database.<br>
+				<br>
+				If a blank connection string is supplied, the class will search for:<br>
+				<br>
+				&nbsp;&nbsp;First an entry in the configuration file:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="Bob ConnectionString" value="..." /&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+				<br>
+				&nbsp;&nbsp;Then the following registry entry:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\Bob<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+				<br>
+				A helper function that can build this connection string for you is available. See the <a href="../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+				<br>
+				To see the documentation on how to build this connection string,
+				<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+			</div>
+		</blockquote>
+		<br>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+							&nbsp;&nbsp;&nbsp;ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+							)<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+						public SqlDataAdapter_Customers(<br>
+							&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlConnection sqlConnection<br>
+							);<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>LongSqlDataAdapterName</b> class.<br>
+				<br>
+				<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. It can be opened or not. 
+				If it is not opened, it will be opened when used then closed again after the job is done.<br>
+			</div>
+		</blockquote>
+		<br>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New(<br>
+							&nbsp;&nbsp;&nbsp;ByVal sqlTransaction As System.Data.SqlClient.SqlTransaction<br>
+							)<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+						public SqlDataAdapter_Customers(<br>
+							&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlTransaction sqlTransaction<br>
+							);<br>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>Bob.SqlDataAdapters.SqlDataAdapter_Customers</b> class.<br>
+				<br>
+				<b>sqlTransaction</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqltransactionclasstopic.htm">SqlTransaction</a> object.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Property
+		</div>
+		<blockquote>
+			<a name="SqlDataAdapter"></a>
+			<div class="Highlight">
+				SqlDataAdapter
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlDataAdapter As System.Data.SqlClient.SqlDataAdapter<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public System.Data.SqlClient.SqlDataAdapter SqlDataAdapter { get; };<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the underlying System.Data.SqlClient.SqlDataAdapter object.
+				</div>
+			</blockquote>
+			<a name="ConnectionType"></a>
+			<div class="Highlight">
+				ConnectionType
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionType As Bob.DataClasses.ConnectionType<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public Bob.DataClasses.ConnectionType ConnectionType { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the current type of connection that is going or has been used
+					against the Sql Server database. It can be:
+					<ul>
+						<li>
+							Bob.DataClasses.ConnectionType.None
+						</li>
+						<li>
+							Bob.DataClasses.ConnectionType.ConnectionString
+						</li>
+						<li>
+							Bob.DataClasses.ConnectionType.SqlConnection
+						</li>
+						<li>
+							Bob.DataClasses.ConnectionType.SqlTransaction
+						</li>
+					</ul>
+					This property is set when you instanciate this class depending on the
+					overloaded version of the <a href="#Constructor">constructor</a> you have used.<br>
+				</div>
+			</blockquote>
+			<a name="ConnectionString"></a>
+			<div class="Highlight">
+				ConnectionString
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionString As String<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string ConnectionString { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the connection string to be used against the 
+					SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>Bob.DataClasses.ConnectionType.ConnectionString</b>.
+				</div>
+			</blockquote>
+			<a name="SqlConnection"></a>
+			<div class="Highlight">
+				SqlConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlConnection As System.Data.SqlClient.SqlConnection<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlConnection SqlConnection { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used
+					against the SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>Bob.DataClasses.ConnectionType.SqlConnection</b>.
+				</div>
+			</blockquote>
+			<a name="SqlTransaction"></a>
+			<div class="Highlight">
+				SqlTransaction
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlTransaction As System.Data.SqlClient.SqlTransaction<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlTransaction SqlTransaction { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">SqlTransaction</a> to be used
+					against the SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>Bob.DataClasses.ConnectionType.SqlTransaction</b>.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Method
+		</div>
+		<blockquote>
+			<a name="FillDataSet1"></a>
+			<div class="Highlight">
+				FillDataSet
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal FK_TitleId As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByRef dataSet As System.Data.DataSet<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlTypes.SqlInt32 FK_TitleId<br>
+								&nbsp;&nbsp;&nbsp;, ref System.Data.DataSet dataSet<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Configures the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqldataadapterclasstopic.htm">SqlDataAdapter</a> and populates the supplied <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatadatasetclasstopic.htm">DataSet</a>
+					object. This version will retrieve all the records of the table.<br>
+					<br>
+					By default, the populated table name in the DataSet will
+					be: <b>Customers</b>.<br>
+					<br>
+					<br>
+					<b>FK_TitleId</b>: Value for this foreign key.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Foriegn Key for Contact Title</b><br>
+					<br>
+					<b>dataSet</b>: DataSet to be populated by the SqlDataAdapter.<br>
+				</div>
+			</blockquote>
+			<br>
+			<a name="FillDataSet2"></a>
+			<div class="Highlight">
+				FillDataSet
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal FK_TitleId As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByRef dataSet As System.Data.DataSet<br>
+								&nbsp;&nbsp;&nbsp;, ByVal startRecord As Integer<br>
+								&nbsp;&nbsp;&nbsp;, ByVal maxRecords As Integer<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlTypes.SqlInt32 FK_TitleId<br>
+								&nbsp;&nbsp;&nbsp;, ref System.Data.DataSet dataSet<br>
+								&nbsp;&nbsp;&nbsp;, int startRecord<br>
+								&nbsp;&nbsp;&nbsp;, int maxRecords<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Configures the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqldataadapterclasstopic.htm">SqlDataAdapter</a> and populates the supplied <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatadatasetclasstopic.htm">DataSet</a>
+					object. With this version, you can specify a number and a starting position
+					for the records you want to retrieve back.<br>
+					<br>
+					By default, the populated table name in the DataSet will
+					be: <b>Customers</b>.<br>
+					<br>
+					<br>
+					<b>FK_TitleId</b>: Value for this foreign key.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Foriegn Key for Contact Title</b><br>
+					<br>
+					<b>dataSet</b>: DataSet to be populated by the SqlDataAdapter.<br>
+					<br>
+					<b>startRecord</b>: The zero-based record number to start with.<br>
+					<br>
+					<b>maxRecords</b>: The maximum number of records to retrieve.<br>
+				</div>
+			</blockquote>
+			<br>
+			<a name="FillDataSet3"></a>
+			<div class="Highlight">
+				FillDataSet
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal FK_TitleId As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByRef dataSet As System.Data.DataSet<br>
+								&nbsp;&nbsp;&nbsp;, ByVal tableName As String<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlTypes.SqlInt32 FK_TitleId<br>
+								&nbsp;&nbsp;&nbsp;, ref System.Data.DataSet dataSet<br>
+								&nbsp;&nbsp;&nbsp;, string tableName<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Configures the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqldataadapterclasstopic.htm">SqlDataAdapter</a> and populates the supplied <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatadatasetclasstopic.htm">DataSet</a>
+					object. This version will retrieve all the records of the table.<br>
+					<br>
+					<br>
+					<b>FK_TitleId</b>: Value for this foreign key.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Foriegn Key for Contact Title</b><br>
+					<br>
+					<b>dataSet</b>: DataSet to be populated by the SqlDataAdapter.<br>
+					<br>
+					<b>tableName</b>: Table name to be use in the DataSet.<br>
+				</div>
+			</blockquote>
+			<br>
+			<a name="FillDataSet4"></a>
+			<div class="Highlight">
+				FillDataSet
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal FK_TitleId As System.Data.SqlTypes.SqlInt32<br>
+								&nbsp;&nbsp;&nbsp;, ByRef dataSet As System.Data.DataSet<br>
+								&nbsp;&nbsp;&nbsp;, ByVal tableName As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal startRecord As Integer<br>
+								&nbsp;&nbsp;&nbsp;, ByVal maxRecords As Integer<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void FillDataSet(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlTypes.SqlInt32 FK_TitleId<br>
+								&nbsp;&nbsp;&nbsp;, ref System.Data.DataSet dataSet<br>
+								&nbsp;&nbsp;&nbsp;, string tableName<br>
+								&nbsp;&nbsp;&nbsp;, int startRecord<br>
+								&nbsp;&nbsp;&nbsp;, int maxRecords<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Configures the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqldataadapterclasstopic.htm">SqlDataAdapter</a> and populates the supplied <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatadatasetclasstopic.htm">DataSet</a>
+					object. With this version, you can specify a number and a starting
+					position for the records you want to retrieve back.<br>
+					<br>
+					<br>
+					<b>FK_TitleId</b>: Value for this foreign key.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Foriegn Key for Contact Title</b><br>
+					<br>
+					<b>dataSet</b>: DataSet to be populated by the SqlDataAdapter.<br>
+					<br>
+					<b>tableName</b>: Table name to be use in the DataSet.<br>
+					<br>
+					<b>startRecord</b>: The zero-based record number to start with.<br>
+					<br>
+					<b>maxRecords</b>: The maximum number of records to retrieve.<br>				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

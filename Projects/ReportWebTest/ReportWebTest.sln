@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\ReportWebTest\", "..\..\WebSites\ReportWebTest\", "{815D4200-7488-4E64-A226-9A59E7220021}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/ReportWebTest"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\ReportWebTest\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ReportWebTest\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ReportWebTest"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\ReportWebTest\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ReportWebTest\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "11160"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{815D4200-7488-4E64-A226-9A59E7220021}.Debug|.NET.ActiveCfg = Debug|.NET
+		{815D4200-7488-4E64-A226-9A59E7220021}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

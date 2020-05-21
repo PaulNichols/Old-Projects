@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HBOS.FS.AMP.UPD.Security</name>
+    </assembly>
+    <members>
+        <member name="T:HBOS.FS.AMP.UPD.Security.UPDIdentity">
+            <summary>
+            Represents a user context for the AMP UPD application.
+            </summary>
+            <remarks>
+            An identity class which represents the user on whose behalf the code is running.
+            The identity class only checks the database for a user's ability to access the UPD application,
+            it does not check if a user can access information for a particular company, this role is filled
+            by the <see cref="T:HBOS.FS.AMP.UPD.Security.UPDPrincipal"/> class.
+            </remarks>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Security.UPDIdentity.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HBOS.FS.AMP.UPD.Security.UPDIdentity"/> class.
+            </summary>
+            <param name="connectionString">A SQL connection string to the authentication database.</param>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDIdentity.SqlConnectionString">
+            <summary>
+            Gets the SQL Connection String used to authenicate a user against the security table.
+            </summary>
+            <value>
+            The SQL Connection String used to authenicate a user against the security table.
+            </value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDIdentity.IsAuthenticated">
+            <summary>
+            Gets a value indicating whether the user has been authenticated.
+            </summary>
+            <value>true if the user was has been authenticated; otherwise, false.</value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDIdentity.Name">
+            <summary>
+            Gets the user's name
+            </summary>
+            <value>The name of the user on whose behalf the code is being run.</value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDIdentity.AuthenticationType">
+            <summary>
+            Gets the type of authentication used to identify the user.
+            </summary>
+            <value>The type of authentication used to identify the user.</value>
+            <remarks>For the AMP authorisation classes the AuthenicationType will be "AMP Auth".</remarks>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.Security.UPDPrincipal">
+            <summary>
+            Allows code to check the group membership of an AMP user.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Security.UPDPrincipal.#ctor(HBOS.FS.AMP.UPD.Security.UPDIdentity,System.String,System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            Initializes a new instance of the UPDPrincipal class from an <see cref="T:HBOS.FS.AMP.UPD.Security.UPDIdentity"/> object.
+            </summary>
+            <param name="identity">The <see cref="T:HBOS.FS.AMP.UPD.Security.UPDIdentity"/> object from which to construct the new instance of <see cref="T:HBOS.FS.AMP.UPD.Security.UPDPrincipal"/></param>
+            <param name="companyId">The company for which permissions should be loaded.</param>
+            <param name="currentCompanyValuationDateAndTime"></param>
+            <param name="nextCompanyValuationDateAndTime"></param>
+            <param name="previousCompanyValuationDateAndTime"></param>
+            <example>
+            The following example creates a new <see cref="T:HBOS.FS.AMP.UPD.Security.UPDPrincipal"/> object from a new <see cref="T:HBOS.FS.AMP.UPD.Security.UPDIdentity"/> object.
+            <code lang="c#">
+            AMPIdentity ampIdentity = new AMPIdentity();
+            AMPPrincipal ampPrincipal = new AMPPrincipal(ampIdentity. "Leeds");
+            </code>
+            The following example can be used to set the principle of the application domain so any resultant
+            threads will inherit the same principle.
+            <code lang="c#">
+            AppDomain.CurrentDomain.SetThreadPrincipal(new UPDPrincipal(new UPDIdentity(dbConnection)));
+            </code>
+            To attach the principle to the current thread use
+            <code lang="c#">
+            Thread.CurrentPrincipal = New UPDPrincipal(new UPDIdentity(dbConnection)))
+            </code>
+            Once the principle is set, a permission demand or link demand can evaluate the properties of the 
+            security principal for the execution context.
+            <code lang="c#">
+            [SecurityPermission(SecurityAction.Demand, Role="Administrator")]
+            public MyMethod()
+            {
+                ....
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.Security.UPDPrincipal.IsInRole(System.String)">
+            <summary>
+            Determines whether the current principal belongs to a specified AMP user group.
+            </summary>
+            <param name="role">The name of the AMP program role for which to check membership.</param>
+            <returns>true if the current principal is a member of the specified role; otherwise, false.</returns>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDPrincipal.CompanyCode">
+            <summary>
+            Gets the company code the current principle was retrieved for.
+            </summary>
+            <value>The company code the current principle was retrieved for.</value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDPrincipal.Identity">
+            <summary>
+            Gets the identity of the current principal.
+            </summary>
+            <value>The <see cref="T:HBOS.FS.AMP.UPD.Security.UPDIdentity"/> object of the current principal</value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDPrincipal.CurrentCompanyValuationDateAndTime">
+            <summary>
+            Gets the current company valuation date and time.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDPrincipal.NextCompanyValuationDateAndTime">
+            <summary>
+            Gets the next company valuation date and time.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:HBOS.FS.AMP.UPD.Security.UPDPrincipal.PreviousCompanyValuationDateAndTime">
+            <summary>
+            Gets the previous company valuation date and time.
+            </summary>
+            <value></value>
+        </member>
+    </members>
+</doc>

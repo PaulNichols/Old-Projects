@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBOS.FS.AMP.Utilities", "HBOS.FS.AMP.Utilities\HBOS.FS.AMP.Utilities.csproj", "{B72F81ED-D55A-4F98-9497-D6298CE0EF26}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {063BF6DE-18BE-4C54-AFC8-3FCDA1AB5F52}
+		SccProjectUniqueName1 = HBOS.FS.AMP.Utilities\\HBOS.FS.AMP.Utilities.csproj
+		SccLocalPath1 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = HBOS.FS.AMP.Utilities\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B72F81ED-D55A-4F98-9497-D6298CE0EF26}.Debug.ActiveCfg = Debug|.NET
+		{B72F81ED-D55A-4F98-9497-D6298CE0EF26}.Debug.Build.0 = Debug|.NET
+		{B72F81ED-D55A-4F98-9497-D6298CE0EF26}.Release.ActiveCfg = Release|.NET
+		{B72F81ED-D55A-4F98-9497-D6298CE0EF26}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+    
+    Version 1.3
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">1.3</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1">this is my long string</data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        [base64 mime encoded serialized .NET Framework object]
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        [base64 mime encoded string representing a byte array form of the .NET Framework object]
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used forserialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="DatabaseErrorTitle">
+        <value>Database Error</value>
+    </data>
+    <data name="LoginFailedNotAssociatedWithTrustedConnection">
+        <value>Your user account is not allowed access to the UPD database server.</value>
+    </data>
+    <data name="SqlServerDoesNotExist">
+        <value>The UPD database server cannot be found on the network.</value>
+    </data>
+    <data name="NoDatabaseAccess">
+        <value>You do not have access to the UPD database.</value>
+    </data>
+    <data name="LoginFailed">
+        <value>You do not have access to the UPD database server.</value>
+    </data>
+    <data name="DuplicateAssetFundTitle">
+        <value>The new asset fund cannot be saved.</value>
+    </data>
+    <data name="CurrentValuationPointChanged">
+        <value>The current valuation point has changed from {0:D} to {1:D}
+</value>
+    </data>
+    <data name="DuplicateAssetFundBody">
+        <value>The asset fund ID you specified already exists in the system.
+Please change the asset fund ID to be unique.</value>
+    </data>
+    <data name="AssetFundChangedBody">
+        <value>The asset fund cannot be saved as the database has changed since it was loaded.
+Please check the current asset fund details and make your changes again if necessary.</value>
+    </data>
+    <data name="NewFileImported">
+        <value>A new {0} file has been imported by {1} at {2:t}
+</value>
+    </data>
+    <data name="AssetFundUnableToSaveTitle">
+        <value>The asset fund cannot be saved.</value>
+    </data>
+    <data name="AssetFundChangedGUI">
+        <value>Asset fund splits were edited by {0} at {1:t}</value>
+    </data>
+    <data name="DatabaseError">
+        <value>A problem has occurred attempting to access the UPD database.</value>
+    </data>
+    <data name="SystemError">
+        <value>A system error has occurred.</value>
+    </data>
+    <data name="UnexpectedErrorTitle">
+        <value>Unexpected error.</value>
+    </data>
+    <data name="UserUnableToSaveTitle">
+        <value>The user cannot be saved.</value>
+    </data>
+    <data name="DuplicateUserTitle">
+        <value>The new user cannot be saved.</value>
+    </data>
+    <data name="DuplicateUserBody">
+        <value>The user logon id you have specified already exists in the system.</value>
+    </data>
+    <data name="UserChangedBody">
+        <value>The user details cannot be saved as the database has been updated since the user information was loaded.</value>
+    </data>
+    <data name="FundGroupLoadTitle">
+        <value>Failed to load fund group</value>
+    </data>
+    <data name="AssetFundGroupLoadBody">
+        <value>Cannot load the asset fund groups for your company</value>
+    </data>
+    <data name="GenericDuplicateTitle">
+        <value>The new {0} cannot be saved.</value>
+    </data>
+    <data name="GenericDuplicateBody">
+        <value>The {0} you specified already exists in the system.</value>
+    </data>
+    <data name="GenericDuplicateParmlessTitle">
+        <value>The new item cannot be saved.</value>
+    </data>
+    <data name="GenericUnableToSaveTitle">
+        <value>The {0} cannot be saved.</value>
+    </data>
+    <data name="GenericUnableToSaveParmlessTitle">
+        <value>The item cannot be saved.</value>
+    </data>
+    <data name="GenericChangedBody">
+        <value>The {0} cannot be saved as the database has changed since it was loaded.</value>
+    </data>
+    <data name="GenericUnableToLoadTitle">
+        <value>Failed to load {0}</value>
+    </data>
+    <data name="GenericUnableToLoadBody">
+        <value>Cannot load the {0} for your company.</value>
+    </data>
+    <data name="UnableToExportTitle">
+        <value>Export failure</value>
+    </data>
+    <data name="UnableToExportBody">
+        <value>Failed to export {0}.</value>
+    </data>
+    <data name="UnableToSaveAssetFundFactor">
+        <value>The {0} data could not be saved for all funds due to other factor data being missing. Please visit the fund static data maintenance screen in order to address this.  </value>
+    </data>
+    <data name="CannotAuthoriseComposite">
+        <value>Cannot authorise this composite price series as one or more of its linked funds have not been authorised</value>
+    </data>
+    <data name="CompositeAuthorisationTitle">
+        <value>Cannot Authorise Composite Price Series</value>
+    </data>
+    <data name="CannotUnauthoriseReleasedBody">
+        <value>This fund has already been released and cannot be unauthorised. Go to the Release Fund Prices screen and Un-Release the fund then come back here and Un-Authorise it.</value>
+    </data>
+    <data name="CannotUnauthoriseReleasedTitle">
+        <value>Cannot Unauthorise Released Fund Price</value>
+    </data>
+    <data name="CannotSaveAuthorisationsBody">
+        <value>An unexpected error occured during the second level authorisation process</value>
+    </data>
+    <data name="CannotSaveAuthorisationsTitle">
+        <value>Cannot Second Level Authorise</value>
+    </data>
+    <data name="NothingToPrintBody">
+        <value>There is nothing in the grid to print.</value>
+    </data>
+    <data name="NothingToPrintTitle">
+        <value>Nothing To Print</value>
+    </data>
+    <data name="NothingToExportBody">
+        <value>There is nothing in the grid to export.</value>
+    </data>
+    <data name="NothingToExportTitle">
+        <value>Nothing To Export</value>
+    </data>
+    <data name="UnauthoriseAllSomeReleasedBody">
+        <value>One or more of the funds have been released and cannot be unauthorised. Go to the the Release Fund Prices screen and Un-Release the funds then come back here and Un-Authorise them.</value>
+    </data>
+    <data name="UnauthoriseAllSomeReleasedTitle">
+        <value>Some Funds Not Unauthorised</value>
+    </data>
+    <data name="NothingToUnauthoriseBody">
+        <value>There is nothing in the grid to unauthorise</value>
+    </data>
+    <data name="NothingToUnauthoriseTitle">
+        <value>Nothing To Unauthorise</value>
+    </data>
+    <data name="CannotAuthoriseUnimportedBody">
+        <value>The price for this fund has not yet been imported, therefore it cannot be authorised</value>
+    </data>
+    <data name="CannotAuthoriseUnimportedTitle">
+        <value>Missing Imported Price</value>
+    </data>
+    <data name="CannotAuthoriseUnpredictedBody">
+        <value>There is no predicted price for this fund, therefore it cannot be authorised</value>
+    </data>
+    <data name="CannotAuthoriseUnpredictedTitle">
+        <value>Missing Predicted Price</value>
+    </data>
+    <data name="CannotDistributeUnavailableFundsBody">
+        <value>Cannot flag for distribution when funds are unavailable</value>
+    </data>
+    <data name="CannotDistributeUnavailableFundsTitle">
+        <value>Unavailable Funds</value>
+    </data>
+    <data name="PathDoesNotExistsBody">
+        <value>The folder path entered is invalid</value>
+    </data>
+    <data name="PathDoesNotExistsTitle">
+        <value>Invalid Folder Path</value>
+    </data>
+    <data name="UnableToValidateTitle">
+        <value>Unable To Validate</value>
+    </data>
+    <data name="UnableToValidateBody">
+        <value>It has not been possible to validate the information </value>
+    </data>
+    <data name="UnableToDistributeDataTitle">
+        <value>Cannot Distribute Data</value>
+    </data>
+    <data name="UnableToDistributeDataBody">
+        <value>It has not been possible to distribute the selected files. {0}</value>
+    </data>
+    <data name="ConfirmDeleteBody">
+        <value>Are you sure you want to delete '{0}'?</value>
+    </data>
+    <data name="ConfirmDeleteTitle">
+        <value>Confirm Deletion</value>
+    </data>
+    <data name="UnableToDeleteBody">
+        <value>Unable to delete, failed with an unexpected error.</value>
+    </data>
+    <data name="UnableToDeleteTitle">
+        <value>Unable To Delete</value>
+    </data>
+    <data name="ConfirmImportTitle">
+        <value>This file has already been imported. Do you wish to re-import?</value>
+    </data>
+    <data name="ConfirmImportBody">
+        <value>Confirm Import</value>
+    </data>
+    <data name="UnderlyingDataChanged">
+        <value>Underlying Data Changed</value>
+    </data>
+    <data name="TimeErrorBody">
+        <value>The difference between your desktop time and the server time is greater than 90 minutes.</value>
+    </data>
+    <data name="TimeErrorTitle">
+        <value>Time Error</value>
+    </data>
+    <data name="AuthenticationErrorTitle">
+        <value>Authentication Error</value>
+    </data>
+    <data name="AuthenticationErrorBody">
+        <value>You are not authorised to use this system</value>
+    </data>
+    <data name="PermissionsErrorBody">
+        <value>You are not authorised to use this system</value>
+    </data>
+    <data name="PermissionsErrorTitle">
+        <value>Permissions Error</value>
+    </data>
+    <data name="UnableToSelectAllForAuthBody">
+        <value>Unable to select all funds for authorisation.</value>
+    </data>
+    <data name="InvalidClientVersionBody">
+        <value>The version number of this application does not match the versions allowed by the database. Either upgrade your software or contact support.</value>
+    </data>
+    <data name="InvalidClientVersionTitle">
+        <value>Invalid Client Version Number</value>
+    </data>
+    <data name="UnexpectedErrorBody">
+        <value>An unexpected error has occurred with the following text: "{0}". Please try your operation again. If this error persists please contact support.</value>
+    </data>
+    <data name="LoginFailedNotAssociatedWithTrustedConnectionTitle">
+        <value>User Not Authorised To Use UPD</value>
+    </data>
+    <data name="UnexpectedDatabaseErrorTitle">
+        <value>An Unexpected Database Error Occured</value>
+    </data>
+    <data name="UnexpectedDatabaseErrorBody">
+        <value>An unexpected error has occurred in the database with the following text: "{0}". Please try your operation again. If this error persists please contact support.</value>
+    </data>
+    <data name="DuplicateCurrencyBody">
+        <value>The currency code you have specified already exists in the system.</value>
+    </data>
+    <data name="DuplicateCurrencyTitle">
+        <value>The new currency cannot be saved.</value>
+    </data>
+    <data name="CurrencyChangedBody">
+        <value>The currency details cannot be saved as the database has been updated since the currency information was loaded.</value>
+    </data>
+    <data name="CurrencyUnableToSaveTitle">
+        <value>The currency cannot be saved.</value>
+    </data>
+    <data name="InvalidValueEnteredTitle">
+        <value>Invalid value entered.</value>
+    </data>
+    <data name="InvalidProportionValueEnteredBody">
+        <value>Proportion must be between 0 and 100%.</value>
+    </data>
+    <data name="UnableToConvertEnteredProportionBody">
+        <value>Unable to convert the edited value to a valid proportion.</value>
+    </data>
+    <data name="CircularReferenceBody">
+        <value>Adding this Fund will cause circular reference issues</value>
+    </data>
+    <data name="CircularReferenceTitle">
+        <value>Circular Reference</value>
+    </data>
+</root>

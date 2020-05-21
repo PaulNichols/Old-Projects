@@ -1,0 +1,46 @@
+<ASPMenu xmlns="ASPMenuSchema.xsd">
+<MenuGroup>
+  <MenuItem Caption="Home" Href="http://www.aspmenu.net/default.aspx" StatusBarTip="Home"/>
+  <MenuItem Caption="About ASPMenu" StatusBarTip="About ASPMenu">
+      <MenuGroup>
+		<MenuItem Caption="Company Profile" Href="http://www.aspmenu.net/About/Profile.aspx" StatusBarTip="Company Profile"/>
+		<MenuItem Caption="Clients" Href="http://www.aspmenu.net/About/Clients.aspx" StatusBarTip="Clients"/>
+		<MenuItem Caption="Other Products" Href="http://www.aspmenu.net/About/OtherProducts.aspx" StatusBarTip="Other Products"/>
+      </MenuGroup>
+   </MenuItem>
+
+   <MenuItem Caption="Download" StatusBarTip="Download">
+      <MenuGroup>
+        <MenuItem Caption="Buy Now" Href="http://www.aspmenu.net/Download/Purchase.aspx" StatusBarTip="Buy Now"/>
+        <MenuItem Caption="Free Trial" Href="http://www.aspmenu.net/Download/Trial.aspx" StatusBarTip="Free Trial"/>
+      </MenuGroup>
+    </MenuItem>
+
+   <MenuItem Caption="Support" StatusBarTip="Support">
+      <MenuGroup>
+        <MenuItem Caption="User Manual" Href="http://www.aspmenu.net/Support/UserManual.aspx" StatusBarTip="User Manual"/>
+        <MenuItem Caption="Object Reference" Href="http://www.aspmenu.net/Support/ObjRef/index.html" Target="_blank" StatusBarTip="Object Reference"/>   
+        <MenuItem Caption="FAQ" Href="http://www.aspmenu.net/Support/FAQ.aspx" StatusBarTip="FAQ"/>
+       </MenuGroup>
+   </MenuItem>
+
+   <MenuItem Caption="Demos" Href="http://www.aspmenu.net/Demos/default.aspx" StatusBarTip="Demos">
+      <MenuGroup>
+		<MenuItem Caption="Vertical" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=Vertical" StatusBarTip="Vertical" />
+		<MenuItem Caption="Horizontal" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=Horizontal" StatusBarTip="Horizontal" />
+		<MenuItem Caption="All Horizontal" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=AllHorizontal" StatusBarTip="All Horizontal"/>
+		<MenuItem Caption="Scrolling" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=Scrolling" StatusBarTip="Scrolling"/>
+		<MenuItem Caption="Multiple Menus" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=MultipleMenus" StatusBarTip="Multiple Menus"/>
+		<MenuItem Caption="Permissions" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=Permissions" StatusBarTip="Permissions"/>
+		<MenuItem Caption="Server Side Events" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=ServerSideEvents" StatusBarTip="Server Side Events"/>
+		<MenuItem Caption="Effects" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=Effects" StatusBarTip="Effects"/>
+		<MenuItem Caption="Icons" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=Icons" StatusBarTip="Icons"/>
+		<MenuItem Caption="Open On Click" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=OpenOnClick" StatusBarTip="Open On Click"/>
+		<MenuItem Caption="Rainbow Theme" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=Rainbow" StatusBarTip="Rainbow Theme"/>
+		<MenuItem Caption="SummerTime Theme" Href="http://www.aspmenu.net/Demos/default.aspx?Demo=SummerTime" StatusBarTip="SummerTime Theme"/>
+      </MenuGroup>
+   </MenuItem>
+   <MenuItem Caption="Contact" Href="http://www.aspmenu.net/Contact/default.aspx" StatusBarTip="Contact"/>
+
+</MenuGroup>
+</ASPMenu> 

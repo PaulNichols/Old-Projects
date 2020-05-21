@@ -1,0 +1,474 @@
+using System;
+using System.Collections;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.Factors;
+
+namespace HBOS.FS.AMP.UPD.Types.Funds
+{
+    /// <summary>
+    /// Create a fund based on the specified fund type.
+    /// 
+    /// Factory Definition:
+    /// Define an interface for creating an object, but let subclasses 
+    /// decide which class to instantiate. Factory Method lets a class 
+    /// defer instantiation to subclasses. 
+    /// </summary>
+    public class FundFactory
+    {
+		#region Fund type
+
+		/// <summary>
+		/// The type of fund to be created.
+		/// </summary>
+		public enum FundType : int
+		{
+			/// <summary>
+			/// LinkedFund
+			/// </summary>
+			Linked = 0,
+
+			/// <summary>
+			/// Open Ended Investment Company (OEIC) fund type
+			/// </summary>
+			Oeic = 1,
+
+			/// <summary>
+			/// Composite Price Series
+			/// </summary>
+			Composite = 2
+		}
+
+		/// <summary>
+		/// Checks the specific type of the abstract class and returns its type as an enum
+		/// </summary>
+		/// <param name="fund"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentException">Invalid asset fund type</exception>
+		public static FundType ResolveFundType (Fund fund)
+		{
+			OEICFund oeic = null;
+			LinkedFund linked = null;
+			Composite comp = null;
+			return ResolveFundType(fund, out oeic, out linked, out comp);
+		}
+
+		/// <summary>
+		/// Encapsulates the type checking of the abstract base class.
+		/// Throws exception if not of any type. 
+		/// Returns two null references and the reference to the specific object type, as well as the return enum type
+		/// </summary>
+		/// <param name="fund"></param>
+		/// <param name="oeic"></param>
+		/// <param name="linked"></param>
+		/// <param name="comp"></param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentException">Invalid fund type</exception>
+		public static FundType ResolveFundType (Fund fund, out OEICFund oeic, out LinkedFund linked, out Composite comp)
+		{
+			//this section is to save casting multiple times later
+			oeic = fund as OEICFund;
+			comp = null;
+			linked = null;
+
+			FundType retType;
+
+			if (oeic == null)
+			{
+				linked = fund as LinkedFund;
+				if (linked == null)
+				{
+					comp = fund as Composite;
+					if (comp == null)
+					{
+						throw new ArgumentException ("fund not of a valid fund type");
+					}
+					else
+					{
+						retType = FundType.Composite;
+					}
+				}
+				else
+				{
+					retType = FundType.Linked;
+				}
+			}
+			else
+			{
+				retType = FundType.Oeic;
+			}
+			return retType;
+		}
+
+		#endregion
+
+		#region Fund creation
+
+		/// <summary>
+		/// Creates a new fund depending on type
+		/// </summary>
+		/// <param name="fundType"></param>
+		/// <param name="hiPortfolioCode"></param>
+		/// <param name="fullName"></param>
+		/// <param name="shortName"></param>
+		/// <param name="classOrSeriesCode"></param>
+		/// <param name="useMidPriceAsBidPrice"></param>
+		/// <param name="onHiPortfolio3"></param>
+		/// <param name="isDualPrice"></param>
+		/// <param name="parentAssetFund"></param>
+		/// <param name="assetMovementTolerance"></param>
+		/// <param name="upperTolerance"></param>
+		/// <param name="lowerTolerance"></param>
+		/// <param name="priceIncreaseOnly"></param>
+		/// <param name="tolerancesID"></param>
+		/// <param name="price"></param>
+		/// <param name="priceSet"></param>
+		/// <param name="importedFundPriceID"></param>
+		/// <param name="valuationBasisEffect"></param>
+		/// <param name="previousPrice"></param>
+		/// <param name="previousPriceSet"></param>
+		/// <param name="fundStatus"></param>
+		/// <param name="statusChangedTime"></param>
+		/// <param name="statusChangedTimeSet"></param>
+		/// <param name="usePredictedPrice"></param>
+		/// <param name="authorisedPriceTimestamp"></param>
+		/// <param name="timestamp"></param>
+		/// <param name="isLife"></param>
+		/// <param name="isExDividend"></param>
+		/// <param name="parentAssetFundID"></param>
+		/// <param name="companyCode"></param>
+		/// <param name="securityCode"></param>
+		/// <param name="factors"></param>
+		/// <param name="isBenchmarkable"></param>
+		/// <returns></returns>
+		public static Fund CreateFund (FundType fundType, string hiPortfolioCode, string fullName, string shortName, string classOrSeriesCode,
+			bool useMidPriceAsBidPrice, bool onHiPortfolio3, bool isDualPrice, AssetFund parentAssetFund,
+			decimal assetMovementTolerance, decimal upperTolerance, decimal lowerTolerance,
+			bool priceIncreaseOnly, Int64 tolerancesID, decimal price, bool priceSet,
+			long importedFundPriceID, decimal valuationBasisEffect, 
+			decimal previousPrice, bool previousPriceSet,
+			Fund.FundStatusType fundStatus, DateTime statusChangedTime, bool statusChangedTimeSet,
+			bool usePredictedPrice, 
+			byte[] authorisedPriceTimestamp,  byte[] timestamp,
+			bool isLife, bool isExDividend, string parentAssetFundID, string companyCode, string securityCode, FactorCollection factors, bool isBenchmarkable)
+		{
+
+			switch (fundType)
+			{
+				case FundType.Composite:
+					return CreateComposite (hiPortfolioCode, fullName, shortName, classOrSeriesCode,useMidPriceAsBidPrice,onHiPortfolio3,isDualPrice,
+						parentAssetFund, assetMovementTolerance, upperTolerance, lowerTolerance, priceIncreaseOnly, tolerancesID, price, priceSet,
+						importedFundPriceID, valuationBasisEffect, previousPrice, previousPriceSet, fundStatus, statusChangedTime, statusChangedTimeSet,
+						usePredictedPrice, authorisedPriceTimestamp, timestamp, isLife, parentAssetFundID, companyCode, securityCode, factors, isBenchmarkable);
+				case FundType.Linked:
+					return CreateLinkedFund (hiPortfolioCode, fullName, shortName, classOrSeriesCode,useMidPriceAsBidPrice,onHiPortfolio3,isDualPrice,
+						parentAssetFund, assetMovementTolerance, upperTolerance, lowerTolerance, priceIncreaseOnly, tolerancesID, price, priceSet,
+						importedFundPriceID, valuationBasisEffect, previousPrice, previousPriceSet, fundStatus, statusChangedTime, statusChangedTimeSet,
+						usePredictedPrice, authorisedPriceTimestamp, timestamp, isLife, parentAssetFundID, companyCode, securityCode, factors, isBenchmarkable);
+				case FundType.Oeic:
+					return CreateOEICFund (hiPortfolioCode, fullName, shortName, classOrSeriesCode, onHiPortfolio3,
+						parentAssetFund, assetMovementTolerance, upperTolerance, lowerTolerance, priceIncreaseOnly, tolerancesID, price, priceSet,
+						importedFundPriceID, valuationBasisEffect, previousPrice, previousPriceSet, fundStatus, statusChangedTime, statusChangedTimeSet,
+						usePredictedPrice, authorisedPriceTimestamp, timestamp, isExDividend, parentAssetFundID, companyCode, securityCode, factors, isBenchmarkable);
+				default:
+					throw new ApplicationException ("unknown fund type");
+			}
+		}
+
+		/// <summary>
+		/// Creates a new linked fund
+		/// </summary>
+		/// <param name="hiPortfolioCode"></param>
+		/// <param name="fullName"></param>
+		/// <param name="shortName"></param>
+		/// <param name="classOrSeriesCode"></param>
+		/// <param name="useMidPriceAsBidPrice"></param>
+		/// <param name="onHiPortfolio3"></param>
+		/// <param name="isDualPrice"></param>
+		/// <param name="parentAssetFund"></param>
+		/// <param name="assetMovementTolerance"></param>
+		/// <param name="upperTolerance"></param>
+		/// <param name="lowerTolerance"></param>
+		/// <param name="priceIncreaseOnly"></param>
+		/// <param name="tolerancesID"></param>
+		/// <param name="price"></param>
+		/// <param name="priceSet"></param>
+		/// <param name="importedFundPriceID"></param>
+		/// <param name="valuationBasisEffect"></param>
+		/// <param name="previousPrice"></param>
+		/// <param name="previousPriceSet"></param>
+		/// <param name="fundStatus"></param>
+		/// <param name="statusChangedTime"></param>
+		/// <param name="statusChangedTimeSet"></param>
+		/// <param name="usePredictedPrice"></param>
+		/// <param name="authorisedPriceTimestamp"></param>
+		/// <param name="timestamp"></param>
+		/// <param name="isLife"></param>
+		/// <param name="parentAssetFundID"></param>
+		/// <param name="companyCode"></param>
+		/// <param name="securityCode"></param>
+		/// <param name="factors"></param>
+		/// <param name="isBenchmarkable"></param>
+		/// <returns></returns>
+		private static LinkedFund CreateLinkedFund (string hiPortfolioCode, string fullName, string shortName, string classOrSeriesCode,
+			bool useMidPriceAsBidPrice, bool onHiPortfolio3, bool isDualPrice, AssetFund parentAssetFund,
+			decimal assetMovementTolerance, decimal upperTolerance, decimal lowerTolerance,
+			bool priceIncreaseOnly, Int64 tolerancesID, decimal price, bool priceSet,
+			long importedFundPriceID, decimal valuationBasisEffect, 
+			decimal previousPrice, bool previousPriceSet,
+			Fund.FundStatusType fundStatus, DateTime statusChangedTime, bool statusChangedTimeSet,
+			bool usePredictedPrice, 
+			byte[] authorisedPriceTimestamp,  byte[] timestamp,
+			bool isLife, string parentAssetFundID, string companyCode, string securityCode, FactorCollection factors, bool isBenchmarkable)
+		{
+			
+			return new LinkedFund(hiPortfolioCode, fullName, shortName, classOrSeriesCode, useMidPriceAsBidPrice,
+				onHiPortfolio3, isDualPrice, parentAssetFund, assetMovementTolerance, upperTolerance, lowerTolerance,
+				priceIncreaseOnly, tolerancesID, price, priceSet, importedFundPriceID, valuationBasisEffect, previousPrice, previousPriceSet,
+				fundStatus, statusChangedTime, statusChangedTimeSet, usePredictedPrice, authorisedPriceTimestamp, timestamp, isLife, parentAssetFundID,
+				companyCode, securityCode, factors, isBenchmarkable);
+		}
+
+		/// <summary>
+		/// Creates a collection of factors for a composite
+		/// </summary>
+		/// <param name="hiPortfolioCode"></param>
+		/// <param name="fullName"></param>
+		/// <param name="shortName"></param>
+		/// <param name="classOrSeriesCode"></param>
+		/// <param name="useMidPriceAsBidPrice"></param>
+		/// <param name="onHiPortfolio3"></param>
+		/// <param name="isDualPrice"></param>
+		/// <param name="parentAssetFund"></param>
+		/// <param name="assetMovementTolerance"></param>
+		/// <param name="upperTolerance"></param>
+		/// <param name="lowerTolerance"></param>
+		/// <param name="priceIncreaseOnly"></param>
+		/// <param name="tolerancesID"></param>
+		/// <param name="price"></param>
+		/// <param name="priceSet"></param>
+		/// <param name="importedFundPriceID"></param>
+		/// <param name="valuationBasisEffect"></param>
+		/// <param name="previousPrice"></param>
+		/// <param name="previousPriceSet"></param>
+		/// <param name="fundStatus"></param>
+		/// <param name="statusChangedTime"></param>
+		/// <param name="statusChangedTimeSet"></param>
+		/// <param name="usePredictedPrice"></param>
+		/// <param name="authorisedPriceTimestamp"></param>
+		/// <param name="timestamp"></param>
+		/// <param name="isLife"></param>
+		/// <param name="parentAssetFundID"></param>
+		/// <param name="companyCode"></param>
+		/// <param name="securityCode"></param>
+		/// <param name="factors"></param>
+		/// <param name="isBenchmarkable"></param>
+		/// <returns></returns>
+		private static Composite CreateComposite (string hiPortfolioCode, string fullName, string shortName, string classOrSeriesCode,
+			bool useMidPriceAsBidPrice, bool onHiPortfolio3, bool isDualPrice, AssetFund parentAssetFund,
+			decimal assetMovementTolerance, decimal upperTolerance, decimal lowerTolerance,
+			bool priceIncreaseOnly, Int64 tolerancesID, decimal price, bool priceSet,
+			long importedFundPriceID, decimal valuationBasisEffect, 
+			decimal previousPrice, bool previousPriceSet,
+			Fund.FundStatusType fundStatus, DateTime statusChangedTime, bool statusChangedTimeSet,
+			bool usePredictedPrice, 
+			byte[] authorisedPriceTimestamp,  byte[] timestamp,
+			bool isLife, string parentAssetFundID, string companyCode, string securityCode, FactorCollection factors, bool isBenchmarkable)
+		{
+			
+			return new Composite(hiPortfolioCode, fullName, shortName, classOrSeriesCode, useMidPriceAsBidPrice,
+				onHiPortfolio3, isDualPrice, parentAssetFund, assetMovementTolerance, upperTolerance, lowerTolerance,
+				priceIncreaseOnly, tolerancesID, price, priceSet, importedFundPriceID, valuationBasisEffect, previousPrice, previousPriceSet,
+				fundStatus, statusChangedTime, statusChangedTimeSet, usePredictedPrice, authorisedPriceTimestamp, timestamp, isLife, parentAssetFundID,
+				companyCode, securityCode, factors, isBenchmarkable);
+		}
+
+		/// <summary>
+		/// Creates a new oeic fund
+		/// </summary>
+		/// <param name="hiPortfolioCode"></param>
+		/// <param name="fullName"></param>
+		/// <param name="shortName"></param>
+		/// <param name="classOrSeriesCode"></param>
+		/// <param name="onHiPortfolio3"></param>
+		/// <param name="parentAssetFund"></param>
+		/// <param name="assetMovementTolerance"></param>
+		/// <param name="upperTolerance"></param>
+		/// <param name="lowerTolerance"></param>
+		/// <param name="priceIncreaseOnly"></param>
+		/// <param name="tolerancesID"></param>
+		/// <param name="price"></param>
+		/// <param name="priceSet"></param>
+		/// <param name="importedFundPriceID"></param>
+		/// <param name="valuationBasisEffect"></param>
+		/// <param name="previousPrice"></param>
+		/// <param name="previousPriceSet"></param>
+		/// <param name="fundStatus"></param>
+		/// <param name="statusChangedTime"></param>
+		/// <param name="statusChangedTimeSet"></param>
+		/// <param name="usePredictedPrice"></param>
+		/// <param name="authorisedPriceTimestamp"></param>
+		/// <param name="timestamp"></param>
+		/// <param name="isExDividend"></param>
+		/// <param name="parentAssetFundID"></param>
+		/// <param name="companyCode"></param>
+		/// <param name="securityCode"></param>
+		/// <param name="factors"></param>
+		/// <param name="isBenchmarkable"></param>
+		/// <returns></returns>
+		private static OEICFund CreateOEICFund (string hiPortfolioCode, string fullName, string shortName, string classOrSeriesCode,
+			bool onHiPortfolio3, AssetFund parentAssetFund,
+			decimal assetMovementTolerance, decimal upperTolerance, decimal lowerTolerance,
+			bool priceIncreaseOnly, Int64 tolerancesID, decimal price, bool priceSet,
+			long importedFundPriceID, decimal valuationBasisEffect, 
+			decimal previousPrice, bool previousPriceSet,
+			Fund.FundStatusType fundStatus, DateTime statusChangedTime, bool statusChangedTimeSet,
+			bool usePredictedPrice, 
+			byte[] authorisedPriceTimestamp,  byte[] timestamp,
+			bool isExDividend, string parentAssetFundID, string companyCode, string securityCode, FactorCollection factors, bool isBenchmarkable)
+		{
+			
+			return new OEICFund(hiPortfolioCode, fullName, shortName, classOrSeriesCode, 
+				onHiPortfolio3, parentAssetFund, assetMovementTolerance, upperTolerance, lowerTolerance,
+				priceIncreaseOnly, tolerancesID, price, priceSet, importedFundPriceID, valuationBasisEffect, previousPrice, previousPriceSet,
+				fundStatus, statusChangedTime, statusChangedTimeSet, usePredictedPrice, authorisedPriceTimestamp, timestamp, isExDividend, parentAssetFundID,
+				companyCode, securityCode, factors, isBenchmarkable);
+		}
+
+		#endregion
+
+		#region Factor creation
+
+		/// <summary>
+		/// Creates new factors collection depending on type
+		/// </summary>
+		/// <param name="fundType"></param>
+		/// <param name="xFactor"></param>
+		/// <param name="xFactorID"></param>
+		/// <param name="xFactorEffectiveDate"></param>
+		/// <param name="xFactorDescription"></param>
+		/// <param name="xFactorTimestamp"></param>
+		/// <param name="valuationBasisEffect"></param>
+		/// <param name="taxProvision"></param>
+		/// <param name="taxProvisionEstimateID"></param>
+		/// <param name="taxProvisionEffectiveDate"></param>
+		/// <param name="taxProvisionEstimateTimestamp"></param>
+		/// <param name="revaluationFactor"></param>
+		/// <param name="revaluationFactorID"></param>
+		/// <param name="revaluationEffectiveDate"></param>
+		/// <param name="revaluationEndDate"></param>
+		/// <param name="revaluationFactorTimestamp"></param>
+		/// <param name="scalingFactor"></param>
+		/// <param name="scalingFactorID"></param>
+		/// <param name="scalingFactorEffectiveDate"></param>
+		/// <param name="scalingFactorTimestamp"></param>
+		/// <param name="holidays"></param>
+		/// <param name="currentValuationDate"></param>
+		/// <returns></returns>
+		public static FactorCollection CreateFundFactors(FundType fundType, decimal xFactor, int xFactorID, DateTime xFactorEffectiveDate, string xFactorDescription, byte[] xFactorTimestamp,
+			decimal valuationBasisEffect,
+			decimal taxProvision, int taxProvisionEstimateID, DateTime taxProvisionEffectiveDate, byte[] taxProvisionEstimateTimestamp,
+			decimal revaluationFactor, int revaluationFactorID, DateTime revaluationEffectiveDate, DateTime revaluationEndDate, byte[] revaluationFactorTimestamp,
+			decimal scalingFactor, int scalingFactorID, DateTime scalingFactorEffectiveDate, byte[] scalingFactorTimestamp,
+			Hashtable holidays,DateTime currentValuationDate)
+		{
+			FactorCollection factors = new FactorCollection();
+
+			factors.Add (CreateTaxProvisionEstimate(taxProvision, taxProvisionEstimateID,  taxProvisionEstimateTimestamp));
+			factors.Add (CreateRevaluationFactor(revaluationFactor, revaluationFactorID,  revaluationEndDate, revaluationFactorTimestamp,currentValuationDate));
+			factors.Add (CreateScalingFactor(scalingFactor, scalingFactorID,  scalingFactorTimestamp)); 
+			factors.Add (CreateXFactor (xFactor, xFactorID,  xFactorDescription, xFactorTimestamp));
+			factors.Add (new ValuationBasis (valuationBasisEffect)); 
+			factors.Holidays = holidays;
+
+			return factors;		
+		}
+
+		#endregion
+
+		#region External system ids
+
+		/// <summary>
+		/// Creates a rehydrated <see cref="ExternalSystemID"/> entity
+		/// </summary>
+		/// <param name="hiPortfolioCode">Hi portfolio code.</param>
+		/// <param name="systemID">System ID.</param>
+		/// <param name="systemName">Name of the system.</param>
+		/// <param name="fundCode">Fund code.</param>
+		/// <param name="timeStamp">Time stamp.</param>
+		/// <returns>The rehydrated ExternalSystemID</returns>
+		public static ExternalSystemID CreateSystem(string hiPortfolioCode, int systemID, 
+			string systemName, string fundCode, byte[] timeStamp)
+		{
+			return new ExternalSystemID(hiPortfolioCode, systemID, systemName, fundCode, timeStamp);
+		}
+
+		/// <summary>
+		/// Creates a new <see cref="ExternalSystemID"/> entity
+		/// </summary>
+		/// <returns>A new External System identifier</returns>
+		public static ExternalSystemID CreateSystem()
+		{
+			return new ExternalSystemID();
+		}
+		
+		#endregion
+
+		#region Private methods
+
+		/// <summary>
+		/// Creates a tax provision estimate
+		/// </summary>
+		/// <param name="taxProvision"></param>
+		/// <param name="taxProvisionEstimateID"></param>
+		/// <param name="taxProvisionEstimateTimestamp"></param>
+		/// <returns></returns>
+		private static TaxProvisionEstimate CreateTaxProvisionEstimate (decimal taxProvision, int taxProvisionEstimateID,  
+			  byte[] taxProvisionEstimateTimestamp)
+		{
+			return new TaxProvisionEstimate (taxProvision, taxProvisionEstimateID,  taxProvisionEstimateTimestamp);
+		}
+
+		/// <summary>B
+		/// Creates a revaluation factor
+		/// </summary>
+		/// <param name="revaluationFactor"></param>
+		/// <param name="revaluationFactorID"></param>
+		/// <param name="revaluationEndDate"></param>
+		/// <param name="revaluationFactorTimestamp"></param>
+		/// <param name="currentValuationDate"></param>
+		/// <returns></returns>
+		private static RevaluationFactor CreateRevaluationFactor (decimal revaluationFactor, int revaluationFactorID,  			
+			DateTime revaluationEndDate, byte[] revaluationFactorTimestamp,DateTime currentValuationDate)
+		{
+			return new RevaluationFactor (revaluationFactor, revaluationFactorID,  revaluationEndDate, revaluationFactorTimestamp,currentValuationDate);
+		}
+
+		/// <summary>
+		/// Creates a scaling factor
+		/// </summary>
+		/// <param name="scalingFactor"></param>
+		/// <param name="scalingFactorID"></param>
+		/// <param name="scalingFactorTimestamp"></param>
+		/// <returns></returns>
+		private static ScalingFactor CreateScalingFactor(decimal scalingFactor, int scalingFactorID, byte[] scalingFactorTimestamp)
+		{
+			return new ScalingFactor (scalingFactor, scalingFactorID,  scalingFactorTimestamp);
+		}
+ 
+		/// <summary>
+		/// Creates an xFactor
+		/// </summary>
+		/// <param name="xFactor"></param>
+		/// <param name="xFactorID"></param>
+		/// <param name="xFactorDescription"></param>
+		/// <param name="xFactorTimestamp"></param>
+		/// <returns></returns>
+		private static XFactor CreateXFactor (decimal xFactor, int xFactorID,  string xFactorDescription, byte[] xFactorTimestamp)
+		{
+			return new XFactor (xFactor, xFactorID,  xFactorDescription, xFactorTimestamp);
+		}
+
+		#endregion
+
+    }
+}

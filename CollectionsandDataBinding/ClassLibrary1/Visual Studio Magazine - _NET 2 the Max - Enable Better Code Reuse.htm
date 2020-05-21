@@ -1,0 +1,629 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.ftponline.com/vsm/2005_02/magazine/columns/net2themax/ -->
+<HTML><HEAD><TITLE>Visual Studio Magazine - .NET 2 the Max - Enable Better Code Reuse</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><!-- Start META Tags -->
+<META content=.NET name=Category>
+<META content="Visual Basic .NET, C#, SQL Server/ADO.NET/Data Access" 
+name=Subcategory>
+<META 
+content=".NET, Visual Basic .NET, C#, SQL Server/ADO.NET/Data Access, VB.NET, reflection, code reuse, IComparable, IComparer, Francesco Balena" 
+name=Keywords>
+<META 
+content=".NET Reflection can simplify many aspects of development by helping you create more generic and highly reusable code." 
+name=DESCRIPTION>
+<META content="Francesco Balena" name=Author>
+<META content="February 2005" name=Issue><!-- End META Tags --><LINK 
+href="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/global.css" 
+type=text/css rel=stylesheet><!-- Start Page Number Function --><!-----------------------------------------------------------------
+      This function builds the numbering scheme for multipage features.
+      It takes 2 parameters:
+      
+      currentPage  the page you are currently on (will not have a link)
+      totalPages   the total number of pages in this feature
+
+      
+      Usage Example:
+      
+      <script language="javascript">
+        buildPageNumbers(7, 10)
+      </script>
+    ------------------------------------------------------------------>
+<STYLE type=text/css>A.buildpagenumbersunderline {
+	FONT: 10pt arial; COLOR: #003399; TEXT-DECORATION: underline
+}
+.buildpagenumbersbold {
+	FONT: bold 10pt arial; COLOR: #000000; TEXT-DECORATION: none
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+<!--
+
+function SymError()
+{
+  return true;
+}
+
+window.onerror = SymError;
+
+var SymRealWinOpen = window.open;
+
+function SymWinOpen(url, name, attributes)
+{
+  return (new Object());
+}
+
+window.open = SymWinOpen;
+
+//-->
+</SCRIPT>
+
+<SCRIPT language=javascript>
+      function buildPageNumbers(currentPage, totalPages)
+      {
+        <!-- If there is a previous page, display it -->
+        if(currentPage!=1)
+        { 
+          if (currentPage!=2)
+          {
+            document.write("<a href='page" + (currentPage-1) + ".aspx' class='buildpagenumbersunderline'>Previous</a> ")
+          }
+          else
+          {
+            document.write("<a href='default.aspx' class='buildpagenumbersunderline'>Previous</a> ")
+          }
+        }
+
+        <!-- Loop through the pages and build links -->
+        for(i=1; i<=totalPages; i++)
+        {
+          if (i==currentPage)
+          {
+            document.write("<span class='buildpagenumbersbold'>" + i + "</span> ")
+          }
+          else if (i!=1)
+          {
+            document.write("<a href='page" + i + ".aspx' class='buildpagenumbersunderline'>" + i + "</a> ")
+          }
+          else
+          {
+            document.write("<a href='default.aspx' class='buildpagenumbersunderline'>" + i + "</a> ")
+          }
+        } 
+
+        <!-- If there is a next page, display it -->
+        if(currentPage!=totalPages)
+        { 
+          document.write("<a href='page" + (currentPage+1) + ".aspx' class='buildpagenumbersunderline'>Next</a>")
+        }
+      }      
+    </SCRIPT>
+<!-- End Page Number Function -->
+<SCRIPT language=JavaScript>
+<!-- hide JavaScript
+function openWindowRes(){
+    popupWin = window.open('popup1.aspx', 'Figure1', 'scrollbars,resizable,width=512,height=410')
+}
+
+function openWindow1(){  
+   popupWin = window.open('figure1.aspx', 'figure1', 'scrollbars,resizable,width=640,height=480')
+}
+function openWindow2(){  
+   popupWin = window.open('listing1.aspx', 'listing1', 'scrollbars,resizable,width=640,height=480')
+}
+function openWindow3(){  
+   popupWin = window.open('listing2.aspx', 'listing2', 'scrollbars,resizable,width=640,height=480')
+}
+function openWindow4(){  
+   popupWin = window.open('listing3.aspx', 'listing3', 'scrollbars,resizable,width=640,height=480')
+}
+function openWindow5(){  
+   popupWin = window.open('listing4.aspx', 'listing4', 'scrollbars,resizable,width=640,height=480')
+}
+function openWindow6(){  
+   popupWin = window.open('sidebar1.aspx', 'sidebar1', 'scrollbars,resizable,width=640,height=480')
+}
+// done hiding -->
+</SCRIPT>
+<!-- Page_Load Event --><!-- End_Page Event -->
+<META content="MSHTML 6.00.2800.1505" name=GENERATOR></HEAD>
+<BODY leftMargin=0 topMargin=0 marginheight="0" marginwidth="0"><A name=top></A>
+<FORM id=ftp_form name=ftp_form action=Default.aspx method=post><INPUT 
+type=hidden 
+value=dDwtNTkxNjY2ODY2O3Q8O2w8aTw1Pjs+O2w8dDw7bDxpPDA+O2k8Mj47PjtsPHQ8O2w8aTw1PjtpPDc+O2k8OT47aTwxMT47aTwxMz47aTwxNT47PjtsPHQ8cDxwPGw8VmlzaWJsZTs+O2w8bzx0Pjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDs+O2w8XDxhIGhyZWY9Ii92c20iXD5cPGltZyBzcmM9Ii92c20vaW1hZ2VzL2xvZ29fdnNtLmdpZiIgYWx0PSJWaXN1YWwgU3R1ZGlvIE1hZ2F6aW5lIiBib3JkZXI9IjAiXD5cPC9hXD47Pj47Pjs7Pjt0PHA8cDxsPFZpc2libGU7PjtsPG88dD47Pj47PjtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8cGF1bF9uaWNob2xzQG50bHdvcmxkLmNvbTs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxOYXZpZ2F0ZVVybDs+O2w8L21lbWJlcnMvZGVmYXVsdC5hc3B4P1NJRD0mUmV0dXJuVXJsPTs+Pjs+Ozs+Oz4+O3Q8cDxwPGw8VmlzaWJsZTs+O2w8bzx0Pjs+Pjs+Ozs+O3Q8cDxwPGw8VmlzaWJsZTs+O2w8bzx0Pjs+Pjs+Ozs+Oz4+O3Q8cDxwPGw8VmlzaWJsZTs+O2w8bzx0Pjs+Pjs+Ozs+Oz4+Oz4+Oz5FAgOFlgV4AfI73P08ek2YRLAlrw== 
+name=__VIEWSTATE> <!-- Start Outer Table -->
+<TABLE cellSpacing=0 cellPadding=0 width=760 border=0>
+  <TBODY>
+  <TR>
+    <TD><!-- Start Header Table --><!-- Start Title Table -->
+      <TABLE class=header cellSpacing=0 cellPadding=0 width=760 border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle><!-- Start Banner Ads -->
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <DIV id=Header1_AdLeaderBoard></DIV>
+                <TD vAlign=top width=728 height=90>
+                  <TABLE cellSpacing=0 cellPadding=0 width=728 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD></TD></TR></TBODY></TABLE></TD>
+                <DIV></DIV></TR></TBODY></TABLE><!-- End Banner Ads --></TD></TR></TBODY></TABLE>
+      <TABLE class=header cellSpacing=0 cellPadding=0 width=760 border=0>
+        <TBODY>
+        <TR vAlign=center>
+          <TD width=244 height=57><SPAN id=Header1_lblLogo><A 
+            href="http://www.ftponline.com/vsm"><IMG 
+            alt="Visual Studio Magazine" 
+            src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/logo_vsm.gif" 
+            border=0></A></SPAN></TD>
+          <TD class=header align=middle width=250><SPAN 
+            id=Header1_lblMember><B>Welcome <SPAN 
+            id=Header1_lblEmail>paul_nichols@ntlworld.com</SPAN></B><BR><A 
+            class=header href="http://www.ftponline.com/members/edit.aspx"><FONT 
+            color=#ffffff>My Account</FONT></A> | <A class=header 
+            href="http://www.ftponline.com/members/login.aspx?Action=Logout"><FONT 
+            color=#ffffff>Logout</FONT></A> </SPAN></TD>
+          <TD><SPAN id=Header1_Search>
+            <TABLE cellSpacing=0 cellPadding=0 width=270 border=0>
+              <TBODY>
+              <TR>
+                <TD class=header vAlign=bottom align=right><INPUT 
+                  id=Header1_locator_code_h type=hidden 
+                  name=Header1:locator_code_h><INPUT id=Header1_find_h 
+                  type=hidden name=Header1:find_h><INPUT id=Header1_section_h 
+                  type=hidden name=Header1:section_h> Locator+ Code: <INPUT 
+                  id=Header1_locator_code 
+                  onkeydown="if(event.keyCode==13){document.location='/javapro/jumpcode.asp?locator_code='+document.getElementById('Header1_locator_code').value+''; return false;}" 
+                  onblur="document.getElementById('Header1_locator_code_h').value=document.getElementById('Header1_locator_code').value;" 
+                  style="WIDTH: 84px; HEIGHT: 22px" name=Header1:locator_code> <INPUT style="WIDTH: 25px" onclick="document.location='/javapro/jumpcode.asp?locator_code='+document.getElementById('Header1_locator_code').value+'';" type=button value=go><BR><IMG 
+                  height=2 alt="" 
+                  src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/spacer.gif" 
+                  width=1 border=0><BR>Search: <INPUT id=Header1_find 
+                  onkeydown="if(event.keyCode==13){document.location='/search/results.asp?find='+document.getElementById('Header1_find').value+'&amp;lib='+document.getElementById('Header1_section').value+''; return false;}" 
+                  onblur="document.getElementById('Header1_find_h').value=document.getElementById('Header1_find').value;" 
+                  style="WIDTH: 84px; HEIGHT: 22px" name=Header1:find><SELECT 
+                  id=Header1_section 
+                  onkeydown="if(event.keyCode==13){document.location='/search/results.asp?find='+document.getElementById('Header1_find').value+'&amp;lib='+document.getElementById('Header1_section').value+''; return false;}" 
+                  style="WIDTH: 84px" 
+                  onchange="if(document.getElementById('Header1_section').selectedIndex==0){document.getElementById('Header1_section_h').value='*'}else{document.getElementById('Header1_section_h').value=document.getElementById('Header1_section').value;}" 
+                  name=Header1:section> <OPTION value="" selected>All</OPTION> 
+                    <OPTION value=vsm>VSM/VBPJ</OPTION> <OPTION 
+                    value=javapro>Java Pro</OPTION> <OPTION 
+                    value=dotnet>WSSM</OPTION> <OPTION 
+                  value=xml>XML</OPTION></SELECT> <INPUT style="WIDTH: 25px" onclick="document.location='/search/results.asp?find='+document.getElementById('Header1_find').value+'&amp;lib='+document.getElementById('Header1_section').value+'';" type=button value=go> 
+                </TD>
+                <TD><IMG height=1 alt="" 
+                  src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/spacer.gif" 
+                  width=14 
+      border=0></TD></TR></TBODY></TABLE></SPAN></TD></TR></TBODY></TABLE><!-- End Title Table --><!-- Start Tabs Table -->
+      <TABLE borderColor=#c0c0c0 cellSpacing=0 cellPadding=1 width=760 
+      borderColorLight=#808080 border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#eeeeee>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <DIV id=Header1_NavFTPOn></DIV>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=80 
+                bgColor=#eeeeee><A class=tabtext 
+                  href="http://www.ftponline.com/">FTPOnline</A></TD>
+                <DIV></DIV>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=76 
+                bgColor=#eeeeee><A class=tabtext 
+                  onmouseover="popUp('HM_Menu1',event);" 
+                  onmouseout="popDown('HM_Menu1');">Channels</A></TD>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=92 
+                bgColor=#eeeeee><A class=tabtext 
+                  onmouseover="popUp('HM_Menu2',event);" 
+                  onmouseout="popDown('HM_Menu2');" 
+                target=_blank>Conferences</A></TD>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=86 
+                bgColor=#eeeeee><A class=tabtext 
+                  onmouseover="popUp('HM_Menu3',event);" 
+                  onmouseout="popDown('HM_Menu3');" 
+                target=_blank>Resources</A></TD>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=86 
+                bgColor=#eeeeee><A class=tabtext 
+                  onmouseover="popUp('HM_Menu4',event);" 
+                  onmouseout="popDown('HM_Menu4');" target=_blank>Hot 
+                Topics</A></TD>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=96 
+                bgColor=#eeeeee><A class=tabtext 
+                  onmouseover="popUp('HM_Menu5',event);" 
+                  onmouseout="popDown('HM_Menu5');">Partner Sites</A></TD>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=88 
+                bgColor=#eeeeee><A class=tabtext 
+                  onmouseover="popUp('HM_Menu6',event);" 
+                  onmouseout="popDown('HM_Menu6');" 
+                target=_blank>Magazines</A></TD>
+                <TD onmouseover="mOvr(this,'#c0c0c0');" 
+                onmouseout="mOut(this,'#eeeeee');" align=middle width=86 
+                bgColor=#eeeeee><A class=tabtext 
+                  onmouseover="popUp('HM_Menu7',event);" 
+                  onmouseout="popDown('HM_Menu7');" target=_blank>About 
+                FTP</A></TD>
+                <TD align=middle width=70 bgColor=#eeeeee><A 
+                  href="http://www.ftponline.com/rss"><IMG alt="RSS 2.0 Feed" 
+                  hspace=3 
+                  src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/xml.gif" 
+                  border=0></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- ##### nav script file #### -->
+      <SCRIPT language=JavaScript type=text/javascript>
+if(window.event + "" == "undefined") event = null;
+function HM_f_PopUp(){return false};
+function HM_f_PopDown(){return false};
+popUp = HM_f_PopUp;
+popDown = HM_f_PopDown;
+</SCRIPT>
+
+      <SCRIPT language=JavaScript type=text/javascript>
+function mOvr(src,clrOver) { 
+if (!src.contains(event.fromElement)) { src.style.cursor = 'hand'; src.bgColor = clrOver; }
+}
+
+function mOut(src,clrIn) { 
+if (!src.contains(event.toElement)) { src.style.cursor = 'default'; src.bgColor = clrIn; }
+} 
+</SCRIPT>
+
+      <SCRIPT language=JavaScript1.2 type=text/javascript>
+HM_PG_FontFamily = "Arial, sans-serif";
+HM_PG_FontSize = 8;
+HM_PG_FontBold = 1;
+HM_PG_FontItalic = 0;
+HM_PG_FontColor = "#000000";
+HM_PG_FontColorOver = "#ffffff";
+HM_PG_BGColor = "#eeeeee";
+HM_PG_BGColorOver = "#000000";
+HM_PG_ItemPadding = 3;
+
+HM_PG_BorderWidth = 1;
+HM_PG_BorderColor = "#000000";
+HM_PG_BorderStyle = "solid";
+HM_PG_SeparatorSize = 1;
+HM_PG_SeparatorColor = "#ffffff";
+</SCRIPT>
+
+      <SCRIPT language=JavaScript>
+function mOvr(src,clrOver) { 
+if (!src.contains(event.fromElement)) { src.style.cursor = 'hand'; src.bgColor = clrOver; }
+}
+
+function mOut(src,clrIn) { 
+if (!src.contains(event.toElement)) { src.style.cursor = 'default'; src.bgColor = clrIn; }
+} 
+</SCRIPT>
+
+      <SCRIPT language=JavaScript1.2 
+      src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/HM_Loader.js" 
+      type=text/javascript></SCRIPT>
+<!-- End Header Table --><!-- Start Big Table Containing Leftnav, Main Content -->
+      <TABLE cellSpacing=0 cellPadding=0 width=760 border=0>
+        <TBODY>
+        <TR><!-- Start Divider -->
+          <TD width=1 bgColor=#cccccc><IMG height=1 
+            src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/divider.gif" 
+            width=1 border=0></TD>
+          <TD width=7><IMG height=1 
+            src="C:\Documents and Settings\Administrator\My Documents\Visual Studio Projects\CollectionsandDataBinding\ClassLibrary1\Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files\spacer(1).gif" 
+            width=7 border=0></TD><!-- End Divider --><!--  Start Main Content Area -->
+          <TD vAlign=top width="100%"><!-- Start Top Subscribe Link --><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD align=right><A class=subscribetop 
+                  href="https://www.neodata.com/ITPS2.cgi?ItemCode=BPRO&amp;OrderType=Reply+Only&amp;iResponse=BPRO.INDEX6&amp;SourceCode=7&amp;KeyCode=T11" 
+                  target=_blank>Free Trial Issue of Visual Studio 
+                  Magazine</A><BR></TD></TR></TBODY></TABLE><BR><!-- End Top Subscribe Link --><!-- Start Main Content Table -->
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top><!-- Start Resource Table --><!-- 1:email 2:pf 3:code 4:resource -->
+                  <SCRIPT language=javascript>
+function OpenSendPage(){
+	window.open('/vsm/sharepage.aspx?url=http://www.ftponline.com/vsm/2005_02/magazine/columns/net2themax/Default.aspx','','width=520,height=400,scrollbars=no,scrolling=no');
+}
+</SCRIPT>
+<!-- Start Resources Table -->
+                  <TABLE cellSpacing=0 cellPadding=0 width=130 align=right 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD colSpan=2><IMG alt="" 
+                        src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/head_articletools.gif" 
+                        width=130 border=0></TD></TR>
+                    <TR>
+                      <TD align=middle>
+                        <TABLE cellSpacing=0 cellPadding=1 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                          <TR>
+                            <TD vAlign=center><A class=footernavlink 
+                              onclick=OpenSendPage(); 
+                              href="http://www.ftponline.com/vsm/2005_02/magazine/columns/net2themax/#"><IMG 
+                              height=12 alt="" 
+                              src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/icon_email_sm.gif" 
+                              width=12 vspace=2 border=0></A></TD>
+                            <TD vAlign=center><FONT face="Arial, Helvetica" 
+                              size=-2 pointsize="8"><A onclick=OpenSendPage(); 
+                              href="http://www.ftponline.com/vsm/2005_02/magazine/columns/net2themax/#">email 
+                              article</A></FONT></TD></TR>
+                          <TR>
+                            <TD vAlign=center><A class=footernavlink 
+                              href="http://www.ftponline.com/vsm/2005_02/magazine/columns/net2themax/default_pf.aspx"><IMG 
+                              height=12 alt="" 
+                              src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/icon_printer_sm.gif" 
+                              width=12 vspace=2 border=0></A></TD>
+                            <TD vAlign=center><FONT face="Arial, Helvetica" 
+                              size=-2 pointsize="8"><A 
+                              href="http://www.ftponline.com/vsm/2005_02/magazine/columns/net2themax/default_pf.aspx">printer 
+                              friendly</A></FONT></TD></TR>
+                          <TR>
+                            <TD vAlign=center><A class=footernavlink 
+                              href="javascript:document.location%20=%20'/vsm/codepage.asp?loccode=' +document.ftp_form.loccode.value;"><IMG 
+                              height=12 alt="" 
+                              src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/icon_code_sm.gif" 
+                              width=12 vspace=2 border=0></A></TD>
+                            <TD vAlign=center><FONT face="Arial, Helvetica" 
+                              size=-2 pointsize="8"><A 
+                              href="javascript:document.location%20=%20'/vsm/jumpcode.asp?locator_code=' +document.ftp_form.loccode.value;">get 
+                              the code</A></FONT></TD></TR>
+                          <TR>
+                            <TD vAlign=center><A class=footernavlink 
+                              href="javascript:openWindowRes();"><IMG height=12 
+                              alt="" 
+                              src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/icon_resource_sm.gif" 
+                              width=12 vspace=2 border=0></A></TD>
+                            <TD vAlign=center><FONT face="Arial, Helvetica" 
+                              size=-2 pointsize="8"><A 
+                              href="javascript:openWindowRes();">more 
+                              resources</A></FONT></TD></TR>
+                          <TR>
+                            <TD align=middle colSpan=2><!-- begin tool sponsor ad tag --><!-- end tools sponsor ad tag --></TD></TR></TBODY></TABLE></TD>
+                      <TD width=1 bgColor=#800000><IMG height=20 alt="" 
+                        hspace=0 
+                        src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/spacer.gif" 
+                        width=1 border=0></TD></TR></TBODY></TABLE><!-- End Resources Table --><!-- End Resource Table --><!-- Start Feature Article --><!-- ADD Content Here -->
+                  <P class=FeatureHead>Enable Better Code Reuse<BR><SPAN 
+                  class=FeatureDek>Reflection in .NET can simplify many aspects 
+                  of development by helping you create more generic and highly 
+                  reusable code. </SPAN><BR><SPAN class=AboutAuthor><EM>by 
+                  Francesco Balena</EM></SPAN> </P><!-- posted date in this format: Posted September 17, 2003 -->
+                  <P><EM>December 6, 2004</EM></P><!-- end posted date -->
+                  <P><EM>Technology Toolbox: VB.NET, C#</EM></P>
+                  <P><SPAN class=DropCap>R</SPAN>eflection is one of the most 
+                  exciting features of the .NET Framework, but many developers 
+                  raise their hands and object when I teach reflection in 
+                  seminars and courses. They say, "Reflection seems great to 
+                  create object browsers, but we don't write that kind of code. 
+                  Why should we bother with reflection in the first place?"</P><!-- start 336x280 ad --><SPAN class=bigbox_left 
+                  id=bigbox>
+                  <TABLE cellSpacing=0 cellPadding=0 width=336 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD align=middle><FONT face="arial, helvetica, verdana" 
+                        color=#808080 size=-2>ADVERTISEMENT</FONT></TD></TR>
+                    <TR>
+                      <TD align=middle>
+                        <TABLE cellSpacing=0 cellPadding=0 width=336 border=0>
+                          <TBODY>
+                          <TR>
+                            <TD></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></SPAN><!-- end 336x280 ad -->
+                  <P>Reflection can do much more than list all the members in a 
+                  .NET type. In fact, reflection is the key to creating highly 
+                  generic and reusable code. Some of the techniques that 
+                  reflection permits today will be available under .NET 2.0 
+                  through generic types, but reflection will continue to provide 
+                  a degree of flexibility that you can't achieve otherwise. 
+                  Indeed, reflection can make a big difference in several cases, 
+                  especially when it comes to making your code more reusable 
+                  (see <A href="javascript:openWindow1();">Figure 1</A>).</P>
+                  <P><SPAN class=SubHead>Build a Universal Comparer 
+                  Type</SPAN><BR>The .NET Framework defines a couple interfaces 
+                  that compare and sort objects: IComparable and IComparer. 
+                  Implementing IComparable is necessary for a type to support 
+                  sorting—indeed, all primitive .NET types implement this 
+                  interface, including strings and numeric types. You implement 
+                  the IComparer interface in auxiliary classes that work as 
+                  comparers for other types, whether you've defined .NET or 
+                  custom types. For example, suppose you're creating a list of 
+                  birthdays for a group of people, and you want to sort dates 
+                  according to the (month, day) pair without taking the year 
+                  into account (see <A href="javascript:openWindow2();">Listing 
+                  1</A>). You use such a class in this manner:</P><PRE class=codesnippet>' dates is an array of Date values
+Array.Sort(dates, New MonthDayComparer)</PRE>
+                  <P>You can expand the MonthDayComparer class to support other 
+                  sort criteria easily; for example, you can sort in descending 
+                  order simply by negating the value that the Compare method 
+                  returns to its callers. Typically, you might pass a comparer's 
+                  constructor an argument that specifies how values should be 
+                  sorted.</P>
+                  <P>Comparer types are useful for more than array sorting; you 
+                  can use them in many other circumstances, such as when 
+                  performing binary searches or when creating SortedList 
+                  objects. The main problem with comparer types is that you must 
+                  define a distinct comparer type for each possible sort 
+                  criterion. Clearly, this requirement can soon become a 
+                  nuisance.</P>
+                  <P>I've implemented far more comparer classes than I'd like to 
+                  admit, so I decided to implement a <EM>definitive comparer 
+                  class</EM>, one that can work with any type of object and any 
+                  combination of properties, as well as one that supports both 
+                  ascending and descending sorts. </P>
+                  <P>It might be helpful to understand how you can use the 
+                  UniversalComparer type before discussing how it works 
+                  internally. Assume you have a Person class that exposes the 
+                  FirstName and LastName string properties. It's a simple matter 
+                  to sort an array of Person objects with the universal 
+                  comparer:</P><PRE class=codesnippet>Dim comp As New UniversalComparer( _
+   GetType(Person), _
+   "LastName, FirstName")
+Array.Sort(arrPersons, comp)</PRE><!-- End Content Here --><!-- If there is only 1 page, delete the function -->
+                  <DIV align=right>
+                  <SCRIPT language=javascript>buildPageNumbers(1, 4)</SCRIPT>
+                  </DIV><BR><BR><BR><A class=underline 
+                  href="http://www.ftponline.com/vsm/2005_02/magazine/columns/net2themax/#top">Back 
+                  to top</A> <BR><BR><!-- End Feature Article --></TD></TR>
+              <TR>
+                <TD width=1 bgColor=#cccccc><IMG height=1 
+                  src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/divider.gif" 
+                  width=1 border=0></TD></TR>
+              <TR>
+                <TD width=7><IMG height=7 
+                  src="C:\Documents and Settings\Administrator\My Documents\Visual Studio Projects\CollectionsandDataBinding\ClassLibrary1\Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files\spacer(1).gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE><!-- End Main Content Table --><!-- Start Subscribe Link --><BR>
+            <DIV class=subscribe><A class=subscribe 
+            href="https://www.neodata.com/ITPS2.cgi?ItemCode=BPRO&amp;OrderType=Reply+Only&amp;iResponse=BPRO.INDEX6&amp;SourceCode=7&amp;KeyCode=B11" 
+            target=_blank>
+            <DIV align=right>Free Trial Issue of Visual Studio 
+            Magazine</A></DIV></DIV><BR><!-- End Subscribe Link --><!-- Start Sponsors --><IMG 
+            height=10 
+            src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/spacer.gif" 
+            width=1><BR><!-- Start Google Ad -->
+            <TABLE cellSpacing=0 cellPadding=0 width=550 align=center>
+              <TBODY>
+              <TR>
+                <TD align=middle>
+                  <SCRIPT type=text/javascript><!--
+			google_ad_client = "pub-1906539797792853";
+			google_ad_width = 468;
+			google_ad_height = 60;
+			google_ad_format = "468x60_as";
+			google_color_border = "336699";
+			google_color_bg = "FFFFFF";
+			google_color_link = "0000FF";
+			google_color_url = "008000";
+			google_color_text = "000000";
+			//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/show_ads.js" 
+                  type=text/javascript>
+			</SCRIPT>
+                </TD></TR></TBODY></TABLE><!-- End Google Ad --><!-- begin ad tag --><!-- end ad tag --><!-- End Sponsors --><BR></TD><!--  End Main Content Area -->
+          <TD vAlign=top align=right><SPAN class=rightad id=rightad>
+            <TABLE cellSpacing=0 cellPadding=0 width=160 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD></TD></TR></TBODY></TABLE><BR><BR><IMG height=1 
+            src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/spacer.gif" 
+            width=1><BR>
+            <HR width=160 color=#000000 SIZE=1>
+            <BR><!-- Start RightAd_Bottom -->
+            <TABLE height=125 cellSpacing=0 cellPadding=0 width=125 align=center 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle>
+                  <TABLE cellSpacing=0 cellPadding=0 width=125 align=center 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+            <DIV>
+            <TABLE height=125 cellSpacing=0 cellPadding=0 width=125 align=center 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle>
+                  <TABLE cellSpacing=0 cellPadding=0 width=125 align=center 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR></DIV>
+            <TABLE height=79 cellSpacing=0 cellPadding=0 width=125 align=center 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle>
+                  <TABLE cellSpacing=0 cellPadding=0 width=125 align=center 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle><A 
+                  href="http://www.ftponline.com/china/"><IMG height=35 alt="" 
+                  src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/chineseicons.gif" 
+                  width=160 border=0></A></TD></TR></TBODY></TABLE><BR><!-- End RightAd_Bottom --></SPAN></TD></TR></TBODY></TABLE><!-- End Big Table Containing Left Nav, Main Content --></TD></TR></TBODY></TABLE><!-- Start Footer Table --><!-- by james 6/30/04 - dead ad --><!-- include virtual="/includes/popup2_1x1_aspnet.inc" -->
+<TABLE cellSpacing=0 cellPadding=0 width=760 border=0>
+  <TBODY>
+  <TR>
+    <TD width=155><IMG height=54 
+      src="Visual Studio Magazine - _NET 2 the Max - Enable Better Code Reuse_files/logo_ftp.gif" 
+      width=129 border=0></TD>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle><!-- Start Footer Navigation Links --><A 
+            class=footernavlink href="http://www.ftponline.com/javapro/">Java 
+            Pro</A> <SPAN class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.ftponline.com/vsm/">Visual Studio Magazine</A> 
+            <SPAN class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.ftponline.com/wss">Windows Server System 
+            Magazine</A><BR><A class=footernavlink 
+            href="http://www.ftponline.com/wss">.NET Magazine</A> <SPAN 
+            class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.ftponline.com/ea/">Enterprise Architect</A> <SPAN 
+            class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.ftponline.com/xmlmag/">XML &amp; Web Services 
+            Magazine</A> <BR><A class=footernavlink 
+            href="http://www.vslive.com/" target=_blank>VSLive!</A> <SPAN 
+            class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.thunderlizard.com/" target=_blank>Thunder Lizard 
+            Events</A> <SPAN class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.ftponline.com/discuss">Discussions</A> <SPAN 
+            class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.ftponline.com/preferences">Newsletters</A> <SPAN 
+            class=divider>|</SPAN> <A class=footernavlink 
+            href="http://www.ftponline.com/default.aspx">FTP Home</A> <BR><!-- End Footer Navigation Links --></TD></TR></TBODY></TABLE></TD>
+    <TD width=167>&nbsp;</TD></TR>
+  <TR>
+    <TD class=footer colSpan=3>© Copyright 2001-2005 <A class=footerbold 
+      href="http://www.ftponline.com/">Fawcette Technical Publications</A> | <A 
+      class=footerbold 
+      href="http://www.ftponline.com/privacy/default.asp">Privacy Policy</A> | 
+      <A class=footerbold 
+      href="http://www.ftponline.com/customerservice.asp">Contact Us</A> 
+  </TD></TR></TBODY></TABLE><!-- End Footer Table --><!-- Begin CodePage Form --><INPUT 
+type=hidden value=vs0502ne name=loccode> <!-- End CodePage Form --></FORM>
+<SCRIPT language=JavaScript>
+<!--
+var SymRealOnLoad;
+var SymRealOnUnload;
+
+function SymOnUnload()
+{
+  window.open = SymWinOpen;
+  if(SymRealOnUnload != null)
+     SymRealOnUnload();
+}
+
+function SymOnLoad()
+{
+  if(SymRealOnLoad != null)
+     SymRealOnLoad();
+  window.open = SymRealWinOpen;
+  SymRealOnUnload = window.onunload;
+  window.onunload = SymOnUnload;
+}
+
+SymRealOnLoad = window.onload;
+window.onload = SymOnLoad;
+
+//-->
+</SCRIPT>
+</BODY></HTML>

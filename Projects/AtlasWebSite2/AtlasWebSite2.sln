@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\AtlasWebSite2\", "..\..\WebSites\AtlasWebSite2\", "{456ABFF7-CB18-42A0-8C3B-FA736F00D83F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/AtlasWebSite2"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\AtlasWebSite2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\AtlasWebSite2\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/AtlasWebSite2"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\AtlasWebSite2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\AtlasWebSite2\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1195"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{456ABFF7-CB18-42A0-8C3B-FA736F00D83F}.Debug|.NET.ActiveCfg = Debug|.NET
+		{456ABFF7-CB18-42A0-8C3B-FA736F00D83F}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

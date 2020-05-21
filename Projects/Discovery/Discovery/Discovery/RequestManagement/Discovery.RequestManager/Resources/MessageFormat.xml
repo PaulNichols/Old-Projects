@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Message>
+  <Header>
+    <SourceSystem Created="14/06/2005 13:00:00" Name="RHG" Type="ERP" Location="192.168.0.1"></SourceSystem>
+    <DestinationSystem Name="MS" Type="MS" Location=""></DestinationSystem>
+    <MessageType>Shipment</MessageType>
+  </Header>
+  <Body>
+    <![CDATA[**Message Data Here**]]>
+  </Body>
+</Message>

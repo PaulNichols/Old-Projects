@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RemittanceAdviceData" targetNamespace="http://tempuri.org/RemittanceAdviceData.xsd"
+	xmlns:mstns="http://tempuri.org/RemittanceAdviceData.xsd" xmlns="http://tempuri.org/RemittanceAdviceData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="RemittanceAdviceData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BORemittanceHeader">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PaymentReference" type="xs:string" minOccurs="0" />
+							<xs:element name="PrintDate" type="xs:string" minOccurs="0" />
+							<xs:element name="IssueAuthority" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicantId" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicantName" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef1" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationType1" type="xs:string" minOccurs="0" />
+							<xs:element name="StandardFee1" type="xs:string" minOccurs="0" />
+							<xs:element name="FeeCharged1" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef2" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationType2" type="xs:string" minOccurs="0" />
+							<xs:element name="StandardFee2" type="xs:string" minOccurs="0" />
+							<xs:element name="FeeCharged2" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef3" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationType3" type="xs:string" minOccurs="0" />
+							<xs:element name="StandardFee3" type="xs:string" minOccurs="0" />
+							<xs:element name="FeeCharged3" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef4" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationType4" type="xs:string" minOccurs="0" />
+							<xs:element name="StandardFee4" type="xs:string" minOccurs="0" />
+							<xs:element name="FeeCharged4" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef5" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationType5" type="xs:string" minOccurs="0" />
+							<xs:element name="StandardFee5" type="xs:string" minOccurs="0" />
+							<xs:element name="FeeCharged5" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef6" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationType6" type="xs:string" minOccurs="0" />
+							<xs:element name="StandardFee6" type="xs:string" minOccurs="0" />
+							<xs:element name="FeeCharged6" type="xs:string" minOccurs="0" />
+							<xs:element name="AmountPayable" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

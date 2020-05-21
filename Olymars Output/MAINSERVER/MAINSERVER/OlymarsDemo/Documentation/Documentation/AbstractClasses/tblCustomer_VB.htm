@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			tblCustomer - Using the Abstract class in Visual Basic .NET
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			tblCustomer
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Using the Abstract class in Visual Basic .NET
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+				<div class="MainBody">
+					This class was generated for the [<a href="tblCustomer.htm">tblCustomer</a>] table.
+					It is located in the
+					<span class="FixedHighlight">
+OlymarsDemo.AbstractClasses
+					</span>
+					namespace.<br>
+					<br>
+					Please note that this class relies on the following underlying classes:
+					<ul>
+						<li>
+							[<a href="../Tables/HowTo_Select/tblCustomer_Overview.htm">OlymarsDemo.DataClasses.Parameters.spS_tblCustomer</a>]
+						</li>
+						<li>
+							[<a href="../Tables/HowTo_Select/tblCustomer_Overview.htm">OlymarsDemo.DataClasses.StoredProcedures.spS_tblCustomer</a>].<br>
+						</li>
+					</ul>
+					<br>
+					To read an overview on this class, click <a href="../AbstractClasses/tblCustomer.htm">here</a>.<br>
+					To see an example on how to call this class in Visual C# .NET, click <a href="../AbstractClasses/tblCustomer_CS.htm">here</a>.
+				</div>
+				<br>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Step by step tutorial
+		</div>
+		<blockquote>
+				<div class="MainTitle">
+					First Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						If you are in Visual Studio.NET, make a reference to the following
+						assembly: "OlymarsDemo.dll".
+					</div>
+					<br>
+					<div class="MainBody">
+						If you are using the compiler, be sure to add a "/r:" switch pointing
+						on the following assembly: "OlymarsDemo.dll".
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Second Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						add thoses directives at the top of your code:
+					</div>
+					<div class="Code">
+						Imports OlymarsDemo.DataClasses<br>
+						Imports Abstracts = OlymarsDemo.AbstractClasses<br>
+						Imports System.Data.SqlTypes
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Third Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Use the Abstract class as described below:
+					</div>
+					<br>
+					<div class="Code">
+						<div class="FixedComment">
+							' Let's build a connection string to the database.<br>
+							' Note: the connection string policy is described <a href="../Stored_Procedures/spS_tblCustomer_CS.htm#Connection">here</a>.<br>
+							' <br>
+							' To see the documentation on how to build this connection string,<br>
+							' <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a>
+						</div>
+						Dim ConnectionString As String = _<br>&nbsp;&nbsp;&nbsp;&nbsp;Information.BuildConnectionString("MAINSERVER\MAINSERVER", "OlymarsDemo")<br>
+						<br>
+						<div class="FixedComment">
+							' Let's instanciate this abstract class and<br>
+							' specify the connection string to use. We could<br>
+							' also use the two others overloaded constructors<br>
+							' that allows us to provide a <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> or<br>
+							' a <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">SqlTransaction</a> instead.
+						</div>
+						Dim NewAC As New _<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;Abstracts.Abstract_tblCustomer(ConnectionString)<br>
+						<br>
+						<div class="FixedComment">
+							' Now, let's refresh a specific record by providing its primary key:
+						</div>
+						<br>
+						<div class="FixedComment">
+							' TODO: provide a specific value here.
+						</div>
+						Dim PK_Cus_LngID As SqlInt32 = ...<br>
+						<br>
+						<div class="FixedComment">
+							' Let's now call the 'Refresh()' method to load this record.<br>
+						</div>
+						If NewAC.Refresh(PK_Cus_LngID) Then<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' The record was found and we can now access all its fields.
+						</div>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Cus_StrLastName.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Cus_StrLastName As SqlString = NewAC.Col_Cus_StrLastName<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Cus_StrFirstName.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Cus_StrFirstName As SqlString = NewAC.Col_Cus_StrFirstName<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Cus_StrEmail.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Cus_StrEmail As SqlString = NewAC.Col_Cus_StrEmail<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+						<br>
+						Else<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' No record with such primary key was found in the database.
+						</div>
+						<br>
+						End If<br>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:57
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

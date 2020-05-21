@@ -1,0 +1,187 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			Bob.DataClasses namespace - Overview
+		</title>
+		<link href="StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			Bob.DataClasses namespace
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				The <b>Bob.DataClasses</b> namespace provides a set of classes that can make
+				all the necessary data access calls to the SQL Server database stored procedures.<br>
+				<br>
+				When you call a stored procedure, you usually perform 4 tasks:
+				<ul>
+					<li>
+						1- Affect the stored procedure parameters before the call
+					</li>
+					<li>
+						2- Call the stored procedure itself
+					</li>
+					<li>
+						3- Retrieve back the stored procedure return value and all the output parameters
+					</li>
+					<li>
+						4- If provided, retrieve back a resultset (or an XML stream)
+					</li>
+				</ul>
+				<br>
+				In order to perform those 4 tasks, two types of classes are provided:
+				<ul>
+					<li>
+						"<b>Parameter</b>" type of class: allows you to perform task #1 and #3
+					</li>
+					<li>
+						"<b>StoredProcedure</b>" type of class: allows you to perform task #2 and #4
+					</li>
+				</ul>
+				<br>
+				When you want to execute a given stored procedure, search for the 2 classes located in the
+				<b>Bob.DataClasses.Parameters</b> and <b>Bob.DataClasses.StoredProcedures</b> which names are the
+				names of your stored procedures. Whit these two types of class, you will able to successfully call
+				any stored procedure of your database.
+			</div>
+		</blockquote>		
+		<hr>
+		<div class="MainTitle">
+			Parameter
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				Before the stored procedure call, this type of classes allows you to supply the following information:
+				<ul>
+					<li>
+						The connection information: how do you want to connect to your database
+					</li>
+					<li>
+						Parameters values: what value do you want to affect to each of your stored procedure parameter
+					</li>
+				</ul>
+				After the stored procedure call, this type of classes allows you to retrieve the following information:
+				<ul>
+					<li>
+						Parameters values: Return Value and all the Output parameters
+					</li>
+					<li>
+						Exception information: information on exceptions that were thrown
+					</li>
+				</ul>
+			</div>
+		</blockquote>		
+		<hr>
+		<div class="MainTitle">
+			StoredProcedure
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				This type of classes allows to <b>actually make the call</b> to your stored procedure.<br>
+				<br>
+				If the stored procedure returns back a resultset (or an XML stream), this class will also
+				give you the ability to get back the data using various ways, such as getting back a <b>System.Data.DataSet</b>,
+				<b>System.Data.SqlClient.SqlDataReader</b>, ...
+			</div>
+		</blockquote>		
+		<hr>
+		<div class="MainTitle">
+			'Bob' database stored procedures
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				You will find next the list of all the 'Bob' stored procedures that you can call using
+				this namespace:<br>
+				(* indicates that the stored procedure was generated)
+			</div>
+			<br>
+			<table border="1" cellpadding="5" cellspacing="0" class="MainBody">
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spD_Customers.htm">spD_Customers</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spD_Title.htm">spD_Title</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spD_xDeleteDatabase.htm">spD_xDeleteDatabase</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spI_Customers.htm">spI_Customers</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spI_Title.htm">spI_Title</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spIU_Customers.htm">spIU_Customers</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spIU_Title.htm">spIU_Title</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_Customers.htm">spS_Customers</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_Customers_Display.htm">spS_Customers_Display</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_Customers_Full.htm">spS_Customers_Full</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_Customers_SelectDisplay.htm">spS_Customers_SelectDisplay</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spS_Title.htm">spS_Title</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spS_Title_Display.htm">spS_Title_Display</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spU_Customers.htm">spU_Customers</a>*
+					</td>
+					<td>
+						<a href="Stored_Procedures/spU_Title.htm">spU_Title</a>*
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="Stored_Procedures/spX_xRebuildIndexes.htm">spX_xRebuildIndexes</a>*
+					</td>
+					<td>
+						&nbsp;
+					</td>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+		</blockquote>	
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.defra.gov.uk/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.defra.gov.uk/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.defra.gov.uk/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="GetVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckPermissionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKnownFacts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="m_ID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKnownFactsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKnownFactsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKnownFactsUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="m_ID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKnownFactsUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKnownFactsUserIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="m_AppID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="m_UserID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserRolesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserWorkGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="m_AppID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="m_UserID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserWorkGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserWorkGroupsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="m_ID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="m_AppID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="m_RoleID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficeAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_Location" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficeAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOfficeAddressResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="m_ID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFullNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSerialisedID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCookie" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSerialisedIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSerialisedIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSerialisedKnownFacts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCookie" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSerialisedKnownFactsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSerialisedKnownFactsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIDFromFullName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIDFromFullNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIDFromFullNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIDFromNameSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_SurName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="m_FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="m_SPNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIDFromNameSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIDFromNameSearchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPermission" />
+  </wsdl:message>
+  <wsdl:message name="CheckPermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKnownFactsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKnownFacts" />
+  </wsdl:message>
+  <wsdl:message name="GetKnownFactsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKnownFactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKnownFactsUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKnownFactsUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetKnownFactsUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKnownFactsUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserWorkGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserWorkGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetUserWorkGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserWorkGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficeAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOfficeAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficeAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOfficeAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFullNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFullName" />
+  </wsdl:message>
+  <wsdl:message name="GetFullNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSerialisedIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSerialisedID" />
+  </wsdl:message>
+  <wsdl:message name="GetSerialisedIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSerialisedIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSerialisedKnownFactsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSerialisedKnownFacts" />
+  </wsdl:message>
+  <wsdl:message name="GetSerialisedKnownFactsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSerialisedKnownFactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIDFromFullNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIDFromFullName" />
+  </wsdl:message>
+  <wsdl:message name="GetIDFromFullNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIDFromFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIDFromNameSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIDFromNameSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetIDFromNameSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIDFromNameSearchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="GetVersion">
+      <wsdl:input message="tns:GetVersionSoapIn" />
+      <wsdl:output message="tns:GetVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPermission">
+      <wsdl:input message="tns:CheckPermissionSoapIn" />
+      <wsdl:output message="tns:CheckPermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKnownFacts">
+      <wsdl:input message="tns:GetKnownFactsSoapIn" />
+      <wsdl:output message="tns:GetKnownFactsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKnownFactsUserID">
+      <wsdl:input message="tns:GetKnownFactsUserIDSoapIn" />
+      <wsdl:output message="tns:GetKnownFactsUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoles">
+      <wsdl:input message="tns:GetUserRolesSoapIn" />
+      <wsdl:output message="tns:GetUserRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWorkGroups">
+      <wsdl:input message="tns:GetUserWorkGroupsSoapIn" />
+      <wsdl:output message="tns:GetUserWorkGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListSoapIn" />
+      <wsdl:output message="tns:GetUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficeAddress">
+      <wsdl:input message="tns:GetOfficeAddressSoapIn" />
+      <wsdl:output message="tns:GetOfficeAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullName">
+      <wsdl:input message="tns:GetFullNameSoapIn" />
+      <wsdl:output message="tns:GetFullNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSerialisedID">
+      <wsdl:input message="tns:GetSerialisedIDSoapIn" />
+      <wsdl:output message="tns:GetSerialisedIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSerialisedKnownFacts">
+      <wsdl:input message="tns:GetSerialisedKnownFactsSoapIn" />
+      <wsdl:output message="tns:GetSerialisedKnownFactsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIDFromFullName">
+      <wsdl:input message="tns:GetIDFromFullNameSoapIn" />
+      <wsdl:output message="tns:GetIDFromFullNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIDFromNameSearch">
+      <wsdl:input message="tns:GetIDFromNameSearchSoapIn" />
+      <wsdl:output message="tns:GetIDFromNameSearchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetVersion">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPermission">
+      <soap:operation soapAction="http://www.defra.gov.uk/CheckPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKnownFacts">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetKnownFacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKnownFactsUserID">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetKnownFactsUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoles">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWorkGroups">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetUserWorkGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficeAddress">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetOfficeAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullName">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSerialisedID">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetSerialisedID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSerialisedKnownFacts">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetSerialisedKnownFacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIDFromFullName">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetIDFromFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIDFromNameSearch">
+      <soap:operation soapAction="http://www.defra.gov.uk/GetIDFromNameSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">DEFRA Single Sign On Web Service. &lt;a href='mailto:admin@defra.gov.uk'&gt;Email&lt;/a&gt;</documentation>
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://devsignonwebservice:10080/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

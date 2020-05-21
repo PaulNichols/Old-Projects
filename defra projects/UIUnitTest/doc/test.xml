@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UIUnitTest</name>
+    </assembly>
+    <members>
+        <member name="T:uk.gov.defra.Phoenix.BOTest.Application.CITESBo">
+            <summary>
+            Summary description for CITESBo.
+            </summary>
+        </member>
+        <member name="M:uk.gov.defra.Phoenix.BOTest.Application.CITESBo.#ctor">
+            <summary>
+            Summary description for CITESBo.
+            </summary>
+        </member>
+        <member name="M:uk.gov.defra.Phoenix.BOTest.Application.CITESBo.Setup">
+            <summary>
+            Summary description for CITESBo.
+            </summary>
+        </member>
+        <member name="M:uk.gov.defra.Phoenix.BOTest.Application.CITESBo.TearDown">
+            <summary>
+            Summary description for CITESBo.
+            </summary>
+        </member>
+        <member name="M:uk.gov.defra.Phoenix.BOTest.Application.CITESBo.TestSearch">
+            <summary>
+            Summary description for CITESBo.
+            </summary>
+        </member>
+        <member name="T:UIUnitTest.SearchCites">
+            <summary>
+            this is a test
+            </summary>
+        </member>
+        <member name="M:UIUnitTest.SearchCites.SetUp">
+            <summary>
+            this is a test
+            </summary>
+            
+        </member>
+        <member name="M:UIUnitTest.SearchCites.TearDown">
+            <summary>
+            this is a test
+            </summary>
+        </member>
+        <member name="M:UIUnitTest.SearchCites.TestNavigation">
+            <summary>
+            this is a test
+            </summary>
+        </member>
+    </members>
+</doc>

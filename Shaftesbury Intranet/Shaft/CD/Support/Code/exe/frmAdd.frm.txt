@@ -1,0 +1,330 @@
+Option Explicit
+Dim oThisContact As Object
+Dim bAllowClose As Boolean
+Dim bEdit As Boolean, bUnSavedData As Boolean
+Dim bViewOnlymode As Boolean
+Dim bcloseclicked  As Boolean
+Dim bFinishLoad As Boolean
+Dim DBID As Long, sOldAbbr As String, sOldFaxAbbr As String
+
+Public Function LoadForm(bViewOnly As Boolean, Optional oContact, Optional frmOwner As Form, Optional aDBID) As Boolean
+Dim sNTlogon As String, i As Long
+
+If IsMissing(aDBID) Then
+    DBID = 0
+Else
+    DBID = aDBID
+End If
+
+    bFinishLoad = False
+    If Not IsMissing(oContact) Then
+        If oContact Is Nothing Then Unload Me: LoadForm = False: Exit Function
+ bViewOnlymode = bViewOnly
+        If bViewOnly Then
+            bEdit = False
+            Caption = "Contact: " & oContact.FileAs
+            On Error Resume Next
+            For i = 0 To 18
+                txtdtls1(i).Locked = True
+            Next i
+            cbotitle.Enabled = False
+            cbosuffix.Enabled = False
+            On Error GoTo 0
+            DTPicker1.Enabled = False
+            cmdadd(0).Enabled = False
+            cmdadd(1).Enabled = False
+            Set oThisContact = oContact
+            FillDtls
+        Else
+            Set oThisContact = oContact
+            FillDtls
+            Caption = "Edit Contact..."
+            bEdit = True
+                On Error Resume Next
+                 
+                sNTlogon = oContact.User1
+               'On Error GoTo 0
+            If sNTlogon = "" Then
+                cmdadd(0).Enabled = False
+                cmdadd(1).Enabled = True
+                cmdadd(1).Caption = "Update Company Contact"
+            Else
+                cmdadd(0).Enabled = True
+                cmdadd(1).Enabled = False
+                cmdadd(0).Caption = "Update Private Contact"
+            End If
+        End If
+    Else
+        bEdit = False
+        Caption = "Add Contact..."
+    End If
+    TabStrip1.Tabs("Buss").Selected = True
+    With cbotitle
+        .AddItem "Dr."
+        .AddItem "Miss"
+        .AddItem "Mr."
+        .AddItem "Mrs."
+        .AddItem "Ms."
+        .AddItem "Prof."
+        .AddItem "Rev"
+        .AddItem "Lady"
+        .AddItem "Lord"
+     End With
+     With cbosuffix
+        .AddItem "I"
+        .AddItem "II"
+        .AddItem "III"
+        .AddItem "Jr."
+        .AddItem "OBE."
+        .AddItem "MBE."
+        .AddItem "Rt.Hon"
+    End With
+    Show vbModeless, frmOwner
+    HighlightTxT Me
+    bFinishLoad = True
+End Function
+
+Private Sub FillDtls()
+
+     
+    With oThisContact
+        txtdtls1(0) = Trim(.Firstname)
+        txtdtls1(3) = Trim(.LastName)
+        DTPicker1 = Trim(.Birthday)
+        txtdtls1(2) = Trim(.BusinessAddress)
+       ' txtdtls1(3) = .BusinessAddressCity
+       On Error Resume Next
+        txtdtls1(4) = Trim(.Salutation)
+        On Error GoTo 0
+        txtdtls1(5) = Trim(.OtherTelephoneNumber)
+        txtdtls1(6) = Trim(.BusinessFaxNumber)
+        On Error Resume Next
+        txtdtls1(8) = Trim(Mid$(.BusinessHomePage, 8))
+        On Error GoTo 0
+        txtdtls1(7) = Trim(.BusinessTelephoneNumber)
+        txtdtls1(1) = Trim(.CompanyName)
+        txtdtls1(16) = Trim(.homeaddress)
+        txtdtls1(13) = Trim(.HomeFaxNumber)
+        txtdtls1(17) = Trim(.MobileTelephoneNumber)
+        txtdtls1(15) = Trim(.FileAs)
+        txtdtls1(9) = Trim(.Email1Address)
+        txtdtls1(10) = Trim(.otherfaxnumber)
+        cbosuffix.Text = Trim(.Suffix)
+        cbotitle.Text = Trim(.Title)
+        txtdtls1(14) = Trim(.HomeTelephoneNumber)
+    End With
+     sOldAbbr = txtdtls1(5)
+     sOldFaxAbbr = txtdtls1(10)
+End Sub
+Private Function Add(atype As ContactType) As Boolean
+    Dim oFindContact As New clsContact
+    Screen.MousePointer = vbHourglass
+  
+              
+    If bEdit Then
+        oContacts.contype = atype
+        If oContacts.UpdateContact(GatherContactDtls, DBID) Then
+            bAllowClose = True
+            Add = True
+        Else
+        
+        End If
+    Else
+        'add move to find here
+        'if adding a company or private contact there adding  then ask if they want to overwrite.if adding a private and someone else has it as private ask if
+        'contact should be promoted and whether these are the details or the existing are the details?
+        oFindContact.InitializeOutlook
+        oFindContact.contype = AllExchange
+        If oFindContact.FindContact(oCurUser.UserName, "fileas", txtdtls1(15)) Then
+            If oFindContact.Count > 0 Then
+                If atype = Exchangeprivate Or atype = Exchangepublic Then
+                    MsgBox "This contact already exists"
+                    Add = False
+                    bDontactivate = True
+                    Screen.MousePointer = vbDefault
+                    Exit Function
+                Else
+
+                End If
+            End If
+        End If
+        Set oFindContact = Nothing
+        If checkdtls Then
+            oContacts.InitializeOutlook
+             oContacts.contype = atype
+            If Not oContacts.AddContact(GatherContactDtls(), iif(atype=Exchangeprivate,oCurUser.UserName,"")) Then
+                MsgBox "Failed to save Contact": Add = False
+            Else
+              '  oContacts.GetContacts
+                 'MsgBox "Contact successfully added"
+                 'Set oContacts = Nothing
+                 frmaddressbook.oAZ.CurrentLetter = Left$(txtdtls1(15), 1)
+                 'frmaddressbook.oAZ_AZClick
+'                 frmaddressbook.oAZ.CurrentLetter = "G"
+'                If frmaddressbook.ShowContacts() Then
+                    Add = True
+                    bAllowClose = True
+'                End If
+            End If
+        Else
+            MsgBox "Failed to save Contact due to missing data or incorrect data": Add = False
+            bAllowClose = True
+        End If
+    End If
+    Screen.MousePointer = vbDefault
+End Function
+       
+Private Function checkdtls() As Boolean
+    checkdtls = True
+    If txtdtls1(0) = "" Then checkdtls = False: Exit Function
+End Function
+Private Sub cmdadd_Click(Index As Integer)
+    If Add(IIf(Index = 0, Exchangeprivate, Exchangepublic)) Then: bUnSavedData = False: Unload Me
+End Sub
+
+Private Function GatherContactDtls() As Object
+
+If bEdit Then
+    Set GatherContactDtls = oThisContact
+Else
+    Set GatherContactDtls = New clsContact
+ End If
+    With GatherContactDtls
+        .Firstname = IIf(Len(Trim(txtdtls1(0))) = 0, " ", txtdtls1(0))
+        .fullname = cbotitle.Text & " " & txtdtls1(0) & " " & txtdtls1(3) & " " & cbosuffix.Text
+        .fullname = Trim(.fullname)
+        .Birthday = IIf(Len(Trim(DTPicker1)) = 0, " ", DTPicker1)
+        .BusinessAddress = IIf(Len(Trim(txtdtls1(2))) = 0, " ", txtdtls1(2))
+        .LastName = IIf(Len(Trim(txtdtls1(3))) = 0, " ", txtdtls1(3))
+        .OtherTelephoneNumber = IIf(Len(Trim(txtdtls1(5))) = 0, " ", txtdtls1(5))
+        .otherfaxnumber = CLng(IIf(Len(Trim(txtdtls1(10))) = 0, 0, txtdtls1(10)))
+        .BusinessFaxNumber = IIf(Len(Trim(txtdtls1(6))) = 0, " ", txtdtls1(6))
+        .BusinessHomePage = IIf(Len(Trim(txtdtls1(8))) = 0, " ", txtdtls1(8))
+        .BusinessTelephoneNumber = IIf(Len(Trim(txtdtls1(7))) = 0, " ", txtdtls1(7))
+        .CompanyName = IIf(Len(Trim(txtdtls1(1))) = 0, " ", txtdtls1(1))
+        .homeaddress = IIf(Len(Trim(txtdtls1(16))) = 0, " ", txtdtls1(16))
+        .HomeFaxNumber = IIf(Len(Trim(txtdtls1(13))) = 0, " ", txtdtls1(13))
+        .MobileTelephoneNumber = IIf(Len(Trim(txtdtls1(17))) = 0, " ", txtdtls1(17))
+        .Title = IIf(Len(Trim(cbotitle.Text)) = 0, " ", cbotitle.Text)
+        .Suffix = IIf(Len(Trim(cbosuffix.Text)) = 0, " ", cbosuffix.Text)
+        .FileAs = IIf(Len(Trim(txtdtls1(15))) = 0, " ", txtdtls1(15))
+        .Email1Address = IIf(Len(Trim(txtdtls1(9))) = 0, " ", txtdtls1(9))
+        .HomeTelephoneNumber = IIf(Len(Trim(txtdtls1(14))) = 0, " ", txtdtls1(14))
+'        If bEdit Then
+'            .userproperties.Add("Salutation", 1) = txtdtls1(4)
+'        Else
+            .Salutation = IIf(Len(Trim(txtdtls1(4))) = 0, " ", txtdtls1(4))
+       ' End If
+       .Business2TelephoneNumber = " "
+       
+    End With
+End Function
+
+Private Sub cmdclose_Click()
+    bcloseclicked = True
+    Unload Me
+    bAllowClose = False
+    bcloseclicked = False
+End Sub
+
+Private Function closeform() As Boolean
+Dim i As Long, j As Long, sRow As String
+
+    If Not bAllowClose Or Not bEdit Then
+        If bUnSavedData Then
+            If MsgBox("You will loose unsaved data are you sure you wish to close.", vbQuestion + vbYesNo) = vbYes Then
+                closeform = False
+            Else
+                closeform = True
+            End If
+        End If
+    Else
+        closeform = False
+    End If
+    If bEdit Then
+        With frmaddressbook.grdcontacts
+           
+             For j = 0 To oCurUser.Settings.Columns.Count - 1
+                .Col = j
+                .Text = oContacts.ContactPropertyValue(oThisContact, oCurUser.Settings.Columns(j + 1).Name)
+            Next j
+        End With
+    Else
+'     With frmaddressbook.grdcontacts
+'            .Col = 0
+'             For j = 0 To oCurUser.Settings.Columns.Count - 1
+'                sRow = oContacts.ContactPropertyValue(oContacts.Item(.RowData(.Row)), oCurUser.Settings.Columns(j + 1).Name)
+'            Next j
+'            .AddItem sRow
+'        End With
+    End If
+    'frmaddressbook.ShowContacts
+   ' If Not bViewOnlymode And Not bcloseclicked Then frmaddressbook.ShowContacts
+End Function
+
+Private Sub DTPicker1_Change()
+    SetDirty
+End Sub
+
+Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+    Cancel = closeform()
+    frmaddressbook.Enabled = True
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    bDontactivate = True
+    oContacts.contype = oCurUser.Settings.ViewType
+    'frmaddressbook.Timer1.Enabled = True
+    Set frmAdd = Nothing
+    
+End Sub
+
+Private Sub TabStrip1_Click()
+
+    frabuss.Visible = IIf(TabStrip1.Tabs("Personal").Selected, False, True): frabuss.ZOrder
+    frapersonal.Visible = IIf(TabStrip1.Tabs("Personal").Selected, True, False): frapersonal.ZOrder
+End Sub
+
+Private Function SetDirty() As Boolean
+    If bFinishLoad And Not bViewOnlymode Then
+        bUnSavedData = True
+        SetDirty = True
+    End If
+End Function
+
+Private Sub txtdtls1_KeyPress(Index As Integer, KeyAscii As Integer)
+If KeyAscii <> 8 Then
+If (Index = 5 Or Index = 10) And (KeyAscii < 48 Or KeyAscii > 57) Then KeyAscii = 0
+End If
+End Sub
+
+Private Sub txtdtls1_LostFocus(Index As Integer)
+Dim rs As Recordset, nNew As Long
+
+If Index = 5 And txtdtls1(5) <> sOldAbbr Then
+    nNew = oContacts.GetNewAbbr
+    If Len(Trim(txtdtls1(5))) = 0 Then txtdtls1(5) = "0"
+    If CLng(txtdtls1(5)) < (nNew - 1) Then
+       ' MsgBox "If you wish to Enter an Abbreviation try  - " & nNew & IIf(sOldAbbr <> "", " or " & sOldAbbr, "")
+        'txtdtls1(5) = ""
+    End If
+End If
+
+If Index = 10 And txtdtls1(10) <> sOldFaxAbbr Then
+    nNew = oContacts.GetNewAbbr2
+    If Len(Trim(txtdtls1(10))) = 0 Then txtdtls1(10) = "0"
+    If CLng(txtdtls1(10)) < (nNew - 1) Then
+       ' MsgBox "If you wish to Enter an Abbreviation try  - " & nNew & IIf(sOldFaxAbbr <> "" And txtdtls1(10) <> "0" And sOldFaxAbbr <> "0", " or " & sOldFaxAbbr, "")
+        'txtdtls1(10) = ""
+    End If
+End If
+
+ If SetDirty Then
+        If Index = 0 Or Index = 3 Then
+            txtdtls1(3) = Proper(txtdtls1(3))
+            txtdtls1(0) = Proper(txtdtls1(0))
+            txtdtls1(4) = Proper(txtdtls1(0)) & " " & Proper(txtdtls1(3))
+            txtdtls1(15) = txtdtls1(3) & "," & txtdtls1(0)
+        End If
+    End If
+End Sub

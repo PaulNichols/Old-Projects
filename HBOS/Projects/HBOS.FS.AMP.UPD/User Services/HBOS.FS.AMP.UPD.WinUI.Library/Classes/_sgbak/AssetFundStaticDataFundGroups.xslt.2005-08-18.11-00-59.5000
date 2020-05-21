@@ -1,0 +1,41 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="text"/>
+	
+	<xsl:template match="/">
+		<xsl:call-template name="Header"/>
+		<xsl:apply-templates select="/AssetFundCollection/*"/>
+    </xsl:template>
+    
+   
+    
+	 <xsl:template name="Header">
+		<!-- Add a header row with all desired field names -->
+		<xsl:text>Company,</xsl:text>
+		<xsl:text>Asset Fund Code,</xsl:text>
+		<xsl:text>Full Name,</xsl:text>
+		<xsl:text>Short Name,</xsl:text>
+		<xsl:text>Asset Fund Type,</xsl:text>
+		<xsl:text>AM Tolerance (%),</xsl:text>
+		<xsl:text>Fund Group Membership</xsl:text>
+		<!--Add end-of-line markers-->	
+		<xsl:text>&#13;</xsl:text>
+		<xsl:text>&#10;</xsl:text>
+		<!-- <xsl:apply-templates select="/AssetFundCollection/*/FundGroups/AssetFundGroup"/>  -->         	
+	</xsl:template>
+
+	<xsl:template match="AssetFund">
+        <xsl:value-of select="translate(@CompanyCode, ',','')"/>
+        <xsl:value-of select="','"/>
+	</xsl:template>
+	
+	<xsl:template match="AssetFundGroup">
+
+		<xsl:text>test</xsl:text>
+	<!--Add end-of-line markers-->	
+		<xsl:text>&#13;</xsl:text>
+		<xsl:text>&#10;</xsl:text>
+	</xsl:template>
+
+</xsl:stylesheet>
+
+  

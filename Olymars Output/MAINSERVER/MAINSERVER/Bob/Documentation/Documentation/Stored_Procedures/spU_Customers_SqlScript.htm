@@ -1,0 +1,159 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spU_Customers - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spU_Customers
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				Create Procedure [spU_Customers]<br>
+				<br>
+				-- Update an existing record in [Customers] table<br>
+				<br>
+				(<br>
+				  @CustomerID [int] -- for [Customers].[CustomerID] column<br>
+				, @CompanyName [nvarchar](40) -- for [Customers].[CompanyName] column<br>
+				, @ConsiderNull_CompanyName bit = 0<br>
+				, @ContactName [nvarchar](30) = Null -- for [Customers].[ContactName] column<br>
+				, @ConsiderNull_ContactName bit = 0<br>
+				, @TitleId [int] = Null -- for [Customers].[TitleId] column<br>
+				, @ConsiderNull_TitleId bit = 0<br>
+				, @Address [nvarchar](60) = Null -- for [Customers].[Address] column<br>
+				, @ConsiderNull_Address bit = 0<br>
+				, @City [nvarchar](15) = Null -- for [Customers].[City] column<br>
+				, @ConsiderNull_City bit = 0<br>
+				, @PostalCode [nvarchar](10) = Null -- for [Customers].[PostalCode] column<br>
+				, @ConsiderNull_PostalCode bit = 0<br>
+				, @Phone [nvarchar](24) = Null -- for [Customers].[Phone] column<br>
+				, @ConsiderNull_Phone bit = 0<br>
+				, @Email [nvarchar](100) = Null -- for [Customers].[Email] column<br>
+				, @ConsiderNull_Email bit = 0<br>
+				, @WebAddress [nvarchar](24) = Null -- for [Customers].[WebAddress] column<br>
+				, @ConsiderNull_WebAddress bit = 0<br>
+				, @Fax [nvarchar](24) = Null -- for [Customers].[Fax] column<br>
+				, @ConsiderNull_Fax bit = 0<br>
+				, @Active [bit] -- for [Customers].[Active] column<br>
+				, @ConsiderNull_Active bit = 0<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				/*<br>
+				&nbsp;&nbsp;&nbsp;This T-SQL code was automatically generated using:<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server Centric .NET Code Generator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v 1.0.1697.21165<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generation Date: 02/01/2005 12:18:02<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generator name: MAINSERVER\Administrator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template last update: 13/10/2003 04:51:40<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template revision: 56177501<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server version: 08.00.0760<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server: MAINSERVER\MAINSERVER<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Database: [Bob]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;WARNING: This source is provided &quot;AS IS&quot; without warranty of any kind.<br>
+				&nbsp;&nbsp;&nbsp;The author disclaims all warranties, either express or implied, including<br>
+				&nbsp;&nbsp;&nbsp;the warranties of merchantability and fitness for a particular purpose.<br>
+				&nbsp;&nbsp;&nbsp;In no event shall the author or its suppliers be liable for any damages<br>
+				&nbsp;&nbsp;&nbsp;whatsoever including direct, indirect, incidental, consequential, loss of<br>
+				&nbsp;&nbsp;&nbsp;business profits or special damages, even if the author or its suppliers<br>
+				&nbsp;&nbsp;&nbsp;have been advised of the possibility of such damages.<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;    More information: http://www.microsoft.com/france/msdn/olymars<br>
+				&nbsp;&nbsp;&nbsp;Latest interim build: http://www.olymars.net/latest.zip<br>
+				&nbsp;&nbsp;&nbsp;       Author's blog: http://blogs.msdn.com/olymars<br>
+				*/<br>
+				<br>
+				<br>
+				--&nbsp;&nbsp;&nbsp;IMPORTANT:<br>
+				--&nbsp;&nbsp;&nbsp;Changes to this SQL code may cause incorrect behavior<br>
+				--&nbsp;&nbsp;&nbsp;and will be lost if the code is regenerated. <br>
+				<br>
+				<br>
+				Set NoCount On<br>
+				<br>
+				If @ConsiderNull_CompanyName Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_CompanyName = 0<br>
+				<br>
+				If @ConsiderNull_ContactName Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_ContactName = 0<br>
+				<br>
+				If @ConsiderNull_TitleId Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_TitleId = 0<br>
+				<br>
+				If @ConsiderNull_Address Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Address = 0<br>
+				<br>
+				If @ConsiderNull_City Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_City = 0<br>
+				<br>
+				If @ConsiderNull_PostalCode Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_PostalCode = 0<br>
+				<br>
+				If @ConsiderNull_Phone Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Phone = 0<br>
+				<br>
+				If @ConsiderNull_Email Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Email = 0<br>
+				<br>
+				If @ConsiderNull_WebAddress Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_WebAddress = 0<br>
+				<br>
+				If @ConsiderNull_Fax Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Fax = 0<br>
+				<br>
+				If @ConsiderNull_Active Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Active = 0<br>
+				<br>
+				<br>
+				Update [dbo].[Customers]<br>
+				<br>
+				Set<br>
+				&nbsp;&nbsp;&nbsp; [CompanyName] = Case @ConsiderNull_CompanyName When 0 Then IsNull(@CompanyName, [CompanyName]) When 1 Then @CompanyName End<br>
+				&nbsp;&nbsp;&nbsp;,[ContactName] = Case @ConsiderNull_ContactName When 0 Then IsNull(@ContactName, [ContactName]) When 1 Then @ContactName End<br>
+				&nbsp;&nbsp;&nbsp;,[TitleId] = Case @ConsiderNull_TitleId When 0 Then IsNull(@TitleId, [TitleId]) When 1 Then @TitleId End<br>
+				&nbsp;&nbsp;&nbsp;,[Address] = Case @ConsiderNull_Address When 0 Then IsNull(@Address, [Address]) When 1 Then @Address End<br>
+				&nbsp;&nbsp;&nbsp;,[City] = Case @ConsiderNull_City When 0 Then IsNull(@City, [City]) When 1 Then @City End<br>
+				&nbsp;&nbsp;&nbsp;,[PostalCode] = Case @ConsiderNull_PostalCode When 0 Then IsNull(@PostalCode, [PostalCode]) When 1 Then @PostalCode End<br>
+				&nbsp;&nbsp;&nbsp;,[Phone] = Case @ConsiderNull_Phone When 0 Then IsNull(@Phone, [Phone]) When 1 Then @Phone End<br>
+				&nbsp;&nbsp;&nbsp;,[Email] = Case @ConsiderNull_Email When 0 Then IsNull(@Email, [Email]) When 1 Then @Email End<br>
+				&nbsp;&nbsp;&nbsp;,[WebAddress] = Case @ConsiderNull_WebAddress When 0 Then IsNull(@WebAddress, [WebAddress]) When 1 Then @WebAddress End<br>
+				&nbsp;&nbsp;&nbsp;,[Fax] = Case @ConsiderNull_Fax When 0 Then IsNull(@Fax, [Fax]) When 1 Then @Fax End<br>
+				&nbsp;&nbsp;&nbsp;,[Active] = Case @ConsiderNull_Active When 0 Then IsNull(@Active, [Active]) When 1 Then @Active End<br>
+				<br>
+				Where<br>
+				&nbsp;&nbsp;&nbsp;     ([CustomerID] = @CustomerID)<br>
+				<br>
+				Set NoCount Off<br>
+				<br>
+				Return(0)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:31
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

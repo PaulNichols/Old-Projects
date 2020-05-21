@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="Schema 0" targetNamespace="http://tempuri.org/ASPMenuSchema.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ASPMenuSchema.xsd" xmlns:mstns="http://tempuri.org/ASPMenuSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ASPMenu">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MenuGroup">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MenuItem">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="MenuGroup">
+											<xs:complexType>
+												<xs:sequence />
+												<xs:attributeGroup ref="MenuGroupAttributes" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attributeGroup ref="MenuItemAttributes" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attributeGroup ref="MenuGroupAttributes" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="ASPMenuAttributes" />
+		</xs:complexType>
+	</xs:element>
+	<xs:attributeGroup name="ASPMenuAttributes">
+		<xs:attribute name="CssFile" type="xs:string" />
+		<xs:attribute name="MenuGroupCss" type="xs:string" />
+		<xs:attribute name="MenuItemCss" type="xs:string" />
+		<xs:attribute name="MenuItemHeight" type="xs:integer" />
+		<xs:attribute name="MenuItemOverCss" type="xs:string" />
+		<xs:attribute name="MenuItemWidth" type="xs:integer" />
+		<xs:attribute name="ExpandDelayTime" type="xs:integer" />
+		<xs:attribute name="ExpandEffect">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="None" />
+					<xs:enumeration value="Blinds" />
+					<xs:enumeration value="CheckerBoard" />
+					<xs:enumeration value="Fade" />
+					<xs:enumeration value="GradientWipe" />
+					<xs:enumeration value="Inset" />
+					<xs:enumeration value="Iris" />
+					<xs:enumeration value="Pixelate" />
+					<xs:enumeration value="RadialWipe" />
+					<xs:enumeration value="RandomDissolve" />
+					<xs:enumeration value="Slide" />
+					<xs:enumeration value="Spiral" />
+					<xs:enumeration value="Stretch" />
+					<xs:enumeration value="Strips" />
+					<xs:enumeration value="Wheel" />
+					<xs:enumeration value="ZigZag" />
+					<xs:enumeration value="RandomBars" />
+					<xs:enumeration value="Barn" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ImagesURL" type="xs:string" />
+		<xs:attribute name="OpenOnClick" type="xs:boolean" />
+		<xs:attribute name="Orientation">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Horizontal" />
+					<xs:enumeration value="Vertical" />
+					<xs:enumeration value="AllHorizontal" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="EffectDuration" type="xs:integer" />
+		<xs:attribute name="EnableAccessControlList" type="xs:boolean" />
+		<xs:attribute name="TextAlignment">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Left" />
+					<xs:enumeration value="Center" />
+					<xs:enumeration value="Right" />
+					<xs:enumeration value="Justified" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="NestedArrowImage" type="xs:string" />
+		<xs:attribute name="OffsetX" type="xs:integer" />
+		<xs:attribute name="OffsetY" type="xs:integer" />
+		<xs:attribute name="Opacity" type="xs:string" />
+		<xs:attribute name="Scrollable" type="xs:boolean" />
+		<xs:attribute name="DisabledItemCss" type="xs:string" />
+		<xs:attribute name="SessionName" type="xs:string" />
+		<xs:attribute name="ScrollDownImage" type="xs:string" />
+		<xs:attribute name="ScrollUpImage" type="xs:string" />
+		<xs:attribute name="ScrollHeight" type="xs:integer" />
+		<xs:attribute name="PostBack" type="xs:string" />
+		<xs:attribute name="IEJavaScriptFile" type="xs:string" />
+		<xs:attribute name="NNJavaScriptFile" type="xs:string" />
+		<xs:attribute name="TextIndent" type="xs:integer" />
+		<xs:attribute name="RootGroupOverlay" type="xs:integer" />
+		<xs:attribute name="NestedGroupOverlay" type="xs:integer" />
+		<xs:attribute name="HighlightClickedItem" type="xs:boolean" />
+		<xs:attribute name="HighlightedItemCss" type="xs:string" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="MenuGroupAttributes">
+		<xs:attribute name="GroupCss" type="xs:string" />
+		<xs:attribute name="Width" type="xs:integer" />
+		<xs:attribute name="UserList" type="xs:string" />
+		<xs:attribute name="ExpandEffect">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="None" />
+					<xs:enumeration value="Blinds" />
+					<xs:enumeration value="CheckerBoard" />
+					<xs:enumeration value="Fade" />
+					<xs:enumeration value="GradientWipe" />
+					<xs:enumeration value="Inset" />
+					<xs:enumeration value="Iris" />
+					<xs:enumeration value="Pixelate" />
+					<xs:enumeration value="RadialWipe" />
+					<xs:enumeration value="RandomDissolve" />
+					<xs:enumeration value="Slide" />
+					<xs:enumeration value="Spiral" />
+					<xs:enumeration value="Stretch" />
+					<xs:enumeration value="Strips" />
+					<xs:enumeration value="Wheel" />
+					<xs:enumeration value="ZigZag" />
+					<xs:enumeration value="RandomBars" />
+					<xs:enumeration value="Barn" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Opacity" type="xs:integer" />
+		<xs:attribute name="EffectDuration" type="xs:integer" />
+		<xs:attribute name="MenuScrollHeight" type="xs:integer" />
+		<xs:attribute name="TextIndent" type="xs:integer" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="MenuItemAttributes">
+		<xs:attribute name="Caption" type="xs:string" />
+		<xs:attribute name="Height" type="xs:integer" />
+		<xs:attribute name="Href" type="xs:string" />
+		<xs:attribute name="ItemCss" type="xs:string" />
+		<xs:attribute name="ItemOverCss" type="xs:string" />
+		<xs:attribute name="Width" type="xs:integer" />
+		<xs:attribute name="UserList" type="xs:string" />
+		<xs:attribute name="DisabledItemCss" type="xs:string" />
+		<xs:attribute name="StatusBarTip" type="xs:string" />
+		<xs:attribute name="TextAlignment">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Left" />
+					<xs:enumeration value="Center" />
+					<xs:enumeration value="Right" />
+					<xs:enumeration value="Justified" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Enabled" type="xs:boolean" />
+		<xs:attribute name="Image" type="xs:string" />
+		<xs:attribute name="Target">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="_blank" />
+					<xs:enumeration value="_parent" />
+					<xs:enumeration value="_self" />
+					<xs:enumeration value="_top" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="CustomID" type="xs:string" />
+	</xs:attributeGroup>
+</xs:schema>

@@ -1,0 +1,279 @@
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
+using HBOS.FS.AMP.UPD.Controllers;
+using HBOS.FS.Support.Tex;
+
+namespace HBOS.FS.AMP.UPD.WinUI.Forms
+{
+	/// <summary>
+	/// ImportManager - GUI for displaying Import Reports
+	/// </summary>
+	public class ImportManager : Form
+	{
+		#region Controls
+
+		private Panel authorisedPricesPanel;
+		private PictureBox authorisedPricesPicture;
+		private Label authorisedPricesExplanation;
+
+		#endregion
+
+		#region Internal Fields
+
+		private bool closedViaCommand ;
+
+		private ImportController importController;
+
+		#endregion
+
+		#region Constructor
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		private ImportManager()
+		{
+			T.E();
+
+			try
+			{
+				InitializeComponent();
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="fileImportController"></param>
+		public ImportManager(ImportController fileImportController) : this()
+		{
+			T.E();
+
+			try
+			{
+				this.importController = fileImportController;
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+		#endregion
+
+		#region Windows Form Designer generated code
+
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof (ImportManager));
+			this.buttonCancel = new System.Windows.Forms.Button();
+			this.buttonConfirm = new System.Windows.Forms.Button();
+			this.authorisedPricesPanel = new System.Windows.Forms.Panel();
+			this.authorisedPricesExplanation = new System.Windows.Forms.Label();
+			this.authorisedPricesPicture = new System.Windows.Forms.PictureBox();
+			this.authorisedPricesPanel.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// buttonCancel
+			// 
+			this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.buttonCancel.Location = new System.Drawing.Point(560, 384);
+			this.buttonCancel.Name = "buttonCancel";
+			this.buttonCancel.Size = new System.Drawing.Size(96, 23);
+			this.buttonCancel.TabIndex = 0;
+			this.buttonCancel.Text = "Cancel &Import";
+			this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+			// 
+			// buttonConfirm
+			// 
+			this.buttonConfirm.Location = new System.Drawing.Point(448, 384);
+			this.buttonConfirm.Name = "buttonConfirm";
+			this.buttonConfirm.Size = new System.Drawing.Size(96, 23);
+			this.buttonConfirm.TabIndex = 1;
+			this.buttonConfirm.Text = "&Save Import";
+			this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
+			// 
+			// authorisedPricesPanel
+			// 
+			this.authorisedPricesPanel.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.authorisedPricesPanel.Controls.Add(this.authorisedPricesExplanation);
+			this.authorisedPricesPanel.Controls.Add(this.authorisedPricesPicture);
+			this.authorisedPricesPanel.Location = new System.Drawing.Point(16, 368);
+			this.authorisedPricesPanel.Name = "authorisedPricesPanel";
+			this.authorisedPricesPanel.Size = new System.Drawing.Size(360, 48);
+			this.authorisedPricesPanel.TabIndex = 2;
+			this.authorisedPricesPanel.Visible = false;
+			// 
+			// authorisedPricesExplanation
+			// 
+			this.authorisedPricesExplanation.Location = new System.Drawing.Point(32, 24);
+			this.authorisedPricesExplanation.Name = "authorisedPricesExplanation";
+			this.authorisedPricesExplanation.Size = new System.Drawing.Size(328, 16);
+			this.authorisedPricesExplanation.TabIndex = 1;
+			this.authorisedPricesExplanation.Text = "Authorised prices exist. This import will not impact these prices.";
+			// 
+			// authorisedPricesPicture
+			// 
+			this.authorisedPricesPicture.Image = ((System.Drawing.Image) (resources.GetObject("authorisedPricesPicture.Image")));
+			this.authorisedPricesPicture.Location = new System.Drawing.Point(8, 16);
+			this.authorisedPricesPicture.Name = "authorisedPricesPicture";
+			this.authorisedPricesPicture.Size = new System.Drawing.Size(16, 24);
+			this.authorisedPricesPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.authorisedPricesPicture.TabIndex = 0;
+			this.authorisedPricesPicture.TabStop = false;
+			// 
+			// ImportManager
+			// 
+			this.AcceptButton = this.buttonConfirm;
+			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+			this.CancelButton = this.buttonCancel;
+			this.ClientSize = new System.Drawing.Size(672, 422);
+			this.ControlBox = false;
+			this.Controls.Add(this.authorisedPricesPanel);
+			this.Controls.Add(this.buttonConfirm);
+			this.Controls.Add(this.buttonCancel);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
+			this.Name = "ImportManager";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Text = "Import Manager - Results";
+			this.authorisedPricesPanel.ResumeLayout(false);
+			this.ResumeLayout(false);
+
+		}
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				if (components != null)
+				{
+					components.Dispose();
+				}
+			}
+			base.Dispose(disposing);
+		}
+
+		private System.Windows.Forms.Button buttonCancel;
+		private System.Windows.Forms.Button buttonConfirm;
+
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.Container components = null;
+
+		#endregion
+
+		#region Events
+
+		/// <summary>
+		/// Form is loading
+		/// </summary>
+		/// <param name="e"></param>
+		protected override void OnLoad(EventArgs e)
+		{
+			T.E();
+
+			try
+			{
+				if (this.importController.HasAuthorisedPrices)
+					this.authorisedPricesPanel.Visible = true;
+				base.OnLoad(e);
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+		/// <summary>
+		/// Cancel the import
+		/// </summary>
+		/// <param name="sender">sending object</param>
+		/// <param name="e">event arguements</param>
+		private void buttonCancel_Click(object sender, EventArgs e)
+		{
+			T.E();
+
+			try
+			{
+				closedViaCommand = true;
+
+				this.importController.CancelImport();
+
+				this.Close();
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+
+		/// <summary>
+		/// "Save" the import
+		/// </summary>
+		/// <param name="sender">sending object</param>
+		/// <param name="e">event arguements</param>
+		private void buttonConfirm_Click(object sender, EventArgs e)
+		{
+			T.E();
+
+			try
+			{
+				closedViaCommand = true;
+
+				this.importController.ActivateImport();
+
+				this.Close();
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+
+		/// <summary>
+		/// Capture the OnClosing() event to prompt the user if they really meant to cancel the import
+		/// </summary>
+		/// <param name="e">Cancel event agruements</param>
+		protected override void OnClosing(CancelEventArgs e)
+		{
+			T.E();
+
+			try
+			{
+				if (!closedViaCommand)
+				{
+					if (MessageBoxHelper.Show("UPDImportManagerBody","UPDImportManagerTitle",
+					                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+					{
+						e.Cancel = true;
+					}
+				}
+				base.OnClosing(e);
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+		#endregion
+	}
+}

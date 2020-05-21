@@ -1,0 +1,383 @@
+using System;
+using System.Reflection;
+
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.FundGroups;
+using HBOS.FS.AMP.UPD.Types.Factors;
+
+using NUnit.Framework;
+
+namespace UT_HBOS.FS.AMP.UPD.Types.AssetFunds
+{
+	/// <summary>
+	/// Base class for testing the property values of AssetFund
+	/// </summary>
+	public abstract class AssertFundTestBase: PropertyTestBase
+	{
+		/// <summary>
+		/// Expected Asset Fund Code
+		/// </summary>
+		protected const string expectedAssetFundCode = "asset fund code";
+
+		/// <summary>
+		/// Expected Asset Movement Tolerance
+		/// </summary>
+		protected const decimal expectedAssetMovementTolerance = 0.5m;
+
+		/// <summary>
+		/// Expected Company Code
+		/// </summary>
+		protected const string expectedCompanyCode = "my comp";
+
+		/// <summary>
+		/// Expected Currency Rate Import ID
+		/// </summary>
+		protected const long expectedCurrencyRateImportID = 10;
+		
+		/// <summary>
+		/// Expected Full Name
+		/// </summary>
+		protected const string expectedFullName = "bob";
+
+		/// <summary>
+		/// Expected Fund Group ID
+		/// </summary>
+		protected const int expectedFundGroupID = 500;
+
+		/// <summary>
+		/// Expected Index Value Import ID
+		/// </summary>
+		protected const long expectedIndexValueImportID = 33;
+
+		/// <summary>
+		/// Expected Index Weighting Import ID
+		/// </summary>
+		protected const long expectedIndexWeightingImportID = 46;
+
+        /// <summary>
+        /// Expected Composite Asset Fund split import id
+        /// </summary>
+        protected const long expectedCompositeFundSplitImportID = 55;
+
+		/// <summary>
+		/// Expected Locked For Calculation
+		/// </summary>
+		protected const bool expectedLockedForCalculation = true;
+
+		/// <summary>
+		/// Expected Market Index Movements
+		/// </summary>
+		protected readonly AssetFundIndexWeightedCollection expectedMarketIndexMovements = new AssetFundIndexWeightedCollection();
+
+		/// <summary>
+		/// Expected Market Value Splits
+		/// </summary>
+		protected readonly AssetFundIndexWeightedCollection expectedMarketValueSplits = new AssetFundIndexWeightedCollection();
+
+
+		/// <summary>
+		/// Expected Predicted Unit Price
+		/// </summary>
+		protected const decimal expectedPredictedUnitPrice = 9.9m;
+
+		/// <summary>
+		/// Expected Previous Unit Price
+		/// </summary>
+		protected const decimal expectedPreviousUnitPrice = 8.8m;
+
+		/// <summary>
+		/// Expected Short Name
+		/// </summary>
+		protected const string expectedShortName = "ken";
+
+		/// <summary>
+		/// Expected TimeStamp
+		/// </summary>
+		protected readonly byte[] expectedTimeStamp = new byte[] {100,200};
+
+		/// <summary>
+		/// Expected Unit Price
+		/// </summary>
+		protected const decimal expectedUnitPrice = 234.56m;
+
+		/// <summary>
+		/// Expected Unit Price Movement
+		/// </summary>
+		protected const decimal expectedUnitPriceMovement = 1.1m;
+
+		/// <summary>
+		/// Expected Valuation Point
+		/// </summary>
+		protected readonly DateTime expectedValuationPoint = new DateTime(1999,11,5,1,2,3,4);
+
+		/// <summary>
+		/// Test the AssetFundCode.
+		/// </summary>
+		[Test]
+		public void AssetFundCode()
+		{
+			AssertPropertyValue("AssetFundCode",expectedAssetFundCode);
+		}
+
+		/// <summary>
+		/// Test the Asset Movement Tolerance
+		/// </summary>
+		[Test]
+		public void AssetMovementTolerance()
+		{
+			AssertPropertyValue("AssetMovementTolerance",expectedAssetMovementTolerance);
+		}
+
+		/// <summary>
+		/// Test the Company Code
+		/// </summary>
+		[Test]
+		public void CompanyCode()
+		{
+			AssertPropertyValue("CompanyCode",expectedCompanyCode);
+		}
+
+		/// <summary>
+		/// Test the Currency Rate Import ID
+		/// </summary>
+		[Test]
+		public void CurrencyRateImportID()
+		{
+			AssertPropertyValue("CurrencyRateImportID",expectedCurrencyRateImportID);
+		}
+
+		/// <summary>
+		/// Test the Full Name
+		/// </summary>
+		[Test]
+		public void FullName()
+		{
+			AssertPropertyValue("FullName",expectedFullName);
+		}
+
+		/// <summary>
+		/// Test the Fund Group ID
+		/// </summary>
+		[Test]
+		public void FundGroupID()
+		{
+			AssertPropertyValue("FundGroupID",expectedFundGroupID);
+		}
+
+		/// <summary>
+		/// Test the Index Value Import ID
+		/// </summary>
+		[Test]
+		public void IndexValueImportID()
+		{
+			AssertPropertyValue("IndexValueImportID",expectedIndexValueImportID);
+		}
+
+		/// <summary>
+		/// Test the Index Weighting Import ID
+		/// </summary>
+		[Test]
+		public void IndexWeightingImportID()
+		{
+			AssertPropertyValue("IndexWeightingImportID",expectedIndexWeightingImportID);
+		}
+
+		/// <summary>
+		/// Test the Locked For Calculation flag
+		/// </summary>
+		[Test]
+		public void LockedForCalculation()
+		{
+			AssertPropertyValue("LockedForCalculation",expectedLockedForCalculation);
+		}
+
+		/// <summary>
+		/// Test the Market Index Movements
+		/// </summary>
+		[Test]
+		public void MarketIndexMovements()
+		{
+			AssertPropertyValue("MarketIndexMovements",expectedMarketIndexMovements);
+		}
+
+		/// <summary>
+		/// Test the Market Value Splits
+		/// </summary>
+		[Test]
+		public void MarketValueSplits()
+		{
+			AssertPropertyValue("MarketValueSplits",expectedMarketValueSplits);
+		}
+
+		/// <summary>
+		/// Test the Predicted Unit Price
+		/// </summary>
+		[Test]
+		public void PredictedUnitPrice()
+		{
+			AssertPropertyValue("PredictedUnitPrice",expectedPredictedUnitPrice);
+		}
+
+		/// <summary>
+		/// Test the Previous Unit Price
+		/// </summary>
+		[Test]
+		public void PreviousUnitPrice()
+		{
+			AssertPropertyValue("PreviousUnitPrice",expectedPreviousUnitPrice);
+		}
+
+		/// <summary>
+		/// Test the Short Name
+		/// </summary>
+		[Test]
+		public void ShortName()
+		{
+			AssertPropertyValue("ShortName",expectedShortName);
+		}
+
+		/// <summary>
+		/// Test the TimeStamp
+		/// </summary>
+		[Test]
+		public void TimeStamp()
+		{
+			AssertPropertyValue("TimeStamp",expectedTimeStamp);
+		}
+
+		/// <summary>
+		/// Test the Unit Price
+		/// </summary>
+		[Test]
+		public void UnitPrice()
+		{
+			AssertPropertyValue("UnitPrice",expectedUnitPrice);
+		}
+
+		/// <summary>
+		/// Test the Unit Price Movement
+		/// </summary>
+		[Test]
+		public void UnitPriceMovement()
+		{
+			AssertPropertyValue("UnitPriceMovement",expectedUnitPriceMovement);
+		}
+		
+		/// <summary>
+		/// Test the Valuation Point
+		/// </summary>
+		[Test]
+		public void ValuationPoint()
+		{
+			AssertPropertyValue("ValuationPoint",expectedValuationPoint);
+		}
+
+	}
+
+	/// <summary>
+	/// Class used to test the AssetFund entity when constructed with the default parameterless constructor
+	/// </summary>
+	[TestFixture]
+	public class DefaultAssetFundTest: AssertFundTestBase
+	{
+		/// <summary>
+		/// Default constructor for NUnit
+		/// </summary>
+		public DefaultAssetFundTest()
+		{
+		}
+
+		/// <summary>
+		/// Creates an initialised AssetFund as the subject of the test
+		/// </summary>
+		/// <returns>The AssetFund under test</returns>
+		protected override object CreateSubject()
+		{
+			return null; //todo - cannot instantiate abstract class - revisit this and make for oeic linked or composite AssetFundFactory.CreateAssetFund();
+		}
+
+		/// <summary>
+		/// Tells the parent class the constructor type used
+		/// </summary>
+		protected override EntityConstructorType constructorType
+		{
+			get
+			{
+				return EntityConstructorType.Default;
+			}
+		}
+
+	}
+
+
+	/// <summary>
+	/// Class used to test the AssetFund entity when constructed with the parametered constructor used from the database
+	/// </summary>
+	[TestFixture]
+	public class InitialisedAssetFundTest: AssertFundTestBase
+	{
+		/// <summary>
+		/// Default constructor for NUnit
+		/// </summary>
+		public InitialisedAssetFundTest()
+		{
+		}
+
+		/// <summary>
+		/// Creates an initialised AssetFund as the subject of the test
+		/// </summary>
+		/// <returns>The AssetFund under test</returns>
+			
+		protected override object CreateSubject()
+		{
+			//TODO - fill this collection and move factor fields off of fund
+			FactorCollection factors = new FactorCollection();
+			AssetFund aFund =  AssetFundFactory.CreateAssetFund(HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFundFactory.AssetFundType.Oeic,
+				expectedAssetFundCode,
+				expectedShortName,
+				expectedFullName,
+				expectedCompanyCode,
+				expectedUnitPrice,
+				expectedUnitPriceMovement,
+				0M,
+				false,
+				expectedPreviousUnitPrice,
+				true,
+				expectedAssetMovementTolerance,
+				expectedValuationPoint,
+				expectedMarketValueSplits,
+				expectedMarketIndexMovements,
+				//expectedFundGroupID,
+				true,
+				true,
+				true,
+				true,
+				expectedLockedForCalculation,
+				expectedCurrencyRateImportID,
+				true,
+				expectedIndexValueImportID,
+				true,
+				expectedIndexWeightingImportID,
+				true,
+                expectedCompositeFundSplitImportID,
+                true,
+				expectedTimeStamp,
+				100,
+                null); // fund status param is unused
+
+			aFund.PredictedUnitPrice = expectedPredictedUnitPrice;
+			return aFund;
+		}
+
+		/// <summary>
+		/// Tells the parent class the constructor type used
+		/// </summary>
+		protected override EntityConstructorType constructorType
+		{
+			get
+			{
+				return EntityConstructorType.Initialised;
+			}
+		}
+	}
+}

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="ValidationFramework.ValidatorAttribute">
+    <Position X="8" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>ValidatorAttribute.cs</FileName>
+      <HashCode>AQAIAAAAAACACAgAAAgCAAAAAAAAAAAIACAADABAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="ValidationFramework.CompareValidatorAttribute">
+    <Position X="15.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <FileName>CompareValidatorAttribute.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAEAAAIAAAAAAIAAAAAAAAAAABA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="ValidationFramework.CustomValidatorAttribute">
+    <Position X="13" Y="4" Width="2" />
+    <TypeIdentifier>
+      <FileName>CustomValidatorAttribute.cs</FileName>
+      <HashCode>gAAAAAAAAAAAAAgAAAACAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="ValidationFramework.LengthValidatorAttribute">
+    <Position X="6.75" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>LengthValidatorAttribute.cs</FileName>
+      <HashCode>gAAAEACAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="ValidationFramework.RangeValidatorAttribute">
+    <Position X="10.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <FileName>RangeValidatorAttribute.cs</FileName>
+      <HashCode>gAAAEACAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="ValidationFramework.RegexValidatorAttribute">
+    <Position X="0.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <FileName>RegexValidatorAttribute.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="ValidationFramework.RequiredValidatorAttribute">
+    <Position X="3.25" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>RequiredValidatorAttribute.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgACAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="ValidationFramework.CustomValidationEventArgs">
+    <Position X="0.5" Y="6.25" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>CustomValidationEventArgs.cs</FileName>
+      <HashCode>AQAAAAEAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.PropertyInfoExtended">
+    <Position X="6.25" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>PropertyInfoExtended.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAACQAAAAAAAAAAQEgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Validation">
+    <Position X="0.5" Y="8.75" Width="2.75" />
+    <TypeIdentifier>
+      <FileName>Validation.cs</FileName>
+      <HashCode>gCAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEAABAABgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.ValidationException">
+    <Position X="3.75" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ValidationException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.ValidationManager">
+    <Position X="6.25" Y="8.75" Width="3.75" />
+    <TypeIdentifier>
+      <FileName>ValidationManager.cs</FileName>
+      <HashCode>CAAAAACAAKCAAAAEIAgAAAAAAAAAQAAAAAQAAAAgABA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="ValidationFramework.ValidationManager.ExceptionStrings" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ValidationManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="InValidBusinessObjectException">
+    <Position X="3.5" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>InValidBusinessObjectException.cs</FileName>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ValidationFramework.ValidationCompareOperator">
+    <Position X="3.75" Y="10" Width="2" />
+    <TypeIdentifier>
+      <FileName>Enums.cs</FileName>
+      <HashCode>ACAAAAAAgAAAAAAAgIAAAAAAAAAAAAAAAAAAAAQAACA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

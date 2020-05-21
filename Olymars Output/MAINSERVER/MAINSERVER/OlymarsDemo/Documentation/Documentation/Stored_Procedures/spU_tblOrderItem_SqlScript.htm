@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spU_tblOrderItem - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spU_tblOrderItem
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				Create Procedure [spU_tblOrderItem]<br>
+				<br>
+				-- Update an existing record in [tblOrderItem] table<br>
+				<br>
+				(<br>
+				  @Oit_GuidID [uniqueidentifier] -- for [tblOrderItem].[Oit_GuidID] column<br>
+				, @Oit_GuidOrderID [uniqueidentifier] -- for [tblOrderItem].[Oit_GuidOrderID] column<br>
+				, @ConsiderNull_Oit_GuidOrderID bit = 0<br>
+				, @Oit_GuidProductID [uniqueidentifier] -- for [tblOrderItem].[Oit_GuidProductID] column<br>
+				, @ConsiderNull_Oit_GuidProductID bit = 0<br>
+				, @Oit_LngAmount [int] -- for [tblOrderItem].[Oit_LngAmount] column<br>
+				, @ConsiderNull_Oit_LngAmount bit = 0<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				/*<br>
+				&nbsp;&nbsp;&nbsp;This T-SQL code was automatically generated using:<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server Centric .NET Code Generator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v 1.0.1287.20792<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generation Date: 28/11/2004 11:31:14<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generator name: &lt;Developer Name Here&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template last update: 24/06/2002 01:53:57<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template revision: 15083637<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server version: 08.00.0194<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server: MAINSERVER\MAINSERVER<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Database: [OlymarsDemo]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;WARNING: This source is provided &quot;AS IS&quot; without warranty of any kind.<br>
+				&nbsp;&nbsp;&nbsp;The author disclaims all warranties, either express or implied, including<br>
+				&nbsp;&nbsp;&nbsp;the warranties of merchantability and fitness for a particular purpose.<br>
+				&nbsp;&nbsp;&nbsp;In no event shall the author or its suppliers be liable for any damages<br>
+				&nbsp;&nbsp;&nbsp;whatsoever including direct, indirect, incidental, consequential, loss of<br>
+				&nbsp;&nbsp;&nbsp;business profits or special damages, even if the author or its suppliers<br>
+				&nbsp;&nbsp;&nbsp;have been advised of the possibility of such damages.<br>
+				*/<br>
+				<br>
+				<br>
+				--&nbsp;&nbsp;&nbsp;IMPORTANT:<br>
+				--&nbsp;&nbsp;&nbsp;Changes to this SQL code may cause incorrect behavior<br>
+				--&nbsp;&nbsp;&nbsp;and will be lost if the code is regenerated. <br>
+				<br>
+				<br>
+				Set NoCount On<br>
+				<br>
+				If @ConsiderNull_Oit_GuidOrderID Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Oit_GuidOrderID = 0<br>
+				<br>
+				If @ConsiderNull_Oit_GuidProductID Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Oit_GuidProductID = 0<br>
+				<br>
+				If @ConsiderNull_Oit_LngAmount Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Oit_LngAmount = 0<br>
+				<br>
+				<br>
+				Update [dbo].[tblOrderItem]<br>
+				<br>
+				Set<br>
+				&nbsp;&nbsp;&nbsp; [Oit_GuidOrderID] = Case @ConsiderNull_Oit_GuidOrderID When 0 Then IsNull(@Oit_GuidOrderID, [Oit_GuidOrderID]) When 1 Then @Oit_GuidOrderID End<br>
+				&nbsp;&nbsp;&nbsp;,[Oit_GuidProductID] = Case @ConsiderNull_Oit_GuidProductID When 0 Then IsNull(@Oit_GuidProductID, [Oit_GuidProductID]) When 1 Then @Oit_GuidProductID End<br>
+				&nbsp;&nbsp;&nbsp;,[Oit_LngAmount] = Case @ConsiderNull_Oit_LngAmount When 0 Then IsNull(@Oit_LngAmount, [Oit_LngAmount]) When 1 Then @Oit_LngAmount End<br>
+				<br>
+				Where<br>
+				&nbsp;&nbsp;&nbsp;     ([Oit_GuidID] = @Oit_GuidID)<br>
+				<br>
+				Set NoCount Off<br>
+				<br>
+				Return(0)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:20
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

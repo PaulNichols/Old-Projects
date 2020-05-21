@@ -1,0 +1,223 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			tblProduct - Overview on how to insert a new record
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			tblProduct
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Overview on how to insert a new record
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				In order to insert a new record in [<a href="../tblProduct.htm">tblProduct</a>] table, a specific stored procedure was created: [<a href="../../Stored_Procedures/spI_tblProduct.htm">spI_tblProduct</a>].
+			</div>
+			<br>
+			<div class="MainBody">
+				This stored procedure has the following parameters to be supplied before its execution:
+				<br>
+				<UL>
+					<LI>
+						<b>@Pro_GuidID</b>:
+						<br>
+							Update this description in the "Olymars/Description" extended property of the "Pro_GuidID" column.
+					</LI>
+					<br><br>
+					<LI>
+						<b>@Pro_StrName</b>:
+						<br>
+							Update this description in the "Olymars/Description" extended property of the "Pro_StrName" column.
+					</LI>
+					<br><br>
+					<LI>
+						<b>@Pro_CurPrice</b>:
+						<br>
+							Update this description in the "Olymars/Description" extended property of the "Pro_CurPrice" column.
+					</LI>
+					<br><br>
+					<LI>
+						<b>@Pro_LngCategoryID</b>:
+						<br>
+							Update this description in the "Olymars/Description" extended property of the "Pro_LngCategoryID" column.
+					</LI>
+					<br><br>
+			</div>
+		</blockquote>
+		<div class="MainTitle">
+			Parameters description
+		</div>
+		<blockquote>
+			<Table>
+				<tr>
+					<td width="250px">
+						<div class="TableHeader">
+							Parameter
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableHeader">
+							SQL Type
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableHeader">
+							Default
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableHeader">
+							Direction
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="250px">
+						<div class="TableRow">
+							[@Pro_GuidID]
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableRow">
+							[uniqueidentifier]
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Null
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Input/Output
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="250px">
+						<div class="TableRow">
+							[@Pro_StrName]
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableRow">
+							[varchar](255)
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							&nbsp;
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Input
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="250px">
+						<div class="TableRow">
+							[@Pro_CurPrice]
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableRow">
+							[money]
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							&nbsp;
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Input
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="250px">
+						<div class="TableRow">
+							[@Pro_LngCategoryID]
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableRow">
+							[int]
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							&nbsp;
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Input
+						</div>
+					</td>
+				</tr>
+			</Table>
+			<br>
+			<div class="NoteHeader">
+				Note:
+			</div>
+			<UL>
+				<div class="NoteBody">
+					<LI>
+						If you do not supply the parameter [<b>@Pro_GuidID</b>], a new [uniqueidentifier] will be automatically generated for you. You can  retrieve this value by reading back the value of this parameter after the stored procedure call.
+					</LI>
+				</div>
+				<br>
+				</UL>
+		</blockquote>
+		<div class="MainTitle">
+			See also:
+		</div>
+		<blockquote>
+			<ul>
+				<div class="SeeAlsoBody">
+					<li>
+						Overview on the <a href="../../Stored_Procedures/spI_tblProduct_Param_Members.htm">Parameter</a> class members.<br>
+					</li>
+					<li>
+						Overview on the <a href="../../Stored_Procedures/spI_tblProduct_Sp_Members.htm">StoredProcedure</a> class members.<br>
+					</li>
+					<li>
+						See a <a href="../../Stored_Procedures/spI_tblProduct_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+					</li>
+					<li>
+						See a <a href="../../Stored_Procedures/spI_tblProduct_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+					</li>
+					<li>
+						Click <a href="../../Stored_Procedures/spI_tblProduct_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+					</li>
+				</div>
+			</ul>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:56
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

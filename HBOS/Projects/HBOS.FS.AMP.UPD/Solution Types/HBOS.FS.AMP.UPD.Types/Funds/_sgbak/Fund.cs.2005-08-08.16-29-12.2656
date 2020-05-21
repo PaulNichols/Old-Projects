@@ -1,0 +1,1884 @@
+using System;
+using System.Text;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.BenchMark;
+using HBOS.FS.AMP.UPD.Types.Factors;
+using HBOS.FS.AMP.UPD.Types.FundGroups;
+
+namespace HBOS.FS.AMP.UPD.Types.Funds
+{
+	/// <summary>
+	/// Base class for all funds. Is now abstract in order that fund type may be determined 
+	/// by the specific class type inheriting from this base.
+	/// </summary>
+	public abstract class Fund : EntityBase, IBenchMark
+	{
+		#region Public enumerations
+
+		/// <summary>
+		/// List of possible fund statuses
+		/// </summary>
+		public enum FundStatusType
+		{
+			/// <summary>
+			/// Fund status code is unrecognised
+			/// </summary>
+			Unknown = 0,
+
+			/// <summary>
+			/// Fund is missing
+			/// </summary>
+			Missing = 1,
+
+			/// <summary>
+			/// Fund data has been imported
+			/// </summary>
+			Imported = 2,
+
+			/// <summary>
+			/// Fund has been first level authorised
+			/// </summary>
+			FirstLevelAuthorised = 4,
+
+			/// <summary>
+			/// Fund has been second level authorised
+			/// </summary>
+			SecondLevelAuthorised = 8,
+
+			/// <summary>
+			/// Fund has been released to distribution
+			/// </summary>
+			Released = 16,
+
+			/// <summary>
+			/// Fund is awaiting distribution
+			/// </summary>
+			AwaitingDistribution = 32,
+
+			/// <summary>
+			/// Fund is in the process of being distributed
+			/// </summary>
+			BeingDistributed = 64,
+
+			/// <summary>
+			/// Fund has been distributed
+			/// </summary>
+			Distributed = 128
+		} ;
+
+		#endregion
+
+		#region Private variable declaration
+
+		#region Drop II
+
+		//
+		// Note. As we work through the drop II use cases move the member
+		//       variables that we still need in this class into this 
+		//       region so what is left we know we can remove from the class.
+		//
+
+		// Property variables - persisted values
+
+		private string m_fullName = string.Empty;
+		private string m_shortName = string.Empty;
+		private string m_classOrSeriesCode = string.Empty;
+		private bool m_onHiPortfolio3 = false;
+		private string m_parentAssetFundID = string.Empty;
+		private AssetFund m_parentAssetFund = null;
+		private decimal m_upperTolerance = 0M;
+		private decimal m_lowerTolerance = 0M;
+
+		//is a percentile to 4dp which is a fraction/ratio to 6dp
+		private const int toleranceNumDecimalPlaces = 6;
+
+		//Allow a null collection - as fund group persister returns a collection, calling client will
+		//mostly just set the fund collection on the fund.
+		private FundGroupCollection m_fundGroups = null;
+
+		/// <summary>
+		/// Collection of factors - added as part of type refactoring / addition of composite
+		/// </summary>
+		protected FactorCollection m_factors = new FactorCollection();
+
+		//added 7th June 2005 - required for static data export
+		private string m_companyCode = string.Empty;
+
+		private string m_securityCode = string.Empty;
+
+		//collection of fundgroups for parent asset fund
+		//only used for static data export
+		private FundGroupCollection m_parentFundGroups = null;
+
+		#endregion
+
+		#region Drop I
+
+		private string m_fundCode = string.Empty;
+		private ExternalSystemIDCollection m_systemIDs = null;
+
+		private decimal m_assetMovementTolerance = 0M;
+		private bool m_priceIncreaseOnly = false;
+		private Int64 m_tolerancesID = 0;
+		private decimal m_price;
+		private bool m_priceSet = false;
+		private long m_importedFundPriceID = 0;
+		private decimal m_previousPrice = 0M;
+		private bool m_previousPriceSet = false;
+		private FundStatusType m_fundStatus = FundStatusType.Missing;
+		private DateTime m_statusChangedTime;
+		private bool m_statusChangedTimeSet = false;
+		private bool m_usePredictedPrice = false;
+		private byte[] m_authorisedPriceTimestamp = null;
+
+		private bool m_progressStatus = false;
+		private bool m_initialProgressStatus = false;
+
+		#endregion 
+
+		private bool m_benchMarkable = false;
+		private Currency.Currency currency=null;
+
+		#endregion
+
+		#region Constructors
+
+		/// <summary>
+		/// Default constructor creating an object with all properties initialised to the default values.
+		/// </summary>
+		protected Fund()
+		{
+		}
+
+		/// <summary>
+		/// Toes the string.
+		/// </summary>
+		/// <returns></returns>
+		public override string ToString()
+		{
+			return this.FullName;
+		}
+
+		/// <summary>
+		/// Creates a new rehydrated <see cref="Fund"/> instance.
+		/// </summary>
+		/// <param name="hiPortfolioCode"></param>
+		/// <param name="fullName"></param>
+		/// <param name="shortName"></param>
+		/// <param name="classOrSeriesCode"></param>
+		/// <param name="onHiPortfolio3"></param>
+		/// <param name="parentAssetFund"></param>
+		/// <param name="assetMovementTolerance"></param>
+		/// <param name="upperTolerance"></param>
+		/// <param name="lowerTolerance"></param>
+		/// <param name="priceIncreaseOnly"></param>
+		/// <param name="tolerancesID"></param>
+		/// <param name="price"></param>
+		/// <param name="priceSet"></param>
+		/// <param name="importedFundPriceID"></param>
+		/// <param name="valuationBasisEffect"></param>
+		/// <param name="previousPrice"></param>
+		/// <param name="previousPriceSet"></param>
+		/// <param name="fundStatus"></param>
+		/// <param name="statusChangedTime"></param>
+		/// <param name="statusChangedTimeSet"></param>
+		/// <param name="usePredictedPrice"></param>
+		/// <param name="authorisedPriceTimestamp"></param>
+		/// <param name="timestamp"></param>
+		/// <param name="parentAssetFundID"></param>
+		/// <param name="companyCode">Used for static data report. Null is acceptable for all other uses</param>
+		/// <param name="securityCode"></param>
+		/// <param name="factors"></param>
+		/// <param name="isBenchmarkable"></param>
+		public Fund(string hiPortfolioCode, string fullName, string shortName,
+		            string classOrSeriesCode, bool onHiPortfolio3, AssetFund parentAssetFund,
+		            decimal assetMovementTolerance, decimal upperTolerance, decimal lowerTolerance,
+		            bool priceIncreaseOnly, Int64 tolerancesID, decimal price, bool priceSet,
+		            long importedFundPriceID, decimal valuationBasisEffect,
+		            decimal previousPrice, bool previousPriceSet, FundStatusType fundStatus, DateTime statusChangedTime,
+		            bool statusChangedTimeSet, bool usePredictedPrice, byte[] authorisedPriceTimestamp,
+		            byte[] timestamp, string parentAssetFundID, string companyCode, string securityCode, FactorCollection factors, bool isBenchmarkable)
+		{
+			// Populate the local member fields.
+			this.m_fundCode = hiPortfolioCode;
+			this.m_fullName = fullName;
+			this.m_shortName = shortName;
+
+			this.m_classOrSeriesCode = classOrSeriesCode;
+			this.m_onHiPortfolio3 = onHiPortfolio3;
+			this.m_parentAssetFund = parentAssetFund;
+
+			this.m_assetMovementTolerance = assetMovementTolerance;
+			this.m_upperTolerance = upperTolerance;
+			this.m_lowerTolerance = lowerTolerance;
+			this.m_priceIncreaseOnly = priceIncreaseOnly;
+			this.m_tolerancesID = tolerancesID;
+			this.m_price = price;
+			this.m_priceSet = priceSet;
+			this.m_importedFundPriceID = importedFundPriceID;
+			this.m_previousPrice = previousPrice;
+			this.m_previousPriceSet = previousPriceSet;
+			this.m_fundStatus = fundStatus;
+			this.m_statusChangedTime = statusChangedTime;
+			this.m_statusChangedTimeSet = statusChangedTimeSet;
+			this.m_authorisedPriceTimestamp = authorisedPriceTimestamp;
+			this.m_parentAssetFundID = parentAssetFundID;
+			this.m_usePredictedPrice = usePredictedPrice;
+            this.m_benchMarkable = isBenchmarkable;
+
+			// Now assign the funds progress status
+			this.m_progressStatus = (this.m_fundStatus >= FundStatusType.SecondLevelAuthorised && !this.m_usePredictedPrice);
+			this.m_initialProgressStatus = this.m_progressStatus;
+
+
+			// Set up the IEntityBase members.
+			this.m_timestamp = timestamp;
+			this.m_isNew = false;
+			this.m_isDeleted = false;
+			this.m_isDirty = false;
+
+			this.m_companyCode = companyCode; //added 7/6/05 - used for static data report. Null is acceptable for all other uses.
+			this.m_securityCode = securityCode;
+
+			if (factors == null)
+			{
+				throw new NullReferenceException("factors collection must be created prior to fund construction");
+			}
+			this.m_factors = factors;
+		}
+
+		#endregion Constructor
+
+		#region Fund properties
+
+		/// <summary>
+		/// caches the fundgroups for the parent asset fund
+		/// Only used by static data export - saves loading up the whole asset fund
+		/// </summary>
+		public FundGroupCollection ParentFundGroups
+		{
+			get { return m_parentFundGroups; }
+			set { m_parentFundGroups = value; }
+		}
+
+
+		/// <summary>
+		/// Gets a value indicating whether this instance is bench markable and can be used as a bench mark.
+		/// </summary>
+		/// <value>
+		/// 	<c>true</c> if this instance is bench markable; otherwise, <c>false</c>.
+		/// </value>
+		public bool IsBenchMarkable
+		{
+			get { return m_benchMarkable; }
+            set 
+                { 
+                m_benchMarkable = value; 
+                this.setDirtyFlag();
+                }
+		}
+
+
+		/// <summary>
+		/// A string representation of the type used for display and reporting purposes.
+		/// todo - remove display properties from the entity once grid improved.
+		/// </summary>
+		public abstract string FundType { get; }
+
+		/// <summary>
+		/// Returns the collection of factors (things that can affect the predicted price)
+		/// This is a collection of type Factor base, which can be one of
+		///		XFactor
+		///		RevaluationFactor
+		///		TaxProvisionEstimate or
+		///		ScalingFactor
+		///	All support IFactor
+		/// </summary>
+		/// <returns></returns>
+		public FactorCollection Factors
+		{
+			get { return m_factors; }
+		}
+
+		/// <summary>
+		/// The collection of IndividualFundGroup that detail the fund groups that this fund is linked to.
+		/// This collection shall always exist and shall return an empty collection if the fund is not associated
+		/// with any fund groups.
+		/// </summary>
+		public FundGroupCollection FundGroups
+		{
+			get
+			{
+				if (m_fundGroups == null)
+				{
+					m_fundGroups = new FundGroupCollection();
+				}
+				return m_fundGroups;
+			}
+			set { m_fundGroups = value; }
+		}
+
+		/// <summary>
+		/// Company code - only used for reports
+		/// </summary>
+		public string CompanyCode
+		{
+			get { return m_companyCode; }
+
+			set
+			{
+				m_companyCode = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The HiPortfolio fund code. Todo - rename to FundCode.
+		/// </summary>
+		public string HiPortfolioCode
+		{
+			get { return m_fundCode; }
+
+			set
+			{
+				m_fundCode = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The full name of fund.
+		/// </summary>
+		public string FullName
+		{
+			get { return this.m_fullName; }
+
+			set
+			{
+				this.m_fullName = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The short name of fund.
+		/// </summary>
+		public string ShortName
+		{
+			get { return this.m_shortName; }
+
+			set
+			{
+				this.m_shortName = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The IDs used to identify this fund on external systems.
+		/// </summary>
+		public ExternalSystemIDCollection SystemIDs
+		{
+			get { return this.m_systemIDs; }
+
+			set
+			{
+				this.m_systemIDs = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The share class code or price series number.
+		/// </summary>
+		public string ClassOrSeriesCode
+		{
+			get { return this.m_classOrSeriesCode; }
+
+			set
+			{
+				this.m_classOrSeriesCode = value;
+				this.setDirtyFlag();
+			}
+		}
+
+
+		/// <summary>
+		/// Flag indicating whether the fund is on HiPortfolio3 or not.
+		/// </summary>
+		public bool OnHiPortfolio3
+		{
+			get { return this.m_onHiPortfolio3; }
+
+			set
+			{
+				this.m_onHiPortfolio3 = value;
+				this.setDirtyFlag();
+			}
+		}
+
+
+		/// <summary>
+		/// The asset fund that this fund belongs to.  Used to return properties specific to the asset
+		/// fund.
+		/// </summary>
+		public AssetFund ParentAssetFund
+		{
+			get { return this.m_parentAssetFund; }
+
+			set
+			{
+				this.m_parentAssetFund = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// A flag indicating whether or not the fund price has been authorised
+		/// </summary>
+		public bool IsAuthorised
+		{
+			get { return m_fundStatus >= FundStatusType.FirstLevelAuthorised; }
+
+		}
+
+		/// <summary>
+		/// The tolerance for the asset movement of the fund.
+		/// </summary>
+		public decimal AssetMovementTolerance
+		{
+			get { return this.m_assetMovementTolerance; }
+
+			set
+			{
+				this.m_assetMovementTolerance = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The upper limit of price movement tolerance for this fund.
+		/// </summary>
+		public decimal UpperTolerance
+		{
+			get { return this.m_upperTolerance; }
+
+			set
+			{
+				this.m_upperTolerance = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The lower limit of price movement tolerance for this fund.
+		/// </summary>
+		public decimal LowerTolerance
+		{
+			get { return this.m_lowerTolerance; }
+
+			set
+			{
+				this.m_lowerTolerance = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the fund price is allowed to fall or not.
+		/// </summary>
+		public bool PriceIncreaseOnly
+		{
+			get { return this.m_priceIncreaseOnly; }
+
+			set
+			{
+				this.m_priceIncreaseOnly = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The ID for the tolerances used in the price calculation.
+		/// </summary>
+		public Int64 TolerancesID
+		{
+			get { return this.m_tolerancesID; }
+
+
+			set { this.m_tolerancesID = value; }
+		}
+
+		/// <summary>
+		/// Flag to indicate whether the tolerances ID is a valid value or not.
+		/// </summary>
+		public bool TolerancesIDSet
+		{
+			get { return this.m_tolerancesID > 0; }
+		}
+
+
+		/// <summary>
+		/// The current imported price of the fund.
+		/// </summary>
+		public decimal Price
+		{
+			get { return m_price; }
+
+
+			set { this.m_price = value; }
+		}
+
+		/// <summary>
+		/// Flag indicating whether the price field has been set or not as zero may be a valid value.
+		/// </summary>
+		public bool PriceSet
+		{
+			get { return this.m_priceSet; }
+
+
+			set { this.m_priceSet = value; }
+		}
+
+		/// <summary>
+		/// The ID for the imported fund price used in the price calculation.
+		/// </summary>
+		public long ImportedFundPriceID
+		{
+			get { return this.m_importedFundPriceID; }
+
+
+			set { this.m_importedFundPriceID = value; }
+		}
+
+		/// <summary>
+		/// Flag indicating whether the imported fund price ID is a valid value or not.
+		/// </summary>
+		public bool ImportedFundPriceIDSet
+		{
+			get { return this.m_importedFundPriceID > 0; }
+		}
+
+		//
+		// TODO: No requirement for this property.  Remove during the next refactoring phase
+		//
+		/// <summary>
+		/// The ID for the valuation basis used in the price calculation.
+		/// </summary>
+		public virtual int ValuationBasisID
+		{
+			get { return this.m_factors.ValuationBasisFctr.FactorID; }
+
+
+			set { this.m_factors.ValuationBasisFctr.FactorID = value; }
+		}
+
+		//
+		// TODO: No requirement for this property.  Remove during the next refactoring phase
+		//
+		/// <summary>
+		/// Flag indicating whether the valuation basis ID is a valid value or not.
+		/// </summary>
+		public virtual bool ValuationBasisIDSet
+		{
+			get { return this.m_factors.ValuationBasisFctr.FactorIDSet; }
+		}
+
+		/// <summary>
+		/// The most recent previous price for the fund.
+		/// </summary>
+		public decimal PreviousPrice
+		{
+			get { return this.m_previousPrice; }
+
+
+			set { this.m_previousPrice = value; }
+		}
+
+		/// <summary>
+		/// Flag indicating whether the previous price field has been set or not as zero may be a 
+		/// valid value.
+		/// </summary>
+		public bool PreviousPriceSet
+		{
+			get { return this.m_previousPriceSet; }
+
+
+			set { this.m_previousPriceSet = value; }
+		}
+
+
+		/// <summary>
+		/// The current fund status.
+		/// </summary>
+		public FundStatusType FundStatus
+		{
+			get { return this.m_fundStatus; }
+
+			set
+			{
+				this.m_fundStatus = value;
+				this.setDirtyFlag();
+			}
+		}
+
+
+		/// <summary>
+		/// The date and time that the status was changed (excluding tolerance status changes).
+		/// </summary>
+		public DateTime StatusChangedTime
+		{
+			get { return this.m_statusChangedTime; }
+
+			set
+			{
+				this.m_statusChangedTime = value;
+				this.m_statusChangedTimeSet = true;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// Flag to indicate whether the StatusChangedTime has been set because it defaults to a 
+		/// valid date.
+		/// </summary>
+		public bool StatusChangedTimeSet
+		{
+			get { return this.m_statusChangedTimeSet; }
+
+
+			set { this.m_statusChangedTimeSet = value; }
+		}
+
+		/// <summary>
+		/// Will be set to true if the predicted price is to be used as the 
+		/// authorised price.
+		/// </summary>
+		public bool UsePredictedPrice
+		{
+			get { return this.m_usePredictedPrice; }
+
+			set
+			{
+				this.m_usePredictedPrice = value;
+				// Do not set the IsDirty flag for an update to this property because it will only be
+				// updated as part of a status change operation.
+			}
+		}
+
+		/// <summary>
+		/// The timestamp on the authorised fund price file for this fund.
+		/// </summary>
+		public byte[] AuthorisedPriceTimestamp
+		{
+			get { return this.m_authorisedPriceTimestamp; }
+
+			set { this.m_authorisedPriceTimestamp = value; }
+		}
+
+		/// <summary>
+		/// The calculated predicted price for the current day.
+		/// Calculate the predicted price for the fund using:
+		/// predicted = previous * (1 + AM + RF + VF + SF + X) * (1 - TI)
+		/// where - AM is asset movement (calculated)
+		///       - TI is tax impact (non oeics - user input)
+		///       - RF is revaluation factor 
+		///       - VF is valuation factor (calculated)
+		///       - SF is scaling factor (user input) and
+		///       - X is X factor (user input).
+		/// All the factors are held as decimal fractions rather than percentages (ie. if there is a
+		/// 10% movement in asset funds then this is used as 0.1 in the calculations).
+		/// The fund weightings are also held as decimal fractions rather than percentages and so must
+		/// add up to 1 rather than to 100.
+		/// </summary>
+		public virtual decimal PredictedPrice
+		{
+			get
+			{
+				//Predicted Price Today = 
+				//	Previous day's autorised price * (1 + predictedMovement)
+				//		where predictedMovement = (Asset Movement + Sum of Factors (excluding TPE)) * (1 - TPE)	
+
+				if (!this.PreviousPriceSet || !this.PredictedAssetMovementSet)
+				{
+					return 0M;
+				}
+
+				return this.PreviousPrice*(1 + predictedMovement);
+
+			}
+
+
+			set
+			{
+				//do nothing - it's a derived value. This is left in for the grid
+			}
+		}
+
+		/// <summary>
+		/// calculates the predicted movement to be applied to the price in order to calculate predicted price
+		/// </summary>
+		protected virtual decimal predictedMovement
+		{
+			get
+			{
+				if (!this.PreviousPriceSet || !this.PredictedAssetMovementSet)
+				{
+					return 0M;
+				}
+
+				// Calculate the predicted movement.
+				//Predicted Movement Today = 
+				//	(Asset Movement + Sum of Factors (excluding TPE)) * (1 - TPE)	
+
+				//so this base formula is for non tpe based funds only (i.e. oeics or non life)
+				//override in composite & linked to call this base and add on TPE effect
+				decimal movement = this.PredictedAssetMovement;
+				if (m_factors != null && m_factors.Count > 0)
+				{
+					movement += m_factors.SumFactors();
+				}
+				return movement;
+
+			}
+		}
+
+
+		/// <summary>
+		/// The calculated valuation basis effect used in price prediction.
+		/// </summary>
+		public virtual decimal ValuationBasisEffect
+		{
+			get { return this.m_factors.ValuationBasisFctr.RatioValue; }
+
+
+			set
+			{
+				this.m_factors.ValuationBasisFctr.RatioValue = value;
+				setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// Flag to indicate whether the asset movement is within the tolerance or not.
+		/// </summary>
+		public bool WithinAssetMovementTolerance
+		{
+			get
+			{
+				if (m_parentAssetFund != null)
+				{
+					return m_parentAssetFund.WithinAssetMovementTolerance;
+				}
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Check to see if the price fails both the upper and lower tolerance
+		/// </summary>
+		public bool PriceOutsideTolerance
+		{
+			get { return (!WithinPriceLowerTolerance && !WithinPriceUpperTolerance); }
+		}
+
+
+		/// <summary>
+		/// This is a check to see that even though the fund is at Second Level 
+		/// Authorisation was it within the tolerances and there for passed the first 
+		/// level tolerance test?
+		/// </summary>
+		public bool SecondLevelButNotFirst
+		{
+			get { return (this.FundStatus == FundStatusType.SecondLevelAuthorised && this.WithinAssetMovementTolerance && !this.PriceOutsideTolerance); }
+		}
+
+		/// <summary>
+		/// Flag to indicate whether the price is within the lower tolerance or not.
+		/// </summary>
+		public bool WithinPriceLowerTolerance
+		{
+			get
+			{
+				if (this.PriceSet)
+				{
+					decimal priceVariance = Math.Abs(this.PriceMovementVariance);
+					return priceVariance <= this.LowerTolerance;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+
+			set
+			{
+				//do nothing - its a derived value. Set left in for the grid.
+			}
+		}
+
+
+		/// <summary>
+		/// Flag to indicate if the price is within rounded price tolerance
+		/// </summary>
+		public bool WithinRoundedPriceLowerTolerance
+		{
+			get
+			{
+				if (this.PriceSet)
+				{
+					decimal priceVariance = Math.Abs(this.PriceMovementVariance);
+					decimal roundedPriceVariance = decimal.Round(priceVariance, toleranceNumDecimalPlaces);
+
+					return roundedPriceVariance <= this.LowerTolerance;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+
+			set
+			{
+				//do nothing - this is a derived value. Set is just here for the grid.
+			}
+		}
+
+
+		/// <summary>
+		/// Flag to indicate whether the price is within the upper tolerance or not.
+		/// </summary>
+		public bool WithinPriceUpperTolerance
+		{
+			get
+			{
+				if (this.PriceSet)
+				{
+					decimal priceVariance = Math.Abs(this.PriceMovementVariance);
+					return priceVariance <= this.UpperTolerance;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+
+			set
+			{
+				//do nothing - this is a derived value. Set is just here for the grid.
+			}
+		}
+
+		/// <summary>
+		/// Flag to indicate whether the price is within the upper tolerance or not.
+		/// </summary>
+		public bool WithinRoundedPriceUpperTolerance
+		{
+			get
+			{
+				if (this.PriceSet)
+				{
+					decimal priceVariance = Math.Abs(this.PriceMovementVariance);
+					decimal roundedPriceVariance = decimal.Round(priceVariance, toleranceNumDecimalPlaces);
+
+					return roundedPriceVariance <= this.UpperTolerance;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+
+			set
+			{
+				//do nothing - its a derived value. Set left in for the grid.
+			}
+		}
+
+		/// <summary>
+		/// Flag to indicate whether the price movement is within the allowed direction or not.
+		/// </summary>
+		public bool WithinPriceDirectionTolerance
+		{
+			get
+			{
+				// Check the direction of the price movement.
+				if (this.PriceSet)
+				{
+					return !this.PriceIncreaseOnly || (this.Price >= this.PreviousPrice);
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+
+			set
+			{
+				//do nothing - its a derived value. Set left in for the grid.				
+			}
+		}
+
+		/// <summary>
+		/// Will be set to true if the current status is to be progressed to the next level or reverted
+		/// to the previous level.
+		/// </summary>
+		public bool ProgressStatus
+		{
+			get { return this.m_progressStatus; }
+
+			set
+			{
+				this.m_progressStatus = value;
+
+				// This property will only be set as part of one of the progression of fund status functions,
+				// in which updates to other properties are not done unless the status is being changed.
+				// Because of this the IsDirty flag should only be set on if the ProgressStatus value has
+				// changed from its original setting.
+				this.IsDirty = !(this.ProgressStatus == this.InitialProgressStatus);
+			}
+		}
+
+		/// <summary>
+		/// This property holds the ProgressStatus value at the time the fund is created.  This is used
+		/// to prevent attempting to perform an status progress operation if the ProgressStatus field has
+		/// been returned to what it was originally.
+		/// </summary>
+		public bool InitialProgressStatus
+		{
+			get { return this.m_initialProgressStatus; }
+
+			set
+			{
+				this.m_initialProgressStatus = value;
+
+				// The ProgressStatus property is only set as part of one of the progression of fund status
+				// functions, in which updates to other properties are not done unless the status is being
+				// changed.  Because of this the IsDirty flag should only be set on if the ProgressStatus
+				// value has changed from its original setting.
+				this.IsDirty = !(this.ProgressStatus == this.InitialProgressStatus);
+			}
+		}
+
+		/// <summary>
+		/// The calculated price movement (difference between current price and previous previous) expressed
+		/// as a percentage.
+		/// </summary>
+		public decimal PriceMovementPercent
+		{
+			get
+			{
+				decimal result = 0;
+
+				if (this.PriceSet && this.PreviousPriceSet && this.PreviousPrice != 0)
+				{
+					result = ((this.Price - this.PreviousPrice)/this.PreviousPrice);
+				}
+
+				return result;
+			}
+		}
+
+
+		/// <summary>
+		/// The calculated predicted price movement (difference between current predicted price and 
+		/// previous price) expressed as a percentage.
+		/// </summary>
+		public decimal PredictedPriceMovementPercent
+		{
+			get
+			{
+				decimal result = 0;
+
+				if (this.PreviousPriceSet && this.PreviousPrice != 0)
+				{
+					decimal predPrice = Decimal.Round(this.PredictedPrice, 4);
+					if (predPrice == 0M)
+					{
+						return 0M;
+					}
+					else
+					{
+						result = ((predPrice - this.PreviousPrice)/this.PreviousPrice);
+					}
+				}
+
+				return Decimal.Round(result, 4);
+			}
+		}
+
+		/// <summary>
+		/// The difference between the actual price movement and the predicted price movement.
+		/// </summary>
+		public decimal PriceMovementVariance
+		{
+			get
+			{
+				decimal result = 0;
+
+				if (this.PriceSet && this.PreviousPriceSet
+					&& this.PreviousPrice != 0)
+				{
+					result = this.PriceMovementPercent - this.PredictedPriceMovementPercent;
+				}
+
+				return result;
+			}
+		}
+
+		/// <summary>
+		/// The ID of the asset fund that this fund belongs to, retrieved from the parent asset fund
+		/// object.
+		/// </summary>
+		public string AssetFundID
+		{
+			get { return m_parentAssetFundID; }
+		}
+
+		/// <summary>
+		/// The name of the asset fund that this fund belongs to, retrieved from the parent asset fund
+		/// object.
+		/// </summary>
+		public string AssetFundName
+		{
+			get
+			{
+				if (this.ParentAssetFund != null)
+				{
+					return this.ParentAssetFund.FullName;
+				}
+
+				return string.Empty;
+			}
+		}
+
+		/// <summary>
+		/// The unit price for the asset fund, retrieved from the parent asset fund object.
+		/// </summary>
+		public decimal AssetUnitPrice
+		{
+			get
+			{
+				if (this.ParentAssetFund != null)
+				{
+					return this.ParentAssetFund.UnitPrice;
+				}
+
+				return 0;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the asset unit price is a valid value or not.
+		/// </summary>
+		public bool AssetUnitPriceSet
+		{
+			get { return (this.ParentAssetFund != null && this.ParentAssetFund.UnitPriceSet); }
+		}
+
+		/// <summary>
+		/// The asset movement for the asset fund, retrieved from the parent asset fund object.
+		/// </summary>
+		public decimal AssetMovement
+		{
+			get
+			{
+				if (this.ParentAssetFund != null)
+				{
+					return this.ParentAssetFund.UnitPriceMovement;
+				}
+
+				return 0;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the asset movement has been calculated and so holds a valid value or
+		/// not.
+		/// </summary>
+		public bool AssetMovementSet
+		{
+			get { return (this.ParentAssetFund != null && this.ParentAssetFund.UnitPriceMovementSet); }
+		}
+
+		/// <summary>
+		/// The asset fund predicted price.
+		/// </summary>
+		public decimal PredictedAssetUnitPrice
+		{
+			get
+			{
+				if (this.ParentAssetFund != null)
+				{
+					return this.ParentAssetFund.PredictedUnitPrice;
+				}
+
+				return 0;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating that the predicted asset unit price is valid.
+		/// </summary>
+		public bool PredictedAssetUnitPriceSet
+		{
+			get { return (this.ParentAssetFund != null && this.ParentAssetFund.PredictedUnitPriceSet); }
+		}
+
+		/// <summary>
+		/// The predicted asset movement for the asset fund, retrieved from the parent asset fund object.
+		/// </summary>
+		public decimal PredictedAssetMovement
+		{
+			get
+			{
+				if (this.ParentAssetFund != null)
+				{
+					return this.ParentAssetFund.PredictedAssetMovement;
+				}
+
+				return 0;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the predicted asset movement has been set because the default may
+		/// be a valid value.
+		/// </summary>
+		public bool PredictedAssetMovementSet
+		{
+			get { return (this.ParentAssetFund != null && this.ParentAssetFund.PredictedAssetMovementSet); }
+		}
+
+		/// <summary>
+		/// The variance in the asset fund unit price movement, retrieved from the parent asset fund
+		/// object.
+		/// </summary>
+		public decimal AssetMovementVariance
+		{
+			get
+			{
+				if (this.ParentAssetFund != null)
+				{
+					return this.ParentAssetFund.AssetMovementVariance;
+				}
+
+				return 0;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the asset movement value is valid or not.
+		/// </summary>
+		public bool AssetMovementVarianceSet
+		{
+			get { return (this.ParentAssetFund != null && this.ParentAssetFund.AssetMovementVarianceSet); }
+		}
+
+		/// <summary>
+		/// The ID for the currency rate import used in the price calculation.
+		/// </summary>
+		public long CurrencyRateSnapshotID
+		{
+			get
+			{
+				long snapshotID = 0;
+
+				// Make sure a valid parent asset fund object has been created
+				if (this.ParentAssetFund != null)
+				{
+					// Get the correct asset fund type and extract the import id
+//					if (this.ParentAssetFund is LinkedAssetFund)
+//					{
+//						snapshotID = ((LinkedAssetFund) this.ParentAssetFund).CurrencyRateSnapshotID;
+//					}
+//					else if (this.ParentAssetFund is OEICAssetFund)
+//					{
+						snapshotID = this.ParentAssetFund.CurrencyRateSnapshotID;
+					//}
+				}
+
+				return snapshotID;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the currency rate import ID is a valid value or not.
+		/// </summary>
+		public bool CurrencyRateSnapshotIDSet
+		{
+			get
+			{
+				bool idSet = false;
+
+				// Make sure a valid parent asset fund object has been created
+				if (this.ParentAssetFund != null)
+				{
+					// Get the correct asset fund type and extract the import id set value
+//					if (this.ParentAssetFund is LinkedAssetFund)
+//					{
+//						idSet = ((LinkedAssetFund) this.ParentAssetFund).CurrencyRateSnapshotIDSet;
+//					}
+//					else if (this.ParentAssetFund is OEICAssetFund)
+//					{
+						idSet = this.ParentAssetFund.CurrencyRateSnapshotIDSet;
+				//	}
+				}
+
+				return idSet;
+			}
+		}
+
+		/// <summary>
+		/// The ID for the index value import used in the price calculation.
+		/// </summary>
+		public long BenchmarkSpiltSnapshotID
+		{
+			get
+			{
+				long snapshotID = 0;
+
+				// Make sure a valid parent asset fund object has been created
+				if (this.ParentAssetFund != null)
+				{
+					// Get the correct asset fund type and extract the import id
+//					if (this.ParentAssetFund is LinkedAssetFund)
+//					{
+//						snapshotID = ((LinkedAssetFund) this.ParentAssetFund).IndexValueSnapshotID;
+//					}
+//					else if (this.ParentAssetFund is OEICAssetFund)
+//					{
+						snapshotID = this.ParentAssetFund.BenchmarkSplitSnapshotID;
+				//	}
+				}
+
+				return snapshotID;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the index value import ID is a valid value or not.
+		/// </summary>
+		public bool IndexValueSnapshotIDSet
+		{
+			get
+			{
+				bool idSet = false;
+
+				// Make sure a valid parent asset fund object has been created
+				if (this.ParentAssetFund != null)
+				{
+					// Get the correct asset fund type and extract the import id set value
+					//if (this.ParentAssetFund is LinkedAssetFund)
+//					{
+//						idSet = ((LinkedAssetFund) this.ParentAssetFund).IndexValueSnapshotIDSet;
+//					}
+//					else if (this.ParentAssetFund is OEICAssetFund)
+//					{
+						idSet = this.ParentAssetFund.BenchmarkSplitSnapshotIDSet;
+					//}
+				}
+
+				return idSet;
+			}
+		}
+
+		/// <summary>
+		/// The ID for the fund index weightings used in the price calculation.
+		/// </summary>
+		public long IndexWeightingSnapshotID
+		{
+			get
+			{
+				long snapshotID = 0;
+
+				// Make sure a valid parent asset fund object has been created
+				if (this.ParentAssetFund != null)
+				{
+					// Get the correct asset fund type and extract the import id
+//					if (this.ParentAssetFund is LinkedAssetFund)
+//					{
+//						snapshotID = ((LinkedAssetFund) this.ParentAssetFund).IndexWeightingSnapshotID;
+//					}
+//					else if (this.ParentAssetFund is OEICAssetFund)
+//					{
+						snapshotID = this.ParentAssetFund.BenchmarkSplitSnapshotID;
+				//	}
+				}
+
+				return snapshotID;
+			}
+		}
+
+		/// <summary>
+		/// Flag indicating whether the index weighting import ID is a valid value or not.
+		/// </summary>
+		public bool IndexWeightingSnapshotIDSet
+		{
+			get
+			{
+				bool idSet = false;
+
+				// Make sure a valid parent asset fund object has been created
+				if (this.ParentAssetFund != null)
+				{
+					// Get the correct asset fund type and extract the import id set value
+//					if (this.ParentAssetFund is LinkedAssetFund)
+//					{
+//						idSet = ((LinkedAssetFund) this.ParentAssetFund).IndexWeightingSnapshotIDSet;
+//					}
+//					else if (this.ParentAssetFund is OEICAssetFund)
+//					{
+						idSet = this.ParentAssetFund.BenchmarkSplitSnapshotIDSet;
+					//}
+				}
+
+				return idSet;
+			}
+		}
+
+		///// <summary>
+//		/// The ID for the composite asset fund split import
+//		/// </summary>
+//		public long CompositeFundSplitSnapshotID
+//		{
+//			get
+//			{
+//				// Make sure a valid parent asset fund object has been created
+//				if (this.ParentAssetFund != null)
+//				{
+//					// Get the correct asset fund type and extract the import id
+////					if (this.ParentAssetFund is CompositeAssetFund)
+////					{
+//						return this.ParentAssetFund.BenchmarkSplitSnapshotID;
+//				//	}
+//				}
+//
+//				return 0;
+//			}
+//		}
+
+		/// <summary>
+		/// Flag indicating whether the asset fund composite split import id is a valid value or not.
+		/// </summary>
+		public bool CompositeFundSplitSnapshotIDSet
+		{
+			get
+			{
+				// Make sure a valid parent asset fund object has been created
+				if (this.ParentAssetFund != null)
+				{
+					// Get the correct asset fund type and extract the import id set value
+//					if (this.ParentAssetFund is CompositeAssetFund)
+//					{
+						return this.ParentAssetFund.BenchmarkSplitSnapshotIDSet;
+					//}
+				}
+
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// THe ID of the funds parent asset fund
+		/// </summary>
+		public string ParentAssetFundID
+		{
+			set { this.m_parentAssetFundID = value; }
+
+			get { return this.m_parentAssetFundID; }
+		}
+
+		/// <summary>
+		/// Derived flag indicating within rounded tolerance
+		/// </summary>
+		public bool PriceMovementRoundedTolerance
+		{
+			get { return this.WithinRoundedPriceLowerTolerance && this.WithinRoundedPriceUpperTolerance && this.WithinPriceDirectionTolerance; }
+		}
+
+		/// <summary>
+		/// The security code needed for import to link fund to hiPort3
+		/// </summary>
+		public string SecurityCode
+		{
+			get { return this.m_securityCode; }
+			set { this.m_securityCode = value; }
+		}
+
+		#endregion Fund properties
+
+		#region Display Properties (re-introduced due to grid limitations. TODO - try to resolve and bring back property formatter)
+
+		/// <summary>
+		/// The formatted field used to display the price.
+		/// </summary>
+		public string PriceDisplay
+		{
+			get { return DisplayFormat.Decimal(this.Price, this.PriceSet, "#,##0.00"); }
+		}
+
+		/// <summary>
+		/// The formatted field used to display the previous price.
+		/// </summary>
+		public string PreviousPriceDisplay
+		{
+			get { return DisplayFormat.Decimal(this.PreviousPrice, this.PreviousPriceSet); }
+		}
+
+		/// <summary>
+		/// The current fund status as a string
+		/// </summary>
+		public string FundStatusDisplay
+		{
+			get { return this.m_fundStatus.ToString(); }
+		}
+
+		/// <summary>
+		/// The formatted field used to display the predicted price.
+		/// </summary>
+		public string PredictedPriceDisplay
+		{
+			get
+			{
+				decimal predPrice = this.PredictedPrice;
+
+				return DisplayFormat.Decimal(predPrice, predPrice > 0M, "#,##0.00");
+			}
+		}
+
+
+		/// <summary>
+		/// The formatted field used to display the price movement.
+		/// </summary>
+		public string PriceMovementPercentDisplay
+		{
+			get
+			{
+				return DisplayFormat.Percent(this.PriceMovementPercent,
+				                             (this.PriceSet && this.PreviousPriceSet));
+			}
+		}
+
+		/// <summary>
+		/// The formatted string to display the predicted price movement.
+		/// </summary>
+		public string PredictedPriceMovementPercentDisplay
+		{
+			get
+			{
+				return DisplayFormat.Percent(this.PredictedPriceMovementPercent,
+				                             (this.PreviousPriceSet));
+			}
+		}
+
+		/// <summary>
+		/// A formatted string showing the price movement variance.
+		/// </summary>
+		public string PriceMovementVarianceDisplay
+		{
+			get
+			{
+				bool varianceSet = this.PriceSet && this.PreviousPriceSet;
+				return DisplayFormat.Percent(this.PriceMovementVariance, varianceSet);
+			}
+		}
+
+		/// <summary>
+		/// The formatted field used to display the asset unit price.
+		/// </summary>
+		public string AssetUnitPriceDisplay
+		{
+			get { return DisplayFormat.Decimal(this.AssetUnitPrice, this.AssetUnitPriceSet, "N4"); }
+		}
+
+		/// <summary>
+		/// The formatted field used to display the asset movement.
+		/// </summary>
+		public string AssetMovementDisplay
+		{
+			get { return DisplayFormat.Percent(this.AssetMovement, this.AssetMovementSet); }
+		}
+
+		/// <summary>
+		/// as above but displays 0 as opposed to unavailable
+		/// </summary>
+		public string AssetMovementDisplay2
+		{
+			get { return DisplayFormat.Percent(this.AssetMovement, true); }
+		}
+
+		/// <summary>
+		/// Formatted field used to display the predicted asset movement.
+		/// </summary>
+		public string PredictedAssetMovementDisplay
+		{
+			get
+			{
+				return DisplayFormat.Percent(this.PredictedAssetMovement,
+				                             this.PredictedAssetMovementSet);
+			}
+		}
+
+		/// <summary>
+		/// Formatted field used to display the asset movement variance.
+		/// </summary>
+		public string AssetMovementVarianceDisplay
+		{
+			get { return DisplayFormat.Percent(this.AssetMovementVariance, this.AssetMovementVarianceSet); }
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of asset movement tolerance check.
+		/// Required for new (drop 2 and 3) status screen
+		/// </summary>
+		public string WithinAssetMovementToleranceDisplay
+		{
+			get { return (this.WithinAssetMovementTolerance ? "Y" : "N"); }
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of asset movement tolerance check.
+		/// LEGACY - todo - can we get rid of this?
+		/// </summary>
+		public string AssetMovementToleranceDisplay
+		{
+			get { return (this.WithinAssetMovementTolerance ? "Yes" : "No"); }
+		}
+
+		/// <summary>
+		/// Display friendly string of asset movement tolerance.
+		/// </summary>
+		public string AssetMovementToleranceDisplay2
+		{
+			get
+			{
+				//todo - we don't have a variable for AssetMovementTolerenceSet!
+				return DisplayFormat.Percent(this.AssetMovementTolerance, this.AssetMovementTolerance > 0);
+			}
+		}
+
+		/// <summary>
+		/// Display friendly string of upper tolerance.
+		/// </summary>
+		public string UpperToleranceDisplay
+		{
+			get
+			{
+				//todo - we don't have a variable for UpperToleranceSet!
+				return DisplayFormat.Percent(this.UpperTolerance, this.UpperTolerance > 0);
+			}
+		}
+
+		/// <summary>
+		/// as above but displays 0 as opposed to unavailable
+		/// </summary>
+		public string UpperToleranceDisplay2
+		{
+			get
+			{
+				//todo - we don't have a variable for UpperToleranceSet!
+				return DisplayFormat.Percent(this.UpperTolerance, true);
+			}
+		}
+
+		/// <summary>
+		/// Display friendly string of lower tolerance.
+		/// </summary>
+		public string LowerToleranceDisplay
+		{
+			get
+			{
+				//todo - we don't have a variable for LowerToleranceSet!
+				return DisplayFormat.Percent(this.LowerTolerance, this.LowerTolerance > 0);
+			}
+		}
+
+		/// <summary>
+		/// as above but displays 0 as opposed to unavailable
+		/// </summary>
+		public string LowerToleranceDisplay2
+		{
+			get { return DisplayFormat.Percent(this.LowerTolerance, true); }
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of price movement tolerance checks.
+		/// </summary>
+		public string PriceMovementToleranceDisplay
+		{
+			get
+			{
+				StringBuilder builder = new StringBuilder();
+
+				if (this.WithinPriceLowerTolerance && this.WithinPriceUpperTolerance
+					&& this.WithinPriceDirectionTolerance)
+				{
+					builder.Append("Y");
+				}
+				else
+				{
+					builder.Append("UT - ");
+					builder.Append(this.WithinPriceUpperTolerance ? "Y" : "N");
+					builder.Append("  LT - ");
+					builder.Append(this.WithinPriceLowerTolerance ? "Y" : "N");
+					builder.Append("  PI - ");
+					builder.Append(this.WithinPriceDirectionTolerance ? "Y" : "N");
+				}
+
+				return builder.ToString();
+			}
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of price movement tolerance checks including rounding.
+		/// </summary>
+		public string PriceMovementRoundedToleranceDisplay
+		{
+			get
+			{
+				StringBuilder builder = new StringBuilder();
+
+				if (this.WithinRoundedPriceLowerTolerance && this.WithinRoundedPriceUpperTolerance
+					&& this.WithinPriceDirectionTolerance)
+				{
+					builder.Append("Y");
+				}
+				else
+				{
+					builder.Append("UT - ");
+					builder.Append(this.WithinRoundedPriceUpperTolerance ? "Y" : "N");
+					builder.Append("  LT - ");
+					builder.Append(this.WithinRoundedPriceLowerTolerance ? "Y" : "N");
+					builder.Append("  PI - ");
+					builder.Append(this.WithinPriceDirectionTolerance ? "Y" : "N");
+				}
+
+				return builder.ToString();
+			}
+		}
+
+		/// <summary>
+		/// Display friendly string giving the result of the price lower tolerance check.
+		/// </summary>
+		public string PriceMovementLowerToleranceDisplay
+		{
+			get { return (this.WithinPriceLowerTolerance ? "Y" : "N"); }
+		}
+
+		/// <summary>
+		/// Display friendly string showing if this is a fund for price increase only
+		/// </summary>
+		public string PriceIncreaseOnlyDisplay
+		{
+			get { return (this.PriceIncreaseOnly ? "Y" : "N"); }
+		}
+
+		/// <summary>
+		/// Display friendly string giving the result of the price upper tolerance check.
+		/// </summary>
+		public string PriceMovementUpperToleranceDisplay
+		{
+			get { return (this.WithinPriceUpperTolerance ? "Y" : "N"); }
+		}
+
+		/// <summary>
+		/// Display friendly string giving the result of the price direction tolerance check.
+		/// </summary>
+		public string PriceMovementDirectionToleranceDisplay
+		{
+			get { return (this.WithinPriceDirectionTolerance ? "Y" : "N"); }
+		}
+
+		/// <summary>
+		/// Display a Y / N based string indicating whether or not the price has been authorised
+		/// </summary>
+		public string IsAuthorisedDisplay
+		{
+			get { return (this.IsAuthorised ? "Y" : "N"); }
+		}
+
+		/// <summary>
+		/// formatted field for the Xfactor
+		/// </summary>
+		public string XFactorDisplay
+		{
+			get
+			{
+				return DisplayFormat.Percent(this.XFactor, true); //display a zero as opposed to 'unavailable'
+			}
+		}
+
+		/// <summary>
+		/// Displays a Y or N 
+		/// </summary>
+		public string OnHiPortfolio3Display
+		{
+			get { return this.OnHiPortfolio3 ? "Y" : "N"; }
+		}
+
+		#endregion
+
+		#region Methods
+
+		/// <summary>
+		/// Set the modified flag to be true.
+		/// </summary>
+		protected void setDirtyFlag()
+		{
+			//
+			// TODO: Possibly check for initial loading and populating code here
+			//
+			this.m_isDirty = true;
+		}
+
+		#endregion
+
+		#region XFactor Properties
+
+		/// <summary>
+		/// The X factor to use for this fund in price prediction calculations.
+		/// </summary>
+		public decimal XFactor
+		{
+			get { return this.m_factors.XFctr.RatioValue; }
+
+			set
+			{
+				//during grid update, the XFactorDisplay property is always set before XFactor.
+				//therefore examine this flag here we know whether to ignore this value as it may be old.
+				//Reset the flag if it is set as it has been utilised
+
+				this.m_factors.XFctr.RatioValue = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The X factor to use for this fund in price prediction calculations.
+		/// </summary>
+		public decimal XFactorPercent
+		{
+			get { return this.m_factors.XFctr.PercentValue; }
+
+			set
+			{
+				//during grid update, the XFactorDisplay property is always set before XFactor.
+				//therefore examine this flag here we know whether to ignore this value as it may be old.
+				//Reset the flag if it is set as it has been utilised
+
+				this.m_factors.XFctr.PercentValue = value;
+				this.setDirtyFlag();
+			}
+		}
+
+		/// <summary>
+		/// The ID for the X factor used in the price calculation.
+		/// </summary>
+		public int XFactorID
+		{
+			get { return this.m_factors.XFctr.FactorID; }
+
+
+			set { this.m_factors.XFctr.FactorID = value; }
+		}
+
+		/// <summary>
+		/// returns whether or not current value is valid
+		/// </summary>
+		/// <returns></returns>
+		public bool XFactorValid()
+		{
+			return this.m_factors.XFctr.IsValid();
+		}
+
+		/// <summary>
+		/// Flag to indicate whether the value is a valid value or not.
+		/// </summary>
+		public bool XFactorIDSet
+		{
+			get { return this.m_factors.XFctr.FactorIDSet; }
+		}
+
+		/// <summary>
+		/// The narrative text describing why the xvalue percentage is applied
+		/// </summary>
+		public string XFactorDescription
+		{
+			get { return this.m_factors.XFctr.Description; }
+
+			set
+			{
+				this.m_factors.XFctr.Description = value;
+				this.setDirtyFlag();
+			}
+
+		}
+
+		#endregion
+
+		/// <summary>
+		/// Gets the Bench Mark movement.
+		/// </summary>
+		/// <value></value>
+		public decimal Movement
+		{
+			get { return this.PriceMovementPercent; }
+		}
+
+		/// <summary>
+		/// Gets the Bench Mark currency.
+		/// </summary>
+		/// <value></value>
+		public HBOS.FS.AMP.UPD.Types.Currency.Currency Currency
+		{
+			get { return currency; }
+		}
+
+		/// <summary>
+		/// Gets the state of availability for the Bench Mark.
+		/// </summary>
+		/// <value></value>
+		public virtual BenchMarkAvailabilityState Availability
+		{
+			get
+			{
+				BenchMarkAvailabilityState returnValue = BenchMarkAvailabilityState.Unavailable;
+				if (IsBenchMarkable && this.FundStatus >= FundStatusType.Released)
+				{
+					returnValue = BenchMarkAvailabilityState.Available;
+				}
+
+				return returnValue;
+
+			}
+		}
+
+		/// <summary>
+		/// This message will show more explanation for the BenchMarkAvailabilityState status.
+		/// </summary>
+		/// <value></value>
+		public string AvailableMessage
+		{
+			get 
+			{
+				string returnMessage="";
+				if ( IsBenchMarkable==false)
+				{
+					returnMessage= "This Fund cannot be used as a Benchmark.";
+				}
+				if (Availability==BenchMarkAvailabilityState.Unavailable)
+				{
+					returnMessage=String.Concat("This Fund is Unavailable because the Fund Status is currently " , System.Enum.GetName(typeof (FundStatusType),this.FundStatus),".") ;
+				}
+				return returnMessage;
+			}
+		}
+
+	}
+}

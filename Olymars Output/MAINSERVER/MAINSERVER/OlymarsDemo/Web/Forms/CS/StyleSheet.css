@@ -1,0 +1,135 @@
+﻿body
+{
+	font-family: Verdana;
+}
+.MandatoryLabelStyle
+{
+	font-weight: bold;
+	font-size: xx-small;
+	width:200px;
+}
+.OptionalLabelStyle
+{
+	font-size: xx-small;
+	width:200px;
+}
+.ErrorStyle
+{
+	font-size: xx-small;
+	color: red;
+}
+.ButtonStyle
+{
+	font-size: xx-small;
+	width: 60px;
+	height: 20px;
+}
+.MandatoryTextBoxStyle
+{
+	font-size: xx-small;
+	width: 300px;
+	height: 22px;
+}
+.OptionalTextBoxStyle
+{
+	font-size: xx-small;
+	width: 300px;
+	height: 22px;
+}
+.MandatoryComboBoxStyle
+{
+	font-size: xx-small;
+	width: 300px;
+	height: 22px;
+}
+.OptionalComboBoxStyle
+{
+	font-size: xx-small;
+	width: 300px;
+	height: 22px;
+}
+.MandatoryCheckBoxStyle
+{
+	font-weight: bold;
+	font-size: xx-small;
+}
+.OptionalCheckBoxStyle
+{
+	font-size: xx-small;
+}
+.ErrorDisplayStyle
+{
+	font-size: xx-small;
+	color: red;
+}
+.TablesDropDownStyle
+{
+	font-size: xx-small;
+	top: 40px;
+	position: absolute;
+	width: 300px;
+	left: 20px;
+	height: 22px;
+}
+.TablesLabelStyle
+{
+	font-size: xx-small;
+	left: 20px;
+	position: absolute;
+	top: 20px;
+}
+.RecordsDropDownStyle
+{
+	font-size: xx-small;
+	top: 40px;
+	position: absolute;
+	width: 300px;
+	left: 340px;
+	height: 22px;
+}
+.RecordsLabelStyle
+{
+	font-size: xx-small;
+	left: 340px;
+	position: absolute;
+	top: 20px;
+}
+.AddNewRecordButtonStyle
+{
+	font-size: xx-small;
+	width: 140px;
+	height: 22px;
+	left: 660px;
+	position: absolute;
+	top: 40px;
+}
+.AdminTopFormStyle
+{
+}
+.FormStyle
+{
+}
+.TableHeader
+{
+	font-size: xx-small;
+	color:Red;
+	text-decoration:none;
+}
+.TableFilter
+{
+	font-size: xx-small;
+}
+.Filter
+{
+	font-size: xx-small;
+}
+.TableRow
+{
+	font-size: xx-small;
+}
+.EditHyperLink
+{
+	font-size: xx-small;
+	color:DarkBleu;
+	text-decoration:none;
+}

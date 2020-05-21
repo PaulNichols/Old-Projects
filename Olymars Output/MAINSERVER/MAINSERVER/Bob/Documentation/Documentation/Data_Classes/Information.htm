@@ -1,0 +1,531 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			Bob.DataClasses namespace - Information Class
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			Bob.DataClasses namespace
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Information Class
+		</div>
+		<hr>
+		<div class="MainBody">
+			This class contains a set of static helper functions. It is located in the '<a href="../DataClasses.htm">Bob.DataClasses</a>' namespace.
+		</div>
+		<br/>
+		<hr>
+		<div class="MainTitle">
+			Public Instance Constructor
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New()<br/>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+							public Information();<br/>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<div class="Highlight">
+				You do not need to instanciate Information because all its methods are static.
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Static Method
+		</div>
+		<blockquote>
+			<span class="Highlight">BuildConnectionString</span>
+			<Blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal userID As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal password As String<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+								&nbsp;&nbsp;&nbsp;, string database<br/>
+								&nbsp;&nbsp;&nbsp;, string userID<br/>
+								&nbsp;&nbsp;&nbsp;, string password<br/>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					This function allows you to build a compatible connection string.<br/>
+					<br/>
+					<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+					<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+					<b>userID</b>: User logon.<br/>
+					<b>password</b>: Password.<br/>
+					<br/>
+					By default, in this overloaded version of the BuildConnectionString function:<br/>
+					<b>Integrated Security</b> is set to False.<br/>
+					<b>connectionTimeOut</b> is set to 15 seconds.<br/>
+					<b>Connections pooling</b> is set to False<br/>
+					<br/>
+					Returns the connection string.<br/>
+					<br/>
+					<br/>
+				</div>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal userID As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal password As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal pooling As Boolean<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string BuildConnectionString(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+								&nbsp;&nbsp;&nbsp;, string database<br/>
+								&nbsp;&nbsp;&nbsp;, string userID<br/>
+								&nbsp;&nbsp;&nbsp;, string password<br/>
+								&nbsp;&nbsp;&nbsp;, bool pooling<br/>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					This function allows you to build a compatible connection string.<br/>
+					<br/>
+					<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+					<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+					<b>userID</b>: User logon.<br/>
+					<b>password</b>: Password.<br/>
+					<b>pooling</b>: True if the connections pooling is wanted.<br/>
+					<br/>
+					By default, in this overloaded version of the BuildConnectionString function:<br/>
+					<b>Integrated Security</b> is set to False.<br/>
+					<b>connectionTimeOut</b> is set to 15 seconds.<br/>
+					<br/>
+					Returns the connection string.<br/>
+					<br/>
+					<br/>
+				</div>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+								&nbsp;&nbsp;&nbsp;, string database<br/>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					This function allows you to build a compatible connection string.<br/>
+					<br/>
+					<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+					<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+					<br/>
+					By default, in this overloaded version of the BuildConnectionString function:<br/>
+					<b>Integrated Security</b> is set to SSPI.<br/>
+					<b>connectionTimeOut</b> is set to 15 seconds.<br/>
+					<b>Connections pooling</b> is set to False<br/>
+					<br/>
+					Returns the connection string.<br/>
+					<br/>
+					<br/>
+				</div>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal pooling As Boolean<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+								&nbsp;&nbsp;&nbsp;, string database<br/>
+								&nbsp;&nbsp;&nbsp;, bool pooling<br/>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					This function allows you to build a compatible connection string.<br/>
+					<br/>
+					<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+					<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+					<b>pooling</b>: True if the connections pooling is wanted.<br/>
+					<br/>
+					By default, in this overloaded version of the BuildConnectionString function:<br/>
+					<b>Integrated Security</b> is set to SSPI.<br/>
+					<b>connectionTimeOut</b> is set to 15 seconds.<br/>
+					<br/>
+					Returns the connection string.<br/>
+					<br/>
+					<br/>
+				</div>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal userID As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal password As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal connectionTimeOut As Short<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+								&nbsp;&nbsp;&nbsp;, string database<br/>
+								&nbsp;&nbsp;&nbsp;, string userID<br/>
+								&nbsp;&nbsp;&nbsp;, string password<br/>
+								&nbsp;&nbsp;&nbsp;, short connectionTimeOut<br/>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					This function allows you to build a compatible connection string.<br/>
+					<br/>
+					<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+					<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+					<b>userID</b>: User logon.<br/>
+					<b>password</b>: Password.<br/>
+					<b>connectionTimeOut</b>: Connection time-out in seconds.<br/>
+					<br/>
+					By default, in this overloaded version of the BuildConnectionString function:<br/>
+					<b>Integrated Security</b> is set to False.<br/>
+					<b>Connections pooling</b> is set to False<br/>
+					<br/>
+					Returns the connection string.<br/>
+					<br/>
+					<br/>
+				</div>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal userID As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal password As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal connectionTimeOut As Short<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal pooled As Boolean<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+								&nbsp;&nbsp;&nbsp;, string database<br/>
+								&nbsp;&nbsp;&nbsp;, string userID<br/>
+								&nbsp;&nbsp;&nbsp;, string password<br/>
+								&nbsp;&nbsp;&nbsp;, short connectionTimeOut<br/>
+								&nbsp;&nbsp;&nbsp;, bool pooled<br/>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					This function allows you to build a compatible connection string.<br/>
+					<br/>
+					<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+					<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+					<b>userID</b>: User logon.<br/>
+					<b>password</b>: Password.<br/>
+					<b>connectionTimeOut</b>: Connection time-out in seconds.<br/>
+					<b>pooled</b>: True if the connections pooling is wanted.<br/>
+					<br/>
+					By default, in this overloaded version of the BuildConnectionString function:<br/>
+					<b>Integrated Security</b> is set to False.<br/>
+					<br/>
+					Returns the connection string.<br/>
+					<br/>
+					<br/>
+				</div>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal connectionTimeOut As Short<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+								&nbsp;&nbsp;&nbsp;, string database<br/>
+								&nbsp;&nbsp;&nbsp;, short connectionTimeOut<br/>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					This function allows you to build a compatible connection string.<br/>
+					<br/>
+					<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+					<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+					<b>connectionTimeOut</b>: Connection time-out in seconds.<br/>
+					<br/>
+					By default, in this overloaded version of the BuildConnectionString function:<br/>
+					<b>Integrated Security</b> is set to SSPI.<br/>
+					<b>Connections pooling</b> is set to False<br/>
+					<br/>
+					Returns the connection string.<br/>
+					<br/>
+					<br/>
+				</div>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function BuildConnectionString(<br/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal server As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal database As String<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal connectionTimeOut As Short<br/>
+								&nbsp;&nbsp;&nbsp;, ByVal pooled As Boolean<br/>
+								) As String
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+					<table style="background-color: gainsboro;">
+						<tr>
+							<td>
+								<div class="SeeAlsoBody">
+									[Visual C# .NET]
+								</div>
+								<div class="Code">
+									public string BuildConnectionString(<br/>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string server<br/>
+									&nbsp;&nbsp;&nbsp;, string database<br/>
+									&nbsp;&nbsp;&nbsp;, bool pooled<br/>
+									&nbsp;&nbsp;&nbsp;, short connectionTimeOut<br/>
+									);
+								</div>
+							</td>
+						</tr>
+					</table>
+					<br/>
+					<div class="MainBody">
+						This function allows you to build a compatible connection string.<br/>
+						<br/>
+						<b>server</b>: Name of the SQL Server instance. Example: <b>MAINSERVER\MAINSERVER</b><br/>
+						<b>database</b>: Name of the SQL Server database. Example: <b>Bob</b><br/>
+						<b>connectionTimeOut</b>: Connection time-out in seconds.<br/>
+						<b>pooled</b>: True if the connections pooling is wanted.<br/>
+						<br/>
+						By default, in this overloaded version of the BuildConnectionString function:<br/>
+						<b>Integrated Security</b> is set to SSPI.<br/>
+						<br/>
+						Returns the connection string.<br/>
+						<br/>
+					</div>
+				</blockquote>
+			</blockquote>
+			<hr>
+			<div class="MainTitle">
+				Public Static Property
+			</div>
+			<blockquote>
+				<div class="Highlight">
+					Version
+				</div>
+				<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property Version() As System.Version
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Version Version();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<div class="MainBody">
+					Returns the current <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemversionclasstopic.htm">version</a> of the assembly.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

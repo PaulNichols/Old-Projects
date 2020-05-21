@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ConsignmentData" targetNamespace="http://tempuri.org/ConsignmentData.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/ConsignmentData.xsd" xmlns:mstns="http://tempuri.org/ConsignmentData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="ConsignmentData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOConsignment">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LinkId" type="xs:integer" minOccurs="0" />
+							<xs:element name="PermitReference" type="xs:string" minOccurs="0" />
+							<xs:element name="BarCode" type="xs:string" minOccurs="0" />
+							<xs:element name="ExhibitionX" type="xs:string" minOccurs="0" />
+							<xs:element name="ExpiryDate" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportX" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportX" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="PetX" type="xs:string" minOccurs="0" />
+							<xs:element name="ReExportX" type="xs:string" minOccurs="0" />
+							<xs:element name="ReExportCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportationX" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportationX" type="xs:string" minOccurs="0" />
+							<xs:element name="IssueDate" type="xs:string" minOccurs="0" />
+							<xs:element name="IssueLetter" type="xs:string" minOccurs="0" />
+							<xs:element name="IssuePlace" type="xs:string" minOccurs="0" />
+							<xs:element name="ReExportationX" type="xs:string" minOccurs="0" />
+							<xs:element name="SpecialConditions" type="xs:string" minOccurs="0" />
+							<xs:element name="SurrenderBorderX" type="xs:string" minOccurs="0" />
+							<xs:element name="SurrenderIssuingX" type="xs:string" minOccurs="0" />
+							<xs:element name="UserName" type="xs:string" minOccurs="0" />
+							<xs:element name="SheetDescription" type="xs:string" minOccurs="0" />
+							<xs:element name="SheetNumber" type="xs:string" minOccurs="0" />
+							<xs:element name="PrintStatus" type="xs:string" minOccurs="0" />
+							<xs:element name="PageMofN" type="xs:string" minOccurs="0" />
+							<xs:element name="IssuingManagementAuthority_NameAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="Location_Address" type="xs:string" minOccurs="0" />
+							<xs:element name="Agent_AuthorisedPartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="Agent_PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="Exporter_AuthorisedPartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="Exporter_PartyAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="Exporter_PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="Importer_AuthorisedPartyId" type="xs:string" minOccurs="0" />
+							<xs:element name="Importer_PartyAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="Importer_PartyName" type="xs:string" minOccurs="0" />
+							<xs:element name="ForeignManagementAuthority_NameAddress" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOSpecimens">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LinkId" type="xs:integer" minOccurs="0" />
+							<xs:element name="PermitReference" type="xs:string" minOccurs="0" />
+							<xs:element name="BarCode" type="xs:string" minOccurs="0" />
+							<xs:element name="ExhibitionX" type="xs:string" minOccurs="0" />
+							<xs:element name="ExpiryDate" type="xs:string" minOccurs="0" />
+							<xs:element name="ExportX" type="xs:string" minOccurs="0" />
+							<xs:element name="ImportX" type="xs:string" minOccurs="0" />
+							<xs:element name="PetX" type="xs:string" minOccurs="0" />
+							<xs:element name="ReExportX" type="xs:string" minOccurs="0" />
+							<xs:element name="IssueLetter" type="xs:string" minOccurs="0" />
+							<xs:element name="SheetDescription" type="xs:string" minOccurs="0" />
+							<xs:element name="SheetNumber" type="xs:string" minOccurs="0" />
+							<xs:element name="PrintStatus" type="xs:string" minOccurs="0" />
+							<xs:element name="PageMofN" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_Reference" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_Appendix" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_CommonName" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_EUAnnex" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_LastReExportCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_Mass" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_OriginCertificateDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_OriginCertificateRef" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_OriginCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_OriginPermitDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_OriginPermitRef" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_Purpose" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_Quantity" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_ScientificName" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_Source" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen1_Descriptions" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_Reference" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_Appendix" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_CommonName" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_EUAnnex" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_LastReExportCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_Mass" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_OriginCertificateDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_OriginCertificateRef" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_OriginCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_OriginPermitDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_OriginPermitRef" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_Purpose" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_Quantity" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_ScientificName" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_Source" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen2_Descriptions" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_Reference" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_Appendix" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_CommonName" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_EUAnnex" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_LastReExportCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_Mass" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_OriginCertificateDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_OriginCertificateRef" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_OriginCountry" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_OriginPermitDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_OriginPermitRef" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_Purpose" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_Quantity" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_ScientificName" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_Source" type="xs:string" minOccurs="0" />
+							<xs:element name="Specimen3_Descriptions" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//mstns:BOConsignment" />
+			<xs:field xpath="mstns:LinkId" />
+		</xs:key>
+		<xs:keyref name="BOConsignmentBOSpecimens" refer="key1">
+			<xs:selector xpath=".//mstns:BOSpecimens" />
+			<xs:field xpath="mstns:LinkId" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

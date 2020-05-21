@@ -1,0 +1,127 @@
+﻿<!-- 
+  Microsoft Visual Studio 2005 Web Deployment Project 
+  http://go.microsoft.com/fwlink/?LinkId=55111
+-->
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Staging</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.51103</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{475C3EE0-BF1D-48B1-B87C-0DC2D588F3F9}</ProjectGuid>
+    <SourceWebPhysicalPath>..\..\..\Discovery.UI</SourceWebPhysicalPath>
+    <SourceWebProject>{0114DDBC-79FE-4F01-AE87-3DFEBC6813F3}|http://localhost/Discovery.UI</SourceWebProject>
+    <SourceWebVirtualPath>/Discovery.UI</SourceWebVirtualPath>
+    <SourceWebMetabasePath>/LM/W3SVC/1/ROOT/Discovery.UI/</SourceWebMetabasePath>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
+    <Major>1</Major>
+    <Minor>6</Minor>
+    <Build>0</Build>
+    <Revision>0</Revision>
+    <OutputPath>c:\Discovery\ManagementServer\Builds\Staging\</OutputPath>
+    <NUnitResultDir>C:\Discovery\ManagementServer\artifacts\$(Configuration)</NUnitResultDir>
+    <BuildArchiveFolder>c:\Discovery\ManagementServer\Archive\$(Configuration)</BuildArchiveFolder>
+    <VssUsername>ccnet_usr</VssUsername>
+    <VssPassword>ccnetuser</VssPassword>
+    <VssDatabasePath>\\Robins\delivery_share\VSS\srcsafe.ini</VssDatabasePath>
+    <EnableUpdateable>false</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Discovery.UI</SingleAssemblyName>
+    <ContentAssemblyName>
+    </ContentAssemblyName>
+    <DeleteAppDataFolder>true</DeleteAppDataFolder>
+    <DebugSymbols>true</DebugSymbols>
+    <!--\\10.1.1.183\ManagementServer-->
+    <DeploymentFolder>\\tykes\ManagementServer</DeploymentFolder>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'RM|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <UseMerge>true</UseMerge>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppDataFolder>true</DeleteAppDataFolder>
+    <SingleAssemblyName>Discovery.UI</SingleAssemblyName>
+    <OutputPath>.\RM</OutputPath>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <AssemblyAttributes Include="AssemblyTitle">
+      <Value>The Delivery Company Management Server</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyDescription">
+      <Value>Company Web Site</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyCompany">
+      <Value>The Delivery Company</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyCopyright">
+      <Value>Copyright (c) The Delivery Company 2006</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(Major).$(Minor).$(Build).$(Revision)</Value>
+    </AssemblyAttributes>
+    <!--
+    <WebConfigReplacementFiles Include="C:\Discovery\ManagementServer\Source\Staging\Discovery\Solution Items\Staging\stagingConfigurationSource.config">
+      <Section>enterpriseLibrary.ConfigurationSource</Section>
+    </WebConfigReplacementFiles>
+	-->
+    <WebConfigReplacementFiles Include="C:\Discovery\Discovery\Solution Items\Staging\stagingConnectionStrings.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'RM|AnyCPU'">
+    <WebConfigReplacementFiles Include="C:\Discovery\Discovery\Solution Items\Staging\stagingConnectionStrings.config">
+      <Section>connectionStrings</Section>
+    </WebConfigReplacementFiles>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Business Objects\Discovery.csproj">
+      <Project>{8F73B782-2337-4D94-9FAF-F3ACE01119B7}</Project>
+      <Name>Discovery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Data Access\Discovery.SQLDataAccessProvider\Discovery.SQLDataAccessProvider.csproj">
+      <Project>{EE40C15E-7A06-4583-AC73-9B4C10AC6C3D}</Project>
+      <Name>Discovery.SQLDataAccessProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Presentation\Discovery.Web.UI.CustomControls\Discovery.Web.UI.CustomControls.csproj">
+      <Project>{363F0E54-D29E-49F5-B691-0A87D9B81C74}</Project>
+      <Name>Discovery.Web.UI.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Scheduling\Discovery.Scheduling\Discovery.Scheduling.csproj">
+      <Project>{F642958F-5D37-46B2-B4B1-21B7A40DC571}</Project>
+      <Name>Discovery.Scheduling</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v8.0\Microsoft.WebDeployment.targets" />
+  <UsingTask AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.Version" />
+  <UsingTask AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.Zip" />
+  <UsingTask AssemblyFile="C:\Program Files\MSBuild\MSBuildCommunityTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.NUnit" />
+  <Target Name="AfterBuild">
+    <!-- Execute and report the NUnit tests    -->
+    <!--***
+	  <NUnit Assemblies="C:\Discovery\ManagementServer\Source\Staging\Discovery\Testing\Discovery.UnitTests\bin\debug\Discovery.UnitTests.dll" ToolPath="C:\Program Files\NUnit-Net-2.0 2.2.8\bin\" WorkingDirectory="C:\Program Files\NUnit-Net-2.0 2.2.8\bin\" OutputXmlFile="$(NUnitResultDir)\nunit-results.xml" ContinueOnError="false" />
+	  ***-->
+    <!-- Deployment web files -->
+    <CreateItem Include="$(OutputPath)\**\*.*" Exclude="$(OutputPath)\**\*.build;&#xD;&#xA;												 $(OutputPath)\**\*.scc;&#xD;&#xA;												 $(OutputPath)\**\*.vssscc;&#xD;&#xA;												 $(OutputPath)\**\*.vspscc;&#xD;&#xA;												 $(OutputPath)\**\*.csproj;&#xD;&#xA;												 $(OutputPath)\**\*.vbproj;&#xD;&#xA;												 $(OutputPath)\**\*.sln;&#xD;&#xA;												 $(OutputPath)\**\*.suo;&#xD;&#xA;												 $(OutputPath)\**\*.user;&#xD;&#xA;												 $(OutputPath)\**\*.cs;&#xD;&#xA;												 $(OutputPath)\**\*.vb;&#xD;&#xA;												 $(OutputPath)\**\*.resx;&#xD;&#xA;												 $(OutputPath)\**\*._old;&#xD;&#xA;												 $(OutputPath)\**\*.old;&#xD;&#xA;												 $(OutputPath)\**\*.reg;&#xD;&#xA;												 $(OutputPath)\**\*.ndoc;&#xD;&#xA;												 $(OutputPath)\**\*.snk;&#xD;&#xA;												 $(OutputPath)\**\*.nunit;&#xD;&#xA;												 $(OutputPath)\**\*.bat;&#xD;&#xA;												 $(OutputPath)\**\*.txt;&#xD;&#xA;												 $(OutputPath)\**\*.strings;&#xD;&#xA;												 $(OutputPath)\**\*.webinfo;&#xD;&#xA;												 $(OutputPath)\**\Web References\**;&#xD;&#xA;												 $(OutputPath)\**\_sgbak\**;&#xD;&#xA;												 $(OutputPath)\**\obj\**;&#xD;&#xA;												 $(OutputPath)\bin\*.xml;&#xD;&#xA;												 $(OutputPath)\**\Tests\**;&#xD;&#xA;												 $(OutputPath)\**\Class\**;&#xD;&#xA;												 $(OutputPath)\**\Docs\**">
+      <Output TaskParameter="Include" ItemName="DeploymentWebFiles" />
+    </CreateItem>
+    <!-- Create Archive directory if not exist -->
+    <MakeDir Condition="!Exists('$(BuildArchiveFolder)')" Directories="$(BuildArchiveFolder)" />
+    <!-- Archive build -->
+    <Zip ZipFileName="$(BuildArchiveFolder)\$(Major).$(Minor).$(Build).$(Revision).zip" Files="@(DeploymentWebFiles)" />
+    <!--Remove and create DeploymentFolder directory-->
+    <RemoveDir Condition="Exists('$DeploymentFolder')" ContinueOnError="false" Directories="$DeploymentFolder" />
+    <!-- Create Deployment directory if not exist -->
+    <MakeDir Condition="!Exists('$(DeploymentFolder)')" ContinueOnError="false" Directories="$(DeploymentFolder)" />
+    <!-- Copy web site to deployment directory -->
+    <Copy SourceFiles="@(DeploymentWebFiles)" ContinueOnError="false" DestinationFiles="@(DeploymentWebFiles->'$(DeploymentFolder)\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+</Project>

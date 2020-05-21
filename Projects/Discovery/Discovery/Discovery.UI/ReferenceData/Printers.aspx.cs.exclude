@@ -1,0 +1,32 @@
+namespace Discovery.UI.Web.ReferenceData
+{
+    /*************************************************************************************************
+   ** CLASS:	Printers
+   **
+   ** OVERVIEW:
+   ** This page shows all printers
+   **
+   ** MODIFICATION HISTORY:
+   **
+   ** Date:		Version:    Who:	Change:
+   ** 19/7/06		1.0			PJN		Initial Version
+   ************************************************************************************************/
+
+    public partial class Printers : DiscoveryDataItemsPage
+    {
+        #region Properties
+
+
+        #endregion
+
+        #region Protected Methods
+
+    
+        #endregion
+
+        #region Events
+
+        #endregion
+
+    }
+}

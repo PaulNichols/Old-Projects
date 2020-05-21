@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomInstaller</name>
+    </assembly>
+    <members>
+        <member name="T:HBOS.FS.AMP.UPD.CustomInstaller.MyEventLogInstaller">
+            <summary>
+            Custom install event to create the ExceptionManager event log source, as users will not have
+            permissions to do this at runtime.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.CustomInstaller.MyEventLogInstaller.Install(System.Collections.IDictionary)">
+            <summary>
+            Performs the custom installation action to create event log sources.
+            </summary>
+            <param name="stateSaver">An IDictionary used to save information needed to perform a commit, rollback, or uninstall operation.</param>
+        </member>
+    </members>
+</doc>

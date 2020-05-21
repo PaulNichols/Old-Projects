@@ -1,0 +1,85 @@
+using System.Data;
+using System.Data.SqlClient;
+using HBOS.FS.AMP.UPD.Exceptions;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.Support.Tex;
+
+namespace HBOS.FS.AMP.UPD.Persistence
+{
+	/// <summary>
+	/// Summary description for MarketIndexPersister.
+	/// </summary>
+	public class StockMarketPersister : EntityPersister
+	{
+        
+        #region Constructor
+        /// <summary>
+        /// Use this class for retrieving all Market Index objects
+        /// Default constructor
+        /// </summary>
+        /// <param name="connectionString"></param>
+        public StockMarketPersister(string connectionString) : base(connectionString)
+		{
+		}
+        #endregion
+
+        #region Public methods
+
+		/// <summary>
+		/// Loads all stock markets related to the country code.
+		/// </summary>
+		/// <param name="countryCode">Country code.</param>
+		/// <returns></returns>
+		public  StockMarketCollection LoadForCountryCode(string countryCode)
+		{
+			T.E();
+			StockMarketCollection stockMarkets = new StockMarketCollection();
+			SqlParameter[] parameters=new SqlParameter[1];
+			parameters[0] = new SqlParameter("@CountryCode", SqlDbType.Char,3); 
+			parameters[0].Value=countryCode;
+			this.LoadEntityCollection("usp_StockMarketListForCountryCode",parameters,stockMarkets);		
+			T.X();
+
+			return stockMarkets;
+		}
+
+        /// <summary>
+        /// Load the collection of market indices from the DB
+        /// </summary>
+        /// <returns type="MarketIndexCollection">A collection of market indices</returns>
+        /// <exception cref="DatabaseException">Unable to load companies</exception>
+		/// <exception cref="InvalidSqlParameterException">Attempt to call stored proc with an invalid parameter</exception>
+		public StockMarketCollection LoadMarketIndices()
+		{
+        	T.E();
+        	StockMarketCollection stockMarkets = new StockMarketCollection();
+			this.LoadEntityCollection("usp_MarketIndicesList",stockMarkets);		
+			T.X();
+
+			return stockMarkets;
+		}
+
+		/// <summary>
+		/// Creates the entity from the data in the reader.
+		/// </summary>
+		/// <param name="safeReader">The reader to build the entity from.</param>
+		/// <returns></returns>
+		protected override object CreateEntity(SafeDataReader safeReader)
+		{
+			T.E();
+			StockMarket newStockMarket = new StockMarket(
+				safeReader.GetString("countryCode"),
+				safeReader.GetString("indexName"),
+				safeReader.GetInt32("marketIndexID"),
+				safeReader.GetBoolean("global")
+				);
+			T.X();
+
+			return newStockMarket;		
+		}
+
+		#endregion
+
+		
+	}
+}

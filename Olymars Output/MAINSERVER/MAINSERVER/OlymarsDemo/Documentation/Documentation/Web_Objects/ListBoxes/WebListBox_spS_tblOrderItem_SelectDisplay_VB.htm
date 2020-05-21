@@ -1,0 +1,186 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			WebListBoxCustom_spS_tblOrderItem_SelectDisplay - Reusing the Web ListBox in Visual Basic .NET
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			WebListBoxCustom_spS_tblOrderItem_SelectDisplay
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Reusing the Web ListBox in Visual Basic .NET
+		</div>
+		<hr>
+			<div class="MainTitle">
+				Overview
+			</div>
+			<blockquote>
+				<div class="MainBody">
+					This class was generated for the [<a href="../../Stored_Procedures/spS_tblOrderItem_SelectDisplay.htm">spS_tblOrderItem_SelectDisplay</a>] stored procedure.<br>
+					It is located in the <span class="FixedHighLight">OlymarsDemo.Web.ListBoxes</span> namespace.<br>
+					<br>
+					This class derives from the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWebUIWebControlsListBoxClassTopic.htm">System.Web.UI.WebControls.ListBox</a> class.<br>
+					<br>
+					It allows you to display the records returned by the stored procedure.
+					Please note that this class relies on the following two underlying classes:
+					<ul>
+						<li>
+							<a href="../../Stored_Procedures/spS_tblOrderItem_SelectDisplay.htm">OlymarsDemo.DataClasses.Parameters.spS_tblOrderItem_SelectDisplay</a>
+						</li>
+						<li>
+							<a href="../../Stored_Procedures/spS_tblOrderItem_SelectDisplay.htm">OlymarsDemo.DataClasses.StoredProcedures.spS_tblOrderItem_SelectDisplay</a>
+						</li>
+					</ul>
+				</div>
+			</blockquote>
+			<hr>
+			<div class="MainTitle">
+				Step by step tutorial
+			</div>
+			<blockquote>
+				<div class="MainTitle">
+					First Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						If you are in Visual Studio.NET, make a reference to the following
+						assembly: "OlymarsDemo.dll".
+					</div>
+					<br>
+					<div class="MainBody">
+						If you are using the compiler, be sure to add a "/r:" switch pointing
+						on the following assembly: "OlymarsDemo.dll".
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Second Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Customize your tool box in Visual Studio.NET by:<br>
+						<UL>
+							<LI>Add new tab in your control box (name it OlymarsDemo, for example)</LI>
+							<LI>
+								Right-Click on this new tab and click on the "Customize Toolbox..." menu
+							</LI>
+							<LI>
+								Switch to the "NET Framework Components" tab
+							</LI>
+							<LI>Click on the "Browse" button and find the OlymarsDemo.dll assembly</LI>
+							<LI>
+								Check the following control:
+								<UL>
+									<LI>Name: <span class="FixedHighLight">WebListBoxCustom_spS_tblOrderItem_SelectDisplay</span></LI>
+									<LI>Namespace: <span class="FixedHighLight">OlymarsDemo.Web.ListBoxes</span></LI>
+								</UL>
+							</LI>
+							<LI>Drag and drop this control on your form and name it:<br><b>webListBoxCustom_spS_tblOrderItem_SelectDisplay1</b></LI>
+						</UL>
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Third Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						add thoses directives at the top of your code:
+					</div>
+					<div class="Code">
+						Imports OlymarsDemo.DataClasses<br>
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Fourth Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Use this <b><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWebUIWebControlsListBoxClassTopic.htm">System.Web.UI.WebControls.ListBox</a></b> based class as described below:
+					</div>
+					<br>
+					<div class="Code">
+						<div class="FixedComment">
+							' Let's build a connection string to the database.<br>
+							' Note: the connection string policy is described <a href="../../Stored_Procedures/spS_tblOrderItem_SelectDisplay_CS.htm#Connection">here</a>.<br>
+							' <br>
+							' To see the documentation on how to build this connection string,<br>
+							' <a href="ms-help:'MS.NETFrameworkSDK/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a>
+						</div>
+						Dim ConnectionString As String = _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information.BuildConnectionString("MAINSERVER\MAINSERVER", "OlymarsDemo")<br>
+						<br>
+						<div class="FixedComment">
+							' Thoses variables are here to allow you to specify some values<br>
+							' for the underlying stored procedure parameters.
+						</div>
+						<br>
+						<div class="FixedComment">
+							' TODO: Supply your own value here. Type must be:<br>
+							' either System.Data.SqlTypes.SqlGuid<br>
+							'     or System.Guid
+						</div>
+						Dim _Oit_GuidID As Object = Nothing<br>
+						<br>
+						<div class="FixedComment">
+							' TODO: Supply your own value here. Type must be:<br>
+							' either System.Data.SqlTypes.SqlGuid<br>
+							'     or System.Guid
+						</div>
+						Dim _Oit_GuidOrderID As Object = Nothing<br>
+						<br>
+						<div class="FixedComment">
+							' TODO: Supply your own value here. Type must be:<br>
+							' either System.Data.SqlTypes.SqlGuid<br>
+							'     or System.Guid
+						</div>
+						Dim _Oit_GuidProductID As Object = Nothing<br>
+						<br>
+						<br>
+						<div class="FixedComment">
+							' Let's initialize the control by specifying the connection string<br>
+							' and all the needed parameters to call the underlying stored<br>
+							' procedure.<br>
+							'<br>
+							' You need also to specify which field will be used for both the<br>
+							' "Value Member" and the "Display Member".<br>
+							' You can use one of the following field names:<br>
+							'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> [Oit_GuidID]<br>
+							'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> [Oit_GuidOrderID]<br>
+							'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> [Oit_GuidOrderID_Display]<br>
+							'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> [Oit_GuidProductID]<br>
+							'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> [Oit_GuidProductID_Display]<br>
+							'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> [Oit_LngAmount]<br>
+							'<br>
+							' Note that a helper exists to help you write a field name<br>
+							' quickly, using the Visual Studio.NET intellisense technology:<br>
+							' It is located here:<br>
+							' StoredProcedures.spS_tblOrderItem_SelectDisplay.Resultset1.Fields<br>
+							<br>
+						</div>
+						webListBoxCustom_spS_tblOrderItem_SelectDisplay1.Initialize(ConnectionString _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, "Value Member here" _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, "Display Member here" _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, _Oit_GuidID _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, _Oit_GuidOrderID _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, _Oit_GuidProductID _<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+						<br>
+						<div class="FixedComment">
+							' If you want the control to select automatically a specific<br>
+							' record, give the desired primay key. If a null value is supplied,<br>
+							' the control will select the first record.
+						</div>
+						Dim PrimaryKey As Object = Nothing<br>
+						<br>
+						webListBoxCustom_spS_tblOrderItem_SelectDisplay1.RefreshData(PrimaryKey)<br>
+						<br>
+					</div>
+				</blockquote>
+			</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:42
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

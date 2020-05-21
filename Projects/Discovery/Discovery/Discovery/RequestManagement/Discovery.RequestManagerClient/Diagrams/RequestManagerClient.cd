@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.RequestManagerClient.RequestManagerClient">
+    <Position X="1.25" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>RequestManagerClient.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.RequestManagerClient.RequestMessage">
+    <Position X="4.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>RequestMessage.cs</FileName>
+      <HashCode>AAAAAAAQEAAAEAAAAAEBAAQAAQAFAAABAQAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.RequestManagerClient.RequestManagerClientMSMQ">
+    <Position X="1.25" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>RequestManagerClientMSMQ.cs</FileName>
+      <HashCode>AAAAACAAAAAgEAAAAEAAAAAAAAAAAQAQAAEAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

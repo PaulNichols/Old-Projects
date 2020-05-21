@@ -1,0 +1,103 @@
+SiteCode,OpenTime,MaximumGrossWeight,CheckInDuration,LoadMethod,UnloadMethod,DefaultDepot,Name,Address1,Address2,Address3,Town,Region,PostCode,X,Y,Telephone,RHRegion,Route,Category,TailLiftRequired,OriginalX,OriginalY
+190,Z,,6,Load,Unload,NORWICH,Queen Elizabeth Hospital           ,Queen Elizabeth Hospital,Gayton Road,KING`S LYNN,Norfolk,,PE30 4ET,05652,03204,                    ,A,NO02,,0,05652,03204
+104,Z,,6,Load,Unload,NORWICH,Rapide 2(Letterpress)Limited       ,Watton,,THETFORD,Norfolk,,,,,                    ,A,NO02,,0,,
+178,Z,,6,Load,Unload,NORWICH,William Clowes Ltd                 ,William Clowes Ltd; Copland Way,Ellough,BECCLES,Suffolk,,NR34 7TL,06451,02883,                    ,A,NO07,,0,06451,02883
+123,Z,,6,Load,Unload,NORWICH,The Lavenham Press Limited         ,The Lavenham Press Ltd; Arbons House,Water Street; Lavenham,SUDBURY,Suffolk,,CO10 9RN,05917,02491,                    ,A,NO04,,0,05917,02491
+162,Z,,6,Load,Unload,NORWICH,Denny Bros Ltd                     ,Denny Bros Ltd,Kempson Way,BURY ST. EDMUNDS,Suffolk,,IP32 7AR,05879,02639,                    ,A,NO02,,0,05879,02639
+153,Z,,6,Load,Unload,NORWICH,East Anglian Magazine Ltd          ,Greenwich Business Park,Greenwich Close,IPSWICH,,,IP3 0DD,,,                    ,A,NO07,,0,,
+122,Z,,6,Load,Unload,NORWICH,Indigo Ross Design & Print Ltd     ,The Old Foundry; Hall Street,Long Melford,SUDBURY,Suffolk,,CO10 9JG,05864,02458,                    ,A,NO04,,0,05864,02458
+176,Z,,6,Load,Unload,NORWICH,Bendart Ltd                        ,Charles Street,,GREAT YARMOUTH,Norfolk,,NR30 3LA,,,                    ,A,NO01,,0,,
+187,Z,,6,Load,Unload,NORWICH,United Closures & Plastics Ltd     ,Salhouse Road,,NORWICH,,,NR7 9AL,,,                    ,A,NO01,,0,,
+163,Z,,6,Load,Unload,NORWICH,St Edmundsbury Borough Council     ,St. Edmundsbury Borough Council,Borough Offices; Angel Hill,BURY ST. EDMUNDS,Suffolk,,IP33 1XB,05854,02642,                    ,A,NO02,,0,05854,02642
+180,Z,,6,Load,Unload,NORWICH,Serco Ltd                          ,Norfolk & Norwich University Hospital,Colney Lane; Colney,NORWICH,,,NR4 7UY,06181,03071,                    ,A,NO01,,0,06181,03071
+145,Z,,6,Load,Unload,NORWICH,Healeys Printers Ltd               ,Healeys Printers Ltd; Unit 10,The Sterling Complex; Farthing Road,IPSWICH,,,IP1 5AP,06133,02454,                    ,A,NO07,,0,06133,02454
+158,Z,,6,Load,Unload,NORWICH,Drecroft Limited                   ,Drecroft Ltd; The Railway Station,Station Hill; Thurston,BURY ST. EDMUNDS,Suffolk,,IP31 3QU,05918,02651,                    ,A,NO02,,0,05918,02651
+188,Z,,6,Load,Unload,NORWICH,Norwich Colour Print Ltd           ,Norwich Colour Print; 2-3,Drayton Industrial Estate; Taverham Road,NORWICH,,,NR8 6RL,06178,03134,                    ,A,NO06,,0,06178,03134
+186,Z,,6,Load,Unload,NORWICH,K G & J Gorvin                     ,4-6 Belmore Road,,NORWICH,,,NR7 0PT,06263,03099,                    ,A,NO01,,0,06263,03099
+179,Z,,6,Load,Unload,NORWICH,Keely Print Ltd                    ,Keely Print,Fen Lane,BECCLES,Suffolk,,NR34 9BB,06422,02910,                    ,A,NO07,,0,06422,02910
+161,Z,,6,Load,Unload,NORWICH,Trendex Ltd                        ,Trendex Ltd,29 Eastern Way,BURY ST. EDMUNDS,Suffolk,,IP32 7AB,05861,02649,                    ,A,NO02,,0,05861,02649
+156,Z,,6,Load,Unload,NORWICH,Acorn Inkwell                      ,Unit 2; Bermuda Road,Ransomes Industrial Estate,IPSWICH,,,IP3 9RU,06200,02414,                    ,A,NO07,,0,06200,02414
+165,Z,,6,Load,Unload,NORWICH,Five Star Printing Ltd             ,Five Star Printing Ltd; Unit 40,Claydon Business Park; Great Blakenham,IPSWICH,,,IP6 0NL,06124,02504,                    ,A,NO03,,0,06124,02504
+155,Z,,6,Load,Unload,NORWICH,DNA Printing Ltd                   ,Bluestem Road,Ransomes Industrial Estate,IPSWICH,,,IP3 9RR,,,                    ,A,NO07,,0,,
+171,Z,,6,Load,Unload,NORWICH,Xactive Ltd                        ,Xactive Ltd,92-98 Westwick Street,NORWICH,,,NR2 4SZ,06225,03089,                    ,A,NO01,,0,06225,03089
+168,Z,,6,Load,Unload,NORWICH,IBM United Kingdom Limited         ,IBM United Kingdom Ltd; St. Peters House,23 Cattle Market Street,NORWICH,,,NR1 3DY,06233,03084,                    ,A,NO01,,0,06233,03084
+170,Z,,6,Load,Unload,NORWICH,Breckland Council                  ,Breckland District Council,Elizabeth House; Walpole Loke,DEREHAM,Norfolk,,NR19 1EE,06001,03123,                    ,A,NO06,,0,06001,03123
+194,Z,,6,Load,Unload,NORWICH,K G K GROUP OF COMPANIES,3 Crane Mead Business Park,Crane Mead,WARE,Hertfordshire,,SG12 9PZ,05362,02139,01920461244,A,NO05,,0,05362,02139
+117,Z,,6,Load,Unload,NORWICH,DUNEX SIGNS,Hill House; Church Lane,Ford End,CHELMSFORD,,,CM3 1LH,05678,02168,,A,NO05,,0,05678,02168
+139,Z,,6,Load,Unload,NORWICH,CORPORATE EXPRESS PT MNGMNT,33-35 Eleanor Cross Road,,WALTHAM CROSS,Hertfordshire,,EN8 7LG,05362,02004,,A,NO05,,0,05362,02004
+106,Z,,6,Load,Unload,NORWICH,S T P STATIONERY,S T P Stationery,1 Rookwood Way,HAVERHILL,Suffolk,,CB9 8PB,05671,02447,01440 703303,A,NO04,,0,05671,02447
+172,Z,,6,Load,Unload,NORWICH,RED HOT COLOUR,10 Barrow Close,Sweet Briar Road Industrial Estate,NORWICH,,,NR3 2AT,06207,03102,01603 404797,A,NO01,,0,06207,03102
+147,Z,,6,Load,Unload,NORWICH,LEVERPRESS LTD,Leverpress Ltd,12-14 Goddard Road,IPSWICH,,,IP1 5NP,06134,02473,01473 461464,A,NO07,,0,06134,02473
+115,Z,,6,Load,Unload,NORWICH,T K ENGINEERING PLASTICS ENSIN,Ensinger Ltd,39 Raynham Road,BISHOP`S STORTFORD,Hertfordshire,,CM23 5PE,05499,02215,,A,NO05,,0,05499,02215
+120,Z,,6,Load,Unload,NORWICH,MALDON PRINTING CO LTD,Wycke Hill Business Park,Wycke Hill,MALDON,Essex,,CM9 6UZ,,,01621 853904,A,NO05,,0,,
+137,Z,,6,Load,Unload,NORWICH,STRONGHOLD INTERNATIONAL LTD,Nicholson Court,,HODDESDON,Hertfordshire,,EN11 0NE,,,01992 761 187,A,NO05,,0,,
+173,Z,,6,Load,Unload,NORWICH,REFLECTIONS (NORFOLK),4 Beckham Place,Edward Street,NORWICH,,,NR3 3DZ,06230,03095,01603 630081,A,NO01,,0,06230,03095
+143,Z,,6,Load,Unload,NORWICH,LAST BROS (PRINTERS) LTD,Last Bros (Printers) Ltd; Delamare Road,Cheshunt,WALTHAM CROSS,Hertfordshire,,EN8 9TE,05364,02024,01992 638283,A,NO05,,0,05364,02024
+149,Z,,6,Load,Unload,NORWICH,MICROPRESS PRINTERS LTD,27 Norwich Road,,HALESWORTH,Suffolk,,IP19 8BX,06387,02777,01986 873494,A,NO07,,0,06387,02777
+109,Z,,6,Load,Unload,NORWICH,ADAM WENBORN,6 Bodmin Road,,CHELMSFORD,,,CM1 6LH,05718,02081,,A,NO05,,0,05718,02081
+141,Z,,6,Load,Unload,NORWICH,L & J CARNELL,Delamare Road,Cheshunt,WALTHAM CROSS,Hertfordshire,,EN8 9SH,,,01992 642261,A,NO05,,0,,
+202,Z,,6,Load,Unload,NORWICH,STANFORD SIGNS,13 Gideons Way,,STANFORD-LE-HOPE,Essex,,SS17 8EE,05691,01836,01268 530185,A,NO05,,0,05691,01836
+177,Z,,6,Load,Unload,NORWICH,SIGNWAVES LTD,Signwaves Ltd,Lefevre Way,GREAT YARMOUTH,Norfolk,,NR31 0NW,06508,03055,01493 419300,A,NO01,,0,06508,03055
+198,Z,,6,Load,Unload,NORWICH,EAST HERTS SIGNS & ENGRAVING,East Herts Signs,3 Old Cross,HERTFORD,,,SG14 1HX,05324,02126,01992 553004,A,NO05,,0,05324,02126
+102,Z,,6,Load,Unload,NORWICH,C/O RAYTHEON SYSTEMS,Elizabeth Way,,HARLOW,Essex,,,,,,A,NO05,,0,,
+121,Z,,6,Load,Unload,NORWICH,DESIGN & LINK LTD,Cutter House; Woodrolfe Road,Tollesbury,MALDON,Essex,,CM9 8SE,05966,02105,01621 869686,A,NO05,,0,05966,02105
+111,Z,,6,Load,Unload,NORWICH,D & J PRESS HARLOW LTD,D & J Press Harlow Ltd,4 Coldharbour Pinnacles Estate; Coldharb,HARLOW,Essex,,CM19 5JH,05431,02094,,A,NO05,,0,05431,02094
+189,Z,,6,Load,Unload,NORWICH,CLANPRESS (KINGS LYNN) LTD,Hamburg Way,North Lynn Industrial Estate,KING`S LYNN,Norfolk,,PE30 2ND,,,01553 772737,A,NO02,,0,,
+157,Z,,6,Load,Unload,NORWICH,IPSWICH PLASTICS LTD,Ipswich Plastics Ltd; Foxtail Road,Ransomes Industrial Estate,IPSWICH,,,IP3 9RX,06200,02415,01473 270101,A,NO07,,0,06200,02415
+103,Z,,6,Load,Unload,NORWICH,GALAXY STATIONERS,,,CHELMSFORD,,,,,,01245 400743,A,NO05,,0,,
+191,Z,,6,Load,Unload,NORWICH,I R S LIMITED,I R S Ltd; Lion Works,Castle Acre Road,SWAFFHAM,Norfolk,,PE37 7HS,05819,03096,01760 721399,A,NO02,,0,05819,03096
+201,Z,,6,Load,Unload,NORWICH,FALDER MATTHEWS LTD,Falder Mathews Ltd,6 Seax Way; Southfields Business Park,BASILDON,Essex,,SS15 6SW,05666,01893,01268 413611,A,NO05,,0,05666,01893
+134,Z,,6,Load,Unload,NORWICH,LEA VALLEY COLOUR LABORATORIES,Lea Valley Colour Ltd; Unit 4b,Charlton Mead Lane,HODDESDON,Hertfordshire,,EN11 0DJ,05385,02083,01992 443461,A,NO05,,0,05385,02083
+114,Z,,6,Load,Unload,NORWICH,CONCEPT DIGITAL LTD,Concept Digital Ltd,12 Birchanger Industrial Estate,BISHOP`S STORTFORD,Hertfordshire,,CM23 2TH,05496,02229,01279 758954,A,NO05,,0,05496,02229
+124,Z,,6,Load,Unload,NORWICH,M FISH LTD,7-8 Faraday Close,,CLACTON-ON-SEA,Essex,,CO15 4TR,06181,02180,01255 475964,A,NO04,,0,06181,02180
+160,Z,,6,Load,Unload,NORWICH,ABBEYHINE LTD,Abbey Hine,Lamdin Road,BURY ST. EDMUNDS,Suffolk,,IP32 6NU,05846,02668,01284 769651,A,NO02,,0,05846,02668
+199,Z,,6,Load,Unload,NORWICH,BST,Unit 4; Brocks Business Park,Hodgson Way,WICKFORD,Essex,,SS11 8YN,05758,01927,,A,NO05,,0,05758,01927
+193,Z,,6,Load,Unload,NORWICH,R D S CARTONS,R D S Cartons; Unit 3,Schoolfield Road; West Thurrock,GRAYS,Essex,,RM20 3HR,05582,01775,01708 861355,A,NO05,,0,05582,01775
+151,Z,,6,Load,Unload,NORWICH,REFLEX LITHO LTD,Reflex Litho Ltd,St. Helens Way,THETFORD,Norfolk,,IP24 1HG,05868,02846,01842 754600,A,NO02,,0,05868,02846
+185,Z,,6,Load,Unload,NORWICH,PAGE BROS (NORWICH) LTD,Page Bros (Norwich) Ltd,Mile Cross Lane,NORWICH,,,NR6 6SA,06221,03116,01603 429141,A,NO06,,0,06221,03116
+142,Z,,6,Load,Unload,NORWICH,RENAISSANCE PRINT&DISPLAY LTD,Unit 3; Delamare Road,Cheshunt,WALTHAM CROSS,Hertfordshire,,EN8 9SU,05366,02027,02082433529,A,NO05,,0,05366,02027
+112,Z,,6,Load,Unload,NORWICH,CONCISELY OFFICE SUPPLIES LTD,Beehive Works,Beehive Lane,CHELMSFORD,,,CM2 9TE,05719,02053,01245 358117,A,NO05,,1,05719,02053
+126,Z,,6,Load,Unload,NORWICH,IMPACT SIGN SERVICES,Sign Shop,21 London Road; Stanway,COLCHESTER,,,CO3 0NR,05956,02249,01206 765028,A,NO04,,0,05956,02249
+205,Z,,6,Load,Unload,NORWICH,BASILDON PRINTING COMPANY LTD,Basildon Printing Co Ltd; Fleet House,1 Armstrong Road; Manor Trading Estate,BENFLEET,Essex,,SS7 4FH,05776,01890,01268 759333,A,NO05,,0,05776,01890
+169,Z,,6,Load,Unload,NORWICH,BARNWELL PRINT LTD,Barnwell Printers,2-4 Penfold Street; Aylsham,NORWICH,,,NR11 6ET,06191,03268,01263 732767,A,NO06,,0,06191,03268
+125,Z,,6,Load,Unload,NORWICH,RAVENSCROFT PRIMARY SCHOOL,Ravenscroft Primary School,Nayland Drive,CLACTON-ON-SEA,Essex,,CO16 8TZ,06156,02157,,A,NO04,,0,06156,02157
+200,Z,,6,Load,Unload,NORWICH,TARN PRINT LTD,Tarn Print Ltd,39-43 Bowlers Croft,BASILDON,Essex,,SS14 3DZ,05725,01905,01268527353,A,NO05,,0,05725,01905
+148,Z,,6,Load,Unload,NORWICH,BRITISH ENERGY STORES,Master Lord Industrial Estate,,LEISTON,Suffolk,,IP16 4JD,,,,A,NO07,,0,,
+174,Z,,6,Load,Unload,NORWICH,GALLPEN PRESS LTD,Gallpen Press Ltd,Starling Road,NORWICH,,,NR3 3EL,06229,03096,01603 624893,A,NO01,,0,06229,03096
+197,Z,,6,Load,Unload,NORWICH,STEPHEN AUSTIN & SONS LTD,Stephen Austin & Sons Ltd,Caxton Hill,HERTFORD,,,SG13 7LU,05335,02125,01992 584955,A,NO05,,0,05335,02125
+195,Z,,6,Load,Unload,NORWICH,QUADRANT OFFSET,Unit 6a,Dicker Mill,HERTFORD,,,SG13 7AE,05329,02131,01992 587373,A,NO05,,0,05329,02131
+183,Z,,6,Load,Unload,NORWICH,SIGNFORCE LTD,Signforce Ltd,4 Burton Close,NORWICH,,,NR6 6AZ,06222,03122,01603 411573,A,NO01,,0,06222,03122
+140,Z,,6,Load,Unload,NORWICH,CRAFT CREATIONS LTD,Craft Creations Ltd; Ingersoll House,Delamare Road; Cheshunt,WALTHAM CROSS,Hertfordshire,,EN8 9HD,05364,02024,01992 635292,A,NO05,,0,05364,02024
+127,Z,,6,Load,Unload,NORWICH,MID ESSEX PRINTERS,Mid Essex Printers,66a London Road,COLCHESTER,,,CO3 4DF,05964,02250,01206 572662,A,NO04,,0,05964,02250
+136,Z,,6,Load,Unload,NORWICH,INC LIMITED,Rawmec (Eec) Ltd; Rawmec Industrial Park,Plumpton Road,HODDESDON,Hertfordshire,,EN11 0EE,05382,02099,0208 366 9555,A,NO05,,0,05382,02099
+113,Z,,6,Load,Unload,NORWICH,ELLIS KERRIGAN LTD,4 South Place,,HARLOW,Essex,,CM20 2AN,05462,02114,01279 641500,A,NO05,,0,05462,02114
+128,Z,,6,Load,Unload,NORWICH,UNIVERSITY OF ESSEX,University of Essex,Wivenhoe Park,COLCHESTER,,,CO4 3SQ,06027,02238,01206 872823,A,NO04,,0,06027,02238
+119,Z,,6,Load,Unload,NORWICH,O & M PRINTWIZE,O & M Printwize,Stepfield,WITHAM,Essex,,CM8 3BN,05826,02148,01376 500900,A,NO05,,0,05826,02148
+107,Z,,6,Load,Unload,NORWICH,N O P RESEARCH CENTRE,Caxton House; Chelmsford Data Centre,91 Victoria Road,CHELMSFORD,,,CM1 1JW,05707,02071,,A,NO05,,0,05707,02071
+116,Z,,6,Load,Unload,NORWICH,FIRST SIGNS & LABELS(BISHOPS,First Signs & Labels; Unit 1,Raynham Road Industrial Estate; 1 Raynha,BISHOP`S STORTFORD,Hertfordshire,,CM23 5PJ,05500,02215,01279 600 711,A,NO05,,0,05500,02215
+129,Z,,6,Load,Unload,NORWICH,C3 IMAGING LTD,Telford Way,Severalls Industrial Park,COLCHESTER,,,CO4 9QP,,,01206 845544,A,NO04,,0,,
+101,Z,,6,Load,Unload,NORWICH,BARTLETT SIGNS AND DISPLAY,Long Stratton,,NORWICH,,,,,,01508 531542,A,NO01,,0,,
+152,Z,,6,Load,Unload,NORWICH,ROLLMARK (DIELETLIT) LTD,Rollmark (Dieletlit) Ltd,22 Howlett Way,THETFORD,Norfolk,,IP24 1HZ,05868,02843,01842 754984,A,NO02,,0,05868,02843
+105,Z,,6,Load,Unload,NORWICH,RESOURCE CREATIVE LTD,Resource Creative,Funstons Commercial Centre; Arkesden Roa,SAFFRON WALDEN,Essex,,CB11 4QU,05482,02329,01799 551255,A,NO05,,0,05482,02329
+138,Z,,6,Load,Unload,NORWICH,COLIN CLAPP LTD,Colin Clapp Ltd; Unit 1-6,Trident Industrial Estate; Pindar Road,HODDESDON,Hertfordshire,,EN11 0SF,05384,02090,01992 470666,A,NO05,,0,05384,02090
+110,Z,,6,Load,Unload,NORWICH,ACORS PRESS,Molyneaux Court,Radford Way,BILLERICAY,Essex,,CM12 0BT,05670,01952,01277 622991,A,NO05,,0,05670,01952
+133,Z,,6,Load,Unload,NORWICH,CLASSIQUE DESIGN & PRINT,Park Farmhouse; Colchester Road,Elmstead,COLCHESTER,,,CO7 7BA,06040,02244,01206 827186,A,NO04,,0,06040,02244
+192,Z,,6,Load,Unload,NORWICH,ADARE CARWIN LTD,Adare Carwin; Unit 1; Trade Link,Weston Avenue; Waterglade Industrial Par,GRAYS,Essex,,RM20 3FJ,05577,01779,02392 459459,A,NO05,,0,05577,01779
+108,Z,,6,Load,Unload,NORWICH,A E SIMMONS LTD,A E Simmons Ltd,Bilton Road,CHELMSFORD,,,CM1 2UJ,05696,02061,01245 352480,A,NO05,,0,05696,02061
+159,Z,,6,Load,Unload,NORWICH,DOCUMEDIA,Documedia,Northern Way,BURY ST. EDMUNDS,Suffolk,,IP32 6NR,05843,02665,01284 762101,A,NO02,,0,05843,02665
+164,Z,,6,Load,Unload,NORWICH,KINGFISHER PRESS LTD,Miro Press,Western Way,BURY ST. EDMUNDS,Suffolk,,IP33 3SP,05838,02648,01359 271171,A,NO02,,0,05838,02648
+135,Z,,6,Load,Unload,NORWICH,JOHNSON & RICHARDSON,Impresa Park,Pindar Road,HODDESDON,Hertfordshire,,EN11 0DL,05384,02093,,A,NO05,,0,05384,02093
+150,Z,,6,Load,Unload,NORWICH,THE DEBEN PRINT CO LTD,The Deben Print Co Ltd,1 Bailey Close; Hadleigh Road Industrial,IPSWICH,,,IP2 0UD,06144,02447,01473 210244,A,NO07,,0,06144,02447
+204,Z,,6,Load,Unload,NORWICH,CHARACTER PRINT & DESIGN LTD,Character Print & Design,17 Brook Road,RAYLEIGH,Essex,,SS6 7UT,05805,01897,01268 298414,A,NO05,,0,05805,01897
+144,Z,,6,Load,Unload,NORWICH,DAVID HORNER ASSOCIATES LTD,David Horner Associates Ltd,125 Brooker Road,WALTHAM ABBEY,Essex,,EN9 1JU,05380,01999,01992 716063,A,NO05,,0,05380,01999
+203,Z,,6,Load,Unload,NORWICH,URBAN DESIGN & PRINT LTD,Urban Design & Print Ltd; Unit 1-2,Victoria Business Park; Short Street,SOUTHEND-ON-SEA,,,SS2 5BY,05882,01862,01702 601927,A,NO05,,0,05882,01862
+132,Z,,6,Load,Unload,NORWICH,JENNER (CITY PRINT) LIMITED,Jenner (City Print) Ltd,Tower Business Park; Kelvedon Road; Tipt,COLCHESTER,,,CO5 0LX,05885,02171,01621 818321,A,NO05,,0,05885,02171
+130,Z,,6,Load,Unload,NORWICH,NORTH ESSEX SIGNS LTD,North Essex Signs Ltd,15 Clough Road; Severalls Industrial Par,COLCHESTER,,,CO4 9QS,06015,02287,01206 752002,A,NO04,,0,06015,02287
+118,Z,,6,Load,Unload,NORWICH,THE GOOD NEWS PRESS LTD,Bridge Cottage,High Ongar Road,ONGAR,Essex,,CM5 9LZ,05558,02041,01277 362106,A,NO05,,0,05558,02041
+196,Z,,10,Load,Unload,NORWICH,P A D S PRINTING & COMMERCIAL,P A D S Printing & Commercial Stationery,1-2 The Mead Business Centre; Mead Lane,HERTFORD,,,SG13 7BJ,05333,02131,01992 553700,A,NO05,,0,05333,02131
+154,Z,,3,Load,Unload,NORWICH,PJ Print,P J Print; 15-16 The Quadrangle Centre,The Drift; Nacton Road,IPSWICH,,,IP3 9QR,06194,02422,,A,IP04,,0,06194,02422
+184,Z,,3,Load,Unload,NORWICH,F Crowe & Sons Ltd,F Crowe & Sons Ltd,50 Hurricane Way,NORWICH,,,NR6 6JB,06226,03133,,A,NO05,,0,06226,03133
+175,Z,,3,Load,Unload,NORWICH,Howard Smith Paper LTD,5 Taverners Square,Silver Road,NORWICH,,,NR3 4SY,06235,03094,,A,NO05,,0,06235,03094
+166,Z,,3,Load,Unload,NORWICH,Saxon Photolitho,Hellesdon Park Road,Drayton High Road,NORWICH,,,NR6 5DR,,,,A,NO05,,0,,
+146,Z,,3,Load,Unload,NORWICH,Print Wright LTD,Printwright Ltd; Unit 6,Boss Hall Road,IPSWICH,,,IP1 5BN,06142,02452,,A,IP04,,0,06142,02452
+131,Z,,6,Load,Unload,NORWICH,UNIVERSAL IMAGE SYSTEMS LTD,Universal Image Systems Ltd,38 Heckworth Close; Severalls Industrial,COLCHESTER,,,CO4 9TB,06012,02285,01206 855445,A,NO04,,0,06012,02285

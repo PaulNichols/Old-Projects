@@ -1,0 +1,21 @@
+<%@ Page Language="C#" MasterPageFile="~/Main.master" EnableEventValidation="false" AutoEventWireup="true" CodeFile="Printers.aspx.cs" Inherits="Discovery.UI.Web.ReferenceData.Printers" Title="Untitled Page"  %>
+
+<%@ Register Assembly="Discovery.Web.UI.CustomControls" Namespace="Discovery.Web.UI.CustomControls"
+    TagPrefix="Discovery" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
+    <div class="PageTitle">
+        Printers</div>
+        <hr />
+        <asp:ImageButton ID="NewButton" runat="server" SkinID="NewButton" CausesValidation="False"/>
+    <Discovery:DiscoveryGrid DetailURL="printer.aspx" DefaultSortExpression="Name" ID="DiscoveryGrid1" runat="server" DataSourceID="PrintersDataSource" DataKeyNames="Id">
+         <Columns>
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+            
+            </Columns>
+    </Discovery:DiscoveryGrid>
+   
+        <asp:ObjectDataSource ID="PrintersDataSource" runat="server" SelectMethod="GetPrinters"
+            TypeName="Discovery.BusinessObjects.Controllers.PrinterController" ></asp:ObjectDataSource>
+    
+</asp:Content>
+

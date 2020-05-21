@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spU_xUpdateTotalOrderAmount - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spU_xUpdateTotalOrderAmount
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Procedure [spU_xUpdateTotalOrderAmount]<br>
+				(<br>
+				@Ord_GuidID uniqueidentifier<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				Declare @Total Money<br>
+				<br>
+				Select @Total = Sum(tblProduct.Pro_CurPrice * tblOrderItem.Oit_LngAmount)<br>
+				From tblOrderItem Inner Join tblProduct On tblOrderItem.Oit_GuidProductID = tblProduct.Pro_GuidID<br>
+				Where tblOrderItem.Oit_GuidOrderID = @Ord_GuidID<br>
+				Group By tblOrderItem.Oit_GuidOrderID<br>
+				<br>
+				Update tblOrder Set Ord_CurTotal = @Total Where Ord_GuidID = @Ord_GuidID<br>
+				<br>
+				Return(0)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:21
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

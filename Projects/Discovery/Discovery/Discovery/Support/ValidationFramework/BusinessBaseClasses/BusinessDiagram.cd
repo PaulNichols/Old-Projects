@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="ValidationFramework.NotifyValidatableBase">
+    <Position X="5.75" Y="7.25" Width="4.25" />
+    <TypeIdentifier>
+      <FileName>BusinessBaseClasses\NotifyValidatableBase.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAYAAKAkAAAAAgAEgQIAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ValidationFramework.NotifyValidatableCollection&lt;T&gt;">
+    <Position X="6.25" Y="2.5" Width="4.5" />
+    <TypeIdentifier>
+      <FileName>BusinessBaseClasses\NotifyValidatableCollection.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ValidationFramework.ValidatableBase">
+    <Position X="6.25" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>BusinessBaseClasses\ValidatableBase.cs</FileName>
+      <HashCode>AAIAAABAAAAAAAAAAAgAAIAAAAAAAACAgAAAAIAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ValidationFramework.ValidatableCollection&lt;T&gt;">
+    <Position X="6.25" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <FileName>BusinessBaseClasses\ValidatableCollection.cs</FileName>
+      <HashCode>AAAAAABAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ValidationFramework.CompareValidatorAttribute">
+    <Position X="1.25" Y="15.5" Width="3" />
+    <TypeIdentifier>
+      <FileName>CompareValidatorAttribute.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAEAAAIAAAAAAIAAAAAAAAAAABA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.ValidationException">
+    <Position X="5.75" Y="10.75" Width="4.25" />
+    <TypeIdentifier>
+      <FileName>ValidationException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.CustomValidationEventArgs">
+    <Position X="10.25" Y="8.25" Width="3" />
+    <TypeIdentifier>
+      <FileName>CustomValidationEventArgs.cs</FileName>
+      <HashCode>AQAAAAEAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.CustomValidatorAttribute">
+    <Position X="11.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CustomValidatorAttribute.cs</FileName>
+      <HashCode>gAAAAAAAAAAAAAgAAAACAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.LengthValidatorAttribute">
+    <Position X="6.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LengthValidatorAttribute.cs</FileName>
+      <HashCode>gAAAEACAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.PropertyInfoExtended">
+    <Position X="20.5" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>PropertyInfoExtended.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAACQAAAAAAAAAAQEgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.RangeValidatorAttribute">
+    <Position X="13.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>RangeValidatorAttribute.cs</FileName>
+      <HashCode>gAAAEACAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.RegexValidatorAttribute">
+    <Position X="4.5" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>RegexValidatorAttribute.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.RequiredValidatorAttribute">
+    <Position X="9" Y="15.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>RequiredValidatorAttribute.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgACAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Validation">
+    <Position X="0.5" Y="7.25" Width="4.5" />
+    <TypeIdentifier>
+      <FileName>Validation.cs</FileName>
+      <HashCode>gCAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEAABAABgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.ValidationManager">
+    <Position X="0.5" Y="2.5" Width="5.25" />
+    <TypeIdentifier>
+      <FileName>ValidationManager.cs</FileName>
+      <HashCode>CAAAAACAAKCAAAAEIAgAAAAAAAAAQAAAAAQAAAAgABA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Class Name="ValidationFramework.ValidationManager.ExceptionStrings" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ValidationManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="ValidationFramework.ValidatorAttribute">
+    <Position X="0.5" Y="11.25" Width="4.5" />
+    <TypeIdentifier>
+      <FileName>ValidatorAttribute.cs</FileName>
+      <HashCode>AQAIAAAAAACACAgAAAgCAAAAAAAAAAAIACAADABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InValidBusinessObjectException">
+    <Position X="10.25" Y="6.25" Width="3" />
+    <TypeIdentifier>
+      <FileName>InValidBusinessObjectException.cs</FileName>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ValidationFramework.IValid">
+    <Position X="9.75" Y="4" Width="3" />
+    <TypeIdentifier>
+      <FileName>BusinessBaseClasses\IValid.cs</FileName>
+      <HashCode>AAAAAABAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ValidationFramework.ValidationCompareOperator">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Enums.cs</FileName>
+      <HashCode>ACAAAAAAgAAAAAAAgIAAAAAAAAAAAAAAAAAAAAQAACA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

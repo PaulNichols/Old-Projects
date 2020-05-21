@@ -1,0 +1,361 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			Customers - Overview on how to retrieve some records
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			Customers
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Overview on how to retrieve some records
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				In order to retrieve some records from the <b>Customers</b> table, you can call
+				4 differents stored procedures depending on your need:<br>
+				<br>
+				<hr>
+				<b>[spS_Customers]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records
+						</li>
+						<li>
+							only one specific record
+						</li>
+						<li>
+							all the table records related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>Title</b> (via the <b>TitleId</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure allows you to get back the data in a resultset or
+					in an XML stream. This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>CustomerID</b>: Customer unique identifier
+						</li>
+						<li>
+							<b>CompanyName</b>: Company for which the contact represents
+						</li>
+						<li>
+							<b>ContactName</b>: Customer or Contact Name (if a business) 
+						</li>
+						<li>
+							<b>TitleId</b>: Foriegn Key for Contact Title
+						</li>
+						<li>
+							<b>Address</b>: Customer/Contact Address
+						</li>
+						<li>
+							<b>City</b>: Customer/Contact City
+						</li>
+						<li>
+							<b>PostalCode</b>: Customer/Contact Post code
+						</li>
+						<li>
+							<b>Phone</b>: Customer/Contact Phone
+						</li>
+						<li>
+							<b>Email</b>: Email Address
+						</li>
+						<li>
+							<b>WebAddress</b>: Web Address URL
+						</li>
+						<li>
+							<b>Fax</b>: Customer/Contact Fax
+						</li>
+						<li>
+							<b>Active</b>: Active flag
+						</li>
+					</ul>
+				</blockquote>
+				<hr>
+				<b>[spS_Customers_Display]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records "display" information
+						</li>
+						<li>
+							only one specific record "display" information
+						</li>
+						<li>
+							all the table records "display" information related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>Title</b> (via the <b>TitleId</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>ID1</b>: Customer unique identifier
+						</li>
+						<li>
+							<b>Display</b>: Display for this table.
+						</li>
+					</ul>
+				</blockquote>
+				<hr>
+				<b>[spS_Customers_SelectDisplay]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records and all the foreign tables "display" information
+						</li>
+						<li>
+							only one specific record and all the foreign tables "display" information
+						</li>
+						<li>
+							all the table records and all the foreign tables "display" information related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>Title</b> (via the <b>TitleId</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure allows you to get back the data in a resultset or
+					in an XML stream. This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>CustomerID</b>: Customer unique identifier
+						</li>
+						<li>
+							<b>CompanyName</b>: Company for which the contact represents
+						</li>
+						<li>
+							<b>ContactName</b>: Customer or Contact Name (if a business) 
+						</li>
+						<li>
+							<b>TitleId</b>: Foriegn Key for Contact Title
+						</li>
+						<li>
+							<b>TitleId_Display</b>: Display of the <b>Title</b> table
+						</li>
+						<li>
+							<b>Address</b>: Customer/Contact Address
+						</li>
+						<li>
+							<b>City</b>: Customer/Contact City
+						</li>
+						<li>
+							<b>PostalCode</b>: Customer/Contact Post code
+						</li>
+						<li>
+							<b>Phone</b>: Customer/Contact Phone
+						</li>
+						<li>
+							<b>Email</b>: Email Address
+						</li>
+						<li>
+							<b>WebAddress</b>: Web Address URL
+						</li>
+						<li>
+							<b>Fax</b>: Customer/Contact Fax
+						</li>
+						<li>
+							<b>Active</b>: Active flag
+						</li>
+					</ul>
+				</blockquote>
+				<hr>
+				<b>[spS_Customers_Full]</b>: this stored procedure allows you to retrieve:
+				<blockquote>
+					<ul>
+						<li>
+							all the table records and all the foreign tables columns
+						</li>
+						<li>
+							only one specific record and all the foreign tables columns
+						</li>
+						<li>
+							all the table records and all the foreign tables columns related to the following foreign tables:<br>
+							<ul>
+								<li>
+									<b>Title</b> (via the <b>TitleId</b> column)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					This stored procedure allows you to get back the data in a resultset or
+					in an XML stream. This stored procedure returns the following columns:
+					<ul>
+						<li>
+							<b>CustomerID</b>: Customer unique identifier
+						</li>
+						<li>
+							<b>CompanyName</b>: Company for which the contact represents
+						</li>
+						<li>
+							<b>ContactName</b>: Customer or Contact Name (if a business) 
+						</li>
+						<li>
+							<b>TitleId</b>: Foriegn Key for Contact Title
+						</li>
+						<li>
+							<b>Address</b>: Customer/Contact Address
+						</li>
+						<li>
+							<b>City</b>: Customer/Contact City
+						</li>
+						<li>
+							<b>PostalCode</b>: Customer/Contact Post code
+						</li>
+						<li>
+							<b>Phone</b>: Customer/Contact Phone
+						</li>
+						<li>
+							<b>Email</b>: Email Address
+						</li>
+						<li>
+							<b>WebAddress</b>: Web Address URL
+						</li>
+						<li>
+							<b>Fax</b>: Customer/Contact Fax
+						</li>
+						<li>
+							<b>Active</b>: Active flag
+						</li>
+						<li>
+							<b>TitleId_TitleId</b>: Unique Identifier
+						</li>
+						<li>
+							<b>TitleId_Title</b>: Title Description
+						</li>
+					</ul>
+				</blockquote>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			See also:
+		</div>
+		<blockquote>
+				<ul>
+					<div class="SeeAlsoBody">
+						<li>
+							[<b>spS_Customers</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+							<br>
+						</li>
+						<li>
+							[<b>spS_Customers_Display</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_Display_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_Display_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_Display_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_Display_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_Display_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_Display_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+							<br>
+						</li>
+						<li>
+							[<b>spS_Customers_SelectDisplay</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_SelectDisplay_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_SelectDisplay_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_SelectDisplay_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</l>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_SelectDisplay_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_SelectDisplay_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_SelectDisplay_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+							<br>
+						</li>
+						<li>
+							[<b>spS_Customers_Full</b>]
+							<ul>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_Full_Param_Members.htm">Parameter</a> class members.<br>
+								</li>
+								<li>
+									Overview on the <a href="../../Stored_Procedures/spS_Customers_Full_Sp_Members.htm">StoredProcedure</a> class members.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_Full_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									See a <a href="../../Stored_Procedures/spS_Customers_Full_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_Full_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+								</li>
+								<li>
+									Click <a href="../../Stored_Procedures/spS_Customers_Full_SqlScript.htm#Function">here</a> to see the T-SQL code for the underlying inline table-valued function.<br>
+								</li>
+							</ul>
+						</li>
+					</div>
+				</UL>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:22
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

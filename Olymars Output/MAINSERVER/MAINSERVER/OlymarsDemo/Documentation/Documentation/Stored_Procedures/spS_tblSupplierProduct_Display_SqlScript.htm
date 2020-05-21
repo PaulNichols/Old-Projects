@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_tblSupplierProduct_Display - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_tblSupplierProduct_Display
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+Create Procedure [spS_tblSupplierProduct_Display]<br>
+				<br>
+				(<br>
+				 @Spr_GuidProductID [uniqueidentifier] = Null -- for [tblSupplierProduct].[Spr_GuidProductID] column<br>
+				,@Spr_GuidSupplierID [uniqueidentifier] = Null -- for [tblSupplierProduct].[Spr_GuidSupplierID] column<br>
+				)<br>
+				<br>
+				-- Returns the number of records found<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				 [tblSupplierProduct_Records].[ID1]<br>
+				,[tblSupplierProduct_Records].[ID2]<br>
+				,[tblSupplierProduct_Records].[Display]<br>
+				<br>
+				From [fntblSupplierProduct_Display](@Spr_GuidProductID, @Spr_GuidSupplierID) As [tblSupplierProduct_Records]<br>
+				<br>
+				Order By<br>
+				[tblSupplierProduct_Records].[Display]<br>
+				<br>
+				Return(@@RowCount)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Function">
+		<div class="MainTitle">
+			T-SQL code for the underlying inline table-valued function used by this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Function [fntblSupplierProduct_Display]<br>
+				(<br>
+				 @Spr_GuidProductID [uniqueidentifier] = Null<br>
+				,@Spr_GuidSupplierID [uniqueidentifier] = Null<br>
+				)<br>
+				<br>
+				Returns Table<br>
+				<br>
+				As<br>
+				<br>
+				Return<br>
+				(<br>
+				Select<br>
+				 [Spr_GuidProductID] As [ID1]<br>
+				,[Spr_GuidSupplierID] As [ID2]<br>
+				,[Product].[Display] + '-&gt;' + [Fournisseur].[Display] As [Display]<br>
+				<br>
+				From [dbo].[tblSupplierProduct]<br>
+				    Inner Join [fntblProduct_Display](Null, Null) [Product] On [Spr_GuidProductID] = [Product].[ID1]<br>
+				        Inner Join [fntblSupplier_Display](Null) [Fournisseur] On [Spr_GuidSupplierID] = [Fournisseur].[ID1]<br>
+				<br>
+				Where<br>
+				    ((@Spr_GuidProductID Is Null) Or ([Spr_GuidProductID] = @Spr_GuidProductID))<br>
+				And ((@Spr_GuidSupplierID Is Null) Or ([Spr_GuidSupplierID] = @Spr_GuidSupplierID))<br>
+				)<br>
+				<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:20
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

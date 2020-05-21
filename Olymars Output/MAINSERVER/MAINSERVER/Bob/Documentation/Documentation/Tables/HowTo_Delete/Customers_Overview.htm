@@ -1,0 +1,168 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			Customers - Overview on how to delete some records
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			Customers
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Overview on how to delete some records
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				In order to delete some records from [<a href="../Customers.htm">Customers</a>] table, a specific stored procedure was created: [<a href="../../Stored_Procedures/spD_Customers.htm">spD_Customers</a>].
+			</div>
+			<br>
+			<div class="MainBody">
+				This stored procedure has the following parameters to be supplied before its execution:
+				<br>
+				<UL>
+					<LI>
+						<b>@CustomerID</b>:
+						<br>
+							Customer unique identifier
+					</LI>
+					<br><br>
+					<LI>
+						<b>@TitleId</b>:
+						<br>
+							Foriegn Key for Contact Title
+					</LI>
+					<br>
+		</blockquote>
+		<div class="MainTitle">
+			Parameters description
+		</div>
+		<blockquote>
+			<Table>
+				<tr>
+					<td width="250px">
+						<div class="TableHeader">
+							Parameter
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableHeader">
+							SQL Type
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableHeader">
+							Default
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableHeader">
+							Direction
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="250px">
+						<div class="TableRow">
+							[@CustomerID]
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableRow">
+							[int]
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Null
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Input
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td width="250px">
+						<div class="TableRow">
+							[@TitleId]
+						</div>
+					</td>
+					<td width="250px">
+						<div class="TableRow">
+							[int]
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Null
+						</div>
+					</td>
+					<td width="200px">
+						<div class="TableRow">
+							Input
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="NoteHeader">
+				Note:
+			</div>
+			<UL>
+				<div class="NoteBody">
+					<LI>
+						If you do supply a value for the parameter [<b>@CustomerID</b>],  the corresponding record will be deleted.
+					</LI>
+					<LI>
+						If you do supply a value for the parameter [<b>@TitleId</b>],  all the records of [<b>Customers</b>] that are related to the corresponding record of [<b>Title</b>] will be deleted.
+					</LI>
+				</div>
+				<br>
+			</UL>
+			<br>
+		</blockquote>
+		<div class="MainTitle">
+			See also:
+		</div>
+		<blockquote>
+			<ul>
+				<div class="SeeAlsoBody">
+					<li>
+						Overview on the <a href="../../Stored_Procedures/spD_Customers_Param_Members.htm">Parameter</a> class members.<br>
+					</li>
+					<li>
+						Overview on the <a href="../../Stored_Procedures/spD_Customers_Sp_Members.htm">StoredProcedure</a> class members.<br>
+					</li>
+					<li>
+						See a <a href="../../Stored_Procedures/spD_Customers_CS.htm">Visual C# .NET</a> example on how to call this stored procedure.<br>
+					</li>
+					<li>
+						See a <a href="../../Stored_Procedures/spD_Customers_VB.htm">Visual Basic .NET</a> example on how to call this stored procedure.<br>
+					</li>
+					<li>
+						Click <a href="../../Stored_Procedures/spD_Customers_SqlScript.htm">here</a> to see the T-SQL code for this stored procedure.<br>
+					</li>
+				</div>
+			</ul>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:22
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

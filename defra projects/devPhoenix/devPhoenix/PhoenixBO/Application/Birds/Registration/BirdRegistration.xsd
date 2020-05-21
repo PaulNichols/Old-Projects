@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by Steven Sartain (Iridium Software) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by Steven Sartain (aaaaa) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" id="BirdRegistrationDataset">
+	<xs:element name="RingApplication">
+		<xs:annotation>
+			<xs:documentation>Root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Party">
+					<xs:annotation>
+						<xs:documentation>Party making the application</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PartyID" type="xs:int">
+								<xs:annotation>
+									<xs:documentation>Party identifier</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PartyAddressID" type="xs:int" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Address to which rings are to be sent, if not party address</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AddressReason" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Reason if different ringing address is specified</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="Declaration">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SpecialRequirements" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Declaration special requirements</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="IsUnderEighteen" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation>Is the keeper under 18?</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="SpecialPenalty" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation>Convicted of a special penalty offence in last 5 years?</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="OtherAnimalOffence" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation>Other animal offence in last 3 years?</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="TrueAndCorrect" type="xs:boolean">
+											<xs:annotation>
+												<xs:documentation>Confirmation of details</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Conviction" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Keeper convictions</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Date" type="xs:date">
+														<xs:annotation>
+															<xs:documentation>Date of conviction</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="Court" type="xs:string">
+														<xs:annotation>
+															<xs:documentation>Convicted by</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="Offence" type="xs:string">
+														<xs:annotation>
+															<xs:documentation>Convicted offences</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Parents" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Parent details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Mother" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Female parent</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="MotherSpecimen" type="SpecimenType">
+											<xs:annotation>
+												<xs:documentation>Specimen details</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="MotherIDMark" type="IDMarkType" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>ID marks</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Father" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Male parent</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FatherSpecimen" type="SpecimenType">
+											<xs:annotation>
+												<xs:documentation>Specimen details</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="FatherIDMark" type="IDMarkType" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>ID marks</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice>
+					<xs:element name="Clutch">
+						<xs:annotation>
+							<xs:documentation>For eggs and chicks</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="IsHatched" type="xs:boolean">
+									<xs:annotation>
+										<xs:documentation>Have any of the eggs hatched?</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="LastLaidDate" nillable="true">
+									<xs:annotation>
+										<xs:documentation>Date last egg was laid. Mandatory, but set to allow nulls for BO</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="xs:date">
+												<xs:attribute name="IsExact" type="xs:boolean" use="required">
+													<xs:annotation>
+														<xs:documentation>Is date approximate or exact?</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="SpecialRequirements" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Any special requirements noted on the application</xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="500"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element name="Egg" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>Any eggs or chicks in the clutch</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="EggRing" type="IDMarkType" maxOccurs="10"/>
+											<xs:element name="EggSpecimen" type="SpecimenType" minOccurs="0"/>
+											<xs:element name="Cloned" type="xs:boolean" default="0"/>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="Adult">
+						<xs:annotation>
+							<xs:documentation>For adult birds</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:choice>
+								<xs:element name="AdultFound">
+									<xs:annotation>
+										<xs:documentation>For found birds</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="IsKeeperVet" type="xs:boolean">
+												<xs:annotation>
+													<xs:documentation>Is the keeper a vet?</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="IsKeeperOfThree" type="xs:boolean">
+												<xs:annotation>
+													<xs:documentation>Keeper of 3 wild Schedule 4 birds?</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="IsKeeperRSPCA" type="xs:boolean">
+												<xs:annotation>
+													<xs:documentation>Is the keeper an RSPCA inspector?</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="AdultFoundBird" maxOccurs="unbounded">
+												<xs:annotation>
+													<xs:documentation>Details of any found birds</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="FoundBirdStatements" type="Statements">
+															<xs:annotation>
+																<xs:documentation>Statements</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="FoundBirdSpecimen" type="SpecimenType">
+															<xs:annotation>
+																<xs:documentation>Specimen details</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="FoundBirdIDMark" type="IDMarkType" minOccurs="0" maxOccurs="unbounded">
+															<xs:annotation>
+																<xs:documentation>Any ID marks</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="DateFound" type="xs:date">
+															<xs:annotation>
+																<xs:documentation>Date bird was found</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="DateAcquired" type="xs:date" nillable="true" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Date bird was acquired by keeper</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="InjuryDetails" type="xs:string">
+															<xs:annotation>
+																<xs:documentation>Details of the bird's injuries</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="FoundRing" type="IDMarkType" minOccurs="0" maxOccurs="10">
+															<xs:annotation>
+																<xs:documentation>Ring(s) allocated to this bird</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="AcquisitionMethod">
+															<xs:annotation>
+																<xs:documentation>Method of acquisition</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="Barter"/>
+																	<xs:enumeration value="Exchange"/>
+																	<xs:enumeration value="Gift"/>
+																	<xs:enumeration value="Hire"/>
+																	<xs:enumeration value="Loan"/>
+																	<xs:enumeration value="Other"/>
+																	<xs:enumeration value="Return"/>
+																	<xs:enumeration value="Sale"/>
+																	<xs:enumeration value="Unknown"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="AcquisitionDetails" type="xs:string" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Details of how the bird came into their possession</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="KeptAddress" type="xs:int" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>The alternative address at which the bird is kept</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="AdultImported">
+									<xs:annotation>
+										<xs:documentation>For imported birds</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="AdultImportedBird" maxOccurs="unbounded">
+												<xs:annotation>
+													<xs:documentation>Specimen list</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="ImportedStatements" type="Statements">
+															<xs:annotation>
+																<xs:documentation>Statements</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="ImportedSpecimen" type="SpecimenType"/>
+														<xs:element name="ImportedIDMarks" type="IDMarkType" minOccurs="0" maxOccurs="unbounded"/>
+														<xs:element name="Quarantine">
+															<xs:annotation>
+																<xs:documentation>Quarantine details</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="KeeperName" type="xs:string">
+																		<xs:annotation>
+																			<xs:documentation>Keeper's name</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="Address" type="xs:string">
+																		<xs:annotation>
+																			<xs:documentation>Quarantine address</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="EndDate" type="xs:date">
+																		<xs:annotation>
+																			<xs:documentation>End of quarantine date</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="Permit" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Not from EU: permit number</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:simpleContent>
+																	<xs:extension base="xs:string"/>
+																</xs:simpleContent>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="Source">
+															<xs:annotation>
+																<xs:documentation>Source of the bird</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="IsFromUK" type="xs:boolean" minOccurs="0">
+																		<xs:annotation>
+																			<xs:documentation>Is bird originally from UK?</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="Origin" type="xs:int">
+																		<xs:annotation>
+																			<xs:documentation>Original source</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="Origin2" type="xs:int">
+																		<xs:annotation>
+																			<xs:documentation>Original source</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="CaptureMethod" minOccurs="0">
+																		<xs:annotation>
+																			<xs:documentation>Method of capture (wild only)</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																				<xs:enumeration value="Disabled"/>
+																				<xs:enumeration value="Taken under license"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:element>
+																	<xs:element name="EULicenseNumber" type="xs:string" minOccurs="0">
+																		<xs:annotation>
+																			<xs:documentation>Captured under license number (wild only)</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="SourceSpecialConditions" type="xs:string" minOccurs="0">
+																		<xs:annotation>
+																			<xs:documentation>Any other sourcing notes</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element name="CountryOfOrigin" type="xs:int" minOccurs="0">
+																		<xs:annotation>
+																			<xs:documentation>Any other sourcing notes</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="ImportedRing" type="IDMarkType" minOccurs="0" maxOccurs="10">
+															<xs:annotation>
+																<xs:documentation>Ring(s) allocated to this bird</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="DateAcquired" type="xs:date" nillable="true">
+															<xs:annotation>
+																<xs:documentation>Date bird was acquired by keeper</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="IsWithinEU" type="xs:boolean"/>
+														<xs:element name="KeptAddress" type="xs:int" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>The alternative address at which the bird is kept</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="AcquisitionDetails" type="xs:string" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Details of how the bird came into their possession</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="PreviousKeeper" type="xs:string" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Name and address of previous keeper</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="PurposeOfImport" type="xs:int" minOccurs="0"/>
+														<xs:element name="PurposeOfImportExplanation" type="xs:string" minOccurs="0"/>
+														<xs:element name="ImportedDate" type="xs:date" minOccurs="0"/>
+														<xs:element name="InjuryDetails" type="xs:string" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Details of the bird's injuries</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="DateFound" type="xs:date" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Date bird was found</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="AcquisitionMethod">
+															<xs:annotation>
+																<xs:documentation>Method of acquisition</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="Barter"/>
+																	<xs:enumeration value="Exchange"/>
+																	<xs:enumeration value="Gift"/>
+																	<xs:enumeration value="Hire"/>
+																	<xs:enumeration value="Loan"/>
+																	<xs:enumeration value="Other"/>
+																	<xs:enumeration value="Return"/>
+																	<xs:enumeration value="Sale"/>
+																	<xs:enumeration value="Unknown"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="ImportedParents" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Parent details</xs:documentation>
+															</xs:annotation>
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="ImportedMother" maxOccurs="unbounded">
+																		<xs:annotation>
+																			<xs:documentation>Female parent</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:sequence>
+																				<xs:element name="ImportedMotherSpecimen" type="SpecimenType">
+																					<xs:annotation>
+																						<xs:documentation>Specimen details</xs:documentation>
+																					</xs:annotation>
+																				</xs:element>
+																				<xs:element name="ImportedMotherIDMark" type="IDMarkType" minOccurs="0" maxOccurs="unbounded">
+																					<xs:annotation>
+																						<xs:documentation>ID marks</xs:documentation>
+																					</xs:annotation>
+																				</xs:element>
+																			</xs:sequence>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="ImportedFather" minOccurs="0" maxOccurs="unbounded">
+																		<xs:annotation>
+																			<xs:documentation>Male parent</xs:documentation>
+																		</xs:annotation>
+																		<xs:complexType>
+																			<xs:sequence>
+																				<xs:element name="ImportedFatherSpecimen" type="SpecimenType">
+																					<xs:annotation>
+																						<xs:documentation>Specimen details</xs:documentation>
+																					</xs:annotation>
+																				</xs:element>
+																				<xs:element name="ImportedFatherIDMark" type="IDMarkType" minOccurs="0" maxOccurs="unbounded">
+																					<xs:annotation>
+																						<xs:documentation>ID marks</xs:documentation>
+																					</xs:annotation>
+																				</xs:element>
+																			</xs:sequence>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="DateTaken" type="xs:date" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Date bird was found</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="IsKeeperVet" type="xs:boolean">
+												<xs:annotation>
+													<xs:documentation>Is the keeper a vet?</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="IsKeeperOfThree" type="xs:boolean">
+												<xs:annotation>
+													<xs:documentation>Keeper of 3 wild Schedule 4 birds?</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element name="IsKeeperRSPCA" type="xs:boolean">
+												<xs:annotation>
+													<xs:documentation>Is the keeper an RSPCA inspector?</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="AdultBred">
+									<xs:annotation>
+										<xs:documentation>For birds bred by the keeper</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="AdultBredBird" maxOccurs="unbounded">
+												<xs:annotation>
+													<xs:documentation>Specimen list</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="BredStatements" type="Statements">
+															<xs:annotation>
+																<xs:documentation>Statements</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="BredSpecimen" type="SpecimenType">
+															<xs:annotation>
+																<xs:documentation>Specimen details</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="BredIDMarks" type="IDMarkType" minOccurs="0" maxOccurs="unbounded">
+															<xs:annotation>
+																<xs:documentation>Existing ID marks</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="BredRing" type="IDMarkType" minOccurs="0" maxOccurs="10">
+															<xs:annotation>
+																<xs:documentation>Ring(s) allocated to this bird</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="AdultOther">
+									<xs:annotation>
+										<xs:documentation>For other birds</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="AdultOtherBird" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="AdultOtherStatements" type="Statements">
+															<xs:annotation>
+																<xs:documentation>Statements</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="AdultOtherSpecimen" type="SpecimenType">
+															<xs:annotation>
+																<xs:documentation>Specimen details</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="AcquisitionMethod">
+															<xs:annotation>
+																<xs:documentation>Method of acquisition</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="Barter"/>
+																	<xs:enumeration value="Exchange"/>
+																	<xs:enumeration value="Gift"/>
+																	<xs:enumeration value="Hire"/>
+																	<xs:enumeration value="Loan"/>
+																	<xs:enumeration value="Other"/>
+																	<xs:enumeration value="Return"/>
+																	<xs:enumeration value="Sale"/>
+																	<xs:enumeration value="Unknown"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:element>
+														<xs:element name="AcquisitionDetails" type="xs:string" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Details of how the bird came into their possession</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="DateAcquired" type="xs:date">
+															<xs:annotation>
+																<xs:documentation>Date bird was acquired</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="OtherIDMarks" type="IDMarkType" minOccurs="0" maxOccurs="unbounded">
+															<xs:annotation>
+																<xs:documentation>Any existing ID marks</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="PreviousKeeper" type="xs:string" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>Name and address of previous keeper</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="EvidenceExplanation" type="xs:string" minOccurs="0"/>
+														<xs:element name="OtherRing" type="IDMarkType" minOccurs="0" maxOccurs="10">
+															<xs:annotation>
+																<xs:documentation>Ring(s) allocated to this bird</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+														<xs:element name="KeptAddress" type="xs:int" minOccurs="0">
+															<xs:annotation>
+																<xs:documentation>The alternative address at which the bird is kept</xs:documentation>
+															</xs:annotation>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="ApplicationMethodId" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>How the application was submitted - postal, internet, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ApplicationReference" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>Unique reference ID for this application. System generated.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="KeeperAcknowledgment" type="xs:boolean" use="optional">
+				<xs:annotation>
+					<xs:documentation>Keeprs applying online must acknowledge that they are the keeper</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="IsInspectionRequired" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Is an inspection required for this application?</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ApplicationStatus" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>Status of this application</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="PaymentStatus" type="xs:int" use="required">
+				<xs:annotation>
+					<xs:documentation>Payment status of the application</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ApplicationType" type="xs:string"/>
+			<xs:attribute name="AssignedTo" type="xs:int" use="optional"/>
+			<xs:attribute name="DORReceivedDate" type="xs:date" use="optional"/>
+			<xs:attribute name="CancellationReason" type="xs:string" use="optional"/>
+			<xs:attribute name="CancellationRefusalReason" type="xs:string" use="optional"/>
+			<xs:attribute name="ReasonForEggsButNoParent" type="xs:string" use="optional"/>
+			<xs:attribute name="RefuseLetterReportId" type="xs:int" use="optional"/>
+			<xs:attribute name="SubmittedDate" type="xs:date" use="optional"/>
+			<xs:attribute name="DeclineReason" type="xs:string" use="optional"/>
+			<xs:attribute name="NextActionDate" type="xs:date" use="optional"/>
+			<xs:attribute name="RelatedRingApplication" type="xs:int" use="optional"/>
+			<xs:attribute name="SLAClock" type="xs:int" use="optional"/>
+			<xs:attribute name="SLAStart" type="xs:date" use="optional"/>
+			<xs:attribute name="InspectorDecisionMade" type="xs:boolean" use="optional"/>
+			<xs:attribute name="ReceivedDate" type="xs:date" use="optional"/>
+			<xs:attribute name="DORApplicationMethodId" type="xs:int" use="optional"/>
+			<xs:attribute name="DORPrintJobId" type="xs:int" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SpecimenType">
+		<xs:sequence>
+			<xs:element name="SpecimenID" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Database key</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IsAmended" type="xs:boolean">
+				<xs:annotation>
+					<xs:documentation>Has the specimen data been amended on this application?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CommonName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Species common name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ScientificName" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Species scientific name</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HatchDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date hatched</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IsHatchDateExact" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Hatch date approximate or accurate?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AgeStatusId" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Age approximation</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Gender">
+				<xs:annotation>
+					<xs:documentation>Specimen gender</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="1"/>
+						<xs:enumeration value="M"/>
+						<xs:enumeration value="F"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RegistrationDocumentReference" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Bird registration document number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Article10Reference" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Article 10 certificate number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FateCode" type="xs:int" minOccurs="0"/>
+			<xs:element name="ECAnnex" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IDMarkType">
+		<xs:sequence>
+			<xs:element name="IDMarkNumber" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Identification number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IDMarkType" type="xs:int">
+				<xs:annotation>
+					<xs:documentation>Type of ID mark</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IDMarkFate" type="xs:int" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fate of ID mark</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FateReason" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Only required for a fate of 'Other'</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Status" default="NotSet">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="NotSet"/>
+						<xs:enumeration value="Fitted"/>
+						<xs:enumeration value="Returned"/>
+						<xs:enumeration value="Fated"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Statements">
+		<xs:sequence>
+			<xs:element name="InspectorSignedDORConfirmMarksFitted" type="xs:boolean" nillable="true"/>
+			<xs:element name="KeeperConfirmsIDMarksFitted" type="xs:boolean" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

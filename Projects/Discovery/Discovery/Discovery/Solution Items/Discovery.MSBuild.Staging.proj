@@ -1,0 +1,24 @@
+﻿<!--EXTERNAL_PROPERTIES: sourceDirectory-->
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- VS Projects -->
+  <ItemGroup>
+    <VSProjects Include="Deployment\Discovery.UI_deployment\Discovery.UI_deployment.wdproj">
+           <Title>Web Deployment Project</Title>
+      <Description>Web Deployment Project</Description>
+    </VSProjects>
+
+   
+  </ItemGroup>
+  
+  <Target Name="Build" >
+
+    <MSBuild Projects="@(VSProjects)" Targets="Build"  
+				 Properties="Configuration=Staging">
+      <Output TaskParameter="TargetOutputs" ItemName="BuildTargetOutputs"/>
+    </MSBuild>
+    
+  </Target>
+
+
+</Project>

@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sql="urn:schemas-microsoft-com:mapping-schema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="VARCHAR_3">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_50">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_100">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_4">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CHAR_3">
+		<xs:restriction base="xs:string">
+			<xs:length value="3" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_250">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CHAR_2">
+		<xs:restriction base="xs:string">
+			<xs:length value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BOOLEAN">
+		<xs:restriction base="xs:boolean" />
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_150">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="150" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_20">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TIMESTAMP_0">
+		<xs:restriction base="xs:dateTime">
+			<xs:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}T\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}.\p{Nd}{1,3}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="INTEGER">
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="2147483647" />
+			<xs:minInclusive value="-2147483648" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_1">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_5">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_2">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_10">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_70">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="70" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CHAR_10">
+		<xs:restriction base="xs:string">
+			<xs:length value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_15">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_2147483647">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2147483647" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_40">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_30">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CHAR_1">
+		<xs:restriction base="xs:string">
+			<xs:length value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VARCHAR_7">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="7" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SMALLINT">
+		<xs:restriction base="xs:integer">
+			<xs:maxInclusive value="32767" />
+			<xs:minInclusive value="-32768" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ROOT">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="VAQUATIC" minOccurs="0" maxOccurs="unbounded" sql:relation="VAQUATIC" sql:key-fields="AQURECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AQURECID" type="INTEGER" sql:relation="VAQUATIC" sql:field="AQURECID" sql:datatype="int" />
+							<xs:element name="AQUTYPE" type="VARCHAR_15" nillable="false" sql:relation="VAQUATIC" sql:field="AQUTYPE"
+								sql:datatype="varchar" />
+							<xs:element name="AQUNAME" type="VARCHAR_50" nillable="false" sql:relation="VAQUATIC" sql:field="AQUNAME"
+								sql:datatype="varchar" />
+							<xs:element name="AQUSUBNAME" type="VARCHAR_30" nillable="true" sql:relation="VAQUATIC" sql:field="AQUSUBNAME"
+								sql:datatype="varchar" />
+							<xs:element name="AQUNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VAQUATIC"
+								sql:field="AQUNOTES" sql:datatype="text" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VAQUATIC_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="AQURECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VBRU" minOccurs="0" maxOccurs="unbounded" sql:relation="VBRU" sql:key-fields="BRURECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BRURECID" type="INTEGER" sql:relation="VBRU" sql:field="BRURECID" sql:datatype="int" />
+							<xs:element name="BRUCTYRECID" type="INTEGER" nillable="false" sql:relation="VBRU" sql:field="BRUCTYRECID"
+								sql:datatype="int" />
+							<xs:element name="BRUVALID" type="BOOLEAN" nillable="false" sql:relation="VBRU" sql:field="BRUVALID"
+								sql:datatype="bit" />
+							<xs:element name="BRUWCMCNAME" type="VARCHAR_40" nillable="true" sql:relation="VBRU" sql:field="BRUWCMCNAME"
+								sql:datatype="varchar" />
+							<xs:element name="BRULEVEL3NAME" type="VARCHAR_40" nillable="true" sql:relation="VBRU" sql:field="BRULEVEL3NAME"
+								sql:datatype="varchar" />
+							<xs:element name="BRULEVEL4CODE" type="VARCHAR_7" nillable="true" sql:relation="VBRU" sql:field="BRULEVEL4CODE"
+								sql:datatype="varchar" />
+							<xs:element name="BRULEVEL4NAME" type="VARCHAR_40" nillable="true" sql:relation="VBRU" sql:field="BRULEVEL4NAME"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VBRU_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="BRURECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VAREAOFUSE" minOccurs="0" maxOccurs="unbounded" sql:relation="VAREAOFUSE"
+					sql:key-fields="AOURECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="AOURECID" type="INTEGER" sql:relation="VAREAOFUSE" sql:field="AOURECID" sql:datatype="int" />
+							<xs:element name="AOUDESC" type="VARCHAR_70" nillable="false" sql:relation="VAREAOFUSE" sql:field="AOUDESC"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VAREAOFUSE_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="AOURECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VCOMMONNAME" minOccurs="0" maxOccurs="unbounded" sql:relation="VCOMMONNAME"
+					sql:key-fields="COMRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="COMRECID" type="INTEGER" sql:relation="VCOMMONNAME" sql:field="COMRECID" sql:datatype="int" />
+							<xs:element name="COMAOURECID" type="INTEGER" nillable="false" sql:relation="VCOMMONNAME" sql:field="COMAOURECID"
+								sql:datatype="int" />
+							<xs:element name="COMSPCRECID" type="INTEGER" nillable="false" sql:relation="VCOMMONNAME" sql:field="COMSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="COMCODE" type="VARCHAR_3" nillable="false" sql:relation="VCOMMONNAME" sql:field="COMCODE"
+								sql:datatype="varchar" />
+							<xs:element name="COMNAME" type="VARCHAR_250" nillable="false" sql:relation="VCOMMONNAME" sql:field="COMNAME"
+								sql:datatype="varchar" />
+							<xs:element name="COMPRODUCTNAME" type="BOOLEAN" nillable="false" sql:relation="VCOMMONNAME"
+								sql:field="COMPRODUCTNAME" sql:datatype="bit" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VCOMMONNAME_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="COMRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VCOUNTRY" minOccurs="0" maxOccurs="unbounded" sql:relation="VCOUNTRY" sql:key-fields="CTYRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CTYRECID" type="INTEGER" sql:relation="VCOUNTRY" sql:field="CTYRECID" sql:datatype="int" />
+							<xs:element name="CTYISO3166" type="BOOLEAN" nillable="false" sql:relation="VCOUNTRY" sql:field="CTYISO3166"
+								sql:datatype="bit" />
+							<xs:element name="CTYBRU" type="BOOLEAN" nillable="false" sql:relation="VCOUNTRY" sql:field="CTYBRU"
+								sql:datatype="bit" />
+							<xs:element name="CTYISO2" type="VARCHAR_2" nillable="true" sql:relation="VCOUNTRY" sql:field="CTYISO2"
+								sql:datatype="varchar" />
+							<xs:element name="CTYISO3" type="VARCHAR_3" nillable="true" sql:relation="VCOUNTRY" sql:field="CTYISO3"
+								sql:datatype="varchar" />
+							<xs:element name="CTYSHORT" type="VARCHAR_50" nillable="false" sql:relation="VCOUNTRY" sql:field="CTYSHORT"
+								sql:datatype="varchar" />
+							<xs:element name="CTYLONG" type="VARCHAR_70" nillable="true" sql:relation="VCOUNTRY" sql:field="CTYLONG"
+								sql:datatype="varchar" />
+							<xs:element name="CTYPARENTISO3" type="VARCHAR_3" nillable="true" sql:relation="VCOUNTRY" sql:field="CTYPARENTISO3"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VCOUNTRY_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="CTYRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VDECISIONS" minOccurs="0" maxOccurs="unbounded" sql:relation="VDECISIONS"
+					sql:key-fields="DECRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DECRECID" type="INTEGER" sql:relation="VDECISIONS" sql:field="DECRECID" sql:datatype="int" />
+							<xs:element name="DECSPCRECID" type="INTEGER" nillable="false" sql:relation="VDECISIONS" sql:field="DECSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="DECCTYRECID" type="INTEGER" nillable="false" sql:relation="VDECISIONS" sql:field="DECCTYRECID"
+								sql:datatype="int" />
+							<xs:element name="DECCODE" type="VARCHAR_3" nillable="false" sql:relation="VDECISIONS" sql:field="DECCODE"
+								sql:datatype="varchar" />
+							<xs:element name="DECLEVEL" type="VARCHAR_50" nillable="true" minOccurs="0" sql:relation="VDECISIONS"
+								sql:field="DECLEVEL" sql:datatype="varchar" />
+							<xs:element name="DECOPINION" type="VARCHAR_10" nillable="true" minOccurs="0" sql:relation="VDECISIONS"
+								sql:field="DECOPINION" sql:datatype="varchar" />
+							<xs:element name="DECDATE" type="TIMESTAMP_0" nillable="false" sql:relation="VDECISIONS" sql:field="DECDATE"
+								sql:datatype="datetime" />
+							<xs:element name="DECSUBPARA46" type="VARCHAR_10" nillable="true" minOccurs="0" sql:relation="VDECISIONS"
+								sql:field="DECSUBPARA46" sql:datatype="varchar" />
+							<xs:element name="DECNOTES" type="VARCHAR_2147483647" nillable="true" minOccurs="0" sql:relation="VDECISIONS"
+								sql:field="DECNOTES" sql:datatype="text" />
+							<xs:element name="DECMISC" type="VARCHAR_50" nillable="true" minOccurs="0" sql:relation="VDECISIONS"
+								sql:field="DECMISC" sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VDECISIONS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="DECRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VDISTRIBAQUA" minOccurs="0" maxOccurs="unbounded" sql:relation="VDISTRIBAQUA">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DAQRECID" type="INTEGER" sql:relation="VDISTRIBAQUA" sql:field="DAQRECID"
+								sql:datatype="int" />
+							<xs:element name="DAQSPCRECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBAQUA" sql:field="DAQSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="DAQAQURECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBAQUA" sql:field="DAQAQURECID"
+								sql:datatype="int" />
+							<xs:element name="DAQDISTRIBCERTAIN" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBAQUA"
+								sql:field="DAQDISTRIBCERTAIN" sql:datatype="varchar" />
+							<xs:element name="DAQEXTINCT" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBAQUA"
+								sql:field="DAQEXTINCT" sql:datatype="varchar" />
+							<xs:element name="DAQINTRODUCED" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBAQUA"
+								sql:field="DAQINTRODUCED" sql:datatype="varchar" />
+							<xs:element name="DAQREINTRODUCED" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBAQUA"
+								sql:field="DAQREINTRODUCED" sql:datatype="varchar" />
+							<xs:element name="DAQNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VDISTRIBAQUA"
+								sql:field="DAQNOTES" sql:datatype="text" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="VDISTRIBBRU" minOccurs="0" maxOccurs="unbounded" sql:relation="VDISTRIBBRU"
+					sql:key-fields="DBURECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DBURECID" type="INTEGER" sql:relation="VDISTRIBBRU" sql:field="DBURECID" sql:datatype="int" />
+							<xs:element name="DBUCTYRECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBBRU" sql:field="DBUCTYRECID"
+								sql:datatype="int" />
+							<xs:element name="DBUSPCRECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBBRU" sql:field="DBUSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="DBUDCTRECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBBRU" sql:field="DBUDCTRECID"
+								sql:datatype="int" />
+							<xs:element name="DBUBRURECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBBRU" sql:field="DBUBRURECID"
+								sql:datatype="int" />
+							<xs:element name="DBUDISTRIBCERTAIN" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBBRU"
+								sql:field="DBUDISTRIBCERTAIN" sql:datatype="varchar" />
+							<xs:element name="DBUEXTINCT" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBBRU" sql:field="DBUEXTINCT"
+								sql:datatype="varchar" />
+							<xs:element name="DBUINTRODUCED" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBBRU"
+								sql:field="DBUINTRODUCED" sql:datatype="varchar" />
+							<xs:element name="DBUREINTRODUCED" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBBRU"
+								sql:field="DBUREINTRODUCED" sql:datatype="varchar" />
+							<xs:element name="DBUBREEDING" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBBRU"
+								sql:field="DBUBREEDING" sql:datatype="varchar" />
+							<xs:element name="DBUVAGRANT" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBBRU" sql:field="DBUVAGRANT"
+								sql:datatype="varchar" />
+							<xs:element name="DBUNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VDISTRIBBRU"
+								sql:field="DBUNOTES" sql:datatype="text" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VDISTRIBBRU_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="DBURECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VDISTRIBCTY" minOccurs="0" maxOccurs="unbounded" sql:relation="VDISTRIBCTY"
+					sql:key-fields="DCTRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DCTRECID" type="INTEGER" sql:relation="VDISTRIBCTY" sql:field="DCTRECID" sql:datatype="int" />
+							<xs:element name="DCTSPCRECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBCTY" sql:field="DCTSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="DCTCTYRECID" type="INTEGER" nillable="false" sql:relation="VDISTRIBCTY" sql:field="DCTCTYRECID"
+								sql:datatype="int" />
+							<xs:element name="DCTDISTRIBCERTAIN" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBCTY"
+								sql:field="DCTDISTRIBCERTAIN" sql:datatype="varchar" />
+							<xs:element name="DCTEXTINCT" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBCTY" sql:field="DCTEXTINCT"
+								sql:datatype="varchar" />
+							<xs:element name="DCTINTRODUCED" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBCTY"
+								sql:field="DCTINTRODUCED" sql:datatype="varchar" />
+							<xs:element name="DCTREINTRODUCED" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBCTY"
+								sql:field="DCTREINTRODUCED" sql:datatype="varchar" />
+							<xs:element name="DCTBREEDING" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBCTY"
+								sql:field="DCTBREEDING" sql:datatype="varchar" />
+							<xs:element name="DCTVAGRANT" type="VARCHAR_1" nillable="false" sql:relation="VDISTRIBCTY" sql:field="DCTVAGRANT"
+								sql:datatype="varchar" />
+							<xs:element name="DCTNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VDISTRIBCTY"
+								sql:field="DCTNOTES" sql:datatype="text" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VDISTRIBCTY_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="DCTRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VFAMILY" minOccurs="0" maxOccurs="unbounded" sql:relation="VFAMILY" sql:key-fields="FAMRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FAMRECID" type="INTEGER" sql:relation="VFAMILY" sql:field="FAMRECID" sql:datatype="int" />
+							<xs:element name="FAMORDRECID" type="INTEGER" nillable="false" sql:relation="VFAMILY" sql:field="FAMORDRECID"
+								sql:datatype="int" />
+							<xs:element name="FAMNAME" type="VARCHAR_50" nillable="false" sql:relation="VFAMILY" sql:field="FAMNAME"
+								sql:datatype="varchar" />
+							<xs:element name="FAMAUTHOR" type="VARCHAR_50" nillable="true" sql:relation="VFAMILY" sql:field="FAMAUTHOR"
+								sql:datatype="varchar" />
+							<xs:element name="FAMSTATUS" type="VARCHAR_1" nillable="false" sql:relation="VFAMILY" sql:field="FAMSTATUS"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VFAMILY_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="FAMRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VGENUS" minOccurs="0" maxOccurs="unbounded" sql:relation="VGENUS" sql:key-fields="GENRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="GENRECID" type="INTEGER" sql:relation="VGENUS" sql:field="GENRECID" sql:datatype="int" />
+							<xs:element name="GENFAMRECID" type="INTEGER" nillable="false" sql:relation="VGENUS" sql:field="GENFAMRECID"
+								sql:datatype="int" />
+							<xs:element name="GENNAME" type="VARCHAR_50" nillable="false" sql:relation="VGENUS" sql:field="GENNAME"
+								sql:datatype="varchar" />
+							<xs:element name="GENAUTHOR" type="VARCHAR_50" nillable="true" sql:relation="VGENUS" sql:field="GENAUTHOR"
+								sql:datatype="varchar" />
+							<xs:element name="GENSTATUS" type="VARCHAR_1" nillable="false" sql:relation="VGENUS" sql:field="GENSTATUS"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VGENUS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="GENRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VHIGHCOMMON" minOccurs="0" maxOccurs="unbounded" sql:relation="VHIGHCOMMON"
+					sql:key-fields="HCOMRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HCOMRECID" type="INTEGER" sql:relation="VHIGHCOMMON" sql:field="HCOMRECID"
+								sql:datatype="int" />
+							<xs:element name="HCOMAOURECID" type="INTEGER" nillable="false" sql:relation="VHIGHCOMMON" sql:field="HCOMAOURECID"
+								sql:datatype="int" />
+							<xs:element name="HCOMCODE" type="VARCHAR_3" nillable="false" sql:relation="VHIGHCOMMON" sql:field="HCOMCODE"
+								sql:datatype="varchar" />
+							<xs:element name="HCOMCODERECID" type="INTEGER" nillable="false" sql:relation="VHIGHCOMMON"
+								sql:field="HCOMCODERECID" sql:datatype="int" />
+							<xs:element name="HCOMNAME" type="VARCHAR_250" nillable="false" sql:relation="VHIGHCOMMON" sql:field="HCOMNAME"
+								sql:datatype="varchar" />
+							<xs:element name="HCOMPRODUCTNAME" type="BOOLEAN" nillable="false" sql:relation="VHIGHCOMMON"
+								sql:field="HCOMPRODUCTNAME" sql:datatype="bit" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VHIGHCOMMON_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="HCOMRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VHIGHDECISIONS" minOccurs="0" maxOccurs="unbounded" sql:relation="VHIGHDECISIONS"
+					sql:key-fields="HDECRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HDECRECID" type="INTEGER" sql:relation="VHIGHDECISIONS" sql:field="HDECRECID"
+								sql:datatype="int" />
+							<xs:element name="HDECCODE" type="CHAR_3" nillable="false" sql:relation="VHIGHDECISIONS" sql:field="HDECCODE"
+								sql:datatype="char" />
+							<xs:element name="HDECCODERECID" type="INTEGER" nillable="false" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECCODERECID" sql:datatype="int" />
+							<xs:element name="HDECCTYRECID" type="INTEGER" nillable="false" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECCTYRECID" sql:datatype="int" />
+							<xs:element name="HDECLEVEL" type="VARCHAR_50" nillable="true" minOccurs="0" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECLEVEL" sql:datatype="varchar" />
+							<xs:element name="HDECOPINION" type="VARCHAR_10" nillable="true" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECOPINION" sql:datatype="varchar" />
+							<xs:element name="HDECDATE" type="TIMESTAMP_0" nillable="false" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECDATE" sql:datatype="datetime" />
+							<xs:element name="HDECSUBPARA46" type="VARCHAR_10" nillable="true" minOccurs="0" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECSUBPARA46" sql:datatype="nvarchar" />
+							<xs:element name="HDECNOTES" type="VARCHAR_2147483647" nillable="true" minOccurs="0" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECNOTES" sql:datatype="text" />
+							<xs:element name="HDECMISC" type="VARCHAR_50" nillable="true"  minOccurs="0" sql:relation="VHIGHDECISIONS"
+								sql:field="HDECMISC" sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VHIGHDECISIONS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="HDECRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VHIGHLEGAL" minOccurs="0" maxOccurs="unbounded" sql:relation="VHIGHLEGAL"
+					sql:key-fields="HLEGRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HLEGRECID" type="INTEGER" sql:relation="VHIGHLEGAL" sql:field="HLEGRECID"
+								sql:datatype="int" />
+							<xs:element name="HLEGLNMRECID" type="INTEGER" nillable="false" sql:relation="VHIGHLEGAL" sql:field="HLEGLNMRECID"
+								sql:datatype="int" />
+							<xs:element name="HLEGCODE" type="CHAR_3" nillable="false" sql:relation="VHIGHLEGAL" sql:field="HLEGCODE"
+								sql:datatype="char" />
+							<xs:element name="HLEGCODERECID" type="INTEGER" nillable="false" sql:relation="VHIGHLEGAL" sql:field="HLEGCODERECID"
+								sql:datatype="int" />
+							<xs:element name="HLEGLISTING" type="VARCHAR_10" nillable="false" sql:relation="VHIGHLEGAL"
+								sql:field="HLEGLISTING" sql:datatype="varchar" />
+							<xs:element name="HLEGDATELISTED" type="TIMESTAMP_0" nillable="true" minOccurs="0" sql:relation="VHIGHLEGAL"
+								sql:field="HLEGDATELISTED" sql:datatype="datetime" />
+							<xs:element name="HLEGISO2" type="CHAR_2" nillable="true" minOccurs="0" sql:relation="VHIGHLEGAL"
+								sql:field="HLEGISO2" sql:datatype="char" />
+							<xs:element name="HLEGSPLITLISTED" type="BOOLEAN" nillable="false" sql:relation="VHIGHLEGAL"
+								sql:field="HLEGSPLITLISTED" sql:datatype="bit" />
+							<xs:element name="HLEGPROTHIGHERTAX" type="BOOLEAN" nillable="false" sql:relation="VHIGHLEGAL"
+								sql:field="HLEGPROTHIGHERTAX" sql:datatype="bit" />
+							<xs:element name="HLEGNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VHIGHLEGAL"
+								sql:field="HLEGNOTES" sql:datatype="text" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VHIGHLEGAL_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="HLEGRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VHIGHQUOTAS" minOccurs="0" maxOccurs="unbounded" sql:relation="VHIGHQUOTAS"
+					sql:key-fields="HQUORECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HQUORECID" type="INTEGER" sql:relation="VHIGHQUOTAS" sql:field="HQUORECID"
+								sql:datatype="int" />
+							<xs:element name="HQUOCODE" type="CHAR_3" nillable="false" sql:relation="VHIGHQUOTAS" sql:field="HQUOCODE"
+								sql:datatype="char" />
+							<xs:element name="HQUOCODERECID" type="INTEGER" nillable="false" sql:relation="VHIGHQUOTAS"
+								sql:field="HQUOCODERECID" sql:datatype="int" />
+							<xs:element name="HQUOCTYRECID" type="INTEGER" nillable="false" sql:relation="VHIGHQUOTAS" sql:field="HQUOCTYRECID"
+								sql:datatype="int" />
+							<xs:element name="HQUONOTRECID" type="INTEGER" nillable="false" sql:relation="VHIGHQUOTAS" sql:field="HQUONOTRECID"
+								sql:datatype="int" />
+							<xs:element name="HQUOEXPORTQUOTA" type="VARCHAR_30" nillable="false" sql:relation="VHIGHQUOTAS"
+								sql:field="HQUOEXPORTQUOTA" sql:datatype="varchar" />
+							<xs:element name="HQUOQUOUNIT" type="VARCHAR_10" nillable="true" sql:relation="VHIGHQUOTAS"
+								sql:field="HQUOQUOUNIT" sql:datatype="varchar" />
+							<xs:element name="HQUOYEAR" type="SMALLINT" nillable="false" sql:relation="VHIGHQUOTAS" sql:field="HQUOYEAR"
+								sql:datatype="smallint" />
+							<xs:element name="HQUONOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VHIGHQUOTAS"
+								sql:field="HQUONOTES" sql:datatype="text" />
+							<xs:element name="HQUOQUOTRMRECID" type="INTEGER" nillable="true" minOccurs="0" sql:relation="VHIGHQUOTAS"
+								sql:field="HQUOQUOTRMRECID" sql:datatype="int" />
+							<xs:element name="HQUOQUOSRCRECID" type="INTEGER" nillable="true" minOccurs="0" sql:relation="VHIGHQUOTAS"
+								sql:field="HQUOQUOSRCRECID" sql:datatype="int" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VHIGHQUOTAS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="HQUORECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VHIGHSYNONYMS" minOccurs="0" maxOccurs="unbounded" sql:relation="VHIGHSYNONYMS"
+					sql:key-fields="HSYNRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HSYNRECID" type="INTEGER" sql:relation="VHIGHSYNONYMS" sql:field="HSYNRECID"
+								sql:datatype="int" />
+							<xs:element name="HSYNCODE" type="CHAR_10" nillable="false" sql:relation="VHIGHSYNONYMS" sql:field="HSYNCODE"
+								sql:datatype="char" />
+							<xs:element name="HSYNCODERECID" type="INTEGER" nillable="false" sql:relation="VHIGHSYNONYMS"
+								sql:field="HSYNCODERECID" sql:datatype="int" />
+							<xs:element name="HSYNPARENTCODE" type="VARCHAR_50" nillable="false" sql:relation="VHIGHSYNONYMS"
+								sql:field="HSYNPARENTCODE" sql:datatype="varchar" />
+							<xs:element name="HSYNPARENTRECID" type="INTEGER" nillable="false" sql:relation="VHIGHSYNONYMS"
+								sql:field="HSYNPARENTRECID" sql:datatype="int" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VHIGHSYNONYMS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="HSYNRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VKINGDOM" minOccurs="0" maxOccurs="unbounded" sql:relation="VKINGDOM" sql:key-fields="KGMRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="KGMRECID" type="INTEGER" sql:relation="VKINGDOM" sql:field="KGMRECID" sql:datatype="int" />
+							<xs:element name="KGMNAME" type="VARCHAR_50" nillable="false" sql:relation="VKINGDOM" sql:field="KGMNAME"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VKINGDOM_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="KGMRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VLEGAL" minOccurs="0" maxOccurs="unbounded" sql:relation="VLEGAL" sql:key-fields="LEGRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LEGRECID" type="INTEGER" sql:relation="VLEGAL" sql:field="LEGRECID" sql:datatype="int" />
+							<xs:element name="LEGLNMRECID" type="INTEGER" nillable="false" sql:relation="VLEGAL" sql:field="LEGLNMRECID"
+								sql:datatype="int" />
+							<xs:element name="LEGSPCRECID" type="INTEGER" nillable="false" sql:relation="VLEGAL" sql:field="LEGSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="LEGLISTING" type="VARCHAR_10" nillable="false" sql:relation="VLEGAL" sql:field="LEGLISTING"
+								sql:datatype="varchar" />
+							<xs:element name="LEGDATELISTED" type="TIMESTAMP_0" nillable="true" sql:relation="VLEGAL" sql:field="LEGDATELISTED"
+								sql:datatype="datetime" />
+							<xs:element name="LEGISO2" type="CHAR_2" nillable="true" minOccurs="0" sql:relation="VLEGAL"
+								sql:field="LEGISO2" sql:datatype="char" />
+							<xs:element name="LEGSPLITLISTED" type="BOOLEAN" nillable="false" sql:relation="VLEGAL" sql:field="LEGSPLITLISTED"
+								sql:datatype="bit" />
+							<xs:element name="LEGPROTHIGHERTAX" type="BOOLEAN" nillable="false" sql:relation="VLEGAL" sql:field="LEGPROTHIGHERTAX"
+								sql:datatype="bit" />
+							<xs:element name="LEGNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VLEGAL"
+								sql:field="LEGNOTES" sql:datatype="text" />
+							<xs:element name="LEGMISC" type="VARCHAR_20" nillable="true" sql:relation="VLEGAL" sql:field="LEGMISC"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VLEGAL_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="LEGRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VLEGALNAME" minOccurs="0" maxOccurs="unbounded" sql:relation="VLEGALNAME"
+					sql:key-fields="LNMRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LNMRECID" type="INTEGER" sql:relation="VLEGALNAME" sql:field="LNMRECID" sql:datatype="int" />
+							<xs:element name="LNMSHORTDESC" type="VARCHAR_50" nillable="false" sql:relation="VLEGALNAME"
+								sql:field="LNMSHORTDESC" sql:datatype="varchar" />
+							<xs:element name="LNMLONGDESC" type="VARCHAR_250" nillable="true" sql:relation="VLEGALNAME"
+								sql:field="LNMLONGDESC" sql:datatype="varchar" />
+							<xs:element name="LNMLEVEL" type="CHAR_1" nillable="false" sql:relation="VLEGALNAME" sql:field="LNMLEVEL"
+								sql:datatype="char" />
+							<xs:element name="LNMNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VLEGALNAME"
+								sql:field="LNMNOTES" sql:datatype="text" />
+							<xs:element name="LNMRECSTATUS" type="CHAR_1" nillable="true" sql:relation="VLEGALNAME" sql:field="LNMRECSTATUS"
+								sql:datatype="char" />
+							<xs:element name="LNMURL" type="VARCHAR_100" nillable="true" sql:relation="VLEGALNAME" sql:field="LNMURL"
+								sql:datatype="varchar" />
+							<xs:element name="LNMDATEADOPT" type="TIMESTAMP_0" nillable="true" sql:relation="VLEGALNAME"
+								sql:field="LNMDATEADOPT" sql:datatype="datetime" />
+							<xs:element name="LNMDATEENFORCE" type="TIMESTAMP_0" nillable="true" sql:relation="VLEGALNAME"
+								sql:field="LNMDATEENFORCE" sql:datatype="datetime" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VLEGALNAME_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="LNMRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VLEVELOFUSE" minOccurs="0" maxOccurs="unbounded" sql:relation="VLEVELOFUSE"
+					sql:key-fields="LOURECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LOURECID" type="INTEGER" sql:relation="VLEVELOFUSE" sql:field="LOURECID" sql:datatype="int" />
+							<xs:element name="LOUDESC" type="VARCHAR_30" nillable="false" sql:relation="VLEVELOFUSE" sql:field="LOUDESC"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VLEVELOFUSE_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="LOURECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VNOTIFICATION" minOccurs="0" maxOccurs="unbounded" sql:relation="VNOTIFICATION"
+					sql:key-fields="NOTRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NOTRECID" type="INTEGER" sql:relation="VNOTIFICATION" sql:field="NOTRECID"
+								sql:datatype="int" />
+							<xs:element name="NOTNAME" type="VARCHAR_50" nillable="false" sql:relation="VNOTIFICATION" sql:field="NOTNAME"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VNOTIFICATION_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="NOTRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VPART" minOccurs="0" maxOccurs="unbounded" sql:relation="VPART" sql:key-fields="PARRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PARRECID" type="INTEGER" sql:relation="VPART" sql:field="PARRECID" sql:datatype="int" />
+							<xs:element name="PARDESC" type="VARCHAR_20" nillable="false" sql:relation="VPART" sql:field="PARDESC"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VPART_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="PARRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VQUOTAS" minOccurs="0" maxOccurs="unbounded" sql:relation="VQUOTAS" sql:key-fields="QUORECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="QUORECID" type="INTEGER" sql:relation="VQUOTAS" sql:field="QUORECID" sql:datatype="int" />
+							<xs:element name="QUOSPCRECID" type="INTEGER" nillable="false" sql:relation="VQUOTAS" sql:field="QUOSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="QUOCTYRECID" type="INTEGER" nillable="false" sql:relation="VQUOTAS" sql:field="QUOCTYRECID"
+								sql:datatype="int" />
+							<xs:element name="QUONOTRECID" type="INTEGER" nillable="false" sql:relation="VQUOTAS" sql:field="QUONOTRECID"
+								sql:datatype="int" />
+							<xs:element name="QUOEXPORTQUOTA" type="VARCHAR_30" nillable="false" sql:relation="VQUOTAS"
+								sql:field="QUOEXPORTQUOTA" sql:datatype="nvarchar" />
+							<xs:element name="QUOUNIT" type="VARCHAR_10" nillable="true" sql:relation="VQUOTAS" sql:field="QUOUNIT"
+								sql:datatype="nvarchar" />
+							<xs:element name="QUOYEAR" type="SMALLINT" nillable="false" sql:relation="VQUOTAS" sql:field="QUOYEAR"
+								sql:datatype="smallint" />
+							<xs:element name="QUONOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VQUOTAS"
+								sql:field="QUONOTES" sql:datatype="text" />
+							<xs:element name="QUOQUOTRMRECID" type="INTEGER" nillable="true" sql:relation="VQUOTAS" sql:field="QUOQUOTRMRECID"
+								sql:datatype="int" />
+							<xs:element name="QUOQUOSRCRECID" type="INTEGER" nillable="true" sql:relation="VQUOTAS" sql:field="QUOQUOSRCRECID"
+								sql:datatype="int" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VQUOTAS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="QUORECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VQUOTASOURCE" minOccurs="0" maxOccurs="unbounded" sql:relation="VQUOTASOURCE"
+					sql:key-fields="QUOSRCRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="QUOSRCRECID" type="INTEGER" sql:relation="VQUOTASOURCE" sql:field="QUOSRCRECID"
+								sql:datatype="int" />
+							<xs:element name="QUOSRCSOURCE" type="VARCHAR_5" nillable="false" sql:relation="VQUOTASOURCE"
+								sql:field="QUOSRCSOURCE" sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VQUOTASOURCE_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="QUOSRCRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VQUOTATERMS" minOccurs="0" maxOccurs="unbounded" sql:relation="VQUOTATERMS"
+					sql:key-fields="QUOTRMRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="QUOTRMRECID" type="INTEGER" sql:relation="VQUOTATERMS" sql:field="QUOTRMRECID"
+								sql:datatype="int" />
+							<xs:element name="QUOTRMTERM" type="VARCHAR_50" nillable="false" sql:relation="VQUOTATERMS"
+								sql:field="QUOTRMTERM" sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VQUOTATERMS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="QUOTRMRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VSPECIES" minOccurs="0" maxOccurs="unbounded" sql:relation="VSPECIES" sql:key-fields="SPCRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SPCRECID" type="INTEGER" sql:relation="VSPECIES" sql:field="SPCRECID" sql:datatype="int" />
+							<xs:element name="SPCGENRECID" type="INTEGER" nillable="false" sql:relation="VSPECIES" sql:field="SPCGENRECID"
+								sql:datatype="int" />
+							<xs:element name="SPCNAME" type="VARCHAR_30" nillable="false" sql:relation="VSPECIES" sql:field="SPCNAME"
+								sql:datatype="varchar" />
+							<xs:element name="SPCAUTHOR" type="VARCHAR_70" nillable="true" sql:relation="VSPECIES" sql:field="SPCAUTHOR"
+								sql:datatype="varchar" />
+							<xs:element name="SPCINFRARANK" type="VARCHAR_4" nillable="true" sql:relation="VSPECIES" sql:field="SPCINFRARANK"
+								sql:datatype="varchar" />
+							<xs:element name="SPCINFRAEPITHET" type="VARCHAR_30" nillable="true" sql:relation="VSPECIES"
+								sql:field="SPCINFRAEPITHET" sql:datatype="varchar" />
+							<xs:element name="SPCINFRARANKAUTHOR" type="VARCHAR_70" nillable="true" sql:relation="VSPECIES"
+								sql:field="SPCINFRARANKAUTHOR" sql:datatype="varchar" />
+							<xs:element name="SPCSTOCKNAME" type="VARCHAR_150" nillable="true" sql:relation="VSPECIES" sql:field="SPCSTOCKNAME"
+								sql:datatype="varchar" />
+							<xs:element name="SPCSTATUS" type="VARCHAR_1" nillable="false" sql:relation="VSPECIES" sql:field="SPCSTATUS"
+								sql:datatype="varchar" />
+							<xs:element name="SPCDISTRIBCOMPLETE" type="VARCHAR_1" nillable="true" sql:relation="VSPECIES"
+								sql:field="SPCDISTRIBCOMPLETE" sql:datatype="varchar" />
+							<xs:element name="SPCNOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VSPECIES"
+								sql:field="SPCNOTES" sql:datatype="text" />
+							<xs:element name="SPCMIGRATORY" type="BOOLEAN" nillable="false" sql:relation="VSPECIES" sql:field="SPCMIGRATORY"
+								sql:datatype="bit" />
+							<xs:element name="SPCFRESHWATER" type="BOOLEAN" nillable="false" sql:relation="VSPECIES" sql:field="SPCFRESHWATER"
+								sql:datatype="bit" />
+							<xs:element name="SPCMARINE" type="BOOLEAN" nillable="false" sql:relation="VSPECIES" sql:field="SPCMARINE"
+								sql:datatype="bit" />
+							<xs:element name="SPCIDMANUAL" type="VARCHAR_30" nillable="true" sql:relation="VSPECIES" sql:field="SPCIDMANUAL"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VSPECIES_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="SPCRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VSYNLINK" minOccurs="0" maxOccurs="unbounded" sql:relation="VSYNLINK" sql:key-fields="SYNRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SYNRECID" type="INTEGER" sql:relation="VSYNLINK" sql:field="SYNRECID" sql:datatype="int" />
+							<xs:element name="SYNSPCRECID" type="INTEGER" nillable="false" sql:relation="VSYNLINK" sql:field="SYNSPCRECID"
+								sql:datatype="int" />
+							<xs:element name="SYNPARENTRECID" type="INTEGER" nillable="false" sql:relation="VSYNLINK" sql:field="SYNPARENTRECID"
+								sql:datatype="int" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VSYNLINK_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="SYNRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VTAXCLASS" minOccurs="0" maxOccurs="unbounded" sql:relation="VTAXCLASS" sql:key-fields="CLARECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CLARECID" type="INTEGER" sql:relation="VTAXCLASS" sql:field="CLARECID" sql:datatype="int" />
+							<xs:element name="CLAPHYRECID" type="INTEGER" nillable="false" sql:relation="VTAXCLASS" sql:field="CLAPHYRECID"
+								sql:datatype="int" />
+							<xs:element name="CLANAME" type="VARCHAR_30" nillable="false" sql:relation="VTAXCLASS" sql:field="CLANAME"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VTAXCLASS_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="CLARECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VTAXORDER" minOccurs="0" maxOccurs="unbounded" sql:relation="VTAXORDER" sql:key-fields="ORDRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ORDRECID" type="INTEGER" sql:relation="VTAXORDER" sql:field="ORDRECID" sql:datatype="int" />
+							<xs:element name="ORDCLARECID" type="INTEGER" nillable="false" sql:relation="VTAXORDER" sql:field="ORDCLARECID"
+								sql:datatype="int" />
+							<xs:element name="ORDNAME" type="VARCHAR_30" nillable="false" sql:relation="VTAXORDER" sql:field="ORDNAME"
+								sql:datatype="varchar" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VTAXORDER_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="ORDRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VTAXPHYLUM" minOccurs="0" maxOccurs="unbounded" sql:relation="VTAXPHYLUM"
+					sql:key-fields="PHYRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PHYRECID" type="INTEGER" sql:relation="VTAXPHYLUM" sql:field="PHYRECID" sql:datatype="int" />
+							<xs:element name="PHYNAME" type="VARCHAR_30" nillable="false" sql:relation="VTAXPHYLUM" sql:field="PHYNAME"
+								sql:datatype="varchar" />
+							<xs:element name="PHYKGMRECID" type="INTEGER" nillable="false" sql:relation="VTAXPHYLUM" sql:field="PHYKGMRECID"
+								sql:datatype="int" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VTAXPHYLUM_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="PHYRECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VUSED" minOccurs="0" maxOccurs="unbounded" sql:relation="VUSE" sql:key-fields="USERECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="USERECID" type="INTEGER" sql:relation="VUSE" sql:field="USERECID" sql:datatype="int" />
+							<xs:element name="USEUTYRECID" type="INTEGER" nillable="false" sql:relation="VUSE" sql:field="USEUTYRECID"
+								sql:datatype="int" />
+							<xs:element name="USESPCRECID" type="INTEGER" nillable="false" sql:relation="VUSE" sql:field="USESPCRECID"
+								sql:datatype="int" />
+							<xs:element name="USEPARRECID" type="INTEGER" nillable="false" sql:relation="VUSE" sql:field="USEPARRECID"
+								sql:datatype="int" />
+							<xs:element name="USELOURECID" type="INTEGER" nillable="false" sql:relation="VUSE" sql:field="USELOURECID"
+								sql:datatype="int" />
+							<xs:element name="USENOTES" type="VARCHAR_2147483647" nillable="true" sql:relation="VUSE" sql:field="USENOTES"
+								sql:datatype="text" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VUSE_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="USERECID" />
+					</xs:key>
+				</xs:element>
+				<xs:element name="VUSETYPE" minOccurs="0" maxOccurs="unbounded" sql:relation="VUSETYPE" sql:key-fields="UTYRECID">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UTYRECID" type="INTEGER" sql:relation="VUSETYPE" sql:field="UTYRECID" sql:datatype="int" />
+							<xs:element name="UTYDESC" type="VARCHAR_30" nillable="false" sql:relation="VUSETYPE" sql:field="UTYDESC"
+								sql:datatype="varchar" />
+							<xs:element name="UTYRECSTATUS" type="CHAR_1" nillable="true" sql:relation="VUSETYPE" sql:field="UTYRECSTATUS"
+								sql:datatype="char" />
+						</xs:sequence>
+					</xs:complexType>
+					<xs:key name="VUSETYPE_PrimaryKey">
+						<xs:selector xpath="." />
+						<xs:field xpath="UTYRECID" />
+					</xs:key>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

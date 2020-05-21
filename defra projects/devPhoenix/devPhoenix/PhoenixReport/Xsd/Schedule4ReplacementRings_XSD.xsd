@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="Schedule4ReplacementRingsData" targetNamespace="http://tempuri.org/Schedule4ReplacementRingsData.xsd"
+	elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/Schedule4ReplacementRingsData.xsd"
+	xmlns:mstns="http://tempuri.org/Schedule4ReplacementRingsData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="Schedule4ReplacementRingsData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOSchedule4ReplacementRings_Main">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:integer" minOccurs="0" />
+							<xs:element name="Barcode" type="xs:string" minOccurs="0" />
+							<xs:element name="InspectionSection" type="xs:boolean" minOccurs="0" />
+							<xs:element name="MaxSignatures" type="xs:integer" minOccurs="0" />
+							<xs:element name="KeeperDetails" type="xs:string" minOccurs="0" />
+							<xs:element name="ApplicationRef" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOSchedule4ReplacementRings_Sub1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:integer" minOccurs="0" />
+							<xs:element name="BirdNo" type="xs:string" minOccurs="0" />
+							<xs:element name="Species" type="xs:string" minOccurs="0" />
+							<xs:element name="CommonName" type="xs:string" minOccurs="0" />
+							<xs:element name="KeptAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="DateHatched" type="xs:string" minOccurs="0" />
+							<xs:element name="Sex" type="xs:string" minOccurs="0" />
+							<xs:element name="Origin" type="xs:string" minOccurs="0" />
+							<xs:element name="DateAcquired" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo1" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo2" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo3" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo4" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo5" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo6" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo7" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo8" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo9" type="xs:string" minOccurs="0" />
+							<xs:element name="RingNo10" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType1" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType2" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType3" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType4" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType5" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType6" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType7" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType8" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType9" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkType10" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted1X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted2X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted3X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted4X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted5X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted6X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted7X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted8X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted9X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeFitted10X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved1X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved2X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved3X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved4X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved5X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved6X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved7X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved8X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved9X" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkTypeRemoved10X" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOSchedule4InspectorSig">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ApplicationId" type="xs:integer" minOccurs="0" />
+							<xs:element name="BirdNo1" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo2" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo3" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo4" type="xs:string" minOccurs="0" />
+							<xs:element name="BirdNo5" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//mstns:BOSchedule4ReplacementRings_Main" />
+			<xs:field xpath="mstns:ApplicationId" />
+		</xs:key>
+		<xs:keyref name="BOSchedule4ReplacementRings_MainBOSchedule4ReplacementRings_Sub1" refer="key1">
+			<xs:selector xpath=".//mstns:BOSchedule4ReplacementRings_Sub1" />
+			<xs:field xpath="mstns:ApplicationId" />
+		</xs:keyref>
+		<xs:keyref name="BOSchedule4ReplacementRings_MainBOSchedule4InspectorSig" refer="key1">
+			<xs:selector xpath=".//mstns:BOSchedule4InspectorSig" />
+			<xs:field xpath="mstns:ApplicationId" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

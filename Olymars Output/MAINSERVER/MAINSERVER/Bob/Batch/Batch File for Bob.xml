@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<BatchMode Version="1.0.1697.21165" LogFile="C:\Documents and Settings\Administrator\My Documents\Olymars Output\MAINSERVER\MAINSERVER\Bob\Batch\Batch File for Bob.log" OutputDirectory="C:\Documents and Settings\Administrator\My Documents\Olymars Output\MAINSERVER\MAINSERVER\Bob">
+  <WorkingDatabase ConnectionString="Data Source=MAINSERVER\MAINSERVER;Initial Catalog=Bob;Integrated Security=SSPI;Pooling=False;Connect Timeout=15;">
+    <Tables UseAll="True" />
+    <StoredProcedures UseAll="True" />
+  </WorkingDatabase>
+  <Repository ConnectionString="Data Source=MAINSERVER\MAINSERVER;Initial Catalog=NewOlymars;Integrated Security=SSPI;Pooling=False;Connect Timeout=15;">
+    <Groups StopIfError="False" UseAll="False">
+      <Group Id="1">
+        <Elements UseAll="True" />
+      </Group>
+      <Group Id="2">
+        <Elements UseAll="True" />
+      </Group>
+      <Group Id="3">
+        <Elements UseAll="false">
+          <Element Id="22" />
+          <Element Id="23" />
+          <Element Id="24" />
+          <Element Id="25" />
+          <Element Id="26" />
+          <Element Id="27" />
+          <Element Id="35" />
+          <Element Id="36" />
+          <Element Id="39" />
+          <Element Id="40" />
+          <Element Id="41" />
+        </Elements>
+      </Group>
+      <Group Id="4">
+        <Elements UseAll="false">
+          <Element Id="42" />
+          <Element Id="43" />
+          <Element Id="44" />
+          <Element Id="45" />
+        </Elements>
+      </Group>
+      <Group Id="5">
+        <Elements UseAll="false">
+          <Element Id="52" />
+          <Element Id="53" />
+          <Element Id="54" />
+          <Element Id="55" />
+          <Element Id="56" />
+          <Element Id="57" />
+          <Element Id="58" />
+          <Element Id="59" />
+          <Element Id="60" />
+          <Element Id="61" />
+        </Elements>
+      </Group>
+      <Group Id="8">
+        <Elements UseAll="True" />
+      </Group>
+      <Group Id="10">
+        <Elements UseAll="True" />
+      </Group>
+    </Groups>
+  </Repository>
+</BatchMode>

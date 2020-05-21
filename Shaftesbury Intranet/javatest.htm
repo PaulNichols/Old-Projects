@@ -1,0 +1,20 @@
+
+
+<html><title> Simple onClick JavaScript Program </title>
+
+<script>
+  function write_numbers() {
+    w=800 
+h=600 
+if (window.screen) { 
+w = window.screen.availWidth; 
+h = window.screen.availHeight; 
+} 
+window.open('page.html','newwin','innerwidth='+w+',innerheight='+h+',top=0,left=0,toolbar=yes,menubar=yes,resizable=yes,dependent=yes,');   }
+</script>
+
+<body>    
+<form>
+  <input type="button" value="Push Me" onClick="write_numbers()">
+</form>
+</body></html>

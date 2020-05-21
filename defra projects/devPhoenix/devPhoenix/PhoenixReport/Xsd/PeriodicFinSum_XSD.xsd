@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="PeriodicFinSumData" targetNamespace="http://tempuri.org/PeriodicFinSumData.xsd"
+	xmlns:mstns="http://tempuri.org/PeriodicFinSumData.xsd" xmlns="http://tempuri.org/PeriodicFinSumData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="PeriodicFinSumData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOPeriodicFinSum">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TotPayment_Cheque_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_Cash_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_PostalOrder_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_Gateway_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_Total_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Cheque_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Cash_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_PostalOrder_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Gateway_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Total_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_England_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_Wales_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_Scotland_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_BirdRegSubTotal_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_CITES_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_Total_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotRefunds_RmdCheque_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotRefunds_Gateway_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotRefunds_Total_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Cheque_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Cash_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_PostalOrder_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Gateway_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Total_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_England_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_Wales_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_Scotland_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_BirdRegSubTotal_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_CITES_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_Total_Number" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_Cheque_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_Cash_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_PostalOrder_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_Gateway_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayment_Total_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Cheque_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Cash_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_PostalOrder_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Gateway_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPayLinkedApp_Total_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_England_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_Wales_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_Scotland_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_BirdRegSubTotal_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_CITES_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotPaidApp_Total_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotRefunds_RmdCheque_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotRefunds_Gateway_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotRefunds_Total_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Cheque_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Cash_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_PostalOrder_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Gateway_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotAdjustment_Total_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_England_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_Wales_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_Scotland_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_BirdRegSubTotal_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_CITES_Amount" type="xs:string" minOccurs="0" />
+							<xs:element name="TotFeeWaiver_Total_Amount" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

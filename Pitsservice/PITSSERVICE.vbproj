@@ -1,0 +1,1446 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Web"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{DB1C8017-DCB7-4BE3-8251-7A232254F5E2}"
+        SccProjectName = "SAK"
+        SccLocalPath = "SAK"
+        SccAuxPath = "SAK"
+        SccProvider = "SAK"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "PITSService"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                OptionCompare = "Text"
+                OptionExplicit = "On"
+                OptionStrict = "On"
+                RootNamespace = "PITSService"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "false"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "C:\WINNT\Microsoft.NET\Framework\v1.0.3705\System.XML.dll"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                    HintPath = "C:\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Web.Services.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "C:\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Data.dll"
+                />
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "C:\WINNT\Microsoft.NET\Framework\v1.0.3705\System.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Web" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AccurideLocationService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AccurideLocationService.asmx.vb"
+                    DependentUpon = "AccurideLocationService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "AccurideLocationService.asmx.resx"
+                    DependentUpon = "AccurideLocationService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "AnticipatedSuccessService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AnticipatedSuccessService.asmx.vb"
+                    DependentUpon = "AnticipatedSuccessService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "AnticipatedSuccessService.asmx.resx"
+                    DependentUpon = "AnticipatedSuccessService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "AssemblyInfo.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CarriersService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CarriersService.asmx.vb"
+                    DependentUpon = "CarriersService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CarriersService.asmx.resx"
+                    DependentUpon = "CarriersService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "clsEPS_Service.vb"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "clsEPS_Service.resx"
+                    DependentUpon = "clsEPS_Service.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "clsTest.vb"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "clsTest.resx"
+                    DependentUpon = "clsTest.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CompetitorService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CompetitorService.asmx.vb"
+                    DependentUpon = "CompetitorService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CompetitorService.asmx.resx"
+                    DependentUpon = "CompetitorService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ContactService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ContactService.asmx.vb"
+                    DependentUpon = "ContactService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ContactService.asmx.resx"
+                    DependentUpon = "ContactService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CostingService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CostingService.asmx.vb"
+                    DependentUpon = "CostingService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CostingService.asmx.resx"
+                    DependentUpon = "CostingService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CostingSlideDetailsService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CostingSlideDetailsService.asmx.vb"
+                    DependentUpon = "CostingSlideDetailsService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CostingSlideDetailsService.asmx.resx"
+                    DependentUpon = "CostingSlideDetailsService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CostingSlideRoutings_ItemsService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CostingSlideRoutings_ItemsService.asmx.vb"
+                    DependentUpon = "CostingSlideRoutings_ItemsService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CostingSlideRoutings_ItemsService.asmx.resx"
+                    DependentUpon = "CostingSlideRoutings_ItemsService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CostingSlideRoutingsService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CostingSlideRoutingsService.asmx.vb"
+                    DependentUpon = "CostingSlideRoutingsService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CostingSlideRoutingsService.asmx.resx"
+                    DependentUpon = "CostingSlideRoutingsService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CostingSlideTypeService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CostingSlideTypeService.asmx.vb"
+                    DependentUpon = "CostingSlideTypeService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CostingSlideTypeService.asmx.resx"
+                    DependentUpon = "CostingSlideTypeService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CountryService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CountryService.asmx.vb"
+                    DependentUpon = "CountryService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CountryService.asmx.resx"
+                    DependentUpon = "CountryService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Crypt.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CultureService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CultureService.asmx.vb"
+                    DependentUpon = "CultureService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CultureService.asmx.resx"
+                    DependentUpon = "CultureService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CurrencyService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CurrencyService.asmx.vb"
+                    DependentUpon = "CurrencyService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CurrencyService.asmx.resx"
+                    DependentUpon = "CurrencyService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CustomerAccountService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CustomerAccountService.asmx.vb"
+                    DependentUpon = "CustomerAccountService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CustomerAccountService.asmx.resx"
+                    DependentUpon = "CustomerAccountService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "CustomerService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "CustomerService.asmx.vb"
+                    DependentUpon = "CustomerService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CustomerService.asmx.resx"
+                    DependentUpon = "CustomerService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DeliveryTermsService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DeliveryTermsService.asmx.vb"
+                    DependentUpon = "DeliveryTermsService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DeliveryTermsService.asmx.resx"
+                    DependentUpon = "DeliveryTermsService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "EnquiryFilterService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EnquiryFilterService.asmx.vb"
+                    DependentUpon = "EnquiryFilterService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "EnquiryFilterService.asmx.resx"
+                    DependentUpon = "EnquiryFilterService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "EventService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EventService.asmx.vb"
+                    DependentUpon = "EventService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "EventService.asmx.resx"
+                    DependentUpon = "EventService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ExchangeRateService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ExchangeRateService.asmx.vb"
+                    DependentUpon = "ExchangeRateService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ExchangeRateService.asmx.resx"
+                    DependentUpon = "ExchangeRateService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Global.asax"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax.vb"
+                    DependentUpon = "Global.asax"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax.resx"
+                    DependentUpon = "Global.asax.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "GroupingService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "GroupingService.asmx.vb"
+                    DependentUpon = "GroupingService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "GroupingService.asmx.resx"
+                    DependentUpon = "GroupingService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "GroupService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "GroupService.asmx.vb"
+                    DependentUpon = "GroupService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "GroupService.asmx.resx"
+                    DependentUpon = "GroupService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ISOService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ISOService.asmx.vb"
+                    DependentUpon = "ISOService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ISOService.asmx.resx"
+                    DependentUpon = "ISOService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ItemService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ItemService.asmx.vb"
+                    DependentUpon = "ItemService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ItemService.asmx.resx"
+                    DependentUpon = "ItemService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ItemSourceService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ItemSourceService.asmx.vb"
+                    DependentUpon = "ItemSourceService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ItemSourceService.asmx.resx"
+                    DependentUpon = "ItemSourceService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "licenses.licx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ListService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ListService.asmx.vb"
+                    DependentUpon = "ListService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ListService.asmx.resx"
+                    DependentUpon = "ListService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MachineService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MachineService.asmx.vb"
+                    DependentUpon = "MachineService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MachineService.asmx.resx"
+                    DependentUpon = "MachineService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MacroMileStoneService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MacroMileStoneService.asmx.vb"
+                    DependentUpon = "MacroMileStoneService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MacroMileStoneService.asmx.resx"
+                    DependentUpon = "MacroMileStoneService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MileStoneService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MileStoneService.asmx.vb"
+                    DependentUpon = "MileStoneService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MileStoneService.asmx.resx"
+                    DependentUpon = "MileStoneService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "NoteService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "NoteService.asmx.vb"
+                    DependentUpon = "NoteService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "NoteService.asmx.resx"
+                    DependentUpon = "NoteService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PackingTypeService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PackingTypeService.asmx.vb"
+                    DependentUpon = "PackingTypeService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PackingTypeService.asmx.resx"
+                    DependentUpon = "PackingTypeService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PartNumberService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PartNumberService.asmx.vb"
+                    DependentUpon = "PartNumberService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PartNumberService.asmx.resx"
+                    DependentUpon = "PartNumberService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PaymentTermsService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PaymentTermsService.asmx.vb"
+                    DependentUpon = "PaymentTermsService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PaymentTermsService.asmx.resx"
+                    DependentUpon = "PaymentTermsService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PeriodIdentifierService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PeriodIdentifierService.asmx.vb"
+                    DependentUpon = "PeriodIdentifierService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PeriodIdentifierService.asmx.resx"
+                    DependentUpon = "PeriodIdentifierService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PITSService.vsdisco"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "PlannerCodeService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PlannerCodeService.asmx.vb"
+                    DependentUpon = "PlannerCodeService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PlannerCodeService.asmx.resx"
+                    DependentUpon = "PlannerCodeService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PlatingService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PlatingService.asmx.vb"
+                    DependentUpon = "PlatingService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PlatingService.asmx.resx"
+                    DependentUpon = "PlatingService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PreSalesMacroMileStoneService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PreSalesMacroMileStoneService.asmx.vb"
+                    DependentUpon = "PreSalesMacroMileStoneService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PreSalesMacroMileStoneService.asmx.resx"
+                    DependentUpon = "PreSalesMacroMileStoneService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PreSalesMileStoneService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PreSalesMileStoneService.asmx.vb"
+                    DependentUpon = "PreSalesMileStoneService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PreSalesMileStoneService.asmx.resx"
+                    DependentUpon = "PreSalesMileStoneService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PreSalesService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PreSalesService.asmx.vb"
+                    DependentUpon = "PreSalesService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PreSalesService.asmx.resx"
+                    DependentUpon = "PreSalesService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PreSalesTypeService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PreSalesTypeService.asmx.vb"
+                    DependentUpon = "PreSalesTypeService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PreSalesTypeService.asmx.resx"
+                    DependentUpon = "PreSalesTypeService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PressService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "PressService.asmx.vb"
+                    DependentUpon = "PressService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PressService.asmx.resx"
+                    DependentUpon = "PressService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ProjectAdminService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ProjectAdminService.asmx.vb"
+                    DependentUpon = "ProjectAdminService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ProjectAdminService.asmx.resx"
+                    DependentUpon = "ProjectAdminService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ProjectExpertTeamService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ProjectExpertTeamService.asmx.vb"
+                    DependentUpon = "ProjectExpertTeamService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ProjectExpertTeamService.asmx.resx"
+                    DependentUpon = "ProjectExpertTeamService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ProjectMasterService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ProjectMasterService.asmx.vb"
+                    DependentUpon = "ProjectMasterService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ProjectMasterService.asmx.resx"
+                    DependentUpon = "ProjectMasterService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ProjectService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ProjectService.asmx.vb"
+                    DependentUpon = "ProjectService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ProjectService.asmx.resx"
+                    DependentUpon = "ProjectService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ProjHistoryService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ProjHistoryService.asmx.vb"
+                    DependentUpon = "ProjHistoryService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ProjHistoryService.asmx.resx"
+                    DependentUpon = "ProjHistoryService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "QuoteService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "QuoteService.asmx.vb"
+                    DependentUpon = "QuoteService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "QuoteService.asmx.resx"
+                    DependentUpon = "QuoteService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "QuoteToProjectService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "QuoteToProjectService.asmx.vb"
+                    DependentUpon = "QuoteToProjectService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "QuoteToProjectService.asmx.resx"
+                    DependentUpon = "QuoteToProjectService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "QuoteToToolingService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "QuoteToToolingService.asmx.vb"
+                    DependentUpon = "QuoteToToolingService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "QuoteToToolingService.asmx.resx"
+                    DependentUpon = "QuoteToToolingService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SalesCheckListItem.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SalesCheckListItem.asmx.vb"
+                    DependentUpon = "SalesCheckListItem.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SalesCheckListItem.asmx.resx"
+                    DependentUpon = "SalesCheckListItem.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SalesCheckListService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SalesCheckListService.asmx.vb"
+                    DependentUpon = "SalesCheckListService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SalesCheckListService.asmx.resx"
+                    DependentUpon = "SalesCheckListService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SalesMarketCodeService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SalesMarketCodeService.asmx.vb"
+                    DependentUpon = "SalesMarketCodeService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SalesMarketCodeService.asmx.resx"
+                    DependentUpon = "SalesMarketCodeService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SalesRegionService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SalesRegionService.asmx.vb"
+                    DependentUpon = "SalesRegionService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SalesRegionService.asmx.resx"
+                    DependentUpon = "SalesRegionService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SalesRepService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SalesRepService.asmx.vb"
+                    DependentUpon = "SalesRepService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SalesRepService.asmx.resx"
+                    DependentUpon = "SalesRepService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SalesService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SalesService.asmx.vb"
+                    DependentUpon = "SalesService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SalesService.asmx.resx"
+                    DependentUpon = "SalesService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SalesSlideSeriesService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SalesSlideSeriesService.asmx.vb"
+                    DependentUpon = "SalesSlideSeriesService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SalesSlideSeriesService.asmx.resx"
+                    DependentUpon = "SalesSlideSeriesService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SlideSeriesService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SlideSeriesService.asmx.vb"
+                    DependentUpon = "SlideSeriesService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SlideSeriesService.asmx.resx"
+                    DependentUpon = "SlideSeriesService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "SlideService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SlideService.asmx.vb"
+                    DependentUpon = "SlideService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SlideService.asmx.resx"
+                    DependentUpon = "SlideService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StageRuleService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StageRuleService.asmx.vb"
+                    DependentUpon = "StageRuleService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StageRuleService.asmx.resx"
+                    DependentUpon = "StageRuleService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StageService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StageService.asmx.vb"
+                    DependentUpon = "StageService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StageService.asmx.resx"
+                    DependentUpon = "StageService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StatusService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StatusService.asmx.vb"
+                    DependentUpon = "StatusService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StatusService.asmx.resx"
+                    DependentUpon = "StatusService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "StatusTypeService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "StatusTypeService.asmx.vb"
+                    DependentUpon = "StatusTypeService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StatusTypeService.asmx.resx"
+                    DependentUpon = "StatusTypeService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "ToolingService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ToolingService.asmx.vb"
+                    DependentUpon = "ToolingService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ToolingService.asmx.resx"
+                    DependentUpon = "ToolingService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UOMService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UOMService.asmx.vb"
+                    DependentUpon = "UOMService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UOMService.asmx.resx"
+                    DependentUpon = "UOMService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "UserService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "UserService.asmx.vb"
+                    DependentUpon = "UserService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserService.asmx.resx"
+                    DependentUpon = "UserService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "VariantService.asmx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "VariantService.asmx.vb"
+                    DependentUpon = "VariantService.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "VariantService.asmx.resx"
+                    DependentUpon = "VariantService.asmx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebForm1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WebForm1.aspx.vb"
+                    DependentUpon = "WebForm1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WebForm1.aspx.resx"
+                    DependentUpon = "WebForm1.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Web References\uksql3\AccurideLocationService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\AnticipatedSuccessService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CarriersService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CompetitorService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ContactService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CostingService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CostingSlideDetailsService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CostingSlideRoutings_ItemsService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CostingSlideRoutingsService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CostingSlideTypeService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CountryService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CultureService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CurrencyService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CustomerAccountService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\CustomerService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\DeliveryTermsService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\EnquiryFilterService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\EventService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ExchangeRateService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\GroupingService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\GroupService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ISOService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ItemService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ItemSourceService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ListService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\MachineService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\MacroMileStoneService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\MileStoneService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\NoteService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PackingTypeService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PartNumberService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PaymentTermsService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PeriodIdentifierService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PITSService.disco"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PlannerCodeService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PlatingService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PreSalesMacroMileStoneService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PreSalesMileStoneService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PreSalesService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PreSalesTypeService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\PressService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ProjectAdminService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ProjectExpertTeamService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ProjectMasterService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ProjectService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ProjHistoryService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\QuoteService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\QuoteToProjectService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\QuoteToToolingService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\Reference.map"
+                    BuildAction = "None"
+                    Generator = "MSDiscoCodeGenerator"
+                    LastGenOutput = "Reference.vb"
+                />
+                <File
+                    RelPath = "Web References\uksql3\Reference.vb"
+                    DependentUpon = "Reference.map"
+                    SubType = "code"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SalesCheckListItem.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SalesCheckListService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SalesMarketCodeService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SalesRegionService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SalesRepService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SalesService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SalesSlideSeriesService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SlideSeriesService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\SlideService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\StageRuleService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\StageService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\StatusService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\StatusTypeService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\ToolingService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\UOMService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\UserService.wsdl"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Web References\uksql3\VariantService.wsdl"
+                    BuildAction = "None"
+                />
+                <Folder
+                    RelPath = "Web References\uksql3\"
+                    WebReferenceUrl = "http://uksql3/PitsService/PITSService.disco"
+                    UrlBehavior = "Static"
+                />
+                <Folder
+                    RelPath = "Web References\"
+                    WebReferences = "TRUE"
+                />
+            </Include>
+        </Files>
+        <StartupServices>
+            <Service ID = "{CF845C55-C321-4742-B673-E6212D061ED9}" />
+        </StartupServices>
+    </VisualBasic>
+</VisualStudioProject>
+

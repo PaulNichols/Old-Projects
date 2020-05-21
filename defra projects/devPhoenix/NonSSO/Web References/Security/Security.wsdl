@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/uk.gov.defra.Phoenix.WebServices/Security" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/uk.gov.defra.Phoenix.WebServices/Security" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/uk.gov.defra.Phoenix.WebServices/Security">
+      <s:element name="GetUserByXPNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XPNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByXPNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserByXPNumberResult" type="s0:SSOUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SSOUser">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:BaseBO">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="SPNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Initials" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Grade" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Unit" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Room" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Ext" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="STD" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Permissions" type="s0:ArrayOfInt" />
+              <s:element minOccurs="0" maxOccurs="1" name="Roles" type="s0:ArrayOfInt" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseBO" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CheckSum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidationErrors" type="s0:ValidationManager" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidationManager">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:ErrorManager" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ErrorManager">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Errors" type="s0:ArrayOfBOError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBOError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BOError" nillable="true" type="s0:BOError" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BOError">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s0:ErrorCodes" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stage" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsWarning" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ErrorCodes">
+        <s:restriction base="s:string">
+          <s:enumeration value="AddressCountMismatch" />
+          <s:enumeration value="MissingPerson" />
+          <s:enumeration value="MissingBusiness" />
+          <s:enumeration value="NoMailingAddress" />
+          <s:enumeration value="MailingAddressNoLongerExists" />
+          <s:enumeration value="NeedOneActiveAddress" />
+          <s:enumeration value="AddressValidationError" />
+          <s:enumeration value="PersonValidationError" />
+          <s:enumeration value="ContactCountMismatch" />
+          <s:enumeration value="NoPrimaryContact" />
+          <s:enumeration value="ContactNoLongerExists" />
+          <s:enumeration value="ContactValidationError" />
+          <s:enumeration value="NeedOneActiveContact" />
+          <s:enumeration value="NeedOneEmailAddress" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PopulateDBFromSSOData">
+        <s:complexType />
+      </s:element>
+      <s:element name="PopulateDBFromSSODataResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="GetUserByXPNumberSoapIn">
+    <part name="parameters" element="s0:GetUserByXPNumber" />
+  </message>
+  <message name="GetUserByXPNumberSoapOut">
+    <part name="parameters" element="s0:GetUserByXPNumberResponse" />
+  </message>
+  <message name="PopulateDBFromSSODataSoapIn">
+    <part name="parameters" element="s0:PopulateDBFromSSOData" />
+  </message>
+  <message name="PopulateDBFromSSODataSoapOut">
+    <part name="parameters" element="s0:PopulateDBFromSSODataResponse" />
+  </message>
+  <portType name="SecuritySoap">
+    <operation name="GetUserByXPNumber">
+      <input message="s0:GetUserByXPNumberSoapIn" />
+      <output message="s0:GetUserByXPNumberSoapOut" />
+    </operation>
+    <operation name="PopulateDBFromSSOData">
+      <input message="s0:PopulateDBFromSSODataSoapIn" />
+      <output message="s0:PopulateDBFromSSODataSoapOut" />
+    </operation>
+  </portType>
+  <binding name="SecuritySoap" type="s0:SecuritySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="GetUserByXPNumber">
+      <soap:operation soapAction="http://tempuri.org/uk.gov.defra.Phoenix.WebServices/Security/GetUserByXPNumber" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PopulateDBFromSSOData">
+      <soap:operation soapAction="http://tempuri.org/uk.gov.defra.Phoenix.WebServices/Security/PopulateDBFromSSOData" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Security">
+    <port name="SecuritySoap" binding="s0:SecuritySoap">
+      <soap:address location="http://mydevphoenixwebservice:10080/Security.asmx" />
+    </port>
+  </service>
+</definitions>

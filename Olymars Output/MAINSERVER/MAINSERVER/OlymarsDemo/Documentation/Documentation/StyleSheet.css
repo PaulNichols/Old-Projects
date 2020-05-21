@@ -1,0 +1,105 @@
+body
+{
+	font-family: Verdana;
+}
+.FixedMainBody
+{
+	font-size: 100%;
+}
+.MainBody
+{
+	font-size: 70%;
+}
+.MainTitle
+{
+	font-weight: bold;
+	font-size: 70%;
+}
+.FixedMainTitle
+{
+	font-weight: bold;
+	font-size: 100%;
+}
+.FirstLevelTitle
+{
+	font-weight: bold;
+	font-size: 90%;
+}
+.FirstLevelSubTitle
+{
+	font-weight: bold;
+	font-size: 80%;
+	color:#008000;
+}
+.SecondLevelTitle
+{
+	font-weight: bold;
+	font-size: 75%;
+}
+.FixedSecondLevelTitle
+{
+	font-weight: bold;
+	font-size: 100%;
+}
+.TableHeader
+{
+	font-weight: bold;
+	font-size: 70%;
+}
+.TableRow
+{
+	font-size: 70%;
+}
+.NoteHeader
+{
+	font-weight: bold;
+	font-size: 70%;
+}
+.NoteBody
+{
+	font-size: 70%;
+}
+.SeeAlsoHeader
+{
+	font-weight: bold;
+	font-size: 70%;
+}
+.SeeAlsoBody
+{
+	font-size: 70%;
+}
+.Copyright
+{
+	text-align: right;
+	font-size: 60%;
+}
+.HighLight
+{
+	color: red;
+	font-weight: bold;
+	font-size: 70%;
+}
+.FixedHighlight
+{
+	color: red;
+	font-weight: bold;
+	font-size: 100%;
+}
+.Code
+{
+	color: blue;
+	font-family: 'Courier New';
+	font-size: 70%;
+}
+.Comment
+{
+	color: green;
+	font-family: 'Courier New';
+	font-size: 70%;
+}
+.FixedComment
+{
+	color: green;
+	font-family: 'Courier New';
+	font-size: 100%;
+}

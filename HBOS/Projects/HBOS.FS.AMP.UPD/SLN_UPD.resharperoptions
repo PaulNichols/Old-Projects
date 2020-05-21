@@ -1,0 +1,1095 @@
+<Configuration>
+  <RecentFilesTracker>
+    <RecentFilesTracker>
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\Business Services\HBOS.FS.AMP.UPD.Persistence\FundGroupStaticDataPersister.cs" offset="6866" line="221" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\Business Services\HBOS.FS.AMP.UPD.Persistence\FundGroupPersister.cs" offset="14625" line="87" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI.Library\Helpers\MessageBoxHelper.cs" offset="13985" line="79" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI.Library\UserControls\FundGroupStaticDataEditor.cs" offset="27426" line="764" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI.Library\UserControls\StaticDataEditor.cs" offset="3038" line="181" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI.Library\UserControls\ErrorWithDialogBoxProvider.cs" offset="0" line="0" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\Solution Types\HBOS.FS.AMP.UPD.Types\DistributionFiles\FundGroupDistributionFile.cs" offset="3870" line="17" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI.Library\Forms\FundGroupFileSettings.cs" offset="8404" line="272" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\Solution Types\HBOS.FS.AMP.UPD.Exceptions\FundGroupFileAssociationException.cs" offset="1393" line="87" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI.Library\DialogText.resx" offset="29181" line="-1" column="-1" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\User Services\HBOS.FS.AMP.UPD.WinUI.Library\Classes\SecondLevelAuthorisationViewController.cs" offset="15822" line="319" column="0" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\Business Services\HBOS.FS.AMP.UPD.Persistence\AuthorisedFundPricePersister.cs" offset="4751" line="93" column="3" />
+      <TrackedFile location="C:\Projects\HBOS.FS.AMP.UPD\Solution Types\HBOS.FS.AMP.UPD.Exceptions\SecondLevelAuthoriseException.cs" offset="274" line="-1" column="-1" />
+    </RecentFilesTracker>
+  </RecentFilesTracker>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund.AssetFundTypeEnum">
+      <Item value="Linked" priority="2" />
+      <Item value="Oeic" priority="6" />
+      <Item value="Composite" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="GetMember" priority="1" />
+      <Item value="GetMethod" priority="0" />
+      <Item value="InvokeMember" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.UserControls.AssetMovementConstituentDecorator">
+      <Item value="FromConstituentListToDecorated" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Reports.FundDriftDataset">
+      <Item value="AssetFund" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.DataGrid.HitTestType">
+      <Item value="Cell" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.Funds">
+      <Item value="LinkedFund" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TreeNodeCollection">
+      <Item value="Clear" priority="1" />
+      <Item value="Add" priority="0" />
+      <Item value="Count" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.AssetFunds">
+      <Item value="AssetMovementConsitituentCollection" priority="5" />
+      <Item value="StockMarket" priority="0" />
+      <Item value="AssetFund" priority="0" />
+      <Item value="AssetMovementConstituent" priority="3" />
+      <Item value="AssetMovementConstituentCollection" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Funds.FundFactory.FundParameters">
+      <Item value="timestamp" priority="0" />
+      <Item value="AuthorisedPriceTimestamp" priority="0" />
+      <Item value="AssetMovementTolerance" priority="0" />
+      <Item value="price" priority="0" />
+      <Item value="ShortName" priority="1" />
+      <Item value="FundType" priority="0" />
+      <Item value="FundStatus" priority="0" />
+      <Item value="FullName" priority="0" />
+      <Item value="statusChangedTimeSet" priority="0" />
+      <Item value="CompanyCode" priority="0" />
+      <Item value="ParentAssetFund" priority="0" />
+      <Item value="OnHiPortfolio3" priority="0" />
+      <Item value="ClassOrSeriesCode" priority="0" />
+      <Item value="importedFundPriceID" priority="0" />
+      <Item value="HiPortfolioCode" priority="1" />
+      <Item value="statusChangedTime" priority="0" />
+      <Item value="factors" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TabPage">
+      <Item value="Resize" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Controllers.UserController">
+      <Item value="SetLastCompany" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.GridColumnStylesCollection">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="MinValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.IList">
+      <Item value="IndexOf" priority="1" />
+      <Item value="Count" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.ImportPersister">
+      <Item value="LoadAssetFundSplitsFromTempTable" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.BenchMark.IBenchMark">
+      <Item value="AvailableMessage" priority="0" />
+      <Item value="Movement" priority="1" />
+      <Item value="Availability" priority="1" />
+      <Item value="ToString" priority="3" />
+      <Item value="Currency" priority="8" />
+      <Item value="BenchMarkType" priority="1" />
+      <Item value="BenchMarkSubType" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DateTimePicker">
+      <Item value="Checked" priority="2" />
+      <Item value="Value" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.CompanyPersister">
+      <Item value="LoadCompany" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataColumnCollection">
+      <Item value="IndexOf" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Collections">
+      <Item value="Hashtable" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS">
+      <Item value="FS" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Controllers">
+      <Item value="AssetMovementConstituentController" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund">
+      <Item value="AssetFundCode" priority="4" />
+      <Item value="AssetMovementConstitute" priority="4" />
+      <Item value="BenchmarkSplitSnapshotIDSet" priority="1" />
+      <Item value="Currency" priority="1" />
+      <Item value="AssetMovementToleranceSet" priority="0" />
+      <Item value="IsNew" priority="1" />
+      <Item value="AssetFundType" priority="4" />
+      <Item value="IsDirty" priority="1" />
+      <Item value="FullName" priority="1" />
+      <Item value="WithinAssetMovementTolerance" priority="1" />
+      <Item value="Equals" priority="1" />
+      <Item value="CurrencyRateSnapshotIDSet" priority="0" />
+      <Item value="BenchmarkSplitSnapshotID" priority="2" />
+      <Item value="AssetMovementConstituents" priority="2" />
+      <Item value="PriceFileId" priority="1" />
+      <Item value="CurrencyRateSnapshotID" priority="0" />
+      <Item value="AssetMovementConstitution" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Controllers.ImportController.ImportFileType">
+      <Item value="Hi3PricesComposite" priority="2" />
+      <Item value="Hi3AssetFundSplits" priority="0" />
+      <Item value="Hi3Prices" priority="3" />
+      <Item value="Hi3CompositeFundSplits" priority="1" />
+      <Item value="PriceComparisionPrices" priority="1" />
+      <Item value="CurrencyExchangeRate" priority="0" />
+      <Item value="Hi3PricesLinked" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.StockMarketIndex">
+      <Item value="StockMarketIndex" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataTable">
+      <Item value="Rows" priority="4" />
+      <Item value="Columns" priority="0" />
+      <Item value="Select" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlDataReader">
+      <Item value="Close" priority="0" />
+      <Item value="IsDBNull" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.CheckBox">
+      <Item value="Checked" priority="4" />
+      <Item value="Enabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TreeView">
+      <Item value="Sorted" priority="0" />
+      <Item value="Nodes" priority="6" />
+      <Item value="SelectedNode" priority="1" />
+      <Item value="Left" priority="0" />
+      <Item value="Width" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.MessageBoxHelper">
+      <Item value="ShowError" priority="0" />
+      <Item value="DialogText" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.CountryPersister">
+      <Item value="FlushCountries" priority="0" />
+      <Item value="LoadCountries" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.TypeAttributes">
+      <Item value="CompareTo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Helpers.ExclusiveListHelper">
+      <Item value="Exclude" priority="0" />
+      <Item value="Included" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.DistributionFiles.DistributionFile">
+      <Item value="FileDescription" priority="0" />
+      <Item value="Status" priority="0" />
+      <Item value="FileID" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyPressEventArgs">
+      <Item value="KeyChar" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Data.SqlDbType">
+      <Item value="Int" priority="1" />
+      <Item value="BigInt" priority="1" />
+      <Item value="VarChar" priority="0" />
+      <Item value="Decimal" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format" priority="0" />
+      <Item value="Concat" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataRowCollection">
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Factors.FactorCollection">
+      <Item value="XFctr" priority="0" />
+      <Item value="TPE" priority="0" />
+      <Item value="ScalingFctr" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataRowView">
+      <Item value="Row" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Classes.GlobalRegistry.NextCompanyValuationDateAndTime">
+      <Item value="ToShortDateString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Decimal">
+      <Item value="MinValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="SpecialFolder" priority="0" />
+      <Item value="GetFolderPath" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Globalization.NumberFormatInfo.InvariantInfo">
+      <Item value="NumberNegativePattern" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError[]">
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Classes.ApplicationSettings.DatabaseDetails">
+      <Item value="ActiveConnectionString" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Attribute">
+      <Item value="GetType" priority="0" />
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Security.UPDPrincipal">
+      <Item value="CurrentCompanyValuationDateAndTime" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:string">
+      <Item value="Trim" priority="2" />
+      <Item value="TrimEnd" priority="0" />
+      <Item value="Replace" priority="3" />
+      <Item value="Length" priority="1" />
+      <Item value="ToUpper" priority="1" />
+      <Item value="Substring" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.FundGroupPersister">
+      <Item value="LoadFundGroupsByCompany" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Classes.AssetFundDecorator">
+      <Item value="AssetFund" priority="0" />
+      <Item value="AssetMovementToleranceDisplay" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="Minute" priority="2" />
+      <Item value="CompareTo" priority="0" />
+      <Item value="Day" priority="2" />
+      <Item value="ToShortDateString" priority="2" />
+      <Item value="Year" priority="1" />
+      <Item value="Month" priority="0" />
+      <Item value="ToString" priority="4" />
+      <Item value="ToShortTimeString" priority="1" />
+      <Item value="Ticks" priority="2" />
+      <Item value="Hour" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Controllers.ImportController.CompanyCollections">
+      <Item value="HiPortfolioCodes" priority="2" />
+      <Item value="AssetFunds" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Forms.DistributionDataManipulationUPAS">
+      <Item value="ShowDialog" priority="1" />
+      <Item value="Load" priority="0" />
+      <Item value="Visible" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Exceptions.SecondLevelAuthorisationException">
+      <Item value="Fund" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DataGridColumnStyle">
+      <Item value="HeaderText" priority="1" />
+      <Item value="Alignment" priority="0" />
+      <Item value="MappingName" priority="0" />
+      <Item value="Width" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.IsolatedStorage.IsolatedStorageFileStream">
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:object[]">
+      <Item value="GetValue" priority="0" />
+      <Item value="Length" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MemberInfo">
+      <Item value="GetType" priority="0" />
+      <Item value="GetCustomAttributes" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Classes.GlobalRegistry.m_UserSettings">
+      <Item value="ActiveConnection" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.Currency">
+      <Item value="CurrencyCollection" priority="2" />
+      <Item value="Currency" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.FundGroups.FundGroupCollection">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.Currency.Currency">
+      <Item value="CalculateMovement" priority="0" />
+      <Item value="GbPound" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFundFactory">
+      <Item value="CreateAssetFund" priority="1" />
+      <Item value="AssetFundType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Controllers.CompanyDetails">
+      <Item value="CompanyCode" priority="2" />
+      <Item value="CompanyValuationDate" priority="1" />
+      <Item value="Company" priority="2" />
+      <Item value="NextValuationDate" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Hashtable">
+      <Item value="Values" priority="0" />
+      <Item value="ContainsKey" priority="0" />
+      <Item value="Contains" priority="0" />
+      <Item value="Add" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:decimal">
+      <Item value="ToString" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@">
+      <Item value="ParentFundGroups" priority="0" />
+      <Item value="Add" priority="7" />
+      <Item value="CurrencyRateSnapshotID" priority="0" />
+      <Item value="LoadHolidays" priority="0" />
+      <Item value="FlushCurrencies" priority="0" />
+      <Item value="entity" priority="0" />
+      <Item value="FundType" priority="0" />
+      <Item value="FullName" priority="0" />
+      <Item value="CurrencyCode" priority="0" />
+      <Item value="NextCompanyValuationDateAndTime" priority="0" />
+      <Item value="Extension" priority="2" />
+      <Item value="BeginInvoke" priority="0" />
+      <Item value="BenchmarkSpiltSnapshotID" priority="0" />
+      <Item value="MarketIndexId" priority="0" />
+      <Item value="ImportedFundPriceID" priority="1" />
+      <Item value="TolerancesSnapshotID" priority="0" />
+      <Item value="ValuationBasisEffect" priority="0" />
+      <Item value="assetFund" priority="0" />
+      <Item value="RevaluationEffect" priority="0" />
+      <Item value="IsBidPriceMidPrice" priority="0" />
+      <Item value="AssetFund" priority="0" />
+      <Item value="NumberOfRelatedFiles" priority="0" />
+      <Item value="IndexName" priority="0" />
+      <Item value="MarketIndexID" priority="0" />
+      <Item value="FileDate" priority="0" />
+      <Item value="Clear" priority="0" />
+      <Item value="CurrentCompanyValuationDateAndTime" priority="0" />
+      <Item value="Equals" priority="0" />
+      <Item value="ClearHolidays" priority="0" />
+      <Item value="XFactorId" priority="0" />
+      <Item value="ImportSnapshot" priority="0" />
+      <Item value="PredictedPrice" priority="0" />
+      <Item value="LoadCompanyByName" priority="0" />
+      <Item value="LoadFundGroupsByCompany" priority="0" />
+      <Item value="FlushCountries" priority="0" />
+      <Item value="AsyncState" priority="0" />
+      <Item value="PermissionId" priority="0" />
+      <Item value="Granted" priority="0" />
+      <Item value="ImportedPrice" priority="0" />
+      <Item value="LoadCompany" priority="0" />
+      <Item value="AssetFundType" priority="1" />
+      <Item value="IsDirty" priority="0" />
+      <Item value="CompanyValuationDate" priority="0" />
+      <Item value="TotalFundCount" priority="0" />
+      <Item value="EndInvoke" priority="0" />
+      <Item value="BenchmarkSplitSnapShotId" priority="0" />
+      <Item value="NextValuationDate" priority="0" />
+      <Item value="PreviousRate" priority="0" />
+      <Item value="PreviousCompanyValuationDateAndTime" priority="0" />
+      <Item value="AssetUnitPrice" priority="0" />
+      <Item value="CompanyCode" priority="3" />
+      <Item value="FundCurrencyCode" priority="0" />
+      <Item value="WasFromPrediction" priority="1" />
+      <Item value="AssetMovementConstitute" priority="1" />
+      <Item value="ActiveConnection" priority="0" />
+      <Item value="Parent" priority="2" />
+      <Item value="FlushFundGroups" priority="0" />
+      <Item value="ExpectedDate" priority="0" />
+      <Item value="m_constitue" priority="0" />
+      <Item value="AssetFundCode" priority="1" />
+      <Item value="Length" priority="0" />
+      <Item value="TaxProvisionFactorID" priority="1" />
+      <Item value="DistributedCount" priority="0" />
+      <Item value="Focused" priority="0" />
+      <Item value="AddRange" priority="2" />
+      <Item value="CurrentRate" priority="1" />
+      <Item value="m_StockMarket" priority="0" />
+      <Item value="ScalingFactorID" priority="0" />
+      <Item value="PriceFileId" priority="0" />
+      <Item value="Name" priority="0" />
+      <Item value="HiPortfolioCode" priority="0" />
+      <Item value="Message" priority="1" />
+      <Item value="ReleasedCount" priority="0" />
+      <Item value="ValuationPointTime" priority="0" />
+      <Item value="Count" priority="1" />
+      <Item value="Price" priority="0" />
+      <Item value="AssetFundID" priority="0" />
+      <Item value="BenchMark" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP">
+      <Item value="UPD" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Controllers.FundController">
+      <Item value="LoadFundLookupsByCompany" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="DisplayMember" priority="0" />
+      <Item value="SelectedIndex" priority="4" />
+      <Item value="DataSource" priority="2" />
+      <Item value="SelectedItem" priority="2" />
+      <Item value="Enabled" priority="2" />
+      <Item value="Items" priority="2" />
+      <Item value="SelectedValue" priority="3" />
+      <Item value="SelectedText" priority="1" />
+      <Item value="ValueMember" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ArrayList">
+      <Item value="ToArray" priority="0" />
+      <Item value="AddRange" priority="8" />
+      <Item value="Add" priority="8" />
+      <Item value="Remove" priority="0" />
+      <Item value="Count" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="Convert" priority="0" />
+      <Item value="UTF8" priority="1" />
+      <Item value="ASCII" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System">
+      <Item value="Int64" priority="0" />
+      <Item value="Console" priority="1" />
+      <Item value="DivideByZeroException" priority="0" />
+      <Item value="IO" priority="0" />
+      <Item value="Collections" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Runtime.Remoting.ObjectHandle">
+      <Item value="Unwrap" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.LabelEditEventArgs">
+      <Item value="Label" priority="2" />
+      <Item value="CancelEdit" priority="0" />
+      <Item value="Item" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Controllers.SystemController.m_fromDate">
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Activator">
+      <Item value="CreateInstanceFrom" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Classes.FundDecorator">
+      <Item value="Fund" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TreeNode">
+      <Item value="Tag" priority="2" />
+      <Item value="Nodes" priority="6" />
+      <Item value="Text" priority="0" />
+      <Item value="Parent" priority="7" />
+      <Item value="IsVisible" priority="0" />
+      <Item value="Remove" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Controllers.AssetFundDataValidator">
+      <Item value="MissingAssetFundsFromPriceImport" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.Funds.Fund.FundStatusType">
+      <Item value="Unknown" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.MouseEventArgs">
+      <Item value="Y" priority="0" />
+      <Item value="X" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataView">
+      <Item value="Sort" priority="0" />
+      <Item value="Table" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:object">
+      <Item value="ToString" priority="1" />
+      <Item value="Equals" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.Windows.Controls.DataGrid">
+      <Item value="Hide" priority="0" />
+      <Item value="PrintColumnSettings" priority="1" />
+      <Item value="MouseDown" priority="0" />
+      <Item value="ColumnHeadersVisible" priority="0" />
+      <Item value="HitTest" priority="0" />
+      <Item value="PrintGridStyle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.UserControls.AssetMovementConstituentDecorator">
+      <Item value="BenchMarkName" priority="0" />
+      <Item value="BenchmarkDisplayName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Users.User">
+      <Item value="LogOnID" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime.Now">
+      <Item value="Month" priority="0" />
+      <Item value="Day" priority="1" />
+      <Item value="Year" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.UserControls.ListToListChangingArgs">
+      <Item value="ChangedItems" priority="1" />
+      <Item value="Cancel" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Classes.SecondLevelAuthorisationViewController.BenchMarkAvalibilityInformation">
+      <Item value="UniqueErrorMessages" priority="0" />
+      <Item value="AllAvailable" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int64">
+      <Item value="MinValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Persistence.IDataRowPersisters.ImportWorkingSplitTableSqlPersister.ColumnPosition">
+      <Item value="primaryKey" priority="0" />
+      <Item value="secondaryKey" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Factors.RevaluationFactor">
+      <Item value="FactorID" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment.SpecialFolder">
+      <Item value="LocalApplicationData" priority="0" />
+      <Item value="ApplicationData" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Reports.FundDriftDataset.AssetFundDataTable">
+      <Item value="AddAssetFundRow" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:int">
+      <Item value="ToString" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.CacheHelper">
+      <Item value="FundGroups" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Companies.Company">
+      <Item value="ValuationDate" priority="0" />
+      <Item value="CompanyCode" priority="4" />
+      <Item value="ValuationPointTime" priority="0" />
+      <Item value="NextValuationDate" priority="0" />
+      <Item value="CompanyName" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.Windows.Controls">
+      <Item value="PrintColumnSettings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.DictionaryEntry">
+      <Item value="Key" priority="0" />
+      <Item value="Value" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Form.DialogResult">
+      <Item value="OK" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types">
+      <Item value="FundGroups" priority="0" />
+      <Item value="Currency" priority="4" />
+      <Item value="Companies" priority="0" />
+      <Item value="AssetFunds" priority="10" />
+      <Item value="EntityBase" priority="0" />
+      <Item value="StockMarketIndex" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Snapshot.Snapshot">
+      <Item value="Id" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Practices.EnterpriseLibrary.Configuration.ConfigurationManager">
+      <Item value="GetConfiguration" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.AssetFunds.AssetMovementConstituentCollection">
+      <Item value="AddRange" priority="1" />
+      <Item value="TotalProportion" priority="0" />
+      <Item value="Clear" priority="0" />
+      <Item value="IsDirty" priority="0" />
+      <Item value="Add" priority="2" />
+      <Item value="Count" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Countries.Country">
+      <Item value="CountryName" priority="2" />
+      <Item value="CountryCode" priority="2" />
+      <Item value="CurrencyCode" priority="5" />
+      <Item value="Currency" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Join" priority="0" />
+      <Item value="ApartmentState" priority="0" />
+      <Item value="Start" priority="1" />
+      <Item value="IsBackground" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@UT_HBOS.FS.AMP.UPD.Types">
+      <Item value="AssetFunds" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:string[]">
+      <Item value="IsReadOnly" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Reflection">
+      <Item value="FieldInfo" priority="0" />
+      <Item value="MemberInfo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlException">
+      <Item value="Number" priority="2" />
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.DistributionFiles.FundGroupDistributionFile">
+      <Item value="FundGroupNumberRequired" priority="1" />
+      <Item value="DecimalPlacesRequired" priority="0" />
+      <Item value="MajorDenimonationRequired" priority="0" />
+      <Item value="IsDirty" priority="0" />
+      <Item value="FileDescription" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Classes.ReportControlFactory.ControlTypeEnum">
+      <Item value="PriceComparision" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS">
+      <Item value="AMP" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.AssetFunds.AssetMovementConstituent">
+      <Item value="ParentAssetFund" priority="2" />
+      <Item value="CalculateEffect" priority="0" />
+      <Item value="IsDirty" priority="0" />
+      <Item value="Proportion" priority="4" />
+      <Item value="CurrencyMovement" priority="0" />
+      <Item value="IsNew" priority="0" />
+      <Item value="BenchMark" priority="12" />
+      <Item value="CalculateMovement" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Classes.GlobalRegistry.CurrentCompanyValuationDateAndTime">
+      <Item value="ToShortDateString" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Funds.Fund">
+      <Item value="LowerTolerance" priority="0" />
+      <Item value="PriceIncreaseOnly" priority="0" />
+      <Item value="IsBenchMarkable" priority="1" />
+      <Item value="SecondLevelButNotFirst" priority="0" />
+      <Item value="BenchmarkSpiltSnapshotID" priority="0" />
+      <Item value="UpperTolerance" priority="1" />
+      <Item value="FullName" priority="1" />
+      <Item value="AssetMovementTolerance" priority="0" />
+      <Item value="Currency" priority="0" />
+      <Item value="UsePredictedPrice" priority="2" />
+      <Item value="IsNew" priority="0" />
+      <Item value="importedFundPriceID" priority="0" />
+      <Item value="FundStatus" priority="0" />
+      <Item value="m_factors" priority="0" />
+      <Item value="Factors" priority="0" />
+      <Item value="IsDirty" priority="0" />
+      <Item value="StatusChangedTime" priority="0" />
+      <Item value="ParentAssetFund" priority="4" />
+      <Item value="Equals" priority="0" />
+      <Item value="ParentAssetFundID" priority="0" />
+      <Item value="PredictedPrice" priority="0" />
+      <Item value="GetType" priority="0" />
+      <Item value="ProgressStatus" priority="1" />
+      <Item value="ImportedFundPriceID" priority="0" />
+      <Item value="PriceOutsideTolerance" priority="0" />
+      <Item value="HiPortfolioCode" priority="4" />
+      <Item value="Price" priority="0" />
+      <Item value="m_tolerancesID" priority="1" />
+      <Item value="ValuationBasisEffect" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Today" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.BenchMark.BenchMarkAvailabilityState">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.FundGroups.FundGroup">
+      <Item value="ShortName" priority="0" />
+      <Item value="ID" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD">
+      <Item value="Controllers" priority="0" />
+      <Item value="Types" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.AttributeCollection">
+      <Item value="Contains" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="2" />
+      <Item value="Visible" priority="0" />
+      <Item value="ForeColor" priority="0" />
+      <Item value="Left" priority="0" />
+      <Item value="Right" priority="0" />
+      <Item value="Width" priority="0" />
+      <Item value="Location" priority="0" />
+      <Item value="Top" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.SafeDataReader">
+      <Item value="GetBoolean" priority="2" />
+      <Item value="GetInt64" priority="1" />
+      <Item value="ColumnExists" priority="4" />
+      <Item value="GetTimestamp" priority="0" />
+      <Item value="IsNull" priority="1" />
+      <Item value="GetInt32" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Button">
+      <Item value="Enabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Specialized.StringDictionary">
+      <Item value="Values" priority="2" />
+      <Item value="ContainsKey" priority="0" />
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataRow[]">
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.ComboBox">
+      <Item value="ObjectCollection" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:char[]">
+      <Item value="Length" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StringWriter">
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.CancelEventArgs">
+      <Item value="Cancel" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListView">
+      <Item value="Left" priority="0" />
+      <Item value="Width" priority="0" />
+      <Item value="Right" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.CacheHelper">
+      <Item value="SetFundGroups" priority="0" />
+      <Item value="FlushCountries" priority="1" />
+      <Item value="Flush" priority="0" />
+      <Item value="GetHolidays" priority="0" />
+      <Item value="GetCountries" priority="0" />
+      <Item value="FlushCurrencies" priority="0" />
+      <Item value="FlushFundGroups" priority="1" />
+      <Item value="GetCurrencies" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.FundGroups">
+      <Item value="FundGroupCollection" priority="0" />
+      <Item value="AssetFundGroup" priority="0" />
+      <Item value="FundGroup" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Persistence.ImportHi3PricesSqlPersister.Hi3PricesColumnPosition">
+      <Item value="AssetUnitPrice1" priority="0" />
+      <Item value="ValuationTime" priority="0" />
+      <Item value="AssetFundId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows">
+      <Item value="Forms" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Funds.Fund.FundStatusType">
+      <Item value="ToString" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.FieldInfo">
+      <Item value="GetCustomAttributes" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime.Today">
+      <Item value="Day" priority="0" />
+      <Item value="Year" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Funds.Composite">
+      <Item value="BenchmarkSpiltSnapshotID" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.UPDApplication.mainForm">
+      <Item value="Handle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Control">
+      <Item value="HasChildren" priority="0" />
+      <Item value="GetType" priority="5" />
+      <Item value="Name" priority="1" />
+      <Item value="Enabled" priority="0" />
+      <Item value="Focus" priority="0" />
+      <Item value="Controls" priority="0" />
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Lookups.SimpleStringLookup">
+      <Item value="DisplayValue" priority="0" />
+      <Item value="Key" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Timer">
+      <Item value="Stop" priority="0" />
+      <Item value="Start" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.AttributeTargets">
+      <Item value="Field" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Exceptions.DatabaseException">
+      <Item value="InnerException" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFundFactory.AssetFundType">
+      <Item value="Linked" priority="0" />
+      <Item value="Oeic" priority="0" />
+      <Item value="Composite" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Factors.XFactor">
+      <Item value="FactorIDSet" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.Funds.FundFactory.FundType">
+      <Item value="Linked" priority="0" />
+      <Item value="Oeic" priority="0" />
+      <Item value="Composite" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Users.Permission">
+      <Item value="IsDirty" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading.Thread.CurrentPrincipal">
+      <Item value="IsInRole" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.Countries">
+      <Item value="CountryCollection" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.UserControls.AssetFundDecorator">
+      <Item value="AssetFund" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DataGrid.HitTestInfo">
+      <Item value="Type" priority="0" />
+      <Item value="Row" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI">
+      <Item value="Classes" priority="0" />
+      <Item value="Forms" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Threading">
+      <Item value="Thread" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataRow">
+      <Item value="AcceptChanges" priority="0" />
+      <Item value="ItemArray" priority="3" />
+      <Item value="RejectChanges" priority="0" />
+      <Item value="BeginEdit" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyEventArgs">
+      <Item value="KeyValue" priority="3" />
+      <Item value="KeyCode" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.AssetFunds.StockMarket">
+      <Item value="Global" priority="4" />
+      <Item value="CountryCode" priority="4" />
+      <Item value="IndexName" priority="5" />
+      <Item value="MarketIndexID" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Process">
+      <Item value="GetProcessById" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Factors.ScalingFactor">
+      <Item value="FactorIDSet" priority="0" />
+      <Item value="FactorID" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ErrorProvider">
+      <Item value="SetError" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.Windows.Controls.PrintColumnSettingsCollection">
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlCommand">
+      <Item value="Parameters" priority="0" />
+      <Item value="Transaction" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Currency.Currency">
+      <Item value="CurrencyName" priority="1" />
+      <Item value="CurrentRate" priority="3" />
+      <Item value="PreviousRate" priority="3" />
+      <Item value="GlobalMarket" priority="0" />
+      <Item value="PreviousConversionRate" priority="0" />
+      <Item value="CalculateMovement" priority="0" />
+      <Item value="CurrencyCode" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlParameterCollection">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Forms">
+      <Item value="UPDRoleCheckedForm" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.SortedList">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Main.StatusbarCallBackInfo">
+      <Item value="StatusBarDelegate" priority="0" />
+      <Item value="StatusbarTimer" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MemberInfo[]">
+      <Item value="GetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Funds.NonOEIC">
+      <Item value="m_factors" priority="0" />
+      <Item value="RevaluationFactorIDSet" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Classes.GlobalRegistry">
+      <Item value="CurrentCompanyValuationDateAndTime" priority="0" />
+      <Item value="CompanyCode" priority="0" />
+      <Item value="ConnectionString" priority="0" />
+      <Item value="AppSettings" priority="0" />
+      <Item value="UserSettingsChanged" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataViewManager">
+      <Item value="CreateDataView" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="ToString" priority="2" />
+      <Item value="Append" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.Windows.Controls.DataGrid.GridPrintStyle">
+      <Item value="MultipleHorizontalPages" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox.ObjectCollection">
+      <Item value="Clear" priority="1" />
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.AnchorStyles">
+      <Item value="Bottom" priority="0" />
+      <Item value="Left" priority="1" />
+      <Item value="Right" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.FundGroups.FundGroupFactory.FundGroupTypes">
+      <Item value="Asset" priority="3" />
+      <Item value="Individual" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Factors.Factor">
+      <Item value="DisplayName" priority="0" />
+      <Item value="effectToday" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Specialized.StringCollection">
+      <Item value="Add" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFundCollection">
+      <Item value="AddRange" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListBox">
+      <Item value="Enabled" priority="0" />
+      <Item value="Items" priority="0" />
+      <Item value="DataSource" priority="0" />
+      <Item value="DisplayMember" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Classes.GlobalRegistry.appSettings">
+      <Item value="DatabaseSettings" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Controllers.Hi3PricesSeriesDataRowValidator">
+      <Item value="ExpectedFundType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="Write" priority="1" />
+      <Item value="WriteLine" priority="8" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Control.ControlCollection">
+      <Item value="Add" priority="0" />
+      <Item value="IndexOf" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO">
+      <Item value="FileInfo" priority="0" />
+      <Item value="Directory" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms">
+      <Item value="IWin32Window" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListBox.ObjectCollection">
+      <Item value="Clear" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.Funds.Fund">
+      <Item value="FundAuthoriseInfo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="Exists" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Controllers.AssetFundController.AssetFundValidationError">
+      <Item value="AssetFundDuplicateFieldCode" priority="0" />
+      <Item value="AssetFundSplitMoreThan100Percent" priority="0" />
+      <Item value="AssetFundSplitLessThan100Percent" priority="0" />
+      <Item value="AssetFundToleranceNegative" priority="0" />
+      <Item value="AssetFundPriceFileNotSelected" priority="0" />
+      <Item value="AssetFundDuplicateFieldShortName" priority="1" />
+      <Item value="AssetFundDuplicateFieldFullName" priority="0" />
+      <Item value="AssetFundFieldEmptyShortName" priority="0" />
+      <Item value="AssetFundInvalidNumDecimalPlacesTolerance" priority="1" />
+      <Item value="AssetFundFieldEmptyCode" priority="1" />
+      <Item value="AssetFundFieldEmptyFullName" priority="0" />
+      <Item value="AssetFundSplitSingleProportionValueOfZero" priority="0" />
+      <Item value="AssetFundTypeNotSelected" priority="0" />
+      <Item value="AssetFundMaxToleranceExceeded" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Types.AssetFunds.AssetFund">
+      <Item value="AssetFundTypeEnum" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Security.UPDIdentity">
+      <Item value="Name" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlTransaction">
+      <Item value="Connection" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.UserControls.StaticDataStockMarketLookupDecorator">
+      <Item value="MarketId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Enum">
+      <Item value="GetName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Funds.LinkedFund">
+      <Item value="PredictedPrice" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="2" />
+      <Item value="MaxLength" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Funds.FundCollection">
+      <Item value="Contains" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.UserControls.CompanyStatus">
+      <Item value="DataChanging" priority="0" />
+      <Item value="ProgressValuationDay" priority="0" />
+      <Item value="DataChanged" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.AssetFundPricingPersister.CreateDetailThread">
+      <Item value="BeginInvoke" priority="1" />
+      <Item value="EndInvoke" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ListView.ListViewItemCollection">
+      <Item value="Clear" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamWriter">
+      <Item value="Write" priority="0" />
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.WinUI.Forms.DistributionDataBinding">
+      <Item value="DataField" priority="1" />
+      <Item value="ControlPropertyToBindTo" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Persistence.FundLookUpPersister">
+      <Item value="LoadForCompany" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:HBOS.FS.AMP.UPD.Types.Lookups.SimpleLookupCollection">
+      <Item value="Add" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Controllers.FundController.FundValidationError">
+      <Item value="FundFieldEmptyHiPortfolioCode" priority="0" />
+      <Item value="FundXFactorInvalid" priority="1" />
+      <Item value="FundInvalidNumDecimalPlacesLowerTolerance" priority="1" />
+      <Item value="FundMaxLowerToleranceExceeded" priority="0" />
+      <Item value="NoError" priority="0" />
+      <Item value="FundTPEInvalid" priority="2" />
+      <Item value="FundScalingFactorInvalidNumber" priority="0" />
+      <Item value="FundDuplicateFieldSecurityCode" priority="0" />
+      <Item value="FundLowerToleranceZero" priority="1" />
+      <Item value="FundTPEInvalidNumber" priority="0" />
+      <Item value="FundXFactorInvalidNumber" priority="0" />
+      <Item value="FundFieldEmptyClassOrPriceSeries" priority="0" />
+      <Item value="FundDuplicateFieldFullName" priority="1" />
+      <Item value="FundRevaluationFactorInvalidNumber" priority="1" />
+      <Item value="FundTypeNotSelected" priority="0" />
+      <Item value="FundLowerToleranceNegative" priority="1" />
+      <Item value="FundFieldEmptyFullName" priority="0" />
+      <Item value="FundScalingFactorInvalid" priority="0" />
+      <Item value="FundCannotUnSelectBenchMark" priority="0" />
+      <Item value="FundFieldEmptyAssetFundID" priority="0" />
+      <Item value="FundToleranceNegative" priority="0" />
+      <Item value="FundInvalidNumDecimalPlacesTolerance" priority="0" />
+      <Item value="FundDuplicateFieldHiPortCode" priority="0" />
+      <Item value="FundUpperToleranceLessThanLowerTolerance" priority="0" />
+      <Item value="FundRevaluationFactorInvalid" priority="1" />
+      <Item value="FundFieldEmptyExternalSystemId" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StringReader">
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.WinUI.Reports">
+      <Item value="FundDriftReportDataset" priority="0" />
+      <Item value="Schemas" priority="0" />
+      <Item value="FundDriftSchema" priority="0" />
+      <Item value="FundDriftDataset" priority="1" />
+      <Item value="PriceComparisionSchema" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@HBOS.FS.AMP.UPD.Controllers.LookupController">
+      <Item value="LoadCurrencies" priority="0" />
+      <Item value="LoadCountries" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="Read" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.DataSet">
+      <Item value="ReadXml" priority="0" />
+      <Item value="DefaultViewManager" priority="0" />
+      <Item value="WriteXml" priority="0" />
+      <Item value="Tables" priority="2" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="ReSharper.FindMethodDialog.checkBoxSearchLibraries">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

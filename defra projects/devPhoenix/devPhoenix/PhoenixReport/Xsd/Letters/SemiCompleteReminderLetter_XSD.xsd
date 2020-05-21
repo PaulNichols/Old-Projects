@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="SemiCompleteReminderLetterData" targetNamespace="http://tempuri.org/SemiCompleteReminderLetterData.xsd"
+	xmlns:mstns="http://tempuri.org/SemiCompleteReminderLetterData.xsd" xmlns="http://tempuri.org/SemiCompleteReminderLetterData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="SemiCompleteReminderLetterData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BOSemiCompleteReminderLetter">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:integer" minOccurs="0" />
+							<xs:element name="FromAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="ToAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="IssuedDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Salutation" type="xs:string" minOccurs="0" />
+							<xs:element name="BeginText" type="xs:string" minOccurs="0" />
+							<xs:element name="IntroText" type="xs:string" minOccurs="0" />
+							<xs:element name="ValidYearText" type="xs:string" minOccurs="0" />
+							<xs:element name="EndText" type="xs:string" minOccurs="0" />
+							<xs:element name="DirectLineText" type="xs:string" minOccurs="0" />
+							<xs:element name="SignatureText" type="xs:string" minOccurs="0" />
+							<xs:element name="FaxText" type="xs:string" minOccurs="0" />
+							<xs:element name="EMailText" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BOSemiCompleteReminderLetterDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:integer" minOccurs="0" />
+							<xs:element name="PermitNoText" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//mstns:BOSemiCompleteReminderLetter" />
+			<xs:field xpath="mstns:Id" />
+		</xs:key>
+		<xs:keyref name="BOSemiCompleteReminderLetterBOSemiCompleteReminderLetterDetails" refer="mstns:key1">
+			<xs:selector xpath=".//mstns:BOSemiCompleteReminderLetterDetails" />
+			<xs:field xpath="mstns:Id" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

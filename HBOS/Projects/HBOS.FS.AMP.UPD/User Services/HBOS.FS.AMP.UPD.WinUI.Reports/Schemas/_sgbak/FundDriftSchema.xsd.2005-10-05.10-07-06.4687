@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="FundDriftDataset" targetNamespace="http://tempuri.org/Dataset1.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/Dataset1.xsd" xmlns:mstns="http://tempuri.org/Dataset1.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="FundDriftDataset" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="AssetFund">
+					<xs:complexType>
+						<xs:sequence></xs:sequence>
+						<xs:attribute name="FundCode" type="xs:string" />
+						<xs:attribute name="FundName" type="xs:string" />
+						<xs:attribute name="SumOfEffect" type="xs:string" />
+						<xs:attribute name="SumOfProportion" type="xs:string" />
+						<xs:attribute name="Effect" type="xs:string" />
+						<xs:attribute name="CurrencyMovement" type="xs:string" />
+						<xs:attribute name="CurrentBenchmarkCurrencyRate" type="xs:string" />
+						<xs:attribute name="PreviousBenchmarkCurrencyRate" type="xs:string" />
+						<xs:attribute name="BenchmarkMovement" type="xs:string" />
+						<xs:attribute name="AssetFundCurrency" type="xs:string" />
+						<xs:attribute name="CurrentAssetCurrencyRate" type="xs:string" />
+						<xs:attribute name="PreviousAssetCurrencyRate" type="xs:string" />
+						<xs:attribute name="CurrentBenchmarkValue" type="xs:string" />
+						<xs:attribute name="PreviousBenchmarkValue" type="xs:string" />
+						<xs:attribute name="Proportion" type="xs:string" />
+						<xs:attribute name="BenchMarkName" type="xs:string" />
+						<xs:attribute name="FundGroupName" type="xs:string" />
+						<xs:attribute name="CurrentValuationDate" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

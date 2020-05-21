@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spI_Title - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spI_Title
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				Create Procedure [spI_Title]<br>
+				<br>
+				-- Inserts a new record in [Title] table<br>
+				(<br>
+				  @TitleId [int] = Null Output -- for [Title].[TitleId] column<br>
+				, @Title [varchar](10) = Null  -- for [Title].[Title] column<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				/*<br>
+				&nbsp;&nbsp;&nbsp;This T-SQL code was automatically generated using:<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server Centric .NET Code Generator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v 1.0.1697.21165<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generation Date: 02/01/2005 12:18:02<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generator name: MAINSERVER\Administrator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template last update: 13/10/2003 04:51:40<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template revision: 56177501<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server version: 08.00.0760<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server: MAINSERVER\MAINSERVER<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Database: [Bob]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;WARNING: This source is provided &quot;AS IS&quot; without warranty of any kind.<br>
+				&nbsp;&nbsp;&nbsp;The author disclaims all warranties, either express or implied, including<br>
+				&nbsp;&nbsp;&nbsp;the warranties of merchantability and fitness for a particular purpose.<br>
+				&nbsp;&nbsp;&nbsp;In no event shall the author or its suppliers be liable for any damages<br>
+				&nbsp;&nbsp;&nbsp;whatsoever including direct, indirect, incidental, consequential, loss of<br>
+				&nbsp;&nbsp;&nbsp;business profits or special damages, even if the author or its suppliers<br>
+				&nbsp;&nbsp;&nbsp;have been advised of the possibility of such damages.<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;    More information: http://www.microsoft.com/france/msdn/olymars<br>
+				&nbsp;&nbsp;&nbsp;Latest interim build: http://www.olymars.net/latest.zip<br>
+				&nbsp;&nbsp;&nbsp;       Author's blog: http://blogs.msdn.com/olymars<br>
+				*/<br>
+				<br>
+				<br>
+				--&nbsp;&nbsp;&nbsp;IMPORTANT:<br>
+				--&nbsp;&nbsp;&nbsp;Changes to this SQL code may cause incorrect behavior<br>
+				--&nbsp;&nbsp;&nbsp;and will be lost if the code is regenerated. <br>
+				<br>
+				<br>
+				Set NoCount On<br>
+				<br>
+				If @TitleId Is Null<br>
+				&nbsp;&nbsp;&nbsp;Begin<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Insert Into [dbo].[Title]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [Title]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Values<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  @Title<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set @TitleId = Cast(SCOPE_IDENTITY() As [int])<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;End<br>
+				<br>
+				Else<br>
+				&nbsp;&nbsp;&nbsp;Begin<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Identity_Insert [dbo].[Title] On<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Insert Into [dbo].[Title]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [TitleId]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, [Title]<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Values<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  @TitleId<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, @Title<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set Identity_Insert [dbo].[Title] Off<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;End<br>
+				<br>
+				Set NoCount Off<br>
+				<br>
+				Return(0)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:31
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

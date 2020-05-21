@@ -1,0 +1,172 @@
+using System;
+using System.Configuration;
+using System.Reflection;
+using System.Threading;
+using HBOS.FS.AMP.UPD.Security;
+
+namespace HBOS.FS.AMP.UPD.WinUI.Classes
+{
+	/// <summary>
+	/// Static class for holding and retrieving global ui settings.
+	/// </summary>
+	public abstract /*static*/ class GlobalRegistry
+	{
+		private GlobalRegistry()
+		{
+		}
+
+		static GlobalRegistry()
+		{
+			string activeConnectionString=ConfigurationSettings.AppSettings["ActiveConnectionString"];
+			connectionString = ConfigurationSettings.AppSettings[activeConnectionString];
+			splitConnectionString();
+		}
+
+		private static string connectionString;
+		private static string[] m_connectionStringParts;
+
+		/// <summary>
+		/// Gets the connection string used to connect to the database.
+		/// </summary>
+		/// <value></value>
+		public static string ConnectionString
+		{
+			get{return connectionString;}
+		}
+
+		/// <summary>
+		/// Gets the Database Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLDatabaseName
+		{
+			get
+			{
+				char [] delimiter = "=".ToCharArray();
+				string[] databaseNameParts;
+				databaseNameParts=m_connectionStringParts[4].Split(delimiter);
+				String returnString="n/a";
+				if (databaseNameParts[0]=="Initial Catalog")
+				{
+					returnString= databaseNameParts[1];
+				}
+
+				return returnString;
+			}
+		}
+		
+
+		/// <summary>
+		/// Gets the User Name and Password details the application will currently use .
+		/// </summary>
+		/// <value></value>
+		public static string LogonDetails
+		{
+			get
+			{
+				string returnString="";
+				if (m_connectionStringParts.Length==6)
+				{
+					returnString= m_connectionStringParts[1];
+				}
+				else if(m_connectionStringParts.Length==7)
+				{
+					returnString= m_connectionStringParts[1]+','+m_connectionStringParts[2];
+				}
+				return returnString;
+			}
+		}
+
+		/// <summary>
+		/// Gets the SQL Server Name the application will currently connect to .
+		/// </summary>
+		/// <value></value>
+		public static string SQLServerName
+		{
+			get
+			{
+				char [] delimiter = "=".ToCharArray();
+				string[] serverNameParts;
+				serverNameParts=m_connectionStringParts[3].Split(delimiter);
+				String returnString="n/a";
+				if (serverNameParts[0]=="Data Source")
+				{
+					returnString= serverNameParts[1];
+				}
+
+				return returnString;
+			}
+		}
+
+		private static void splitConnectionString()
+		{
+			char [] delimiter = ";".ToCharArray();
+			m_connectionStringParts= connectionString.Split(delimiter);
+		}
+
+		/// <summary>
+		/// Gets the company code for the current user.
+		/// </summary>
+		/// <value></value>
+		public static string CompanyCode
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.CompanyCode;
+			}
+		}
+
+		/// <summary>
+		/// Gets the company valuation point and day for the current company.
+		/// </summary>
+		/// <value></value>
+		public static DateTime CurrentCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.CurrentCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the valuation point and day if the current was progress on.
+		/// </summary>
+		/// <value></value>
+		public static DateTime NextCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.NextCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the previous valuation point and day if the current was progress on.
+		/// </summary>
+		/// <value></value>
+		public static DateTime PreviousCompanyValuationDateAndTime
+		{
+			get
+			{
+				UPDPrincipal updPrincipal = (UPDPrincipal) Thread.CurrentPrincipal;
+				return updPrincipal.PreviousCompanyValuationDateAndTime;
+			}
+		}
+
+		/// <summary>
+		/// Gets the client version for the running instance.
+		/// </summary>
+		/// <value></value>
+		public static Version ClientVersion
+		{
+			get
+			{
+				return Assembly.GetEntryAssembly().GetName().Version;
+			}
+		}
+
+	}
+}

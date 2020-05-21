@@ -1,0 +1,13 @@
+[main]
+home=about:blank
+option1=False
+option2=True
+option3=False
+
+[Search]
+url=http://www.altavista.com
+
+[dates]
+peA=16/11/2000
+16/11/2000=test
+17/11/2000=muhaha im testing this date thingie

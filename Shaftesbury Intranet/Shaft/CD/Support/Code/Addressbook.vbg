@@ -1,0 +1,4 @@
+VBGROUP 5.0
+StartupProject=exe\addressbook.vbp
+Project=ocx\ocx.vbp
+Project=dll\addressbookDLL.vbp

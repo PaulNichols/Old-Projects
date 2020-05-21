@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			WebFormList_tblOrder - How to install and reuse this Web Form
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			WebFormList_tblOrder
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;How to install and reuse this Web Form
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Installation
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				In order to use successfully this Web form, you have to perform the
+				following tasks:
+				<ul>
+					<li>
+						Create a virtual directory (<i>OlymarsDemo_WebForms</i> in our example) pointing on a given directory (<i>WebSiteDir</i> in our example)
+					</li>
+					<li>
+						Create a <b>Bin</b> sub directory in <i>WebSiteDir</i> and copy <b>OlymarsDemo.Forms.dll</b> in it
+					</li>
+					<li>
+						Copy the <b>WebFormList_tblOrder.aspx</b> file in the <i>WebSiteDir</i> directory
+					</li>
+					<li>
+						Copy the <b>web.config</b> file in the <i>WebSiteDir</i> directory
+					</li>
+					<li>
+						Edit the <b>web.config</b> file and update the 	<b>OlymarsDemo ConnectionString</b> key to reflect
+						the correct location of the SQL Server database.
+
+					</li>
+					<li>
+						You can now browse to <b>http://YourWebServer/OlymarsDemo_WebForms/WebFormList_tblOrder.aspx</b>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Reusing this Web Form
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				The following parameters are available to interact with this Web Form but are <b>not mandatory</b>:
+				<ul>
+					<li>
+						<b>Ord_LngCustomerID</b>: you can pre-filter the displayed records by supplying a value for this foreign key<br>
+					</li>
+					<br>
+					<li>
+						<b>SortBy</b>: you can pre-sort the records by a given column<br>
+					</li>
+					<br>
+					<li>
+						<b>SortOrder</b>: you can pre-sort the records in <b>Ascending</b> or <b>Descending</b> order<br>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:58
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,834 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			WinListBox_Customers - Members overview
+		</title>
+		<link href="../../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			WinListBox_Customers
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			To read an overview on this class, click <a href="WinListBox_spS_Customers_Display.htm">here</a>.<br>
+			To see an example on how to call this class in Visual C# .NET, click <a href="WinListBox_spS_Customers_Display_CS.htm">here</a>.<br>
+			To see an example on how to call this class in Visual Basic .NET, click <a href="WinListBox_spS_Customers_Display_VB.htm">here</a>.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#Abstract_Customers">Abstract_Customers</a>
+					</li>
+					<li>
+						<a href="#BindingInProgress">BindingInProgress</a>
+					</li>
+					<li>
+						<a href="#ConnectionType">ConnectionType</a>
+					</li>
+					<li>
+						<a href="#ConnectionString">ConnectionString</a>
+					</li>
+					<li>
+						<a href="#DoDataBindAfterRefreshData">DoDataBindAfterRefreshData</a>
+					</li>
+					<li>
+						<a href="#Initialize1">Initialize</a>
+					</li>
+					<li>
+						<a href="#RefreshCurrentRecord">RefreshCurrentRecord</a>
+					</li>
+					<li>
+						<a href="#RefreshData1">RefreshData</a>
+					</li>
+					<li>
+						<a href="#SelectedRecordID">SelectedRecordID</a>
+					</li>
+					<li>
+						<a href="#SelectedRecordsID">SelectedRecordsID</a>
+					</li>
+					<li>
+						<a href="#SP_Parameter">SP_Parameter</a>
+					</li>
+					<li>
+						<a href="#SqlConnection">SqlConnection</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Constructor"></a>
+		<div class="MainTitle">
+			Public Constructor
+		</div>
+		<blockquote>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual Basic .NET]
+						</div>
+						<div class="Code">
+							Public Sub New()
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table style="background-color: gainsboro;">
+				<tr>
+					<td>
+						<div class="SeeAlsoBody">
+							[Visual C# .NET]
+						</div>
+						<div class="Code">
+						public WinListBox_Customers();
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>Bob.Windows.ListBoxes.WinListBox_Customers</b> class.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Property
+		</div>
+		<blockquote>
+			<a name="BindingInProgress"></a>
+			<div class="Highlight">
+				BindingInProgress
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property BindingInProgress() As Boolean
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public bool BindingInProgress( get; );
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Returns <b>true</b> if a binding operation is currently in progress.
+					This situation occurs during a <b>RefreshData()</b> method call..
+				</div>
+			</blockquote>
+			<a name="ConnectionType"></a>
+			<div class="Highlight">
+				ConnectionType
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionType As Bob.DataClasses.ConnectionType<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public Bob.DataClasses.ConnectionType ConnectionType { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the current type of connection that is going or has been used
+					against the Sql Server database. It can be:
+					<ul>
+						<li>
+							Bob.DataClasses.ConnectionType.None
+						</li>
+						<li>
+							Bob.DataClasses.ConnectionType.ConnectionString
+						</li>
+						<li>
+							Bob.DataClasses.ConnectionType.SqlConnection
+						</li>
+						<li>
+							Bob.DataClasses.ConnectionType.SqlTransaction [Not available here]
+						</li>
+					</ul>
+					This property is set when you instanciate this class depending on the
+					overloaded version of the <a href="#Initialize1">Initialize</a> method
+					you have used.<br>
+				</div>
+			</blockquote>
+			<a name="ConnectionString"></a>
+			<div class="Highlight">
+				ConnectionString
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property ConnectionString As String<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public string ConnectionString { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the connection string to be used against the 
+					SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>Bob.DataClasses.ConnectionType.ConnectionString</b>.
+				</div>
+			</blockquote>
+			<a name="SqlConnection"></a>
+			<div class="Highlight">
+				SqlConnection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SqlConnection As System.Data.SqlClient.SqlConnection<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlClient.SqlConnection SqlConnection { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> to be used
+					against the SQL Server database.<br>
+					<br>
+					This value is only available if
+					<a href="#ConnectionType">ConnectionType</a> property is equal to <b>Bob.DataClasses.ConnectionType.SqlConnection</b>.
+				</div>
+			</blockquote>
+			<a name="SP_Parameter"></a>
+			<div class="Highlight">
+				SP_Parameter
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SP_Parameter As Bob.DataClasses.Parameters.spS_Customers_Display<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public Bob.DataClasses.Parameters.spS_Customers_Display SP_Parameter { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the Parameter class that was used to populate this control. For more information on this class, click
+					<a href="../../Stored_Procedures/spS_Customers_Display_Param_Members.htm">here</a>.
+				</div>
+			</blockquote>
+			<a name="Abstract_Customers"></a>
+			<div class="Highlight">
+				Abstract_Customers
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property Abstract_Customers As Bob.AbstractClasses.Abstract_Customers<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public Bob.AbstractClasses.Abstract_Customers Abstract_Customers { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <b>Customers</b> abstract class so that you can access any table
+					column for the current record selection. For more information on this class, click
+					<a href="../../AbstractClasses/Customers.htm">here</a>.<br>
+					<br>
+					When the selection has changed, you need to call the <a href="#RefreshCurrentRecord">RefreshCurrentRecord</a>
+					method <b>first</b> before accessing this property.
+				</div>
+			</blockquote>
+			<a name="DoDataBindAfterRefreshData"></a>
+			<div class="Highlight">
+				DoDataBindAfterRefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Property DoDataBindAfterRefreshData As Boolean<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public bool DoDataBindAfterRefreshData { get; set; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Gets or sets the fact that the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWebUIControlClassDataBindTopic.htm">DataBind</a>
+					method has to be called after the <a href="#RefreshData1">RefreshData</a> method call.
+				</div>
+			</blockquote>
+			<a name="SelectedRecordID"></a>
+			<div class="Highlight">
+				SelectedRecordID
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SelectedRecordID As System.Data.SqlTypes.SqlInt32<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Data.SqlTypes.SqlInt32 SelectedRecordID { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the currently selected record primary key.
+				</div>
+			</blockquote>
+			<a name="SelectedRecordsID"></a>
+			<div class="Highlight">
+				SelectedRecordsID
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public ReadOnly Property SelectedRecordsID As System.Collections.ArrayList<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public System.Collections.ArrayList SelectedRecordsID { get; };<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the currently selected records primary keys. This property is only available if
+					SelectionMode=MultiSimple or SelectionMode=MultiExtended.<br>
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Public Methods
+		</div>
+		<blockquote>
+			<a name="Initialize1"></a>
+			<div class="Highlight">
+				Initialize
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal connectionString As String<br>
+								&nbsp;&nbsp;&nbsp;, ByVal FK_TitleId As System.Data.SqlTypes.SqlInt32<br>
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string connectionString<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 FK_TitleId<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Initializes the control. You need to specify how to connect to the
+					SQL Server database and if you want to populate the whole table content or
+					only a subset (based on its foreign keys).<br>
+					<br>
+					The data will only be populated once you have called the <a href="#RefreshData1">RefreshData</a> method.<br>
+					<br>
+					<b>connectionString</b>: A valid connection string to the database.<br>
+					<br>
+					<blockquote>
+						If a blank connection string is supplied, the class will search for:<br>
+						<br>
+						&nbsp;&nbsp;First an entry in the configuration file:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="Bob ConnectionString" value="..." /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+						<br>
+						&nbsp;&nbsp;Then the following registry entry:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\Bob<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+						<br>
+						A helper function that can build this connection string for you is available. See the <a href="../../Data_Classes/Information.htm">BuildConnectionString</a> function description.<br>
+						<br>
+						To see the documentation on how to build this connection string,
+						<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+					</blockquote>
+					<b>FK_TitleId</b>: Value for this foreign key.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Foriegn Key for Contact Title</b><br>
+						<br>
+				</div>
+			</blockquote>
+			<a name="Initialize2"></a>
+			<div class="Highlight">
+				Initialize
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal sqlConnection As System.Data.SqlClient.SqlConnection<br>
+								&nbsp;&nbsp;&nbsp;, ByVal FK_TitleId As System.Data.SqlTypes.SqlInt32<br>								
+								)<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void Initialize(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlClient.SqlConnection sqlConnection<br>
+								&nbsp;&nbsp;&nbsp;, System.Data.SqlTypes.SqlInt32 FK_TitleId<br>
+								);<br>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Initializes the control. You need to specify how to connect to the
+					SQL Server database and if you want to populate the whole table content or
+					only a subset (based on its foreign keys).<br>
+					<br>
+					The data will only be populated once you have called the <a href="#RefreshData1">RefreshData</a> method.<br>
+					<br>
+					<b>sqlConnection</b>: A valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object. If it is not opened, it will be
+					opened when used then closed again after the job is done.
+					<br>
+					<br>
+					<b>FK_TitleId</b>: Value for this foreign key.<br>
+					&nbsp;&nbsp;&nbsp;Database description of this parameter: <b>Foriegn Key for Contact Title</b><br>
+						<br>
+				</div>
+			</blockquote>
+			<a name="RefreshData1"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData()
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads the <b>the table content</b>. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">Bob.DataClasses.CustomException</a> is thrown.
+				</div>
+			</blockquote>
+			<a name="RefreshData2"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal startRecord As Integer<br>
+								&nbsp;&nbsp;&nbsp;, ByVal maxRecords As Integer<br>
+								)
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int startRecord<br>
+								&nbsp;&nbsp;&nbsp;, int maxRecords<br>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads a subset of the <b>table content</b>. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">Bob.DataClasses.CustomException</a> is thrown.<br>
+					<br>
+					<b>startRecord</b>: The zero-based record number to start with.<br>
+					<br>
+					<b>maxRecords</b>: The maximum number of records to retrieve.
+				</div>
+			</blockquote>
+			<a name="RefreshData3"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal PK_CustomerID As System.Data.SqlTypes.SqlInt32<br>
+								)
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlTypes.SqlInt32 PK_CustomerID<br>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads the <b>table content</b>. You can specify which record you want to be selected
+					by default. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">Bob.DataClasses.CustomException</a> is thrown.<br>
+					<br>
+					<b>PK_CustomerID</b>: Primary key of the record you want to be selected by default.<br>
+				</div>
+			</blockquote>
+			<a name="RefreshData4"></a>
+			<div class="Highlight">
+				RefreshData
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Sub RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByVal PK_CustomerID As System.Data.SqlTypes.SqlInt32 <br>
+								&nbsp;&nbsp;&nbsp;, ByVal startRecord As Integer<br>
+								&nbsp;&nbsp;&nbsp;, ByVal maxRecords As Integer<br>
+								)
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public void RefreshData(<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Data.SqlTypes.SqlInt32 PK_CustomerID<br>
+								&nbsp;&nbsp;&nbsp;, int startRecord<br>
+								&nbsp;&nbsp;&nbsp;, int maxRecords<br>
+								);
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Load or reloads a subset of the <b>table content</b>. You can specify which record you want to be selected
+					by default. In order to successfully call this method,
+					you need to call first the <a href="#Initialize1">Initialize</a> method.<br>
+					<br>
+					If you call this method before the Initialize method, an <b>InvalidOperationException</b>
+					exception is thrown.<br>
+					If a database error occurs during the call, a <a href="../../Data_Classes/CustomException.htm">Bob.DataClasses.CustomException</a> is thrown.<br>
+					<br>
+					<b>PK_CustomerID</b>: Primary key of the record you want to be selected by default.<br>
+					<br>
+					<b>startRecord</b>: The zero-based record number to start with.<br>
+					<br>
+					<b>maxRecords</b>: The maximum number of records to retrieve.
+				</div>
+			</blockquote>
+			<a name="RefreshCurrentRecord"></a>
+			<div class="Highlight">
+				RefreshCurrentRecord
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual Basic .NET]
+							</div>
+							<div class="Code">
+								Public Function RefreshCurrentRecord() As Boolean
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+							<div class="SeeAlsoBody">
+								[Visual C# .NET]
+							</div>
+							<div class="Code">
+								public bool RefreshCurrentRecord();
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="MainBody">
+					<br>
+					Loads the <a href="#Abstract_Customers">Customers abstract class</a> for the current selected record primary key.<br>
+					<br>
+					Returns <b>true</b> if the call succeeded; <b>false</b>, otherwise.
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:33
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

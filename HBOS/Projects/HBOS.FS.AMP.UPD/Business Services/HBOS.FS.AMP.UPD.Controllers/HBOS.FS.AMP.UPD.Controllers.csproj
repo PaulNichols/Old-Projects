@@ -1,0 +1,299 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{714F4B38-F16F-4631-AE72-BC43EE3206F9}"
+        SccProjectName = "SAK"
+        SccLocalPath = "SAK"
+        SccAuxPath = "SAK"
+        SccProvider = "SAK"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "HBOS.FS.AMP.UPD.Controllers"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "HBOS.FS.AMP.UPD.Controllers"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = "doc\HBOS.FS.AMP.UPD.Controllers.xml"
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "true"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = "doc\HBOS.FS.AMP.UPD.Controllers.xml"
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "true"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\..\WINNT\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.Common.ExceptionManagement"
+                    AssemblyName = "HBOS.FS.Common.ExceptionManagement"
+                    HintPath = "..\..\Dependancies\HBOS.FS.Common.ExceptionManagement.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.Support.Tex"
+                    AssemblyName = "HBOS.FS.Support.Tex"
+                    HintPath = "..\..\Dependancies\HBOS.FS.Support.Tex.Dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.UPD.Exceptions"
+                    Project = "{8D0114A7-6D56-4802-BBF4-585E60607C8E}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.UPD.Types"
+                    Project = "{5540C061-1CB9-4156-8792-E10EE75C61CA}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.Data.Transfer"
+                    AssemblyName = "HBOS.FS.AMP.Data.Transfer"
+                    HintPath = "..\..\Dependancies\HBOS.FS.AMP.Data.Transfer.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.Data.FileReaders"
+                    AssemblyName = "HBOS.FS.Data.FileReaders"
+                    HintPath = "..\..\Dependancies\HBOS.FS.Data.FileReaders.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.Data.Persister"
+                    AssemblyName = "HBOS.FS.AMP.Data.Persister"
+                    HintPath = "..\..\Dependancies\HBOS.FS.AMP.Data.Persister.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.Data.Persister.Interface"
+                    AssemblyName = "HBOS.FS.AMP.Data.Persister.Interface"
+                    HintPath = "..\..\Dependancies\HBOS.FS.AMP.Data.Persister.Interface.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.Data.Transfer.Interface"
+                    AssemblyName = "HBOS.FS.AMP.Data.Transfer.Interface"
+                    HintPath = "..\..\Dependancies\HBOS.FS.AMP.Data.Transfer.Interface.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.Data.Validator.Interface"
+                    AssemblyName = "HBOS.FS.AMP.Data.Validator.Interface"
+                    HintPath = "..\..\Dependancies\HBOS.FS.AMP.Data.Validator.Interface.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.Data.Types"
+                    AssemblyName = "HBOS.FS.AMP.Data.Types"
+                    HintPath = "..\..\Dependancies\HBOS.FS.AMP.Data.Types.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.Entities"
+                    AssemblyName = "HBOS.FS.AMP.Entities"
+                    HintPath = "..\..\Dependancies\HBOS.FS.AMP.Entities.dll"
+                />
+                <Reference
+                    Name = "HBOS.FS.AMP.UPD.Persistence"
+                    Project = "{563292A6-45A4-4CDF-937B-EDE2239DF506}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssetFundController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CompanyController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CountryController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CurrencyController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "CurrentStatusController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DistributionFileController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "FundController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "FundGroupController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ImportController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "LookupController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PriceFileController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ReportController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "StockMarketController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SystemController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UPDIO.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "UserController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "VersionController.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Common\AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Common\BuildAssembly.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Common\ReleaseAssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\AssetFundDataRowValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\AssetFundDataValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\CompositeSplitCompositeFundDataRowValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\CountryDataRowValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\CurrencyDataRowValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\Hi3PricesAssetUnitPriceDataRowValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\Hi3PricesSeriesDataRowValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "IDataRowValidators\MarketIndexDataRowValidator.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

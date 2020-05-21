@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HBOS.FS.AMP.UPD.WinUI</name>
+    </assembly>
+    <members>
+        <member name="T:HBOS.FS.AMP.UPD.WinUI.Main">
+            <summary>
+            Main form for application.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.#ctor">
+            <summary>
+            Form entry point
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.Finalize">
+            <summary>
+            Form Unload
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.FileImportFilesImportCurrencyExchangeRatesMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            User wnats to import Currency Exchange rates.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.FileImportFilesImportStockMarketIndicesMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            User is trying to Import Stock Market Indices.
+            </summary>
+            <param name="sender">Import menu item</param>
+            <param name="e">n/a</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.FileImportFilesHi3PricesMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            user wants to import Hi3 Prices
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.FileImportFilesHi3PricesLinkedMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            user wants to import Hi3 Linked Fund Prices
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.FileImportFilesHi3AssetFundSplitsMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            User wants to import Hi3 Asset fund splits.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.fileExitMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Cleanly exit the application
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.secondLevelMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Show the second level authorisation screen.
+            </summary>
+            <param name="sender">Not used.</param>
+            <param name="e">Not used.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.releaseMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            User wants to release some prices
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.onStatusbarUpdateTimerTick(System.Object,System.EventArgs)">
+            <summary>
+            React on a click from the statusbarUpdateTimer.
+            </summary>
+            <param name="sender">Sending object</param>
+            <param name="e">Event arguements</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.loadUserControl(System.Windows.Forms.UserControl,System.String)">
+            <summary>
+            Load a user control into the display area panel and set attributes.
+            The User control should implement ICustomInit which has the method CustomInitialization().
+            In case any user control does not implement the interface, this method has the IF check
+            so the appln does not break.
+            </summary>
+            <param name="controlToLoad">Control object to be loaded</param>
+            <param name="titleBarCaption">Text to display within the title bar</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.loadUserControl(HBOS.FS.AMP.UPD.WinUI.Classes.IStatusViewBuilder,System.String,System.Boolean)">
+            <summary>
+            Load a user control into the display area panel and set attributes.
+            The User control should implement ICustomInit which has the method CustomInitialization().
+            In case any user control does not implement the interface, this method has the IF check
+            so the appln does not break.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.removeCurrentControl(System.Boolean)">
+            <summary>
+            Remove the current control from the main display area
+            </summary>
+            <param name="hideTitleBar">Hide the main title bar</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.createStaticDataView(HBOS.FS.AMP.UPD.WinUI.Classes.IStaticDataBuilder)">
+            <summary>
+            Creates the static data view using the provided builder.
+            </summary>
+            <param name="builder">Builder.</param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.CheckCurrentStatus(HBOS.FS.AMP.UPD.Types.Status.CurrentImportStatus)">
+            <summary>
+            Checks the current status.
+            </summary>
+            <param name="currentStatus">Current status.</param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.updateStatusBar">
+            <summary>
+            Updates the current validation point on the status bar, displaying a warning dialog
+            if there has been a change and the user is on a screen which the change impacts.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.Main.PopulateDatabaseMenu">
+            <summary>
+            Populates the database menu.
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.WinUI.Main.StatusBarDelegate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HBOS.FS.AMP.UPD.WinUI.UPDApplication">
+            <summary>
+            Summary description for UPDApplication.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.UPDApplication.Main">
+            <summary>
+            The main entry point into the Application Interface.
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.UPDApplication.ExitApplication">
+            <summary>
+            Main exit point for the application interface
+            </summary>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.UPDApplication.runningInstance">
+            <summary>
+            Get the process the application is running on
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.UPDApplication.switchToExistingInstance">
+            <summary>
+            Check for an existing instance and if one exists, switch to it
+            </summary>
+            <returns>True - instance switched.  False - no existing instance found</returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.UPDApplication.SetForegroundWindow(System.IntPtr)">
+            <summary>
+            API call to bring specified window to the front
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.UPDApplication.Application_ThreadException(System.Object,System.Threading.ThreadExceptionEventArgs)">
+            <summary>
+            Handle a thread exception
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:HBOS.FS.AMP.UPD.WinUI.UPDApplication.validateDesktopDateTime">
+            <summary>
+            Validate the Desktop Date Time
+            </summary>
+            <returns>Valid or Invalid indicator</returns>
+        </member>
+    </members>
+</doc>

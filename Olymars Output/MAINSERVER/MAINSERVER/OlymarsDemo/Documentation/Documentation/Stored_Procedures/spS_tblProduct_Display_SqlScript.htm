@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_tblProduct_Display - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_tblProduct_Display
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+Create Procedure [spS_tblProduct_Display]<br>
+				<br>
+				(<br>
+				 @Pro_GuidID [uniqueidentifier] = Null -- for [tblProduct].[Pro_GuidID] column<br>
+				,@Pro_LngCategoryID [int] = Null -- for [tblProduct].[Pro_LngCategoryID] column<br>
+				)<br>
+				<br>
+				-- Returns the number of records found<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				 [tblProduct_Records].[ID1]<br>
+				,[tblProduct_Records].[Display]<br>
+				<br>
+				From [fntblProduct_Display](@Pro_GuidID, @Pro_LngCategoryID) As [tblProduct_Records]<br>
+				<br>
+				Order By<br>
+				[tblProduct_Records].[Display]<br>
+				<br>
+				Return(@@RowCount)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Function">
+		<div class="MainTitle">
+			T-SQL code for the underlying inline table-valued function used by this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Function [fntblProduct_Display]<br>
+				(<br>
+				 @Pro_GuidID [uniqueidentifier] = Null<br>
+				,@Pro_LngCategoryID [int] = Null<br>
+				)<br>
+				<br>
+				Returns Table<br>
+				<br>
+				As<br>
+				<br>
+				Return<br>
+				(<br>
+				Select<br>
+				 [Pro_GuidID] As [ID1]<br>
+				,[Pro_StrName] + ' [' + [tblCategory].[Cat_StrName] + ']' As [Display]<br>
+				<br>
+				From [dbo].[tblProduct]<br>
+				    Inner Join [dbo].[tblCategory] On [tblProduct].[Pro_LngCategoryID] = [tblCategory].[Cat_LngID]<br>
+				&nbsp;&nbsp;&nbsp;<br>
+				Where<br>
+				    ((@Pro_GuidID Is Null) Or ([Pro_GuidID] = @Pro_GuidID))<br>
+				And ((@Pro_LngCategoryID Is Null) Or ([Pro_LngCategoryID] = @Pro_LngCategoryID))<br>
+				)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:19
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

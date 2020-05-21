@@ -1,0 +1,796 @@
+using System;
+using System.Data.SqlClient;
+using HBOS.FS.AMP.UPD.Exceptions;
+using HBOS.FS.AMP.UPD.Persistence;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+using HBOS.FS.AMP.UPD.Types.Countries;
+using HBOS.FS.AMP.UPD.Types.Funds;
+using HBOS.FS.AMP.UPD.Types.Lookups;
+using HBOS.FS.Support.Tex;
+
+namespace HBOS.FS.AMP.UPD.Controllers
+{
+	/// <summary>
+	/// Summary description for AssetFundController.
+	/// </summary>
+	public class AssetFundController
+	{
+		#region Constructor
+
+		/// <summary>
+		/// Default constructor
+		/// </summary>
+		public AssetFundController()
+		{
+			//
+			// TODO: Add constructor logic here
+			//
+		}
+
+		#endregion
+
+		#region Load methods
+
+		/// <summary>
+		/// Loads a list of asset funds for supplied company
+		/// </summary>
+		/// <param name="connectionString"></param>
+		/// <param name="companyCode"></param>
+		/// <returns></returns>
+		public  static SimpleStringLookupCollection LoadAssetFundLookupsByCompany(string connectionString, string companyCode)
+		{
+			AssetFundLookupPersister afLookup = new AssetFundLookupPersister(connectionString);
+			return afLookup.LoadForCompany(companyCode);
+		}
+
+		/// <summary>
+		/// Loads a list of asset funds for supplied company and type
+		/// </summary>
+		/// <param name="connectionString"></param>
+		/// <param name="companyCode">The company code to filter by</param>
+		/// <param name="assetFundType">The asset fund type to filter by</param>
+		/// <returns></returns>
+		public  static SimpleStringLookupCollection LoadAssetFundLookupsByCompanyAndType
+			(string connectionString, string companyCode, AssetFund.AssetFundTypeEnum assetFundType)
+		{
+			AssetFundLookupPersister afLookup = new AssetFundLookupPersister(connectionString);
+			return afLookup.LoadForCompany(companyCode, assetFundType);
+		}
+
+//		/// <summary>
+//		/// Load All Asset funds regardless of company
+//		/// </summary>
+//		/// <param name="connectionString"></param>
+//		/// <returns></returns>
+//		public Hashtable LoadAssetFundIds (string connectionString)
+//		{
+//			AssetFundLookupPersister afLookup = new AssetFundLookupPersister(connectionString);
+//			return afLookup.GetAllIds();
+//		}
+
+
+/*
+ * Deprecated
+ * 
+        /// <summary>
+        /// Lightweight asset fund load
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="companyCode"></param>
+        /// <returns>
+        /// A collection of asset fund objects only with a few properties set that we're interested in
+        /// </returns>
+        public AssetFundCollection LoadAssetFundsLight(string connectionString, string companyCode)
+        {
+			AssetFundPersister assetFunds = new AssetFundPersister(connectionString);
+			return assetFunds.LoadAssetFundsLightForCompanyID( companyCode);
+        }
+*/
+
+/* Deprecated
+        /// <summary>
+        /// Lightweight asset fund load
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="fundGroupID"></param>
+        /// <returns></returns>
+        public AssetFundCollection LoadAssetFundsLight(string connectionString, int fundGroupID)
+        {
+            AssetFundPersister assetFunds = new AssetFundPersister(connectionString);
+            return assetFunds.LoadAssetFundsLightForFundGroupID(fundGroupID);
+        }
+*/
+
+		/// <summary>
+		/// Lightweight asset fund load (static data)
+		/// </summary>
+		/// <param name="connectionString"></param>
+		/// <param name="assetFundID"></param>
+		/// <returns></returns>
+		public  static AssetFund LoadAssetFundLight(string connectionString, string assetFundID)
+		{
+			AssetFundStaticDataPersister persister = new AssetFundStaticDataPersister(connectionString);
+			return persister.Load(assetFundID);
+		}
+
+		/// <summary>
+		/// Lightweight asset fund load (static data)
+		/// </summary>
+		/// <param name="connectionString"></param>
+		/// <param name="companyCode"></param>
+		/// <returns></returns>
+		public static AssetFundCollection LoadAssetFundsByCompanyIdForStaticDataExport(string connectionString, string companyCode)
+		{
+			AssetFundStaticDataExportPersister persister = new AssetFundStaticDataExportPersister(connectionString);
+			return persister.LoadForCompany(companyCode);
+		}
+
+		/// <summary>
+		/// Get a collection of the asset funds from the database for a specified company
+		/// </summary>
+		/// <param name="connectionString">Valid database connection string</param>
+		/// <param name="companyCode">The ID of the company for which the funds are to be retrieved</param>
+		/// <param name="currentWeightings">Extract the most recent weightings<br />
+		/// <list type="bullet">
+		/// <item>
+		/// <description>Pass in a value of <code>true</code> will extract the most recent weightings overriding any 
+		/// indices that have authorised where there are more recent values</description>
+		/// </item>
+		/// <list type="bullet">
+		/// <listheader>
+		/// <description>Pass in a value of <code>false</code> will either</description>
+		/// </listheader>
+		/// <item>
+		/// <description>Extract weightings for authorised indices only.</description>
+		/// </item>
+		/// <item>
+		/// <description>Or, when there are no authorised indices for the most recent weightings</description>
+		/// </item>
+		/// </list>
+		/// </list>
+		/// </param>
+		/// <returns>A collection of asset fund objects</returns>
+		public  static AssetFundCollection LoadAssetFunds(string connectionString, string companyCode, bool currentWeightings)
+		{
+			AssetFundPricingPersister assetFunds = new AssetFundPricingPersister(connectionString);
+			return assetFunds.LoadForCompany(companyCode, currentWeightings);
+		}
+
+		/// <summary>
+		/// Get a collection of the asset funds from the database for a specified fund group
+		/// </summary>
+		/// <param name="connectionString">Valid DB connection string</param>
+		/// <param name="fundGroupID">The ID of the fund group for which the funds are to be retrieved</param>
+		/// <param name="currentWeightings">Extract the most recent weightings<br />
+		/// <list type="bullet">
+		/// <item>
+		/// <description>Pass in a value of <code>true</code> will extract the most recent weightings overriding any 
+		/// indices that have authorised where there are more recent values</description>
+		/// </item>
+		/// <list type="bullet">
+		/// <listheader>
+		/// <description>Pass in a value of <code>false</code> will either</description>
+		/// </listheader>
+		/// <item>
+		/// <description>Extract weightings for authorised indices only.</description>
+		/// </item>
+		/// <item>
+		/// <description>Or, when there are no authorised indices for the most recent weightings</description>
+		/// </item>
+		/// </list>
+		/// </list>
+		/// </param>
+		/// <returns>A collection of asset fund objects</returns>
+		public static AssetFundCollection LoadAssetFunds(string connectionString, int fundGroupID, bool currentWeightings)
+		{
+			AssetFundPricingPersister assetFunds = new AssetFundPricingPersister(connectionString);
+			return assetFunds.Load(fundGroupID, currentWeightings);
+		}
+
+		/// <summary>
+		/// Get the passed asset fund
+		/// </summary>
+		/// <param name="connectionString"></param>
+		/// <param name="assetFundID"></param>
+		/// <param name="currentWeightings"></param>
+		/// <returns></returns>
+		public  static AssetFund LoadAssetFund(string connectionString, string assetFundID, bool currentWeightings)
+		{
+			AssetFundPricingPersister persister = new AssetFundPricingPersister(connectionString);
+			return persister.Load(assetFundID, currentWeightings);
+		}
+
+		/*
+		 * TODO - this needs to be deprecated but import still using it
+		 * 
+		 */
+
+		/// <summary>
+		/// Return a list of all the valid stock market indices
+		/// </summary>
+		/// <param name="connectionString">Valid DB connection string</param>
+		/// <returns type="MarketIndexCollection">A stock market index collection object</returns>
+		public  static StockMarketCollection LoadStockMarketIndices(string connectionString)
+		{
+			return LookupController.LoadStockMarketIndices(connectionString);
+		}
+
+		#endregion
+
+		#region Load lookup data
+
+		/// <summary>
+		/// Method to get a list of all the countries held in the DB
+		/// </summary>
+		/// <param name="connectionString">Valid DB connection string</param>
+		/// <returns type="CountryCollection">A country collection object</returns>
+		public static CountryCollection LoadCountries(string connectionString)
+		{
+			CountryPersister countries = new CountryPersister(connectionString);
+			return countries.LoadCountries();
+		}
+
+		/// <summary>
+		/// Loads the all available benchmarks.
+		/// </summary>
+		/// <param name="connectionString">Connection string.</param>
+		/// <returns></returns>
+		public static AssetMovementConstituentCollection LoadAllAvailableBenchmarks(string connectionString)
+		{
+			T.E();
+			AssetMovementConstituentCollection parts = null;
+
+			try
+			{
+				AssetMovementConstituentPersister amcp=new AssetMovementConstituentPersister(connectionString);
+				parts = amcp.LoadAllBenchmarks();
+			}
+			finally
+			{
+				T.X();
+			}
+			return parts;
+		}
+
+
+
+		#endregion
+
+		#region Update methods
+
+		/// <summary>
+/// Persist light asset fund data back to the database
+/// </summary>
+/// <param name="connectionString"></param>
+/// <param name="assetFunds"></param>
+		public static void UpdateAssetFunds(string connectionString, AssetFundCollection assetFunds)
+		{
+			T.E();
+			try
+			{
+				AssetFundStaticDataPersister updateAssetFunds = new AssetFundStaticDataPersister(connectionString);
+				updateAssetFunds.Save(assetFunds);
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+		/// <summary>
+		/// Saves a singular asset fund
+		/// </summary>
+		/// <param name="connectionString"></param>
+		/// <param name="assetFund"></param>
+		public static void UpdateAssetFund(string connectionString, AssetFund assetFund)
+		{
+			T.E();
+			try
+			{
+				AssetFundStaticDataPersister updateAssetFunds = new AssetFundStaticDataPersister(connectionString);
+				updateAssetFunds.Save(assetFund);
+			}
+			finally
+			{
+				T.X();
+			}
+		}
+
+		/// <summary>
+		/// Todo - should the child funds collection be a property on the asset fund?
+		/// </summary>
+		/// <param name="connectionString"></param>
+		/// <param name="assetFund"></param>
+		/// <param name="childFunds"></param>
+		public  static void UpdateAssetFundAndChildFunds(string connectionString, AssetFund assetFund, FundCollection childFunds)
+		{
+			T.E();
+			SqlTransaction newTrans;
+			InvalidFactorException factorEx = null;
+			try
+			{
+				using (SqlConnection newConnection = new SqlConnection(connectionString))
+				{
+					// Establish the transaction object
+					newConnection.Open();
+					newTrans = newConnection.BeginTransaction();
+					AssetFundStaticDataPersister updateAssetFunds = new AssetFundStaticDataPersister(connectionString);
+					try
+					{
+						updateAssetFunds.Save(assetFund, newTrans);
+						if (childFunds != null && childFunds.Count > 0)
+						{
+							FundStaticDataPersister fundPersister = new FundStaticDataPersister(connectionString);
+							try
+							{
+								fundPersister.SaveFunds(childFunds, newTrans);
+							}
+							catch (InvalidFactorException ex)
+							{
+								//if we get this we still want to commit the transaction, but
+								//we want rethrow it in order to inform calling client who can then inform the user
+								//through the UI.
+								//Once UI validation is completed we could remove this and just always 
+								//treat this as an error and always fail.
+								factorEx = ex;
+							}
+
+						}
+						newTrans.Commit();
+					}
+					catch (Exception ex)
+					{
+						newTrans.Rollback();
+						throw ex;
+					}
+				}
+
+			}
+			finally
+			{
+				T.X();
+			}
+			if (factorEx != null)
+			{
+				throw factorEx;
+			}
+		}
+
+		/* Deprecated
+		 * 
+        /// <summary>
+        /// Update the asset fund market value split indices
+        /// </summary>
+        /// <remarks>The update will mimmick a data import, thus requireing an import ID</remarks>
+        /// <remarks>
+        /// Three steps need to be carried out;
+        ///     1. Capture the import ID
+        ///     2. Insert the maket value split values
+        ///     3. Activate the market value split
+        /// </remarks>
+        /// <param name="connectionString">Valid conneciton string</param>
+        /// <param name="indices">collection of market value split indices</param>
+        /// <param name="indexSourceName">The name to be applied for the new/updated asset fund index weighted values</param>
+        public bool UpdateMarketValueSplit(string connectionString, 
+            AssetFundIndexWeightedCollection indices, string indexSourceName)
+        {
+			T.E();
+			string messageText;
+			bool successFlag = false;
+			int importReference;
+
+			try
+			{
+                
+				SqlTransaction newTrans;
+				AssetFundIndexWeightedPersister updateIndices = null;
+            
+				// Establish connection
+				// This will generate its own internal FINALLY statement which will dispose
+				// of the connection correctly, thus reducing our own code!
+				using ( SqlConnection newConnection = new SqlConnection( connectionString ) )
+				{                
+					// Establish the transaction object
+					newConnection.Open();
+					newTrans = newConnection.BeginTransaction();
+					try
+					{               
+
+						// First, create a new import reference in the database and capture the ID
+						// Sorry about the different ways of caprturing the success flag, this
+						// was already in place :-)
+						ImportPersister importSource = new ImportPersister( connectionString );
+						importReference = importSource.SaveImportSource(out successFlag, indexSourceName, newTrans);
+                        
+						// Second, save the market value splits
+						if ( successFlag ) 
+						{
+							updateIndices = new AssetFundIndexWeightedPersister(connectionString);
+
+							updateIndices.SnapshotID = importReference;
+							updateIndices.Save(indices, newTrans);
+						}
+
+						// Third, activate the newly updated weighted indices
+						successFlag = updateIndices.ActivateWeightedIndices(newTrans, importReference);
+
+						// Now, commit changes through to the database
+						if ( successFlag )
+						{
+							newTrans.Commit();
+						}
+						else
+						{
+							newTrans.Rollback();
+							messageText = "The market value split data could not be saved to the database.";
+							throw new DatabaseException( messageText, "State = " + newTrans.Connection.State.ToString() );
+						}
+					}
+					catch(DatabaseException)
+					{
+						// Attempt to rollback the transaction
+						try
+						{
+							newTrans.Rollback();
+							throw;      //  This will simply send the database exception back to the client
+						}
+						catch (SqlException sqlEx)
+						{
+							// Trap any rollBack exceptions
+							if ( null != newTrans.Connection )
+							{
+								messageText = "An exception of type {0} was encountered while attempting to roll back the transaction.";
+                                throw new TransactionRollbackException(String.Format(messageText, sqlEx.GetType()), "State = " + newTrans.Connection.State.ToString(), sqlEx);
+							}
+						}
+					}
+				}
+			}
+			finally
+			{
+				T.X();
+			}
+
+            return successFlag;
+        }
+		*/
+
+		#endregion 
+
+		#region Validation Methods
+
+		/// <summary>
+		/// Indicates what type of error occurred 
+		/// </summary>
+		public enum AssetFundFieldValidationError
+		{
+			/// <summary>
+			/// no error occurred
+			/// </summary>
+			NoError,
+			/// <summary>
+			/// a required field was not completed
+			/// </summary>
+			FieldEmpty,
+			/// <summary>
+			/// a unique field already exists in db
+			/// </summary>
+			DuplicateField
+		}
+
+		/// <summary>
+		/// Indicates the type of market split error
+		/// </summary>
+		public enum MarketSplitProportionValidationError
+		{
+			/// <summary>
+			///No error occurred 
+			/// </summary>
+			NoError,
+			/// <summary>
+			/// market splits proportion total is less than 100%
+			/// </summary>
+			lessThan100Percent,
+			/// <summary>
+			/// market splits proportion total is greater than 100%
+			/// </summary>
+			moreThan100Percent,
+			/// <summary>
+			/// a weighting must be valid to 4dp (6dp as a ratio)
+			/// </summary>
+			invalidNumDecimalPlaces
+		}
+
+		/// <summary>
+		/// validation enum for tolerance validation
+		/// </summary>
+		public enum ToleranceValidationError
+		{
+			/// <summary>
+			/// no error occurred
+			/// </summary>
+			NoError,
+			/// <summary>
+			/// value higher than max
+			/// </summary>
+			maxToleranceExceeded,
+			/// <summary>
+			/// tolerance must be provided
+			/// </summary>
+			toleranceNegative,
+			/// <summary>
+			/// tolerance must be to 2dp
+			/// </summary>
+			invalidNumDecimalPlaces
+		}
+
+		private  static ToleranceValidationError validateTolerance(decimal tolerance)
+		{
+			T.E();
+			ToleranceValidationError tolError = ToleranceValidationError.NoError;
+			try
+			{
+				if (tolerance < 0)
+				{
+					tolError = ToleranceValidationError.toleranceNegative;
+				}
+				else if (tolerance > MaxTolerance)
+				{
+					tolError = ToleranceValidationError.maxToleranceExceeded;
+				}
+					//note for next line that we store tolerance as a ratio not a percentile (is to 4dp percentile)
+				else if (tolerance != decimal.Parse(tolerance.ToString("#0.000000")))
+				{
+					tolError = ToleranceValidationError.invalidNumDecimalPlaces;
+				}
+			}
+			finally
+			{
+				T.X();
+			}
+			return tolError;
+		}
+
+		/// <summary>
+		/// The maximum upper tolerance allowed
+		/// </summary>
+		public static decimal MaxTolerance
+		{
+			get
+			{
+				return 99.999M; //9999.9%
+			}
+		}
+
+		/// <summary>
+		/// Validates that the short name is ok, the full name is ok, and that the market splits total 100%
+		/// Precondition - full name and short name max length is validated prior to here (by restricting text field in UI)
+		/// </summary>
+		/// <param name="connection"></param>
+		/// <param name="updatedAssetFund"></param>
+		/// <param name="fullNameError"></param>
+		/// <param name="shortNameError"></param>
+		/// <param name="assetMovementToleranceError"></param>
+		/// <param name="mktSplitProportionError"></param>
+		/// <returns></returns>
+		public static bool ValidateUpdatedAssetFund(string connection, AssetFund updatedAssetFund,
+		                                     out AssetFundFieldValidationError fullNameError,
+		                                     out AssetFundFieldValidationError shortNameError,
+		                                     out ToleranceValidationError assetMovementToleranceError,
+		                                     out MarketSplitProportionValidationError mktSplitProportionError)
+		{
+			T.E();
+			bool isValid = true;
+			fullNameError = AssetFundFieldValidationError.NoError;
+			shortNameError = AssetFundFieldValidationError.NoError;
+			assetMovementToleranceError = ToleranceValidationError.NoError;
+			mktSplitProportionError = MarketSplitProportionValidationError.NoError;
+			try
+			{
+				bool fullNameExists = false;
+				bool shortNameExists = false;
+				AssetFundStaticDataPersister afPersister = new AssetFundStaticDataPersister(connection);
+				afPersister.CheckFullNameOrShortNameDuplicationForExistingAssetFund(updatedAssetFund.AssetFundCode,
+				                                                                    updatedAssetFund.FullName, updatedAssetFund.ShortName, out fullNameExists, out shortNameExists);
+
+				if (updatedAssetFund.FullName.Length == 0)
+				{
+					isValid = false;
+					fullNameError = AssetFundFieldValidationError.FieldEmpty;
+				}
+				else if (fullNameExists)
+				{
+					isValid = false;
+					fullNameError = AssetFundFieldValidationError.DuplicateField;
+				}
+
+				if (updatedAssetFund.ShortName.Length == 0)
+				{
+					isValid = false;
+					shortNameError = AssetFundFieldValidationError.FieldEmpty;
+
+				}
+				else if (shortNameExists)
+				{
+					isValid = false;
+					shortNameError = AssetFundFieldValidationError.DuplicateField;
+				}
+
+				assetMovementToleranceError = validateTolerance(updatedAssetFund.AssetMovementTolerance);
+				if (assetMovementToleranceError != ToleranceValidationError.NoError)
+				{
+					isValid = false;
+				}
+
+				mktSplitProportionError = ValidateMarketValueSplit(updatedAssetFund);
+				if (mktSplitProportionError != MarketSplitProportionValidationError.NoError)
+				{
+					isValid = false;
+				}
+			}
+			finally
+			{
+				T.X();
+			}
+			return isValid;
+
+		}
+
+		/// <summary>
+		/// Validates data for the creation of a new asset fund. Accepts param data
+		/// rather than an object as type also requires validation.
+		/// Precondition - maxlength of fields validated in UI.
+		/// </summary>
+		/// <param name="connection"></param>
+		/// <param name="assetFundID"></param>
+		/// <param name="fullName"></param>
+		/// <param name="shortName"></param>
+		/// <param name="assetFundIDError"></param>
+		/// <param name="fullNameError"></param>
+		/// <param name="shortNameError"></param>
+		/// <returns></returns>
+		public  static bool ValidateNewAssetFund(string connection, string assetFundID, string fullName, string shortName,
+		                                 out AssetFundFieldValidationError assetFundIDError,
+		                                 out AssetFundFieldValidationError fullNameError,
+		                                 out AssetFundFieldValidationError shortNameError)
+			//out bool weightedMovementsOK)
+		{
+//											WeightedMovementCollection weightedMovements,
+
+			T.E();
+			bool isValid = true;
+			//weightedMovementsOK = true;
+			assetFundIDError = AssetFundFieldValidationError.NoError;
+			fullNameError = AssetFundFieldValidationError.NoError;
+			shortNameError = AssetFundFieldValidationError.NoError;
+			try
+			{
+				//afTypeOK = true; //afType != AssetFundFactory.AssetFundType.unknown
+
+				AssetFundPricingPersister afPersister = new AssetFundPricingPersister(connection);
+
+				bool assetFundIDEXists;
+				bool fullNameExists;
+				bool shortNameExists;
+
+				afPersister.CheckAssetFundExistence(assetFundID, fullName, shortName, out assetFundIDEXists, out fullNameExists, out shortNameExists);
+
+				if (assetFundID.Length == 0)
+				{
+					isValid = false;
+					assetFundIDError = AssetFundFieldValidationError.FieldEmpty;
+				}
+				else if (assetFundIDEXists)
+				{
+					isValid = false;
+					assetFundIDError = AssetFundFieldValidationError.DuplicateField;
+				}
+
+
+				if (fullName == null || fullName.Length == 0)
+				{
+					isValid = false;
+					fullNameError = AssetFundFieldValidationError.FieldEmpty;
+				}
+				else if (fullNameExists)
+				{
+					isValid = false;
+					fullNameError = AssetFundFieldValidationError.DuplicateField;
+				}
+
+				if (shortName == null || shortName.Length == 0)
+				{
+					isValid = false;
+					shortNameError = AssetFundFieldValidationError.FieldEmpty;
+
+				}
+				else if (shortNameExists)
+				{
+					isValid = false;
+					shortNameError = AssetFundFieldValidationError.DuplicateField;
+				}
+
+			}
+			finally
+			{
+				T.X();
+			}
+			return isValid;
+		}
+
+		/// <summary>
+		/// Validate the market value split proportion value of the asset fund weighted
+		/// indices.  This will ensure the sum of the proportion value adds up to 100%. 
+		/// Note that this can only be validated for an updated asset fund - a new asset fund
+		/// cannot have mv splits as its type has not been decide upon until saved
+		/// </summary>
+		/// <param name="updatedAssetFund"></param>
+		/// <returns></returns>
+		public  static MarketSplitProportionValidationError ValidateMarketValueSplit(AssetFund updatedAssetFund)
+		{
+			MarketSplitProportionValidationError retValue = MarketSplitProportionValidationError.NoError;
+			decimal proportionSum = 0;
+			T.E();
+			try
+			{
+//				if (!(updatedAssetFund is CompositeAssetFund))
+//				{
+					proportionSum = updatedAssetFund.AssetMovementConstitute.TotalProportion();
+					
+							
+					//WeightedIndex wIdx = (WeightedIndex) marketIndices[i];
+					//								try
+					//								{
+					//									if (wIdx.ProportionPercentage != decimal.Parse(wIdx.ProportionPercentageDisplay))
+					//									{
+					//										retValue = MarketSplitProportionValidationError.invalidNumDecimalPlaces;
+					//										break;
+					//									}
+					//								}
+					//								catch
+					//								{
+					//								}
+							
+
+					if (retValue == MarketSplitProportionValidationError.NoError)
+					{
+						if (proportionSum < 1)
+						{
+							retValue = MarketSplitProportionValidationError.lessThan100Percent;
+						}
+						else if (proportionSum > 1)
+						{
+							retValue = MarketSplitProportionValidationError.moreThan100Percent;
+						}
+					}
+				}
+				//					}
+				//					else
+				//					{
+				//						//when the user updates they must provide some market value splits
+				//						retValue = MarketSplitProportionValidationError.lessThan100Percent;
+				//					}
+//			}
+		
+			finally
+			{
+				T.X();
+			}
+
+			return retValue;
+		}
+
+		#endregion
+
+		/// <summary>
+		/// Updates the movement constituents.
+		/// </summary>
+		/// <param name="parts">Parts.</param>
+		/// <param name="fund">Fund.</param>
+		/// <param name="connectionString">Connection string.</param>
+		public static void UpdateMovementConstituents(AssetMovementConstituentCollection parts, AssetFund fund, string connectionString)
+		{
+			throw new NotImplementedException();
+		}
+	}
+}

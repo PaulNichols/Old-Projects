@@ -1,0 +1,315 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spD_tblCategory - Calling this stored procedure using Visual C# .NET
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spD_tblCategory
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Calling this stored procedure using Visual C# .NET
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+				<div class="MainBody">
+					You will find next a sample of code written in Visual C# .NET that will
+					allows you to call the classes responsible for executing the stored procedure
+					[spD_tblCategory].
+				</div>
+				<br>
+				<div class="MainBody">
+					This stored procedure was automatically generated
+					and allows you to delete some records from the [<a href="../Tables/HowTo_Delete/tblCategory_Overview.htm">tblCategory</a>] table.
+				<br>
+				<br>
+			To read an overview on this stored procedure, click <a href="../Tables/HowTo_Delete/tblCategory_Overview.htm">here</a>.<br>
+			To see an example on how to call this class in Visual Basic .NET, click <a href="spD_tblCategory_VB.htm">here</a>.<br>
+				</div>
+				<br>
+			</blockquote>
+			<hr>
+			<div class="MainTitle">
+				The basics
+			</div>
+			<blockquote>
+				<div class="MainBody">
+					Basically, the concept of thoses classes is the following:
+					<UL>
+						<LI>
+							<div class="FixedMainTitle">
+								<b>OlymarsDemo.DataClasses.Parameters.spD_tblCategory</b>: 
+							</div>
+							<div class="FixedMainBody">
+								this class is responsible for taking the stored procedure parameters value and will let
+								you retrieve the output parameters (including the Return Value) once the call to the stored
+								procedure has been made;
+							</div>
+							<br>
+						</LI>
+						<LI>
+							<div class="FixedMainTitle">
+								<b>OlymarsDemo.DataClasses.StoredProcedures.spD_tblCategory</b>: 
+							</div>
+							<div class="FixedMainBody">
+								this class is responsible for executing the stored procedure itself.
+							</div>
+						</LI>
+					</UL>
+				</div>
+				<br>
+				<div class="MainBody">
+					In order to execute this stored procedure, we need to execute the four following steps:
+					<UL>
+						<LI>
+							Make a reference to the correct assembly (from Visual Studio.NET or from the compiler command line);
+						</LI>
+						<LI>
+							Add some directives so that the code is more easy to read;
+						</LI>
+						<LI>
+							Use the "Parameter" class;
+						</LI>
+						<LI>
+							Execute the "Stored Procedure" class and then retrieve back some data (if available);
+						</LI>
+					<UL>
+				</div>
+				<br>
+			</blockquote>
+			<hr>
+			<div class="MainTitle">
+				Step by step tutorial
+			</div>
+			<blockquote>
+				<div class="MainTitle">
+					First Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						If you are in Visual Studio.NET, make a reference to the following
+						assembly: "OlymarsDemo.dll".
+					</div>
+					<br>
+					<div class="MainBody">
+						If you are using the compiler, be sure to add a "/r:" switch pointing
+						on the following assembly: "OlymarsDemo.dll".
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Second Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						add thoses directives at the top of your code:
+					</div>
+					<div class="Code">
+						using System.Data.SqlClient;<br>
+						using OlymarsDemo.DataClasses;<br>
+						using Params = OlymarsDemo.DataClasses.Parameters;<br>
+						using SPs = OlymarsDemo.DataClasses.StoredProcedures;<br>
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Third Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						We are going now to initialize the "Parameter" class:
+					</div>
+					<br>
+					<div class="Comment">
+						// Let's instanciate the correct parameter object for this stored<br>
+						// procedure.<br>
+						//<br>
+						// By using True in the constructor, we indicate to the class<br>
+						// that if we do NOT supply values for some of the stored procedure<br>
+						// parameters, it means that it should use the stored procedure<br>
+						// parameters default values instead.
+					</div>
+					<div class="Code">
+						Params.spD_tblCategory Param = new Params.spD_tblCategory(true);
+					</div>
+					<br>
+					<a name="Connection"></a>
+					<div class="Comment">
+						// Let's define on which server and database we want to<br>
+						// execute this stored procedure.<br>
+						//<br>
+						// A helper function is available to you if you need to build<br>
+						// a valid connection string.<br>
+						// If a blank connection string is supplied, the class will search for:<br>
+						//<br>
+						// &nbsp;&nbsp;First an entry in the configuration file:<br>
+						// &nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;<br>
+						// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;appSettings&gt;<br>
+						// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;add key="OlymarsDemo ConnectionString" value="..." /&gt;<br>
+						// &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/appSettings&gt;<br>
+						// &nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;<br>
+						//<br>
+						// &nbsp;&nbsp;Then the following registry entry:<br>
+						// &nbsp;&nbsp;&nbsp;&nbsp;-Key: HKEY_LOCAL_MACHINE\SOFTWARE\ConnectionStrings\OlymarsDemo<br>
+						// &nbsp;&nbsp;&nbsp;&nbsp;-String Value: ConnectionString<br>
+						// <br>
+						// To see the documentation on how to build this connection string,<br>
+						// <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a><br>
+						//<br>
+						// You can also supply a valid SqlConnection or<br>
+						// a valid SqlTransaction object.
+					</div>
+					<div class="Code">
+						<br>
+						<div class="FixedComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// First case: you can supply a connection string</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string ConnectionString = Information.BuildConnectionString("MAINSERVER\MAINSERVER", "OlymarsDemo");<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Param.SetUpConnection(ConnectionString);<br>
+						<br>
+						<div class="FixedComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Second case: you can supply a valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemdatasqlclientsqlconnectionclasstopic.htm">SqlConnection</a> object</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SqlConnection sqlConnection = new SqlConnection(ConnectionString);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlConnection.Open();<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Param.SetUpConnection(sqlConnection);<br>
+						<br>
+						<div class="FixedComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Third case: you can supply a valid <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">SqlTransaction</a> object</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SqlConnection sqlConnection = new SqlConnection(ConnectionString);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlConnection.Open();<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SqlTransaction sqlTransaction = sqlConnection.BeginTransaction();<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Param.SetUpConnection(sqlTransaction);<br>
+						<div class="FixedComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Note: you can call sqlTransaction.Commit()</br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// or sqlTransaction.Rollback() after the call.</div>
+					</div>
+					<br>
+					<div class="Comment">
+						// You can specify a command time-out. The default value is 15 seconds.
+					</div>
+					<div class="Code">
+						Param.CommandTimeOut = 60;
+					</div>
+					<br>
+					<div class="Comment">
+						// You can now set some or all the stored procedure parameters.<br>
+						// If a parameter is not set, it will be consider as Null when<br>
+						// supplied to the stored procedure.
+					</div>
+					<br>
+					<div class="Comment">
+						// TODO: Supply your own value here. Type must be:<br>
+						// either System.Data.SqlTypes.SqlInt32<br>
+						//     or System.Int32<br>
+						
+						<br>//<br>
+						// If you want to supply the SQL Server Null value, please use:<br>
+						// System.Data.SqlTypes.SqlInt32.Null<br>
+						//<br>
+						// If instead, you want to use the stored procedure parameter<br>
+						// default value (if present) and because we have instanciated<br>
+						// this class using True for the 'useDefaultValue' parameter in the<br>
+						// constructor, all you have to do is NOT TO ASSIGN this parameter<br>
+						// value.<br>
+						//<br>
+						// Param.Param_Cat_LngID = ...;
+					</div>
+					<br>
+				</blockquote>
+				<div class="MainTitle">
+					Last Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Now let's execute the stored procedure itself
+						and retrieve back the ReturnValue/Output parameters:
+					</div>
+					<br>
+					<div class="Comment">
+						// Let's now instanciate the corresponding stored procedure object.<br>
+						<br>
+						// <b>false</b> means that we do not want the Execute method to throw any<br>
+						// exception but instead we want to get a boolean return status.
+					</div>
+					<div class="Code">
+						SPs.spD_tblCategory SP = new SPs.spD_tblCategory(false);
+					</div>
+					<br>
+					<div class="Comment">
+						// You can now execute the stored procedure.
+					</div>
+					<div class="Code">
+						if (SP.Execute(ref Param)) {<br>
+						<br>
+							<div class="FixedComment">
+								&nbsp;&nbsp;&nbsp;&nbsp;// You can now retrieve the RETURN_VALUE<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;// and all the Input/Output parameters.
+							</div>
+							&nbsp;&nbsp;&nbsp;&nbsp;if (!Param.Param_RETURN_VALUE.IsNull) {<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... = Param.Param_RETURN_VALUE.Value;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}
+							<br>
+						}<br>
+						else {<br>
+						<br>
+							<div class="FixedComment">
+								&nbsp;&nbsp;&nbsp;&nbsp;// At this level, an exception has occured. Every "Parameter"<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;// object implements the same interface which is IParameter.<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;// We can get back this interface and find out exactly what<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;// kind of error has occured and at what level of the <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;// process this exception occured.<br>
+							</div>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;IParameter ParameterInfo = Param;<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;switch (ParameterInfo.ErrorSource) {<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case ErrorSource.ConnectionInitialization:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ParameterInfo.SqlException.ToString());<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case ErrorSource.ParametersSetting:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ParameterInfo.SqlException.ToString());<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case ErrorSource.ConnectionOpening:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ParameterInfo.SqlException.ToString());<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case ErrorSource.QueryExecution:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ParameterInfo.SqlException.ToString());<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case ErrorSource.ParametersRetrieval:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ParameterInfo.SqlException.ToString());<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case ErrorSource.Other:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(ParameterInfo.OtherException.ToString());<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+						}<br>
+						<br>
+						<div class="FixedComment">
+							// Now, you can dispose those objects.
+						</div>
+						Param.Dispose();<br>
+						SP.Dispose();<br>
+					</div>
+				</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

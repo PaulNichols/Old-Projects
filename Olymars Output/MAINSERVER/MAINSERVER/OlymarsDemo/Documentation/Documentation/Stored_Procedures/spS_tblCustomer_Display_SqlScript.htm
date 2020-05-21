@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_tblCustomer_Display - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_tblCustomer_Display
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+Create Procedure [spS_tblCustomer_Display]<br>
+				<br>
+				(<br>
+				 @Cus_LngID [int] = Null -- for [tblCustomer].[Cus_LngID] column<br>
+				)<br>
+				<br>
+				-- Returns the number of records found<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				 [tblCustomer_Records].[ID1]<br>
+				,[tblCustomer_Records].[Display]<br>
+				<br>
+				From [fntblCustomer_Display](@Cus_LngID) As [tblCustomer_Records]<br>
+				<br>
+				Order By<br>
+				[tblCustomer_Records].[Display]<br>
+				<br>
+				Return(@@RowCount)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Function">
+		<div class="MainTitle">
+			T-SQL code for the underlying inline table-valued function used by this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Function [fntblCustomer_Display]<br>
+				(<br>
+				 @Cus_LngID [int] = Null<br>
+				)<br>
+				<br>
+				Returns Table<br>
+				<br>
+				As<br>
+				<br>
+				Return<br>
+				(<br>
+				Select<br>
+				 [Cus_LngID] As [ID1]<br>
+				,[Cus_StrLastName] + ' ' + [Cus_StrFirstName] + ' (' + [Cus_StrEmail] + ')' As [Display]<br>
+				&nbsp;&nbsp;&nbsp;<br>
+				From [dbo].[tblCustomer]<br>
+				<br>
+				Where<br>
+				    ((@Cus_LngID Is Null) Or ([Cus_LngID] = @Cus_LngID))<br>
+				)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:18
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

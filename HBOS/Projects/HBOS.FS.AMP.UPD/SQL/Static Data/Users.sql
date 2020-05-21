@@ -1,0 +1,26 @@
+BEGIN TRANSACTION
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('ELADOM01\ACCSVXH','Vincent Holt','','fsys',2005-06-14,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('ELADOM01\cpa5azn','Andy Newman','HIFM','upd',2005-03-04,1)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('ELADOM01\pdcsazb','Arun Bhardwaj','','D823889\accsbxd',2005-02-25,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('ELADOM01\pdcsmxb','Matthew Bettison','','D823889\accsbxd',2005-02-25,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('ELADOM01\pdcsrzb','Robin Baleham','','D823889\accsbxd',2005-02-25,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('ELADOM01\sspajh','Andrew Harrison','','D823889\accsbxd',2005-02-25,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('fsys','fsys','HLL       ','fsys',2005-06-17,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('guest','Guest','','upd',2005-06-13,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('KAJ','Kevin Jackson','','fsys',2005-03-09,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('system','system account','','D823889\accsbxd',2005-02-02,0)
+INSERT INTO [dbo].[Users]([loginID], [userName], [lastCompany], [lastChangedBy], [lastChangedDate], [deleted])
+VALUES('upd','generic "public" user','CMIG      ','upd',2005-06-20,0)
+GO
+COMMIT TRANSACTION
+GO

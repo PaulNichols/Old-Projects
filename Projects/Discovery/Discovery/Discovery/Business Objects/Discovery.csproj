@@ -1,0 +1,295 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F73B782-2337-4D94-9FAF-F3ACE01119B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Discovery</RootNamespace>
+    <AssemblyName>Discovery</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
+    <OutputPath>bin\Staging\</OutputPath>
+    <DocumentationFile>bin\Staging\Discovery.XML</DocumentationFile>
+    <DefineConstants>ADDRESSLOOKUP</DefineConstants>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Trung|AnyCPU' ">
+    <OutputPath>bin\Trung\</OutputPath>
+    <DocumentationFile>bin\Staging\Discovery.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'RM|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RM\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.SqlConfigurationSource, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.EnterpriseLibrary.SqlConfigurationSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solution Items\Dependencies\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\BusinessObjects\Controllers\AuditEntryController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\CommanderController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\AddressController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\ErrorTypeController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\ProfileProvider.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\RoleProvider.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\SequenceController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\DropController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\LoadCategoryController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\OpcoDivisionController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\Framework.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\LogController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\PrinterController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\TransactionSubTypeController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\TransactionTypeController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\OptrakRegionController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\OpcoController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\RouteController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\TripController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\WarehouseController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\SalesLocationController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\MappingController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\NonWorkingDayController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\RoutingController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\ShipmentController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\ShipmentLineController.cs" />
+    <Compile Include="Components\BusinessObjects\Controllers\TrunkerDayController.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\CommanderSalesOrderLine.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\CommanderSalesOrder.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\CommanderProduct.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ErrorType.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Role.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Rule.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Sequence.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\LoadCategory.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Printer.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\RoutingHistory.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\MergedShipment.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\RoutingLockDetail.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ShipmentDrop.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ShipmentDropLine.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ShipmentNote.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ShipmentSummaryByTrip.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\OpCoDivision.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ShipmentSummaryByRoute.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\TDCShipment2.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\LogEntry.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\TransactionSubType.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\TransactionType.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\SalesLocation.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\OpCo.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\OptrakRegion.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Route.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Trip.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\TrunkerDay.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Address.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\AuditEntry.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Contact.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Mapping.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\NonWorkingDay.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\OpCoShipment.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\OpCoShipmentLine.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Shipment.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ShipmentCriteria.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\ShipmentLine.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\TDCShipmentLine.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\Warehouse.cs" />
+    <Compile Include="Components\BusinessSubscribers\CommanderParsing.cs" />
+    <Compile Include="Components\BusinessSubscribers\CommanderProductMaintenanceParsing.cs" />
+    <Compile Include="Components\BusinessSubscribers\CommanderSalesOrderParsing.cs" />
+    <Compile Include="Components\BusinessSubscribers\CommanderGoodsInParsing.cs" />
+    <Compile Include="Components\BusinessSubscribers\CommanderStockParsing.cs" />
+    <Compile Include="Components\BusinessSubscribers\CommanderParsingProcessor.cs" />
+    <Compile Include="Components\BusinessSubscribers\OptrakFileSubscriber.cs" />
+    <Compile Include="Components\BusinessSubscribers\OpTrakTripPartSubscriber.cs" />
+    <Compile Include="Components\BusinessSubscribers\OpTrakTripSubscriber.cs" />
+    <Compile Include="Components\BusinessSubscribers\OpTrakDropSubscriber.cs" />
+    <Compile Include="Components\BusinessSubscribers\ShipmentCommanderMessage.cs" />
+    <Compile Include="Components\BusinessSubscribers\ShipmentMapping.cs" />
+    <Compile Include="Components\BusinessSubscribers\ShipmentParsing.cs" />
+    <Compile Include="Components\BusinessSubscribers\ShipmentValidation.cs" />
+    <Compile Include="Components\ComponentServices\Configuration\PageAuthorisation.cs" />
+    <Compile Include="Components\ComponentServices\DataAccess\DataAccessProvider.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\CommanderParsingException.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\FailedShipmentMappingException.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\FailedShipmentParsingException.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\DiscoveryEmailHandler.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\OptrakParsingException.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\InValidBusinessObjectException.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\MappingException.cs" />
+    <Compile Include="Components\ComponentServices\ExceptionHandling\InvalidAddressException.cs" />
+    <Compile Include="Components\ComponentServices\Mapping\Mapper.cs" />
+    <Compile Include="Components\ComponentServices\Parsing\TextFieldParser.cs" />
+    <Compile Include="Components\ComponentServices\QASWrapper.cs" />
+    <Compile Include="Components\ComponentServices\Scheduling\Scheduling.cs" />
+    <Compile Include="Components\ComponentServices\Scheduling\SchedulingProvider.cs" />
+    <Compile Include="Components\RequestSubscribers\Auditing.cs" />
+    <Compile Include="Components\RequestSubscribers\Routing.cs" />
+    <Compile Include="DeliveryNote.cs">
+      <DependentUpon>DeliveryNote.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Components\BusinessObjects\Entities\TDCShipment.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Components\BusinessObjects\Diagrams\Commander.cd" />
+    <None Include="Components\BusinessObjects\Diagrams\Controllers.cd" />
+    <None Include="Components\BusinessObjects\Diagrams\Delete Me.cd" />
+    <None Include="Components\BusinessObjects\Diagrams\NonWorkingDay.cd" />
+    <None Include="Components\BusinessObjects\Diagrams\NonWorkingDays.cd" />
+    <None Include="Components\BusinessObjects\Diagrams\PreRouting.cd" />
+    <None Include="Components\BusinessObjects\Diagrams\Routing.cd" />
+    <None Include="Components\BusinessObjects\Diagrams\Shipments.cd" />
+    <None Include="Components\BusinessSubscribers\Diagrams\CommanderSubscribers.cd" />
+    <None Include="Components\BusinessSubscribers\Diagrams\ShipmentCommanderSubscriber.cd" />
+    <None Include="Components\BusinessSubscribers\Diagrams\RoutingSubscribers.cd" />
+    <None Include="Components\BusinessSubscribers\Diagrams\ShipmentSubscribers.cd" />
+    <None Include="Components\ComponentServices\Diagrams\Configuration.cd" />
+    <None Include="Components\ComponentServices\Diagrams\DataAccess.cd" />
+    <None Include="Components\ComponentServices\Diagrams\ComponentServices.cd" />
+    <None Include="Components\ComponentServices\Diagrams\Parsing.cd" />
+    <None Include="Components\ComponentServices\Diagrams\Routing.cd" />
+    <None Include="Components\ComponentServices\Scheduling\Scheduling.cd" />
+    <None Include="Components\RequestSubscribers\Diagrams\Auditing.cd" />
+    <None Include="Components\RequestSubscribers\Diagrams\Routing.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data Access\ASPNET.SQLDataAccessProvider\ASPNET.SQLDataAccessProvider.csproj">
+      <Project>{92564125-45E4-41C9-A071-22618EB16DDC}</Project>
+      <Name>ASPNET.SQLDataAccessProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integration\Discovery.Integration\Discovery.Integration.csproj">
+      <Project>{E275D0E0-5C75-488B-BCB1-80DFB9AF4A7F}</Project>
+      <Name>Discovery.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestManagement\Discovery.RequestManagerClient\Discovery.RequestManagerClient.csproj">
+      <Project>{E811F3B8-5C4D-419E-8F8E-BDA0EE467163}</Project>
+      <Name>Discovery.RequestManagerClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestManagement\Discovery.RequestManager\Discovery.RequestManager.csproj">
+      <Project>{2DE01D34-8BB3-45C7-9E2F-47007157A174}</Project>
+      <Name>Discovery.RequestManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Support\Discovery.Utility\Discovery.Utility.csproj">
+      <Project>{32C42ABF-759E-45A0-BF96-E091BD2DADB1}</Project>
+      <Name>Discovery.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Support\ValidationFramework\ValidationFramework.csproj">
+      <Project>{2142749B-022E-4033-BB19-8A0436661020}</Project>
+      <Name>ValidationFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DeliveryNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeliveryNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\BusinessServices\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

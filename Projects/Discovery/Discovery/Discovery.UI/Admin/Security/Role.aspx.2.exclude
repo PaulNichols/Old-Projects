@@ -1,0 +1,112 @@
+<%@ Page Language="C#" MasterPageFile="~/Main.master" AutoEventWireup="true" CodeFile="Role.aspx.cs" Inherits="Discovery.UI.Web.Security.Role" Title="Untitled Page" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" Runat="Server">
+    <div>
+        <asp:FormView ID="FormView1" runat="server" CellPadding="4" DataSourceID="ObjectDataSource2"
+            Font-Names="Arial" Font-Size="8pt" ForeColor="#333333" Width="37px">
+            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+            <EditRowStyle BackColor="#999999" />
+            <EditItemTemplate>
+                            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update"
+                                Text="Update">
+                            </asp:LinkButton>&nbsp;|
+                            <asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                Text="Cancel">
+                            </asp:LinkButton><br />
+                <br />
+                <table>
+                    <tr>
+                        <td style="width: 131px">
+                            Role Name:</td>
+                        <td style="width: 346px">
+                            <asp:Label ID="Label2" runat="server" Text="OpcoAdministrator"></asp:Label></td>
+                    </tr>
+                </table>
+                <br />
+                <asp:GridView ID="GridView1" runat="server" 
+                     DataSourceID="ObjectDataSource3"
+                    Width="383px">
+                    
+                    <Columns>
+                        <asp:BoundField DataField="UserName" HeaderText="User Name" ReadOnly="True" SortExpression="UserName">
+                            <ItemStyle Width="66%" />
+                            <HeaderStyle Width="66%" />
+                        </asp:BoundField>
+                        <asp:TemplateField HeaderText="User Is In Role">
+                            <ItemStyle HorizontalAlign="Center" />
+                            <HeaderStyle HorizontalAlign="Center" />
+                            <ItemTemplate>
+                                <asp:CheckBox ID="CheckBox1" runat="server" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                  
+                </asp:GridView>
+            </EditItemTemplate>
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <InsertItemTemplate>
+                            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Insert"
+                                Text="Add"></asp:LinkButton>&nbsp;|
+                            <asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel"
+                                Text="Cancel">
+                            </asp:LinkButton><br />
+                <table>
+                    <tr>
+                        <td style="width: 108px">
+                            Role Name:</td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("UserName") %>' Width="252px"></asp:TextBox></td>
+                    </tr>
+                </table>
+            </InsertItemTemplate>
+            <ItemTemplate>
+    <asp:LinkButton ID="btnBack" runat="server" CausesValidation="True" CommandName="Update"
+        Font-Names="Arial" Font-Size="8pt" OnClick="btnBack_Click" Text="< Back"></asp:LinkButton>
+                |
+    <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
+        Text="Edit" Font-Names="Arial" Font-Size="8pt"></asp:LinkButton>
+                |
+    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Delete"
+        Text="Delete" Font-Names="Arial" Font-Size="8pt"></asp:LinkButton><br />
+                <br />
+    <table style="font-size: 8pt; color: #000000; font-family: Arail;">
+        <tr>
+            <td style="width: 131px">
+                Role Name:</td>
+            <td style="width: 346px">
+                &nbsp;<asp:Label ID="Label1" runat="server" Text="OpcoAdministrator"></asp:Label></td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size: 8pt; width: 331px; font-family: Arial;">
+        <tr>
+            <td style="width: 50%; color: white; background-color: #336699;" valign="top">
+                Users In Role:</td>
+        </tr>
+        <tr>
+            <td valign="top">
+                &nbsp;<asp:BulletedList ID="BulletedList1" runat="server" DataSourceID="ObjectDataSource2">
+                </asp:BulletedList>
+            </td>
+        </tr>
+    </table>
+            </ItemTemplate>
+            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        </asp:FormView>
+        <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="GetAllUsers"
+            TypeName="DiscoveryProject.SecurityController">
+        </asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetUsersInRole"
+            TypeName="DiscoveryProject.SecurityController" UpdateMethod="AddUsersToRole">
+            <UpdateParameters>
+                <asp:Parameter Name="role" Type="String" />
+                <asp:Parameter Name="users" Type="Object" />
+            </UpdateParameters>
+            <SelectParameters>
+                <asp:QueryStringParameter Name="roleName" QueryStringField="Role"
+                    Type="String" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
+        &nbsp;</div>
+</asp:Content>
+

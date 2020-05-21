@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distribution File xslt Loader", "Distribution File xslt Loader.csproj", "{25AE56D0-A1F4-4515-B2B1-97D280E6DF5D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{25AE56D0-A1F4-4515-B2B1-97D280E6DF5D}.Debug.ActiveCfg = Debug|.NET
+		{25AE56D0-A1F4-4515-B2B1-97D280E6DF5D}.Debug.Build.0 = Debug|.NET
+		{25AE56D0-A1F4-4515-B2B1-97D280E6DF5D}.Release.ActiveCfg = Release|.NET
+		{25AE56D0-A1F4-4515-B2B1-97D280E6DF5D}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

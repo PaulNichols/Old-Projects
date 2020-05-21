@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.BusinessObjects.Controllers.NonWorkingDayController">
+    <Position X="5.75" Y="5.25" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\NonWorkingDayController.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAIAAAAAAAAAEAAYCAACAgQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.NonWorkingDay">
+    <Position X="0.5" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\NonWorkingDay.cs</FileName>
+      <HashCode>AEAAAAAABAAgAAAAIBAAAAAABAAgAAAAABAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Region">
+    <Position X="5.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\Region.cs</FileName>
+      <HashCode>AEAAAAAAAAAgAAAAIAAgAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="Discovery.ComponentServices.DataAccess.DataAccessProvider">
+    <Position X="0.75" Y="5" Width="3.25" />
+    <TypeIdentifier>
+      <FileName>Components\ComponentServices\DataAccess\DataAccessProvider.cs</FileName>
+      <HashCode>gFmgQDwKJYiEVXKmg7AgEJFBEh8gKATAUQkVmxKKrl4=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.PersistableBusinessObject">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+</ClassDiagram>

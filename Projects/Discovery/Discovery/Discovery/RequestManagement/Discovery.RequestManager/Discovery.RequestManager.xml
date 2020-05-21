@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RequestController Trace="false">
+
+  <CustomSettings>
+    <Setting Name="Some Setting" Value="Some Value" />
+  </CustomSettings>
+
+  <RequestManagers>
+
+    <!-- This request manager will process messages for the main Discovery channel -->
+    <RequestManager Description="Main Discovery channel for external systems."
+                    ProcessorType="Discovery.RequestManagement.RequestProcessorMSMQ, Discovery.RequestManager"
+                    MinThreads="1"
+                    MaxThreads="10"
+                    WorkPauseSeconds=".2"
+                    ShutdownPauseSeconds=".2"
+                    ConsumeUnprocessed="true"
+                    MaxErrors="5"
+                    Enabled="true">
+
+      <CustomSettings>
+        <Setting Name="QueueName" Value="robins\discovery.main.channel" />
+      </CustomSettings>
+
+      <Subscribers>
+        <!-- Audtiting subscriber, audits all messages for this channel -->
+        <Subscriber
+              Label="SRC:RHG"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.RequestSubscribers.Auditing, Discovery"
+              StopOnFailed="false"
+              StopOnConsumed="false"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+
+          <Filters>
+            <!--  Only process this request if the destination system is not commander -->
+            <Filter
+                Label="DEST:MS"
+                Body=".*"
+                Operator="And"
+                Enabled="false"/>
+          </Filters>
+
+        </Subscriber>
+
+        <!-- Routing subscriber, used for routing specific messges to another channel -->
+        <Subscriber
+              Label="SRC:RHG"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.RequestSubscribers.Routing, Discovery"
+              StopOnFailed="false"
+              StopOnConsumed="false"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="false">
+
+          <Filters>
+            <!--  Only process this request if the destination system is not commander -->
+            <Filter
+                Label="DEST:MS"
+                Body=".*"
+                Operator="And"
+                Enabled="false"/>
+          </Filters>
+
+          <CustomSettings>
+            <!-- Route commander messages to the commander channel for processing -->
+            <Setting Name="RouteTo" Value="lspringslt\Discovery.Main.Channel" />
+          </CustomSettings>
+
+        </Subscriber>
+
+        <!--
+        **************************************************************
+        ** Shipment Parsing
+        **************************************************************
+        -->
+        <Subscriber
+              Label="(TYPE:Shipment;)"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.BusinessSubscribers.ShipmentParsing, Discovery"
+              StopOnFailed="true"
+              StopOnConsumed="true"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+        </Subscriber>
+
+        <!--
+        **************************************************************
+        ** Shipment Mapping
+        **************************************************************
+        -->
+        <Subscriber
+              Label="(TYPE:Shipment;)"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.BusinessSubscribers.ShipmentMapping, Discovery"
+              StopOnFailed="true"
+              StopOnConsumed="true"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+        </Subscriber>
+
+      </Subscribers>
+    </RequestManager>
+
+    <!-- 
+    **************************************************************
+    ** O P T R A K   C H A N N E L
+    **************************************************************
+    -->
+
+    <!-- This request manager will process messages for the main Discovery channel -->
+    <RequestManager Description="Optrak channel for external systems."
+                    ProcessorType="Discovery.RequestManagement.RequestProcessorMSMQ, Discovery.RequestManager"
+                    MinThreads="1"
+                    MaxThreads="1"
+                    WorkPauseSeconds=".2"
+                    ShutdownPauseSeconds=".2"
+                    ConsumeUnprocessed="true"
+                    MaxErrors="5"
+                    Enabled="true">
+
+      <CustomSettings>
+        <Setting Name="QueueName" Value="pnicholslt\discovery.optrakin" />
+      </CustomSettings>
+
+      <Subscribers>
+        <!-- Audtiting subscriber, audits all messages for this channel -->
+        <Subscriber
+              Label="TYPE:Optrak"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.RequestSubscribers.Auditing, Discovery"
+              StopOnFailed="false"
+              StopOnConsumed="false"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+        </Subscriber>
+
+
+        <!--
+        **************************************************************
+        ** OptrakTripSubscriber
+        **************************************************************
+        -->
+        <Subscriber
+              Label="(TYPE:Optrak;NAME:trips.txt)"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.BusinessSubscribers.OptrakTripSubscriber, Discovery"
+              StopOnFailed="true"
+              StopOnConsumed="true"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+        </Subscriber>
+
+        <!--
+        **************************************************************
+        ** OptrakDropSubscriber
+        **************************************************************
+        -->
+        <Subscriber
+              Label="(TYPE:Optrak;NAME:calls.txt)"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.BusinessSubscribers.OptrakDropSubscriber, Discovery"
+              StopOnFailed="true"
+              StopOnConsumed="true"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+        </Subscriber>
+
+        <!--
+        **************************************************************
+        ** OptrakTripPartSubscriber
+        **************************************************************
+        -->
+        <Subscriber
+              Label="(TYPE:Optrak;NAME:trippart.txt)"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.BusinessSubscribers.OptrakTripPartSubscriber, Discovery"
+              StopOnFailed="true"
+              StopOnConsumed="true"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+        </Subscriber>
+
+
+        <!--
+        **************************************************************
+        ** OptrakFileSubscriber
+        **************************************************************
+        -->
+        <Subscriber
+              Label="(TYPE:Optrak)"
+              Body=".*"
+              Operator="And"
+              Type="Discovery.BusinessSubscribers.OptrakFileSubscriber, Discovery"
+              StopOnFailed="true"
+              StopOnConsumed="true"
+              StopOnProcessed="false"
+              Instrumentation="false"
+              Enabled="true">
+        </Subscriber>
+
+      </Subscribers>
+    </RequestManager>
+
+
+  </RequestManagers>
+
+</RequestController>
+

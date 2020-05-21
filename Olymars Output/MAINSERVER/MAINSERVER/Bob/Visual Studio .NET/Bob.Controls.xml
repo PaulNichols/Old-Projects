@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<Database	name="Bob" 
+			displayName="Bob Controls"
+			windowsAssembly="C:\Documents and Settings\Administrator\My Documents\Olymars Output\MAINSERVER\MAINSERVER\Bob\Bin\Bob.dll"
+			webAssembly="C:\Documents and Settings\Administrator\My Documents\Olymars Output\MAINSERVER\MAINSERVER\Bob\Bin\Bob.dll"
+			compactFrameworkLocalAssembly="C:\Documents and Settings\Administrator\My Documents\Olymars Output\MAINSERVER\MAINSERVER\Bob\Ce\Bin\Design.Bob.Ce.dll"
+			compactFrameworkRemoteAssembly="C:\Documents and Settings\Administrator\My Documents\Olymars Output\MAINSERVER\MAINSERVER\Bob\Ce\Bin\Design.Bob.Ce.dll"
+			windowsTabName="Bob Windows controls"
+			webTabName="Bob Web controls"
+			compactFrameworkLocalTabName="Bob .NET CF Local controls"
+			compactFrameworkRemoteTabName="Bob .NET CF Remote controls">
+	<Tables>
+		<Table name="Customers">
+			<Windows>
+				<WinComboBox name="WinComboBox_Customers" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Customers" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBox_Customers" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGrid_Customers" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownList_Customers" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBox_Customers" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxList_Customers" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGrid_Customers" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeater_Customers" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataList_Customers" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBox_Customers" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Customers" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_Customers" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListView_Customers" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBox_Customers" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Customers" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_Customers" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListView_Customers" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</Table>
+		<Table name="Job">
+			<Windows>
+				<WinComboBox name="WinComboBox_Job" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Job" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBox_Job" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGrid_Job" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownList_Job" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBox_Job" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxList_Job" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGrid_Job" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeater_Job" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataList_Job" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBox_Job" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Job" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_Job" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListView_Job" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBox_Job" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Job" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_Job" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListView_Job" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</Table>
+		<Table name="JobPart">
+			<Windows>
+				<WinComboBox name="WinComboBox_JobPart" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_JobPart" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBox_JobPart" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGrid_JobPart" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownList_JobPart" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBox_JobPart" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxList_JobPart" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGrid_JobPart" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeater_JobPart" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataList_JobPart" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBox_JobPart" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_JobPart" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_JobPart" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListView_JobPart" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBox_JobPart" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_JobPart" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_JobPart" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListView_JobPart" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</Table>
+		<Table name="JobPartType">
+			<Windows>
+				<WinComboBox name="WinComboBox_JobPartType" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_JobPartType" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBox_JobPartType" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGrid_JobPartType" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownList_JobPartType" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBox_JobPartType" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxList_JobPartType" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGrid_JobPartType" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeater_JobPartType" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataList_JobPartType" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBox_JobPartType" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_JobPartType" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_JobPartType" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListView_JobPartType" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBox_JobPartType" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_JobPartType" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_JobPartType" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListView_JobPartType" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</Table>
+		<Table name="Title">
+			<Windows>
+				<WinComboBox name="WinComboBox_Title" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Title" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBox_Title" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGrid_Title" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownList_Title" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBox_Title" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxList_Title" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGrid_Title" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeater_Title" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataList_Title" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBox_Title" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Title" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_Title" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListView_Title" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBox_Title" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBox_Title" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGrid_Title" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListView_Title" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</Table>
+	</Tables>
+	<StoredProcedures>
+		<StoredProcedure name="spS_Customers">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_Customers" namespace="Bob.Windows.CheckedListBoxes" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_Customers" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_Customers" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_Customers" namespace="Bob.Web.CheckBoxLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_Customers_Full">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers_Full" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers_Full" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_Customers_Full" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Customers_Full" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_Customers_Full" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_Customers_Full" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_Customers_Full" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGridCustom_spS_Customers_Full" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeaterCustom_spS_Customers_Full" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataListCustom_spS_Customers_Full" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers_Full" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers_Full" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Customers_Full" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Customers_Full" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers_Full" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers_Full" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Customers_Full" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Customers_Full" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_Customers_SelectDisplay">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Customers_SelectDisplay" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_Customers_SelectDisplay" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_Customers_SelectDisplay" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGridCustom_spS_Customers_SelectDisplay" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeaterCustom_spS_Customers_SelectDisplay" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataListCustom_spS_Customers_SelectDisplay" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Customers_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_Job">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_Job" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_Job" namespace="Bob.Windows.CheckedListBoxes" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_Job" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_Job" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_Job" namespace="Bob.Web.CheckBoxLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_Job" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_Job" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_Job_Full">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_Job_Full" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job_Full" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_Job_Full" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Job_Full" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_Job_Full" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_Job_Full" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_Job_Full" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGridCustom_spS_Job_Full" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeaterCustom_spS_Job_Full" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataListCustom_spS_Job_Full" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_Job_Full" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job_Full" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Job_Full" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Job_Full" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_Job_Full" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job_Full" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Job_Full" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Job_Full" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_Job_SelectDisplay">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Job_SelectDisplay" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_Job_SelectDisplay" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_Job_SelectDisplay" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGridCustom_spS_Job_SelectDisplay" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeaterCustom_spS_Job_SelectDisplay" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataListCustom_spS_Job_SelectDisplay" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_Job_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_JobPart">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_JobPart" namespace="Bob.Windows.CheckedListBoxes" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_JobPart" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_JobPart" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_JobPart" namespace="Bob.Web.CheckBoxLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_JobPart_Full">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart_Full" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart_Full" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_JobPart_Full" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_JobPart_Full" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_JobPart_Full" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_JobPart_Full" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_JobPart_Full" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGridCustom_spS_JobPart_Full" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeaterCustom_spS_JobPart_Full" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataListCustom_spS_JobPart_Full" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_JobPart_Full" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_JobPart_SelectDisplay">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_JobPart_SelectDisplay" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_JobPart_SelectDisplay" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_JobPart_SelectDisplay" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGridCustom_spS_JobPart_SelectDisplay" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeaterCustom_spS_JobPart_SelectDisplay" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataListCustom_spS_JobPart_SelectDisplay" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_JobPart_SelectDisplay" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_JobPartType">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPartType" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPartType" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_JobPartType" namespace="Bob.Windows.CheckedListBoxes" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_JobPartType" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_JobPartType" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_JobPartType" namespace="Bob.Web.CheckBoxLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPartType" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPartType" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_JobPartType" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_JobPartType" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_Title">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_Title" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Title" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_Title" namespace="Bob.Windows.CheckedListBoxes" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_Title" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_Title" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_Title" namespace="Bob.Web.CheckBoxLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_Title" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Title" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_Title" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_Title" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+		<StoredProcedure name="spS_xSearchCustomer">
+			<Windows>
+				<WinComboBox name="WinComboBoxCustom_spS_xSearchCustomer" namespace="Bob.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_xSearchCustomer" namespace="Bob.Windows.ListBoxes" />
+				<WinCheckedListBox name="WinCheckedListBoxCustom_spS_xSearchCustomer" namespace="Bob.Windows.CheckedListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_xSearchCustomer" namespace="Bob.Windows.DataGrids" />
+			</Windows>
+			<Web>
+				<WebDropDownList name="WebDropDownListCustom_spS_xSearchCustomer" namespace="Bob.Web.DropDownLists" />
+				<WebListBox name="WebListBoxCustom_spS_xSearchCustomer" namespace="Bob.Web.ListBoxes" />
+				<WebCheckedBoxList name="WebCheckBoxListCustom_spS_xSearchCustomer" namespace="Bob.Web.CheckBoxLists" />
+				<WebDataGrid name="WebDataGridCustom_spS_xSearchCustomer" namespace="Bob.Web.DataGrids" />
+				<WebRepeater name="WebRepeaterCustom_spS_xSearchCustomer" namespace="Bob.Web.Repeaters" />
+				<WebDataList name="WebDataListCustom_spS_xSearchCustomer" namespace="Bob.Web.DataLists" />
+			</Web>
+			<CompactFrameworkRemote>
+				<WinComboBox name="WinComboBoxCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlServer.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlServer.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlServer.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlServer.Windows.ListViews" />
+			</CompactFrameworkRemote>
+			<CompactFrameworkLocal>
+				<WinComboBox name="WinComboBoxCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlCe.Windows.ComboBoxes" />
+				<WinListBox name="WinListBoxCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlCe.Windows.ListBoxes" />
+				<WinDataGrid name="WinDataGridCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlCe.Windows.DataGrids" />
+				<WinListView name="WinListViewCustom_spS_xSearchCustomer" namespace="Bob.Ce.SqlCe.Windows.ListViews" />
+			</CompactFrameworkLocal>
+		</StoredProcedure>
+	</StoredProcedures>
+</Database>

@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_tblOrder_Display - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_tblOrder_Display
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Procedure [spS_tblOrder_Display]<br>
+				<br>
+				(<br>
+				 @Ord_GuidID [uniqueidentifier] = Null -- for [tblOrder].[Ord_GuidID] column<br>
+				,@Ord_LngCustomerID [int] = Null -- for [tblOrder].[Ord_LngCustomerID] column<br>
+				)<br>
+				<br>
+				-- Returns the number of records found<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				 [tblOrder_Records].[ID1]<br>
+				,[tblOrder_Records].[Display]<br>
+				<br>
+				From [fntblOrder_Display](@Ord_GuidID, @Ord_LngCustomerID) As [tblOrder_Records]<br>
+				<br>
+				Order By<br>
+				[tblOrder_Records].[Display] Desc<br>
+				<br>
+				Return(@@RowCount)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Function">
+		<div class="MainTitle">
+			T-SQL code for the underlying inline table-valued function used by this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Function [fntblOrder_Display]<br>
+				(<br>
+				 @Ord_GuidID [uniqueidentifier] = Null<br>
+				,@Ord_LngCustomerID [int] = Null<br>
+				)<br>
+				<br>
+				Returns Table<br>
+				<br>
+				As<br>
+				<br>
+				Return<br>
+				(<br>
+				Select<br>
+				 [Ord_GuidID] As [ID1]<br>
+				,Convert(varchar(20), [tblOrder].[Ord_DatOrderedOn], 112) + ' ' + Convert(varchar(20), [tblOrder].[Ord_DatOrderedOn], 108) + '-&gt; ' + [Client].[Display] As [Display]<br>
+				<br>
+				From [dbo].[tblOrder]<br>
+				    Inner Join [fntblCustomer_Display](Null) [Client] On [Ord_LngCustomerID] = [Client].[ID1]<br>
+				<br>
+				Where<br>
+				    ((@Ord_GuidID Is Null) Or ([Ord_GuidID] = @Ord_GuidID))<br>
+				And ((@Ord_LngCustomerID Is Null) Or ([Ord_LngCustomerID] = @Ord_LngCustomerID))<br>
+				)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:18
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

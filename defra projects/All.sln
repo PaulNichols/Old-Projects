@@ -1,0 +1,202 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PhoenixDO", "PhoenixObjects\PhoenixDO\PhoenixDO.vbproj", "{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PhoenixBO", "devPhoenix\PhoenixBO\PhoenixBO.vbproj", "{17E67187-ED22-4F2A-891E-FE40F1C0AF24}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mydevPhoenixSecure", "http://localhost:5003/mydevPhoenixSecure.vbproj", "{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mydevPhoenixWebService", "http://localhost:5004/mydevPhoenixWebService.vbproj", "{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PhoenixReport", "devPhoenix\PhoenixReport\PhoenixReport.vbproj", "{631366A1-8D1D-495B-98F7-9CE1E786BABB}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "devPhoenixCommonCode", "http://localhost:5002/devPhoenixCommonCode/devPhoenixCommonCode.vbproj", "{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NonSSO", "devPhoenix\NonSSO\NonSSO.vbproj", "{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PhoenixControls", "devPhoenix\PhoenixControls\PhoenixControls.vbproj", "{DB80CC61-8EB2-45A8-B459-7A2C580D161F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EnterpriseObjects", "devPhoenix\Enterprise Objects\EnterpriseObjects.vbproj", "{33A904ED-DDB6-4120-8531-331D2583806C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 9
+		SccProjectUniqueName0 = PhoenixObjects\\PhoenixDO\\PhoenixDO.vbproj
+		SccProjectName0 = \u0022$/devPhoenix/devPhoenix/PhoenixDO\u0022,\u0020CCHBAAAA
+		SccLocalPath0 = PhoenixObjects\\PhoenixDO
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = devPhoenix\\PhoenixBO\\PhoenixBO.vbproj
+		SccProjectName1 = \u0022$/devPhoenix/devPhoenix/PhoenixBO\u0022,\u0020EGHBAAAA
+		SccLocalPath1 = devPhoenix\\PhoenixBO
+		SccProvider1 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName2 = http://localhost:5003/mydevPhoenixSecure.vbproj
+		SccProjectName2 = \u0022$/devPhoenix/mydevPhoenixSecure\u0022,\u0020OXTAAAAA
+		SccLocalPath2 = ..\\Web\\devPhoenixSecure
+		SccProvider2 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectEnlistmentChoice2 = 2
+		SccProjectUniqueName3 = http://localhost:5004/mydevPhoenixWebService.vbproj
+		SccProjectName3 = \u0022$/devPhoenix/mydevPhoenixWebService\u0022,\u0020PXTAAAAA
+		SccLocalPath3 = ..\\Web\\devPhoenixWebService
+		SccProvider3 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectEnlistmentChoice3 = 2
+		SccProjectUniqueName4 = devPhoenix\\PhoenixReport\\PhoenixReport.vbproj
+		SccProjectName4 = \u0022$/devPhoenix/devPhoenix/PhoenixReport\u0022,\u0020HRKCAAAA
+		SccLocalPath4 = devPhoenix\\PhoenixReport
+		SccProvider4 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName5 = http://localhost:5002/devPhoenixCommonCode/devPhoenixCommonCode.vbproj
+		SccProjectName5 = \u0022$/devPhoenix/devPhoenixCommonCode\u0022,\u0020WVRBAAAA
+		SccLocalPath5 = ..\\Web\\devPhoenix\\devPhoenixCommonCode
+		SccProvider5 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectEnlistmentChoice5 = 2
+		SccProjectUniqueName6 = devPhoenix\\NonSSO\\NonSSO.vbproj
+		SccProjectName6 = \u0022$/devPhoenix/NonSSO\u0022,\u0020EXCFAAAA
+		SccLocalPath6 = devPhoenix\\NonSSO
+		SccProvider6 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName7 = devPhoenix\\PhoenixControls\\PhoenixControls.vbproj
+		SccProjectName7 = \u0022$/devPhoenix/devPhoenix/PhoenixControls\u0022,\u0020KLMBAAAA
+		SccLocalPath7 = devPhoenix\\PhoenixControls
+		SccProvider7 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+		SccProjectUniqueName8 = devPhoenix\\Enterprise\u0020Objects\\EnterpriseObjects.vbproj
+		SccProjectName8 = \u0022$/devPhoenix/devPhoenix/Enterprise\u0020Objects\u0022,\u0020OUVBAAAA
+		SccLocalPath8 = devPhoenix\\Enterprise\u0020Objects
+		SccProvider8 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		CanCheckoutShared = false
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug - No Complie = Debug - No Complie
+		Debug Local = Debug Local
+		Debug NonSSO = Debug NonSSO
+		FMDDEV2 = FMDDEV2
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug.ActiveCfg = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug.Build.0 = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug - No Complie.ActiveCfg = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug Local.ActiveCfg = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug Local.Build.0 = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Debug NonSSO.ActiveCfg = Debug|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.FMDDEV2.ActiveCfg = Release|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.FMDDEV2.Build.0 = Release|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Release.ActiveCfg = Release|.NET
+		{8DF2BD7D-591D-45A7-A615-08B4518EDAF7}.Release.Build.0 = Release|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug.ActiveCfg = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug.Build.0 = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug - No Complie.ActiveCfg = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug Local.ActiveCfg = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug Local.Build.0 = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug NonSSO.ActiveCfg = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Debug NonSSO.Build.0 = Debug|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.FMDDEV2.ActiveCfg = Release|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.FMDDEV2.Build.0 = Release|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Release.ActiveCfg = Release|.NET
+		{17E67187-ED22-4F2A-891E-FE40F1C0AF24}.Release.Build.0 = Release|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug.ActiveCfg = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug.Build.0 = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug - No Complie.ActiveCfg = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug Local.ActiveCfg = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug Local.Build.0 = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Debug NonSSO.ActiveCfg = Debug Local|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.FMDDEV2.ActiveCfg = FMDDEV2|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.FMDDEV2.Build.0 = FMDDEV2|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Release.ActiveCfg = FMDDEV2|.NET
+		{6C00E737-9F55-49C1-A1F6-E6DBFD5CF5DA}.Release.Build.0 = FMDDEV2|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Debug.ActiveCfg = Debug Local|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Debug.Build.0 = Debug Local|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Debug - No Complie.ActiveCfg = Debug Local|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Debug Local.ActiveCfg = Debug Local|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Debug Local.Build.0 = Debug Local|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Debug NonSSO.ActiveCfg = Debug Local|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.FMDDEV2.ActiveCfg = FMDDEV2|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.FMDDEV2.Build.0 = FMDDEV2|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Release.ActiveCfg = FMDDEV2|.NET
+		{AAB190E3-8B00-45FA-A9C2-C0B741EFCDBE}.Release.Build.0 = FMDDEV2|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.Debug.ActiveCfg = Debug|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.Debug.Build.0 = Debug|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.Debug - No Complie.ActiveCfg = Debug|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.Debug Local.ActiveCfg = Debug|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.Debug NonSSO.ActiveCfg = Debug|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.FMDDEV2.ActiveCfg = Release|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.FMDDEV2.Build.0 = Release|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.Release.ActiveCfg = Release|.NET
+		{631366A1-8D1D-495B-98F7-9CE1E786BABB}.Release.Build.0 = Release|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug.ActiveCfg = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug.Build.0 = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug - No Complie.ActiveCfg = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug - No Complie.Build.0 = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug Local.ActiveCfg = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug Local.Build.0 = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug NonSSO.ActiveCfg = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Debug NonSSO.Build.0 = Debug|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.FMDDEV2.ActiveCfg = Release|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.FMDDEV2.Build.0 = Release|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Release.ActiveCfg = Release|.NET
+		{7C9FC42B-6BE0-4006-A118-4EF358D01DB1}.Release.Build.0 = Release|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug.ActiveCfg = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug.Build.0 = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug - No Complie.ActiveCfg = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug - No Complie.Build.0 = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug Local.ActiveCfg = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug Local.Build.0 = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug NonSSO.ActiveCfg = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Debug NonSSO.Build.0 = Debug|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.FMDDEV2.ActiveCfg = Release|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.FMDDEV2.Build.0 = Release|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Release.ActiveCfg = Release|.NET
+		{EB3AB1B4-B539-4DEA-BCD3-B4A19E9A9830}.Release.Build.0 = Release|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug.ActiveCfg = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug.Build.0 = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug - No Complie.ActiveCfg = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug - No Complie.Build.0 = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug Local.ActiveCfg = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug Local.Build.0 = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug NonSSO.ActiveCfg = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Debug NonSSO.Build.0 = Debug|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.FMDDEV2.ActiveCfg = Release|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.FMDDEV2.Build.0 = Release|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Release.ActiveCfg = Release|.NET
+		{DB80CC61-8EB2-45A8-B459-7A2C580D161F}.Release.Build.0 = Release|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug.ActiveCfg = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug.Build.0 = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug - No Complie.ActiveCfg = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug - No Complie.Build.0 = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug Local.ActiveCfg = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug Local.Build.0 = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug NonSSO.ActiveCfg = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Debug NonSSO.Build.0 = Debug|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.FMDDEV2.ActiveCfg = Release|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.FMDDEV2.Build.0 = Release|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Release.ActiveCfg = Release|.NET
+		{33A904ED-DDB6-4120-8531-331D2583806C}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

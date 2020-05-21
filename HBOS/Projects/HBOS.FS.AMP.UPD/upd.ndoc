@@ -1,0 +1,47 @@
+<project SchemaVersion="1.3">
+    <assemblies>
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.Controllers.dll" documentation="..\Output\HBOS.FS.AMP.UPD.Controllers.xml" />
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.Persistence.dll" documentation="..\Output\HBOS.FS.AMP.UPD.Persistence.xml" />
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.Security.dll" documentation="..\Output\HBOS.FS.AMP.UPD.Security.xml" />
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.Exceptions.dll" documentation="..\Output\HBOS.FS.AMP.UPD.Exceptions.xml" />
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.Types.dll" documentation="..\Output\HBOS.FS.AMP.UPD.Types.xml" />
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.WinUI.exe" documentation="..\Output\HBOS.FS.AMP.UPD.WinUI.xml" />
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.WinUI.Library.dll" documentation="..\Output\HBOS.FS.AMP.UPD.WinUI.Library.xml" />
+        <assembly location="..\Output\HBOS.FS.AMP.UPD.WinUI.Reports.dll" documentation="..\Output\HBOS.FS.AMP.UPD.WinUI.Reports.xml" />
+    </assemblies>
+    <namespaces>
+        <namespace name="HBOS.FS.AMP.UPD">
+    </namespace>
+    </namespaces>
+    <documenters>
+        <documenter name="JavaDoc">
+            <property name="OutputDirectory" value=".\docs\JavaDoc\" />
+        </documenter>
+        <documenter name="LaTeX">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="TextFileFullName" value="Documentation.tex" />
+            <property name="TexFileBaseName" value="Documentation" />
+            <property name="LatexCompiler" value="latex" />
+            <property name="TexFileFullPath" value=".\doc\Documentation.tex" />
+        </documenter>
+        <documenter name="LinearHtml">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="Title" value="An NDoc Documented Class Library" />
+        </documenter>
+        <documenter name="MSDN">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="HtmlHelpName" value="HBOS.FS.AMP.UPD Library Documentation" />
+            <property name="Title" value="HBOS.FS.AMP.UPD Library" />
+            <property name="IncludeAssemblyVersion" value="True" />
+            <property name="CopyrightText" value="Copyright © 2004 HBOS plc." />
+        </documenter>
+        <documenter name="VS.NET 2003">
+            <property name="OutputDirectory" value=".\doc\" />
+            <property name="HtmlHelpName" value="Documentation" />
+            <property name="Title" value="An NDoc documented library" />
+        </documenter>
+        <documenter name="XML">
+            <property name="OutputFile" value=".\doc\doc.xml" />
+        </documenter>
+    </documenters>
+</project>

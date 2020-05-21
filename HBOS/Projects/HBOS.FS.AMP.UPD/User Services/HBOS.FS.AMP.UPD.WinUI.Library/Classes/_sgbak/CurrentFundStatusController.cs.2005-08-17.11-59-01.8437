@@ -1,0 +1,776 @@
+using System;
+using System.Collections;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using HBOS.FS.AMP.UPD.Types;
+using HBOS.FS.AMP.UPD.Types.Funds;
+using HBOS.FS.AMP.UPD.WinUI.Forms;
+using HBOS.FS.AMP.UPD.WinUI.UserControls;
+using HBOS.FS.AMP.Windows.Controls;
+using HBOS.FS.Support.Tex;
+using CellDoubleClickedDelegate = HBOS.FS.AMP.Windows.Controls.DataGrid.CellDoubleClickedDelegate;
+using DataGrid = HBOS.FS.AMP.Windows.Controls.DataGrid;
+using HBOSGrid = HBOS.FS.AMP.Windows.Controls.DataGrid;
+
+namespace HBOS.FS.AMP.UPD.WinUI.Classes
+{
+
+
+	/// <summary>
+	/// This class can be used when display formating is required
+	/// </summary>
+	public class FundDecorator
+	{
+		/// <summary>
+		/// Creates a decorated object from an Fund.
+		/// </summary>
+		/// <param name="fund">Fund.</param>
+		/// <returns></returns>
+		public static FundDecorator ToDecoratedObject(Fund fund)
+		{
+			return new FundDecorator(fund);
+		}
+
+		/// <summary>
+		/// Takes a decorated object and creates an Fund.
+		/// </summary>
+		/// <param name="decoratedFund">Decorated fund.</param>
+		/// <returns></returns>
+		public static Fund FromDecoratedObject(FundDecorator decoratedFund)
+		{
+			return decoratedFund.Fund;
+		}
+
+		/// <summary>
+		/// Takes a decorated list of objects and returns an FundCollection.
+		/// </summary>
+		/// <param name="decoratedFunds">Decorated funds.</param>
+		/// <returns></returns>
+		public static FundCollection FromDecoratedList(IList decoratedFunds)
+		{
+			FundCollection returnFundCollection = new FundCollection();
+			foreach (FundDecorator decoratedFund in decoratedFunds)
+			{
+				returnFundCollection.Add(FromDecoratedObject(decoratedFund));
+			}
+
+			return returnFundCollection;
+		}
+
+		/// <summary>
+		/// From a regular to a decorated list.
+		/// </summary>
+		/// <param name="fundCollection">Fund collection.</param>
+		/// <returns></returns>
+		public static IList ToDecoratedList(IList fundCollection)
+		{
+			ArrayList returnList = new ArrayList();
+			foreach (Fund fund in fundCollection)
+			{
+				returnList.Add(ToDecoratedObject(fund));
+			}
+			return returnList;
+		}
+
+		private Fund m_fund;
+		private string m_PriceDisplay;
+		private string m_PreviousPriceDisplay;
+		private string m_fundStatus;
+		private string m_PredictedPriceDisplay;
+		private string m_PriceMovementPercentDisplay;
+		private string m_PredictedPriceMovementPercentDisplay;
+		private string m_PriceMovementVarianceDisplay;
+		private string m_AssetUnitPriceDisplay;
+		private string m_AssetMovementDisplay;
+		private string m_AssetMovementDisplay2;
+		private string m_PredictedAssetMovementDisplay;
+		private string m_AssetMovementVarianceDisplay;
+		private string m_WithinAssetMovementToleranceDisplay;
+		private string m_AssetMovementToleranceDisplay;
+		private string m_AssetMovementToleranceDisplay2;
+		private string m_UpperToleranceDisplay;
+		private string m_UpperToleranceDisplay2;
+		private string m_FullName;
+		private decimal m_AssetMovementTolerance;
+		private bool m_IsNew;
+		private bool m_IsDirty;
+		private decimal m_UpperTolerance;
+		private string m_PropertiesHeader;
+		private string m_AssetFundId;
+		private IList m_Factors;
+		private decimal m_LowerTolerance;
+		private bool m_PriceIncreaseOnly;
+		private string m_PriceMovementToleranceDisplay;
+		private string m_PriceMovementRoundedToleranceDisplay;
+		private string m_PriceMovementLowerToleranceDisplay;
+		private string m_PriceMovementUpperToleranceDisplay;
+		private string m_PriceMovementDirectionToleranceDisplay;
+		private string m_IsAuthorisedDisplay;
+		private string m_XFactorDisplay;
+		private string m_OnHiPortfolio3Display;
+		private string m_IsBenchMarkableDisplay;
+		private DateTime m_StatusChangedTime;
+
+		/// <summary>
+		/// Gets or sets the fund.
+		/// </summary>
+		/// <value></value>
+		public Fund Fund
+		{
+			get { return m_fund; }
+			set { m_fund = value; }
+		}
+
+		/// <summary>
+		/// Creates a new <see cref="FundDecorator"/> instance.
+		/// Needed for the grid to re-hydrate this object
+		/// </summary>
+		public FundDecorator()
+		{
+		}
+
+		private FundDecorator(Fund fund)
+		{
+			StatusChangedTime = fund.StatusChangedTime;
+			IsBenchMarkableDisplay = fund.IsBenchMarkable ? "Y" : "N";
+			OnHiPortfolio3Display = fund.OnHiPortfolio3 ? "Y" : "N";
+			XFactorDisplay = DisplayFormat.Percent(fund.XFactor, true); //display a zero as opposed to 'unavailable'
+			IsAuthorisedDisplay = fund.IsAuthorised ? "Y" : "N";
+			PriceMovementDirectionToleranceDisplay = fund.WithinPriceDirectionTolerance ? "Y" : "N";
+			PriceMovementUpperToleranceDisplay = fund.WithinPriceUpperTolerance ? "Y" : "N";
+			PriceMovementLowerToleranceDisplay = fund.WithinPriceLowerTolerance ? "Y" : "N";
+			PriceMovementRoundedToleranceDisplay = buildPriceMovementRoundedToleranceDisplay(fund);
+			PriceMovementToleranceDisplay = buildPriceMovementToleranceDisplay(fund);
+			LowerTolerance = fund.LowerTolerance;
+			Factors = fund.Factors;
+			UpperTolerance = fund.UpperTolerance;
+			IsNew = fund.IsNew;
+			IsDirty = fund.IsDirty;
+			Fund = fund;
+			PriceIncreaseOnly = fund.PriceIncreaseOnly;
+			FullName = fund.FullName;
+			AssetFundID = fund.ParentAssetFundID;
+			PropertiesHeader = FullName.Trim() + " Properties";
+			WithinAssetMovementToleranceDisplay = fund.WithinAssetMovementTolerance ? "Y" : "N";
+			AssetMovementTolerance = fund.AssetMovementTolerance;
+			AssetMovementToleranceDisplay = fund.WithinAssetMovementTolerance ? "Yes" : "No";
+			AssetMovementToleranceDisplay2 = DisplayFormat.Percent(fund.AssetMovementTolerance, fund.AssetMovementTolerance > 0);
+			UpperToleranceDisplay = DisplayFormat.Percent(fund.UpperTolerance, fund.UpperTolerance > 0);
+			UpperToleranceDisplay2 = DisplayFormat.Percent(fund.UpperTolerance, true);
+			AssetMovementVarianceDisplay = DisplayFormat.Percent(fund.AssetMovementVariance, fund.AssetMovementVarianceSet);
+			PriceDisplay = DisplayFormat.Decimal(fund.Price, fund.PriceSet, "#,##0.00");
+			PreviousPriceDisplay = DisplayFormat.Decimal(fund.PreviousPrice, fund.PreviousPriceSet);
+			FundStatusDisplay = fund.FundStatus.ToString();
+
+			decimal predPrice = fund.PredictedPrice;
+			PredictedPriceDisplay = DisplayFormat.Decimal(predPrice, predPrice > 0M, "#,##0.00");
+			PriceMovementPercentDisplay = DisplayFormat.Percent(fund.PriceMovementPercent, (fund.PriceSet && fund.PreviousPriceSet));
+			PredictedPriceMovementPercentDisplay = DisplayFormat.Percent(fund.PredictedPriceMovementPercent, (fund.PreviousPriceSet));
+
+			bool varianceSet = fund.PriceSet && fund.PreviousPriceSet;
+			PriceMovementVarianceDisplay = DisplayFormat.Percent(fund.PriceMovementVariance, varianceSet);
+			AssetUnitPriceDisplay = DisplayFormat.Decimal(fund.AssetUnitPrice, fund.AssetUnitPriceSet, "N4");
+			AssetMovementDisplay = DisplayFormat.Percent(fund.AssetMovement, fund.AssetMovementSet);
+			AssetMovementDisplay2 = DisplayFormat.Percent(fund.AssetMovement, true);
+			PredictedAssetMovementDisplay = DisplayFormat.Percent(fund.PredictedAssetMovement, fund.PredictedAssetMovementSet);
+
+
+		}
+
+
+		private string buildPriceMovementRoundedToleranceDisplay(Fund fund)
+		{
+			StringBuilder builder = new StringBuilder();
+
+			if (fund.WithinRoundedPriceLowerTolerance && fund.WithinRoundedPriceUpperTolerance
+				&& fund.WithinPriceDirectionTolerance)
+			{
+				builder.Append("Y");
+			}
+			else
+			{
+				builder.Append("UT - ");
+				builder.Append(fund.WithinRoundedPriceUpperTolerance ? "Y" : "N");
+				builder.Append("  LT - ");
+				builder.Append(fund.WithinRoundedPriceLowerTolerance ? "Y" : "N");
+				builder.Append("  PI - ");
+				builder.Append(fund.WithinPriceDirectionTolerance ? "Y" : "N");
+			}
+
+			return builder.ToString();
+		}
+
+		private string buildPriceMovementToleranceDisplay(Fund fund)
+		{
+			StringBuilder builder = new StringBuilder();
+
+			if (fund.WithinPriceLowerTolerance && fund.WithinPriceUpperTolerance
+				&& fund.WithinPriceDirectionTolerance)
+			{
+				builder.Append("Y");
+			}
+			else
+			{
+				builder.Append("UT - ");
+				builder.Append(fund.WithinPriceUpperTolerance ? "Y" : "N");
+				builder.Append("  LT - ");
+				builder.Append(fund.WithinPriceLowerTolerance ? "Y" : "N");
+				builder.Append("  PI - ");
+				builder.Append(fund.WithinPriceDirectionTolerance ? "Y" : "N");
+			}
+
+			return builder.ToString();
+		}
+
+		/// <summary>
+		/// Gets or sets the status changed time.
+		/// </summary>
+		/// <value></value>
+		public DateTime StatusChangedTime
+		{
+			get { return m_StatusChangedTime; }
+			set { m_StatusChangedTime = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether [price increase only].
+		/// </summary>
+		/// <value>
+		/// 	<c>true</c> if [price increase only]; otherwise, <c>false</c>.
+		/// </value>
+		public bool PriceIncreaseOnly
+		{
+			get { return m_PriceIncreaseOnly; }
+			set { m_PriceIncreaseOnly = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the factors.
+		/// </summary>
+		/// <value></value>
+		public IList Factors
+		{
+			get { return m_Factors; }
+			set { m_Factors = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the properties header.
+		/// </summary>
+		/// <value></value>
+		public string PropertiesHeader
+		{
+			get { return m_PropertiesHeader; }
+			set { m_PropertiesHeader = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether this instance is dirty.
+		/// </summary>
+		/// <value>
+		/// 	<c>true</c> if this instance is dirty; otherwise, <c>false</c>.
+		/// </value>
+		public bool IsDirty
+		{
+			get { return m_IsDirty; }
+			set { m_IsDirty = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether this instance is new.
+		/// </summary>
+		/// <value>
+		/// 	<c>true</c> if this instance is new; otherwise, <c>false</c>.
+		/// </value>
+		public bool IsNew
+		{
+			get { return m_IsNew; }
+			set { m_IsNew = value; }
+		}
+
+		#region Display Properties (re-introduced due to grid limitations. TODO - try to resolve and bring back property formatter)
+
+		/// <summary>
+		/// The formatted field used to display the price.
+		/// </summary>
+		public string PriceDisplay
+		{
+			get { return m_PriceDisplay; }
+			set { m_PriceDisplay = value; }
+		}
+
+		/// <summary>
+		/// The formatted field used to display the previous price.
+		/// </summary>
+		public string PreviousPriceDisplay
+		{
+			get { return m_PreviousPriceDisplay; }
+			set { m_PreviousPriceDisplay = value; }
+		}
+
+		/// <summary>
+		/// The current fund status as a string
+		/// </summary>
+		public string FundStatusDisplay
+		{
+			get { return m_fundStatus; }
+			set { m_fundStatus = value; }
+		}
+
+		/// <summary>
+		/// The formatted field used to display the predicted price.
+		/// </summary>
+		public string PredictedPriceDisplay
+		{
+			get { return m_PredictedPriceDisplay; }
+			set { m_PredictedPriceDisplay = value; }
+		}
+
+
+		/// <summary>
+		/// The formatted field used to display the price movement.
+		/// </summary>
+		public string PriceMovementPercentDisplay
+		{
+			get { return m_PriceMovementPercentDisplay; }
+			set { m_PriceMovementPercentDisplay = value; }
+		}
+
+		/// <summary>
+		/// The formatted string to display the predicted price movement.
+		/// </summary>
+		public string PredictedPriceMovementPercentDisplay
+		{
+			get { return m_PredictedPriceMovementPercentDisplay; }
+			set { m_PredictedPriceMovementPercentDisplay = value; }
+		}
+
+		/// <summary>
+		/// A formatted string showing the price movement variance.
+		/// </summary>
+		public string PriceMovementVarianceDisplay
+		{
+			get { return m_PriceMovementVarianceDisplay; }
+			set { m_PriceMovementVarianceDisplay = value; }
+		}
+
+		/// <summary>
+		/// The formatted field used to display the asset unit price.
+		/// </summary>
+		public string AssetUnitPriceDisplay
+		{
+			get { return m_AssetUnitPriceDisplay; }
+			set { m_AssetUnitPriceDisplay = value; }
+		}
+
+		/// <summary>
+		/// The formatted field used to display the asset movement.
+		/// </summary>
+		public string AssetMovementDisplay
+		{
+			get { return m_AssetMovementDisplay; }
+			set { m_AssetMovementDisplay = value; }
+		}
+
+		/// <summary>
+		/// as above but displays 0 as opposed to unavailable
+		/// </summary>
+		public string AssetMovementDisplay2
+		{
+			get { return m_AssetMovementDisplay2; }
+			set { m_AssetMovementDisplay2 = value; }
+		}
+
+		/// <summary>
+		/// Formatted field used to display the predicted asset movement.
+		/// </summary>
+		public string PredictedAssetMovementDisplay
+		{
+			get { return m_PredictedAssetMovementDisplay; }
+			set { m_PredictedAssetMovementDisplay = value; }
+		}
+
+		/// <summary>
+		/// Formatted field used to display the asset movement variance.
+		/// </summary>
+		public string AssetMovementVarianceDisplay
+		{
+			get { return m_AssetMovementVarianceDisplay; }
+			set { m_AssetMovementVarianceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of asset movement tolerance check.
+		/// Required for new (drop 2 and 3) status screen
+		/// </summary>
+		public string WithinAssetMovementToleranceDisplay
+		{
+			get { return m_WithinAssetMovementToleranceDisplay; }
+			set { m_WithinAssetMovementToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of asset movement tolerance check.
+		/// LEGACY - todo - can we get rid of this?
+		/// </summary>
+		public string AssetMovementToleranceDisplay
+		{
+			get { return m_AssetMovementToleranceDisplay; }
+			set { m_AssetMovementToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string of asset movement tolerance.
+		/// </summary>
+		public string AssetMovementToleranceDisplay2
+		{
+			get { return m_AssetMovementToleranceDisplay2; }
+			set { m_AssetMovementToleranceDisplay2 = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string of upper tolerance.
+		/// </summary>
+		public string UpperToleranceDisplay
+		{ //todo - we don't have a variable for UpperToleranceSet!
+			get { return m_UpperToleranceDisplay; }
+			set { m_UpperToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// as above but displays 0 as opposed to unavailable
+		/// </summary>
+		public string UpperToleranceDisplay2
+		{ //todo - we don't have a variable for UpperToleranceSet!
+			get { return m_UpperToleranceDisplay2; }
+			set { m_UpperToleranceDisplay2 = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the full name.
+		/// </summary>
+		/// <value></value>
+		public string FullName
+		{
+			get { return m_FullName; }
+			set { m_FullName = value; }
+		}
+
+
+		/// <summary>
+		/// Gets or sets the asset movement tolerance.
+		/// </summary>
+		/// <value></value>
+		public decimal AssetMovementTolerance
+		{
+			get { return m_AssetMovementTolerance; }
+			set { m_AssetMovementTolerance = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the asset fund ID.
+		/// </summary>
+		/// <value></value>
+		public string AssetFundID
+		{
+			get { return m_AssetFundId; }
+			set { m_AssetFundId = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the upper tolerance.
+		/// </summary>
+		/// <value></value>
+		public decimal UpperTolerance
+		{
+			get { return m_UpperTolerance; }
+			set { m_UpperTolerance = value; }
+		}
+
+		/// <summary>
+		/// Gets or sets the lower tolerance.
+		/// </summary>
+		/// <value></value>
+		public decimal LowerTolerance
+		{
+			get { return m_LowerTolerance; }
+			set { m_LowerTolerance = value; }
+		}
+
+
+		/// <summary>
+		/// Display friendly string of lower tolerance.
+		/// </summary>
+		public string LowerToleranceDisplay
+		{
+			get
+			{
+				//todo - we don't have a variable for LowerToleranceSet!
+				return DisplayFormat.Percent(this.LowerTolerance, this.LowerTolerance > 0);
+			}
+		}
+
+		/// <summary>
+		/// as above but displays 0 as opposed to unavailable
+		/// </summary>
+		public string LowerToleranceDisplay2
+		{
+			get { return DisplayFormat.Percent(this.LowerTolerance, true); }
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of price movement tolerance checks.
+		/// </summary>
+		public string PriceMovementToleranceDisplay
+		{
+			get { return m_PriceMovementToleranceDisplay; }
+			set { m_PriceMovementToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string giving result of price movement tolerance checks including rounding.
+		/// </summary>
+		public string PriceMovementRoundedToleranceDisplay
+		{
+			get { return m_PriceMovementRoundedToleranceDisplay; }
+			set { m_PriceMovementRoundedToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string giving the result of the price lower tolerance check.
+		/// </summary>
+		public string PriceMovementLowerToleranceDisplay
+		{
+			get { return m_PriceMovementLowerToleranceDisplay; }
+			set { m_PriceMovementLowerToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string showing if this is a fund for price increase only
+		/// </summary>
+		public string PriceIncreaseOnlyDisplay
+		{
+			get { return (this.PriceIncreaseOnly ? "Y" : "N"); }
+		}
+
+		/// <summary>
+		/// Display friendly string giving the result of the price upper tolerance check.
+		/// </summary>
+		public string PriceMovementUpperToleranceDisplay
+		{
+			get { return m_PriceMovementUpperToleranceDisplay; }
+			set { m_PriceMovementUpperToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display friendly string giving the result of the price direction tolerance check.
+		/// </summary>
+		public string PriceMovementDirectionToleranceDisplay
+		{
+			get { return m_PriceMovementDirectionToleranceDisplay; }
+			set { m_PriceMovementDirectionToleranceDisplay = value; }
+		}
+
+		/// <summary>
+		/// Display a Y / N based string indicating whether or not the price has been authorised
+		/// </summary>
+		public string IsAuthorisedDisplay
+		{
+			get { return m_IsAuthorisedDisplay; }
+			set { m_IsAuthorisedDisplay = value; }
+		}
+
+		/// <summary>
+		/// formatted field for the Xfactor
+		/// </summary>
+		public string XFactorDisplay
+		{
+			get { return m_XFactorDisplay; }
+			set { m_XFactorDisplay = value; }
+		}
+
+		/// <summary>
+		/// Displays a Y or N 
+		/// </summary>
+		public string OnHiPortfolio3Display
+		{
+			get { return m_OnHiPortfolio3Display; }
+			set { m_OnHiPortfolio3Display = value; }
+		}
+
+		/// <summary>
+		/// Display a Y / N based string indicating whether or not the fund can be used for benchmarking
+		/// </summary>
+		public string IsBenchMarkableDisplay
+		{
+			get { return m_IsBenchMarkableDisplay; }
+			set { m_IsBenchMarkableDisplay = value; }
+		}
+
+		#endregion
+	}
+
+	/// <summary>
+	/// Summary description for ReleaseFundViewController.
+	/// </summary>
+	public class CurrentFundStatusController : StatusViewController
+	{
+		/// <summary>
+		/// Creates a new <see cref="ReleaseFundViewController"/> instance.
+		/// </summary>
+		public CurrentFundStatusController(StatusView view, StatusDataManager dataManager) : base(view, dataManager)
+		{
+			T.E();
+			view.RefreshData += new StatusView.RefreshDataDelegate(refreshData);
+			T.X();
+		}
+
+		#region Overrides
+
+		/// <summary>
+		/// Configures the grid.
+		/// </summary>
+		protected override void configureGrid()
+		{
+			T.E();
+			HBOSGrid grid = view.grid;
+			DataGridTableStyle style = new DataGridTableStyle();
+
+			grid.TableStyles.Clear();
+			grid.TableStyles.Add(style);
+			grid.CellDoubleClicked += new DataGrid.CellDoubleClickedDelegate(this.OnGridCellDoubleClicked);
+
+			style.AlternatingBackColor = Color.WhiteSmoke;
+			style.DataGrid = grid;
+			style.HeaderForeColor = SystemColors.ControlText;
+			style.MappingName = "";
+
+			// Hack to allow for multi-line header rows.
+			// This requires a large font (36pt) to be set for grid.HeaderFont through the properties window
+			style.HeaderFont = grid.Font;
+
+			const int defaultColWidth = 80;
+
+			//fund columns
+			AddTextBoxReadOnlyColumnStyle("FullName", "Fund Name.", 220, HorizontalAlignment.Left, "");
+			AddTextBoxReadOnlyColumnStyle("PriceDisplay", "Imported.\n Price.", defaultColWidth, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("PredictedPriceDisplay", "Predicted .\nPrice .", defaultColWidth, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("PriceMovementPercentDisplay", "Imported .\nPrice .\nMovement .", defaultColWidth, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("PredictedPriceMovementPercentDisplay", "Predicted .\nPrice .\nMovement .", defaultColWidth, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("PriceMovementVarianceDisplay", "Price .\nVariance .", defaultColWidth, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("PriceMovementRoundedToleranceDisplay", "Within price\nTolerance", 140, HorizontalAlignment.Left, "");
+			AddTextBoxReadOnlyColumnStyle("AssetUnitPriceDisplay", "Asset .\nUnit Price", defaultColWidth, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("AssetMovementDisplay", "Asset Price .\nMovement", 100, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("PredictedAssetMovementDisplay", "Predicted AM", 90, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("AssetMovementVarianceDisplay", "AM Variance", 90, HorizontalAlignment.Right, "");
+			AddTextBoxReadOnlyColumnStyle("WithinAssetMovementToleranceDisplay", "Within AM \nTolerance", defaultColWidth, HorizontalAlignment.Left, "");
+			AddTextBoxReadOnlyColumnStyle("FundStatusDisplay", "Current \nStatus ", defaultColWidth, HorizontalAlignment.Left, "");
+			AddTextBoxReadOnlyColumnStyle("StatusChangedTime", "Last Status \nChanged ", 130, HorizontalAlignment.Left, "");
+			T.X();
+		}
+
+		/// <summary>
+		/// Creates the actions.
+		/// </summary>
+		protected override StatusAction[] createActions()
+		{
+			T.E();
+
+			StatusAction[] result = new StatusAction[4];
+
+			result[0] = new StatusAction();
+			result[0].Text = "&Refresh";
+			result[0].Executed += new EventHandler(refreshExecuted);
+
+			result[1] = new StatusAction();
+			result[1].Text = "&Print";
+			result[1].Executed += new EventHandler(printExecuted);
+
+			result[2] = new StatusAction();
+			result[2].Text = "&Export";
+			result[2].Executed += new EventHandler(exportExecuted);
+
+			result[3] = new StatusAction();
+			result[3].Text = "Pr&operties";
+			result[3].Executed += new EventHandler(PropertiesButtonClicked);
+
+			T.X();
+			return result;
+		}
+
+		#endregion Overrides
+
+		#region Event Handlers
+
+		private void refreshExecuted(object sender, EventArgs e)
+		{
+			T.E();
+			refreshData();
+			T.X();
+		}
+
+		private void PropertiesButtonClicked(object sender, EventArgs e)
+		{
+			int CurrentRowIndex = view.grid.CurrentRowIndex;
+			if (CurrentRowIndex >= 0)
+			{
+				this.displayFundProperties(CurrentRowIndex);
+			}
+		}
+
+		/// <summary>
+		/// hadle that the grid has been double clicked, and possible show the properties dialog
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void OnGridCellDoubleClicked(object sender, CellEventArgs e)
+		{
+			//KAJ 09/03/2005 - Double clicking header row causes exception
+			T.E();
+			if (e.RowNumber >= 0)
+			{
+				this.displayFundProperties(e.RowNumber);
+			}
+			T.X();
+		}
+
+		private void printExecuted(object sender, EventArgs e)
+		{
+			printGrid("Current Fund Status");
+		}
+
+		private void exportExecuted(object sender, EventArgs e)
+		{
+			exportGrid("CurrentFundStatus.csv", "HBOS.FS.AMP.UPD.WinUI.UserControls.CurrentFundStatus.xslt");
+		}
+
+		#endregion Event Handlers
+
+		#region Private Members
+
+		/// <summary>
+		/// Display the currently selected fund properties
+		/// </summary>
+		/// <param name="selectedRow">currently selected grid row number</param>
+		private void displayFundProperties(int selectedRow)
+		{
+			T.E();
+			// Make sure we have funds
+			if (view.Data.Count > 0)
+			{
+				// Get the currently selected fund object against 
+				// the selected data grid row
+				FundDecorator selectedFund = base.fundAtRow(selectedRow);
+
+				// Pass the currently selected fund object to the form 
+				// and Display its properties
+				CurrentFundStatusProperties properties = new CurrentFundStatusProperties(selectedFund);
+				properties.Show(); //Dialog(view.Parent);
+			}
+			T.X();
+		}
+
+		#endregion Private Members
+	}
+}

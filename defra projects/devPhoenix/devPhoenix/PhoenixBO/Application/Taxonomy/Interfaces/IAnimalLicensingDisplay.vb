@@ -1,0 +1,13 @@
+Namespace Taxonomy
+    Public Interface IAnimalLicensingDisplay
+        Property ID() As Int32
+        Property AverageLifespan() As Int32
+        Property AverageNumberOfOffspring() As Int32
+        Property BirdFeeLevel() As Int32
+        Property IncubationOrGestationDays() As Int32
+        Property MinimumMicrochipAge() As Int32
+        Property MinimumMicrochipSize() As Int32
+        Property OldestAcceptedAge() As Int32
+        Property SexualMaturityAge() As Int32
+    End Interface
+End Namespace

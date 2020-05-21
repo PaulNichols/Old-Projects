@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spS_tblOrderItem_Display - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spS_tblOrderItem_Display
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Procedure [spS_tblOrderItem_Display]<br>
+				<br>
+				(<br>
+				 @Oit_GuidID [uniqueidentifier] = Null -- for [tblOrderItem].[Oit_GuidID] column<br>
+				,@Oit_GuidOrderID [uniqueidentifier] = Null -- for [tblOrderItem].[Oit_GuidOrderID] column<br>
+				,@Oit_GuidProductID [uniqueidentifier] = Null -- for [tblOrderItem].[Oit_GuidProductID] column<br>
+				)<br>
+				<br>
+				-- Returns the number of records found<br>
+				<br>
+				As<br>
+				<br>
+				Select<br>
+				 [tblOrderItem_Records].[ID1]<br>
+				,[tblOrderItem_Records].[Display]<br>
+				<br>
+				From [fntblOrderItem_Display](@Oit_GuidID, @Oit_GuidOrderID, @Oit_GuidProductID) As [tblOrderItem_Records]<br>
+				<br>
+				Return(@@RowCount)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Function">
+		<div class="MainTitle">
+			T-SQL code for the underlying inline table-valued function used by this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				
+CREATE Function [fntblOrderItem_Display]<br>
+				(<br>
+				 @Oit_GuidID [uniqueidentifier] = Null<br>
+				,@Oit_GuidOrderID [uniqueidentifier] = Null<br>
+				,@Oit_GuidProductID [uniqueidentifier] = Null<br>
+				)<br>
+				<br>
+				Returns Table<br>
+				<br>
+				As<br>
+				<br>
+				Return<br>
+				(<br>
+				Select Top 100 Percent<br>
+				<br>
+				 [Oit_GuidID] As [ID1]<br>
+				,Convert(varchar(20), [tblOrderItem].[Oit_LngAmount]) + ' ''' + [Product].[Display] + '''' As [Display]<br>
+				<br>
+				From [dbo].[tblOrderItem]<br>
+				&nbsp;&nbsp;&nbsp;Inner Join [fntblProduct_Display](Null, Null) [Product] On [tblOrderItem].[Oit_GuidProductID] = [Product].[ID1]<br>
+				&nbsp;&nbsp;&nbsp;<br>
+				Where<br>
+				    ((@Oit_GuidID Is Null) Or ([Oit_GuidID] = @Oit_GuidID))<br>
+				And ((@Oit_GuidOrderID Is Null) Or ([Oit_GuidOrderID] = @Oit_GuidOrderID))<br>
+				And ((@Oit_GuidProductID Is Null) Or ([Oit_GuidProductID] = @Oit_GuidProductID))<br>
+				<br>
+				Order By [Product].[Display]<br>
+				)<br>
+				<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:19
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

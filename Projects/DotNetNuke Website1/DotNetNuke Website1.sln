@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\DotNetNuke Website1\", "..\..\WebSites\DotNetNuke Website1\", "{C54A45F5-8B25-4A53-900B-2615DBD4A882}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/DotNetNuke Website1"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\DotNetNuke Website1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\DotNetNuke Website1\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/DotNetNuke Website1"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\DotNetNuke Website1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\DotNetNuke Website1\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1422"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C54A45F5-8B25-4A53-900B-2615DBD4A882}.Debug|.NET.ActiveCfg = Debug|.NET
+		{C54A45F5-8B25-4A53-900B-2615DBD4A882}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

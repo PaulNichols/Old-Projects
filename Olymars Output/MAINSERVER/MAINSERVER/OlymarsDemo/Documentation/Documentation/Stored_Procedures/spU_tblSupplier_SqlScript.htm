@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spU_tblSupplier - SQL Script
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spU_tblSupplier
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;SQL Script
+		</div>
+		<hr>
+		<div class="MainTitle">
+			T-SQL code for this stored procedure
+		</div>
+		<blockquote>
+			<div class="MainBody" style="background-color: gainsboro;">
+				Create Procedure [spU_tblSupplier]<br>
+				<br>
+				-- Update an existing record in [tblSupplier] table<br>
+				<br>
+				(<br>
+				  @Sup_GuidID [uniqueidentifier] -- for [tblSupplier].[Sup_GuidID] column<br>
+				, @Sup_StrName [varchar](255) -- for [tblSupplier].[Sup_StrName] column<br>
+				, @ConsiderNull_Sup_StrName bit = 0<br>
+				)<br>
+				<br>
+				As<br>
+				<br>
+				/*<br>
+				&nbsp;&nbsp;&nbsp;This T-SQL code was automatically generated using:<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server Centric .NET Code Generator<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v 1.0.1287.20792<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generation Date: 28/11/2004 11:31:14<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generator name: &lt;Developer Name Here&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template last update: 24/06/2002 01:53:57<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template revision: 15083637<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server version: 08.00.0194<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server: MAINSERVER\MAINSERVER<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Database: [OlymarsDemo]<br>
+				<br>
+				&nbsp;&nbsp;&nbsp;WARNING: This source is provided &quot;AS IS&quot; without warranty of any kind.<br>
+				&nbsp;&nbsp;&nbsp;The author disclaims all warranties, either express or implied, including<br>
+				&nbsp;&nbsp;&nbsp;the warranties of merchantability and fitness for a particular purpose.<br>
+				&nbsp;&nbsp;&nbsp;In no event shall the author or its suppliers be liable for any damages<br>
+				&nbsp;&nbsp;&nbsp;whatsoever including direct, indirect, incidental, consequential, loss of<br>
+				&nbsp;&nbsp;&nbsp;business profits or special damages, even if the author or its suppliers<br>
+				&nbsp;&nbsp;&nbsp;have been advised of the possibility of such damages.<br>
+				*/<br>
+				<br>
+				<br>
+				--&nbsp;&nbsp;&nbsp;IMPORTANT:<br>
+				--&nbsp;&nbsp;&nbsp;Changes to this SQL code may cause incorrect behavior<br>
+				--&nbsp;&nbsp;&nbsp;and will be lost if the code is regenerated. <br>
+				<br>
+				<br>
+				Set NoCount On<br>
+				<br>
+				If @ConsiderNull_Sup_StrName Is Null<br>
+				&nbsp;&nbsp;&nbsp;Set @ConsiderNull_Sup_StrName = 0<br>
+				<br>
+				<br>
+				Update [dbo].[tblSupplier]<br>
+				<br>
+				Set<br>
+				&nbsp;&nbsp;&nbsp; [Sup_StrName] = Case @ConsiderNull_Sup_StrName When 0 Then IsNull(@Sup_StrName, [Sup_StrName]) When 1 Then @Sup_StrName End<br>
+				<br>
+				Where<br>
+				&nbsp;&nbsp;&nbsp;     ([Sup_GuidID] = @Sup_GuidID)<br>
+				<br>
+				Set NoCount Off<br>
+				<br>
+				Return(0)<br>
+				
+			</div>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:21
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

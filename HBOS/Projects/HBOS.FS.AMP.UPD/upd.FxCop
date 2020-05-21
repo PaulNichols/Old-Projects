@@ -1,0 +1,1099 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.32" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.32 rc 1\Xml\FxCopReport.Xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>100</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>10</RuleExceptionsThreshold>
+  <Spelling Locale="en-gb" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.Exceptions.dll" Analyze="False" AnalyzeAllChildren="False" />
+  <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.Persistence.dll" Analyze="False" AnalyzeAllChildren="False" />
+  <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.Security.dll" Analyze="False" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.Types.dll" Analyze="False" AnalyzeAllChildren="False" />
+  <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.WinUI.Library.dll" Analyze="False" AnalyzeAllChildren="False" />
+  <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.WinUI.Reports.dll" Analyze="False" AnalyzeAllChildren="False" />
+  <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI/bin/Debug/HBOS.FS.AMP.UPD.WinUI.exe" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="False">
+    <Rule Name="AbstractTypesShouldNotHaveConstructors" Enabled="True" />
+    <Rule Name="AssembliesShouldHaveValidStrongNames" Enabled="True" />
+    <Rule Name="AvoidEmptyInterfaces" Enabled="True" />
+    <Rule Name="AvoidExcessiveParametersOnGenericTypes" Enabled="True" />
+    <Rule Name="AvoidOutParameters" Enabled="True" />
+    <Rule Name="CollectionsShouldImplementGenericInterface" Enabled="True" />
+    <Rule Name="ConsiderPassingBaseTypesAsParameters" Enabled="True" />
+    <Rule Name="DeclareEventHandlersCorrectly" Enabled="True" />
+    <Rule Name="DeclareTypesInNamespaces" Enabled="True" />
+    <Rule Name="DefaultParametersShouldNotBeUsed" Enabled="True" />
+    <Rule Name="DefineAccessorsForAttributeArguments" Enabled="True" />
+    <Rule Name="DoNotCatchGeneralExceptionTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareProtectedMembersInSealedTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareStaticMembersOnGenericTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareVirtualMembersInSealedTypes" Enabled="True" />
+    <Rule Name="DoNotDeclareVisibleInstanceFields" Enabled="True" />
+    <Rule Name="DoNotExposeGenericLists" Enabled="True" />
+    <Rule Name="DoNotHideBaseClassMethods" Enabled="True" />
+    <Rule Name="DoNotNestGenericTypesInMemberSignatures" Enabled="True" />
+    <Rule Name="DoNotOverloadOperatorEqualsOnReferenceTypes" Enabled="True" />
+    <Rule Name="DoNotPassTypesByReference" Enabled="True" />
+    <Rule Name="EnumeratorsShouldBeStronglyTyped" Enabled="True" />
+    <Rule Name="EnumsShouldHaveZeroValue" Enabled="True" />
+    <Rule Name="EnumStorageShouldBeInt32" Enabled="True" />
+    <Rule Name="GenericMethodsShouldProvideTypeParameter" Enabled="True" />
+    <Rule Name="ICollectionImplementationsHaveStronglyTypedMembers" Enabled="True" />
+    <Rule Name="ImplementIDisposableCorrectly" Enabled="True" />
+    <Rule Name="ImplementStandardExceptionConstructors" Enabled="True" />
+    <Rule Name="IndexersShouldNotBeMultidimensional" Enabled="True" />
+    <Rule Name="InterfaceMethodsShouldBeCallableByChildTypes" Enabled="True" />
+    <Rule Name="ListsAreStronglyTyped" Enabled="True" />
+    <Rule Name="MarkAssembliesWithAssemblyVersion" Enabled="True" />
+    <Rule Name="MarkAssembliesWithClsCompliant" Enabled="True" />
+    <Rule Name="MarkAssembliesWithComVisible" Enabled="True" />
+    <Rule Name="MarkAttributesWithAttributeUsage" Enabled="True" />
+    <Rule Name="MarkEnumsWithFlags" Enabled="True" />
+    <Rule Name="MembersShouldNotExposeCertainConcreteTypes" Enabled="True" />
+    <Rule Name="MovePInvokesToNativeMethodsClass" Enabled="True" />
+    <Rule Name="NestedTypesShouldNotBeVisible" Enabled="True" />
+    <Rule Name="OverloadOperatorEqualsOnOverloadingAddAndSubtract" Enabled="True" />
+    <Rule Name="OverrideMethodsOnComparableTypes" Enabled="True" />
+    <Rule Name="PropertiesShouldNotBeWriteOnly" Enabled="True" />
+    <Rule Name="ProvideObsoleteAttributeMessage" Enabled="True" />
+    <Rule Name="ReplaceRepetitiveArgumentsWithParamsArray" Enabled="True" />
+    <Rule Name="StaticHolderTypesShouldBeSealed" Enabled="True" />
+    <Rule Name="StaticHolderTypesShouldNotHaveConstructors" Enabled="True" />
+    <Rule Name="StringUriOverloadsCallSystemUriOverloads" Enabled="True" />
+    <Rule Name="TypesShouldNotExtendCertainBaseTypes" Enabled="True" />
+    <Rule Name="TypesThatOwnDisposableFieldsShouldBeDisposable" Enabled="True" />
+    <Rule Name="TypesThatOwnNativeResourcesShouldBeDisposable" Enabled="True" />
+    <Rule Name="UriParametersShouldNotBeStrings" Enabled="True" />
+    <Rule Name="UriPropertiesShouldNotBeStrings" Enabled="True" />
+    <Rule Name="UriReturnValuesShouldNotBeStrings" Enabled="True" />
+    <Rule Name="UseEventsWhereAppropriate" Enabled="True" />
+    <Rule Name="UseGenericEventHandlerInstances" Enabled="True" />
+    <Rule Name="UseGenericsWhereAppropriate" Enabled="True" />
+    <Rule Name="UseIntegralOrStringArgumentForIndexers" Enabled="True" />
+    <Rule Name="UsePropertiesWhereAppropriate" Enabled="True" />
+    <Rule Name="ValidateArgumentsOfPublicMethods" Enabled="True" />
+   </RuleFile>
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.32">
+  <Namespaces>
+   <Namespace Name="HBOS.FS.AMP.UPD.Security">
+    <Messages>
+     <Message TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2005-06-28 06:55:10Z">
+      <Issue Name="Namespace">
+       <Item>HBOS.FS.AMP.UPD.Security</Item>
+      </Issue>
+      <Issue Name="Namespace">
+       <Item>HBOS.FS.AMP.UPD.Security</Item>
+      </Issue>
+      <Issue Name="Namespace">
+       <Item>HBOS.FS.AMP.UPD.Security</Item>
+      </Issue>
+      <Notes>
+       <User Name="Paul">
+        <Note Id="4" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="HBOS.FS.AMP.UPD.WinUI">
+    <Messages>
+     <Message TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2005-06-24 07:33:34Z">
+      <Issue Name="Namespace">
+       <Item>HBOS.FS.AMP.UPD.WinUI</Item>
+      </Issue>
+      <Issue Name="Namespace">
+       <Item>HBOS.FS.AMP.UPD.WinUI</Item>
+      </Issue>
+      <Issue Name="Namespace">
+       <Item>HBOS.FS.AMP.UPD.WinUI</Item>
+      </Issue>
+      <Notes>
+       <User Name="Paul">
+        <Note Id="4" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.Exceptions.dll">
+    <Modules>
+     <Module Name="hbos.fs.amp.upd.exceptions.dll">
+      <Namespaces>
+       <Namespace Name="HBOS.FS.AMP.UPD.Exceptions">
+        <Types>
+         <Type Name="DatabaseError">
+          <Members>
+           <Member Name="LoginFailed">
+            <Messages>
+             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1723" Status="Excluded" Created="2005-06-27 10:30:19Z">
+              <Issue Name="Member">
+               <Item>Login</Item>
+               <Item>LoginFailed</Item>
+               <Item>LogOn</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="LoginFailedNotAssociatedWithTrustedConnection">
+            <Messages>
+             <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1723" Status="Excluded" Created="2005-06-27 10:30:19Z">
+              <Issue Name="Member">
+               <Item>Login</Item>
+               <Item>LoginFailedNotAssociatedWithTrustedConnection</Item>
+               <Item>LogOn</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.Persistence.dll">
+    <Modules>
+     <Module Name="hbos.fs.amp.upd.persistence.dll">
+      <Namespaces>
+       <Namespace Name="HBOS.FS.AMP.UPD.Persistence">
+        <Types>
+         <Type Name="FundStaticDataPersister">
+          <Messages>
+           <Message Id="Persister" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-06-24 07:19:26Z">
+            <Issue Name="Type">
+             <Item>Persister</Item>
+             <Item>HBOS.FS.AMP.UPD.Persistence.FundStaticDataPersister</Item>
+            </Issue>
+            <Notes>
+             <User Name="Paul">
+              <Note Id="2" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI.Library/bin/Debug/HBOS.FS.AMP.UPD.Security.dll">
+    <Modules>
+     <Module Name="hbos.fs.amp.upd.security.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2005-06-28 06:55:10Z">
+        <Issue Name="NoStrongName">
+         <Item>HBOS.FS.AMP.UPD.Security</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="HBOS.FS.AMP.UPD.Security">
+        <Types>
+         <Type Name="UPDIdentity">
+          <Messages>
+           <Message TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2005-06-28 06:55:10Z">
+            <Issue Name="Type">
+             <Item>UPDIdentity</Item>
+            </Issue>
+            <Notes>
+             <User Name="Paul">
+              <Note Id="4" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="UPDPrincipal">
+          <Messages>
+           <Message TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2005-06-28 06:55:10Z">
+            <Issue Name="Type">
+             <Item>UPDPrincipal</Item>
+            </Issue>
+            <Notes>
+             <User Name="Paul">
+              <Note Id="3" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor(HBOS.FS.AMP.UPD.Security.UPDIdentity,System.String)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2005-06-28 06:55:10Z">
+              <Issue>
+               <Item>UPDPrincipal.UPDPrincipal(UPDIdentity, String)</Item>
+               <Item>roles</Item>
+               <Item>System.String[]</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Created="2005-06-28 06:55:10Z">
+              <Issue>
+               <Item>UPDPrincipal.UPDPrincipal(UPDIdentity, String)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306" Created="2005-06-28 06:55:10Z">
+              <Issue>
+               <Item>DataSet</Item>
+               <Item>UPDPrincipal.UPDPrincipal(UPDIdentity, String)</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Created="2005-06-28 06:55:10Z">
+              <Issue>
+               <Item>'identity'</Item>
+               <Item>UPDPrincipal.UPDPrincipal(UPDIdentity, String)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/../../../Projects/HBOS.FS.AMP.UPD/User Services/HBOS.FS.AMP.UPD.WinUI/bin/Debug/HBOS.FS.AMP.UPD.WinUI.exe">
+    <Modules>
+     <Module Name="hbos.fs.amp.upd.winui.exe">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Created="2005-06-24 07:26:02Z">
+        <Issue Name="NoStrongName">
+         <Item>HBOS.FS.AMP.UPD.WinUI</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="HBOS.FS.AMP.UPD.WinUI">
+        <Types>
+         <Type Name="Main">
+          <Members>
+           <Member Name="fileDistributeMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.fileDistributeMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.fileDistributeMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileImportFilesHi3AssetFundSplitsMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3AssetFundSplitsMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3AssetFundSplitsMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileImportFilesHi3CompositeFundSplitsMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3CompositeFundSplitsMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3CompositeFundSplitsMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileImportFilesHi3PricesCompositeMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3PricesCompositeMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3PricesCompositeMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileImportFilesHi3PricesLinkedMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3PricesLinkedMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3PricesLinkedMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileImportFilesHi3PricesMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3PricesMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesHi3PricesMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileImportFilesImportCurrencyExchangeRatesMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesImportCurrencyExchangeRatesMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesImportCurrencyExchangeRatesMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileImportFilesImportStockMarketIndicesMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesImportStockMarketIndicesMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.FileImportFilesImportStockMarketIndicesMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Finalize():System.Void">
+            <Messages>
+             <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Created="2005-06-24 07:26:02Z">
+              <Issue Name="FinalizeImplementation">
+               <Item>Main.Finalize():Void</Item>
+              </Issue>
+              <Issue Name="FinalizeOverride">
+               <Item>HBOS.FS.AMP.UPD.WinUI.Main</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>page1</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Unit Pricing and Distribution</Item>
+              </Issue>
+              <Notes>
+               <User Name="Paul">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.Windows.Forms.MenuItem.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;About</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Asset Funds</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Company</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Currency Exchange Rates</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Distribute</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Distribute</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;File</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Fund Drift</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Help</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Historical Prices</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Import Files</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Refresh</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Release Authorised Prices</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Reports</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Static Data</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Stock Market Indices</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Users</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;View</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Company &amp;Status</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Current &amp;Asset Fund Status</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Current &amp;Fund Status</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>E&amp;xit</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Fund</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Fund &amp;Groups</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Hi3 &amp;Asset Fund Splits</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Hi3 &amp;Linked Prices</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Hi3 C&amp;omposite Fund Splits</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Hi3 Composit&amp;e Prices</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Hi3 OEIC &amp;Prices</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Second &amp;Level Authorisation</Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Tas&amp;ks</Item>
+              </Issue>
+              <Notes>
+               <User Name="Paul">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.Windows.Forms.StatusBarPanel.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>StatusBarPanel.set_Text(String):Void</Item>
+               <Item>Company : </Item>
+              </Issue>
+              <Issue>
+               <Item>Main.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>StatusBarPanel.set_Text(String):Void</Item>
+               <Item>Current Valuation Point :</Item>
+              </Issue>
+              <Notes>
+               <User Name="Paul">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="loadCompanyStatus():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.loadCompanyStatus():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.loadCompanyStatus():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="loadUserControl(System.Windows.Forms.UserControl,System.String):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.loadUserControl(UserControl, String):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.loadUserControl(UserControl, String):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="menuCompany_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.menuCompany_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.menuCompany_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.ApplicationException.#ctor(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.menuCompany_Click(Object, EventArgs):Void</Item>
+               <Item>1</Item>
+               <Item>ApplicationException.ApplicationException(String)</Item>
+               <Item>Cannot find company code for selected company</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201" Created="2005-06-24 07:26:02Z">
+              <Issue Name="TooGeneric">
+               <Item>Main.menuCompany_Click(Object, EventArgs):Void</Item>
+               <Item>System.ApplicationException</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="releaseMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.releaseMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.releaseMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="reportsFundDriftMenu_Click_1(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.reportsFundDriftMenu_Click_1(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.reportsFundDriftMenu_Click_1(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="reportsPredictedPriceMenu_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.reportsPredictedPriceMenu_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.reportsPredictedPriceMenu_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="secondLevelMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.secondLevelMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.secondLevelMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="staticDataAssetFundsMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataAssetFundsMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataAssetFundsMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="staticDataFundGroupsMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataFundGroupsMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataFundGroupsMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="staticDataFundsMenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataFundsMenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataFundsMenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="staticDataUsersMenu_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataUsersMenu_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.staticDataUsersMenu_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="updateStatusBar():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.StatusBarPanel.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.updateStatusBar():Void</Item>
+               <Item>1</Item>
+               <Item>StatusBarPanel.set_Text(String):Void</Item>
+               <Item>Current Valuation Point : __</Item>
+              </Issue>
+              <Notes>
+               <User Name="Paul">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="viewCurrentAssetFundmenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.viewCurrentAssetFundmenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.viewCurrentAssetFundmenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="viewCurrentFundStatusmenuItem_Click(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.viewCurrentFundStatusmenuItem_Click(Object, EventArgs):Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>Main.viewCurrentFundStatusmenuItem_Click(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="UPDApplication">
+          <Messages>
+           <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Created="2005-06-24 07:26:02Z">
+            <Issue>
+             <Item>UPDApplication</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2005-06-24 07:26:02Z">
+            <Issue Name="Type">
+             <Item>UPDApplication</Item>
+            </Issue>
+            <Notes>
+             <User Name="Paul">
+              <Note Id="4" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="handleRunningInstance(System.Diagnostics.Process):System.Void">
+            <Messages>
+             <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>UPDApplication.handleRunningInstance(Process):Void</Item>
+               <Item>Process.get_MainWindowHandle():IntPtr</Item>
+               <Item>&#xD;&#xA;-&gt;System.Diagnostics.Process.get_MainWindowHandle : IntPtr&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.handleRunningInstance(System.Diagnostics.Process) : Void&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.Main : Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Main():System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>UPDApplication.Main():Void</Item>
+              </Issue>
+              <Issue>
+               <Item>UPDApplication.Main():Void</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>UPDApplication.Main():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="runningInstance():System.Diagnostics.Process">
+            <Messages>
+             <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>UPDApplication.runningInstance():Process</Item>
+               <Item>Process.get_Id():Int32</Item>
+               <Item>&#xD;&#xA;-&gt;System.Diagnostics.Process.get_Id : Int32&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.runningInstance : Process&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.Main : Void</Item>
+              </Issue>
+              <Issue>
+               <Item>UPDApplication.runningInstance():Process</Item>
+               <Item>Process.get_MainModule():ProcessModule</Item>
+               <Item>&#xD;&#xA;-&gt;System.Diagnostics.Process.get_MainModule : ProcessModule&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.runningInstance : Process&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.Main : Void</Item>
+              </Issue>
+              <Issue>
+               <Item>UPDApplication.runningInstance():Process</Item>
+               <Item>Process.get_ProcessName():String</Item>
+               <Item>&#xD;&#xA;-&gt;System.Diagnostics.Process.get_ProcessName : String&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.runningInstance : Process&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.Main : Void</Item>
+              </Issue>
+              <Issue>
+               <Item>UPDApplication.runningInstance():Process</Item>
+               <Item>Process.GetCurrentProcess():Process</Item>
+               <Item>&#xD;&#xA;-&gt;System.Diagnostics.Process.GetCurrentProcess : Process&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.runningInstance : Process&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.Main : Void</Item>
+              </Issue>
+              <Issue>
+               <Item>UPDApplication.runningInstance():Process</Item>
+               <Item>Process.GetProcessesByName(String):Process[]</Item>
+               <Item>&#xD;&#xA;-&gt;System.Diagnostics.Process.GetProcessesByName(System.String) : Process[]&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.runningInstance : Process&#xD;&#xA;-&gt;HBOS.FS.AMP.UPD.WinUI.UPDApplication.Main : Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SetForegroundWindow(System.IntPtr):System.Boolean">
+            <Messages>
+             <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Created="2005-06-24 07:26:02Z">
+              <Issue Name="Return">
+               <Item>UPDApplication.SetForegroundWindow(IntPtr):Boolean</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>UPDApplication.SetForegroundWindow(IntPtr):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ShowWindowAsync(System.IntPtr,System.Int32):System.Boolean">
+            <Messages>
+             <Message TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414" Created="2005-06-24 07:26:02Z">
+              <Issue Name="Return">
+               <Item>UPDApplication.ShowWindowAsync(IntPtr, Int32):Boolean</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Created="2005-06-24 07:26:02Z">
+              <Issue>
+               <Item>UPDApplication.ShowWindowAsync(IntPtr, Int32):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="Paul">
+    <Note Id="0" Modified="2005-06-27 10:38:20Z">over kill for this project</Note>
+    <Note Id="1" Modified="2005-06-27 10:38:52Z">overkill</Note>
+    <Note Id="2" Modified="2005-06-24 07:23:54Z">Spelt correctly</Note>
+    <Note Id="3" Modified="2005-06-28 07:12:49Z">UPD is allowed</Note>
+    <Note Id="4" Modified="2005-06-28 07:13:00Z">UPD is allowed</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Resolution Name="NoStrongName">Sign '{0}' with a strong name key.</Resolution>
+   </Rule>
+   <Rule TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102">
+    <Resolution Name="Default">{0} contains a catch(Exception) handler that is not matched with a generic catch clause (catch{{}} in C#, catch(System::Object*){{}} in mc++) for non-CLSCompliant exception. Eliminate the catch(Exception) clause by catching a specific set of Exceptions or add a generic catch (catch() in C#) that duplicates the code contained within the catch(Exception) handler.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify '{0}' to catch a more specific exception than '{1}' or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122">
+    <Resolution Name="Default">{0} calls into {1} which has a LinkDemand. By making this call, {1} is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: {2}</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+    <Resolution Name="Default">{0} initializes field {1} of type {2} to {3}. Remove this initialization as it will be done automatically by the runtime.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303">
+    <Resolution Name="Default">{0} passes a literal as parameter {1} of a call to {2}. Retrieve the following string argument from a resource table instead: '{3}'</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotRaiseReservedExceptionTypes" Category="Microsoft.Usage" CheckId="CA2201">
+    <Resolution Name="TooGeneric">{0} creates an exception of type '{1}', an exception type that is not sufficiently specific and should never be raised by user code. If this exception instance might be thrown, use a different exception type.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" />
+   <Rule TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063">
+    <Resolution Name="FinalizeImplementation">Modify {0} so that it calls Dispose(false) and then returns.</Resolution>
+    <Resolution Name="FinalizeOverride">Remove the finalizer from type {0}, override Dispose(bool disposing), and put the finalization logic in the code path where 'disposing' is false.</Resolution>
+   </Rule>
+   <Rule TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705">
+    <Resolution Name="Namespace">Correct the capitalization of namespace name '{0}'.</Resolution>
+    <Resolution Name="Type">Correct the capitalization of type name '{0}'.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkBooleanPInvokeArgumentsWithMarshalAs" Category="Microsoft.Interoperability" CheckId="CA1414">
+    <Resolution Name="Return">Add the MarshalAsAttribute to the return type of PInvoke {0}. If the corresponding unmanaged return type is a 4-byte Win32 'BOOL', use MarshalAs(UnmanagedType.Bool). For a 1-byte C++ 'bool', use MarshalAs(UnmanagedType.U1).</Resolution>
+   </Rule>
+   <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+    <Resolution Name="Default">Because it is a DllImport method, {0} should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Resolution>
+   </Rule>
+   <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+    <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   </Rule>
+   <Rule TypeName="SetLocaleForDataTypes" Category="Microsoft.Globalization" CheckId="CA1306">
+    <Resolution Name="Default">Be sure to set the {0} Locale property wherever '{1}' creates an instance of that type.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+    <Resolution Name="Default">Change {0} to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control. If it is set to RightTolLeft.Inherit, check its parent until a value indicating Yes or No is found.</Resolution>
+   </Rule>
+   <Rule TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053">
+    <Resolution Name="Default">Remove the public constructors from '{0}'.</Resolution>
+   </Rule>
+   <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1723" />
+   <Rule TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062">
+    <Resolution Name="Default">Validate parameter {0} passed to externally visible method {1}.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

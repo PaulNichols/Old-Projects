@@ -1,0 +1,269 @@
+using System;
+using HBOS.FS.AMP.UPD.Types.Currency;
+using NUnit.Framework;
+using HBOS.FS.AMP.UPD.Types.AssetFunds;
+
+namespace UT_HBOS.FS.AMP.UPD.Types.AssetFunds
+{
+	/// <summary>
+	/// Unit tests for the asset movement of an asset fund
+	/// </summary>
+	[TestFixture]    
+	public class AssetFundAssetMovementCalculationTests
+	{
+		/// <summary>
+		/// Default constructor required by NUnit
+		/// </summary>
+		public AssetFundAssetMovementCalculationTests()
+		{
+		}
+
+		/// <summary>
+		/// Creates a single index with an asset movement of 10%
+		/// </summary>
+		/// <returns>A AssetMovementConstituentCollection containing a single index</returns>
+		/// 
+		public static AssetMovementConstituentCollection CreateSingleBenchMark()
+		{
+			// Create a weighted index collection
+			AssetMovementConstituentCollection indices = new AssetMovementConstituentCollection();
+
+			HBOS.FS.AMP.UPD.Types.StockMarketIndex.StockMarketIndex benchMark=new HBOS.FS.AMP.UPD.Types.StockMarketIndex.StockMarketIndex(0,"test",5,3.35,Currency.GbPound);
+			AssetMovementConstituent constituent1 = new AssetMovementConstituent(,1.0m,benchMark);
+//			index1.MarketMovement = 0.05m;
+//			index1.CurrencyMovement = -0.05m;
+//			index1.Proportion = 1.0m;
+
+			// Total effect on asset movement = 10%
+
+			indices.Add(constituent1);
+			return indices;
+		}
+
+		/// <summary>
+		/// Creates a collections with multiple positive initialised indices with a combined asset movement of 4%
+		/// </summary>
+		/// <returns>A AssetMovementConstituentCollection containing two indicies</returns>
+		public static AssetMovementConstituentCollection CreateMultiplePositiveInitialisedIndices()
+		{
+			// Create a weighted index collection
+			AssetMovementConstituentCollection indices = new AssetMovementConstituentCollection();
+
+			AssetFundIndexWeighted index1 = new AssetFundIndexWeighted();
+			index1.MarketMovement = 0.15m;
+			index1.CurrencyMovement = 0.05m;
+			index1.Proportion = 0.5m;
+
+			// Add another index and ensure the movement is correct            
+			AssetFundIndexWeighted index2 = new AssetFundIndexWeighted();
+			index2.MarketMovement = 0.02m;
+			index2.CurrencyMovement = 0.04m;
+			index2.Proportion = 0.5m;
+
+
+			// Total effect on asset movement = 4%
+
+			indices.Add(index1);
+			indices.Add(index2);
+			return indices;
+		}
+
+		/// <summary>
+		/// Creates one positive and one negative initialised indices with a combined asset movement of -2%
+		/// </summary>
+		/// <returns>A AssetMovementConstituentCollection containing two indicies</returns>
+		public static AssetMovementConstituentCollection CreateMultiplePositiveAndNegativeInitialisedIndices()
+		{
+			// Create a weighted index collection
+			AssetMovementConstituentCollection indices = new AssetMovementConstituentCollection();
+
+			AssetFundIndexWeighted index1 = new AssetFundIndexWeighted();
+			index1.MarketMovement = -0.15m;
+			index1.CurrencyMovement = -0.05m;
+			index1.Proportion = 0.5m;
+
+			// Add another index and ensure the movement is correct            
+			AssetFundIndexWeighted index2 = new AssetFundIndexWeighted();
+			index2.MarketMovement = 0.02m;
+			index2.CurrencyMovement = 0.04m;
+			index2.Proportion = 0.5m;
+
+			// Total effect on asset movement -5% + 3% = -2%
+
+			indices.Add(index1);
+			indices.Add(index2);
+			return indices;
+		}
+
+		/// <summary>
+		/// Creates an initialised asset fund with index movements. Tolerance is defaulted to 0.05
+		/// </summary>
+		/// <param name="constituents">The indicies used to calculate prices</param>
+		/// <returns>The created AssetFund</returns>
+		public static AssetFund CreateInitialisedAssetFundWithIndexMovements(AssetMovementConstituentCollection constituents)
+		{
+			return CreateInitialisedAssetFundWithIndexMovements(constituents,0.05m);
+		}
+
+		/// <summary>
+		/// Creates an initialised asset fund with index movements
+		/// </summary>
+		/// <param name="constituents">The indicies used to calculate prices.</param>
+		/// <param name="tolerance">The allowed tolerance for the fund.</param>
+		/// <returns></returns>
+		public static AssetFund CreateInitialisedAssetFundWithIndexMovements(AssetMovementConstituentCollection constituents, decimal tolerance)
+		{
+			/* Cannot instantiate an abstract class - todo revisit this and make for an oeic, linked or composite
+			 * 
+			AssetFund assetFund = new AssetFund("AssetFundCode",
+				"ShortName",
+				"FullName",
+				"CompanyCode",
+				100.0m, // Unit Price
+				System.DateTime.Now, // Valuation Point
+				0.15m, // Unit Price Movement (15%)
+				115.0m, // Previous unit price
+				true, //prev unit price set
+				0M, //auth unit price
+				false,//auth unit price set
+				true, // Locked for calculation
+				tolerance, // AM Tolerance (5%, i.e. passed)
+				null,  // Market Value Splits
+				indicies , // Weighted Indices
+				//0, // FundGroup
+				//                AssetFund.WarningLevels.None, // Warning level
+				true, // UnitPriceSet
+				true, // UnitPriceMovementSet
+				true, // AMTolerance set
+				true, // Valuation point set
+				1, // CurrencyRateImportID
+				true, //CurrencyRateImportIDSet
+				1, // IndexValueImportID
+				true, //IndexValueImportIDSet
+				1, // IndexWeightingImportID
+				true, // IndexWeightingImportIDSet
+				new byte[1],
+				1 // assetFundStatus
+				);
+
+			*/
+			return null; //assetFund;
+		}
+
+
+		/// <summary>
+		/// Test that IEntityBase is initialised.
+		/// </summary>
+		[Test]
+		public void IEntityBaseIsInitialised()
+		{
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(CreateSingleBenchMark());
+			UnitTestHelpers.OverloadedConstructorIEntityTest(assetFund);
+		}
+		
+		/// <summary>
+		/// Test the predicted asset movement.
+		/// </summary>
+		[Test]
+		public void PredictedAssetMovement()
+		{
+			// Check that the predicted asset movement, on the basis of 
+			// a single (100%) index of 0.05 + 0.05 is 0.1
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(CreateSingleIndex());
+			decimal expectedAssetMovement = 1.0m*(0.05m+0.05m);
+			Assert.AreEqual(expectedAssetMovement, assetFund.PredictedAssetMovement);
+		}
+
+		/// <summary>
+		/// Test the movement is Within the tolerance.
+		/// </summary>
+		[Test]
+		public void WithinTolerance()
+		{
+			// Check that the within tolerance calculation is correct.
+			// We know the tolerance has been set at 0.1m, and are predicting
+			// 0.1m, so this test should be true
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(CreateSingleIndex());
+			bool isAssetMovementWithinTolerance = true;
+			Assert.AreEqual(isAssetMovementWithinTolerance, assetFund.WithinAssetMovementTolerance);
+		}
+
+		/// <summary>
+		/// Test the movement is outside the tolerance.
+		/// </summary>
+		[Test]
+		public void OutsideTolerance()
+		{
+			// Check that the within tolerance calculation is correct.
+			// We know the tolerance has been set at 0.01m, and are predicting
+			// 0.1m, so this test should be false
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(CreateSingleIndex(),0.01m);
+			bool isAssetMovementWithinTolerance = false;
+			Assert.AreEqual(isAssetMovementWithinTolerance, assetFund.WithinAssetMovementTolerance);
+		}
+
+		/// <summary>
+		/// Test the movement variance.
+		/// </summary>
+		[Test]
+		public void MovementVariance()
+		{
+			// We should also be able to test the variance - we gave a unit price movement 
+			// of +15% and a predicted movement of +10%, so the variance should be +5%
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(CreateSingleIndex());
+			decimal assetMovementVariance = 0.05m;
+			Assert.AreEqual(assetMovementVariance, assetFund.AssetMovementVariance);
+
+
+			// If this test passes, let's make sure that the tolerance tests are correct by changing
+			// the tolerance to be equal to the asset movement          
+			assetFund.AssetMovementTolerance = assetFund.PredictedAssetMovement;
+            bool isAssetMovementWithinTolerance = true;
+            Assert.AreEqual(isAssetMovementWithinTolerance, assetFund.WithinAssetMovementTolerance);
+		}
+
+		/// <summary>
+		/// Tests that multiple positive indices returns the correct movement
+		/// </summary>
+		[Test]
+		public void TestMultiplePositiveIndices()
+		{
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(CreateMultiplePositiveInitialisedIndices());
+			
+			// Check that the predicted asset movement, on the basis of 
+			// a (50%) index of 0.15 + -0.05 is  0.05
+			// a (50%) index of 0.02 + -0.04 is -0.03 = 0.04 in total
+
+			decimal expectedAssetMovement = 0.04m;
+			Assert.AreEqual(expectedAssetMovement, assetFund.PredictedAssetMovement);
+		}
+
+		/// <summary>
+		/// Tests that multiple positive and negative indices return the correct movement
+		/// </summary>
+		/// 
+		[Test]
+		public void TestMultiplePositiveAndNegativeIndices()
+		{
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(CreateMultiplePositiveAndNegativeInitialisedIndices());
+
+			// Check that the predicted asset movement, on the basis of 
+			// a (50%) index of -0.15 +  0.05 is -0.05
+			// a (50%) index of  0.02 + -0.04 is -0.01 = -0.06 in total
+			decimal expectedAssetMovement = -0.06m;
+			Assert.AreEqual(expectedAssetMovement, assetFund.PredictedAssetMovement);
+		}
+
+		/// <summary>
+		/// Test that an exception is thrown when proportion does not total 100 percent.
+		/// </summary>
+		[Test]
+		[ExpectedException(typeof(InvalidOperationException))]
+		public void ExceptionWhenProportionDoesNotTotal100Percent()
+		{
+			AssetMovementConstituentCollection idx = CreateSingleIndex();
+			idx[0].Proportion = 0.99m;
+			AssetFund assetFund = CreateInitialisedAssetFundWithIndexMovements(idx);
+		}
+	}
+}

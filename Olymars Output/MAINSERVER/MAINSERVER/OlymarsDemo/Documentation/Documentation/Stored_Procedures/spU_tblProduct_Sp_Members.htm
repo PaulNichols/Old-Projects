@@ -1,0 +1,294 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			spU_tblProduct - Members overview
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			spU_tblProduct
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Members overview
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+			<div class="MainBody">
+			This class must be used in conjunction with the [<a href="spU_tblProduct_Param_Members.htm">OlymarsDemo.DataClasses.Parameters.spU_tblProduct</a>] class.
+			These classes allow you to execute the [<a href="spU_tblProduct.htm">spU_tblProduct</a>] stored procedure.<br>
+				<br>
+				Basically, you use the "<b>Parameter</b>" class to supply the needed parameters to the stored procedure. Then,
+				you use the "<b>StoredProcedure</b>" class to actually execute the stored procedure. Once executed, you can
+				retrieve back the ReturnValue and all the output parameters by using again the "<b>Parameter</b>" class.<br>
+				<br>
+				This class inherits from <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemMarshalByRefObjectClassTopic.htm">System.MarshalByRefObject</a> and implements the following interface:
+				<ul>
+					<li>
+						<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemIDisposableClassTopic.htm">System.IDisposable</a>
+					</li>
+				</ul>
+			To read an overview on this stored procedure, click <a href="../Tables/HowTo_Update/tblProduct_Overview.htm">here</a>.<br>
+			To see an example on how to call this class in Visual C# .NET, click <a href="spU_tblProduct_CS.htm">here</a>.<br>
+			To see an example on how to call this class in Visual Basic .NET, click <a href="spU_tblProduct_VB.htm">here</a>.<br>
+			</div>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			All members
+		</div>
+		<blockquote>
+			<div class="MainBody">
+				<ul>
+					<li>
+						<a href="#Connection">Connection</a>
+					</li>
+					<li>
+						<a href="#Dispose">Dispose</a>
+					</li>
+					<li>
+						<a href="#Execute">Execute</a>
+					</li>
+				</ul>
+			</div>
+		</blockquote>
+		<hr>
+		<a name="Constructor"></a>
+		<div class="MainTitle">
+			Public Constructor
+		</div>
+		<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+			<div class="SeeAlsoBody">
+				[Visual Basic .NET]
+			</div>
+			<div class="Code">
+				Public Sub New()<br>
+			</div>
+						</td>
+					</tr>
+				</table>
+			<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+			<div class="SeeAlsoBody">
+				[Visual C# .NET]
+			</div>
+			<div class="Code">
+				public spU_tblProduct();<br>
+			</div>
+						</td>
+					</tr>
+				</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>spU_tblProduct</b> class.
+				Using this default constructor implies that you do <b>NOT</b> want the <a href="#Execute">Execute</a>
+				method to throw an exception. If you want this method to throw an exception, use the overloaded
+				constructor instead.
+			</div>
+			<br>
+			<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+			<div class="SeeAlsoBody">
+				[Visual Basic .NET]
+			</div>
+			<div class="Code">
+				Public Sub New(<br>
+				&nbsp;&nbsp;&nbsp;ByVal throwExceptionOnExecute As Boolean<br>
+				)<br>
+			</div>
+						</td>
+					</tr>
+				</table>
+			<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+			<div class="SeeAlsoBody">
+				[Visual C# .NET]
+			</div>
+			<div class="Code">
+				public spU_tblProduct(<br>
+				&nbsp;&nbsp;&nbsp;bool throwExceptionOnExecute<br>
+				);<br>
+			</div>
+						</td>
+					</tr>
+				</table>
+			<br>
+			<div class="MainBody">
+				Create a new instance of the <b>spU_tblProduct</b> class.<br>
+				<br>
+				<b>throwExceptionOnExecute</b>: Supply <b>True</b> if you want the <a href="#Execute">Execute</a> method
+				to throw an exception. Supply <b>False</b> otherwise.
+			</div>
+		</blockquote>
+		<br>
+		<hr>
+		<div class="MainTitle">
+			Public Properties
+		</div>
+		<blockquote>
+			<a name="Connection"></a>
+			<div class="Highlight">
+				Connection
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public ReadOnly Property Connection As System.Data.SqlClient.SqlConnection<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public System.Data.SqlClient.SqlConnection Connection { get; };<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Returns the <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> that was actually used by the class.
+				</div>
+			</blockquote>
+		</blockquote>
+		<br>
+		<hr>
+		<div class="MainTitle">
+			Public Methods
+		</div>
+		<blockquote>
+			<a name="Dispose"></a>
+			<div class="Highlight">
+				Dispose
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Sub Dispose()<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public void Dispose();<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					Disposes the current instance of this object.
+				</div>
+			</blockquote>
+			<a name="Execute"></a>
+			<div class="Highlight">
+				Execute
+			</div>
+			<blockquote>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual Basic .NET]
+				</div>
+				<div class="Code">
+					Public Function Execute(<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByRef parameters As OlymarsDemo.DataClasses.Parameters.spU_tblProduct<br>
+					) As Boolean<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<table style="background-color: gainsboro;">
+					<tr>
+						<td>
+				<div class="SeeAlsoBody">
+					[Visual C# .NET]
+				</div>
+				<div class="Code">
+					public bool Execute(<br>
+					&nbsp;&nbsp;&nbsp;ref OlymarsDemo.DataClasses.Parameters.spU_tblProduct parameters<br>
+					);<br>
+				</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<div class="MainBody">
+					This method allows you to execute the [<b>spU_tblProduct</b>] stored procedure.
+					Depending on how you have instanciated this class, this method will return a boolean status or will throw an exception
+					if anything wrong happens.<br>
+					<br>
+					<b>parameters</b>: Contains all the necessary information to execute correctly the stored procedure, i.e. 
+					the database connection to use and all the necessary input parameters to be supplied
+					for this stored procedure execution. After the execution, this object will allow you
+					to retrieve back the stored procedure return value and all the output parameters.<br>
+					<br>
+					<b>Return Value</b><br>
+					<blockquote>
+						If you have used the <b>default constructor</b> to instanciate this class, this method returns <b>True</b> if the call was successful.
+						Otherwise, it returns <b>False</b>. In this case, the <i>parameters</i> allows you to find out which exception has occured.<br>
+						<br>
+						If you have used the <b>overloaded constructor</b> (with throwExceptionOnExecute  = True) and if the call is not successful, an exception
+						will be thrown. This method can throw two different types of exceptions:
+						<ul>
+							<li>
+								<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlExceptionClassTopic.htm">System.Data.SqlClient.SqlException</a>
+							</li>
+							<li>
+								<a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfsystemexceptionclasstopic.htm">System.Exception</a>
+							</li>
+						</ul>
+					</blockquote>
+				</div>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:15:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			Olymars Library v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

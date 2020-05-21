@@ -1,0 +1,186 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			Customers - Using the Abstract class in Visual Basic .NET
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			Customers
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Using the Abstract class in Visual Basic .NET
+		</div>
+		<hr>
+		<div class="MainTitle">
+			Overview
+		</div>
+		<blockquote>
+				<div class="MainBody">
+					This class was generated for the [<a href="Customers.htm">Customers</a>] table.
+					It is located in the
+					<span class="FixedHighlight">
+Bob.AbstractClasses
+					</span>
+					namespace.<br>
+					<br>
+					Please note that this class relies on the following underlying classes:
+					<ul>
+						<li>
+							[<a href="../Tables/HowTo_Select/Customers_Overview.htm">Bob.DataClasses.Parameters.spS_Customers</a>]
+						</li>
+						<li>
+							[<a href="../Tables/HowTo_Select/Customers_Overview.htm">Bob.DataClasses.StoredProcedures.spS_Customers</a>].<br>
+						</li>
+					</ul>
+					<br>
+					To read an overview on this class, click <a href="../AbstractClasses/Customers.htm">here</a>.<br>
+					To see an example on how to call this class in Visual C# .NET, click <a href="../AbstractClasses/Customers_CS.htm">here</a>.
+				</div>
+				<br>
+		</blockquote>
+		<hr>
+		<div class="MainTitle">
+			Step by step tutorial
+		</div>
+		<blockquote>
+				<div class="MainTitle">
+					First Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						If you are in Visual Studio.NET, make a reference to the following
+						assembly: "Bob.dll".
+					</div>
+					<br>
+					<div class="MainBody">
+						If you are using the compiler, be sure to add a "/r:" switch pointing
+						on the following assembly: "Bob.dll".
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Second Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						add thoses directives at the top of your code:
+					</div>
+					<div class="Code">
+						Imports Bob.DataClasses<br>
+						Imports Abstracts = Bob.AbstractClasses<br>
+						Imports System.Data.SqlTypes
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Third Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Use the Abstract class as described below:
+					</div>
+					<br>
+					<div class="Code">
+						<div class="FixedComment">
+							' Let's build a connection string to the database.<br>
+							' Note: the connection string policy is described <a href="../Stored_Procedures/spS_Customers_CS.htm#Connection">here</a>.<br>
+							' <br>
+							' To see the documentation on how to build this connection string,<br>
+							' <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a>
+						</div>
+						Dim ConnectionString As String = _<br>&nbsp;&nbsp;&nbsp;&nbsp;Information.BuildConnectionString("MAINSERVER\MAINSERVER", "Bob")<br>
+						<br>
+						<div class="FixedComment">
+							' Let's instanciate this abstract class and<br>
+							' specify the connection string to use. We could<br>
+							' also use the two others overloaded constructors<br>
+							' that allows us to provide a <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassTopic.htm">SqlConnection</a> or<br>
+							' a <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlTransactionClassTopic.htm">SqlTransaction</a> instead.
+						</div>
+						Dim NewAC As New _<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;Abstracts.Abstract_Customers(ConnectionString)<br>
+						<br>
+						<div class="FixedComment">
+							' Now, let's refresh a specific record by providing its primary key:
+						</div>
+						<br>
+						<div class="FixedComment">
+							' TODO: provide a specific value here.
+						</div>
+						Dim PK_CustomerID As SqlInt32 = ...<br>
+						<br>
+						<div class="FixedComment">
+							' Let's now call the 'Refresh()' method to load this record.<br>
+						</div>
+						If NewAC.Refresh(PK_CustomerID) Then<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' The record was found and we can now access all its fields.
+						</div>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_CompanyName.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_CompanyName As SqlString = NewAC.Col_CompanyName<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_ContactName.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_ContactName As SqlString = NewAC.Col_ContactName<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_TitleId.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_TitleId As SqlInt32 = NewAC.Col_TitleId<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Address.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Address As SqlString = NewAC.Col_Address<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_City.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_City As SqlString = NewAC.Col_City<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_PostalCode.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_PostalCode As SqlString = NewAC.Col_PostalCode<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Phone.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Phone As SqlString = NewAC.Col_Phone<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Email.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Email As SqlString = NewAC.Col_Email<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_WebAddress.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_WebAddress As SqlString = NewAC.Col_WebAddress<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Fax.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Fax As SqlString = NewAC.Col_Fax<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;If Not(NewAC.Col_Active.IsNull) Then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim Col_Active As SqlBoolean = NewAC.Col_Active<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;End If<br>
+							<br>
+						<br>
+						Else<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' No record with such primary key was found in the database.
+						</div>
+						<br>
+						End If<br>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Sunday 02 January 2005 - 12:33:23
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

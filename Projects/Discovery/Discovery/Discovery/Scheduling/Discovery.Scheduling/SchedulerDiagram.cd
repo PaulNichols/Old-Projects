@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.Scheduling.DataProvider">
+    <Position X="4.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>DataProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAQAAACAEEAQAAEAACAAAQBCAAAAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.SchedulingProvider">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SchedulingProvider.cs</FileName>
+      <HashCode>MgAgMAAAgCAAMIAQACJERBRABIIAiAAARRAgAAICCAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.DiscoverySchedulingProvider">
+    <Position X="2.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>DiscoverySchedulingProvider.cs</FileName>
+      <HashCode>EAAAAAAAgCAAIAAAACBEABQABAIAiAAAQBAgAAACCAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.Scheduler">
+    <Position X="5.5" Y="10" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>Scheduler.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Discovery.Scheduling.Scheduler.CoreScheduler">
+        <TypeIdentifier>
+          <NewMemberFileName>Scheduler.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="Discovery.Scheduling.SchedulingController">
+    <Position X="6" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>SchedulerController.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAACBEEAQABEIAgAAAQBCgAAACCAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.ScheduleItem" Collapsed="true">
+    <Position X="1.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AAQCAAkAEEAAAIQQAEAARyCEACBgAWAgGAAIABgIQQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.ScheduleQueueItem" Collapsed="true">
+    <Position X="0.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.ScheduleHistoryItem" Collapsed="true">
+    <Position X="2.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AIAFAAAAAQQAARAAQAABAAAgCAAAIAAAAAAAAEAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.SchedulerClient" Collapsed="true">
+    <Position X="1.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AEAAICAEAEQAAQYAAAAAAQAIAEIgAAAAEACAABAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.PurgeScheduleHistory" Collapsed="true">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.Scheduling.SampleScheduleTask" Collapsed="true">
+    <Position X="2.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Discovery.Scheduling.EventName" Collapsed="true">
+    <Position X="3.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Discovery.Scheduling.ScheduleSource" Collapsed="true">
+    <Position X="3.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAQAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Discovery.Scheduling.ScheduleStatus" Collapsed="true">
+    <Position X="3.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Scheduling.cs</FileName>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAIAAAAAAAAAgIAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Discovery.Scheduling.WorkStarted" Collapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Discovery.Scheduling.WorkProgressing" Collapsed="true">
+    <Position X="2" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Discovery.Scheduling.WorkCompleted" Collapsed="true">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Discovery.Scheduling.WorkErrored" Collapsed="true">
+    <Position X="2" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>SchedulingProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Delegate>
+</ClassDiagram>

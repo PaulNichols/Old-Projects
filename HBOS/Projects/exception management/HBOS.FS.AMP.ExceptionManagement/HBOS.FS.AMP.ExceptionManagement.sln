@@ -1,0 +1,44 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBOS.FS.AMP.ExceptionManagement", "HBOS.FS.AMP.ExceptionManagement.csproj", "{58AD7EEC-D316-4066-ADD6-3DC9FBEB9BC1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dependencies", "..\Dependencies\Dependencies.csproj", "{00CEBD2F-9156-4910-8AFB-ED4FE0E6AE31}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectName0 = $/564_AssetManagementProject/HBOS.FS.AMP.ExceptionManagement
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:SourceGear\u0020Vault\u0020Client
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection0 = HBOS.FS.AMP.ExceptionManagement\\
+		SolutionUniqueID = {0A1AAB1D-A83A-4ECD-9207-CF426692A9AF}
+		SccProjectUniqueName1 = ..\\Dependencies\\Dependencies.csproj
+		SccLocalPath1 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = Dependencies\\
+		SccProjectUniqueName2 = HBOS.FS.AMP.ExceptionManagement.csproj
+		SccLocalPath2 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection2 = HBOS.FS.AMP.ExceptionManagement\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{58AD7EEC-D316-4066-ADD6-3DC9FBEB9BC1}.Debug.ActiveCfg = Debug|.NET
+		{58AD7EEC-D316-4066-ADD6-3DC9FBEB9BC1}.Debug.Build.0 = Debug|.NET
+		{58AD7EEC-D316-4066-ADD6-3DC9FBEB9BC1}.Release.ActiveCfg = Release|.NET
+		{58AD7EEC-D316-4066-ADD6-3DC9FBEB9BC1}.Release.Build.0 = Release|.NET
+		{00CEBD2F-9156-4910-8AFB-ED4FE0E6AE31}.Debug.ActiveCfg = Debug|.NET
+		{00CEBD2F-9156-4910-8AFB-ED4FE0E6AE31}.Release.ActiveCfg = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

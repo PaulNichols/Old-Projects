@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RegistrationRefusalLetterData" targetNamespace="http://tempuri.org/RegistrationRefusalLetterData.xsd"
+	xmlns:mstns="http://tempuri.org/RegistrationRefusalLetterData.xsd" xmlns="http://tempuri.org/RegistrationRefusalLetterData.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="RegistrationRefusalLetterData" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="BORegistrationRefusalLetter">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:integer" minOccurs="0" />
+							<xs:element name="FromAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="ToAddress" type="xs:string" minOccurs="0" />
+							<xs:element name="IssuedDate" type="xs:string" minOccurs="0" />
+							<xs:element name="Salutation" type="xs:string" minOccurs="0" />
+							<xs:element name="OurReference" type="xs:string" minOccurs="0" />
+							<xs:element name="BeginText" type="xs:string" minOccurs="0" />
+							<xs:element name="IntroText" type="xs:string" minOccurs="0" />
+							<xs:element name="EndText" type="xs:string" minOccurs="0" />
+							<xs:element name="DirectLineText" type="xs:string" minOccurs="0" />
+							<xs:element name="SignatureText" type="xs:string" minOccurs="0" />
+							<xs:element name="FaxText" type="xs:string" minOccurs="0" />
+							<xs:element name="EMailText" type="xs:string" minOccurs="0" />														
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BORegistrationRefusalLetterDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" type="xs:integer" minOccurs="0" />
+							<xs:element name="IdMarkTypeText" type="xs:string" minOccurs="0" />
+							<xs:element name="IdMarkText" type="xs:string" minOccurs="0" />
+							<xs:element name="CommonNameText" type="xs:string" minOccurs="0" />
+							<xs:element name="ScientificNameText" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:key name="key1">
+			<xs:selector xpath=".//mstns:BORegistrationRefusalLetter" />
+			<xs:field xpath="mstns:Id" />
+		</xs:key>
+		<xs:keyref name="BORegistrationRefusalLetterBORegistrationRefusalLetterDetails" refer="mstns:key1">
+			<xs:selector xpath=".//mstns:BORegistrationRefusalLetterDetails" />
+			<xs:field xpath="mstns:Id" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

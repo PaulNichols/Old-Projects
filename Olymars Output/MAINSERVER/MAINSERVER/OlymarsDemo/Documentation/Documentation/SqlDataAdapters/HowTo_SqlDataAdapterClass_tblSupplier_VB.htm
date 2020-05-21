@@ -1,0 +1,194 @@
+<html>
+	<head>
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<title>
+			SqlDataAdapter_tblSupplier - Using the SqlDataAdapter class in Visual Basic .NET
+		</title>
+		<link href="../StyleSheet.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="FirstLevelTitle">
+			SqlDataAdapter_tblSupplier
+		</div>
+		<div class="FirstLevelSubTitle">
+			&nbsp;&nbsp;&nbsp;Using the SqlDataAdapter class in Visual Basic .NET
+		</div>
+		<hr>
+			<div class="MainTitle">
+				Overview
+			</div>
+			<blockquote>
+				<div class="MainBody">
+					This class was generated for the [<a href="../Tables/tblSupplier.htm">tblSupplier</a>] table.
+					It is located in the
+					<span class="FixedHighlight">
+OlymarsDemo.SqlDataAdapters
+					</span>
+					namespace.<br>
+					<br>
+					Please note that this class relies on the following underlying stored procedures:
+					<br>
+					<ul>
+						<li>
+							[<a href="../Stored_Procedures/spI_tblSupplier.htm">spI_tblSupplier</a>]
+						</li>
+						<li>
+							[<a href="../Stored_Procedures/spU_tblSupplier.htm">spU_tblSupplier</a>]
+						</li>
+						<li>
+							[<a href="../Stored_Procedures/spD_tblSupplier.htm">spD_tblSupplier</a>]
+						</li>
+						<li>
+							[<a href="../Stored_Procedures/spS_tblSupplier.htm">spS_tblSupplier</a>]
+						</li>
+					</ul>
+					To read an overview on this class, click <a href="HowTo_SqlDataAdapterClass_tblSupplier.htm">here</a>.<br>
+					To see the members of this class, click <a href="SqlDataAdapterClass_tblSupplier_Members.htm">here</a>.<br>
+					To see an example on how to call this class in Visual C# .NET, click <a href="HowTo_SqlDataAdapterClass_tblSupplier_CS.htm">here</a>.
+				</div>
+			</blockquote>
+			<hr>
+			<div class="MainTitle">
+				Step by step tutorial
+			</div>
+			<blockquote>
+				<br>
+				<div class="MainTitle">
+					First Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						If you are in Visual Studio.NET, make a reference to the following
+						assembly: "OlymarsDemo.dll".
+					</div>
+					<br>
+					<div class="MainBody">
+						If you are using the compiler, be sure to add a "/r:" switch pointing
+						on the following assembly: "OlymarsDemo.dll".
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Second Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						From <b>Visual Studio.NET</b>, create a new "Visual Basic Projects/Windows Application" project. On the default form (Form1),
+						add the following controls:
+						<br>
+						<ul>
+							<li>
+								<b>Button</b> (name: cmdRefresh, Text: Refresh)
+							</li>
+							<li>
+								<b>Button</b> (name: cmdUpdate, Text: Update)
+							</li>
+							<li>
+								<b><a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemWindowsFormsDataGridClassTopic.htm">DataGrid</a></b> (name: dataGrid1)
+							</li>
+						</ul>
+					</div>
+					<div class="MainBody">
+						add thoses directives at the top of your code:
+					</div>
+					<div class="Code">
+						Imports OlymarsDemo.DataClasses<br>
+						Imports SqlDataAdapters = OlymarsDemo.SqlDataAdapters
+					</div>
+					<br>
+					<div class="MainBody">
+						Declare the two following class level variables:
+					</div>
+					<div class="Code">
+						Private sqlDataAdapter_tblSupplier As SqlDataAdapters.SqlDataAdapter_tblSupplier<br>
+						Private CurrentDataSet As System.Data.DataSet<br>
+					</div>
+				</blockquote>
+				<div class="MainTitle">
+					Third Step:
+				</div>
+				<blockquote>
+					<div class="MainBody">
+						Double-click on the "<b>cmdRefresh</b>" button and paste the following code:
+					</div>
+					<br>
+					<div class="Code">
+						Private Sub cmdRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRefresh.Click<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' Let's build a connection string to the database.<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;' Note: the connection string policy is described <a href="../Stored_Procedures/spS_tblSupplier_CS.htm#Connection">here</a>.<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;' <br>
+							&nbsp;&nbsp;&nbsp;&nbsp;' To see the documentation on how to build this connection string,<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;' <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemDataSqlClientSqlConnectionClassConnectionStringTopic.htm">click here</a>
+						</div>
+&nbsp;&nbsp;&nbsp;&nbsp;						Dim ConnectionString As String = _<br>&nbsp;&nbsp;&nbsp;&nbsp;Information.BuildConnectionString("MAINSERVER\MAINSERVER", "OlymarsDemo")<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' Let's instanciate the SqlDataAdapter class.<br>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;sqlDataAdapter_tblSupplier = _<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New SqlDataAdapters.SqlDataAdapter_tblSupplier(ConnectionString)<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' Let's instanciate a new <a href="ms-help://MS.NETFrameworkSDK/cpref/html/frlrfSystemDataDataSetClassTopic.htm">DataSet</a> class.<br>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;CurrentDataSet = New System.Data.DataSet()<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' Let's use the SqlDataAdapter class to fill this DataSet.<br>
+						</div>
+					&nbsp;&nbsp;&nbsp;&nbsp;sqlDataAdapter_tblSupplier.FillDataSet(CurrentDataSet)<br>
+						<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;' Let's load the DataGrid with the DataSet content.<br>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;dataGrid1.DataSource = CurrentDataSet.Tables("tblSupplier").DefaultView<br>
+						<br>
+						End Sub<br>
+					</div>
+					<br>
+					<div class="MainBody">
+						Double-click on the "<b>cmdUpdate</b>" button and paste the following code:
+					</div>
+					<br>
+					<div class="Code">
+						Private Sub cmdUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click<br>
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;Try<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<br>
+						<div class="FixedComment">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' Let's update all the changes that have been made in the DataGrid<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' by invoking the underlying SqlDataAdapter.<br>
+						</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlDataAdapter_tblSupplier.SqlDataAdapter.Update(CurrentDataSet, "tblSupplier")<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;Catch Exception As System.Data.SqlClient.SqlException<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show(Exception.ToString())<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;End Try<br>
+						<br>
+						End Sub<br>
+					</div>
+					<br>
+					<div class="MainBody">
+						Hit <b>F5</b> to run this project. Click on the "<b>Refresh</b> button.
+						Make what ever changes you want (Add a new record, Update an
+						existing record and delete an existing record). Click on the "<b>Update</b>
+						button. All the changes have been populated back to your database.
+					</div>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<hr>
+		<div class="Copyright">
+			This documentation was automatically generated on:
+			Monday 27 December 2004 - 16:14:57
+		</div>
+		<br>
+		<div class="Copyright">
+			SQL Server Centric .NET Code Generator<br>
+			OlyMars v 1.0.1697.21165<br>
+		</div>
+	</body>
+</html>

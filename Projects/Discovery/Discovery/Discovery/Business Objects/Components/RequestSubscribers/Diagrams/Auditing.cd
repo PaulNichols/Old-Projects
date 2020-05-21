@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Discovery.RequestSubscribers.Auditing">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\RequestSubscribers\Auditing.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="auditEntry" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Discovery.RequestManagement.RequestSubscriber">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Discovery.BusinessObjects.MessageAuditEntry">
+    <Position X="3.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Entities\AuditEntry.cs</FileName>
+      <HashCode>AEAAAAAQEAAAMBAAACEAAAQAAAAFAAABAQAAIAEAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Discovery.BusinessObjects.Controllers.AuditEntryController">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Components\BusinessObjects\Controllers\AuditController.cs</FileName>
+      <HashCode>AAAAAAgAAAAAAAAAAQAAAAAAAAYAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

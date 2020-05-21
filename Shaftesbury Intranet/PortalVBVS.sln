@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PortalVBVS", "http://Intranet/PortalVBVS.vbproj", "{E4536552-4389-4B4A-AC3D-AAF0AD444548}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WebSetup1", "WebSetup1\WebSetup1.vdproj", "{E58971D4-02D8-418E-B387-41CC70B47B1A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E4536552-4389-4B4A-AC3D-AAF0AD444548}.Debug.ActiveCfg = Debug|.NET
+		{E4536552-4389-4B4A-AC3D-AAF0AD444548}.Debug.Build.0 = Debug|.NET
+		{E4536552-4389-4B4A-AC3D-AAF0AD444548}.Release.ActiveCfg = Release|.NET
+		{E4536552-4389-4B4A-AC3D-AAF0AD444548}.Release.Build.0 = Release|.NET
+		{E58971D4-02D8-418E-B387-41CC70B47B1A}.Debug.ActiveCfg = Debug
+		{E58971D4-02D8-418E-B387-41CC70B47B1A}.Release.ActiveCfg = Release
+		{E58971D4-02D8-418E-B387-41CC70B47B1A}.Release.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
