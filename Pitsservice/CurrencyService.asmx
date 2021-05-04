@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="CurrencyService.asmx.vb" Class="PITSService.CurrencyService" %>

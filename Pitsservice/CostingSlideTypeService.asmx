@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="CostingSlideTypeService.asmx.vb" Class="PITSService.CostingSlideTypeService" %>

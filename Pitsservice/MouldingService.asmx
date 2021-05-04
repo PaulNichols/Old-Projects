@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="MouldingService.asmx.vb" Class="PITSService.MouldingService" %>

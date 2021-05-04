@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="StatusTypeService.asmx.vb" Class="PITSService.StatusTypeService" %>

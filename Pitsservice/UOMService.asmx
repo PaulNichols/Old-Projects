@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="UOMService.asmx.vb" Class="PITSService.UOMService" %>

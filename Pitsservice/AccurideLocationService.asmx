@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="AccurideLocationService.asmx.vb" Class="PITSService.AccurideLocationService" %>

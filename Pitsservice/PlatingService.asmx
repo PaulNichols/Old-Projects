@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="PlatingService.asmx.vb" Class="PITSService.PlatingService" %>

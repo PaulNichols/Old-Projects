@@ -1,1 +1,0 @@
-<%@ WebService Language="vb" Codebehind="PackingTypeService.asmx.vb" Class="PITSService.PackingTypeService" %>
